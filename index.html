@@ -119,7 +119,39 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-        
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-btn {
+            padding: 0.5rem 0.75rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.25rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            opacity: 0.5;
+        }
+
+        .lang-btn.active {
+            opacity: 1;
+            background: var(--primary-lighter);
+        }
+
+        .lang-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -528,10 +560,14 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .nav-links {
                 gap: 1rem;
                 flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .lang-switcher {
                 justify-content: center;
             }
             
@@ -570,11 +606,15 @@
             <nav>
                 <div class="logo">Mateo</div>
                 <ul class="nav-links">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#competences">Compétences</a></li>
-                    <li><a href="#projets">Projets</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
             </nav>
         </div>
     </header>
@@ -588,23 +628,23 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-tag">
-                    ⚡ Disponible pour un stage d'avril 2025
+                    <span data-i18n="hero.availability">⚡ Disponible pour un stage d'avril 2025</span>
                 </div>
                 <h1>
-                    Salut, je suis <span class="gradient-text">Mateo</span><br>
-                    Développeur & Étudiant en Informatique
+                    <span data-i18n="hero.greeting">Salut, je suis</span> <span class="gradient-text">Mateo</span><br>
+                    <span data-i18n="hero.title">Développeur & Étudiant en Informatique</span>
                 </h1>
-                <p>
-                    Étudiant en 2ème année de BUT Informatique à l'IUT d'Annecy, passionné par le développement web, 
-                    les bases de données et la création de solutions innovantes. Je recherche un stage de 1 à 3 mois 
+                <p data-i18n="hero.description">
+                    Étudiant en 2ème année de BUT Informatique à l'IUT d'Annecy, passionné par le développement web,
+                    les bases de données et la création de solutions innovantes. Je recherche un stage de 1 à 3 mois
                     pour mettre en pratique mes compétences et apprendre au sein d'une équipe dynamique.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
-                        📩 Me contacter
+                        <span data-i18n="hero.contact">📩 Me contacter</span>
                     </a>
                     <a href="#projets" class="btn btn-secondary">
-                        🚀 Voir mes projets
+                        <span data-i18n="hero.projects">🚀 Voir mes projets</span>
                     </a>
                 </div>
             </div>
@@ -618,22 +658,22 @@
                 <div class="stat-card">
                     <div class="icon">🎓</div>
                     <h3>BUT 2</h3>
-                    <p>Informatique à l'IUT Annecy</p>
+                    <p data-i18n="stats.education">Informatique à l'IUT Annecy</p>
                 </div>
                 <div class="stat-card">
                     <div class="icon">💻</div>
                     <h3>10+</h3>
-                    <p>Projets développés</p>
+                    <p data-i18n="stats.projects">Projets développés</p>
                 </div>
                 <div class="stat-card">
                     <div class="icon">🏆</div>
-                    <h3>Champion</h3>
-                    <p>Polo & Saut d'Obstacles</p>
+                    <h3 data-i18n="stats.champion">Champion</h3>
+                    <p data-i18n="stats.sports">Polo & Saut d'Obstacles</p>
                 </div>
                 <div class="stat-card">
                     <div class="icon">🎯</div>
-                    <h3>Stage</h3>
-                    <p>Recherche active depuis avril 2025</p>
+                    <h3 data-i18n="stats.internship">Stage</h3>
+                    <p data-i18n="stats.seeking">Recherche active depuis avril 2025</p>
                 </div>
             </div>
         </div>
@@ -643,16 +683,16 @@
     <section id="competences">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">💡 Mes compétences</span>
-                <h2>Technologies & Outils</h2>
-                <p>Un large éventail de compétences acquises durant ma formation et mes projets personnels</p>
+                <span class="section-tag"><span data-i18n="skills.tag">💡 Mes compétences</span></span>
+                <h2 data-i18n="skills.title">Technologies & Outils</h2>
+                <p data-i18n="skills.description">Un large éventail de compétences acquises durant ma formation et mes projets personnels</p>
             </div>
             
             <div class="skills-grid">
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">🌐</span>
-                        Développement Web
+                        <span data-i18n="skills.webDev">Développement Web</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">HTML/CSS</span>
@@ -668,7 +708,7 @@
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">💾</span>
-                        Bases de Données
+                        <span data-i18n="skills.databases">Bases de Données</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PostgreSQL</span>
@@ -682,7 +722,7 @@
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">⚙️</span>
-                        Langages & Frameworks
+                        <span data-i18n="skills.languages">Langages & Frameworks</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Java</span>
@@ -696,7 +736,7 @@
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">🔐</span>
-                        Sécurité & Crypto
+                        <span data-i18n="skills.security">Sécurité & Crypto</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">AES</span>
@@ -710,7 +750,7 @@
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">🐧</span>
-                        Système & Réseau
+                        <span data-i18n="skills.system">Système & Réseau</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Linux</span>
@@ -725,7 +765,7 @@
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">🛠️</span>
-                        Outils & Méthodes
+                        <span data-i18n="skills.tools">Outils & Méthodes</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Git/GitHub</span>
@@ -743,9 +783,9 @@
     <section id="projets">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">🚀 Mes réalisations</span>
-                <h2>Projets & Développements</h2>
-                <p>Une sélection de mes projets académiques et personnels</p>
+                <span class="section-tag"><span data-i18n="projects.tag">🚀 Mes réalisations</span></span>
+                <h2 data-i18n="projects.title">Projets & Développements</h2>
+                <p data-i18n="projects.description">Une sélection de mes projets académiques et personnels</p>
             </div>
             
             <div class="projects-grid">
@@ -757,9 +797,9 @@
                             <span class="project-tag">PostgreSQL</span>
                             <span class="project-tag">Web</span>
                         </div>
-                        <h3>Jeu Pokémon 2D</h3>
-                        <p>Développement d'un jeu web 2D avec Laravel et PostgreSQL, incluant un système de combat et de progression.</p>
-                        <a href="#contact" class="btn btn-secondary">En savoir plus →</a>
+                        <h3 data-i18n="projects.pokemon.title">Jeu Pokémon 2D</h3>
+                        <p data-i18n="projects.pokemon.description">Développement d'un jeu web 2D avec Laravel et PostgreSQL, incluant un système de combat et de progression.</p>
+                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
                 
@@ -771,9 +811,9 @@
                             <span class="project-tag">Socket.io</span>
                             <span class="project-tag">Real-time</span>
                         </div>
-                        <h3>Application de Chat</h3>
-                        <p>Chat en temps réel avec Node.js et Socket.io, permettant des conversations instantanées entre utilisateurs.</p>
-                        <a href="#contact" class="btn btn-secondary">En savoir plus →</a>
+                        <h3 data-i18n="projects.chat.title">Application de Chat</h3>
+                        <p data-i18n="projects.chat.description">Chat en temps réel avec Node.js et Socket.io, permettant des conversations instantanées entre utilisateurs.</p>
+                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
                 
@@ -785,12 +825,12 @@
                             <span class="project-tag">Cryptographie</span>
                             <span class="project-tag">Sécurité</span>
                         </div>
-                        <h3>Suite Cryptographique</h3>
-                        <p>Implémentation d'algorithmes de chiffrement (AES, RSA, SHA-256) et codes de correction d'erreurs (Hamming).</p>
-                        <a href="#contact" class="btn btn-secondary">En savoir plus →</a>
+                        <h3 data-i18n="projects.crypto.title">Suite Cryptographique</h3>
+                        <p data-i18n="projects.crypto.description">Implémentation d'algorithmes de chiffrement (AES, RSA, SHA-256) et codes de correction d'erreurs (Hamming).</p>
+                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
-                
+
                 <div class="project-card reveal">
                     <div class="project-image">🏦</div>
                     <div class="project-content">
@@ -799,12 +839,12 @@
                             <span class="project-tag">WPF</span>
                             <span class="project-tag">MVVM</span>
                         </div>
-                        <h3>Système Bancaire</h3>
-                        <p>Application WPF en architecture MVVM pour la gestion de comptes bancaires avec interface moderne.</p>
-                        <a href="#contact" class="btn btn-secondary">En savoir plus →</a>
+                        <h3 data-i18n="projects.banking.title">Système Bancaire</h3>
+                        <p data-i18n="projects.banking.description">Application WPF en architecture MVVM pour la gestion de comptes bancaires avec interface moderne.</p>
+                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
-                
+
                 <div class="project-card reveal">
                     <div class="project-image">🎯</div>
                     <div class="project-content">
@@ -813,12 +853,12 @@
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">Game Dev</span>
                         </div>
-                        <h3>Platformer 2D</h3>
-                        <p>Jeu de plateforme développé avec Phaser.js, incluant physique, collisions et système de niveaux.</p>
-                        <a href="#contact" class="btn btn-secondary">En savoir plus →</a>
+                        <h3 data-i18n="projects.platformer.title">Platformer 2D</h3>
+                        <p data-i18n="projects.platformer.description">Jeu de plateforme développé avec Phaser.js, incluant physique, collisions et système de niveaux.</p>
+                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
-                
+
                 <div class="project-card reveal">
                     <div class="project-image">🌐</div>
                     <div class="project-content">
@@ -827,9 +867,9 @@
                             <span class="project-tag">HTML/CSS</span>
                             <span class="project-tag">Portfolio</span>
                         </div>
-                        <h3>Portfolio Personnel</h3>
-                        <p>Site portfolio déployé sur GitHub Pages pour présenter mes compétences et projets de manière professionnelle.</p>
-                        <a href="#contact" class="btn btn-secondary">Voir le site →</a>
+                        <h3 data-i18n="projects.portfolio.title">Portfolio Personnel</h3>
+                        <p data-i18n="projects.portfolio.description">Site portfolio déployé sur GitHub Pages pour présenter mes compétences et projets de manière professionnelle.</p>
+                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.viewSite">Voir le site →</span></a>
                     </div>
                 </div>
             </div>
@@ -840,13 +880,13 @@
     <section id="contact">
         <div class="container">
             <div class="contact-section reveal">
-                <h2>🚀 Travaillons ensemble !</h2>
-                <p>Je suis disponible pour un stage de 1 à 3 mois à partir d'avril 2025</p>
-                <a href="mailto:mateo@example.com" class="btn btn-primary">Me contacter par email</a>
-                
+                <h2 data-i18n="contact.title">🚀 Travaillons ensemble !</h2>
+                <p data-i18n="contact.subtitle">Je suis disponible pour un stage de 1 à 3 mois à partir d'avril 2025</p>
+                <a href="mailto:mateo@example.com" class="btn btn-primary"><span data-i18n="contact.emailBtn">Me contacter par email</span></a>
+
                 <div class="contact-methods">
                     <a href="mailto:mateo@example.com" class="contact-item">
-                        📧 Email
+                        <span data-i18n="contact.email">📧 Email</span>
                     </a>
                     <a href="https://linkedin.com" target="_blank" class="contact-item">
                         💼 LinkedIn
@@ -862,8 +902,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Mateo - Étudiant Développeur | IUT Annecy</p>
-            <p>Créé avec passion 🚀</p>
+            <p data-i18n="footer.copyright">© 2025 Mateo - Étudiant Développeur | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
         </div>
     </footer>
 
@@ -908,6 +948,217 @@
                 }
             });
         });
+
+        // Language Switcher
+        const translations = {
+            fr: {
+                meta: {
+                    title: 'Mateo - Étudiant Développeur | Portfolio',
+                    description: 'Mateo, étudiant en BUT Informatique à l\'IUT Annecy. Développeur passionné cherchant un stage de 1-3 mois à partir d\'avril 2025.'
+                },
+                nav: {
+                    home: 'Accueil',
+                    skills: 'Compétences',
+                    projects: 'Projets',
+                    contact: 'Contact'
+                },
+                hero: {
+                    availability: '⚡ Disponible pour un stage d\'avril 2025',
+                    greeting: 'Salut, je suis',
+                    title: 'Développeur & Étudiant en Informatique',
+                    description: 'Étudiant en 2ème année de BUT Informatique à l\'IUT d\'Annecy, passionné par le développement web, les bases de données et la création de solutions innovantes. Je recherche un stage de 1 à 3 mois pour mettre en pratique mes compétences et apprendre au sein d\'une équipe dynamique.',
+                    contact: '📩 Me contacter',
+                    projects: '🚀 Voir mes projets'
+                },
+                stats: {
+                    education: 'Informatique à l\'IUT Annecy',
+                    projects: 'Projets développés',
+                    champion: 'Champion',
+                    sports: 'Polo & Saut d\'Obstacles',
+                    internship: 'Stage',
+                    seeking: 'Recherche active depuis avril 2025'
+                },
+                skills: {
+                    tag: '💡 Mes compétences',
+                    title: 'Technologies & Outils',
+                    description: 'Un large éventail de compétences acquises durant ma formation et mes projets personnels',
+                    webDev: 'Développement Web',
+                    databases: 'Bases de Données',
+                    languages: 'Langages & Frameworks',
+                    security: 'Sécurité & Crypto',
+                    system: 'Système & Réseau',
+                    tools: 'Outils & Méthodes'
+                },
+                projects: {
+                    tag: '🚀 Mes réalisations',
+                    title: 'Projets & Développements',
+                    description: 'Une sélection de mes projets académiques et personnels',
+                    learnMore: 'En savoir plus →',
+                    viewSite: 'Voir le site →',
+                    pokemon: {
+                        title: 'Jeu Pokémon 2D',
+                        description: 'Développement d\'un jeu web 2D avec Laravel et PostgreSQL, incluant un système de combat et de progression.'
+                    },
+                    chat: {
+                        title: 'Application de Chat',
+                        description: 'Chat en temps réel avec Node.js et Socket.io, permettant des conversations instantanées entre utilisateurs.'
+                    },
+                    crypto: {
+                        title: 'Suite Cryptographique',
+                        description: 'Implémentation d\'algorithmes de chiffrement (AES, RSA, SHA-256) et codes de correction d\'erreurs (Hamming).'
+                    },
+                    banking: {
+                        title: 'Système Bancaire',
+                        description: 'Application WPF en architecture MVVM pour la gestion de comptes bancaires avec interface moderne.'
+                    },
+                    platformer: {
+                        title: 'Platformer 2D',
+                        description: 'Jeu de plateforme développé avec Phaser.js, incluant physique, collisions et système de niveaux.'
+                    },
+                    portfolio: {
+                        title: 'Portfolio Personnel',
+                        description: 'Site portfolio déployé sur GitHub Pages pour présenter mes compétences et projets de manière professionnelle.'
+                    }
+                },
+                contact: {
+                    title: '🚀 Travaillons ensemble !',
+                    subtitle: 'Je suis disponible pour un stage de 1 à 3 mois à partir d\'avril 2025',
+                    emailBtn: 'Me contacter par email',
+                    email: '📧 Email'
+                },
+                footer: {
+                    copyright: '© 2025 Mateo - Étudiant Développeur | IUT Annecy',
+                    signature: 'Créé avec passion 🚀'
+                }
+            },
+            en: {
+                meta: {
+                    title: 'Mateo - Student Developer | Portfolio',
+                    description: 'Mateo, Computer Science student at IUT Annecy. Passionate developer looking for a 1-3 month internship from April 2025.'
+                },
+                nav: {
+                    home: 'Home',
+                    skills: 'Skills',
+                    projects: 'Projects',
+                    contact: 'Contact'
+                },
+                hero: {
+                    availability: '⚡ Available for internship from April 2025',
+                    greeting: 'Hi, I\'m',
+                    title: 'Developer & Computer Science Student',
+                    description: '2nd year Computer Science student at IUT Annecy, passionate about web development, databases and creating innovative solutions. I\'m looking for a 1 to 3 month internship to apply my skills and learn within a dynamic team.',
+                    contact: '📩 Contact me',
+                    projects: '🚀 View my projects'
+                },
+                stats: {
+                    education: 'Computer Science at IUT Annecy',
+                    projects: 'Developed projects',
+                    champion: 'Champion',
+                    sports: 'Polo & Show Jumping',
+                    internship: 'Internship',
+                    seeking: 'Actively seeking since April 2025'
+                },
+                skills: {
+                    tag: '💡 My skills',
+                    title: 'Technologies & Tools',
+                    description: 'A wide range of skills acquired during my education and personal projects',
+                    webDev: 'Web Development',
+                    databases: 'Databases',
+                    languages: 'Languages & Frameworks',
+                    security: 'Security & Cryptography',
+                    system: 'System & Network',
+                    tools: 'Tools & Methods'
+                },
+                projects: {
+                    tag: '🚀 My achievements',
+                    title: 'Projects & Developments',
+                    description: 'A selection of my academic and personal projects',
+                    learnMore: 'Learn more →',
+                    viewSite: 'View site →',
+                    pokemon: {
+                        title: '2D Pokémon Game',
+                        description: 'Development of a 2D web game with Laravel and PostgreSQL, including a battle and progression system.'
+                    },
+                    chat: {
+                        title: 'Chat Application',
+                        description: 'Real-time chat with Node.js and Socket.io, enabling instant conversations between users.'
+                    },
+                    crypto: {
+                        title: 'Cryptographic Suite',
+                        description: 'Implementation of encryption algorithms (AES, RSA, SHA-256) and error correction codes (Hamming).'
+                    },
+                    banking: {
+                        title: 'Banking System',
+                        description: 'WPF application in MVVM architecture for bank account management with modern interface.'
+                    },
+                    platformer: {
+                        title: '2D Platformer',
+                        description: 'Platform game developed with Phaser.js, including physics, collisions and level system.'
+                    },
+                    portfolio: {
+                        title: 'Personal Portfolio',
+                        description: 'Portfolio site deployed on GitHub Pages to showcase my skills and projects professionally.'
+                    }
+                },
+                contact: {
+                    title: '🚀 Let\'s work together!',
+                    subtitle: 'I\'m available for a 1 to 3 month internship from April 2025',
+                    emailBtn: 'Contact me by email',
+                    email: '📧 Email'
+                },
+                footer: {
+                    copyright: '© 2025 Mateo - Student Developer | IUT Annecy',
+                    signature: 'Created with passion 🚀'
+                }
+            }
+        };
+
+        // Get nested translation value
+        function getNestedTranslation(obj, path) {
+            return path.split('.').reduce((prev, curr) => prev?.[curr], obj);
+        }
+
+        // Change language function
+        function changeLanguage(lang) {
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update meta tags
+            document.title = translations[lang].meta.title;
+            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].meta.description);
+
+            // Update all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const translation = getNestedTranslation(translations[lang], key);
+                if (translation) {
+                    element.textContent = translation;
+                }
+            });
+
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Language button click handlers
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
+
+        // Load saved language preference or default to French
+        const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
+        changeLanguage(savedLang);
     </script>
 </body>
 </html>
