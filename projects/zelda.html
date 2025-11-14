@@ -1,149 +1,365 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zelda II: The Adventure of Link - Portfolio Project</title>
+    <title>Zelda II: The Adventure of Link - Mateo Portfolio</title>
+    <meta name="description" content="Recréation complète du jeu Zelda 2 en Python avec graphismes ASCII, système RPG, combats et monde ouvert.">
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #60a5fa;
+            --primary-lighter: #dbeafe;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-orange: #f59e0b;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 2rem;
         }
 
-        /* Back Button */
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .back-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.95);
-            color: #667eea;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 0.75rem;
             font-weight: 600;
-            margin-bottom: 20px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
         }
 
         .back-btn:hover {
-            background: white;
-            transform: translateX(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
         }
 
-        /* Header Section */
+        /* Hero Section */
         .hero {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            padding-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
             text-align: center;
+            margin: 0 auto;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .hero h1 {
-            font-size: 3em;
-            color: #667eea;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            animation: slideUp 0.6s ease 0.1s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero h2 {
-            font-size: 1.8em;
-            color: #764ba2;
-            margin-bottom: 20px;
-            font-weight: 300;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-light);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            animation: slideUp 0.6s ease 0.2s both;
         }
 
         .hero p {
-            font-size: 1.2em;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideUp 0.6s ease 0.3s both;
         }
 
         /* Badges */
         .badges {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
+            animation: slideUp 0.6s ease 0.4s both;
         }
 
         .badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        /* GitHub Button */
-        .github-btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: #24292e;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.1em;
+            background: var(--primary-lighter);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .github-btn:hover {
+        .badge:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-dark {
+            background: var(--dark);
+            color: white;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
+        }
+
+        .btn-dark:hover {
             background: #000;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
         }
 
-        .github-btn::before {
-            content: "⭐ ";
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideUp 0.6s ease 0.5s both;
         }
 
-        /* Content Sections */
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        /* Section */
+        section {
+            padding: 4rem 0;
+            position: relative;
         }
 
-        .section h3 {
-            font-size: 2em;
-            color: #667eea;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #764ba2;
-            padding-bottom: 10px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--primary-lighter);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Card */
+        .content-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border-left-color: var(--accent-purple);
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
         /* Game Preview */
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .screenshot-box {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .screenshot-title {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
         .game-preview {
             background: #1e1e1e;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
             overflow-x: auto;
-            margin: 20px 0;
             box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -163,14 +379,26 @@
             text-shadow: 0 0 10px #ffff00;
         }
 
-        /* Code Snippets */
+        .controls-info {
+            background: var(--primary-lighter);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .controls-info strong {
+            color: var(--primary);
+        }
+
+        /* Code Preview */
         .code-preview {
             background: #282c34;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
             overflow-x: auto;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .code-preview pre {
@@ -205,115 +433,82 @@
             color: #d19a66;
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+        .code-section {
+            margin-bottom: 2rem;
         }
 
-        .feature-card {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-card h4 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .feature-card p {
-            color: #555;
+        .code-section h4 {
+            color: var(--accent-purple);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         /* Tech Stack */
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
+            gap: 1rem;
+            margin: 2rem 0;
         }
 
         .tech-item {
             background: white;
-            padding: 12px 24px;
-            border-radius: 10px;
-            border: 2px solid #667eea;
-            color: #667eea;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            border: 2px solid var(--primary-lighter);
+            color: var(--primary);
             font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .tech-item:hover {
-            background: #667eea;
+            background: var(--primary);
             color: white;
-            transform: scale(1.05);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
-        /* Screenshots Container */
-        .screenshots {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .screenshot-box {
-            background: #1e1e1e;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .screenshot-title {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 10px;
+        /* CTA Section */
+        .cta-section {
+            background: var(--dark);
+            color: white;
+            border-radius: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h3 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         /* Footer */
-        .footer {
-            text-align: center;
-            padding: 30px;
+        footer {
+            background: var(--dark);
             color: white;
-            font-size: 0.9em;
+            padding: 3rem 0;
+            text-align: center;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .hero h2 {
-                font-size: 1.3em;
-            }
-
-            .section {
-                padding: 25px;
-            }
-
-            .ascii-art {
-                font-size: 0.5em;
-            }
+        footer p {
+            opacity: 0.7;
+            margin: 0.5rem 0;
         }
 
         /* Animations */
-        @keyframes fadeIn {
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -321,83 +516,154 @@
             }
         }
 
-        .section {
-            animation: fadeIn 0.6s ease-out;
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
         }
 
-        .hero {
-            animation: fadeIn 0.8s ease-out;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding-top: 150px;
+            }
+
+            .features-grid,
+            .screenshots {
+                grid-template-columns: 1fr;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+            }
+
+            .ascii-art {
+                font-size: 0.5em;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Back Button -->
-        <a href="../index.html" class="back-btn">← Retour au Portfolio</a>
-
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>🗡️ Zelda II: The Adventure of Link</h1>
-            <h2>A Python Terminal-Based RPG Adventure</h2>
-            <p>
-                Un hommage à la célèbre franchise Zelda, recréé entièrement en Python avec des graphismes ASCII et des séquences d'échappement ANSI pour une expérience rétro authentique dans votre terminal.
-            </p>
-
-            <div class="badges">
-                <span class="badge">Python 3</span>
-                <span class="badge">Terminal Game</span>
-                <span class="badge">ASCII Art</span>
-                <span class="badge">RPG</span>
-                <span class="badge">Open Source</span>
-            </div>
-
-            <a href="https://github.com/MateoBourdin/ZeldaProject" class="github-btn" target="_blank">
-                Voir sur GitHub
-            </a>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Mateo</div>
+                <a href="../index.html" class="back-btn">← Retour au Portfolio</a>
+            </nav>
         </div>
+    </header>
 
-        <!-- Description Section -->
-        <div class="section">
-            <h3>📖 À propos du projet</h3>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">
-                Ce projet est une recréation du jeu classique "Zelda 2: The Adventure of Link" développé entièrement en Python.
-                Le jeu utilise le terminal comme interface, avec des graphismes ASCII colorés et des animations en temps réel.
-            </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="project-icon">🗡️</div>
+                <h1>
+                    <span class="gradient-text">Zelda II: The Adventure of Link</span>
+                </h1>
+                <h2>A Python Terminal-Based RPG Adventure</h2>
+                <p>
+                    Un hommage à la célèbre franchise Zelda, recréé entièrement en Python avec des graphismes ASCII
+                    et des séquences d'échappement ANSI pour une expérience rétro authentique dans votre terminal.
+                </p>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4>🎮 Gameplay Complet</h4>
-                    <p>Système de combat, exploration de carte, rencontres aléatoires, NPCs interactifs et boss à affronter.</p>
+                <div class="badges">
+                    <span class="badge">Python 3</span>
+                    <span class="badge">Terminal Game</span>
+                    <span class="badge">ASCII Art</span>
+                    <span class="badge">RPG</span>
+                    <span class="badge">Open Source</span>
                 </div>
-                <div class="feature-card">
-                    <h4>🗺️ Monde Ouvert</h4>
-                    <p>Explorez différents biomes : plaines, forêts, déserts, grottes, temples et palais.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>⚔️ Système RPG</h4>
-                    <p>Leveling, stats (vie, mana, attaque), objets à collecter et quêtes à accomplir.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🎨 ASCII Art</h4>
-                    <p>Graphismes ASCII détaillés avec couleurs ANSI pour une expérience visuelle rétro.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>👾 Monstres Variés</h4>
-                    <p>Différents types d'ennemis avec des comportements d'IA uniques.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>💬 NPCs Interactifs</h4>
-                    <p>Dialogues, quêtes secondaires et système de récompenses.</p>
+
+                <div class="hero-buttons">
+                    <a href="https://github.com/MateoBourdin/ZeldaProject" class="btn btn-dark" target="_blank">
+                        ⭐ Voir sur GitHub
+                    </a>
+                    <a href="#about" class="btn btn-primary">
+                        📖 En savoir plus
+                    </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Game Preview Section -->
-        <div class="section">
-            <h3>🎬 Prévisualisation du Jeu</h3>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">📖 Présentation</span>
+                <h2>À propos du projet</h2>
+                <p>Une recréation complète du jeu classique avec des technologies modernes</p>
+            </div>
+
+            <div class="content-card reveal">
+                <p style="font-size: 1.1em; margin-bottom: 2rem; color: var(--text-light);">
+                    Ce projet est une recréation du jeu classique "Zelda 2: The Adventure of Link" développé entièrement en Python.
+                    Le jeu utilise le terminal comme interface, avec des graphismes ASCII colorés et des animations en temps réel.
+                    Réalisé en solo au printemps 2024 à l'ENIB.
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>🎮 Gameplay Complet</h4>
+                        <p>Système de combat, exploration de carte, rencontres aléatoires, NPCs interactifs et boss à affronter.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🗺️ Monde Ouvert</h4>
+                        <p>Explorez différents biomes : plaines, forêts, déserts, grottes, temples et palais.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>⚔️ Système RPG</h4>
+                        <p>Leveling, stats (vie, mana, attaque), objets à collecter et quêtes à accomplir.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎨 ASCII Art</h4>
+                        <p>Graphismes ASCII détaillés avec couleurs ANSI pour une expérience visuelle rétro.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>👾 Monstres Variés</h4>
+                        <p>Différents types d'ennemis avec des comportements d'IA uniques.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>💬 NPCs Interactifs</h4>
+                        <p>Dialogues, quêtes secondaires et système de récompenses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Preview Section -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">🎬 Aperçu</span>
+                <h2>Prévisualisation du Jeu</h2>
+                <p>Découvrez les différentes interfaces du jeu</p>
+            </div>
 
             <div class="screenshots">
-                <div class="screenshot-box">
+                <div class="screenshot-box reveal">
                     <div class="screenshot-title">Écran de Démarrage</div>
                     <div class="game-preview">
                         <div class="ascii-art start-screen">--------------------------------------------------------------------------------
@@ -412,7 +678,7 @@
                     </div>
                 </div>
 
-                <div class="screenshot-box">
+                <div class="screenshot-box reveal">
                     <div class="screenshot-title">Carte du Monde</div>
                     <div class="game-preview">
                         <div class="ascii-art">###############--                                  --
@@ -432,19 +698,27 @@
                 </div>
             </div>
 
-            <p style="margin-top: 20px; color: #555;">
+            <div class="controls-info reveal">
                 <strong>Commandes :</strong> ZQSD pour se déplacer sur la carte | QD + Espace pour les combats |
                 M pour attaquer | C pour s'accroupir | Entrée pour interagir avec les NPCs
-            </p>
+            </div>
         </div>
+    </section>
 
-        <!-- Code Preview Section -->
-        <div class="section">
-            <h3>💻 Extraits de Code</h3>
+    <!-- Code Preview Section -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">💻 Code</span>
+                <h2>Extraits de Code</h2>
+                <p>Découvrez les mécanismes internes du jeu</p>
+            </div>
 
-            <h4 style="color: #764ba2; margin: 20px 0 10px;">Système de Joueur (Player.py)</h4>
-            <div class="code-preview">
-                <pre><code><span class="keyword">import</span> os
+            <div class="content-card reveal">
+                <div class="code-section">
+                    <h4>Système de Joueur (Player.py)</h4>
+                    <div class="code-preview">
+                        <pre><code><span class="keyword">import</span> os
 <span class="keyword">import</span> sys
 
 <span class="keyword">class</span> <span class="function">Player</span>: <span class="keyword">pass</span>
@@ -461,11 +735,13 @@
     player.pos = [<span class="number">26</span>, <span class="number">27</span>]
     player.in_fight = <span class="keyword">False</span>
     <span class="keyword">return</span> player</code></pre>
-            </div>
+                    </div>
+                </div>
 
-            <h4 style="color: #764ba2; margin: 30px 0 10px;">Boucle de Jeu Principale (main.py)</h4>
-            <div class="code-preview">
-                <pre><code><span class="keyword">def</span> <span class="function">run</span>(data):
+                <div class="code-section">
+                    <h4>Boucle de Jeu Principale (main.py)</h4>
+                    <div class="code-preview">
+                        <pre><code><span class="keyword">def</span> <span class="function">run</span>(data):
     <span class="comment"># Boucle de simulation principale</span>
     <span class="keyword">while</span> <span class="number">1</span>:
         <span class="function">interact</span>(data)  <span class="comment"># Gestion des entrées clavier</span>
@@ -483,11 +759,13 @@
             new_pos = (pos[<span class="number">0</span>], pos[<span class="number">1</span>] + <span class="number">1</span>)
         <span class="keyword">elif</span> KeyEnter == <span class="string">'m'</span>:
             Player.<span class="function">set_attack_cd</span>(data[<span class="string">'player'</span>], <span class="number">5</span>)</code></pre>
-            </div>
+                    </div>
+                </div>
 
-            <h4 style="color: #764ba2; margin: 30px 0 10px;">Système de Rencontres Aléatoires</h4>
-            <div class="code-preview">
-                <pre><code><span class="comment"># Détection des rencontres aléatoires dans les plaines</span>
+                <div class="code-section">
+                    <h4>Système de Rencontres Aléatoires</h4>
+                    <div class="code-preview">
+                        <pre><code><span class="comment"># Détection des rencontres aléatoires dans les plaines</span>
 <span class="keyword">if</span> cara_on_new_pos == <span class="string">'7'</span>:
     Encounter = random.<span class="function">randint</span>(<span class="number">0</span>, <span class="number">100</span>)
     <span class="keyword">if</span> Encounter > <span class="number">100</span> - data[<span class="string">'Encounter_Chance'</span>]:
@@ -496,24 +774,34 @@
         Mons2 = Monster.<span class="function">create</span>(<span class="string">"Humanoid"</span>, <span class="string">"T"</span>, <span class="number">20</span>, [<span class="number">10</span>, <span class="number">28</span>], <span class="number">40</span>, <span class="number">30</span>, <span class="number">2</span>)
         data[<span class="string">'monster_list'</span>] = [Mons1, Mons2]
         Player.<span class="function">set_fight</span>(data[<span class="string">'player'</span>], <span class="keyword">True</span>)</code></pre>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Technical Stack Section -->
-        <div class="section">
-            <h3>🛠️ Technologies Utilisées</h3>
-            <div class="tech-stack">
-                <div class="tech-item">Python 3</div>
-                <div class="tech-item">termios (Linux/Unix)</div>
-                <div class="tech-item">sys & os modules</div>
-                <div class="tech-item">ANSI Escape Sequences</div>
-                <div class="tech-item">ASCII Graphics</div>
-                <div class="tech-item">OOP (Object-Oriented)</div>
+    <!-- Tech Stack Section -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">🛠️ Technologies</span>
+                <h2>Stack Technique</h2>
+                <p>Les technologies utilisées pour ce projet</p>
             </div>
 
-            <h4 style="color: #764ba2; margin: 30px 0 15px;">Architecture du Projet</h4>
-            <div class="code-preview">
-                <pre><code>Projet IPI 2024/
+            <div class="content-card reveal">
+                <div class="tech-stack">
+                    <div class="tech-item">Python 3</div>
+                    <div class="tech-item">termios (Linux/Unix)</div>
+                    <div class="tech-item">sys & os modules</div>
+                    <div class="tech-item">ANSI Escape Sequences</div>
+                    <div class="tech-item">ASCII Graphics</div>
+                    <div class="tech-item">OOP (Object-Oriented)</div>
+                </div>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Architecture du Projet</h3>
+                <div class="code-preview">
+                    <pre><code>Projet IPI 2024/
 ├── main.py              <span class="comment"># Point d'entrée et boucle de jeu principale</span>
 ├── Player.py            <span class="comment"># Gestion du joueur (stats, inventaire, mouvement)</span>
 ├── Monster.py           <span class="comment"># Système de monstres et IA ennemie</span>
@@ -527,55 +815,81 @@
 ├── Town1.txt / Town2.txt  <span class="comment"># Villages avec NPCs</span>
 ├── Palace*.txt          <span class="comment"># Palais final avec boss</span>
 └── Readme.txt           <span class="comment"># Instructions du jeu</span></code></pre>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Features Techniques Section -->
-        <div class="section">
-            <h3>⚙️ Fonctionnalités Techniques</h3>
+    <!-- Technical Features Section -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">⚙️ Fonctionnalités</span>
+                <h2>Défis Techniques Relevés</h2>
+                <p>Les aspects techniques complexes du projet</p>
+            </div>
+
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card reveal">
+                    <h4>🖥️ Rendu Terminal en Temps Réel</h4>
+                    <p>
+                        Gestion de l'affichage avec les séquences d'échappement ANSI pour positionner le curseur
+                        et afficher des graphismes colorés dans le terminal sans bibliothèque externe.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <h4>⌨️ Input Non-Bloquant</h4>
+                    <p>
+                        Utilisation de termios et select pour lire les entrées clavier sans bloquer la boucle de jeu,
+                        permettant une réactivité en temps réel.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <h4>🎮 Physique de Plateforme</h4>
+                    <p>
+                        Implémentation d'un système de gravité, de sauts et de collisions pour les combats en side-scrolling.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <h4>🗺️ Système de Monde Ouvert</h4>
+                    <p>
+                        Transition fluide entre la carte du monde et les scènes de combat, avec sauvegarde de position
+                        et gestion des différents biomes.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
                     <h4>🎯 Gestion des Inputs</h4>
                     <p>Lecture des touches en temps réel avec termios et tty pour une expérience fluide.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>🎨 Rendu ANSI</h4>
-                    <p>Utilisation des séquences d'échappement ANSI pour les couleurs et le positionnement du curseur.</p>
-                </div>
-                <div class="feature-card">
+                <div class="feature-card reveal">
                     <h4>🤖 Intelligence Artificielle</h4>
                     <p>IA simple pour les monstres qui poursuivent le joueur et gèrent les collisions.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>💾 Système de Données</h4>
-                    <p>Structure de données complète pour gérer l'état du jeu, les stats et l'inventaire.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🗺️ Chargement de Cartes</h4>
-                    <p>Système modulaire de chargement de cartes depuis des fichiers texte.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🎮 Mode Admin</h4>
-                    <p>Commandes de débogage pour tester rapidement différentes parties du jeu.</p>
-                </div>
             </div>
         </div>
+    </section>
 
-        <!-- How to Run Section -->
-        <div class="section">
-            <h3>🚀 Comment Lancer le Jeu</h3>
+    <!-- How to Run Section -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">🚀 Installation</span>
+                <h2>Comment Lancer le Jeu</h2>
+                <p>Guide d'installation et de lancement</p>
+            </div>
 
-            <h4 style="color: #764ba2; margin: 20px 0 10px;">Prérequis</h4>
-            <ul style="margin-left: 20px; line-height: 2;">
-                <li>Python 3.x installé</li>
-                <li>Système Linux/Unix/MacOS (ou WSL sur Windows)</li>
-                <li>Terminal supportant les séquences ANSI</li>
-                <li>Terminal en plein écran recommandé</li>
-            </ul>
+            <div class="content-card reveal">
+                <h3>📋 Prérequis</h3>
+                <ul style="margin-left: 1.5rem; line-height: 2; color: var(--text-light); margin-bottom: 2rem;">
+                    <li>Python 3.x installé</li>
+                    <li>Système Linux/Unix/MacOS (ou WSL sur Windows)</li>
+                    <li>Terminal supportant les séquences ANSI</li>
+                    <li>Terminal en plein écran recommandé</li>
+                </ul>
 
-            <h4 style="color: #764ba2; margin: 30px 0 10px;">Installation et Lancement</h4>
-            <div class="code-preview">
-                <pre><code><span class="comment"># Cloner le repository</span>
+                <h3 style="margin-bottom: 1rem;">💻 Installation et Lancement</h3>
+                <div class="code-preview">
+                    <pre><code><span class="comment"># Cloner le repository</span>
 git clone https://github.com/MateoBourdin/ZeldaProject.git
 
 <span class="comment"># Naviguer dans le dossier du projet</span>
@@ -583,71 +897,79 @@ cd ZeldaProject/<span class="string">"Projet IPI 2024"</span>
 
 <span class="comment"># Lancer le jeu</span>
 python3 main.py</code></pre>
-            </div>
+                </div>
 
-            <h4 style="color: #764ba2; margin: 30px 0 10px;">Pour Windows (WSL)</h4>
-            <div class="code-preview">
-                <pre><code><span class="comment"># Installer WSL</span>
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🪟 Pour Windows (WSL)</h3>
+                <div class="code-preview">
+                    <pre><code><span class="comment"># Installer WSL</span>
 wsl --install
 
 <span class="comment"># Une fois dans WSL</span>
 cd /mnt/p/S1/Zelda/<span class="string">"Projet IPI 2024"</span>
 python3 main.py</code></pre>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Challenges Section -->
-        <div class="section">
-            <h3>🎓 Défis Techniques Relevés</h3>
-            <div class="feature-card" style="margin-bottom: 15px;">
-                <h4>🖥️ Rendu Terminal en Temps Réel</h4>
+    <!-- CTA Section -->
+    <section>
+        <div class="container">
+            <div class="cta-section reveal">
+                <h3>🌟 Découvrez le Code Source</h3>
                 <p>
-                    Gestion de l'affichage avec les séquences d'échappement ANSI pour positionner le curseur
-                    et afficher des graphismes colorés dans le terminal sans bibliothèque externe.
+                    Le projet complet est disponible sur GitHub avec tout le code source,
+                    les assets et la documentation.
                 </p>
-            </div>
-            <div class="feature-card" style="margin-bottom: 15px;">
-                <h4>⌨️ Input Non-Bloquant</h4>
-                <p>
-                    Utilisation de termios et select pour lire les entrées clavier sans bloquer la boucle de jeu,
-                    permettant une réactivité en temps réel.
-                </p>
-            </div>
-            <div class="feature-card" style="margin-bottom: 15px;">
-                <h4>🎮 Physique de Plateforme</h4>
-                <p>
-                    Implémentation d'un système de gravité, de sauts et de collisions pour les combats en side-scrolling.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h4>🗺️ Système de Monde Ouvert</h4>
-                <p>
-                    Transition fluide entre la carte du monde et les scènes de combat, avec sauvegarde de position
-                    et gestion des différents biomes.
-                </p>
+                <a href="https://github.com/MateoBourdin/ZeldaProject" class="btn btn-primary" target="_blank" style="box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);">
+                    ⭐ Explorer le Repository GitHub
+                </a>
             </div>
         </div>
-
-        <!-- GitHub CTA -->
-        <div class="section" style="text-align: center; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);">
-            <h3 style="margin-bottom: 20px;">🌟 Découvrez le Code Source</h3>
-            <p style="font-size: 1.1em; margin-bottom: 25px; color: #555;">
-                Le projet complet est disponible sur GitHub avec tout le code source,
-                les assets et la documentation.
-            </p>
-            <a href="https://github.com/MateoBourdin/ZeldaProject" class="github-btn" target="_blank">
-                Explorer le Repository GitHub
-            </a>
-        </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <div class="footer">
-        <p>Projet solo réalisé au printemps 2024 à l'ENIB</p>
-        <p style="margin-top: 10px;">© 2024 - Zelda II: The Adventure of Link Recreation</p>
-        <p style="margin-top: 10px; font-size: 0.8em;">
-            The Legend of Zelda est une marque déposée de Nintendo. Ce projet est un hommage non-commercial.
-        </p>
-    </div>
+    <footer>
+        <div class="container">
+            <p>Projet solo réalisé au printemps 2024 à l'ENIB</p>
+            <p>© 2024 - Zelda II: The Adventure of Link Recreation</p>
+            <p style="font-size: 0.875rem; margin-top: 1rem;">
+                The Legend of Zelda est une marque déposée de Nintendo. Ce projet est un hommage non-commercial.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Check on load
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
