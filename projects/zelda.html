@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zelda II: The Adventure of Link - A Python Terminal-Based RPG Adventure">
     <title>Zelda II: The Adventure of Link - Portfolio Project</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap');
@@ -386,77 +387,133 @@
         .hero {
             animation: slideUp 0.6s ease-out;
         }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-lighter);
+            color: var(--primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.4rem;
+            }
+
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.875rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+
     <div class="container">
         <!-- Back Button -->
-        <a href="../index.html" class="back-btn">← Retour au Portfolio</a>
+        <a href="../index.html" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
 
         <!-- Hero Section -->
         <div class="hero">
             <h1>🗡️ Zelda II: The Adventure of Link</h1>
-            <h2>A Python Terminal-Based RPG Adventure</h2>
-            <p>
+            <h2 data-i18n="hero.subtitle">A Python Terminal-Based RPG Adventure</h2>
+            <p data-i18n="hero.description">
                 Un hommage à la célèbre franchise Zelda, recréé entièrement en Python avec des graphismes ASCII et des séquences d'échappement ANSI pour une expérience rétro authentique dans votre terminal.
             </p>
 
             <div class="badges">
                 <span class="badge">Python 3</span>
-                <span class="badge">Terminal Game</span>
+                <span class="badge" data-i18n="hero.badge.terminal">Terminal Game</span>
                 <span class="badge">ASCII Art</span>
                 <span class="badge">RPG</span>
-                <span class="badge">Open Source</span>
+                <span class="badge" data-i18n="hero.badge.opensource">Open Source</span>
             </div>
 
-            <a href="https://github.com/MateoBourdin/ZeldaProject" class="github-btn" target="_blank">
+            <a href="https://github.com/MateoBourdin/ZeldaProject" class="github-btn" target="_blank" data-i18n="hero.github">
                 Voir sur GitHub
             </a>
         </div>
 
         <!-- Description Section -->
         <div class="section">
-            <h3>📖 À propos du projet</h3>
-            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);">
+            <h3 data-i18n="about.title">📖 À propos du projet</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">
                 Ce projet est une recréation du jeu classique "Zelda 2: The Adventure of Link" développé entièrement en Python.
                 Le jeu utilise le terminal comme interface, avec des graphismes ASCII colorés et des animations en temps réel.
             </p>
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <h4>🎮 Gameplay Complet</h4>
-                    <p>Système de combat, exploration de carte, rencontres aléatoires, NPCs interactifs et boss à affronter.</p>
+                    <h4 data-i18n="features.gameplay.title">🎮 Gameplay Complet</h4>
+                    <p data-i18n="features.gameplay.desc">Système de combat, exploration de carte, rencontres aléatoires, NPCs interactifs et boss à affronter.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>🗺️ Monde Ouvert</h4>
-                    <p>Explorez différents biomes : plaines, forêts, déserts, grottes, temples et palais.</p>
+                    <h4 data-i18n="features.world.title">🗺️ Monde Ouvert</h4>
+                    <p data-i18n="features.world.desc">Explorez différents biomes : plaines, forêts, déserts, grottes, temples et palais.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>⚔️ Système RPG</h4>
-                    <p>Leveling, stats (vie, mana, attaque), objets à collecter et quêtes à accomplir.</p>
+                    <h4 data-i18n="features.rpg.title">⚔️ Système RPG</h4>
+                    <p data-i18n="features.rpg.desc">Leveling, stats (vie, mana, attaque), objets à collecter et quêtes à accomplir.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>🎨 ASCII Art</h4>
-                    <p>Graphismes ASCII détaillés avec couleurs ANSI pour une expérience visuelle rétro.</p>
+                    <h4 data-i18n="features.ascii.title">🎨 ASCII Art</h4>
+                    <p data-i18n="features.ascii.desc">Graphismes ASCII détaillés avec couleurs ANSI pour une expérience visuelle rétro.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>👾 Monstres Variés</h4>
-                    <p>Différents types d'ennemis avec des comportements d'IA uniques.</p>
+                    <h4 data-i18n="features.monsters.title">👾 Monstres Variés</h4>
+                    <p data-i18n="features.monsters.desc">Différents types d'ennemis avec des comportements d'IA uniques.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>💬 NPCs Interactifs</h4>
-                    <p>Dialogues, quêtes secondaires et système de récompenses.</p>
+                    <h4 data-i18n="features.npcs.title">💬 NPCs Interactifs</h4>
+                    <p data-i18n="features.npcs.desc">Dialogues, quêtes secondaires et système de récompenses.</p>
                 </div>
             </div>
         </div>
 
         <!-- Game Preview Section -->
         <div class="section">
-            <h3>🎬 Prévisualisation du Jeu</h3>
+            <h3 data-i18n="preview.title">🎬 Prévisualisation du Jeu</h3>
 
             <div class="screenshots">
                 <div class="screenshot-box">
-                    <div class="screenshot-title">Écran de Démarrage</div>
+                    <div class="screenshot-title" data-i18n="preview.start">Écran de Démarrage</div>
                     <div class="game-preview">
                         <div class="ascii-art start-screen">--------------------------------------------------------------------------------
                                  Hi Welcome
@@ -471,7 +528,7 @@
                 </div>
 
                 <div class="screenshot-box">
-                    <div class="screenshot-title">Carte du Monde</div>
+                    <div class="screenshot-title" data-i18n="preview.map">Carte du Monde</div>
                     <div class="game-preview">
                         <div class="ascii-art">###############--                                  --
 ###############--      --------------               ---
@@ -490,7 +547,7 @@
                 </div>
             </div>
 
-            <p style="margin-top: 1.5rem; color: var(--text-light);">
+            <p style="margin-top: 1.5rem; color: var(--text-light);" data-i18n="preview.controls">
                 <strong>Commandes :</strong> ZQSD pour se déplacer sur la carte | QD + Espace pour les combats |
                 M pour attaquer | C pour s'accroupir | Entrée pour interagir avec les NPCs
             </p>
@@ -498,9 +555,9 @@
 
         <!-- Code Preview Section -->
         <div class="section">
-            <h3>💻 Extraits de Code</h3>
+            <h3 data-i18n="code.title">💻 Extraits de Code</h3>
 
-            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;">Système de Joueur (Player.py)</h4>
+            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.player">Système de Joueur (Player.py)</h4>
             <div class="code-preview">
                 <pre><code><span class="keyword">import</span> os
 <span class="keyword">import</span> sys
@@ -521,7 +578,7 @@
     <span class="keyword">return</span> player</code></pre>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;">Boucle de Jeu Principale (main.py)</h4>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.gameloop">Boucle de Jeu Principale (main.py)</h4>
             <div class="code-preview">
                 <pre><code><span class="keyword">def</span> <span class="function">run</span>(data):
     <span class="comment"># Boucle de simulation principale</span>
@@ -543,7 +600,7 @@
             Player.<span class="function">set_attack_cd</span>(data[<span class="string">'player'</span>], <span class="number">5</span>)</code></pre>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;">Système de Rencontres Aléatoires</h4>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.encounters">Système de Rencontres Aléatoires</h4>
             <div class="code-preview">
                 <pre><code><span class="comment"># Détection des rencontres aléatoires dans les plaines</span>
 <span class="keyword">if</span> cara_on_new_pos == <span class="string">'7'</span>:
@@ -559,7 +616,7 @@
 
         <!-- Technical Stack Section -->
         <div class="section">
-            <h3>🛠️ Technologies Utilisées</h3>
+            <h3 data-i18n="tech.title">🛠️ Technologies Utilisées</h3>
             <div class="tech-stack">
                 <div class="tech-item">Python 3</div>
                 <div class="tech-item">termios (Linux/Unix)</div>
@@ -569,7 +626,7 @@
                 <div class="tech-item">OOP (Object-Oriented)</div>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;">Architecture du Projet</h4>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.architecture">Architecture du Projet</h4>
             <div class="code-preview">
                 <pre><code>Projet IPI 2024/
 ├── main.py              <span class="comment"># Point d'entrée et boucle de jeu principale</span>
@@ -590,48 +647,48 @@
 
         <!-- Features Techniques Section -->
         <div class="section">
-            <h3>⚙️ Fonctionnalités Techniques</h3>
+            <h3 data-i18n="technical.title">⚙️ Fonctionnalités Techniques</h3>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h4>🎯 Gestion des Inputs</h4>
-                    <p>Lecture des touches en temps réel avec termios et tty pour une expérience fluide.</p>
+                    <h4 data-i18n="technical.input.title">🎯 Gestion des Inputs</h4>
+                    <p data-i18n="technical.input.desc">Lecture des touches en temps réel avec termios et tty pour une expérience fluide.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>🎨 Rendu ANSI</h4>
-                    <p>Utilisation des séquences d'échappement ANSI pour les couleurs et le positionnement du curseur.</p>
+                    <h4 data-i18n="technical.rendering.title">🎨 Rendu ANSI</h4>
+                    <p data-i18n="technical.rendering.desc">Utilisation des séquences d'échappement ANSI pour les couleurs et le positionnement du curseur.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>🤖 Intelligence Artificielle</h4>
-                    <p>IA simple pour les monstres qui poursuivent le joueur et gèrent les collisions.</p>
+                    <h4 data-i18n="technical.ai.title">🤖 Intelligence Artificielle</h4>
+                    <p data-i18n="technical.ai.desc">IA simple pour les monstres qui poursuivent le joueur et gèrent les collisions.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>💾 Système de Données</h4>
-                    <p>Structure de données complète pour gérer l'état du jeu, les stats et l'inventaire.</p>
+                    <h4 data-i18n="technical.data.title">💾 Système de Données</h4>
+                    <p data-i18n="technical.data.desc">Structure de données complète pour gérer l'état du jeu, les stats et l'inventaire.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>🗺️ Chargement de Cartes</h4>
-                    <p>Système modulaire de chargement de cartes depuis des fichiers texte.</p>
+                    <h4 data-i18n="technical.maps.title">🗺️ Chargement de Cartes</h4>
+                    <p data-i18n="technical.maps.desc">Système modulaire de chargement de cartes depuis des fichiers texte.</p>
                 </div>
                 <div class="feature-card">
-                    <h4>🎮 Mode Admin</h4>
-                    <p>Commandes de débogage pour tester rapidement différentes parties du jeu.</p>
+                    <h4 data-i18n="technical.admin.title">🎮 Mode Admin</h4>
+                    <p data-i18n="technical.admin.desc">Commandes de débogage pour tester rapidement différentes parties du jeu.</p>
                 </div>
             </div>
         </div>
 
         <!-- How to Run Section -->
         <div class="section">
-            <h3>🚀 Comment Lancer le Jeu</h3>
+            <h3 data-i18n="howto.title">🚀 Comment Lancer le Jeu</h3>
 
-            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;">Prérequis</h4>
+            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.prereq">Prérequis</h4>
             <ul style="margin-left: 1.5rem; line-height: 1.8; color: var(--text-light);">
-                <li>Python 3.x installé</li>
-                <li>Système Linux/Unix/MacOS (ou WSL sur Windows)</li>
-                <li>Terminal supportant les séquences ANSI</li>
-                <li>Terminal en plein écran recommandé</li>
+                <li data-i18n="howto.prereq.python">Python 3.x installé</li>
+                <li data-i18n="howto.prereq.system">Système Linux/Unix/MacOS (ou WSL sur Windows)</li>
+                <li data-i18n="howto.prereq.terminal">Terminal supportant les séquences ANSI</li>
+                <li data-i18n="howto.prereq.fullscreen">Terminal en plein écran recommandé</li>
             </ul>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;">Installation et Lancement</h4>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.install">Installation et Lancement</h4>
             <div class="code-preview">
                 <pre><code><span class="comment"># Cloner le repository</span>
 git clone https://github.com/MateoBourdin/ZeldaProject.git
@@ -643,7 +700,7 @@ cd ZeldaProject/<span class="string">"Projet IPI 2024"</span>
 python3 main.py</code></pre>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;">Pour Windows (WSL)</h4>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.windows">Pour Windows (WSL)</h4>
             <div class="code-preview">
                 <pre><code><span class="comment"># Installer WSL</span>
 wsl --install
@@ -656,30 +713,30 @@ python3 main.py</code></pre>
 
         <!-- Challenges Section -->
         <div class="section">
-            <h3>🎓 Défis Techniques Relevés</h3>
+            <h3 data-i18n="challenges.title">🎓 Défis Techniques Relevés</h3>
             <div class="feature-card" style="margin-bottom: 15px;">
-                <h4>🖥️ Rendu Terminal en Temps Réel</h4>
-                <p>
+                <h4 data-i18n="challenges.rendering.title">🖥️ Rendu Terminal en Temps Réel</h4>
+                <p data-i18n="challenges.rendering.desc">
                     Gestion de l'affichage avec les séquences d'échappement ANSI pour positionner le curseur
                     et afficher des graphismes colorés dans le terminal sans bibliothèque externe.
                 </p>
             </div>
             <div class="feature-card" style="margin-bottom: 15px;">
-                <h4>⌨️ Input Non-Bloquant</h4>
-                <p>
+                <h4 data-i18n="challenges.input.title">⌨️ Input Non-Bloquant</h4>
+                <p data-i18n="challenges.input.desc">
                     Utilisation de termios et select pour lire les entrées clavier sans bloquer la boucle de jeu,
                     permettant une réactivité en temps réel.
                 </p>
             </div>
             <div class="feature-card" style="margin-bottom: 15px;">
-                <h4>🎮 Physique de Plateforme</h4>
-                <p>
+                <h4 data-i18n="challenges.physics.title">🎮 Physique de Plateforme</h4>
+                <p data-i18n="challenges.physics.desc">
                     Implémentation d'un système de gravité, de sauts et de collisions pour les combats en side-scrolling.
                 </p>
             </div>
             <div class="feature-card">
-                <h4>🗺️ Système de Monde Ouvert</h4>
-                <p>
+                <h4 data-i18n="challenges.world.title">🗺️ Système de Monde Ouvert</h4>
+                <p data-i18n="challenges.world.desc">
                     Transition fluide entre la carte du monde et les scènes de combat, avec sauvegarde de position
                     et gestion des différents biomes.
                 </p>
@@ -688,12 +745,12 @@ python3 main.py</code></pre>
 
         <!-- GitHub CTA -->
         <div class="section" style="text-align: center; background: var(--primary-lighter);">
-            <h3 style="margin-bottom: 1.5rem;">🌟 Découvrez le Code Source</h3>
-            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);">
+            <h3 style="margin-bottom: 1.5rem;" data-i18n="cta.title">🌟 Découvrez le Code Source</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);" data-i18n="cta.description">
                 Le projet complet est disponible sur GitHub avec tout le code source,
                 les assets et la documentation.
             </p>
-            <a href="https://github.com/MateoBourdin/ZeldaProject" class="github-btn" target="_blank">
+            <a href="https://github.com/MateoBourdin/ZeldaProject" class="github-btn" target="_blank" data-i18n="cta.button">
                 Explorer le Repository GitHub
             </a>
         </div>
@@ -701,11 +758,312 @@ python3 main.py</code></pre>
 
     <!-- Footer -->
     <div class="footer">
-        <p>Projet solo réalisé au printemps 2024 à l'ENIB</p>
+        <p data-i18n="footer.project">Projet solo réalisé au printemps 2024 à l'ENIB</p>
         <p>© 2024 - Zelda II: The Adventure of Link Recreation</p>
-        <p style="font-size: 0.875rem;">
+        <p style="font-size: 0.875rem;" data-i18n="footer.disclaimer">
             The Legend of Zelda est une marque déposée de Nintendo. Ce projet est un hommage non-commercial.
         </p>
     </div>
+
+    <script>
+        // i18n translations
+        const translations = {
+            fr: {
+                nav: {
+                    back: "← Retour au Portfolio"
+                },
+                hero: {
+                    subtitle: "Un RPG d'Aventure Python dans le Terminal",
+                    description: "Un hommage à la célèbre franchise Zelda, recréé entièrement en Python avec des graphismes ASCII et des séquences d'échappement ANSI pour une expérience rétro authentique dans votre terminal.",
+                    badge: {
+                        terminal: "Jeu Terminal",
+                        opensource: "Open Source"
+                    },
+                    github: "Voir sur GitHub"
+                },
+                about: {
+                    title: "📖 À propos du projet",
+                    description: "Ce projet est une recréation du jeu classique \"Zelda 2: The Adventure of Link\" développé entièrement en Python. Le jeu utilise le terminal comme interface, avec des graphismes ASCII colorés et des animations en temps réel."
+                },
+                features: {
+                    gameplay: {
+                        title: "🎮 Gameplay Complet",
+                        desc: "Système de combat, exploration de carte, rencontres aléatoires, NPCs interactifs et boss à affronter."
+                    },
+                    world: {
+                        title: "🗺️ Monde Ouvert",
+                        desc: "Explorez différents biomes : plaines, forêts, déserts, grottes, temples et palais."
+                    },
+                    rpg: {
+                        title: "⚔️ Système RPG",
+                        desc: "Leveling, stats (vie, mana, attaque), objets à collecter et quêtes à accomplir."
+                    },
+                    ascii: {
+                        title: "🎨 ASCII Art",
+                        desc: "Graphismes ASCII détaillés avec couleurs ANSI pour une expérience visuelle rétro."
+                    },
+                    monsters: {
+                        title: "👾 Monstres Variés",
+                        desc: "Différents types d'ennemis avec des comportements d'IA uniques."
+                    },
+                    npcs: {
+                        title: "💬 NPCs Interactifs",
+                        desc: "Dialogues, quêtes secondaires et système de récompenses."
+                    }
+                },
+                preview: {
+                    title: "🎬 Prévisualisation du Jeu",
+                    start: "Écran de Démarrage",
+                    map: "Carte du Monde",
+                    controls: "<strong>Commandes :</strong> ZQSD pour se déplacer sur la carte | QD + Espace pour les combats | M pour attaquer | C pour s'accroupir | Entrée pour interagir avec les NPCs"
+                },
+                code: {
+                    title: "💻 Extraits de Code",
+                    player: "Système de Joueur (Player.py)",
+                    gameloop: "Boucle de Jeu Principale (main.py)",
+                    encounters: "Système de Rencontres Aléatoires"
+                },
+                tech: {
+                    title: "🛠️ Technologies Utilisées",
+                    architecture: "Architecture du Projet"
+                },
+                technical: {
+                    title: "⚙️ Fonctionnalités Techniques",
+                    input: {
+                        title: "🎯 Gestion des Inputs",
+                        desc: "Lecture des touches en temps réel avec termios et tty pour une expérience fluide."
+                    },
+                    rendering: {
+                        title: "🎨 Rendu ANSI",
+                        desc: "Utilisation des séquences d'échappement ANSI pour les couleurs et le positionnement du curseur."
+                    },
+                    ai: {
+                        title: "🤖 Intelligence Artificielle",
+                        desc: "IA simple pour les monstres qui poursuivent le joueur et gèrent les collisions."
+                    },
+                    data: {
+                        title: "💾 Système de Données",
+                        desc: "Structure de données complète pour gérer l'état du jeu, les stats et l'inventaire."
+                    },
+                    maps: {
+                        title: "🗺️ Chargement de Cartes",
+                        desc: "Système modulaire de chargement de cartes depuis des fichiers texte."
+                    },
+                    admin: {
+                        title: "🎮 Mode Admin",
+                        desc: "Commandes de débogage pour tester rapidement différentes parties du jeu."
+                    }
+                },
+                howto: {
+                    title: "🚀 Comment Lancer le Jeu",
+                    prereq: "Prérequis",
+                    install: "Installation et Lancement",
+                    windows: "Pour Windows (WSL)",
+                    prereq: {
+                        python: "Python 3.x installé",
+                        system: "Système Linux/Unix/MacOS (ou WSL sur Windows)",
+                        terminal: "Terminal supportant les séquences ANSI",
+                        fullscreen: "Terminal en plein écran recommandé"
+                    }
+                },
+                challenges: {
+                    title: "🎓 Défis Techniques Relevés",
+                    rendering: {
+                        title: "🖥️ Rendu Terminal en Temps Réel",
+                        desc: "Gestion de l'affichage avec les séquences d'échappement ANSI pour positionner le curseur et afficher des graphismes colorés dans le terminal sans bibliothèque externe."
+                    },
+                    input: {
+                        title: "⌨️ Input Non-Bloquant",
+                        desc: "Utilisation de termios et select pour lire les entrées clavier sans bloquer la boucle de jeu, permettant une réactivité en temps réel."
+                    },
+                    physics: {
+                        title: "🎮 Physique de Plateforme",
+                        desc: "Implémentation d'un système de gravité, de sauts et de collisions pour les combats en side-scrolling."
+                    },
+                    world: {
+                        title: "🗺️ Système de Monde Ouvert",
+                        desc: "Transition fluide entre la carte du monde et les scènes de combat, avec sauvegarde de position et gestion des différents biomes."
+                    }
+                },
+                cta: {
+                    title: "🌟 Découvrez le Code Source",
+                    description: "Le projet complet est disponible sur GitHub avec tout le code source, les assets et la documentation.",
+                    button: "Explorer le Repository GitHub"
+                },
+                footer: {
+                    project: "Projet solo réalisé au printemps 2024 à l'ENIB",
+                    disclaimer: "The Legend of Zelda est une marque déposée de Nintendo. Ce projet est un hommage non-commercial."
+                }
+            },
+            en: {
+                nav: {
+                    back: "← Back to Portfolio"
+                },
+                hero: {
+                    subtitle: "A Python Terminal-Based RPG Adventure",
+                    description: "A tribute to the famous Zelda franchise, entirely recreated in Python with ASCII graphics and ANSI escape sequences for an authentic retro experience in your terminal.",
+                    badge: {
+                        terminal: "Terminal Game",
+                        opensource: "Open Source"
+                    },
+                    github: "View on GitHub"
+                },
+                about: {
+                    title: "📖 About the Project",
+                    description: "This project is a recreation of the classic game \"Zelda 2: The Adventure of Link\" developed entirely in Python. The game uses the terminal as an interface, with colorful ASCII graphics and real-time animations."
+                },
+                features: {
+                    gameplay: {
+                        title: "🎮 Complete Gameplay",
+                        desc: "Combat system, map exploration, random encounters, interactive NPCs and bosses to fight."
+                    },
+                    world: {
+                        title: "🗺️ Open World",
+                        desc: "Explore different biomes: plains, forests, deserts, caves, temples and palaces."
+                    },
+                    rpg: {
+                        title: "⚔️ RPG System",
+                        desc: "Leveling, stats (life, mana, attack), items to collect and quests to accomplish."
+                    },
+                    ascii: {
+                        title: "🎨 ASCII Art",
+                        desc: "Detailed ASCII graphics with ANSI colors for a retro visual experience."
+                    },
+                    monsters: {
+                        title: "👾 Varied Monsters",
+                        desc: "Different types of enemies with unique AI behaviors."
+                    },
+                    npcs: {
+                        title: "💬 Interactive NPCs",
+                        desc: "Dialogues, side quests and reward system."
+                    }
+                },
+                preview: {
+                    title: "🎬 Game Preview",
+                    start: "Start Screen",
+                    map: "World Map",
+                    controls: "<strong>Controls:</strong> WASD to move on the map | AD + Space for fights | M to attack | C to crouch | Enter to interact with NPCs"
+                },
+                code: {
+                    title: "💻 Code Snippets",
+                    player: "Player System (Player.py)",
+                    gameloop: "Main Game Loop (main.py)",
+                    encounters: "Random Encounters System"
+                },
+                tech: {
+                    title: "🛠️ Technologies Used",
+                    architecture: "Project Architecture"
+                },
+                technical: {
+                    title: "⚙️ Technical Features",
+                    input: {
+                        title: "🎯 Input Management",
+                        desc: "Real-time key reading with termios and tty for a smooth experience."
+                    },
+                    rendering: {
+                        title: "🎨 ANSI Rendering",
+                        desc: "Use of ANSI escape sequences for colors and cursor positioning."
+                    },
+                    ai: {
+                        title: "🤖 Artificial Intelligence",
+                        desc: "Simple AI for monsters that chase the player and handle collisions."
+                    },
+                    data: {
+                        title: "💾 Data System",
+                        desc: "Complete data structure to manage game state, stats and inventory."
+                    },
+                    maps: {
+                        title: "🗺️ Map Loading",
+                        desc: "Modular system for loading maps from text files."
+                    },
+                    admin: {
+                        title: "🎮 Admin Mode",
+                        desc: "Debug commands to quickly test different parts of the game."
+                    }
+                },
+                howto: {
+                    title: "🚀 How to Run the Game",
+                    prereq: "Prerequisites",
+                    install: "Installation and Launch",
+                    windows: "For Windows (WSL)",
+                    prereq: {
+                        python: "Python 3.x installed",
+                        system: "Linux/Unix/MacOS system (or WSL on Windows)",
+                        terminal: "Terminal supporting ANSI sequences",
+                        fullscreen: "Fullscreen terminal recommended"
+                    }
+                },
+                challenges: {
+                    title: "🎓 Technical Challenges",
+                    rendering: {
+                        title: "🖥️ Real-Time Terminal Rendering",
+                        desc: "Display management with ANSI escape sequences to position the cursor and display colored graphics in the terminal without external library."
+                    },
+                    input: {
+                        title: "⌨️ Non-Blocking Input",
+                        desc: "Use of termios and select to read keyboard inputs without blocking the game loop, enabling real-time responsiveness."
+                    },
+                    physics: {
+                        title: "🎮 Platform Physics",
+                        desc: "Implementation of a gravity, jump and collision system for side-scrolling combat."
+                    },
+                    world: {
+                        title: "🗺️ Open World System",
+                        desc: "Smooth transition between the world map and combat scenes, with position saving and management of different biomes."
+                    }
+                },
+                cta: {
+                    title: "🌟 Discover the Source Code",
+                    description: "The complete project is available on GitHub with all the source code, assets and documentation.",
+                    button: "Explore the GitHub Repository"
+                },
+                footer: {
+                    project: "Solo project completed in spring 2024 at ENIB",
+                    disclaimer: "The Legend of Zelda is a registered trademark of Nintendo. This project is a non-commercial tribute."
+                }
+            }
+        };
+
+        // Get saved language or default to French
+        let currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const keys = element.getAttribute('data-i18n').split('.');
+                let translation = translations[lang];
+
+                for (const key of keys) {
+                    translation = translation[key];
+                }
+
+                element.innerHTML = translation;
+            });
+
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.onclick.toString().includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (currentLang === 'en') {
+                changeLanguage('en');
+            } else {
+                changeLanguage('fr');
+            }
+        });
+    </script>
 </body>
 </html>
