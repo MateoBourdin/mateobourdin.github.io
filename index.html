@@ -656,13 +656,133 @@
             }
         }
         
+        /* CV Modal */
+        .cv-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cv-modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .cv-modal {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .cv-modal-overlay.active .cv-modal {
+            transform: scale(1);
+        }
+
+        .cv-modal h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .cv-modal p {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cv-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cv-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 1rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .cv-option:hover {
+            background: var(--primary-lighter);
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .cv-option-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cv-option-flag {
+            font-size: 2rem;
+        }
+
+        .cv-option-text h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cv-option-text p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin: 0;
+            text-align: left;
+        }
+
+        .cv-option-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .cv-modal-close {
+            margin-top: 1.5rem;
+            padding: 0.75rem;
+            background: transparent;
+            border: 2px solid var(--primary-lighter);
+            border-radius: 0.75rem;
+            color: var(--text);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .cv-modal-close:hover {
+            background: var(--primary-lighter);
+            border-color: var(--primary);
+        }
+
         /* Scroll reveal */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.6s ease;
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
@@ -721,9 +841,9 @@
                     <a href="#contact" class="btn btn-primary">
                         <span data-i18n="hero.contact">📩 Me contacter</span>
                     </a>
-                    <a href="CV/Matéo BOURDIN - English CV.pdf" class="btn btn-secondary" download>
+                    <button id="downloadCVBtn" class="btn btn-secondary">
                         <span data-i18n="hero.downloadCV">📄 Télécharger mon CV</span>
-                    </a>
+                    </button>
                     <a href="#projets" class="btn btn-secondary">
                         <span data-i18n="hero.projects">🚀 Voir mes projets</span>
                     </a>
@@ -1167,6 +1287,42 @@
         </div>
     </footer>
 
+    <!-- CV Modal -->
+    <div class="cv-modal-overlay" id="cvModal">
+        <div class="cv-modal">
+            <h3 data-i18n="cvModal.title">📄 Choisissez la langue</h3>
+            <p data-i18n="cvModal.subtitle">Sélectionnez la version de mon CV que vous souhaitez télécharger</p>
+
+            <div class="cv-options">
+                <a href="CV/Bourdin Matéo CV Francais Internationnal.pdf" class="cv-option" download>
+                    <div class="cv-option-content">
+                        <div class="cv-option-flag">🇫🇷</div>
+                        <div class="cv-option-text">
+                            <h4 data-i18n="cvModal.french.title">Version Française</h4>
+                            <p data-i18n="cvModal.french.subtitle">CV en français</p>
+                        </div>
+                    </div>
+                    <div class="cv-option-icon">↓</div>
+                </a>
+
+                <a href="CV/Matéo BOURDIN - English CV.pdf" class="cv-option" download>
+                    <div class="cv-option-content">
+                        <div class="cv-option-flag">🇬🇧</div>
+                        <div class="cv-option-text">
+                            <h4 data-i18n="cvModal.english.title">English Version</h4>
+                            <p data-i18n="cvModal.english.subtitle">CV in English</p>
+                        </div>
+                    </div>
+                    <div class="cv-option-icon">↓</div>
+                </a>
+            </div>
+
+            <button class="cv-modal-close" id="closeCVModal">
+                <span data-i18n="cvModal.close">Fermer</span>
+            </button>
+        </div>
+    </div>
+
     <script>
         // Header scroll effect
         const header = document.getElementById('header');
@@ -1224,6 +1380,35 @@
                     });
                 }
             });
+        });
+
+        // CV Modal functionality
+        const cvModal = document.getElementById('cvModal');
+        const downloadCVBtn = document.getElementById('downloadCVBtn');
+        const closeCVModal = document.getElementById('closeCVModal');
+
+        // Open modal
+        downloadCVBtn.addEventListener('click', () => {
+            cvModal.classList.add('active');
+        });
+
+        // Close modal when clicking close button
+        closeCVModal.addEventListener('click', () => {
+            cvModal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        cvModal.addEventListener('click', (e) => {
+            if (e.target === cvModal) {
+                cvModal.classList.remove('active');
+            }
+        });
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && cvModal.classList.contains('active')) {
+                cvModal.classList.remove('active');
+            }
         });
 
         // Language Switcher
@@ -1381,6 +1566,19 @@
                 footer: {
                     copyright: '© 2025 Mateo - Étudiant Développeur | IUT Annecy',
                     signature: 'Créé avec passion 🚀'
+                },
+                cvModal: {
+                    title: '📄 Choisissez la langue',
+                    subtitle: 'Sélectionnez la version de mon CV que vous souhaitez télécharger',
+                    french: {
+                        title: 'Version Française',
+                        subtitle: 'CV en français'
+                    },
+                    english: {
+                        title: 'English Version',
+                        subtitle: 'CV in English'
+                    },
+                    close: 'Fermer'
                 }
             },
             en: {
@@ -1536,6 +1734,19 @@
                 footer: {
                     copyright: '© 2025 Mateo - Student Developer | IUT Annecy',
                     signature: 'Created with passion 🚀'
+                },
+                cvModal: {
+                    title: '📄 Choose Language',
+                    subtitle: 'Select the version of my CV you want to download',
+                    french: {
+                        title: 'French Version',
+                        subtitle: 'CV in French'
+                    },
+                    english: {
+                        title: 'English Version',
+                        subtitle: 'CV in English'
+                    },
+                    close: 'Close'
                 }
             }
         };
