@@ -303,16 +303,10 @@
             text-decoration: underline;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
         .social-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
             background: var(--primary);
@@ -322,6 +316,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            margin-top: 1rem;
         }
 
         .social-btn:hover {
@@ -550,11 +545,9 @@
                     <div class="icon">💼</div>
                     <h3 data-i18n="contact.linkedin.title">LinkedIn</h3>
                     <p data-i18n="contact.linkedin.subtitle">Connectons-nous professionnellement</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/BOURDINMateo/" target="_blank" class="social-btn">
-                            <span data-i18n="contact.linkedin.button">Voir mon profil</span>
-                        </a>
-                    </div>
+                    <a href="https://www.linkedin.com/in/BOURDINMateo/" target="_blank" class="social-btn">
+                        <span data-i18n="contact.linkedin.button">Voir mon profil</span>
+                    </a>
                 </div>
 
                 <!-- GitHub Card -->
@@ -562,33 +555,30 @@
                     <div class="icon">💻</div>
                     <h3 data-i18n="contact.github.title">GitHub</h3>
                     <p data-i18n="contact.github.subtitle">Découvrez mes projets</p>
-                    <div class="social-links">
-                        <a href="https://github.com/MateoBourdin" target="_blank" class="social-btn">
-                            <span data-i18n="contact.github.button">Voir mon GitHub</span>
-                        </a>
-                    </div>
+                    <a href="https://github.com/MateoBourdin" target="_blank" class="social-btn">
+                        <span data-i18n="contact.github.button">Voir mon GitHub</span>
+                    </a>
                 </div>
             </div>
 
             <!-- Map Section -->
             <div class="map-section">
                 <h2 data-i18n="contact.location.title">📍 Ma Localisation</h2>
-                <p data-i18n="contact.location.subtitle">Je suis actuellement étudiant à l'IUT d'Annecy</p>
+                <p data-i18n="contact.location.subtitle">Reignier-Esery, Haute-Savoie</p>
 
                 <div class="address-info">
-                    <div class="icon">🏫</div>
+                    <div class="icon">📍</div>
                     <div class="info">
-                        <h3 data-i18n="contact.location.institution">IUT Annecy - Université Savoie Mont Blanc</h3>
-                        <p><strong data-i18n="contact.location.address">Adresse :</strong> 9 Rue de l'Arc-en-Ciel, 74940 Annecy, France</p>
-                        <p><strong data-i18n="contact.location.department">Département :</strong> <span data-i18n="contact.location.departmentName">Informatique</span></p>
+                        <h3 data-i18n="contact.location.institution">Localisation</h3>
+                        <p><strong data-i18n="contact.location.address">Adresse :</strong> 613 rue de la gare, 74930 Reignier-Esery, France</p>
                         <p><strong data-i18n="contact.location.availability">Disponibilité :</strong> <span data-i18n="contact.location.availabilityText">Stage à partir d'avril 2026 (8-12 semaines)</span></p>
                     </div>
                 </div>
 
                 <div class="map-container">
-                    <!-- OpenStreetMap embedded map for IUT Annecy -->
+                    <!-- OpenStreetMap embedded map for 613 rue de la gare, Reignier-Esery -->
                     <iframe
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=6.1267%2C45.9089%2C6.1367%2C45.9139&layer=mapnik&marker=45.9114%2C6.1317"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=6.258%2C46.132%2C6.268%2C46.142&layer=mapnik&marker=46.137%2C6.263"
                         allowfullscreen
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
@@ -668,11 +658,9 @@
                     },
                     location: {
                         title: '📍 Ma Localisation',
-                        subtitle: 'Je suis actuellement étudiant à l\'IUT d\'Annecy',
-                        institution: 'IUT Annecy - Université Savoie Mont Blanc',
+                        subtitle: 'Reignier-Esery, Haute-Savoie',
+                        institution: 'Localisation',
                         address: 'Adresse :',
-                        department: 'Département :',
-                        departmentName: 'Informatique',
                         availability: 'Disponibilité :',
                         availabilityText: 'Stage à partir d\'avril 2026 (8-12 semaines)'
                     }
@@ -714,11 +702,9 @@
                     },
                     location: {
                         title: '📍 My Location',
-                        subtitle: 'I\'m currently a student at IUT Annecy',
-                        institution: 'IUT Annecy - Savoie Mont Blanc University',
+                        subtitle: 'Reignier-Esery, Haute-Savoie',
+                        institution: 'Location',
                         address: 'Address:',
-                        department: 'Department:',
-                        departmentName: 'Computer Science',
                         availability: 'Availability:',
                         availabilityText: 'Internship from April 2026 (8-12 weeks)'
                     }
