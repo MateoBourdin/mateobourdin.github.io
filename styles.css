@@ -299,10 +299,11 @@ nav {
 
 /* Hero Section (Page d'accueil) */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
+    padding-bottom: 3rem;
     position: relative;
     overflow: hidden;
 }
