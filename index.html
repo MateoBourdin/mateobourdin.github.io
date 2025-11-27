@@ -931,7 +931,7 @@
             <div class="section-header reveal">
                 <span class="section-tag"><span data-i18n="experience.tag">💼 Mon parcours</span></span>
                 <h2 data-i18n="experience.title">Expérience Professionnelle</h2>
-                <p data-i18n="experience.description">Mes expériences et projets professionnels</p>
+                <p data-i18n="experience.description">Mes expériences professionnelles en entreprise</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card reveal">
@@ -939,9 +939,10 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag">Été 2024</span>
+                            <span class="project-tag" style="background: var(--accent-purple); color: white;">Emploi saisonnier</span>
                         </div>
                         <h3 data-i18n="experience.intersport.title">Vendeur - Intersport</h3>
-                        <p data-i18n="experience.intersport.description">Conseil client sur les équipements sportifs et gestion des stocks.</p>
+                        <p data-i18n="experience.intersport.description">Conseil personnalisé aux clients sur les équipements sportifs, gestion des stocks et mise en rayon. Développement de compétences en relation client et travail d'équipe dans un environnement commercial dynamique.</p>
                     </div>
                 </div>
 
@@ -950,23 +951,26 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag">Été 2023</span>
+                            <span class="project-tag" style="background: var(--accent-purple); color: white;">Emploi saisonnier</span>
                         </div>
                         <h3 data-i18n="experience.carrefour.title">Employé Boulangerie - Carrefour Market</h3>
-                        <p data-i18n="experience.carrefour.description">Préparation des produits et contrôle qualité.</p>
+                        <p data-i18n="experience.carrefour.description">Préparation et mise en valeur des produits de boulangerie, contrôle qualité et respect des normes d'hygiène. Gestion de la relation client et travail en équipe dans un contexte exigeant.</p>
                     </div>
                 </div>
 
-                <div class="project-card reveal">
-                    <div class="project-image">💼</div>
+                <div class="project-card reveal" style="border: 3px solid var(--accent-green);">
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--accent-green), var(--primary));">💼</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag" data-i18n="experience.lookingFor">Recherche de stage</span>
+                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="experience.lookingFor">Recherche active</span>
+                            <span class="project-tag">Avril 2026</span>
                         </div>
                         <h3 data-i18n="experience.internship.title">Stage BUT Informatique</h3>
-                        <p data-i18n="experience.internship.description">Je recherche activement un stage de 8 à 12 semaines à partir d'avril 2026 en développement logiciel, développement web ou administration de bases de données.</p>
+                        <p data-i18n="experience.internship.description">Je recherche activement un stage de 8 à 12 semaines à partir d'avril 2026 en développement logiciel, développement web ou administration de bases de données. Objectif : mettre en pratique mes compétences en Python, PHP, Laravel, PostgreSQL et contribuer à des projets concrets en entreprise.</p>
                         <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
                             <strong data-i18n="experience.internship.duration">Durée :</strong> <span data-i18n="experience.internship.weeks">8-12 semaines</span><br>
-                            <strong data-i18n="experience.internship.start">Début :</strong> <span data-i18n="experience.internship.date">Avril 2026</span>
+                            <strong data-i18n="experience.internship.start">Début :</strong> <span data-i18n="experience.internship.date">Avril 2026</span><br>
+                            <strong data-i18n="experience.internship.domains">Domaines :</strong> <span data-i18n="experience.internship.domainsText">Développement Web, Bases de données, Développement logiciel</span>
                         </p>
                     </div>
                 </div>
@@ -1151,105 +1155,194 @@
             <div class="section-header reveal">
                 <span class="section-tag"><span data-i18n="projects.tag">🚀 Mes réalisations</span></span>
                 <h2 data-i18n="projects.title">Projets & Développements</h2>
-                <p data-i18n="projects.description">Une sélection de mes projets académiques et personnels</p>
+                <p data-i18n="projects.description">Une sélection de mes projets académiques et personnels utilisant diverses technologies</p>
             </div>
-            
+
+            <!-- Project Filters -->
+            <div class="project-filters reveal" style="margin-bottom: 3rem; text-align: center;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--text);" data-i18n="projects.filters.title">Filtrer les projets :</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                    <button class="filter-btn active" data-filter="all" style="padding: 0.75rem 1.5rem; border-radius: 0.5rem; border: 2px solid var(--primary); background: var(--primary); color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <span data-i18n="projects.filters.all">Tous les projets</span>
+                    </button>
+                    <button class="filter-btn" data-filter="academic" style="padding: 0.75rem 1.5rem; border-radius: 0.5rem; border: 2px solid var(--primary); background: white; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <span data-i18n="projects.filters.academic">Projets Académiques</span>
+                    </button>
+                    <button class="filter-btn" data-filter="personal" style="padding: 0.75rem 1.5rem; border-radius: 0.5rem; border: 2px solid var(--primary); background: white; color: var(--primary); font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <span data-i18n="projects.filters.personal">Projets Personnels</span>
+                    </button>
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="tech-filter-btn active" data-tech="all" style="padding: 0.5rem 1rem; border-radius: 0.5rem; border: 2px solid var(--accent-purple); background: var(--accent-purple); color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem;">
+                        <span data-i18n="projects.techFilters.all">Toutes technos</span>
+                    </button>
+                    <button class="tech-filter-btn" data-tech="python" style="padding: 0.5rem 1rem; border-radius: 0.5rem; border: 2px solid var(--accent-purple); background: white; color: var(--accent-purple); font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem;">
+                        Python
+                    </button>
+                    <button class="tech-filter-btn" data-tech="web" style="padding: 0.5rem 1rem; border-radius: 0.5rem; border: 2px solid var(--accent-purple); background: white; color: var(--accent-purple); font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem;">
+                        Web
+                    </button>
+                    <button class="tech-filter-btn" data-tech="database" style="padding: 0.5rem 1rem; border-radius: 0.5rem; border: 2px solid var(--accent-purple); background: white; color: var(--accent-purple); font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem;">
+                        <span data-i18n="projects.techFilters.database">Bases de données</span>
+                    </button>
+                </div>
+            </div>
+
             <div class="projects-grid">
-                <div class="project-card reveal">
+                <!-- Portfolio Site - Projet BUT2 -->
+                <div class="project-card reveal" data-type="academic" data-tech="web" style="border: 3px solid var(--accent-orange);">
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--accent-orange), var(--primary));">🌐</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" style="background: var(--accent-orange); color: white;">Projet BUT2</span>
+                            <span class="project-tag">Déc. 2024 - Jan. 2025</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
+                        </div>
+                        <h3 data-i18n="projects.portfolio.title">Portfolio Personnel - Cas d'Étude BUT2</h3>
+                        <p data-i18n="projects.portfolio.description">Développement d'un site portfolio responsive et bilingue (FR/EN) dans le cadre du BUT Informatique 2ème année. Utilisation de HTML5, CSS3 et JavaScript vanilla pour créer une interface moderne avec animations, système de traduction i18n, formulaire de contact sécurisé via Formspree, et déploiement automatisé sur GitHub Pages. Ce projet démontre mes compétences en développement web front-end et design UX/UI.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.portfolio.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.portfolio.contextText">Projet universitaire visant à créer une vitrine professionnelle de mes compétences et projets</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.portfolio.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">HTML5, CSS3, JavaScript, GitHub Pages, Formspree</span>
+                        </div>
+                        <a href="#accueil" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.viewSite">Vous êtes dessus ! →</span></a>
+                    </div>
+                </div>
+
+                <!-- Zelda Project -->
+                <div class="project-card reveal" data-type="academic" data-tech="python">
                     <div class="project-image">🗡️</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Terminal</span>
-                            <span class="project-tag">ASCII Art</span>
+                            <span class="project-tag">Printemps 2024</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
+                            <span class="project-tag">ENIB</span>
                         </div>
                         <h3 data-i18n="projects.zelda.title">Zelda II: The Adventure of Link</h3>
-                        <p data-i18n="projects.zelda.description">Recréation complète du jeu Zelda 2 en Python avec graphismes ASCII, système RPG, combats et monde ouvert.</p>
-                        <a href="projects/zelda.html" class="btn btn-secondary"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                        <p data-i18n="projects.zelda.description">Recréation complète du jeu classique Zelda 2 en Python avec graphismes ASCII colorés et séquences ANSI. Développement d'un système RPG complet incluant combats side-scrolling, exploration de monde ouvert, rencontres aléatoires, NPCs interactifs et gestion d'inventaire. Utilisation de termios pour la gestion des inputs non-bloquants et création d'une IA simple pour les ennemis.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.zelda.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.zelda.contextText">Projet de programmation avancée réalisé en année préparatoire à l'ENIB</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.zelda.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">Python 3, termios, sys, ANSI Escape Sequences, ASCII Art</span>
+                        </div>
+                        <a href="projects/zelda.html" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
                     </div>
                 </div>
 
-                <div class="project-card reveal">
+                <!-- Pokemon Game -->
+                <div class="project-card reveal" data-type="academic" data-tech="web database">
                     <div class="project-image">🎮</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Laravel</span>
-                            <span class="project-tag">PostgreSQL</span>
-                            <span class="project-tag">Web</span>
+                            <span class="project-tag">Automne 2024</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
+                            <span class="project-tag">IUT Annecy</span>
                         </div>
                         <h3 data-i18n="projects.pokemon.title">Jeu Pokémon 2D</h3>
-                        <p data-i18n="projects.pokemon.description">Développement d'un jeu web 2D avec Laravel et PostgreSQL, incluant un système de combat et de progression.</p>
-                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
+                        <p data-i18n="projects.pokemon.description">Développement d'un jeu web 2D inspiré de Pokémon utilisant le framework Laravel pour le backend et PostgreSQL pour la gestion de la base de données. Implémentation d'un système de combat au tour par tour, gestion des Pokémons avec leurs statistiques et évolutions, système d'authentification des joueurs, et interface responsive. Utilisation de requêtes SQL complexes avec Window Functions et CTEs pour les statistiques de jeu.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.pokemon.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.pokemon.contextText">Projet de développement web et bases de données BUT Informatique 2ème année</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.pokemon.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">PHP, Laravel, PostgreSQL, HTML/CSS, JavaScript, SQL</span>
+                        </div>
+                        <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
 
-                <div class="project-card reveal">
+                <!-- Chat Application -->
+                <div class="project-card reveal" data-type="academic" data-tech="web">
                     <div class="project-image">💬</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">Socket.io</span>
-                            <span class="project-tag">Real-time</span>
+                            <span class="project-tag">2024</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
                         </div>
-                        <h3 data-i18n="projects.chat.title">Application de Chat</h3>
-                        <p data-i18n="projects.chat.description">Chat en temps réel avec Node.js et Socket.io, permettant des conversations instantanées entre utilisateurs.</p>
-                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
+                        <h3 data-i18n="projects.chat.title">Application de Chat Temps Réel</h3>
+                        <p data-i18n="projects.chat.description">Application de messagerie instantanée développée avec Node.js et Socket.io permettant la communication en temps réel entre plusieurs utilisateurs. Implémentation de salons de discussion, notification de présence, historique des messages et interface utilisateur responsive. Gestion des événements WebSocket pour assurer une communication bidirectionnelle fluide entre le serveur et les clients.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.chat.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.chat.contextText">Projet de programmation réseau et applications temps réel</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.chat.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">Node.js, Socket.io, Express, HTML/CSS, JavaScript, WebSocket</span>
+                        </div>
+                        <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
 
-                <div class="project-card reveal">
+                <!-- Cryptographic Suite -->
+                <div class="project-card reveal" data-type="academic" data-tech="python">
                     <div class="project-image">🔐</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Cryptographie</span>
-                            <span class="project-tag">Sécurité</span>
+                            <span class="project-tag">2024</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
                         </div>
                         <h3 data-i18n="projects.crypto.title">Suite Cryptographique</h3>
-                        <p data-i18n="projects.crypto.description">Implémentation d'algorithmes de chiffrement (AES, RSA, SHA-256) et codes de correction d'erreurs (Hamming).</p>
-                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
+                        <p data-i18n="projects.crypto.description">Implémentation from scratch en Python d'algorithmes cryptographiques modernes et classiques : chiffrement symétrique AES, chiffrement asymétrique RSA, fonction de hachage SHA-256, chiffrement de César, et codes de correction d'erreurs de Hamming. Ce projet explore les fondamentaux de la cryptographie en recréant ces algorithmes sans bibliothèques externes, démontrant une compréhension approfondie des mathématiques et de la sécurité informatique.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.crypto.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.crypto.contextText">Projet de cryptographie et sécurité informatique BUT Informatique</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.crypto.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">Python 3, Mathématiques, Algorithmes cryptographiques, Sécurité</span>
+                        </div>
+                        <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
 
-                <div class="project-card reveal">
+                <!-- Banking System -->
+                <div class="project-card reveal" data-type="academic" data-tech="other">
                     <div class="project-image">🏦</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">C#</span>
-                            <span class="project-tag">WPF</span>
-                            <span class="project-tag">MVVM</span>
+                            <span class="project-tag">2024</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
                         </div>
-                        <h3 data-i18n="projects.banking.title">Système Bancaire</h3>
-                        <p data-i18n="projects.banking.description">Application WPF en architecture MVVM pour la gestion de comptes bancaires avec interface moderne.</p>
-                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
+                        <h3 data-i18n="projects.banking.title">Système de Gestion Bancaire</h3>
+                        <p data-i18n="projects.banking.description">Application desktop développée en C# avec WPF utilisant le pattern d'architecture MVVM (Model-View-ViewModel). Gestion complète de comptes bancaires incluant création de comptes, virements, historique des transactions et interface utilisateur moderne. Implémentation de la data binding bidirectionnelle et de l'INotifyPropertyChanged pour une interface réactive et maintenable.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.banking.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.banking.contextText">Projet de programmation orientée objet et patterns de conception</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.banking.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">C#, WPF, MVVM, .NET, XAML, Data Binding</span>
+                        </div>
+                        <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
 
-                <div class="project-card reveal">
+                <!-- Platformer Game -->
+                <div class="project-card reveal" data-type="personal" data-tech="web">
                     <div class="project-image">🎯</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Phaser.js</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Game Dev</span>
+                            <span class="project-tag">2024</span>
+                            <span class="project-tag" style="background: var(--accent-green); color: white;">Personnel</span>
                         </div>
-                        <h3 data-i18n="projects.platformer.title">Platformer 2D</h3>
-                        <p data-i18n="projects.platformer.description">Jeu de plateforme développé avec Phaser.js, incluant physique, collisions et système de niveaux.</p>
-                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
-                    </div>
-                </div>
-
-                <div class="project-card reveal">
-                    <div class="project-image">🌐</div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">GitHub Pages</span>
-                            <span class="project-tag">HTML/CSS</span>
-                            <span class="project-tag">Portfolio</span>
+                        <h3 data-i18n="projects.platformer.title">Jeu de Plateforme 2D</h3>
+                        <p data-i18n="projects.platformer.description">Jeu de plateforme développé avec le framework JavaScript Phaser.js, incluant un moteur physique pour la gravité et les collisions, système de niveaux progressifs, collecte d'objets et ennemis avec IA. Utilisation des sprites, tilemaps et animations pour créer une expérience de jeu fluide et engageante dans le navigateur.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.platformer.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.platformer.contextText">Projet personnel pour explorer le développement de jeux web</span>
                         </div>
-                        <h3 data-i18n="projects.portfolio.title">Portfolio Personnel</h3>
-                        <p data-i18n="projects.portfolio.description">Site portfolio déployé sur GitHub Pages pour présenter mes compétences et projets de manière professionnelle.</p>
-                        <a href="#contact" class="btn btn-secondary"><span data-i18n="projects.viewSite">Voir le site →</span></a>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.platformer.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">Phaser.js, JavaScript, HTML5 Canvas, Game Physics</span>
+                        </div>
+                        <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
             </div>
@@ -1463,23 +1556,25 @@
                 experience: {
                     tag: '💼 Mon parcours',
                     title: 'Expérience Professionnelle',
-                    description: 'Mes expériences et projets professionnels',
-                    lookingFor: 'Recherche de stage',
+                    description: 'Mes expériences professionnelles en entreprise',
+                    lookingFor: 'Recherche active',
                     intersport: {
                         title: 'Vendeur - Intersport',
-                        description: 'Conseil client sur les équipements sportifs et gestion des stocks.'
+                        description: 'Conseil personnalisé aux clients sur les équipements sportifs, gestion des stocks et mise en rayon. Développement de compétences en relation client et travail d\'équipe dans un environnement commercial dynamique.'
                     },
                     carrefour: {
                         title: 'Employé Boulangerie - Carrefour Market',
-                        description: 'Préparation des produits et contrôle qualité.'
+                        description: 'Préparation et mise en valeur des produits de boulangerie, contrôle qualité et respect des normes d\'hygiène. Gestion de la relation client et travail en équipe dans un contexte exigeant.'
                     },
                     internship: {
                         title: 'Stage BUT Informatique',
-                        description: 'Je recherche activement un stage de 8 à 12 semaines à partir d\'avril 2026 en développement logiciel, développement web ou administration de bases de données.',
+                        description: 'Je recherche activement un stage de 8 à 12 semaines à partir d\'avril 2026 en développement logiciel, développement web ou administration de bases de données. Objectif : mettre en pratique mes compétences en Python, PHP, Laravel, PostgreSQL et contribuer à des projets concrets en entreprise.',
                         duration: 'Durée :',
                         weeks: '8-12 semaines',
                         start: 'Début :',
-                        date: 'Avril 2026'
+                        date: 'Avril 2026',
+                        domains: 'Domaines :',
+                        domainsText: 'Développement Web, Bases de données, Développement logiciel'
                     }
                 },
                 education: {
@@ -1524,37 +1619,68 @@
                 projects: {
                     tag: '🚀 Mes réalisations',
                     title: 'Projets & Développements',
-                    description: 'Une sélection de mes projets académiques et personnels',
+                    description: 'Une sélection de mes projets académiques et personnels utilisant diverses technologies',
+                    filters: {
+                        title: 'Filtrer les projets :',
+                        all: 'Tous les projets',
+                        academic: 'Projets Académiques',
+                        personal: 'Projets Personnels'
+                    },
+                    techFilters: {
+                        all: 'Toutes technos',
+                        database: 'Bases de données'
+                    },
                     learnMore: 'En savoir plus →',
                     viewProject: 'Voir le projet →',
-                    viewSite: 'Voir le site →',
+                    viewSite: 'Vous êtes dessus ! →',
+                    portfolio: {
+                        title: 'Portfolio Personnel - Cas d\'Étude BUT2',
+                        description: 'Développement d\'un site portfolio responsive et bilingue (FR/EN) dans le cadre du BUT Informatique 2ème année. Utilisation de HTML5, CSS3 et JavaScript vanilla pour créer une interface moderne avec animations, système de traduction i18n, formulaire de contact sécurisé via Formspree, et déploiement automatisé sur GitHub Pages. Ce projet démontre mes compétences en développement web front-end et design UX/UI.',
+                        context: 'Contexte :',
+                        contextText: 'Projet universitaire visant à créer une vitrine professionnelle de mes compétences et projets',
+                        tech: 'Technologies :'
+                    },
                     zelda: {
                         title: 'Zelda II: The Adventure of Link',
-                        description: 'Recréation complète du jeu Zelda 2 en Python avec graphismes ASCII, système RPG, combats et monde ouvert.'
+                        description: 'Recréation complète du jeu classique Zelda 2 en Python avec graphismes ASCII colorés et séquences ANSI. Développement d\'un système RPG complet incluant combats side-scrolling, exploration de monde ouvert, rencontres aléatoires, NPCs interactifs et gestion d\'inventaire. Utilisation de termios pour la gestion des inputs non-bloquants et création d\'une IA simple pour les ennemis.',
+                        context: 'Contexte :',
+                        contextText: 'Projet de programmation avancée réalisé en année préparatoire à l\'ENIB',
+                        tech: 'Technologies :'
                     },
                     pokemon: {
                         title: 'Jeu Pokémon 2D',
-                        description: 'Développement d\'un jeu web 2D avec Laravel et PostgreSQL, incluant un système de combat et de progression.'
+                        description: 'Développement d\'un jeu web 2D inspiré de Pokémon utilisant le framework Laravel pour le backend et PostgreSQL pour la gestion de la base de données. Implémentation d\'un système de combat au tour par tour, gestion des Pokémons avec leurs statistiques et évolutions, système d\'authentification des joueurs, et interface responsive. Utilisation de requêtes SQL complexes avec Window Functions et CTEs pour les statistiques de jeu.',
+                        context: 'Contexte :',
+                        contextText: 'Projet de développement web et bases de données BUT Informatique 2ème année',
+                        tech: 'Technologies :'
                     },
                     chat: {
-                        title: 'Application de Chat',
-                        description: 'Chat en temps réel avec Node.js et Socket.io, permettant des conversations instantanées entre utilisateurs.'
+                        title: 'Application de Chat Temps Réel',
+                        description: 'Application de messagerie instantanée développée avec Node.js et Socket.io permettant la communication en temps réel entre plusieurs utilisateurs. Implémentation de salons de discussion, notification de présence, historique des messages et interface utilisateur responsive. Gestion des événements WebSocket pour assurer une communication bidirectionnelle fluide entre le serveur et les clients.',
+                        context: 'Contexte :',
+                        contextText: 'Projet de programmation réseau et applications temps réel',
+                        tech: 'Technologies :'
                     },
                     crypto: {
                         title: 'Suite Cryptographique',
-                        description: 'Implémentation d\'algorithmes de chiffrement (AES, RSA, SHA-256) et codes de correction d\'erreurs (Hamming).'
+                        description: 'Implémentation from scratch en Python d\'algorithmes cryptographiques modernes et classiques : chiffrement symétrique AES, chiffrement asymétrique RSA, fonction de hachage SHA-256, chiffrement de César, et codes de correction d\'erreurs de Hamming. Ce projet explore les fondamentaux de la cryptographie en recréant ces algorithmes sans bibliothèques externes, démontrant une compréhension approfondie des mathématiques et de la sécurité informatique.',
+                        context: 'Contexte :',
+                        contextText: 'Projet de cryptographie et sécurité informatique BUT Informatique',
+                        tech: 'Technologies :'
                     },
                     banking: {
-                        title: 'Système Bancaire',
-                        description: 'Application WPF en architecture MVVM pour la gestion de comptes bancaires avec interface moderne.'
+                        title: 'Système de Gestion Bancaire',
+                        description: 'Application desktop développée en C# avec WPF utilisant le pattern d\'architecture MVVM (Model-View-ViewModel). Gestion complète de comptes bancaires incluant création de comptes, virements, historique des transactions et interface utilisateur moderne. Implémentation de la data binding bidirectionnelle et de l\'INotifyPropertyChanged pour une interface réactive et maintenable.',
+                        context: 'Contexte :',
+                        contextText: 'Projet de programmation orientée objet et patterns de conception',
+                        tech: 'Technologies :'
                     },
                     platformer: {
-                        title: 'Platformer 2D',
-                        description: 'Jeu de plateforme développé avec Phaser.js, incluant physique, collisions et système de niveaux.'
-                    },
-                    portfolio: {
-                        title: 'Portfolio Personnel',
-                        description: 'Site portfolio déployé sur GitHub Pages pour présenter mes compétences et projets de manière professionnelle.'
+                        title: 'Jeu de Plateforme 2D',
+                        description: 'Jeu de plateforme développé avec le framework JavaScript Phaser.js, incluant un moteur physique pour la gravité et les collisions, système de niveaux progressifs, collecte d\'objets et ennemis avec IA. Utilisation des sprites, tilemaps et animations pour créer une expérience de jeu fluide et engageante dans le navigateur.',
+                        context: 'Contexte :',
+                        contextText: 'Projet personnel pour explorer le développement de jeux web',
+                        tech: 'Technologies :'
                     }
                 },
                 contact: {
@@ -1631,23 +1757,25 @@
                 experience: {
                     tag: '💼 My journey',
                     title: 'Professional Experience',
-                    description: 'My experiences and professional projects',
-                    lookingFor: 'Looking for internship',
+                    description: 'My professional experiences in companies',
+                    lookingFor: 'Actively seeking',
                     intersport: {
                         title: 'Sales Associate - Intersport',
-                        description: 'Customer advice on sports equipment and inventory management.'
+                        description: 'Personalized customer advice on sports equipment, inventory management and stocking. Development of customer relations and teamwork skills in a dynamic commercial environment.'
                     },
                     carrefour: {
                         title: 'Bakery Employee - Carrefour Market',
-                        description: 'Product preparation and quality control.'
+                        description: 'Preparation and presentation of bakery products, quality control and compliance with hygiene standards. Customer relationship management and teamwork in a demanding environment.'
                     },
                     internship: {
                         title: 'Computer Science Internship',
-                        description: 'I am actively seeking an 8 to 12 week internship starting April 2026 in software development, web development, or database administration.',
+                        description: 'I am actively seeking an 8 to 12 week internship starting April 2026 in software development, web development, or database administration. Objective: to put into practice my skills in Python, PHP, Laravel, PostgreSQL and contribute to concrete projects in a company.',
                         duration: 'Duration:',
                         weeks: '8-12 weeks',
                         start: 'Start:',
-                        date: 'April 2026'
+                        date: 'April 2026',
+                        domains: 'Areas:',
+                        domainsText: 'Web Development, Databases, Software Development'
                     }
                 },
                 education: {
@@ -1692,37 +1820,68 @@
                 projects: {
                     tag: '🚀 My achievements',
                     title: 'Projects & Developments',
-                    description: 'A selection of my academic and personal projects',
+                    description: 'A selection of my academic and personal projects using various technologies',
+                    filters: {
+                        title: 'Filter projects:',
+                        all: 'All projects',
+                        academic: 'Academic Projects',
+                        personal: 'Personal Projects'
+                    },
+                    techFilters: {
+                        all: 'All techs',
+                        database: 'Databases'
+                    },
                     learnMore: 'Learn more →',
                     viewProject: 'View project →',
-                    viewSite: 'View site →',
+                    viewSite: 'You are on it! →',
+                    portfolio: {
+                        title: 'Personal Portfolio - BUT2 Case Study',
+                        description: 'Development of a responsive and bilingual (FR/EN) portfolio website as part of the 2nd year Computer Science BUT degree. Using HTML5, CSS3 and vanilla JavaScript to create a modern interface with animations, i18n translation system, secure contact form via Formspree, and automated deployment on GitHub Pages. This project demonstrates my front-end web development and UX/UI design skills.',
+                        context: 'Context:',
+                        contextText: 'University project aimed at creating a professional showcase of my skills and projects',
+                        tech: 'Technologies:'
+                    },
                     zelda: {
                         title: 'Zelda II: The Adventure of Link',
-                        description: 'Complete recreation of Zelda 2 in Python with ASCII graphics, RPG system, battles and open world.'
+                        description: 'Complete recreation of the classic Zelda 2 game in Python with colorful ASCII graphics and ANSI sequences. Development of a complete RPG system including side-scrolling combat, open world exploration, random encounters, interactive NPCs and inventory management. Use of termios for non-blocking input handling and creation of simple enemy AI.',
+                        context: 'Context:',
+                        contextText: 'Advanced programming project completed in preparatory year at ENIB',
+                        tech: 'Technologies:'
                     },
                     pokemon: {
                         title: '2D Pokémon Game',
-                        description: 'Development of a 2D web game with Laravel and PostgreSQL, including a battle and progression system.'
+                        description: 'Development of a 2D web game inspired by Pokémon using the Laravel framework for backend and PostgreSQL for database management. Implementation of turn-based combat system, Pokémon management with stats and evolutions, player authentication system, and responsive interface. Use of complex SQL queries with Window Functions and CTEs for game statistics.',
+                        context: 'Context:',
+                        contextText: 'Web development and databases project - 2nd year Computer Science BUT',
+                        tech: 'Technologies:'
                     },
                     chat: {
-                        title: 'Chat Application',
-                        description: 'Real-time chat with Node.js and Socket.io, enabling instant conversations between users.'
+                        title: 'Real-Time Chat Application',
+                        description: 'Instant messaging application developed with Node.js and Socket.io enabling real-time communication between multiple users. Implementation of chat rooms, presence notification, message history and responsive user interface. WebSocket event management to ensure smooth bidirectional communication between server and clients.',
+                        context: 'Context:',
+                        contextText: 'Network programming and real-time applications project',
+                        tech: 'Technologies:'
                     },
                     crypto: {
                         title: 'Cryptographic Suite',
-                        description: 'Implementation of encryption algorithms (AES, RSA, SHA-256) and error correction codes (Hamming).'
+                        description: 'From-scratch implementation in Python of modern and classic cryptographic algorithms: AES symmetric encryption, RSA asymmetric encryption, SHA-256 hash function, Caesar cipher, and Hamming error correction codes. This project explores cryptography fundamentals by recreating these algorithms without external libraries, demonstrating deep understanding of mathematics and computer security.',
+                        context: 'Context:',
+                        contextText: 'Cryptography and computer security project - Computer Science BUT',
+                        tech: 'Technologies:'
                     },
                     banking: {
-                        title: 'Banking System',
-                        description: 'WPF application in MVVM architecture for bank account management with modern interface.'
+                        title: 'Banking Management System',
+                        description: 'Desktop application developed in C# with WPF using the MVVM (Model-View-ViewModel) architecture pattern. Complete bank account management including account creation, transfers, transaction history and modern user interface. Implementation of bidirectional data binding and INotifyPropertyChanged for a reactive and maintainable interface.',
+                        context: 'Context:',
+                        contextText: 'Object-oriented programming and design patterns project',
+                        tech: 'Technologies:'
                     },
                     platformer: {
-                        title: '2D Platformer',
-                        description: 'Platform game developed with Phaser.js, including physics, collisions and level system.'
-                    },
-                    portfolio: {
-                        title: 'Personal Portfolio',
-                        description: 'Portfolio website deployed on GitHub Pages to showcase my skills and projects professionally.'
+                        title: '2D Platform Game',
+                        description: 'Platform game developed with the JavaScript Phaser.js framework, including physics engine for gravity and collisions, progressive level system, object collection and enemies with AI. Use of sprites, tilemaps and animations to create a smooth and engaging gaming experience in the browser.',
+                        context: 'Context:',
+                        contextText: 'Personal project to explore web game development',
+                        tech: 'Technologies:'
                     }
                 },
                 contact: {
@@ -1797,6 +1956,71 @@
         // Load saved language preference or default to French
         const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
         changeLanguage(savedLang);
+
+        // Project Filters Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const techFilterButtons = document.querySelectorAll('.tech-filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        let currentTypeFilter = 'all';
+        let currentTechFilter = 'all';
+
+        // Type filter (Academic/Personal/All)
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.background = 'white';
+                    b.style.color = 'var(--primary)';
+                });
+                btn.classList.add('active');
+                btn.style.background = 'var(--primary)';
+                btn.style.color = 'white';
+
+                // Get filter value
+                currentTypeFilter = btn.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+
+        // Tech filter (Python/Web/Database/All)
+        techFilterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                techFilterButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.background = 'white';
+                    b.style.color = 'var(--accent-purple)';
+                });
+                btn.classList.add('active');
+                btn.style.background = 'var(--accent-purple)';
+                btn.style.color = 'white';
+
+                // Get filter value
+                currentTechFilter = btn.getAttribute('data-tech');
+                applyFilters();
+            });
+        });
+
+        // Apply both filters
+        function applyFilters() {
+            projectCards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                const cardTech = card.getAttribute('data-tech') || '';
+
+                const typeMatch = currentTypeFilter === 'all' || cardType === currentTypeFilter;
+                const techMatch = currentTechFilter === 'all' || cardTech.includes(currentTechFilter);
+
+                if (typeMatch && techMatch) {
+                    card.style.display = '';
+                    // Re-trigger reveal animation
+                    setTimeout(() => card.classList.add('active'), 100);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>
