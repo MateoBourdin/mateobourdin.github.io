@@ -746,6 +746,26 @@ section {
     font-size: 0.875rem;
 }
 
+.stat-card.internship-highlight {
+    background: linear-gradient(135deg, #fff, var(--primary-lighter));
+    border: 2px solid var(--accent-green);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.2);
+}
+
+.stat-card.internship-highlight .icon {
+    font-size: 3rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
 .stat-number {
     font-size: 3rem;
     font-weight: 800;
