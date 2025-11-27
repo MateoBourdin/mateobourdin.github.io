@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SAE201 - Application C# Desktop - Programmation Orientée Objet">
+    <title>SAE201 - Application C# - Portfolio Project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #60a5fa;
+            --primary-lighter: #dbeafe;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-orange: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .back-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Header Section */
+        .hero {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 4rem 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.25rem, 3vw, 1.8rem);
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--primary-lighter);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* GitHub Button */
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
+        }
+
+        .github-btn:hover {
+            background: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.4);
+        }
+
+        /* Content Sections */
+        .section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h3 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary-lighter);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background: var(--light);
+            padding: 1.75rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: var(--primary-lighter);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--primary-lighter);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--dark);
+            color: white;
+            border-radius: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .hero {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-lighter);
+            color: var(--primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.4rem;
+            }
+
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <!-- Back Button -->
+        <a href="../index.html#projects" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🎮 Application C#</h1>
+            <h2 data-i18n="hero.subtitle">SAE201 - Développement d'Application Desktop</h2>
+            <p data-i18n="hero.description">
+                Application desktop développée en C# avec Visual Studio dans le cadre de la SAE201.
+                Projet mettant en œuvre les concepts avancés de programmation orientée objet et les bonnes pratiques
+                de développement logiciel du BUT Informatique.
+            </p>
+
+            <div class="badges">
+                <span class="badge">C#</span>
+                <span class="badge">.NET</span>
+                <span class="badge">Visual Studio</span>
+                <span class="badge" data-i18n="hero.badge.oop">POO Avancée</span>
+                <span class="badge">SAE201</span>
+            </div>
+
+            <a href="https://github.com/MateoBourdin/SAE201-Dev" class="github-btn" target="_blank" data-i18n="hero.github">
+                💻 Voir sur GitHub
+            </a>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="section">
+            <h3 data-i18n="stats.title">📊 Statistiques du Projet</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label" data-i18n="stats.commits">Commits</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">C#</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">S2</div>
+                    <div class="stat-label" data-i18n="stats.semester">Semestre 2</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="section">
+            <h3 data-i18n="about.title">📖 À propos du projet</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">
+                Ce projet a été développé dans le cadre de la SAE201 - Développement d'une application au second semestre
+                du BUT Informatique. Il s'agit d'une application desktop en C# utilisant Visual Studio et mettant en pratique
+                les concepts de programmation orientée objet, les patterns de conception et les bonnes pratiques de développement.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="features.oop.title">📦 Programmation Orientée Objet</h4>
+                    <p data-i18n="features.oop.desc">Architecture logicielle utilisant les principes SOLID, l'encapsulation, l'héritage et le polymorphisme.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.architecture.title">🏗️ Architecture Logicielle</h4>
+                    <p data-i18n="features.architecture.desc">Conception d'une architecture modulaire et maintenable avec séparation des responsabilités.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.ui.title">🖥️ Interface Utilisateur</h4>
+                    <p data-i18n="features.ui.desc">Développement d'une interface desktop moderne et intuitive avec .NET Framework.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.patterns.title">🎨 Design Patterns</h4>
+                    <p data-i18n="features.patterns.desc">Implémentation de patterns de conception pour une meilleure structuration du code.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.testing.title">🧪 Tests et Débogage</h4>
+                    <p data-i18n="features.testing.desc">Mise en place de tests unitaires et gestion des erreurs avec des pratiques de débogage.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.git.title">🔀 Gestion de Version</h4>
+                    <p data-i18n="features.git.desc">Utilisation avancée de Git pour le versioning et la traçabilité du code.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Stack Section -->
+        <div class="section">
+            <h3 data-i18n="tech.title">🛠️ Technologies Utilisées</h3>
+            <div class="tech-stack">
+                <div class="tech-item">C#</div>
+                <div class="tech-item">.NET Framework</div>
+                <div class="tech-item">Visual Studio</div>
+                <div class="tech-item">Git</div>
+                <div class="tech-item">Windows Forms / WPF</div>
+                <div class="tech-item">OOP</div>
+            </div>
+
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte Pédagogique</h4>
+            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.context.desc">
+                La <strong>SAE201 - Développement d'une application</strong> est un projet majeur du second semestre du BUT Informatique.
+                Il permet de consolider les compétences en développement logiciel avec un focus sur la programmation orientée objet,
+                la conception d'architecture et l'implémentation de fonctionnalités complexes dans un environnement de développement professionnel.
+            </p>
+        </div>
+
+        <!-- OOP Concepts Section -->
+        <div class="section">
+            <h3 data-i18n="oop.title">🎯 Concepts de POO Mis en Pratique</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="oop.encapsulation.title">🔒 Encapsulation</h4>
+                    <p data-i18n="oop.encapsulation.desc">Protection des données avec des modificateurs d'accès et des propriétés pour un code plus sûr.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="oop.inheritance.title">🧬 Héritage</h4>
+                    <p data-i18n="oop.inheritance.desc">Hiérarchie de classes pour la réutilisation du code et l'extension des fonctionnalités.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="oop.polymorphism.title">🎭 Polymorphisme</h4>
+                    <p data-i18n="oop.polymorphism.desc">Méthodes virtuelles et interfaces pour un code flexible et extensible.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="oop.abstraction.title">🎨 Abstraction</h4>
+                    <p data-i18n="oop.abstraction.desc">Classes abstraites et interfaces pour définir des contrats clairs entre composants.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Outcomes Section -->
+        <div class="section">
+            <h3 data-i18n="learning.title">🎓 Compétences Développées</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="learning.dev.title">💻 Développement Logiciel</h4>
+                    <p data-i18n="learning.dev.desc">Maîtrise de C# et du framework .NET pour créer des applications desktop robustes.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="learning.design.title">📐 Conception Logicielle</h4>
+                    <p data-i18n="learning.design.desc">Analyse des besoins, modélisation UML et conception d'architecture logicielle.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="learning.practices.title">✨ Bonnes Pratiques</h4>
+                    <p data-i18n="learning.practices.desc">Application des conventions de codage, documentation et principes de clean code.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="learning.tools.title">🔧 Outils de Développement</h4>
+                    <p data-i18n="learning.tools.desc">Utilisation professionnelle de Visual Studio, Git et outils de débogage.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Management Section -->
+        <div class="section">
+            <h3 data-i18n="management.title">📋 Gestion de Projet</h3>
+            <p style="color: var(--text-light); margin-bottom: 1rem;" data-i18n="management.description">
+                Le projet SAE201 inclut également des aspects de gestion de projet :
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="management.planning.title">📅 Planification</h4>
+                    <p data-i18n="management.planning.desc">Organisation du travail avec définition d'objectifs et respect des délais.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="management.versioning.title">🔀 Versioning</h4>
+                    <p data-i18n="management.versioning.desc">Gestion des versions avec Git et documentation des changements.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="management.quality.title">✅ Assurance Qualité</h4>
+                    <p data-i18n="management.quality.desc">Tests, revue de code et validation des fonctionnalités développées.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GitHub CTA -->
+        <div class="section" style="text-align: center; background: var(--primary-lighter);">
+            <h3 style="margin-bottom: 1.5rem;" data-i18n="cta.title">🌟 Découvrez le Code Source</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);" data-i18n="cta.description">
+                Le projet complet est disponible sur GitHub avec plus de 75 commits documentés.
+            </p>
+            <a href="https://github.com/MateoBourdin/SAE201-Dev" class="github-btn" target="_blank" data-i18n="cta.button">
+                Explorer le Repository GitHub
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p data-i18n="footer.project">SAE201 - Développement d'une application</p>
+        <p data-i18n="footer.context">Projet réalisé au printemps 2025 à l'IUT d'Annecy</p>
+        <p>© 2025 - Application C# - BUT Informatique</p>
+    </div>
+
+    <script>
+        // i18n translations
+        const translations = {
+            fr: {
+                nav: {
+                    back: "← Retour au Portfolio"
+                },
+                hero: {
+                    subtitle: "SAE201 - Développement d'Application Desktop",
+                    description: "Application desktop développée en C# avec Visual Studio dans le cadre de la SAE201. Projet mettant en œuvre les concepts avancés de programmation orientée objet et les bonnes pratiques de développement logiciel du BUT Informatique.",
+                    badge: {
+                        oop: "POO Avancée"
+                    },
+                    github: "💻 Voir sur GitHub"
+                },
+                stats: {
+                    title: "📊 Statistiques du Projet",
+                    commits: "Commits",
+                    semester: "Semestre 2"
+                },
+                about: {
+                    title: "📖 À propos du projet",
+                    description: "Ce projet a été développé dans le cadre de la SAE201 - Développement d'une application au second semestre du BUT Informatique. Il s'agit d'une application desktop en C# utilisant Visual Studio et mettant en pratique les concepts de programmation orientée objet, les patterns de conception et les bonnes pratiques de développement."
+                },
+                features: {
+                    oop: {
+                        title: "📦 Programmation Orientée Objet",
+                        desc: "Architecture logicielle utilisant les principes SOLID, l'encapsulation, l'héritage et le polymorphisme."
+                    },
+                    architecture: {
+                        title: "🏗️ Architecture Logicielle",
+                        desc: "Conception d'une architecture modulaire et maintenable avec séparation des responsabilités."
+                    },
+                    ui: {
+                        title: "🖥️ Interface Utilisateur",
+                        desc: "Développement d'une interface desktop moderne et intuitive avec .NET Framework."
+                    },
+                    patterns: {
+                        title: "🎨 Design Patterns",
+                        desc: "Implémentation de patterns de conception pour une meilleure structuration du code."
+                    },
+                    testing: {
+                        title: "🧪 Tests et Débogage",
+                        desc: "Mise en place de tests unitaires et gestion des erreurs avec des pratiques de débogage."
+                    },
+                    git: {
+                        title: "🔀 Gestion de Version",
+                        desc: "Utilisation avancée de Git pour le versioning et la traçabilité du code."
+                    }
+                },
+                tech: {
+                    title: "🛠️ Technologies Utilisées",
+                    context: "Contexte Pédagogique",
+                    context: {
+                        desc: "La <strong>SAE201 - Développement d'une application</strong> est un projet majeur du second semestre du BUT Informatique. Il permet de consolider les compétences en développement logiciel avec un focus sur la programmation orientée objet, la conception d'architecture et l'implémentation de fonctionnalités complexes dans un environnement de développement professionnel."
+                    }
+                },
+                oop: {
+                    title: "🎯 Concepts de POO Mis en Pratique",
+                    encapsulation: {
+                        title: "🔒 Encapsulation",
+                        desc: "Protection des données avec des modificateurs d'accès et des propriétés pour un code plus sûr."
+                    },
+                    inheritance: {
+                        title: "🧬 Héritage",
+                        desc: "Hiérarchie de classes pour la réutilisation du code et l'extension des fonctionnalités."
+                    },
+                    polymorphism: {
+                        title: "🎭 Polymorphisme",
+                        desc: "Méthodes virtuelles et interfaces pour un code flexible et extensible."
+                    },
+                    abstraction: {
+                        title: "🎨 Abstraction",
+                        desc: "Classes abstraites et interfaces pour définir des contrats clairs entre composants."
+                    }
+                },
+                learning: {
+                    title: "🎓 Compétences Développées",
+                    dev: {
+                        title: "💻 Développement Logiciel",
+                        desc: "Maîtrise de C# et du framework .NET pour créer des applications desktop robustes."
+                    },
+                    design: {
+                        title: "📐 Conception Logicielle",
+                        desc: "Analyse des besoins, modélisation UML et conception d'architecture logicielle."
+                    },
+                    practices: {
+                        title: "✨ Bonnes Pratiques",
+                        desc: "Application des conventions de codage, documentation et principes de clean code."
+                    },
+                    tools: {
+                        title: "🔧 Outils de Développement",
+                        desc: "Utilisation professionnelle de Visual Studio, Git et outils de débogage."
+                    }
+                },
+                management: {
+                    title: "📋 Gestion de Projet",
+                    description: "Le projet SAE201 inclut également des aspects de gestion de projet :",
+                    planning: {
+                        title: "📅 Planification",
+                        desc: "Organisation du travail avec définition d'objectifs et respect des délais."
+                    },
+                    versioning: {
+                        title: "🔀 Versioning",
+                        desc: "Gestion des versions avec Git et documentation des changements."
+                    },
+                    quality: {
+                        title: "✅ Assurance Qualité",
+                        desc: "Tests, revue de code et validation des fonctionnalités développées."
+                    }
+                },
+                cta: {
+                    title: "🌟 Découvrez le Code Source",
+                    description: "Le projet complet est disponible sur GitHub avec plus de 75 commits documentés.",
+                    button: "Explorer le Repository GitHub"
+                },
+                footer: {
+                    project: "SAE201 - Développement d'une application",
+                    context: "Projet réalisé au printemps 2025 à l'IUT d'Annecy"
+                }
+            },
+            en: {
+                nav: {
+                    back: "← Back to Portfolio"
+                },
+                hero: {
+                    subtitle: "SAE201 - Desktop Application Development",
+                    description: "Desktop application developed in C# with Visual Studio as part of SAE201. Project implementing advanced object-oriented programming concepts and software development best practices for the Computer Science BUT.",
+                    badge: {
+                        oop: "Advanced OOP"
+                    },
+                    github: "💻 View on GitHub"
+                },
+                stats: {
+                    title: "📊 Project Statistics",
+                    commits: "Commits",
+                    semester: "Semester 2"
+                },
+                about: {
+                    title: "📖 About the Project",
+                    description: "This project was developed as part of SAE201 - Application Development in the second semester of the Computer Science BUT. It is a C# desktop application using Visual Studio that puts into practice object-oriented programming concepts, design patterns and development best practices."
+                },
+                features: {
+                    oop: {
+                        title: "📦 Object-Oriented Programming",
+                        desc: "Software architecture using SOLID principles, encapsulation, inheritance and polymorphism."
+                    },
+                    architecture: {
+                        title: "🏗️ Software Architecture",
+                        desc: "Design of modular and maintainable architecture with separation of concerns."
+                    },
+                    ui: {
+                        title: "🖥️ User Interface",
+                        desc: "Development of modern and intuitive desktop interface with .NET Framework."
+                    },
+                    patterns: {
+                        title: "🎨 Design Patterns",
+                        desc: "Implementation of design patterns for better code structure."
+                    },
+                    testing: {
+                        title: "🧪 Testing and Debugging",
+                        desc: "Implementation of unit tests and error handling with debugging practices."
+                    },
+                    git: {
+                        title: "🔀 Version Control",
+                        desc: "Advanced use of Git for versioning and code traceability."
+                    }
+                },
+                tech: {
+                    title: "🛠️ Technologies Used",
+                    context: "Educational Context",
+                    context: {
+                        desc: "<strong>SAE201 - Application Development</strong> is a major project of the second semester of the Computer Science BUT. It allows to consolidate skills in software development with a focus on object-oriented programming, architecture design and implementation of complex features in a professional development environment."
+                    }
+                },
+                oop: {
+                    title: "🎯 OOP Concepts in Practice",
+                    encapsulation: {
+                        title: "🔒 Encapsulation",
+                        desc: "Data protection with access modifiers and properties for safer code."
+                    },
+                    inheritance: {
+                        title: "🧬 Inheritance",
+                        desc: "Class hierarchy for code reuse and feature extension."
+                    },
+                    polymorphism: {
+                        title: "🎭 Polymorphism",
+                        desc: "Virtual methods and interfaces for flexible and extensible code."
+                    },
+                    abstraction: {
+                        title: "🎨 Abstraction",
+                        desc: "Abstract classes and interfaces to define clear contracts between components."
+                    }
+                },
+                learning: {
+                    title: "🎓 Skills Developed",
+                    dev: {
+                        title: "💻 Software Development",
+                        desc: "Mastery of C# and .NET framework to create robust desktop applications."
+                    },
+                    design: {
+                        title: "📐 Software Design",
+                        desc: "Requirements analysis, UML modeling and software architecture design."
+                    },
+                    practices: {
+                        title: "✨ Best Practices",
+                        desc: "Application of coding conventions, documentation and clean code principles."
+                    },
+                    tools: {
+                        title: "🔧 Development Tools",
+                        desc: "Professional use of Visual Studio, Git and debugging tools."
+                    }
+                },
+                management: {
+                    title: "📋 Project Management",
+                    description: "The SAE201 project also includes project management aspects:",
+                    planning: {
+                        title: "📅 Planning",
+                        desc: "Work organization with goal definition and deadline compliance."
+                    },
+                    versioning: {
+                        title: "🔀 Versioning",
+                        desc: "Version management with Git and documentation of changes."
+                    },
+                    quality: {
+                        title: "✅ Quality Assurance",
+                        desc: "Testing, code review and validation of developed features."
+                    }
+                },
+                cta: {
+                    title: "🌟 Discover the Source Code",
+                    description: "The complete project is available on GitHub with over 75 documented commits.",
+                    button: "Explore the GitHub Repository"
+                },
+                footer: {
+                    project: "SAE201 - Application Development",
+                    context: "Project completed in spring 2025 at IUT Annecy"
+                }
+            }
+        };
+
+        // Get saved language or default to French
+        let currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const keys = element.getAttribute('data-i18n').split('.');
+                let translation = translations[lang];
+
+                for (const key of keys) {
+                    translation = translation[key];
+                }
+
+                element.innerHTML = translation;
+            });
+
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.onclick.toString().includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (currentLang === 'en') {
+                changeLanguage('en');
+            } else {
+                changeLanguage('fr');
+            }
+        });
+    </script>
+</body>
+</html>
