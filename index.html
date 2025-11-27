@@ -1208,7 +1208,10 @@
                             <strong style="color: var(--text);" data-i18n="projects.portfolio.tech">Technologies :</strong>
                             <span style="color: var(--text-light);">HTML5, CSS3, JavaScript, GitHub Pages, Formspree</span>
                         </div>
-                        <a href="#accueil" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.viewSite">Vous êtes dessus ! →</span></a>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="#accueil" class="btn btn-secondary"><span data-i18n="projects.viewSite">Vous êtes dessus ! →</span></a>
+                            <a href="https://github.com/MateoBourdin/mateobourdin.github.io" target="_blank" class="btn btn-secondary" style="background: var(--dark); border-color: var(--dark);">💻 GitHub</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1231,7 +1234,33 @@
                             <strong style="color: var(--text);" data-i18n="projects.zelda.tech">Technologies :</strong>
                             <span style="color: var(--text-light);">Python 3, termios, sys, ANSI Escape Sequences, ASCII Art</span>
                         </div>
-                        <a href="projects/zelda.html" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="projects/zelda.html" class="btn btn-secondary"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                            <a href="https://github.com/MateoBourdin/ZeldaProject" target="_blank" class="btn btn-secondary" style="background: var(--dark); border-color: var(--dark);">💻 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SAE201-Dev Project -->
+                <div class="project-card reveal" data-type="academic" data-tech="other">
+                    <div class="project-image">🎮</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Printemps 2025</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
+                            <span class="project-tag">IUT Annecy</span>
+                        </div>
+                        <h3 data-i18n="projects.sae201.title">Application C# - SAE201</h3>
+                        <p data-i18n="projects.sae201.description">Projet académique développé en C# avec Visual Studio dans le cadre de la SAE201. Application desktop utilisant les concepts de programmation orientée objet et les bonnes pratiques de développement logiciel. Le projet met en œuvre les compétences acquises en développement d'applications et en conception logicielle.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.sae201.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.sae201.contextText">Situation d'Apprentissage et d'Évaluation - BUT Informatique</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.sae201.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">C#, .NET, Visual Studio, POO</span>
+                        </div>
+                        <a href="https://github.com/MateoBourdin/SAE201-Dev" target="_blank" class="btn btn-secondary" style="margin-top: 1rem; background: var(--dark); border-color: var(--dark);">💻 GitHub</a>
                     </div>
                 </div>
 
@@ -1681,6 +1710,13 @@
                         context: 'Contexte :',
                         contextText: 'Projet personnel pour explorer le développement de jeux web',
                         tech: 'Technologies :'
+                    },
+                    sae201: {
+                        title: 'Application C# - SAE201',
+                        description: 'Projet académique développé en C# avec Visual Studio dans le cadre de la SAE201. Application desktop utilisant les concepts de programmation orientée objet et les bonnes pratiques de développement logiciel. Le projet met en œuvre les compétences acquises en développement d\'applications et en conception logicielle.',
+                        context: 'Contexte :',
+                        contextText: 'Situation d\'Apprentissage et d\'Évaluation - BUT Informatique',
+                        tech: 'Technologies :'
                     }
                 },
                 contact: {
@@ -1881,6 +1917,13 @@
                         description: 'Platform game developed with the JavaScript Phaser.js framework, including physics engine for gravity and collisions, progressive level system, object collection and enemies with AI. Use of sprites, tilemaps and animations to create a smooth and engaging gaming experience in the browser.',
                         context: 'Context:',
                         contextText: 'Personal project to explore web game development',
+                        tech: 'Technologies:'
+                    },
+                    sae201: {
+                        title: 'C# Application - SAE201',
+                        description: 'Academic project developed in C# with Visual Studio as part of SAE201. Desktop application using object-oriented programming concepts and software development best practices. The project implements skills acquired in application development and software design.',
+                        context: 'Context:',
+                        contextText: 'Learning and Assessment Situation - Computer Science BUT',
                         tech: 'Technologies:'
                     }
                 },
