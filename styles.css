@@ -1214,6 +1214,7 @@ footer p, .footer p {
 
 .linkedin-btn {
     background: var(--primary);
+    color: white;
     box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
 }
 
@@ -1224,6 +1225,7 @@ footer p, .footer p {
 
 .github-btn {
     background: var(--primary);
+    color: white;
     box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
 }
 
