@@ -302,7 +302,7 @@ nav {
     min-height: 70vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: 3rem;
     position: relative;
     overflow: hidden;
@@ -1194,41 +1194,42 @@ footer p, .footer p {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     background: var(--primary);
     color: white;
     text-decoration: none;
     border-radius: 0.75rem;
     font-weight: 600;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
     margin-top: 1rem;
 }
 
 .social-btn:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
 }
 
 .linkedin-btn {
-    background: #0077b5;
-    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+    background: var(--primary);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
 }
 
 .linkedin-btn:hover {
-    background: #005885;
-    box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
+    background: var(--primary-dark);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
 }
 
 .github-btn {
-    background: #24292e;
-    box-shadow: 0 4px 15px rgba(36, 41, 46, 0.3);
+    background: var(--primary);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
 }
 
 .github-btn:hover {
-    background: #1a1e22;
-    box-shadow: 0 6px 20px rgba(36, 41, 46, 0.4);
+    background: var(--primary-dark);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
 }
 
 .map-section {
