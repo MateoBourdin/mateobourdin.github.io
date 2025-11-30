@@ -1234,6 +1234,19 @@ footer p, .footer p {
     box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
 }
 
+/* Force white color for text in social buttons */
+.social-btn span,
+.linkedin-btn span,
+.github-btn span {
+    color: white;
+}
+
+.social-btn:hover span,
+.linkedin-btn:hover span,
+.github-btn:hover span {
+    color: white;
+}
+
 .map-section {
     background: white;
     padding: 3rem 2rem;
