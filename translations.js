@@ -68,6 +68,15 @@ const translations = {
                 date: 'Avril 2026',
                 domains: 'Domaines :',
                 domainsText: 'Développement Web, Bases de données, Développement logiciel'
+            },
+            magicalsky: {
+                since: 'Depuis Fév. 2025',
+                type: 'Bénévolat Informatique',
+                title: 'Game Designer - MagicalSky',
+                description: 'Game designer sur le serveur Minecraft MagicalSky (magicalsky.fr). Création et configuration de mobs avec MythicMobs, développement d\'outils personnalisés avec MMOItems. Création de serveurs privés et plugins avec Paper. Modélisation 3D de mobs avec Blockbench, compétence acquise grâce à mon expérience CATIA à l\'ENIB. Force de proposition pour de nouvelles fonctionnalités et solutions techniques. Travail collaboratif au sein d\'une équipe de 13-14 personnes.',
+                skills: 'Compétences :',
+                skillsText: 'Java, MythicMobs, MMOItems, Paper, Blockbench, Travail d\'équipe',
+                details: 'Voir le détail'
             }
         },
         education: {
@@ -269,6 +278,15 @@ const translations = {
                 date: 'April 2026',
                 domains: 'Areas:',
                 domainsText: 'Web Development, Databases, Software Development'
+            },
+            magicalsky: {
+                since: 'Since Feb. 2025',
+                type: 'IT Volunteering',
+                title: 'Game Designer - MagicalSky',
+                description: 'Game designer on the Minecraft server MagicalSky (magicalsky.fr). Creation and configuration of mobs with MythicMobs, development of custom tools with MMOItems. Creation of private servers and plugins with Paper. 3D mob modeling with Blockbench, a skill acquired through my CATIA experience at ENIB. Proactive in proposing new features and technical solutions. Collaborative work within a team of 13-14 people.',
+                skills: 'Skills:',
+                skillsText: 'Java, MythicMobs, MMOItems, Paper, Blockbench, Teamwork',
+                details: 'View details'
             }
         },
         education: {
