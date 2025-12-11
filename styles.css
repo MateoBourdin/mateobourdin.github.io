@@ -369,6 +369,7 @@ nav {
     margin-bottom: 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
+    flex-direction: column;
 }
 
 .hero.project-hero h1 {
