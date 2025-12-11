@@ -51,6 +51,7 @@ const translations = {
             title: 'Expérience Professionnelle',
             description: 'Mes expériences professionnelles en entreprise',
             lookingFor: 'Recherche active',
+            featured: '⭐ En vedette',
             intersport: {
                 title: 'Vendeur - Intersport',
                 description: 'Conseil personnalisé aux clients sur les équipements sportifs, gestion des stocks et mise en rayon. Développement de compétences en relation client et travail d\'équipe dans un environnement commercial dynamique.'
@@ -261,6 +262,7 @@ const translations = {
             title: 'Professional Experience',
             description: 'My professional experiences in companies',
             lookingFor: 'Actively seeking',
+            featured: '⭐ Featured',
             intersport: {
                 title: 'Sales Associate - Intersport',
                 description: 'Personalized customer advice on sports equipment, inventory management and stocking. Development of customer relations and teamwork skills in a dynamic commercial environment.'
