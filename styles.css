@@ -28,7 +28,8 @@ body {
     font-family: 'Inter', sans-serif;
     color: var(--text);
     background-color: var(--light);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 0.95rem;
     overflow-x: hidden;
 }
 
@@ -70,7 +71,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 800;
     background: linear-gradient(135deg, var(--primary), var(--accent-purple));
     -webkit-background-clip: text;
@@ -128,7 +129,7 @@ nav {
     border: none;
     background: transparent;
     cursor: pointer;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     border-radius: 0.375rem;
     transition: all 0.3s ease;
     opacity: 0.5;
@@ -333,7 +334,7 @@ nav {
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
     margin-bottom: 1.5rem;
     animation: slideUp 0.6s ease 0.1s both;
 }
@@ -346,16 +347,16 @@ nav {
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--text-light);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     max-width: 600px;
     animation: slideUp 0.6s ease 0.2s both;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
     animation: slideUp 0.6s ease 0.3s both;
 }
@@ -373,7 +374,7 @@ nav {
 }
 
 .hero.project-hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.75rem, 4vw, 3rem);
     background: linear-gradient(135deg, var(--primary), var(--accent-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -383,14 +384,14 @@ nav {
 }
 
 .hero.project-hero h2 {
-    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     color: var(--text-light);
     margin-bottom: 1.5rem;
     font-weight: 400;
 }
 
 .hero.project-hero p {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     color: var(--text-light);
     max-width: 800px;
     margin: 0 auto;
@@ -440,16 +441,16 @@ section {
 .section {
     background: white;
     border-radius: 1.5rem;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
+    padding: 2.75rem;
+    margin-bottom: 2.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     animation: fadeIn 0.6s ease-out;
 }
 
 .section h3 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
     color: var(--primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     padding-bottom: 0.75rem;
     border-bottom: 3px solid var(--primary-lighter);
 }
@@ -465,18 +466,18 @@ section {
     color: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
 .section-header h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     margin-bottom: 1rem;
 }
 
 .section-header p {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     color: var(--text-light);
     max-width: 600px;
     margin: 0 auto;
@@ -511,13 +512,13 @@ section {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .feature-card {
     background: var(--light);
-    padding: 1.75rem;
+    padding: 2rem;
     border-radius: 1rem;
     border-left: 4px solid var(--primary);
     transition: all 0.3s ease;
@@ -532,12 +533,12 @@ section {
 .feature-card h4 {
     color: var(--primary);
     margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
 }
 
 .feature-card p {
     color: var(--text-light);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* Tech Stack */
@@ -568,12 +569,12 @@ section {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .skill-category {
     background: white;
-    padding: 2rem;
+    padding: 2.25rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
@@ -584,7 +585,7 @@ section {
 }
 
 .skill-category h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -592,7 +593,7 @@ section {
 }
 
 .skill-category .icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .skill-tags {
@@ -621,7 +622,7 @@ section {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .project-card {
@@ -698,12 +699,13 @@ section {
 }
 
 .project-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 
 .project-content p {
     color: var(--text-light);
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
 }
 
@@ -766,12 +768,12 @@ section {
 }
 
 .stat-card .icon {
-    font-size: 2.5rem;
+    font-size: 1.875rem;
     margin-bottom: 1rem;
 }
 
 .stat-card h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: var(--primary);
     margin-bottom: 0.5rem;
 }
@@ -788,7 +790,7 @@ section {
 }
 
 .stat-card.internship-highlight .icon {
-    font-size: 3rem;
+    font-size: 2.25rem;
     animation: pulse 2s infinite;
 }
 
@@ -802,7 +804,7 @@ section {
 }
 
 .stat-number {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 800;
     color: var(--primary);
     margin-bottom: 0.5rem;
@@ -817,8 +819,8 @@ section {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    gap: 2rem;
+    margin: 2.5rem 0;
 }
 
 /* Video Container */
@@ -940,13 +942,13 @@ section {
 }
 
 .contact-section h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 .contact-section > p {
     color: var(--text-light);
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     margin-bottom: 2rem;
 }
 
@@ -1039,7 +1041,7 @@ footer p, .footer p {
 }
 
 .contact-hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
 }
 
@@ -1051,7 +1053,7 @@ footer p, .footer p {
 }
 
 .contact-hero p {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--text-light);
     max-width: 600px;
     margin: 0 auto;
@@ -1071,7 +1073,7 @@ footer p, .footer p {
 
 .contact-form-section h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
@@ -1172,13 +1174,13 @@ footer p, .footer p {
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-bottom: 4rem;
 }
 
 .contact-card {
     background: white;
-    padding: 2rem;
+    padding: 2.25rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1191,12 +1193,12 @@ footer p, .footer p {
 }
 
 .contact-card .icon {
-    font-size: 3rem;
+    font-size: 2.25rem;
     margin-bottom: 1rem;
 }
 
 .contact-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
     color: var(--primary);
 }
@@ -1287,7 +1289,7 @@ footer p, .footer p {
 .map-section h2 {
     text-align: center;
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .map-section p {
@@ -1308,7 +1310,7 @@ footer p, .footer p {
 }
 
 .address-info .icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--primary);
 }
 
@@ -1317,7 +1319,7 @@ footer p, .footer p {
 }
 
 .address-info h3 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     margin-bottom: 0.5rem;
     color: var(--primary);
 }
@@ -1374,7 +1376,7 @@ footer p, .footer p {
 }
 
 .cv-modal h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     margin-bottom: 1rem;
     color: var(--primary);
@@ -1418,13 +1420,13 @@ footer p, .footer p {
 }
 
 .cv-option-flag {
-    font-size: 2.5rem;
+    font-size: 1.875rem;
 }
 
 .cv-option-text h4 {
     color: var(--text);
     margin-bottom: 0.25rem;
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
 }
 
 .cv-option-text p {
@@ -1469,7 +1471,7 @@ footer p, .footer p {
     }
 
     .cv-option-flag {
-        font-size: 2rem;
+        font-size: 1.625rem;
     }
 }
 
@@ -1575,7 +1577,7 @@ footer p, .footer p {
     }
 
     .hero h1 {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(1.875rem, 8vw, 2.5rem);
     }
 
     .hero p {
