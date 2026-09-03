@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stage BUT2 chez Lappi Soft - Système Discovery Diary développé sous Unity pour le jeu The Inspector">
+    <title>Discovery Diary - Stage Lappi Soft - Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <!-- Back Button -->
+        <a href="../index.html#experience" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
+
+        <!-- Hero Section -->
+        <div class="hero project-hero">
+            <h1 data-i18n="hero.title">Discovery Diary - Stage Lappi Soft</h1>
+            <h2 data-i18n="hero.subtitle">Stage BUT2 - Système de journal découvrable pour The Inspector</h2>
+            <p data-i18n="hero.description">
+                Stage de développement chez Lappi Soft, studio de jeux vidéo indépendant basé à Pers-Jussy (Haute-Savoie),
+                dirigé par Maxime Bernard. Conception et développement en autonomie complète du système Discovery Diary
+                sous Unity pour le jeu The Inspector.
+            </p>
+
+            <div class="badges">
+                <span class="badge">Unity 2019.4.41f1</span>
+                <span class="badge">C#</span>
+                <span class="badge" data-i18n="hero.badge.gamedev">Développement de Jeu</span>
+                <span class="badge" data-i18n="hero.badge.internship">Stage BUT2</span>
+                <span class="badge">Avril - Juin 2026</span>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="section">
+            <h3 data-i18n="stats.title">📊 Statistiques du Projet</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">~2 400</div>
+                    <div class="stat-label" data-i18n="stats.lines">Lignes de code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label" data-i18n="stats.scripts">Scripts C#</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2 → 84</div>
+                    <div class="stat-label" data-i18n="stats.fps">FPS (scène de test)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label" data-i18n="stats.languages">Langues supportées</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="section">
+            <h3 data-i18n="about.title">📖 À propos du projet</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">
+                Durant mon stage de BUT2 chez Lappi Soft, j'ai conçu et développé en autonomie le système Discovery Diary,
+                un journal découvrable directement in-game pour le jeu The Inspector. Réparti sur 12 scripts C# dans le
+                namespace <code>DiscoveryDiary</code> (~2 400 lignes, commentés en anglais), ce système gère la découverte,
+                l'affichage et la persistance de notes narratives que le joueur débloque en explorant le monde du jeu.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="features.notif.title">🔔 Notification Manager</h4>
+                    <p data-i18n="features.notif.desc">Gestionnaire centralisé des notifications de découverte, orchestrant l'affichage des alertes en jeu sans interrompre le gameplay.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.bignotif.title">🎬 Big Notification</h4>
+                    <p data-i18n="features.bignotif.desc">Système de notification élargie piloté par Animator, avec synchronisation audio automatique calée sur la durée réelle du clip sonore.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.psb.title">🖼️ PSB Importer</h4>
+                    <p data-i18n="features.psb.desc">Outil éditeur maison : un script ExportLayerPositions.jsx extrait les positions de calques d'un fichier PSB Photoshop vers un JSON, importé ensuite automatiquement dans Unity.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.persistence.title">💾 Persistance par Flags</h4>
+                    <p data-i18n="features.persistence.desc">Sauvegarde de la progression du joueur via des variables Lua, intégrées au Pixel Crushers Dialogue System déjà utilisé par le studio.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.i18n.title">🌍 Support Multilingue</h4>
+                    <p data-i18n="features.i18n.desc">Interface et contenus disponibles en 5 langues : anglais, français, russe, italien et chinois.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.perf.title">⚡ Optimisation des Performances</h4>
+                    <p data-i18n="features.perf.desc">Diagnostic et correction des goulots d'étranglement, faisant passer la scène de test de 2 à 84 FPS.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Stack Section -->
+        <div class="section">
+            <h3 data-i18n="tech.title">🛠️ Technologies & Outils</h3>
+            <div class="tech-stack">
+                <div class="tech-item">Unity 2019.4.41f1</div>
+                <div class="tech-item">C#</div>
+                <div class="tech-item">Pixel Crushers Dialogue System</div>
+                <div class="tech-item">Lua</div>
+                <div class="tech-item">Animator</div>
+                <div class="tech-item">Adobe Photoshop / ExtendScript (JSX)</div>
+                <div class="tech-item">JSON</div>
+            </div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="section">
+            <h3 data-i18n="methodology.title">🤝 Méthode de travail</h3>
+            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="methodology.description">
+                Le studio a fonctionné sur un principe de ségrégation des pouvoirs : développement et packaging du système
+                Discovery Diary en autonomie complète de mon côté, intégration finale dans le jeu réalisée par Maxime Bernard,
+                validée sans difficulté grâce à une documentation soignée. Le projet a également été co-produit avec
+                Edoardo Ventisette, développeur basé en Italie.
+            </p>
+            <div class="tech-stack">
+                <div class="tech-item" data-i18n="methodology.role.mateo">Développement & Packaging - Mateo</div>
+                <div class="tech-item" data-i18n="methodology.role.maxime">Intégration finale - Maxime Bernard</div>
+                <div class="tech-item" data-i18n="methodology.role.edoardo">Co-production - Edoardo Ventisette</div>
+            </div>
+        </div>
+
+        <!-- Documentation Section -->
+        <div class="section">
+            <h3 data-i18n="docs.title">📚 Documentation & Livrables</h3>
+            <p style="color: var(--text-light); line-height: 1.8;" data-i18n="docs.description">
+                Documentation développeur bilingue français/anglais livrée avec le projet : guides complets, quick start
+                et guide d'intégration, accompagnés du package Unity exporté <code>DiscoveryDiary_Package_v2.unitypackage</code>
+                prêt à être réutilisé par l'équipe.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p data-i18n="footer.experience">Stage Développeur Unity - Lappi Soft</p>
+            <p data-i18n="footer.context">Avril - Juin 2026 - The Inspector</p>
+            <p>© 2026 - Mateo Bourdin</p>
+        </div>
+    </div>
+
+    <script>
+        // i18n translations
+        const translations = {
+            fr: {
+                nav: { back: "Retour au Portfolio" },
+                hero: {
+                    title: "Discovery Diary - Stage Lappi Soft",
+                    subtitle: "Stage BUT2 - Système de journal découvrable pour The Inspector",
+                    description: "Stage de développement chez Lappi Soft, studio de jeux vidéo indépendant basé à Pers-Jussy (Haute-Savoie), dirigé par Maxime Bernard. Conception et développement en autonomie complète du système Discovery Diary sous Unity pour le jeu The Inspector.",
+                    badge: { gamedev: "Développement de Jeu", internship: "Stage BUT2" }
+                },
+                stats: {
+                    title: "📊 Statistiques du Projet",
+                    lines: "Lignes de code",
+                    scripts: "Scripts C#",
+                    fps: "FPS (scène de test)",
+                    languages: "Langues supportées"
+                },
+                about: {
+                    title: "📖 À propos du projet",
+                    description: "Durant mon stage de BUT2 chez Lappi Soft, j'ai conçu et développé en autonomie le système Discovery Diary, un journal découvrable directement in-game pour le jeu The Inspector. Réparti sur 12 scripts C# dans le namespace <code>DiscoveryDiary</code> (~2 400 lignes, commentés en anglais), ce système gère la découverte, l'affichage et la persistance de notes narratives que le joueur débloque en explorant le monde du jeu."
+                },
+                features: {
+                    notif: { title: "🔔 Notification Manager", desc: "Gestionnaire centralisé des notifications de découverte, orchestrant l'affichage des alertes en jeu sans interrompre le gameplay." },
+                    bignotif: { title: "🎬 Big Notification", desc: "Système de notification élargie piloté par Animator, avec synchronisation audio automatique calée sur la durée réelle du clip sonore." },
+                    psb: { title: "🖼️ PSB Importer", desc: "Outil éditeur maison : un script ExportLayerPositions.jsx extrait les positions de calques d'un fichier PSB Photoshop vers un JSON, importé ensuite automatiquement dans Unity." },
+                    persistence: { title: "💾 Persistance par Flags", desc: "Sauvegarde de la progression du joueur via des variables Lua, intégrées au Pixel Crushers Dialogue System déjà utilisé par le studio." },
+                    i18n: { title: "🌍 Support Multilingue", desc: "Interface et contenus disponibles en 5 langues : anglais, français, russe, italien et chinois." },
+                    perf: { title: "⚡ Optimisation des Performances", desc: "Diagnostic et correction des goulots d'étranglement, faisant passer la scène de test de 2 à 84 FPS." }
+                },
+                tech: { title: "🛠️ Technologies & Outils" },
+                methodology: {
+                    title: "🤝 Méthode de travail",
+                    description: "Le studio a fonctionné sur un principe de ségrégation des pouvoirs : développement et packaging du système Discovery Diary en autonomie complète de mon côté, intégration finale dans le jeu réalisée par Maxime Bernard, validée sans difficulté grâce à une documentation soignée. Le projet a également été co-produit avec Edoardo Ventisette, développeur basé en Italie.",
+                    role: {
+                        mateo: "Développement & Packaging - Mateo",
+                        maxime: "Intégration finale - Maxime Bernard",
+                        edoardo: "Co-production - Edoardo Ventisette"
+                    }
+                },
+                docs: {
+                    title: "📚 Documentation & Livrables",
+                    description: "Documentation développeur bilingue français/anglais livrée avec le projet : guides complets, quick start et guide d'intégration, accompagnés du package Unity exporté <code>DiscoveryDiary_Package_v2.unitypackage</code> prêt à être réutilisé par l'équipe."
+                },
+                footer: {
+                    experience: "Stage Développeur Unity - Lappi Soft",
+                    context: "Avril - Juin 2026 - The Inspector"
+                }
+            },
+            en: {
+                nav: { back: "Back to Portfolio" },
+                hero: {
+                    title: "Discovery Diary - Lappi Soft Internship",
+                    subtitle: "BUT2 Internship - Discoverable Journal System for The Inspector",
+                    description: "Development internship at Lappi Soft, an independent video game studio based in Pers-Jussy (Haute-Savoie, France), led by Maxime Bernard. Designed and developed, fully independently, the Discovery Diary system in Unity for the game The Inspector.",
+                    badge: { gamedev: "Game Development", internship: "BUT2 Internship" }
+                },
+                stats: {
+                    title: "📊 Project Statistics",
+                    lines: "Lines of code",
+                    scripts: "C# Scripts",
+                    fps: "FPS (test scene)",
+                    languages: "Supported languages"
+                },
+                about: {
+                    title: "📖 About the Project",
+                    description: "During my BUT2 internship at Lappi Soft, I independently designed and developed the Discovery Diary system, an in-game discoverable journal for The Inspector. Spread across 12 C# scripts in the <code>DiscoveryDiary</code> namespace (~2,400 lines, commented in English), this system handles the discovery, display and persistence of narrative notes the player unlocks while exploring the game world."
+                },
+                features: {
+                    notif: { title: "🔔 Notification Manager", desc: "Centralized manager for discovery notifications, orchestrating in-game alert display without interrupting gameplay." },
+                    bignotif: { title: "🎬 Big Notification", desc: "Expanded notification system driven by Animator, with automatic audio synchronization matched to the actual duration of the sound clip." },
+                    psb: { title: "🖼️ PSB Importer", desc: "Custom editor tool: an ExportLayerPositions.jsx script extracts layer positions from a Photoshop PSB file into JSON, then automatically imported into Unity." },
+                    persistence: { title: "💾 Flag-based Persistence", desc: "Player progress saved through Lua variables, integrated with the Pixel Crushers Dialogue System already used by the studio." },
+                    i18n: { title: "🌍 Multi-language Support", desc: "Interface and content available in 5 languages: English, French, Russian, Italian and Chinese." },
+                    perf: { title: "⚡ Performance Optimization", desc: "Diagnosed and fixed performance bottlenecks, raising the test scene from 2 to 84 FPS." }
+                },
+                tech: { title: "🛠️ Technologies & Tools" },
+                methodology: {
+                    title: "🤝 Way of Working",
+                    description: "The studio operated on a separation-of-duties principle: I developed and packaged the Discovery Diary system in full autonomy, while final integration into the game was handled by Maxime Bernard, validated without difficulty thanks to careful documentation. The project was also co-produced with Edoardo Ventisette, a developer based in Italy.",
+                    role: {
+                        mateo: "Development & Packaging - Mateo",
+                        maxime: "Final Integration - Maxime Bernard",
+                        edoardo: "Co-production - Edoardo Ventisette"
+                    }
+                },
+                docs: {
+                    title: "📚 Documentation & Deliverables",
+                    description: "Bilingual French/English developer documentation delivered with the project: full guides, a quick start and an integration guide, alongside the exported Unity package <code>DiscoveryDiary_Package_v2.unitypackage</code> ready for the team to reuse."
+                },
+                footer: {
+                    experience: "Unity Developer Internship - Lappi Soft",
+                    context: "April - June 2026 - The Inspector"
+                }
+            }
+        };
+
+        let currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const keys = element.getAttribute('data-i18n').split('.');
+                let translation = translations[lang];
+                for (const key of keys) {
+                    translation = translation[key];
+                }
+                element.innerHTML = translation;
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.onclick.toString().includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage(currentLang === 'en' ? 'en' : 'fr');
+        });
+    </script>
+</body>
+</html>

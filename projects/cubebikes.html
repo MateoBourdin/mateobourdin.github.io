@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CUBE Bikes - Plateforme e-commerce full-stack ASP.NET Core 8 / Vue 3 développée en SAE 3.01 et SAE 4.01">
+    <title>CUBE Bikes - Portfolio Project</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <!-- Back Button -->
+        <a href="../index.html#projets" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
+
+        <!-- Hero Section -->
+        <div class="hero project-hero">
+            <h1>🚲 CUBE Bikes</h1>
+            <h2 data-i18n="hero.subtitle">SAE 3.01 / SAE 4.01 - Plateforme E-commerce Full-Stack</h2>
+            <p data-i18n="hero.description">
+                Plateforme e-commerce complète pour une boutique de vélos, développée en équipe de 4 sur plusieurs
+                semestres du BUT Informatique. Le projet a évolué d'un prototype Laravel/PostgreSQL (SAE 3.01) vers
+                une architecture ASP.NET Core 8 / Vue 3 complète (SAE 4.01).
+            </p>
+
+            <div class="badges">
+                <span class="badge">ASP.NET Core 8</span>
+                <span class="badge">Vue 3</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge" data-i18n="hero.badge.academic">Projet Académique</span>
+                <span class="badge">SAE 3.01 / 4.01</span>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="section">
+            <h3 data-i18n="stats.title">📊 Statistiques du Projet</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label" data-i18n="stats.team">Membres de l'équipe</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label" data-i18n="stats.iterations">Itérations (Laravel → ASP.NET)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">S3-S4</div>
+                    <div class="stat-label" data-i18n="stats.semesters">Semestres</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="section">
+            <h3 data-i18n="about.title">📖 À propos du projet</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">
+                CUBE Bikes est un projet fil rouge du BUT Informatique reproduisant une boutique en ligne de vélos.
+                Sa première itération (SAE 3.01, semestre 3) a été développée avec Laravel et PostgreSQL, avec un
+                accent mis sur la navigation par catégories (CTE récursives, eager loading) et la gestion des commandes.
+                La seconde itération (SAE 4.01, semestre 4) a repris le projet sur une stack ASP.NET Core 8 / Vue 3
+                complète, en ajoutant authentification avancée, paiement en ligne et fonctionnalités de recherche
+                géolocalisée.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="features.auth.title">🔐 Authentification & Sécurité</h4>
+                    <p data-i18n="features.auth.desc">JWT combiné à Google OAuth, 2FA par TOTP, mots de passe hashés avec BCrypt et gestion des erreurs standardisée au format RFC 7807.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.payment.title">💳 Paiement en Ligne</h4>
+                    <p data-i18n="features.payment.desc">Intégration de Stripe Checkout pour un processus de paiement sécurisé de bout en bout.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.search.title">🔎 Recherche à Facettes</h4>
+                    <p data-i18n="features.search.desc">Filtrage avancé du catalogue produits par catégorie, taille, prix et disponibilité.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.stores.title">🗺️ Sélecteur de Magasin</h4>
+                    <p data-i18n="features.stores.desc">Carte interactive Leaflet/OpenStreetMap avec store Vue réactif synchronisé via des <code>CustomEvent</code>, affichant la disponibilité produit par taille et par magasin.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.arch.title">🏗️ Architecture Backend</h4>
+                    <p data-i18n="features.arch.desc">Pattern Repository/Service avec Entity Framework Core, contrôleurs C# entièrement commentés en XML et documentation Swagger.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.ux.title">✨ Expérience Utilisateur</h4>
+                    <p data-i18n="features.ux.desc">Formulaires validés avec Vee-validate, notifications toast avec Vue Sonner, état global géré par Pinia et interface Tailwind CSS responsive.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Stack Section -->
+        <div class="section">
+            <h3 data-i18n="tech.title">🛠️ Technologies & Outils</h3>
+            <h4 style="color: var(--accent-purple); margin-bottom: 1rem;" data-i18n="tech.backend.title">Backend</h4>
+            <div class="tech-stack">
+                <div class="tech-item">ASP.NET Core 8</div>
+                <div class="tech-item">Entity Framework Core</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item">JWT / Google OAuth</div>
+                <div class="tech-item">TOTP 2FA</div>
+                <div class="tech-item">BCrypt</div>
+                <div class="tech-item">Swagger</div>
+                <div class="tech-item">Stripe Checkout</div>
+            </div>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem;" data-i18n="tech.frontend.title">Frontend</h4>
+            <div class="tech-stack">
+                <div class="tech-item">Vue 3</div>
+                <div class="tech-item">Pinia</div>
+                <div class="tech-item">Vue Router</div>
+                <div class="tech-item">Tailwind CSS</div>
+                <div class="tech-item">Vee-validate</div>
+                <div class="tech-item">Axios</div>
+                <div class="tech-item">Leaflet</div>
+                <div class="tech-item">Vue Sonner</div>
+            </div>
+        </div>
+
+        <!-- Previous Iteration Section -->
+        <div class="section">
+            <h3 data-i18n="previous.title">⏮️ Itération Précédente (SAE 3.01)</h3>
+            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="previous.description">
+                La première version du projet, développée en Laravel et PostgreSQL, posait déjà les bases de la
+                plateforme : navigation par catégories optimisée grâce à des CTE récursives et de l'eager loading,
+                ainsi qu'un système de gestion des commandes. Cette évolution technique illustre ma progression
+                d'un stack PHP/Laravel vers un stack C#/ASP.NET Core plus robuste.
+            </p>
+            <div class="tech-stack">
+                <div class="tech-item">Laravel</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item" data-i18n="previous.cte">CTE récursives</div>
+                <div class="tech-item" data-i18n="previous.eager">Eager loading</div>
+            </div>
+        </div>
+
+        <!-- Documentation Section -->
+        <div class="section">
+            <h3 data-i18n="docs.title">📚 Documentation</h3>
+            <p style="color: var(--text-light); line-height: 1.8;" data-i18n="docs.description">
+                Le projet est accompagné d'une documentation soignée : README détaillé, diagrammes d'architecture
+                et timesheet généré automatiquement à partir de l'historique des commits GitHub, en plus des
+                DTOs et contrôleurs C# commentés au format XML.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p data-i18n="footer.experience">Projet Académique - Équipe de 4</p>
+            <p data-i18n="footer.context">SAE 3.01 / SAE 4.01 - BUT Informatique, IUT Annecy</p>
+            <p>© 2026 - Mateo Bourdin</p>
+        </div>
+    </div>
+
+    <script>
+        // i18n translations
+        const translations = {
+            fr: {
+                nav: { back: "Retour au Portfolio" },
+                hero: {
+                    subtitle: "SAE 3.01 / SAE 4.01 - Plateforme E-commerce Full-Stack",
+                    description: "Plateforme e-commerce complète pour une boutique de vélos, développée en équipe de 4 sur plusieurs semestres du BUT Informatique. Le projet a évolué d'un prototype Laravel/PostgreSQL (SAE 3.01) vers une architecture ASP.NET Core 8 / Vue 3 complète (SAE 4.01).",
+                    badge: { academic: "Projet Académique" }
+                },
+                stats: {
+                    title: "📊 Statistiques du Projet",
+                    team: "Membres de l'équipe",
+                    iterations: "Itérations (Laravel → ASP.NET)",
+                    semesters: "Semestres"
+                },
+                about: {
+                    title: "📖 À propos du projet",
+                    description: "CUBE Bikes est un projet fil rouge du BUT Informatique reproduisant une boutique en ligne de vélos. Sa première itération (SAE 3.01, semestre 3) a été développée avec Laravel et PostgreSQL, avec un accent mis sur la navigation par catégories (CTE récursives, eager loading) et la gestion des commandes. La seconde itération (SAE 4.01, semestre 4) a repris le projet sur une stack ASP.NET Core 8 / Vue 3 complète, en ajoutant authentification avancée, paiement en ligne et fonctionnalités de recherche géolocalisée."
+                },
+                features: {
+                    auth: { title: "🔐 Authentification & Sécurité", desc: "JWT combiné à Google OAuth, 2FA par TOTP, mots de passe hashés avec BCrypt et gestion des erreurs standardisée au format RFC 7807." },
+                    payment: { title: "💳 Paiement en Ligne", desc: "Intégration de Stripe Checkout pour un processus de paiement sécurisé de bout en bout." },
+                    search: { title: "🔎 Recherche à Facettes", desc: "Filtrage avancé du catalogue produits par catégorie, taille, prix et disponibilité." },
+                    stores: { title: "🗺️ Sélecteur de Magasin", desc: "Carte interactive Leaflet/OpenStreetMap avec store Vue réactif synchronisé via des <code>CustomEvent</code>, affichant la disponibilité produit par taille et par magasin." },
+                    arch: { title: "🏗️ Architecture Backend", desc: "Pattern Repository/Service avec Entity Framework Core, contrôleurs C# entièrement commentés en XML et documentation Swagger." },
+                    ux: { title: "✨ Expérience Utilisateur", desc: "Formulaires validés avec Vee-validate, notifications toast avec Vue Sonner, état global géré par Pinia et interface Tailwind CSS responsive." }
+                },
+                tech: {
+                    title: "🛠️ Technologies & Outils",
+                    backend: { title: "Backend" },
+                    frontend: { title: "Frontend" }
+                },
+                previous: {
+                    title: "⏮️ Itération Précédente (SAE 3.01)",
+                    description: "La première version du projet, développée en Laravel et PostgreSQL, posait déjà les bases de la plateforme : navigation par catégories optimisée grâce à des CTE récursives et de l'eager loading, ainsi qu'un système de gestion des commandes. Cette évolution technique illustre ma progression d'un stack PHP/Laravel vers un stack C#/ASP.NET Core plus robuste.",
+                    cte: "CTE récursives",
+                    eager: "Eager loading"
+                },
+                docs: {
+                    title: "📚 Documentation",
+                    description: "Le projet est accompagné d'une documentation soignée : README détaillé, diagrammes d'architecture et timesheet généré automatiquement à partir de l'historique des commits GitHub, en plus des DTOs et contrôleurs C# commentés au format XML."
+                },
+                footer: {
+                    experience: "Projet Académique - Équipe de 4",
+                    context: "SAE 3.01 / SAE 4.01 - BUT Informatique, IUT Annecy"
+                }
+            },
+            en: {
+                nav: { back: "Back to Portfolio" },
+                hero: {
+                    subtitle: "SAE 3.01 / SAE 4.01 - Full-Stack E-commerce Platform",
+                    description: "Complete e-commerce platform for a bike shop, developed by a team of 4 across several semesters of the Computer Science BUT degree. The project evolved from a Laravel/PostgreSQL prototype (SAE 3.01) into a full ASP.NET Core 8 / Vue 3 architecture (SAE 4.01).",
+                    badge: { academic: "Academic Project" }
+                },
+                stats: {
+                    title: "📊 Project Statistics",
+                    team: "Team members",
+                    iterations: "Iterations (Laravel → ASP.NET)",
+                    semesters: "Semesters"
+                },
+                about: {
+                    title: "📖 About the Project",
+                    description: "CUBE Bikes is a flagship project of the Computer Science BUT degree recreating an online bike shop. Its first iteration (SAE 3.01, semester 3) was built with Laravel and PostgreSQL, focused on optimized category navigation (recursive CTEs, eager loading) and order management. The second iteration (SAE 4.01, semester 4) rebuilt the project on a full ASP.NET Core 8 / Vue 3 stack, adding advanced authentication, online payment and geolocated search features."
+                },
+                features: {
+                    auth: { title: "🔐 Authentication & Security", desc: "JWT combined with Google OAuth, TOTP-based 2FA, BCrypt-hashed passwords, and standardized error handling in RFC 7807 format." },
+                    payment: { title: "💳 Online Payment", desc: "Stripe Checkout integration for a secure end-to-end payment process." },
+                    search: { title: "🔎 Faceted Search", desc: "Advanced product catalog filtering by category, size, price and availability." },
+                    stores: { title: "🗺️ Store Selector", desc: "Interactive Leaflet/OpenStreetMap map with a reactive Vue store synchronized via <code>CustomEvent</code>, showing product availability by size and store." },
+                    arch: { title: "🏗️ Backend Architecture", desc: "Repository/Service pattern with Entity Framework Core, C# controllers fully documented with XML comments, and Swagger documentation." },
+                    ux: { title: "✨ User Experience", desc: "Forms validated with Vee-validate, toast notifications with Vue Sonner, global state managed by Pinia, and a responsive Tailwind CSS interface." }
+                },
+                tech: {
+                    title: "🛠️ Technologies & Tools",
+                    backend: { title: "Backend" },
+                    frontend: { title: "Frontend" }
+                },
+                previous: {
+                    title: "⏮️ Previous Iteration (SAE 3.01)",
+                    description: "The first version of the project, built with Laravel and PostgreSQL, already laid the platform's foundations: optimized category navigation using recursive CTEs and eager loading, plus an order management system. This technical evolution illustrates my progression from a PHP/Laravel stack to a more robust C#/ASP.NET Core stack.",
+                    cte: "Recursive CTEs",
+                    eager: "Eager loading"
+                },
+                docs: {
+                    title: "📚 Documentation",
+                    description: "The project comes with thorough documentation: a detailed README, architecture diagrams, and a timesheet automatically generated from the GitHub commit history, in addition to XML-commented C# controllers and DTOs."
+                },
+                footer: {
+                    experience: "Academic Project - Team of 4",
+                    context: "SAE 3.01 / SAE 4.01 - Computer Science BUT, IUT Annecy"
+                }
+            }
+        };
+
+        let currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const keys = element.getAttribute('data-i18n').split('.');
+                let translation = translations[lang];
+                for (const key of keys) {
+                    translation = translation[key];
+                }
+                element.innerHTML = translation;
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.onclick.toString().includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage(currentLang === 'en' ? 'en' : 'fr');
+        });
+    </script>
+</body>
+</html>

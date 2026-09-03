@@ -2,7 +2,7 @@ const translations = {
     fr: {
         meta: {
             title: 'Mateo - Étudiant Développeur | Portfolio',
-            description: 'Mateo, étudiant en BUT Informatique à l\'IUT Annecy. Développeur passionné cherchant un stage de 1-3 mois à partir d\'avril 2025.'
+            description: 'Mateo, étudiant en 3ème année de BUT Informatique (parcours RA) à l\'IUT Annecy. Développeur passionné recherchant un stage de 16 semaines à partir du 19 janvier 2027.'
         },
         nav: {
             home: 'Accueil',
@@ -14,10 +14,10 @@ const translations = {
             contact: 'Contact'
         },
         hero: {
-            availability: '⚡ Disponible pour un stage d\'avril 2026',
+            availability: '⚡ Disponible pour un stage de 16 semaines dès le 19 janvier 2027',
             greeting: 'Salut, je suis',
             title: 'Développeur & Étudiant en Informatique',
-            description: 'Étudiant en 2ème année de BUT Informatique à l\'IUT d\'Annecy, passionné par le développement web, les bases de données et la création d\'applications conviviales. Je recherche un stage de 8 à 12 semaines à partir d\'avril 2026 pour mettre en pratique mes compétences et apprendre au sein d\'une équipe dynamique.',
+            description: 'Étudiant en 3ème année de BUT Informatique (parcours Réalisation d\'Applications) à l\'IUT d\'Annecy, passionné par le développement web, les bases de données et la création d\'applications conviviales. Fort d\'un stage de BUT2 chez Lappi Soft, je recherche un stage de 16 semaines à partir du 19 janvier 2027 pour mettre en pratique mes compétences et apprendre au sein d\'une équipe dynamique.',
             contact: '📩 Me contacter',
             downloadCV: '📄 Télécharger mon CV',
             projects: '🚀 Voir mes projets'
@@ -29,12 +29,12 @@ const translations = {
         stats: {
             education: 'Informatique à l\'IUT Annecy',
             projects: 'Projets développés',
-            champion: '2ème & 3ème',
-            sports: 'Championnats de Bretagne de Voltige, Polo et CSO',
+            champion: 'Champion & 3ème',
+            sports: 'France de Polo et Saut d\'Obstacles',
             languages: '3',
             languagesText: 'Langues parlées',
             internship: 'Stage',
-            seeking: 'Recherche active d\'avril 2026'
+            seeking: 'Recherche active dès le 19 janvier 2027'
         },
         languages: {
             tag: '🌍 Langues',
@@ -52,6 +52,16 @@ const translations = {
             description: 'Mes expériences professionnelles en entreprise',
             lookingFor: 'Recherche active',
             featured: '⭐ En vedette',
+            lappisoft: {
+                dates: 'Avril - Juin 2026',
+                title: 'Stage Développeur Unity - Lappi Soft',
+                description: 'Studio de jeux vidéo indépendant (Pers-Jussy) dirigé par Maxime Bernard. Conception et développement en autonomie du système Discovery Diary (journal découvrable in-game) pour le jeu The Inspector sous Unity : ~2 400 lignes réparties sur 12 scripts C#, Notification Manager, Big Notification synchronisée à l\'audio, outil éditeur PSB Importer, persistance via variables Lua et support de 5 langues.',
+                perf: 'Gain de performance :',
+                perfText: '2 → 84 FPS sur la scène de test',
+                stack: 'Stack :',
+                stackText: 'Unity 2019.4.41f1, C#, Pixel Crushers Dialogue System',
+                details: 'Voir le détail'
+            },
             intersport: {
                 title: 'Vendeur - Intersport',
                 description: 'Conseil personnalisé aux clients sur les équipements sportifs, gestion des stocks et mise en rayon. Développement de compétences en relation client et travail d\'équipe dans un environnement commercial dynamique.'
@@ -61,12 +71,12 @@ const translations = {
                 description: 'Préparation et mise en valeur des produits de boulangerie, contrôle qualité et respect des normes d\'hygiène. Gestion de la relation client et travail en équipe dans un contexte exigeant.'
             },
             internship: {
-                title: 'Stage BUT Informatique',
-                description: 'Je recherche activement un stage de 8 à 12 semaines à partir d\'avril 2026 en développement logiciel, développement web ou administration de bases de données. Objectif : mettre en pratique mes compétences en Python, PHP, Laravel, PostgreSQL et contribuer à des projets concrets en entreprise.',
+                title: 'Stage BUT3 Informatique',
+                description: 'Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement logiciel, développement web ou administration de bases de données. Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Vue 3, PHP/Laravel, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l\'étranger.',
                 duration: 'Durée :',
-                weeks: '8-12 semaines',
+                weeks: '16 semaines',
                 start: 'Début :',
-                date: 'Avril 2026',
+                date: '19 janvier 2027',
                 domains: 'Domaines :',
                 domainsText: 'Développement Web, Bases de données, Développement logiciel'
             },
@@ -86,8 +96,8 @@ const translations = {
             description: 'Mon cursus et mes diplômes',
             current: 'En cours',
             but: {
-                title: 'BUT Informatique - 2ème année',
-                description: 'Formation en informatique à l\'IUT d\'Annecy, spécialisation en développement d\'applications et gestion de bases de données.',
+                title: 'BUT Informatique - 3ème année (parcours RA)',
+                description: 'Formation en informatique à l\'IUT d\'Annecy, parcours Réalisation d\'Applications : développement d\'applications, architecture logicielle et gestion de bases de données.',
                 school: 'École :'
             },
             enib: {
@@ -111,13 +121,14 @@ const translations = {
         skills: {
             tag: '💡 Mes compétences',
             title: 'Technologies & Outils',
-            description: 'Un large éventail de compétences acquises durant ma formation et mes projets personnels',
-            webDev: 'Développement Web',
-            databases: 'Bases de Données',
-            languages: 'Langages & Frameworks',
-            security: 'Sécurité & Crypto',
-            system: 'Système & Réseau',
-            tools: 'Outils & Méthodes'
+            description: 'Un large éventail de compétences acquises durant ma formation, mon stage et mes projets personnels',
+            backend: 'Backend',
+            frontend: 'Frontend & Mobile',
+            databases: 'Données',
+            tools: 'Outils & DevOps',
+            system: 'Système',
+            ai: 'Intelligence Artificielle',
+            aiAssisted: 'Dév. assisté par IA'
         },
         projects: {
             tag: '🚀 Mes réalisations',
@@ -137,8 +148,8 @@ const translations = {
             viewProject: 'Voir le projet →',
             viewSite: 'Vous êtes dessus ! →',
             portfolio: {
-                title: 'Portfolio Personnel - Cas d\'Étude BUT2',
-                description: 'Développement d\'un site portfolio responsive et bilingue (FR/EN) dans le cadre du BUT Informatique 2ème année. Utilisation de HTML5, CSS3 et JavaScript vanilla pour créer une interface moderne avec animations, système de traduction i18n, formulaire de contact sécurisé via Formspree, et déploiement automatisé sur GitHub Pages. Ce projet démontre mes compétences en développement web front-end et design UX/UI.',
+                title: 'Portfolio Personnel - Cas d\'Étude BUT2/BUT3',
+                description: 'Développement d\'un site portfolio responsive et bilingue (FR/EN) initié en BUT2 et maintenu à jour depuis. Utilisation de HTML5, CSS3 et JavaScript vanilla pour créer une interface moderne avec animations, système de traduction i18n, formulaire de contact sécurisé via Formspree, et déploiement automatisé sur GitHub Pages. Ce projet démontre mes compétences en développement web front-end et design UX/UI.',
                 context: 'Contexte :',
                 contextText: 'Projet universitaire visant à créer une vitrine professionnelle de mes compétences et projets',
                 tech: 'Technologies :'
@@ -150,25 +161,28 @@ const translations = {
                 contextText: 'Projet de programmation avancée réalisé en année préparatoire à l\'ENIB',
                 tech: 'Technologies :'
             },
-            chat: {
-                title: 'Application de Chat Temps Réel',
-                description: 'Application de messagerie instantanée développée avec Node.js et Socket.io permettant la communication en temps réel entre plusieurs utilisateurs. Implémentation de salons de discussion, notification de présence, historique des messages et interface utilisateur responsive. Gestion des événements WebSocket pour assurer une communication bidirectionnelle fluide entre le serveur et les clients.',
+            cubebikes: {
+                title: 'CUBE Bikes - Plateforme E-commerce',
+                description: 'Plateforme e-commerce full-stack pour une boutique de vélos : backend ASP.NET Core 8 / Entity Framework Core / PostgreSQL avec authentification JWT + Google OAuth, 2FA par TOTP, paiement Stripe Checkout et pattern Repository/Service ; frontend Vue 3 / Pinia / Tailwind CSS avec recherche à facettes, sélecteur de magasin sur carte Leaflet et disponibilité produit par taille et par magasin. Projet récurrent ayant évolué de la SAE 3.01 (Laravel/PostgreSQL) à la SAE 4.01 (ASP.NET Core/Vue 3).',
                 context: 'Contexte :',
-                contextText: 'Projet de programmation réseau et applications temps réel',
+                contextText: 'Projet fil rouge sur plusieurs semestres - BUT Informatique',
                 tech: 'Technologies :'
             },
-            banking: {
-                title: 'Système de Gestion Bancaire',
-                description: 'Application desktop développée en C# avec WPF utilisant le pattern d\'architecture MVVM (Model-View-ViewModel). Gestion complète de comptes bancaires incluant création de comptes, virements, historique des transactions et interface utilisateur moderne. Implémentation de la data binding bidirectionnelle et de l\'INotifyPropertyChanged pour une interface réactive et maintenable.',
+            twitterclone: {
+                title: 'Clone Twitter/X',
+                description: 'Clone de réseau social développé en équipe de 4 avec Laravel 13 / PHP 8.3, PostgreSQL, Redis et Livewire/Alpine.js, incluant des fonctionnalités temps réel via WebSockets (Laravel Reverb) et un assistant IA façon Grok basé sur l\'API Gemini, déployé avec Docker. Mon rôle : frontend et gestion des médias (upload photo/vidéo, infinite scroll, édition de profil, fonctionnalités temps réel).',
                 context: 'Contexte :',
-                contextText: 'Projet de programmation orientée objet et patterns de conception',
+                contextText: 'Projet de groupe R408A1 - BUT Informatique 3ème année',
                 tech: 'Technologies :'
             },
-            platformer: {
-                title: 'Jeu de Plateforme 2D',
-                description: 'Jeu de plateforme développé avec le framework JavaScript Phaser.js, incluant un moteur physique pour la gravité et les collisions, système de niveaux progressifs, collecte d\'objets et ennemis avec IA. Utilisation des sprites, tilemaps et animations pour créer une expérience de jeu fluide et engageante dans le navigateur.',
-                context: 'Contexte :',
-                contextText: 'Projet personnel pour explorer le développement de jeux web',
+            winecellar: {
+                title: 'Gestion de Cave à Vin',
+                description: 'Application desktop WPF en C# avec architecture MVVM pour la gestion d\'une cave à vin. Conception de diagrammes UML, base de données PostgreSQL et API REST pour la communication client-serveur.',
+                tech: 'Technologies :'
+            },
+            spacebattle: {
+                title: 'Space Battle',
+                description: 'Jeu en C# développé en équipe utilisant la programmation orientée objet et les principes de conception d\'interface utilisateur. Implémentation du rendu graphique, de la gestion audio et travail collaboratif avec Git.',
                 tech: 'Technologies :'
             },
             sae201: {
@@ -188,12 +202,12 @@ const translations = {
         },
         contact: {
             title: '🚀 Travaillons ensemble !',
-            subtitle: 'Je suis disponible pour un stage de 8 à 12 semaines à partir d\'avril 2026',
+            subtitle: 'Je suis disponible pour un stage de 16 semaines à partir du 19 janvier 2027',
             emailBtn: 'Me contacter',
             email: '📧 Formulaire de contact'
         },
         footer: {
-            copyright: '© 2025 Mateo - Étudiant Développeur | IUT Annecy',
+            copyright: '© 2026 Mateo - Étudiant Développeur | IUT Annecy',
             signature: 'Créé avec passion 🚀'
         },
         cvModal: {
@@ -213,7 +227,7 @@ const translations = {
     en: {
         meta: {
             title: 'Mateo - Student Developer | Portfolio',
-            description: 'Mateo, Computer Science student at IUT Annecy. Passionate developer looking for a 1-3 month internship from April 2025.'
+            description: 'Mateo, 3rd-year Computer Science student (Application Development track) at IUT Annecy. Passionate developer seeking a 16-week internship starting January 19, 2027.'
         },
         nav: {
             home: 'Home',
@@ -225,10 +239,10 @@ const translations = {
             contact: 'Contact'
         },
         hero: {
-            availability: '⚡ Available for internship from April 2026',
+            availability: '⚡ Available for a 16-week internship from January 19, 2027',
             greeting: 'Hi, I\'m',
             title: 'Developer & Computer Science Student',
-            description: '2nd year Computer Science student at IUT Annecy, passionate about web development, databases and creating user-friendly applications. I\'m looking for an 8 to 12 week internship from April 2026 to apply my skills and learn within a dynamic team.',
+            description: '3rd-year Computer Science student (Application Development track) at IUT Annecy, passionate about web development, databases and creating user-friendly applications. Having completed a BUT2 internship at Lappi Soft, I\'m looking for a 16-week internship starting January 19, 2027 to apply my skills and learn within a dynamic team.',
             contact: '📩 Contact me',
             downloadCV: '📄 Download my CV',
             projects: '🚀 View my projects'
@@ -240,12 +254,12 @@ const translations = {
         stats: {
             education: 'Computer Science at IUT Annecy',
             projects: 'Developed projects',
-            champion: '2nd & 3rd',
-            sports: 'Brittany Championships: Aerobatics, Polo & Show Jumping',
+            champion: 'Champion & 3rd',
+            sports: 'French Polo and Show Jumping Championships',
             languages: '3',
             languagesText: 'Languages spoken',
             internship: 'Internship',
-            seeking: 'Actively seeking from April 2026'
+            seeking: 'Actively seeking from January 19, 2027'
         },
         languages: {
             tag: '🌍 Languages',
@@ -263,6 +277,16 @@ const translations = {
             description: 'My professional experiences in companies',
             lookingFor: 'Actively seeking',
             featured: '⭐ Featured',
+            lappisoft: {
+                dates: 'April - June 2026',
+                title: 'Unity Developer Internship - Lappi Soft',
+                description: 'Independent video game studio (Pers-Jussy) led by Maxime Bernard. Designed and developed, independently, the Discovery Diary system (an in-game discoverable journal) for the game The Inspector in Unity: ~2,400 lines across 12 C# scripts, Notification Manager, Big Notification synced to audio, PSB Importer editor tool, persistence via Lua variables, and support for 5 languages.',
+                perf: 'Performance gain:',
+                perfText: '2 → 84 FPS on the test scene',
+                stack: 'Stack:',
+                stackText: 'Unity 2019.4.41f1, C#, Pixel Crushers Dialogue System',
+                details: 'View details'
+            },
             intersport: {
                 title: 'Sales Associate - Intersport',
                 description: 'Personalized customer advice on sports equipment, inventory management and stocking. Development of customer relations and teamwork skills in a dynamic commercial environment.'
@@ -272,12 +296,12 @@ const translations = {
                 description: 'Preparation and presentation of bakery products, quality control and compliance with hygiene standards. Customer relationship management and teamwork in a demanding environment.'
             },
             internship: {
-                title: 'Computer Science Internship',
-                description: 'I am actively seeking an 8 to 12 week internship starting April 2026 in software development, web development, or database administration. Objective: to put into practice my skills in Python, PHP, Laravel, PostgreSQL and contribute to concrete projects in a company.',
+                title: 'BUT3 Computer Science Internship',
+                description: 'I am actively seeking a 16-week internship starting January 19, 2027 in software development, web development, or database administration. Objective: to put into practice my skills in C#/ASP.NET Core, Vue 3, PHP/Laravel, PostgreSQL and contribute to concrete projects in a company, in France or abroad.',
                 duration: 'Duration:',
-                weeks: '8-12 weeks',
+                weeks: '16 weeks',
                 start: 'Start:',
-                date: 'April 2026',
+                date: 'January 19, 2027',
                 domains: 'Areas:',
                 domainsText: 'Web Development, Databases, Software Development'
             },
@@ -297,8 +321,8 @@ const translations = {
             description: 'My studies and degrees',
             current: 'In progress',
             but: {
-                title: 'B.U.T. Computer Science - 2nd Year',
-                description: 'Computer Science degree at IUT Annecy, specializing in application development and database management.',
+                title: 'B.U.T. Computer Science - 3rd Year (Application Development track)',
+                description: 'Computer Science degree at IUT Annecy, Application Development track: application development, software architecture and database management.',
                 school: 'School:'
             },
             enib: {
@@ -322,13 +346,14 @@ const translations = {
         skills: {
             tag: '💡 My skills',
             title: 'Technologies & Tools',
-            description: 'A wide range of skills acquired during my education and personal projects',
-            webDev: 'Web Development',
-            databases: 'Databases',
-            languages: 'Languages & Frameworks',
-            security: 'Security & Cryptography',
-            system: 'System & Network',
-            tools: 'Tools & Methods'
+            description: 'A wide range of skills acquired during my education, my internship and personal projects',
+            backend: 'Backend',
+            frontend: 'Frontend & Mobile',
+            databases: 'Data',
+            tools: 'Tools & DevOps',
+            system: 'System',
+            ai: 'Artificial Intelligence',
+            aiAssisted: 'AI-assisted development'
         },
         projects: {
             tag: '🚀 My achievements',
@@ -348,8 +373,8 @@ const translations = {
             viewProject: 'View project →',
             viewSite: 'You are on it! →',
             portfolio: {
-                title: 'Personal Portfolio - BUT2 Case Study',
-                description: 'Development of a responsive and bilingual (FR/EN) portfolio website as part of the 2nd year Computer Science BUT degree. Using HTML5, CSS3 and vanilla JavaScript to create a modern interface with animations, i18n translation system, secure contact form via Formspree, and automated deployment on GitHub Pages. This project demonstrates my front-end web development and UX/UI design skills.',
+                title: 'Personal Portfolio - BUT2/BUT3 Case Study',
+                description: 'Development of a responsive and bilingual (FR/EN) portfolio website started in BUT2 and kept up to date since. Using HTML5, CSS3 and vanilla JavaScript to create a modern interface with animations, i18n translation system, secure contact form via Formspree, and automated deployment on GitHub Pages. This project demonstrates my front-end web development and UX/UI design skills.',
                 context: 'Context:',
                 contextText: 'University project aimed at creating a professional showcase of my skills and projects',
                 tech: 'Technologies:'
@@ -361,25 +386,28 @@ const translations = {
                 contextText: 'Advanced programming project completed in preparatory year at ENIB',
                 tech: 'Technologies:'
             },
-            chat: {
-                title: 'Real-Time Chat Application',
-                description: 'Instant messaging application developed with Node.js and Socket.io enabling real-time communication between multiple users. Implementation of chat rooms, presence notification, message history and responsive user interface. WebSocket event management to ensure smooth bidirectional communication between server and clients.',
+            cubebikes: {
+                title: 'CUBE Bikes - E-commerce Platform',
+                description: 'Full-stack e-commerce platform for a bike shop: ASP.NET Core 8 / Entity Framework Core / PostgreSQL backend with JWT + Google OAuth authentication, TOTP 2FA, Stripe Checkout payment and Repository/Service pattern; Vue 3 / Pinia / Tailwind CSS frontend with faceted search, a Leaflet map store selector and per-size/per-store product availability. A recurring project that evolved from SAE 3.01 (Laravel/PostgreSQL) to SAE 4.01 (ASP.NET Core/Vue 3).',
                 context: 'Context:',
-                contextText: 'Network programming and real-time applications project',
+                contextText: 'Multi-semester flagship project - Computer Science BUT',
                 tech: 'Technologies:'
             },
-            banking: {
-                title: 'Banking Management System',
-                description: 'Desktop application developed in C# with WPF using the MVVM (Model-View-ViewModel) architecture pattern. Complete bank account management including account creation, transfers, transaction history and modern user interface. Implementation of bidirectional data binding and INotifyPropertyChanged for a reactive and maintainable interface.',
+            twitterclone: {
+                title: 'Twitter/X Clone',
+                description: 'Social network clone developed by a team of 4 with Laravel 13 / PHP 8.3, PostgreSQL, Redis and Livewire/Alpine.js, including real-time features via WebSockets (Laravel Reverb) and a Grok-like AI assistant powered by the Gemini API, deployed with Docker. My role: frontend and media management (photo/video upload, infinite scroll, profile editing, real-time features).',
                 context: 'Context:',
-                contextText: 'Object-oriented programming and design patterns project',
+                contextText: 'R408A1 group project - 3rd year Computer Science BUT',
                 tech: 'Technologies:'
             },
-            platformer: {
-                title: '2D Platform Game',
-                description: 'Platform game developed with the JavaScript Phaser.js framework, including physics engine for gravity and collisions, progressive level system, object collection and enemies with AI. Use of sprites, tilemaps and animations to create a smooth and engaging gaming experience in the browser.',
-                context: 'Context:',
-                contextText: 'Personal project to explore web game development',
+            winecellar: {
+                title: 'Wine Cellar Management',
+                description: 'WPF desktop application in C# with MVVM architecture for managing a wine cellar. UML diagram design, PostgreSQL database and REST API for client-server communication.',
+                tech: 'Technologies:'
+            },
+            spacebattle: {
+                title: 'Space Battle',
+                description: 'C# game developed as a team using object-oriented programming and user interface design principles. Implementation of graphics rendering, audio management, and collaborative development with Git.',
                 tech: 'Technologies:'
             },
             sae201: {
@@ -399,12 +427,12 @@ const translations = {
         },
         contact: {
             title: '🚀 Let\'s work together!',
-            subtitle: 'I\'m available for an 8 to 12 week internship from April 2026',
+            subtitle: 'I\'m available for a 16-week internship starting January 19, 2027',
             emailBtn: 'Contact me',
             email: '📧 Contact form'
         },
         footer: {
-            copyright: '© 2025 Mateo - Student Developer | IUT Annecy',
+            copyright: '© 2026 Mateo - Student Developer | IUT Annecy',
             signature: 'Created with passion 🚀'
         },
         cvModal: {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateo - Étudiant Développeur | Portfolio</title>
-    <meta name="description" content="Mateo, étudiant en BUT Informatique à l'IUT Annecy. Développeur passionné cherchant un stage de 1-3 mois à partir d'avril 2025.">
+    <meta name="description" content="Mateo, étudiant en 3ème année de BUT Informatique (parcours RA) à l'IUT Annecy. Développeur passionné recherchant un stage de 16 semaines à partir du 19 janvier 2027.">
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -45,16 +45,17 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-tag">
-                    <span data-i18n="hero.availability">⚡ Disponible pour un stage d'avril 2026</span>
+                    <span data-i18n="hero.availability">⚡ Disponible pour un stage de 16 semaines dès le 19 janvier 2027</span>
                 </div>
                 <h1>
                     <span data-i18n="hero.greeting">Salut, je suis</span> <span class="gradient-text">Mateo</span><br>
                     <span data-i18n="hero.title">Développeur & Étudiant en Informatique</span>
                 </h1>
                 <p data-i18n="hero.description">
-                    Étudiant en 2ème année de BUT Informatique à l'IUT d'Annecy, passionné par le développement web,
-                    les bases de données et la création d'applications conviviales. Je recherche un stage de 8 à 12 semaines
-                    à partir d'avril 2026 pour mettre en pratique mes compétences et apprendre au sein d'une équipe dynamique.
+                    Étudiant en 3ème année de BUT Informatique (parcours Réalisation d'Applications) à l'IUT d'Annecy,
+                    passionné par le développement web, les bases de données et la création d'applications conviviales.
+                    Fort d'un stage de BUT2 chez Lappi Soft, je recherche un stage de 16 semaines à partir du 19 janvier 2027
+                    pour mettre en pratique mes compétences et apprendre au sein d'une équipe dynamique.
                 </p>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn btn-primary">
@@ -81,18 +82,18 @@
             <div class="stats reveal">
                 <div class="stat-card">
                     <div class="icon">🎓</div>
-                    <h3>BUT 2</h3>
+                    <h3>BUT 3</h3>
                     <p data-i18n="stats.education">Informatique à l'IUT Annecy</p>
                 </div>
                 <div class="stat-card">
                     <div class="icon">💻</div>
-                    <h3>10+</h3>
+                    <h3>12+</h3>
                     <p data-i18n="stats.projects">Projets développés</p>
                 </div>
                 <div class="stat-card">
                     <div class="icon">🏆</div>
-                    <h3 data-i18n="stats.champion">2ème & 3ème</h3>
-                    <p data-i18n="stats.sports">Championnats de Bretagne de Voltige</p>
+                    <h3 data-i18n="stats.champion">Champion & 3ème</h3>
+                    <p data-i18n="stats.sports">France de Polo et Saut d'Obstacles</p>
                 </div>
                 <div class="stat-card">
                     <div class="icon">🌍</div>
@@ -102,7 +103,7 @@
                 <div class="stat-card internship-highlight">
                     <div class="icon">🎯</div>
                     <h3 data-i18n="stats.internship">Stage</h3>
-                    <p data-i18n="stats.seeking">Recherche active d'avril 2026</p>
+                    <p data-i18n="stats.seeking">Recherche active dès le 19 janvier 2027</p>
                 </div>
             </div>
 
@@ -153,19 +154,40 @@
                 <p data-i18n="experience.description">Mes expériences professionnelles en entreprise</p>
             </div>
             <div class="projects-grid">
-                <!-- Stage BUT Informatique - Avril 2026 -->
+                <!-- Stage Lappi Soft - Avril-Juin 2026 (Expérience phare) -->
+                <div class="project-card reveal featured-experience">
+                    <div class="featured-badge" data-i18n="experience.featured">⭐ En vedette</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--accent-orange), var(--primary));">🎮</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" style="background: var(--accent-orange); color: white;" data-i18n="experience.lappisoft.dates">Avril - Juin 2026</span>
+                            <span class="project-tag">Stage BUT2</span>
+                        </div>
+                        <h3 data-i18n="experience.lappisoft.title">Stage Développeur Unity - Lappi Soft</h3>
+                        <p data-i18n="experience.lappisoft.description">Studio de jeux vidéo indépendant (Pers-Jussy) dirigé par Maxime Bernard. Conception et développement en autonomie du système Discovery Diary (journal découvrable in-game) pour le jeu The Inspector sous Unity : ~2 400 lignes réparties sur 12 scripts C#, Notification Manager, Big Notification synchronisée à l'audio, outil éditeur PSB Importer, persistance via variables Lua et support de 5 langues.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="experience.lappisoft.perf">Gain de performance :</strong> <span data-i18n="experience.lappisoft.perfText">2 → 84 FPS sur la scène de test</span><br>
+                            <strong data-i18n="experience.lappisoft.stack">Stack :</strong> <span data-i18n="experience.lappisoft.stackText">Unity 2019.4.41f1, C#, Pixel Crushers Dialogue System</span>
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="projects/lappisoft.html" class="btn btn-secondary"><span data-i18n="experience.lappisoft.details">Voir le détail</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage BUT Informatique - 19 Janvier 2027 -->
                 <div class="project-card reveal" style="border: 3px solid var(--accent-green);">
                     <div class="project-image" style="background: linear-gradient(135deg, var(--accent-green), var(--primary));">💼</div>
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="experience.lookingFor">Recherche active</span>
-                            <span class="project-tag">Avril 2026</span>
+                            <span class="project-tag">19 Janvier 2027</span>
                         </div>
-                        <h3 data-i18n="experience.internship.title">Stage BUT Informatique</h3>
-                        <p data-i18n="experience.internship.description">Je recherche activement un stage de 8 à 12 semaines à partir d'avril 2026 en développement logiciel, développement web ou administration de bases de données. Objectif : mettre en pratique mes compétences en Python, PHP, Laravel, PostgreSQL et contribuer à des projets concrets en entreprise.</p>
+                        <h3 data-i18n="experience.internship.title">Stage BUT3 Informatique</h3>
+                        <p data-i18n="experience.internship.description">Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement logiciel, développement web ou administration de bases de données. Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Vue 3, PHP/Laravel, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l'étranger.</p>
                         <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
-                            <strong data-i18n="experience.internship.duration">Durée :</strong> <span data-i18n="experience.internship.weeks">8-12 semaines</span><br>
-                            <strong data-i18n="experience.internship.start">Début :</strong> <span data-i18n="experience.internship.date">Avril 2026</span><br>
+                            <strong data-i18n="experience.internship.duration">Durée :</strong> <span data-i18n="experience.internship.weeks">16 semaines</span><br>
+                            <strong data-i18n="experience.internship.start">Début :</strong> <span data-i18n="experience.internship.date">19 janvier 2027</span><br>
                             <strong data-i18n="experience.internship.domains">Domaines :</strong> <span data-i18n="experience.internship.domainsText">Développement Web, Bases de données, Développement logiciel</span>
                         </p>
                     </div>
@@ -234,11 +256,11 @@
                     <div class="project-image">🎓</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Sept. 2024 - 2026</span>
+                            <span class="project-tag">Sept. 2024 - 2027</span>
                             <span class="project-tag" data-i18n="education.current">En cours</span>
                         </div>
-                        <h3 data-i18n="education.but.title">BUT Informatique - 2ème année</h3>
-                        <p data-i18n="education.but.description">Formation en informatique à l'IUT d'Annecy, spécialisation en développement d'applications et gestion de bases de données.</p>
+                        <h3 data-i18n="education.but.title">BUT Informatique - 3ème année (parcours RA)</h3>
+                        <p data-i18n="education.but.description">Formation en informatique à l'IUT d'Annecy, parcours Réalisation d'Applications : développement d'applications, architecture logicielle et gestion de bases de données.</p>
                         <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
                             <strong data-i18n="education.but.school">École :</strong> IUT Annecy - Université Savoie Mont Blanc
                         </p>
@@ -304,88 +326,73 @@
             <div class="skills-grid">
                 <div class="skill-category reveal">
                     <h3>
-                        <span class="icon">🌐</span>
-                        <span data-i18n="skills.webDev">Développement Web</span>
+                        <span class="icon">⚙️</span>
+                        <span data-i18n="skills.backend">Backend</span>
                     </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Socket.io</span>
-                        <span class="skill-tag">Phaser.js</span>
+                        <span class="skill-tag">C# / ASP.NET Core</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">PHP / Laravel</span>
+                        <span class="skill-tag">Python</span>
                     </div>
                 </div>
-                
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">🌐</span>
+                        <span data-i18n="skills.frontend">Frontend & Mobile</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Vue 3</span>
+                        <span class="skill-tag">HTML/CSS/JS</span>
+                        <span class="skill-tag">Flutter</span>
+                    </div>
+                </div>
+
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">💾</span>
-                        <span data-i18n="skills.databases">Bases de Données</span>
+                        <span data-i18n="skills.databases">Données</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Window Functions</span>
-                        <span class="skill-tag">Stored Procedures</span>
-                        <span class="skill-tag">CTEs</span>
+                        <span class="skill-tag">Entity Framework Core</span>
+                        <span class="skill-tag">MongoDB</span>
                     </div>
                 </div>
-                
-                <div class="skill-category reveal">
-                    <h3>
-                        <span class="icon">⚙️</span>
-                        <span data-i18n="skills.languages">Langages & Frameworks</span>
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">WPF (MVVM)</span>
-                        <span class="skill-tag">AutoIt</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category reveal">
-                    <h3>
-                        <span class="icon">🔐</span>
-                        <span data-i18n="skills.security">Sécurité & Crypto</span>
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AES</span>
-                        <span class="skill-tag">RSA</span>
-                        <span class="skill-tag">SHA-256</span>
-                        <span class="skill-tag">Caesar Cipher</span>
-                        <span class="skill-tag">Hamming Codes</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category reveal">
-                    <h3>
-                        <span class="icon">🐧</span>
-                        <span data-i18n="skills.system">Système & Réseau</span>
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Apache</span>
-                        <span class="skill-tag">Nginx</span>
-                        <span class="skill-tag">SSL</span>
-                        <span class="skill-tag">TCP/IP</span>
-                        <span class="skill-tag">VLANs</span>
-                    </div>
-                </div>
-                
+
                 <div class="skill-category reveal">
                     <h3>
                         <span class="icon">🛠️</span>
-                        <span data-i18n="skills.tools">Outils & Méthodes</span>
+                        <span data-i18n="skills.tools">Outils & DevOps</span>
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Git/GitHub</span>
-                        <span class="skill-tag">BPMN</span>
-                        <span class="skill-tag">Agile</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">FL Studio</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">🐧</span>
+                        <span data-i18n="skills.system">Système</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">🤖</span>
+                        <span data-i18n="skills.ai">Intelligence Artificielle</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Claude Code</span>
+                        <span class="skill-tag">GPT-5</span>
+                        <span class="skill-tag" data-i18n="skills.aiAssisted">Dév. assisté par IA</span>
                     </div>
                 </div>
             </div>
@@ -441,8 +448,8 @@
                             <span class="project-tag">Déc. 2024 - Jan. 2025</span>
                             <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
                         </div>
-                        <h3 data-i18n="projects.portfolio.title">Portfolio Personnel - Cas d'Étude BUT2</h3>
-                        <p data-i18n="projects.portfolio.description">Développement d'un site portfolio responsive et bilingue (FR/EN) dans le cadre du BUT Informatique 2ème année. Utilisation de HTML5, CSS3 et JavaScript vanilla pour créer une interface moderne avec animations, système de traduction i18n, formulaire de contact sécurisé via Formspree, et déploiement automatisé sur GitHub Pages. Ce projet démontre mes compétences en développement web front-end et design UX/UI.</p>
+                        <h3 data-i18n="projects.portfolio.title">Portfolio Personnel - Cas d'Étude BUT2/BUT3</h3>
+                        <p data-i18n="projects.portfolio.description">Développement d'un site portfolio responsive et bilingue (FR/EN) initié en BUT2 et maintenu à jour depuis. Utilisation de HTML5, CSS3 et JavaScript vanilla pour créer une interface moderne avec animations, système de traduction i18n, formulaire de contact sécurisé via Formspree, et déploiement automatisé sur GitHub Pages. Ce projet démontre mes compétences en développement web front-end et design UX/UI.</p>
                         <div style="margin-top: 1rem;">
                             <strong style="color: var(--text);" data-i18n="projects.portfolio.context">Contexte :</strong>
                             <span style="color: var(--text-light);" data-i18n="projects.portfolio.contextText">Projet universitaire visant à créer une vitrine professionnelle de mes compétences et projets</span>
@@ -507,67 +514,82 @@
                     </div>
                 </div>
 
-                <!-- Chat Application -->
-                <div class="project-card reveal" data-type="academic" data-tech="web">
-                    <div class="project-image">💬</div>
+                <!-- CUBE Bikes - SAE 4.01 -->
+                <div class="project-card reveal" data-type="academic" data-tech="web database" style="border: 3px solid var(--primary);">
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--primary), var(--accent-purple));">🚲</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">2024</span>
+                            <span class="project-tag" style="background: var(--primary); color: white;">SAE 4.01</span>
+                            <span class="project-tag">BUT3 - Équipe de 4</span>
                             <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
                         </div>
-                        <h3 data-i18n="projects.chat.title">Application de Chat Temps Réel</h3>
-                        <p data-i18n="projects.chat.description">Application de messagerie instantanée développée avec Node.js et Socket.io permettant la communication en temps réel entre plusieurs utilisateurs. Implémentation de salons de discussion, notification de présence, historique des messages et interface utilisateur responsive. Gestion des événements WebSocket pour assurer une communication bidirectionnelle fluide entre le serveur et les clients.</p>
+                        <h3 data-i18n="projects.cubebikes.title">CUBE Bikes - Plateforme E-commerce</h3>
+                        <p data-i18n="projects.cubebikes.description">Plateforme e-commerce full-stack pour une boutique de vélos : backend ASP.NET Core 8 / Entity Framework Core / PostgreSQL avec authentification JWT + Google OAuth, 2FA par TOTP, paiement Stripe Checkout et pattern Repository/Service ; frontend Vue 3 / Pinia / Tailwind CSS avec recherche à facettes, sélecteur de magasin sur carte Leaflet et disponibilité produit par taille et par magasin. Projet récurrent ayant évolué de la SAE 3.01 (Laravel/PostgreSQL) à la SAE 4.01 (ASP.NET Core/Vue 3).</p>
                         <div style="margin-top: 1rem;">
-                            <strong style="color: var(--text);" data-i18n="projects.chat.context">Contexte :</strong>
-                            <span style="color: var(--text-light);" data-i18n="projects.chat.contextText">Projet de programmation réseau et applications temps réel</span>
+                            <strong style="color: var(--text);" data-i18n="projects.cubebikes.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.cubebikes.contextText">Projet fil rouge sur plusieurs semestres - BUT Informatique</span>
                         </div>
                         <div style="margin-top: 0.5rem;">
-                            <strong style="color: var(--text);" data-i18n="projects.chat.tech">Technologies :</strong>
-                            <span style="color: var(--text-light);">Node.js, Socket.io, Express, HTML/CSS, JavaScript, WebSocket</span>
+                            <strong style="color: var(--text);" data-i18n="projects.cubebikes.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">ASP.NET Core 8, EF Core, PostgreSQL, Vue 3, Pinia, Tailwind CSS, Stripe, Leaflet</span>
+                        </div>
+                        <a href="projects/cubebikes.html" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                    </div>
+                </div>
+
+                <!-- Twitter/X Clone - Projet de groupe -->
+                <div class="project-card reveal" data-type="academic" data-tech="web database">
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--dark), var(--primary));">🐦</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">R408A1 - Équipe de 4</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
+                        </div>
+                        <h3 data-i18n="projects.twitterclone.title">Clone Twitter/X</h3>
+                        <p data-i18n="projects.twitterclone.description">Clone de réseau social développé en équipe de 4 avec Laravel 13 / PHP 8.3, PostgreSQL, Redis et Livewire/Alpine.js, incluant des fonctionnalités temps réel via WebSockets (Laravel Reverb) et un assistant IA façon Grok basé sur l'API Gemini, déployé avec Docker. Mon rôle : frontend et gestion des médias (upload photo/vidéo, infinite scroll, édition de profil, fonctionnalités temps réel).</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.twitterclone.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.twitterclone.contextText">Projet de groupe R408A1 - BUT Informatique 3ème année</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.twitterclone.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">Laravel 13, PHP 8.3, PostgreSQL, Redis, Livewire, Alpine.js, Docker</span>
+                        </div>
+                        <a href="projects/twitterclone.html" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                    </div>
+                </div>
+
+                <!-- Gestion de cave à vin -->
+                <div class="project-card reveal" data-type="academic" data-tech="database other">
+                    <div class="project-image">🍷</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Équipe de 2</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
+                        </div>
+                        <h3 data-i18n="projects.winecellar.title">Gestion de Cave à Vin</h3>
+                        <p data-i18n="projects.winecellar.description">Application desktop WPF en C# avec architecture MVVM pour la gestion d'une cave à vin. Conception de diagrammes UML, base de données PostgreSQL et API REST pour la communication client-serveur.</p>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.winecellar.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">C#, WPF, MVVM, PostgreSQL, API REST, UML</span>
                         </div>
                         <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
                 </div>
 
-                <!-- Banking System -->
+                <!-- Space Battle -->
                 <div class="project-card reveal" data-type="academic" data-tech="other">
-                    <div class="project-image">🏦</div>
+                    <div class="project-image">🚀</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">2024</span>
+                            <span class="project-tag">Équipe de 3</span>
                             <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);">Académique</span>
                         </div>
-                        <h3 data-i18n="projects.banking.title">Système de Gestion Bancaire</h3>
-                        <p data-i18n="projects.banking.description">Application desktop développée en C# avec WPF utilisant le pattern d'architecture MVVM (Model-View-ViewModel). Gestion complète de comptes bancaires incluant création de comptes, virements, historique des transactions et interface utilisateur moderne. Implémentation de la data binding bidirectionnelle et de l'INotifyPropertyChanged pour une interface réactive et maintenable.</p>
-                        <div style="margin-top: 1rem;">
-                            <strong style="color: var(--text);" data-i18n="projects.banking.context">Contexte :</strong>
-                            <span style="color: var(--text-light);" data-i18n="projects.banking.contextText">Projet de programmation orientée objet et patterns de conception</span>
-                        </div>
+                        <h3 data-i18n="projects.spacebattle.title">Space Battle</h3>
+                        <p data-i18n="projects.spacebattle.description">Jeu en C# développé en équipe utilisant la programmation orientée objet et les principes de conception d'interface utilisateur. Implémentation du rendu graphique, de la gestion audio et travail collaboratif avec Git.</p>
                         <div style="margin-top: 0.5rem;">
-                            <strong style="color: var(--text);" data-i18n="projects.banking.tech">Technologies :</strong>
-                            <span style="color: var(--text-light);">C#, WPF, MVVM, .NET, XAML, Data Binding</span>
-                        </div>
-                        <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
-                    </div>
-                </div>
-
-                <!-- Platformer Game -->
-                <div class="project-card reveal" data-type="personal" data-tech="web">
-                    <div class="project-image">🎯</div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">2024</span>
-                            <span class="project-tag" style="background: var(--accent-green); color: white;">Personnel</span>
-                        </div>
-                        <h3 data-i18n="projects.platformer.title">Jeu de Plateforme 2D</h3>
-                        <p data-i18n="projects.platformer.description">Jeu de plateforme développé avec le framework JavaScript Phaser.js, incluant un moteur physique pour la gravité et les collisions, système de niveaux progressifs, collecte d'objets et ennemis avec IA. Utilisation des sprites, tilemaps et animations pour créer une expérience de jeu fluide et engageante dans le navigateur.</p>
-                        <div style="margin-top: 1rem;">
-                            <strong style="color: var(--text);" data-i18n="projects.platformer.context">Contexte :</strong>
-                            <span style="color: var(--text-light);" data-i18n="projects.platformer.contextText">Projet personnel pour explorer le développement de jeux web</span>
-                        </div>
-                        <div style="margin-top: 0.5rem;">
-                            <strong style="color: var(--text);" data-i18n="projects.platformer.tech">Technologies :</strong>
-                            <span style="color: var(--text-light);">Phaser.js, JavaScript, HTML5 Canvas, Game Physics</span>
+                            <strong style="color: var(--text);" data-i18n="projects.spacebattle.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">C#, Programmation Orientée Objet, Git</span>
                         </div>
                         <a href="https://github.com/MateoBourdin" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.learnMore">En savoir plus →</span></a>
                     </div>
@@ -604,7 +626,7 @@
         <div class="container">
             <div class="contact-section reveal">
                 <h2 data-i18n="contact.title">🚀 Travaillons ensemble !</h2>
-                <p data-i18n="contact.subtitle">Je suis disponible pour un stage de 8 à 12 semaines à partir d'avril 2026</p>
+                <p data-i18n="contact.subtitle">Je suis disponible pour un stage de 16 semaines à partir du 19 janvier 2027</p>
                 <a href="contact.html" class="btn btn-primary"><span data-i18n="contact.emailBtn">Me contacter</span></a>
 
                 <div class="contact-methods">
@@ -625,7 +647,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p data-i18n="footer.copyright">© 2025 Mateo - Étudiant Développeur | IUT Annecy</p>
+            <p data-i18n="footer.copyright">© 2026 Mateo - Étudiant Développeur | IUT Annecy</p>
             <p data-i18n="footer.signature">Créé avec passion 🚀</p>
         </div>
     </footer>

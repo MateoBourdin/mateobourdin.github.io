@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clone Twitter/X - Projet de groupe R408A1 - Laravel 13, PostgreSQL, Redis, WebSockets">
+    <title>Clone Twitter/X - Portfolio Project</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <!-- Back Button -->
+        <a href="../index.html#projets" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
+
+        <!-- Hero Section -->
+        <div class="hero project-hero">
+            <h1>🐦 Clone Twitter/X</h1>
+            <h2 data-i18n="hero.subtitle">R408A1 - Réseau Social Temps Réel en Équipe</h2>
+            <p data-i18n="hero.description">
+                Clone de réseau social développé en équipe de 4 (Mateo, Denis, Axel, Morgan) dans le cadre du module
+                R408A1. Fonctionnalités temps réel, assistant IA intégré et déploiement conteneurisé avec Docker.
+            </p>
+
+            <div class="badges">
+                <span class="badge">Laravel 13</span>
+                <span class="badge">PHP 8.3</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">Redis</span>
+                <span class="badge" data-i18n="hero.badge.academic">Projet Académique</span>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="section">
+            <h3 data-i18n="stats.title">📊 Statistiques du Projet</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label" data-i18n="stats.team">Membres de l'équipe</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">R408A1</div>
+                    <div class="stat-label" data-i18n="stats.module">Module BUT3</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">🐳</div>
+                    <div class="stat-label" data-i18n="stats.docker">Déploiement Docker</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="section">
+            <h3 data-i18n="about.title">📖 À propos du projet</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">
+                Ce projet de groupe reproduit les fonctionnalités clés d'un réseau social type Twitter/X : publication
+                de messages, médias, fil d'actualité en temps réel et interactions sociales. L'équipe de 4 (Mateo,
+                Denis, Axel, Morgan) a travaillé sur une stack Laravel 13 / PHP 8.3 avec PostgreSQL, Redis pour le
+                cache et les files d'attente, Livewire et Alpine.js pour la réactivité côté client, et Laravel Reverb
+                pour les WebSockets. Le projet intègre également un assistant conversationnel façon Grok, basé sur
+                l'API Gemini, et est déployé via Docker.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="features.realtime.title">⚡ Temps Réel</h4>
+                    <p data-i18n="features.realtime.desc">Fil d'actualité et notifications mises à jour en direct grâce aux WebSockets Laravel Reverb.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.ai.title">🤖 Assistant IA</h4>
+                    <p data-i18n="features.ai.desc">Assistant conversationnel inspiré de Grok, propulsé par l'API Gemini, intégré directement dans l'application.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.media.title">📸 Gestion des Médias</h4>
+                    <p data-i18n="features.media.desc">Upload de photos et vidéos, infinite scroll sur le fil et édition de profil - développés par Mateo.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.cache.title">⚙️ Cache & Files d'Attente</h4>
+                    <p data-i18n="features.cache.desc">Redis utilisé pour la mise en cache et la gestion des files d'attente asynchrones.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.reactivity.title">🔄 Réactivité Frontend</h4>
+                    <p data-i18n="features.reactivity.desc">Interfaces dynamiques construites avec Livewire et Alpine.js, sans framework JavaScript lourd.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.docker.title">🐳 Déploiement Docker</h4>
+                    <p data-i18n="features.docker.desc">Environnement de développement et de production conteneurisé pour une mise en place reproductible.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Role Section -->
+        <div class="section">
+            <h3 data-i18n="role.title">🙋 Mon Rôle dans l'Équipe</h3>
+            <p style="color: var(--text-light); line-height: 1.8;" data-i18n="role.description">
+                Au sein de l'équipe de 4, j'ai principalement pris en charge le frontend et la gestion des médias :
+                upload photo/vidéo, infinite scroll sur le fil d'actualité, édition de profil, ainsi que l'intégration
+                des fonctionnalités temps réel côté client.
+            </p>
+        </div>
+
+        <!-- Technical Stack Section -->
+        <div class="section">
+            <h3 data-i18n="tech.title">🛠️ Technologies & Outils</h3>
+            <div class="tech-stack">
+                <div class="tech-item">Laravel 13</div>
+                <div class="tech-item">PHP 8.3</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item">Redis</div>
+                <div class="tech-item">Livewire</div>
+                <div class="tech-item">Alpine.js</div>
+                <div class="tech-item">Laravel Reverb (WebSockets)</div>
+                <div class="tech-item">API Gemini</div>
+                <div class="tech-item">Docker</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p data-i18n="footer.experience">Projet Académique - Équipe de 4</p>
+            <p data-i18n="footer.context">Module R408A1 - BUT Informatique 3ème année, IUT Annecy</p>
+            <p>© 2026 - Mateo Bourdin</p>
+        </div>
+    </div>
+
+    <script>
+        // i18n translations
+        const translations = {
+            fr: {
+                nav: { back: "Retour au Portfolio" },
+                hero: {
+                    subtitle: "R408A1 - Réseau Social Temps Réel en Équipe",
+                    description: "Clone de réseau social développé en équipe de 4 (Mateo, Denis, Axel, Morgan) dans le cadre du module R408A1. Fonctionnalités temps réel, assistant IA intégré et déploiement conteneurisé avec Docker.",
+                    badge: { academic: "Projet Académique" }
+                },
+                stats: {
+                    title: "📊 Statistiques du Projet",
+                    team: "Membres de l'équipe",
+                    module: "Module BUT3",
+                    docker: "Déploiement Docker"
+                },
+                about: {
+                    title: "📖 À propos du projet",
+                    description: "Ce projet de groupe reproduit les fonctionnalités clés d'un réseau social type Twitter/X : publication de messages, médias, fil d'actualité en temps réel et interactions sociales. L'équipe de 4 (Mateo, Denis, Axel, Morgan) a travaillé sur une stack Laravel 13 / PHP 8.3 avec PostgreSQL, Redis pour le cache et les files d'attente, Livewire et Alpine.js pour la réactivité côté client, et Laravel Reverb pour les WebSockets. Le projet intègre également un assistant conversationnel façon Grok, basé sur l'API Gemini, et est déployé via Docker."
+                },
+                features: {
+                    realtime: { title: "⚡ Temps Réel", desc: "Fil d'actualité et notifications mises à jour en direct grâce aux WebSockets Laravel Reverb." },
+                    ai: { title: "🤖 Assistant IA", desc: "Assistant conversationnel inspiré de Grok, propulsé par l'API Gemini, intégré directement dans l'application." },
+                    media: { title: "📸 Gestion des Médias", desc: "Upload de photos et vidéos, infinite scroll sur le fil et édition de profil - développés par Mateo." },
+                    cache: { title: "⚙️ Cache & Files d'Attente", desc: "Redis utilisé pour la mise en cache et la gestion des files d'attente asynchrones." },
+                    reactivity: { title: "🔄 Réactivité Frontend", desc: "Interfaces dynamiques construites avec Livewire et Alpine.js, sans framework JavaScript lourd." },
+                    docker: { title: "🐳 Déploiement Docker", desc: "Environnement de développement et de production conteneurisé pour une mise en place reproductible." }
+                },
+                role: {
+                    title: "🙋 Mon Rôle dans l'Équipe",
+                    description: "Au sein de l'équipe de 4, j'ai principalement pris en charge le frontend et la gestion des médias : upload photo/vidéo, infinite scroll sur le fil d'actualité, édition de profil, ainsi que l'intégration des fonctionnalités temps réel côté client."
+                },
+                tech: { title: "🛠️ Technologies & Outils" },
+                footer: {
+                    experience: "Projet Académique - Équipe de 4",
+                    context: "Module R408A1 - BUT Informatique 3ème année, IUT Annecy"
+                }
+            },
+            en: {
+                nav: { back: "Back to Portfolio" },
+                hero: {
+                    subtitle: "R408A1 - Real-Time Social Network Built by a Team",
+                    description: "Social network clone developed by a team of 4 (Mateo, Denis, Axel, Morgan) as part of the R408A1 module. Real-time features, an integrated AI assistant, and containerized deployment with Docker.",
+                    badge: { academic: "Academic Project" }
+                },
+                stats: {
+                    title: "📊 Project Statistics",
+                    team: "Team members",
+                    module: "BUT3 Module",
+                    docker: "Docker Deployment"
+                },
+                about: {
+                    title: "📖 About the Project",
+                    description: "This group project recreates the key features of a Twitter/X-like social network: posting messages and media, a real-time feed, and social interactions. The team of 4 (Mateo, Denis, Axel, Morgan) worked on a Laravel 13 / PHP 8.3 stack with PostgreSQL, Redis for caching and queues, Livewire and Alpine.js for client-side reactivity, and Laravel Reverb for WebSockets. The project also includes a Grok-like conversational assistant powered by the Gemini API, and is deployed via Docker."
+                },
+                features: {
+                    realtime: { title: "⚡ Real-Time", desc: "Feed and notifications updated live thanks to Laravel Reverb WebSockets." },
+                    ai: { title: "🤖 AI Assistant", desc: "A Grok-inspired conversational assistant, powered by the Gemini API, integrated directly into the app." },
+                    media: { title: "📸 Media Management", desc: "Photo/video upload, infinite scroll on the feed, and profile editing - built by Mateo." },
+                    cache: { title: "⚙️ Cache & Queues", desc: "Redis used for caching and managing asynchronous job queues." },
+                    reactivity: { title: "🔄 Frontend Reactivity", desc: "Dynamic interfaces built with Livewire and Alpine.js, without a heavy JavaScript framework." },
+                    docker: { title: "🐳 Docker Deployment", desc: "Containerized development and production environment for reproducible setup." }
+                },
+                role: {
+                    title: "🙋 My Role in the Team",
+                    description: "Within the team of 4, I primarily handled the frontend and media management: photo/video upload, infinite scroll on the feed, profile editing, and integrating real-time features on the client side."
+                },
+                tech: { title: "🛠️ Technologies & Tools" },
+                footer: {
+                    experience: "Academic Project - Team of 4",
+                    context: "R408A1 Module - 3rd year Computer Science BUT, IUT Annecy"
+                }
+            }
+        };
+
+        let currentLang = localStorage.getItem('preferredLanguage') || 'fr';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const keys = element.getAttribute('data-i18n').split('.');
+                let translation = translations[lang];
+                for (const key of keys) {
+                    translation = translation[key];
+                }
+                element.innerHTML = translation;
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.onclick.toString().includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            changeLanguage(currentLang === 'en' ? 'en' : 'fr');
+        });
+    </script>
+</body>
+</html>
