@@ -107,7 +107,7 @@ const translations = {
             },
             bac: {
                 title: 'Baccalauréat avec mention',
-                description: 'Baccalauréat général avec spécialités Physique-Chimie, Mathématiques et NSI (Numérique et Sciences Informatiques).',
+                description: 'Baccalauréat général avec spécialités Mathématiques et NSI (Numérique et Sciences Informatiques).',
                 mention: 'Mention Bien',
                 school: 'Lycée :'
             },
@@ -332,7 +332,7 @@ const translations = {
             },
             bac: {
                 title: 'French Baccalaureate with honors',
-                description: 'General Baccalaureate with specializations in Physics-Chemistry, Mathematics and NSI (Computer Science).',
+                description: 'General Baccalaureate with specializations in Mathematics and NSI (Computer Science).',
                 mention: 'With Merit',
                 school: 'High School:'
             },
