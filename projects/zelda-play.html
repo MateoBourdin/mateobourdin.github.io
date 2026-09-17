@@ -156,11 +156,15 @@ os.chdir("${WORKDIR}")
             }, 200);
         }
 
-        // Capture au niveau de la fenetre plutot que via xterm.onData : le jeu
-        // reagit aux touches meme si le focus n'est pas (ou plus) sur le
-        // terminal. xterm exige de cliquer dedans pour capter le clavier, ce
-        // qui faisait perdre les touches des qu'on cliquait ailleurs sur la
-        // page (aucune touche n'atteignait alors le jeu).
+        // Capture au niveau de la fenetre, en phase de capture (3e argument
+        // `true`), plutot que via xterm.onData : le jeu reagit aux touches
+        // quel que soit le focus. Deux problemes corriges par ce choix :
+        // 1) sans focus sur le terminal, xterm ne recevait jamais la touche
+        //    (rien n'atteignait le jeu des qu'on cliquait ailleurs) ;
+        // 2) AVEC le focus sur le terminal, xterm capte et traite la touche
+        //    en interne avant qu'elle ne remonte jusqu'ici (son textarea
+        //    cache "avale" l'evenement) : la phase de capture nous fait
+        //    intervenir en premier, avant xterm, dans les deux cas.
         window.addEventListener("keydown", (e) => {
             if (mode !== "name-entry" && mode !== "playing") return;
             if (e.ctrlKey || e.metaKey || e.altKey) return; // laisse passer les raccourcis navigateur
@@ -173,6 +177,7 @@ os.chdir("${WORKDIR}")
 
             if (ch === null) return; // touche non geree (Tab, fleches, F-keys...) : comportement navigateur normal
             e.preventDefault();
+            e.stopPropagation(); // empeche xterm de traiter/avaler la meme touche juste apres
 
             if (mode === "name-entry") {
                 if (ch === "\r") {
@@ -189,7 +194,7 @@ os.chdir("${WORKDIR}")
             } else if (mode === "playing") {
                 webio.push_key(ch);
             }
-        });
+        }, true);
 
         boot().catch((err) => {
             statusLine.textContent = "Erreur au chargement : " + err;
