@@ -8,58 +8,50 @@
     <link rel="stylesheet" href="../styles.css">
     <style>
         .emulation-banner {
-            background: linear-gradient(135deg, var(--primary), var(--accent-purple));
-            border-radius: 1.5rem;
-            padding: 2.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            background: var(--primary-lighter);
+            border-left: 4px solid var(--primary);
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
             margin-bottom: 2rem;
-            text-align: center;
-            color: white;
-            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.35);
         }
-        .emulation-banner .emulation-kicker {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.18);
-            padding: 0.35rem 0.9rem;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+        .emulation-banner-text {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }
-        .emulation-banner h2 {
-            color: white;
-            font-size: clamp(1.4rem, 3vw, 2.1rem);
-            margin-bottom: 0.75rem;
+        .emulation-banner-text .icon {
+            font-size: 1.5rem;
         }
-        .emulation-banner p {
-            color: rgba(255, 255, 255, 0.92);
-            max-width: 700px;
-            margin: 0 auto 1.75rem;
-            font-size: 1.05rem;
+        .emulation-banner strong {
+            color: var(--text);
+        }
+        .emulation-banner span.detail {
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
         .emulation-play-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            background: white;
-            color: var(--primary-dark);
-            padding: 1.1rem 2.75rem;
-            border-radius: 0.85rem;
-            font-weight: 700;
-            font-size: 1.2rem;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0.6rem;
+            font-weight: 600;
+            font-size: 0.95rem;
             text-decoration: none;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-            animation: pulse 2.2s infinite;
-            transition: transform 0.2s ease;
+            white-space: nowrap;
+            transition: transform 0.15s ease, background 0.15s ease;
         }
         .emulation-play-btn:hover {
-            transform: translateY(-3px) scale(1.03);
-        }
-        .emulation-note {
-            margin-top: 1.1rem;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.78);
+            background: var(--primary-dark);
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -97,16 +89,13 @@
 
         <!-- Emulation Banner : le jeu tourne reellement dans le navigateur -->
         <div class="emulation-banner">
-            <span class="emulation-kicker" data-i18n="banner.kicker">Emule dans ton navigateur</span>
-            <h2 data-i18n="banner.title">🎮 Ce jeu terminal Unix tourne ici, en vrai, sans rien installer</h2>
-            <p data-i18n="banner.description">
-                Grace a une emulation Python/WebAssembly (Pyodide) qui s'execute entierement en local dans la page,
-                tu peux lancer une vraie partie de Zelda II directement dans ton navigateur — aucun serveur, aucune installation.
-            </p>
+            <div class="emulation-banner-text">
+                <span class="icon">🎮</span>
+                <span><strong data-i18n="banner.title">Jouable directement dans le navigateur</strong> — <span class="detail" data-i18n="banner.description">emulation Python/WebAssembly (Pyodide), sans installation</span></span>
+            </div>
             <a href="zelda-play.html" class="emulation-play-btn" data-i18n="banner.button">
-                ▶️ Jouer maintenant
+                ▶️ Jouer
             </a>
-            <div class="emulation-note" data-i18n="banner.note">Ca tourne dans un onglet de ton navigateur, pas sur un serveur distant.</div>
         </div>
 
         <!-- Description Section -->
@@ -420,11 +409,9 @@ python3 main.py</code></pre>
                     github: "Voir sur GitHub"
                 },
                 banner: {
-                    kicker: "Emule dans ton navigateur",
-                    title: "🎮 Ce jeu terminal Unix tourne ici, en vrai, sans rien installer",
-                    description: "Grace a une emulation Python/WebAssembly (Pyodide) qui s'execute entierement en local dans la page, tu peux lancer une vraie partie de Zelda II directement dans ton navigateur — aucun serveur, aucune installation.",
-                    button: "▶️ Jouer maintenant",
-                    note: "Ca tourne dans un onglet de ton navigateur, pas sur un serveur distant."
+                    title: "Jouable directement dans le navigateur",
+                    description: "emulation Python/WebAssembly (Pyodide), sans installation",
+                    button: "▶️ Jouer"
                 },
                 about: {
                     title: "📖 À propos du projet",
@@ -554,11 +541,9 @@ python3 main.py</code></pre>
                     github: "View on GitHub"
                 },
                 banner: {
-                    kicker: "Emulated in your browser",
-                    title: "🎮 This Unix terminal game runs right here, for real, nothing to install",
-                    description: "Thanks to Python/WebAssembly emulation (Pyodide) running entirely locally in the page, you can play a real game of Zelda II directly in your browser — no server, no install.",
-                    button: "▶️ Play now",
-                    note: "This runs in your browser tab, not on a remote server."
+                    title: "Playable directly in the browser",
+                    description: "Python/WebAssembly emulation (Pyodide), no install required",
+                    button: "▶️ Play"
                 },
                 about: {
                     title: "📖 About the Project",

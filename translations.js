@@ -200,6 +200,16 @@ const translations = {
                 tech: 'Technologies :'
             }
         },
+        emulations: {
+            tag: '🕹️ Jouable en ligne',
+            title: 'Émulations disponibles',
+            description: 'Certains projets tournent directement dans le navigateur, sans rien installer',
+            play: 'Jouer →',
+            zelda: {
+                title: 'Zelda II: The Adventure of Link',
+                description: 'Jeu terminal Python, émulé via Pyodide (Python/WebAssembly)'
+            }
+        },
         contact: {
             title: '🚀 Travaillons ensemble !',
             subtitle: 'Je suis disponible pour un stage de 16 semaines à partir du 19 janvier 2027',
@@ -423,6 +433,16 @@ const translations = {
                 context: 'Context:',
                 contextText: 'Team game development project - 2nd year Computer Science BUT',
                 tech: 'Technologies:'
+            }
+        },
+        emulations: {
+            tag: '🕹️ Playable online',
+            title: 'Available Emulations',
+            description: 'Some projects run directly in the browser, no install required',
+            play: 'Play →',
+            zelda: {
+                title: 'Zelda II: The Adventure of Link',
+                description: 'Python terminal game, emulated via Pyodide (Python/WebAssembly)'
             }
         },
         contact: {
