@@ -33,11 +33,20 @@ jobs:
       - name: Check external links
         uses: lycheeverse/lychee-action@v2
         with:
+          # --accept 999 works around LinkedIn returning that status to any
+          # non-browser request instead of blocking outright (a link-checker
+          # false positive documented across lychee's own issue tracker).
+          # formspree.io and the github-readme-stats/streak-stats badge
+          # generators are excluded: the former only accepts POST (a GET
+          # probe gets 405 by design, not because the endpoint is broken),
+          # the latter are free serverless services known to occasionally
+          # 503 under load, which isn't something this repo can fix.
           args: >-
             --no-progress
             --max-retries 3
             --retry-wait-time 5
             --timeout 20
-            --accept 100..=103,200..=299,429
+            --accept 100..=103,200..=299,429,999
+            --exclude 'formspree\.io|github-readme-stats\.vercel\.app|github-readme-streak-stats\.herokuapp\.com'
             './**/*.html'
           fail: true
