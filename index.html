@@ -24,7 +24,26 @@
                     <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
                     <li><a href="#experience" data-i18n="nav.experience">Expérience</a></li>
                     <li><a href="#formation" data-i18n="nav.education">Formation</a></li>
-                    <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#projets" data-i18n="nav.projects">Projets</a>
+                        <div class="nav-dropdown-menu">
+                            <div class="nav-dropdown-category">
+                                <span class="nav-dropdown-category-label" data-i18n="nav.projectsCategoryWeb">Applications web</span>
+                                <a href="#accueil"><span data-i18n="projects.portfolio.title">Portfolio Personnel - Cas d'Étude BUT2/BUT3</span></a>
+                                <a href="projects/cubebikes.html"><span data-i18n="projects.cubebikes.title">CUBE Bikes - Plateforme E-commerce</span></a>
+                                <a href="projects/twitterclone.html"><span data-i18n="projects.twitterclone.title">Clone Twitter/X</span></a>
+                            </div>
+                            <div class="nav-dropdown-category">
+                                <span class="nav-dropdown-category-label" data-i18n="nav.projectsCategoryGames">Jeux</span>
+                                <a href="projects/zelda.html">🗡️ <span data-i18n="projects.zelda.title">Zelda II: The Adventure of Link</span></a>
+                                <a href="projects/sae101.html"><span data-i18n="projects.survival.title">Survival Island</span></a>
+                            </div>
+                            <div class="nav-dropdown-category">
+                                <span class="nav-dropdown-category-label" data-i18n="nav.projectsCategoryDesktop">Applications bureau</span>
+                                <a href="projects/sae201.html"><span data-i18n="projects.sae201.title">Application C# - SAE201</span></a>
+                            </div>
+                        </div>
+                    </li>
                     <li class="nav-dropdown">
                         <a href="#emulations" data-i18n="nav.emulations">🕹️ Émulations</a>
                         <div class="nav-dropdown-menu">
@@ -34,7 +53,19 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#competences" data-i18n="nav.skills">Compétences</a>
+                        <div class="nav-dropdown-menu">
+                            <div class="nav-dropdown-category">
+                                <a href="#skills-backend"><span class="icon">⚙️</span> <span data-i18n="skills.backend">Backend</span></a>
+                                <a href="#skills-frontend"><span class="icon">🌐</span> <span data-i18n="skills.frontend">Frontend & Mobile</span></a>
+                                <a href="#skills-databases"><span class="icon">💾</span> <span data-i18n="skills.databases">Données</span></a>
+                                <a href="#skills-tools"><span class="icon">🛠️</span> <span data-i18n="skills.tools">Outils & DevOps</span></a>
+                                <a href="#skills-system"><span class="icon">🐧</span> <span data-i18n="skills.system">Système</span></a>
+                                <a href="#skills-ai"><span class="icon">🤖</span> <span data-i18n="skills.ai">Intelligence Artificielle</span></a>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
                 </ul>
                 <div class="lang-switcher">
@@ -333,7 +364,7 @@
             </div>
             
             <div class="skills-grid">
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" id="skills-backend">
                     <h3>
                         <span class="icon">⚙️</span>
                         <span data-i18n="skills.backend">Backend</span>
@@ -346,7 +377,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" id="skills-frontend">
                     <h3>
                         <span class="icon">🌐</span>
                         <span data-i18n="skills.frontend">Frontend & Mobile</span>
@@ -358,7 +389,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" id="skills-databases">
                     <h3>
                         <span class="icon">💾</span>
                         <span data-i18n="skills.databases">Données</span>
@@ -370,7 +401,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" id="skills-tools">
                     <h3>
                         <span class="icon">🛠️</span>
                         <span data-i18n="skills.tools">Outils & DevOps</span>
@@ -382,7 +413,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" id="skills-system">
                     <h3>
                         <span class="icon">🐧</span>
                         <span data-i18n="skills.system">Système</span>
@@ -393,7 +424,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category reveal">
+                <div class="skill-category reveal" id="skills-ai">
                     <h3>
                         <span class="icon">🤖</span>
                         <span data-i18n="skills.ai">Intelligence Artificielle</span>
