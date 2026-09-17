@@ -41,7 +41,15 @@ def step():
         show(data)
         return True
 
-    interact(data)
+    # Traite toutes les touches deja en attente (jusqu'a une limite de
+    # securite) avant de faire avancer le reste du jeu : sans ca, des touches
+    # pressees rapidement s'empilaient et n'etaient rejouees qu'une par une
+    # toutes les 200ms, donnant une impression de commandes en retard.
+    keys_processed = 0
+    while webio.has_key() and not data.get("quit") and keys_processed < 50:
+        interact(data)
+        keys_processed += 1
+
     show(data)
     live(data)
     return not data.get("quit")
