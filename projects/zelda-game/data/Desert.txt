@@ -1,0 +1,13 @@
+
+D '              '     '           "        '              '     '           "       D
+D   '      '      '        '    '        "    '      '      '        '    '        " D
+D   '  '       '        '      '    '         '  '       '        '      '    '      D
+D '              '     '           "        '              '     '           "       D
+D   '      '      '        '    '        "    '      '      '        '    '        " D
+D   '  '       '        '      '    '         '  '       '        '      '    '      D
+D '              '     '           "        '              '     '           "       D
+D   '      '      '        '    '        "    '      '      '        '    '        " D
+D   '  '       '        '      '    '         '  '       '        '      '    '      D
+D ' ' " ' " ' '  '" '  "' " ' "  ' " ' "' ' " ' " ' " ' '  ' " ' " ' " '  " ' "'  ' "D
+D"""Z"""ZZ"Z"""""Z""""""Z""""Z""ZZ"""ZZ"""Z"""Z"""ZZ"Z"""""Z""""""Z""""Z""ZZ"""ZZ""""D
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ

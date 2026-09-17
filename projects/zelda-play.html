@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jouer a Zelda II: The Adventure of Link directement dans le navigateur">
+    <title>Jouer a Zelda II - Portfolio Project</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+    <style>
+        .play-wrap {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+        #terminal-shell {
+            background: #000;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            overflow-x: auto;
+        }
+        #terminal {
+            width: max-content;
+        }
+        #status-line {
+            font-family: 'Space Grotesk', monospace;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            min-height: 1.4em;
+        }
+        .controls-hint {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .key-badge {
+            background: var(--primary-lighter);
+            color: var(--primary-dark);
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container play-wrap">
+        <a href="zelda.html" class="back-btn">← Retour a la page du projet</a>
+
+        <div class="hero project-hero">
+            <h1>🗡️ Zelda II — Joue directement ici</h1>
+            <p>
+                Le jeu tourne entierement dans ton navigateur grace a
+                <strong>Pyodide</strong> (Python compile en WebAssembly) : aucun serveur,
+                aucune installation, tout s'execute en local sur ta machine.
+            </p>
+        </div>
+
+        <div class="section">
+            <div id="status-line">Chargement de l'environnement Python (Pyodide)...</div>
+            <div id="terminal-shell">
+                <div id="terminal"></div>
+            </div>
+
+            <div class="controls-hint">
+                <span class="key-badge">Z Q S D — se deplacer</span>
+                <span class="key-badge">Espace — sauter en combat</span>
+                <span class="key-badge">M — attaquer</span>
+                <span class="key-badge">C — s'accroupir</span>
+                <span class="key-badge">Entree — parler aux PNJ</span>
+                <span class="key-badge">Esc — quitter</span>
+            </div>
+            <p style="margin-top:1rem; color: var(--text-light); font-size: 0.9rem;">
+                Clique dans le terminal avant de jouer pour qu'il capte tes touches.
+                Recharge la page pour recommencer une partie.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+    <script>
+        const GAME_BASE = "zelda-game/";
+        const PY_FILES = ["Background.py", "Player.py", "Monster.py", "PNJ.py", "webio.py", "webmain.py"];
+        const MAP_FILES = [
+            "CaveObjectI.txt", "CaveObjectV.txt", "CaveWithoutIssues.txt", "Desert.txt",
+            "End.txt", "Forest.txt", "Map.txt", "PalacePart1.txt", "PalacePart2NoBoss.txt",
+            "SpecialCave.txt", "StartScreen.txt", "Temple.txt", "Town1.txt", "Town2.txt", "plain.txt"
+        ];
+        const WORKDIR = "/zelda";
+
+        const statusLine = document.getElementById("status-line");
+        const term = new Terminal({
+            cols: 150,
+            rows: 38,
+            fontSize: 13,
+            cursorBlink: true,
+            convertEol: true,
+            theme: { background: "#000000" }
+        });
+        term.open(document.getElementById("terminal"));
+
+        // Redirige l'ecriture Python (sys.stdout) vers le terminal xterm.js.
+        window.zeldaTerminalWrite = function (text) {
+            term.write(text);
+        };
+
+        let mode = "loading"; // "loading" -> "name-entry" -> "playing" -> "ended"
+        let nameBuffer = "";
+        let webio = null;
+        let webmain = null;
+        let tickHandle = null;
+
+        async function boot() {
+            const pyodide = await loadPyodide();
+            pyodide.FS.mkdirTree(WORKDIR);
+
+            for (const name of PY_FILES) {
+                const res = await fetch(GAME_BASE + name);
+                const text = await res.text();
+                pyodide.FS.writeFile(WORKDIR + "/" + name, text);
+            }
+            for (const name of MAP_FILES) {
+                const res = await fetch(GAME_BASE + "data/" + name);
+                const text = await res.text();
+                pyodide.FS.writeFile(WORKDIR + "/" + name, text);
+            }
+
+            pyodide.runPython(`
+import sys, os
+sys.path.insert(0, "${WORKDIR}")
+os.chdir("${WORKDIR}")
+`);
+
+            webio = pyodide.pyimport("webio");
+            webmain = pyodide.pyimport("webmain");
+
+            statusLine.textContent = "Pret ! Entre ton nom dans le terminal puis appuie sur Entree.";
+            mode = "name-entry";
+            term.write("Bienvenue dans Zelda II: The Adventure of Link\r\n");
+            term.write("Entre le nom de ton personnage puis appuie sur Entree : ");
+            term.focus();
+        }
+
+        function startGame(name) {
+            mode = "playing";
+            term.write("\r\n");
+            webmain.start(name || "Link");
+            tickHandle = setInterval(() => {
+                const alive = webmain.step();
+                if (!alive) {
+                    clearInterval(tickHandle);
+                    mode = "ended";
+                    statusLine.textContent = "Partie terminee. Recharge la page pour recommencer.";
+                }
+            }, 200);
+        }
+
+        term.onData((data) => {
+            if (mode === "name-entry") {
+                for (const ch of data) {
+                    if (ch === "\r") {
+                        startGame(nameBuffer.trim());
+                        return;
+                    } else if (ch === "") { // backspace
+                        if (nameBuffer.length > 0) {
+                            nameBuffer = nameBuffer.slice(0, -1);
+                            term.write("\b \b");
+                        }
+                    } else if (ch >= " " && nameBuffer.length < 20) {
+                        nameBuffer += ch;
+                        term.write(ch);
+                    }
+                }
+            } else if (mode === "playing") {
+                for (const ch of data) {
+                    webio.push_key(ch);
+                }
+            }
+        });
+
+        boot().catch((err) => {
+            statusLine.textContent = "Erreur au chargement : " + err;
+            console.error(err);
+        });
+    </script>
+</body>
+</html>
