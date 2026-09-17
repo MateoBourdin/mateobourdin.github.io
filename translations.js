@@ -10,6 +10,8 @@ const translations = {
             experience: 'Expérience',
             education: 'Formation',
             projects: 'Projets',
+            emulations: '🕹️ Émulations',
+            emulationsCategoryTerminal: 'Jeux terminal',
             skills: 'Compétences',
             contact: 'Contact'
         },
@@ -245,6 +247,8 @@ const translations = {
             experience: 'Experience',
             education: 'Education',
             projects: 'Projects',
+            emulations: '🕹️ Emulations',
+            emulationsCategoryTerminal: 'Terminal games',
             skills: 'Skills',
             contact: 'Contact'
         },

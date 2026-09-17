@@ -28,12 +28,10 @@
         .emulation-banner-text .icon {
             font-size: 1.5rem;
         }
-        .emulation-banner strong {
+        .emulation-banner-text span:last-child {
             color: var(--text);
-        }
-        .emulation-banner span.detail {
-            color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 400;
         }
         .emulation-play-btn {
             display: inline-flex;
@@ -91,10 +89,10 @@
         <div class="emulation-banner">
             <div class="emulation-banner-text">
                 <span class="icon">🎮</span>
-                <span><strong data-i18n="banner.title">Jouable directement dans le navigateur</strong> — <span class="detail" data-i18n="banner.description">emulation Python/WebAssembly (Pyodide), sans installation</span></span>
+                <span data-i18n="banner.title">Jouable dans le navigateur — emulation Pyodide (Python/WebAssembly), sans installation</span>
             </div>
             <a href="zelda-play.html" class="emulation-play-btn" data-i18n="banner.button">
-                ▶️ Jouer
+                Jouer →
             </a>
         </div>
 
@@ -409,9 +407,8 @@ python3 main.py</code></pre>
                     github: "Voir sur GitHub"
                 },
                 banner: {
-                    title: "Jouable directement dans le navigateur",
-                    description: "emulation Python/WebAssembly (Pyodide), sans installation",
-                    button: "▶️ Jouer"
+                    title: "Jouable dans le navigateur — emulation Pyodide (Python/WebAssembly), sans installation",
+                    button: "Jouer →"
                 },
                 about: {
                     title: "📖 À propos du projet",
@@ -541,9 +538,8 @@ python3 main.py</code></pre>
                     github: "View on GitHub"
                 },
                 banner: {
-                    title: "Playable directly in the browser",
-                    description: "Python/WebAssembly emulation (Pyodide), no install required",
-                    button: "▶️ Play"
+                    title: "Playable in the browser — Pyodide emulation (Python/WebAssembly), no install required",
+                    button: "Play →"
                 },
                 about: {
                     title: "📖 About the Project",
