@@ -9,9 +9,49 @@
     --text-light: #64748b;
     --dark: #0f172a;
     --light: #f8fafc;
+    --surface: #ffffff;
+    --header-bg: rgba(248, 250, 252, 0.8);
+    --header-bg-scrolled: rgba(248, 250, 252, 0.95);
     --accent-green: #10b981;
     --accent-purple: #8b5cf6;
     --accent-orange: #f59e0b;
+}
+
+/* Dark theme: applied automatically from OS preference, unless the visitor
+   has explicitly picked a theme (data-theme on <html>, saved in localStorage
+   by theme.js), in which case that explicit choice always wins. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary: #60a5fa;
+        --primary-dark: #3b82f6;
+        --primary-light: #93c5fd;
+        --primary-lighter: #1e3a5f;
+        --text: #e2e8f0;
+        --text-light: #94a3b8;
+        --light: #0f172a;
+        --surface: #1e293b;
+        --header-bg: rgba(15, 23, 42, 0.8);
+        --header-bg-scrolled: rgba(15, 23, 42, 0.95);
+        --accent-green: #34d399;
+        --accent-purple: #a78bfa;
+        --accent-orange: #fbbf24;
+    }
+}
+
+:root[data-theme="dark"] {
+    --primary: #60a5fa;
+    --primary-dark: #3b82f6;
+    --primary-light: #93c5fd;
+    --primary-lighter: #1e3a5f;
+    --text: #e2e8f0;
+    --text-light: #94a3b8;
+    --light: #0f172a;
+    --surface: #1e293b;
+    --header-bg: rgba(15, 23, 42, 0.8);
+    --header-bg-scrolled: rgba(15, 23, 42, 0.95);
+    --accent-green: #34d399;
+    --accent-purple: #a78bfa;
+    --accent-orange: #fbbf24;
 }
 
 * {
@@ -31,6 +71,7 @@ body {
     line-height: 1.7;
     font-size: 0.95rem;
     overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4 {
@@ -52,14 +93,14 @@ header {
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(248, 250, 252, 0.8);
+    background: var(--header-bg);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 header.scrolled {
-    background: rgba(248, 250, 252, 0.95);
+    background: var(--header-bg-scrolled);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -123,7 +164,7 @@ nav {
     top: 100%;
     left: 50%;
     transform: translate(-50%, 8px);
-    background: white;
+    background: var(--surface);
     border-radius: 0.75rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     padding: 1rem;
@@ -176,7 +217,7 @@ nav {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    background: white;
+    background: var(--surface);
     padding: 0.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -210,7 +251,7 @@ nav {
     right: 2rem;
     display: flex;
     gap: 0.5rem;
-    background: white;
+    background: var(--surface);
     padding: 0.5rem;
     border-radius: 0.75rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -273,6 +314,32 @@ nav {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* Theme toggle (injected by theme.js on every page) */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.08);
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -301,7 +368,7 @@ nav {
 }
 
 .btn-secondary {
-    background: white;
+    background: var(--surface);
     color: var(--primary);
     border: 2px solid var(--primary-lighter);
 }
@@ -422,7 +489,7 @@ nav {
 /* Hero Section (Pages de projets) */
 .hero.project-hero {
     min-height: auto;
-    background: white;
+    background: var(--surface);
     border-radius: 1.5rem;
     padding: 4rem 2.5rem;
     margin-bottom: 2rem;
@@ -497,7 +564,7 @@ section {
 }
 
 .section {
-    background: white;
+    background: var(--surface);
     border-radius: 1.5rem;
     padding: 2.75rem;
     margin-bottom: 2.5rem;
@@ -679,7 +746,7 @@ section {
 }
 
 .skill-category {
-    background: white;
+    background: var(--surface);
     padding: 2.25rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -732,7 +799,7 @@ section {
 }
 
 .project-card {
-    background: white;
+    background: var(--surface);
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -860,7 +927,7 @@ section {
 }
 
 .stat-card {
-    background: white;
+    background: var(--surface);
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
@@ -1040,7 +1107,7 @@ section {
 
 /* Contact Section (Page d'accueil) */
 .contact-section {
-    background: white;
+    background: var(--surface);
     padding: 4rem 3rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -1085,6 +1152,42 @@ section {
     border-color: var(--primary);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* GitHub activity stats (theme-aware: swapped via data-theme, see theme.js) */
+.github-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.github-stats-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+}
+
+.github-stats-img.dark {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .github-stats-img.light {
+        display: none;
+    }
+    :root:not([data-theme="light"]) .github-stats-img.dark {
+        display: block;
+    }
+}
+
+:root[data-theme="dark"] .github-stats-img.light {
+    display: none;
+}
+
+:root[data-theme="dark"] .github-stats-img.dark {
+    display: block;
 }
 
 @media (max-width: 768px) {
@@ -1170,7 +1273,7 @@ footer p, .footer p {
 }
 
 .contact-form-section {
-    background: white;
+    background: var(--surface);
     padding: 3rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -1221,7 +1324,7 @@ footer p, .footer p {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    background: white;
+    background: var(--surface);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
@@ -1285,7 +1388,7 @@ footer p, .footer p {
 }
 
 .contact-card {
-    background: white;
+    background: var(--surface);
     padding: 2.25rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -1386,7 +1489,7 @@ footer p, .footer p {
 }
 
 .map-section {
-    background: white;
+    background: var(--surface);
     padding: 3rem 2rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -1472,7 +1575,7 @@ footer p, .footer p {
 }
 
 .cv-modal {
-    background: white;
+    background: var(--surface);
     border-radius: 1.5rem;
     padding: 3rem;
     max-width: 600px;

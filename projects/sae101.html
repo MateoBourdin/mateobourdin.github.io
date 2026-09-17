@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Survival Island - SAE101 - Island Defense Game in C#">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/projects/sae101.html">
+    <meta property="og:title" content="Survival Island - SAE101 - Portfolio Project">
+    <meta property="og:description" content="Survival Island - SAE101 - Island Defense Game in C#">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Survival Island - SAE101 - Portfolio Project">
+    <meta name="twitter:description" content="Survival Island - SAE101 - Island Defense Game in C#">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Survival Island - SAE101 - Portfolio Project</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -107,7 +125,7 @@
             </div>
 
             <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte Pédagogique</h4>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.context.desc">
+            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.contextInfo.desc">
                 Ce projet a été réalisé dans le cadre de la <strong>SAE101 - Implémentation d'un besoin client</strong> au premier semestre
                 du BUT Informatique à l'IUT d'Annecy. Il s'agit du premier projet de développement en équipe, permettant de mettre en
                 pratique les compétences en programmation orientée objet, en gestion de projet et en travail collaboratif avec Git.
@@ -279,7 +297,7 @@
                 tech: {
                     title: "🛠️ Technologies Utilisées",
                     context: "Contexte Pédagogique",
-                    context: {
+                    contextInfo: {
                         desc: "Ce projet a été réalisé dans le cadre de la <strong>SAE101 - Implémentation d'un besoin client</strong> au premier semestre du BUT Informatique à l'IUT d'Annecy. Il s'agit du premier projet de développement en équipe, permettant de mettre en pratique les compétences en programmation orientée objet, en gestion de projet et en travail collaboratif avec Git."
                     }
                 },
@@ -398,7 +416,7 @@
                 tech: {
                     title: "🛠️ Technologies Used",
                     context: "Educational Context",
-                    context: {
+                    contextInfo: {
                         desc: "This project was completed as part of <strong>SAE101 - Client Need Implementation</strong> in the first semester of the Computer Science BUT at IUT Annecy. It is the first team development project, allowing to put into practice skills in object-oriented programming, project management and collaborative work with Git."
                     }
                 },
@@ -491,5 +509,6 @@
             }
         });
     </script>
+    <script src="../theme.js"></script>
 </body>
 </html>

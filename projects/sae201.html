@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SAE201 - Application C# Desktop - Programmation Orientée Objet">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/projects/sae201.html">
+    <meta property="og:title" content="SAE201 - Application C# - Portfolio Project">
+    <meta property="og:description" content="SAE201 - Application C# Desktop - Programmation Orientée Objet">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SAE201 - Application C# - Portfolio Project">
+    <meta name="twitter:description" content="SAE201 - Application C# Desktop - Programmation Orientée Objet">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>SAE201 - Application C# - Portfolio Project</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -110,7 +128,7 @@
             </div>
 
             <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte Pédagogique</h4>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.context.desc">
+            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.contextInfo.desc">
                 La <strong>SAE201 - Développement d'une application</strong> est un projet majeur du second semestre du BUT Informatique.
                 Il permet de consolider les compétences en développement logiciel avec un focus sur la programmation orientée objet,
                 la conception d'architecture et l'implémentation de fonctionnalités complexes dans un environnement de développement professionnel.
@@ -257,7 +275,7 @@
                 tech: {
                     title: "🛠️ Technologies Utilisées",
                     context: "Contexte Pédagogique",
-                    context: {
+                    contextInfo: {
                         desc: "La <strong>SAE201 - Développement d'une application</strong> est un projet majeur du second semestre du BUT Informatique. Il permet de consolider les compétences en développement logiciel avec un focus sur la programmation orientée objet, la conception d'architecture et l'implémentation de fonctionnalités complexes dans un environnement de développement professionnel."
                     }
                 },
@@ -375,7 +393,7 @@
                 tech: {
                     title: "🛠️ Technologies Used",
                     context: "Educational Context",
-                    context: {
+                    contextInfo: {
                         desc: "<strong>SAE201 - Application Development</strong> is a major project of the second semester of the Computer Science BUT. It allows to consolidate skills in software development with a focus on object-oriented programming, architecture design and implementation of complex features in a professional development environment."
                     }
                 },
@@ -486,5 +504,6 @@
             }
         });
     </script>
+    <script src="../theme.js"></script>
 </body>
 </html>

@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Zelda II: The Adventure of Link - A Python Terminal-Based RPG Adventure">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/projects/zelda.html">
+    <meta property="og:title" content="Zelda II: The Adventure of Link - Portfolio Project">
+    <meta property="og:description" content="Zelda II: The Adventure of Link - A Python Terminal-Based RPG Adventure">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zelda II: The Adventure of Link - Portfolio Project">
+    <meta name="twitter:description" content="Zelda II: The Adventure of Link - A Python Terminal-Based RPG Adventure">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Zelda II: The Adventure of Link - Portfolio Project</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
@@ -307,10 +325,10 @@
 
             <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.prereq">Prérequis</h4>
             <ul style="margin-left: 1.5rem; line-height: 1.8; color: var(--text-light);">
-                <li data-i18n="howto.prereq.python">Python 3.x installé</li>
-                <li data-i18n="howto.prereq.system">Système Linux/Unix/MacOS (ou WSL sur Windows)</li>
-                <li data-i18n="howto.prereq.terminal">Terminal supportant les séquences ANSI</li>
-                <li data-i18n="howto.prereq.fullscreen">Terminal en plein écran recommandé</li>
+                <li data-i18n="howto.prereqItems.python">Python 3.x installé</li>
+                <li data-i18n="howto.prereqItems.system">Système Linux/Unix/MacOS (ou WSL sur Windows)</li>
+                <li data-i18n="howto.prereqItems.terminal">Terminal supportant les séquences ANSI</li>
+                <li data-i18n="howto.prereqItems.fullscreen">Terminal en plein écran recommandé</li>
             </ul>
 
             <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.install">Installation et Lancement</h4>
@@ -488,7 +506,7 @@ python3 main.py</code></pre>
                     prereq: "Prérequis",
                     install: "Installation et Lancement",
                     windows: "Pour Windows (WSL)",
-                    prereq: {
+                    prereqItems: {
                         python: "Python 3.x installé",
                         system: "Système Linux/Unix/MacOS (ou WSL sur Windows)",
                         terminal: "Terminal supportant les séquences ANSI",
@@ -619,7 +637,7 @@ python3 main.py</code></pre>
                     prereq: "Prerequisites",
                     install: "Installation and Launch",
                     windows: "For Windows (WSL)",
-                    prereq: {
+                    prereqItems: {
                         python: "Python 3.x installed",
                         system: "Linux/Unix/MacOS system (or WSL on Windows)",
                         terminal: "Terminal supporting ANSI sequences",
@@ -698,5 +716,6 @@ python3 main.py</code></pre>
             }
         });
     </script>
+    <script src="../theme.js"></script>
 </body>
 </html>

@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clone Twitter/X - Projet de groupe R408A1 - Laravel 13, PostgreSQL, Redis, WebSockets">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/projects/twitterclone.html">
+    <meta property="og:title" content="Clone Twitter/X - Portfolio Project">
+    <meta property="og:description" content="Clone Twitter/X - Projet de groupe R408A1 - Laravel 13, PostgreSQL, Redis, WebSockets">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clone Twitter/X - Portfolio Project">
+    <meta name="twitter:description" content="Clone Twitter/X - Projet de groupe R408A1 - Laravel 13, PostgreSQL, Redis, WebSockets">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Clone Twitter/X - Portfolio Project</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -232,5 +250,6 @@
             changeLanguage(currentLang === 'en' ? 'en' : 'fr');
         });
     </script>
+    <script src="../theme.js"></script>
 </body>
 </html>

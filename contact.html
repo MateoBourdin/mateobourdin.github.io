@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Mateo | Portfolio</title>
     <meta name="description" content="Contactez Mateo pour un stage de 16 semaines dès le 19 janvier 2027 ou une collaboration. IUT Annecy, France.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/contact.html">
+    <meta property="og:title" content="Contact - Mateo | Portfolio">
+    <meta property="og:description" content="Contactez Mateo pour un stage de 16 semaines dès le 19 janvier 2027 ou une collaboration. IUT Annecy, France.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact - Mateo | Portfolio">
+    <meta name="twitter:description" content="Contactez Mateo pour un stage de 16 semaines dès le 19 janvier 2027 ou une collaboration. IUT Annecy, France.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -380,5 +398,6 @@
             }
         });
     </script>
+    <script src="theme.js"></script>
 </body>
 </html>
