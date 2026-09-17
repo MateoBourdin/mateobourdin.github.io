@@ -73,7 +73,6 @@
                 <span class="key-badge">Esc — quitter</span>
             </div>
             <p style="margin-top:1rem; color: var(--text-light); font-size: 0.9rem;">
-                Clique dans le terminal avant de jouer pour qu'il capte tes touches.
                 Recharge la page pour recommencer une partie.
             </p>
         </div>
@@ -137,11 +136,10 @@ os.chdir("${WORKDIR}")
             webio = pyodide.pyimport("webio");
             webmain = pyodide.pyimport("webmain");
 
-            statusLine.textContent = "Pret ! Entre ton nom dans le terminal puis appuie sur Entree.";
+            statusLine.textContent = "Pret ! Entre ton nom puis appuie sur Entree.";
             mode = "name-entry";
             term.write("Bienvenue dans Zelda II: The Adventure of Link\r\n");
             term.write("Entre le nom de ton personnage puis appuie sur Entree : ");
-            term.focus();
         }
 
         function startGame(name) {
@@ -158,26 +156,38 @@ os.chdir("${WORKDIR}")
             }, 200);
         }
 
-        term.onData((data) => {
+        // Capture au niveau de la fenetre plutot que via xterm.onData : le jeu
+        // reagit aux touches meme si le focus n'est pas (ou plus) sur le
+        // terminal. xterm exige de cliquer dedans pour capter le clavier, ce
+        // qui faisait perdre les touches des qu'on cliquait ailleurs sur la
+        // page (aucune touche n'atteignait alors le jeu).
+        window.addEventListener("keydown", (e) => {
+            if (mode !== "name-entry" && mode !== "playing") return;
+            if (e.ctrlKey || e.metaKey || e.altKey) return; // laisse passer les raccourcis navigateur
+
+            let ch = null;
+            if (e.key === "Enter") ch = "\r";
+            else if (e.key === "Escape") ch = "";
+            else if (e.key === "Backspace") ch = "";
+            else if (e.key.length === 1) ch = e.key;
+
+            if (ch === null) return; // touche non geree (Tab, fleches, F-keys...) : comportement navigateur normal
+            e.preventDefault();
+
             if (mode === "name-entry") {
-                for (const ch of data) {
-                    if (ch === "\r") {
-                        startGame(nameBuffer.trim());
-                        return;
-                    } else if (ch === "") { // backspace
-                        if (nameBuffer.length > 0) {
-                            nameBuffer = nameBuffer.slice(0, -1);
-                            term.write("\b \b");
-                        }
-                    } else if (ch >= " " && nameBuffer.length < 20) {
-                        nameBuffer += ch;
-                        term.write(ch);
+                if (ch === "\r") {
+                    startGame(nameBuffer.trim());
+                } else if (ch === "") {
+                    if (nameBuffer.length > 0) {
+                        nameBuffer = nameBuffer.slice(0, -1);
+                        term.write("\b \b");
                     }
+                } else if (ch >= " " && nameBuffer.length < 20) {
+                    nameBuffer += ch;
+                    term.write(ch);
                 }
             } else if (mode === "playing") {
-                for (const ch of data) {
-                    webio.push_key(ch);
-                }
+                webio.push_key(ch);
             }
         });
 
