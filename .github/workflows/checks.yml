@@ -1,0 +1,44 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  i18n-and-html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check i18n key coverage (every language, every page)
+        run: node scripts/check-i18n.js
+
+      - name: Check HTML validity
+        run: python3 scripts/check-html.py
+
+      - name: Check internal links and #anchors
+        run: python3 scripts/check-links.py
+
+  external-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check external links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-mail
+            --max-retries 3
+            --retry-wait-time 5
+            --timeout 20
+            --accept 100..=103,200..=299,429
+            './**/*.html'
+          fail: true
