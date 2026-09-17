@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Game Designer - MagicalSky - Expérience de bénévolat en informatique sur serveur Minecraft">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/projects/magicalsky.html">
+    <meta property="og:title" content="Game Designer - MagicalSky - Portfolio">
+    <meta property="og:description" content="Game Designer - MagicalSky - Expérience de bénévolat en informatique sur serveur Minecraft">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game Designer - MagicalSky - Portfolio">
+    <meta name="twitter:description" content="Game Designer - MagicalSky - Expérience de bénévolat en informatique sur serveur Minecraft">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Game Designer - MagicalSky - Portfolio</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -402,5 +420,6 @@
             }
         });
     </script>
+    <script src="../theme.js"></script>
 </body>
 </html>

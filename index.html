@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateo - Étudiant Développeur | Portfolio</title>
     <meta name="description" content="Mateo, étudiant en 3ème année de BUT Informatique (parcours RA) à l'IUT Annecy. Développeur passionné recherchant un stage de 16 semaines à partir du 19 janvier 2027.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/">
+    <meta property="og:title" content="Mateo - Étudiant Développeur | Portfolio">
+    <meta property="og:description" content="Mateo, étudiant en 3ème année de BUT Informatique (parcours RA) à l'IUT Annecy. Développeur passionné recherchant un stage de 16 semaines à partir du 19 janvier 2027.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mateo - Étudiant Développeur | Portfolio">
+    <meta name="twitter:description" content="Mateo, étudiant en 3ème année de BUT Informatique (parcours RA) à l'IUT Annecy. Développeur passionné recherchant un stage de 16 semaines à partir du 19 janvier 2027.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -690,6 +708,13 @@
                         💻 GitHub
                     </a>
                 </div>
+
+                <a href="https://github.com/MateoBourdin" target="_blank" class="github-stats" aria-label="Voir le profil GitHub de Mateo Bourdin">
+                    <img class="github-stats-img light" src="https://github-readme-stats.vercel.app/api?username=MateoBourdin&show_icons=true&hide_border=true&bg_color=ffffff&title_color=2563eb&icon_color=8b5cf6&text_color=1e293b" alt="Statistiques GitHub de Mateo Bourdin" loading="lazy">
+                    <img class="github-stats-img dark" src="https://github-readme-stats.vercel.app/api?username=MateoBourdin&show_icons=true&hide_border=true&bg_color=1e293b&title_color=60a5fa&icon_color=a78bfa&text_color=e2e8f0" alt="Statistiques GitHub de Mateo Bourdin" loading="lazy">
+                    <img class="github-stats-img light" src="https://github-readme-streak-stats.herokuapp.com/?user=MateoBourdin&hide_border=true&background=ffffff&ring=2563eb&fire=8b5cf6&currStreakLabel=2563eb&sideLabels=1e293b&currStreakNum=1e293b&sideNums=1e293b&dates=64748b" alt="Serie de contributions GitHub de Mateo Bourdin" loading="lazy">
+                    <img class="github-stats-img dark" src="https://github-readme-streak-stats.herokuapp.com/?user=MateoBourdin&hide_border=true&background=1e293b&ring=60a5fa&fire=a78bfa&currStreakLabel=60a5fa&sideLabels=e2e8f0&currStreakNum=e2e8f0&sideNums=e2e8f0&dates=94a3b8" alt="Serie de contributions GitHub de Mateo Bourdin" loading="lazy">
+                </a>
             </div>
         </div>
     </section>
@@ -740,5 +765,6 @@
 
     <script src="translations.js"></script>
     <script src="script.js"></script>
+    <script src="theme.js"></script>
 </body>
 </html>

@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jouer a Zelda II: The Adventure of Link directement dans le navigateur">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/projects/zelda-play.html">
+    <meta property="og:title" content="Jouer a Zelda II - Portfolio Project">
+    <meta property="og:description" content="Jouer a Zelda II: The Adventure of Link directement dans le navigateur">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jouer a Zelda II - Portfolio Project">
+    <meta name="twitter:description" content="Jouer a Zelda II: The Adventure of Link directement dans le navigateur">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Jouer a Zelda II - Portfolio Project</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
@@ -26,8 +44,22 @@
         #status-line {
             font-family: 'Space Grotesk', monospace;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             min-height: 1.4em;
+        }
+        #loading-progress {
+            height: 4px;
+            background: var(--primary-lighter);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        #loading-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--primary);
+            border-radius: 999px;
+            transition: width 0.2s ease;
         }
         .controls-hint {
             display: flex;
@@ -60,6 +92,7 @@
 
         <div class="section">
             <div id="status-line">Chargement de l'environnement Python (Pyodide)...</div>
+            <div id="loading-progress"><div id="loading-bar"></div></div>
             <div id="terminal-shell">
                 <div id="terminal"></div>
             </div>
@@ -91,6 +124,8 @@
         const WORKDIR = "/zelda";
 
         const statusLine = document.getElementById("status-line");
+        const loadingProgress = document.getElementById("loading-progress");
+        const loadingBar = document.getElementById("loading-bar");
         const term = new Terminal({
             cols: 150,
             rows: 38,
@@ -113,19 +148,28 @@
         let tickHandle = null;
 
         async function boot() {
+            statusLine.textContent = "Chargement de Pyodide (WebAssembly)...";
+            loadingBar.style.width = "10%";
             const pyodide = await loadPyodide();
+            loadingBar.style.width = "35%";
             pyodide.FS.mkdirTree(WORKDIR);
 
-            for (const name of PY_FILES) {
-                const res = await fetch(GAME_BASE + name);
+            const filesToFetch = [
+                ...PY_FILES.map((name) => ({ name, dir: "" })),
+                ...MAP_FILES.map((name) => ({ name, dir: "data/" }))
+            ];
+            let fetched = 0;
+            for (const f of filesToFetch) {
+                const res = await fetch(GAME_BASE + f.dir + f.name);
                 const text = await res.text();
-                pyodide.FS.writeFile(WORKDIR + "/" + name, text);
+                pyodide.FS.writeFile(WORKDIR + "/" + f.name, text);
+                fetched++;
+                statusLine.textContent = `Récupération des fichiers du jeu... (${fetched}/${filesToFetch.length})`;
+                loadingBar.style.width = (35 + (fetched / filesToFetch.length) * 55) + "%";
             }
-            for (const name of MAP_FILES) {
-                const res = await fetch(GAME_BASE + "data/" + name);
-                const text = await res.text();
-                pyodide.FS.writeFile(WORKDIR + "/" + name, text);
-            }
+
+            statusLine.textContent = "Initialisation du jeu...";
+            loadingBar.style.width = "95%";
 
             pyodide.runPython(`
 import sys, os
@@ -136,6 +180,8 @@ os.chdir("${WORKDIR}")
             webio = pyodide.pyimport("webio");
             webmain = pyodide.pyimport("webmain");
 
+            loadingBar.style.width = "100%";
+            loadingProgress.style.display = "none";
             statusLine.textContent = "Pret ! Entre ton nom puis appuie sur Entree.";
             mode = "name-entry";
             term.write("Bienvenue dans Zelda II: The Adventure of Link\r\n");
@@ -198,8 +244,10 @@ os.chdir("${WORKDIR}")
 
         boot().catch((err) => {
             statusLine.textContent = "Erreur au chargement : " + err;
+            loadingProgress.style.display = "none";
             console.error(err);
         });
     </script>
+    <script src="../theme.js"></script>
 </body>
 </html>
