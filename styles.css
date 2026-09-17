@@ -530,6 +530,54 @@ section {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* Emulations list */
+.emulations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.emulation-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+}
+
+.emulation-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.emulation-item-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.emulation-item-content {
+    flex: 1;
+    min-width: 200px;
+}
+
+.emulation-item-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+}
+
+.emulation-item-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
 .feature-card h4 {
     color: var(--primary);
     margin-bottom: 0.75rem;
