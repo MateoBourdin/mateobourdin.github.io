@@ -1,0 +1,13 @@
+
+R '              '     '           "         '              '     '           "        R
+R   '      '      '        '    '        "     '      '      '        '    '        "  R
+R   '  '       '        '      '    '          '  '       '        '      '    '       R
+R '              '     '           "         '              '     '           "        R
+R   '      '      '        '    '        "     '      '      '        '    '        "  R
+R   '  '       '        '      '    '          '  '       '        '      '    '       R
+R '              '     '           "         '              '     '           "        R
+R   '      '      '        '    '        "     '      '      '        '    '        "  R
+R   ////\\\    ///\\   ////\\\\   ///\\        ////\\\    ///\\   ////\\\\   ///\\     R
+R ' MMMMM=M    MMMMM   MMMMM=MM   MMMMM      ' MMMMM=M    MMMMM   MMMMM=MM   MMMMM     R
+R"""MMMMM=M""""MMMMM"""MMMMM=MM"""MMMMM""""""""MMMMM=M""""MMMMM"""MMMMM=MM"""MMMMM"""""R
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
