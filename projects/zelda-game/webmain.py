@@ -41,6 +41,21 @@ def step():
         show(data)
         return True
 
+    # Le saut en diagonale (Espace) depend de l'etat laisse par une touche de
+    # direction toute recente (last_direction/mvt_cd, voir interact()). Quand
+    # les deux touches sont pressees quasi simultanement, l'ordre des
+    # evenements clavier du navigateur n'est pas garanti : si Espace arrivait
+    # avant la touche de direction dans le meme cycle, le saut retombait a
+    # tort sur un saut tout droit. On trie donc la file en attente pour que
+    # les touches de direction passent toujours avant Espace au sein d'un
+    # meme cycle (tri stable : l'ordre relatif est conserve sinon).
+    pending = []
+    while webio.has_key():
+        pending.append(webio.read_key())
+    pending.sort(key=lambda k: k == ' ')
+    for k in pending:
+        webio.push_key(k)
+
     # Traite toutes les touches deja en attente (jusqu'a une limite de
     # securite) avant de faire avancer le reste du jeu : sans ca, des touches
     # pressees rapidement s'empilaient et n'etaient rejouees qu'une par une
