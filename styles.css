@@ -1896,3 +1896,42 @@ footer p, .footer p {
         font-size: 0.5em;
     }
 }
+
+/* BUT year by year */
+.but-years-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: stretch;
+}
+
+.but-year-block {
+    margin-top: 1.25rem;
+}
+
+.but-year-block strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.but-year-block ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.but-year-block li::marker {
+    color: var(--primary);
+}
+
+.but-year-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.but-year-link:hover {
+    text-decoration: underline;
+}
