@@ -101,7 +101,7 @@ const translations = {
             description: 'Mon cursus et mes diplômes',
             current: 'En cours',
             but: {
-                title: 'BUT Informatique - 3ème année (parcours RA)',
+                title: 'Bachelor (BUT) Informatique - 3e et dernière année (parcours RA)',
                 description: 'Formation en informatique à l\'IUT d\'Annecy, parcours Réalisation d\'Applications : développement d\'applications, architecture logicielle et gestion de bases de données.',
                 school: 'École :'
             },
@@ -133,7 +133,26 @@ const translations = {
             tools: 'Outils & DevOps',
             system: 'Système',
             ai: 'Intelligence Artificielle',
-            aiAssisted: 'Dév. assisté par IA'
+            aiAssisted: 'Dév. assisté par IA',
+            level: { advanced: 'confirmé', intermediate: 'intermédiaire', basic: 'notions' }
+        },
+        tags: {
+            jan2027: '19 janvier 2027',
+            sept2024: 'Sept. 2024 - 2027',
+            summer2024: 'Été 2024',
+            summer2023: 'Été 2023',
+            dec2024jan2025: 'Déc. 2024 - Janv. 2025',
+            dec2024: 'Déc. 2024',
+            spring2024: 'Printemps 2024',
+            spring2025: 'Printemps 2025',
+            academic: 'Académique',
+            seasonal: 'Emploi saisonnier',
+            butProject2: 'Projet BUT2',
+            internshipBut2: 'Stage BUT2',
+            team2: 'Équipe de 2',
+            team3: 'Équipe de 3',
+            but3team4: 'BUT3 - Équipe de 4',
+            r408team4: 'R408A1 - Équipe de 4'
         },
         projects: {
             tag: '🚀 Mes réalisations',
@@ -341,8 +360,8 @@ const translations = {
             description: 'My studies and degrees',
             current: 'In progress',
             but: {
-                title: 'B.U.T. Computer Science - 3rd Year (Application Development track)',
-                description: 'Computer Science degree at IUT Annecy, Application Development track: application development, software architecture and database management.',
+                title: 'Bachelor\'s degree in Computer Science (BUT) - 3rd and final year (Application Development track)',
+                description: 'French national Bachelor\'s degree (3 years, 180 ECTS) at IUT Annecy, Application Development track: application development, software architecture and database management.',
                 school: 'School:'
             },
             enib: {
@@ -353,7 +372,7 @@ const translations = {
             bac: {
                 title: 'French Baccalaureate with honors',
                 description: 'General Baccalaureate with specializations in Mathematics and NSI (Computer Science).',
-                mention: 'With Merit',
+                mention: 'With Distinction',
                 school: 'High School:'
             },
             science: {
@@ -373,7 +392,26 @@ const translations = {
             tools: 'Tools & DevOps',
             system: 'System',
             ai: 'Artificial Intelligence',
-            aiAssisted: 'AI-assisted development'
+            aiAssisted: 'AI-assisted development',
+            level: { advanced: 'advanced', intermediate: 'intermediate', basic: 'basic' }
+        },
+        tags: {
+            jan2027: '19 January 2027',
+            sept2024: 'Sept. 2024 - 2027',
+            summer2024: 'Summer 2024',
+            summer2023: 'Summer 2023',
+            dec2024jan2025: 'Dec. 2024 - Jan. 2025',
+            dec2024: 'Dec. 2024',
+            spring2024: 'Spring 2024',
+            spring2025: 'Spring 2025',
+            academic: 'Academic',
+            seasonal: 'Seasonal job',
+            butProject2: '2nd-year project',
+            internshipBut2: '2nd-year internship',
+            team2: 'Team of 2',
+            team3: 'Team of 3',
+            but3team4: '3rd year - Team of 4',
+            r408team4: 'R408A1 - Team of 4'
         },
         projects: {
             tag: '🚀 My achievements',

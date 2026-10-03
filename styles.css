@@ -811,6 +811,17 @@ section {
     transition: all 0.3s ease;
 }
 
+.skill-level {
+    font-weight: 400;
+    font-size: 0.75rem;
+    opacity: 0.75;
+    margin-left: 0.25rem;
+}
+
+.skill-level::before {
+    content: '· ';
+}
+
 .skill-tag:hover {
     background: var(--primary);
     color: white;
