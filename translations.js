@@ -134,7 +134,7 @@ const translations = {
             system: 'Système',
             ai: 'Intelligence Artificielle',
             aiAssisted: 'Dév. assisté par IA',
-            level: { advanced: 'confirmé', intermediate: 'intermédiaire', basic: 'notions' }
+            level: { advanced: 'confirmé', intermediate: 'intermédiaire', basic: 'notions', learning: 'en cours' }
         },
         tags: {
             jan2027: '19 janvier 2027',
@@ -393,7 +393,7 @@ const translations = {
             system: 'System',
             ai: 'Artificial Intelligence',
             aiAssisted: 'AI-assisted development',
-            level: { advanced: 'advanced', intermediate: 'intermediate', basic: 'basic' }
+            level: { advanced: 'advanced', intermediate: 'intermediate', basic: 'basic', learning: 'in progress' }
         },
         tags: {
             jan2027: '19 January 2027',
