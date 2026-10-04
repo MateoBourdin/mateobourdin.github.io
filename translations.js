@@ -1,6 +1,7 @@
 const translations = {
     fr: {
         shots: {
+            lappi: "Le carnet Discovery Diary dans The Inspector (Unity)",
             cube: "Sélecteur de magasin CUBE Bikes sur carte Leaflet (données de démonstration)",
             twitter: "Modèle conceptuel de données du clone Twitter/X",
             sae201: "Diagramme des classes métier de l’application Cave à vin",
@@ -319,6 +320,7 @@ const translations = {
     },
     en: {
         shots: {
+            lappi: "The Discovery Diary notebook in The Inspector (Unity)",
             cube: "CUBE Bikes store selector on a Leaflet map (demo data)",
             twitter: "Conceptual data model of the Twitter/X clone",
             sae201: "Domain class diagram of the wine cellar application",
