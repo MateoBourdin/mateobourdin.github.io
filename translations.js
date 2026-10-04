@@ -207,7 +207,7 @@ const translations = {
             internshipBut2: 'Stage BUT2',
             team2: 'Équipe de 2',
             team3: 'Équipe de 3',
-            but2team4: 'BUT2 - Équipe de 4',
+            but2team5: 'BUT2 - Équipe de 5',
             r408team4: 'R408A1 - Équipe de 4'
         },
         projects: {
@@ -246,6 +246,7 @@ const translations = {
                 description: 'Plateforme e-commerce full-stack pour une boutique de vélos : backend ASP.NET Core 8 / Entity Framework Core / PostgreSQL avec authentification JWT + Google OAuth, 2FA par TOTP, paiement Stripe Checkout et pattern Repository/Service ; frontend Vue 3 / Pinia / Tailwind CSS avec recherche à facettes, sélecteur de magasin sur carte Leaflet et disponibilité produit par taille et par magasin. Projet récurrent ayant évolué de la SAE 3.01 (Laravel/PostgreSQL) à la SAE 4.01 (ASP.NET Core/Vue 3).',
                 context: 'Contexte :',
                 contextText: 'Projet fil rouge sur plusieurs semestres - BUT Informatique',
+                disclaimer: "Projet académique fictif : ce n'est pas le site officiel de la marque CUBE et il n'y a aucun lien avec elle.",
                 tech: 'Technologies :'
             },
             twitterclone: {
@@ -514,7 +515,7 @@ const translations = {
             internshipBut2: '2nd-year internship',
             team2: 'Team of 2',
             team3: 'Team of 3',
-            but2team4: '2nd year - Team of 4',
+            but2team5: '2nd year - Team of 5',
             r408team4: 'R408A1 - Team of 4'
         },
         projects: {
@@ -553,6 +554,7 @@ const translations = {
                 description: 'Full-stack e-commerce platform for a bike shop: ASP.NET Core 8 / Entity Framework Core / PostgreSQL backend with JWT + Google OAuth authentication, TOTP 2FA, Stripe Checkout payment and Repository/Service pattern; Vue 3 / Pinia / Tailwind CSS frontend with faceted search, a Leaflet map store selector and per-size/per-store product availability. A recurring project that evolved from SAE 3.01 (Laravel/PostgreSQL) to SAE 4.01 (ASP.NET Core/Vue 3).',
                 context: 'Context:',
                 contextText: 'Multi-semester flagship project - Computer Science BUT',
+                disclaimer: "Fictional academic project: this is not the official CUBE website and it has no connection with the brand.",
                 tech: 'Technologies:'
             },
             twitterclone: {
