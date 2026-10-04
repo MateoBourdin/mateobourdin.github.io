@@ -113,9 +113,8 @@ const translations = {
                 s4: "Conception UML",
                 s5: "Gestion de version (Git)",
                 p1: "Survival Island — jeu de défense en C# (SAE 1.01)",
-                p2: "Application desktop C# (SAE 2.01)",
-                p3: "Gestion de cave à vin — WPF/MVVM, PostgreSQL, API REST",
-                p4: "Space Battle — jeu C# en équipe"
+                p2: "Cave à vin Nicolas — WPF/MVVM, PostgreSQL, API REST (SAE 2.01)",
+                                p3: "Space Battle — jeu C# en équipe"
             },
             y2: {
                 title: "2e année — Full-stack et premier stage",
@@ -253,19 +252,14 @@ const translations = {
                 contextText: 'Projet de groupe R408A1 - BUT Informatique 2e année',
                 tech: 'Technologies :'
             },
-            winecellar: {
-                title: 'Gestion de Cave à Vin',
-                description: 'Application desktop WPF en C# avec architecture MVVM pour la gestion d\'une cave à vin. Conception de diagrammes UML, base de données PostgreSQL et API REST pour la communication client-serveur.',
-                tech: 'Technologies :'
-            },
             spacebattle: {
                 title: 'Space Battle',
                 description: 'Jeu en C# développé en équipe utilisant la programmation orientée objet et les principes de conception d\'interface utilisateur. Implémentation du rendu graphique, de la gestion audio et travail collaboratif avec Git.',
                 tech: 'Technologies :'
             },
             sae201: {
-                title: 'Application C# - SAE201',
-                description: 'Projet académique développé en C# avec Visual Studio dans le cadre de la SAE201. Application desktop utilisant les concepts de programmation orientée objet et les bonnes pratiques de développement logiciel. Le projet met en œuvre les compétences acquises en développement d\'applications et en conception logicielle.',
+                title: 'Cave à vin Nicolas - SAE 2.01',
+                description: 'Application desktop de gestion de cave à vin pour l\'enseigne Nicolas, développée en C# avec WPF et une architecture MVVM. Conception UML, base de données PostgreSQL et API REST pour la communication client-serveur.',
                 context: 'Contexte :',
                 contextText: 'Situation d\'Apprentissage et d\'Évaluation - BUT Informatique',
                 tech: 'Technologies :'
@@ -426,9 +420,8 @@ const translations = {
                 s4: "UML design",
                 s5: "Version control (Git)",
                 p1: "Survival Island — defence game in C# (SAE 1.01)",
-                p2: "C# desktop application (SAE 2.01)",
-                p3: "Wine cellar manager — WPF/MVVM, PostgreSQL, REST API",
-                p4: "Space Battle — team game in C#"
+                p2: "Nicolas wine cellar — WPF/MVVM, PostgreSQL, REST API (SAE 2.01)",
+                                p3: "Space Battle — team game in C#"
             },
             y2: {
                 title: "2nd year — Full-stack and first internship",
@@ -566,19 +559,14 @@ const translations = {
                 contextText: 'R408A1 group project - 2nd year Computer Science BUT',
                 tech: 'Technologies:'
             },
-            winecellar: {
-                title: 'Wine Cellar Management',
-                description: 'WPF desktop application in C# with MVVM architecture for managing a wine cellar. UML diagram design, PostgreSQL database and REST API for client-server communication.',
-                tech: 'Technologies:'
-            },
             spacebattle: {
                 title: 'Space Battle',
                 description: 'C# game developed as a team using object-oriented programming and user interface design principles. Implementation of graphics rendering, audio management, and collaborative development with Git.',
                 tech: 'Technologies:'
             },
             sae201: {
-                title: 'C# Application - SAE201',
-                description: 'Academic project developed in C# with Visual Studio as part of SAE201. Desktop application using object-oriented programming concepts and software development best practices. The project implements skills acquired in application development and software design.',
+                title: 'Nicolas wine cellar - SAE 2.01',
+                description: 'Wine cellar management desktop application for the Nicolas wine retailer, built in C# with WPF and an MVVM architecture. UML design, PostgreSQL database and REST API for client-server communication.',
                 context: 'Context:',
                 contextText: 'Learning and Assessment Situation - Computer Science BUT',
                 tech: 'Technologies:'
