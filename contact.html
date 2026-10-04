@@ -83,6 +83,7 @@
                 <p data-i18n="contact.form.subtitle">Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais</p>
 
                 <form id="contactForm" class="contact-form" action="https://formspree.io/f/xgvdvjnv" method="POST">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
                     <div class="form-group">
                         <label for="name" data-i18n="contact.form.name">Nom *</label>
                         <input type="text" id="name" name="name" required placeholder="Votre nom complet">
@@ -117,7 +118,7 @@
                     <div class="icon">💼</div>
                     <h3 data-i18n="contact.linkedin.title">LinkedIn</h3>
                     <p data-i18n="contact.linkedin.subtitle">Connectons-nous professionnellement</p>
-                    <a href="https://www.linkedin.com/in/BOURDINMateo/" target="_blank" class="social-btn linkedin-btn">
+                    <a href="https://www.linkedin.com/in/BOURDINMateo/" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn">
                         <span data-i18n="contact.linkedin.button">Voir mon profil</span>
                     </a>
                 </div>
@@ -127,7 +128,7 @@
                     <div class="icon">💻</div>
                     <h3 data-i18n="contact.github.title">GitHub</h3>
                     <p data-i18n="contact.github.subtitle">Découvrez mes projets</p>
-                    <a href="https://github.com/MateoBourdin" target="_blank" class="social-btn github-btn">
+                    <a href="https://github.com/MateoBourdin" target="_blank" rel="noopener noreferrer" class="social-btn github-btn">
                         <span data-i18n="contact.github.button">Voir mon GitHub</span>
                     </a>
                 </div>
