@@ -205,7 +205,7 @@ const translations = {
             internshipBut2: 'Stage BUT2',
             team2: 'Équipe de 2',
             team3: 'Équipe de 3',
-            but3team4: 'BUT3 - Équipe de 4',
+            but2team4: 'BUT2 - Équipe de 4',
             r408team4: 'R408A1 - Équipe de 4'
         },
         projects: {
@@ -250,7 +250,7 @@ const translations = {
                 title: 'Clone Twitter/X',
                 description: 'Clone de réseau social développé en équipe de 4 avec Laravel 13 / PHP 8.3, PostgreSQL, Redis et Livewire/Alpine.js, incluant des fonctionnalités temps réel via WebSockets (Laravel Reverb) et un assistant IA façon Grok basé sur l\'API Gemini, déployé avec Docker. Mon rôle : frontend et gestion des médias (upload photo/vidéo, infinite scroll, édition de profil, fonctionnalités temps réel).',
                 context: 'Contexte :',
-                contextText: 'Projet de groupe R408A1 - BUT Informatique 3ème année',
+                contextText: 'Projet de groupe R408A1 - BUT Informatique 2e année',
                 tech: 'Technologies :'
             },
             winecellar: {
@@ -274,7 +274,7 @@ const translations = {
                 title: 'Survival Island',
                 description: 'Jeu de défense d\'île développé en C# où le joueur doit protéger son île contre des vagues d\'ennemis. Le joueur reste au centre de l\'écran et doit gérer sa vie, ses dégâts et sa vitesse de tir. Système de vagues progressives avec génération aléatoire d\'ennemis qui se rapprochent de l\'île. Développement collaboratif avec gestion de version Git.',
                 context: 'Contexte :',
-                contextText: 'Projet de développement de jeux en équipe - BUT Informatique 2ème année',
+                contextText: 'Projet de développement de jeux en équipe - BUT Informatique 1re année',
                 tech: 'Technologies :'
             }
         },
@@ -518,7 +518,7 @@ const translations = {
             internshipBut2: '2nd-year internship',
             team2: 'Team of 2',
             team3: 'Team of 3',
-            but3team4: '3rd year - Team of 4',
+            but2team4: '2nd year - Team of 4',
             r408team4: 'R408A1 - Team of 4'
         },
         projects: {
@@ -563,7 +563,7 @@ const translations = {
                 title: 'Twitter/X Clone',
                 description: 'Social network clone developed by a team of 4 with Laravel 13 / PHP 8.3, PostgreSQL, Redis and Livewire/Alpine.js, including real-time features via WebSockets (Laravel Reverb) and a Grok-like AI assistant powered by the Gemini API, deployed with Docker. My role: frontend and media management (photo/video upload, infinite scroll, profile editing, real-time features).',
                 context: 'Context:',
-                contextText: 'R408A1 group project - 3rd year Computer Science BUT',
+                contextText: 'R408A1 group project - 2nd year Computer Science BUT',
                 tech: 'Technologies:'
             },
             winecellar: {
@@ -587,7 +587,7 @@ const translations = {
                 title: 'Survival Island',
                 description: 'Island defense game developed in C# where the player must protect their island against waves of enemies. The player stays at the center of the screen and must manage their health, damage, and firing speed. Progressive wave system with random enemy generation approaching the island. Collaborative development with Git version control.',
                 context: 'Context:',
-                contextText: 'Team game development project - 2nd year Computer Science BUT',
+                contextText: 'Team game development project - 1st year Computer Science BUT',
                 tech: 'Technologies:'
             }
         },
