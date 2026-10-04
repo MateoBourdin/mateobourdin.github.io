@@ -11,16 +11,16 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Survival Island - SAE 1.01 - Island Defence Game in C#">
+    <meta name="description" content="Survival Island (SAE 1.01) : jeu de combat naval en C# / WPF, développé à trois au premier semestre du BUT Informatique.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mateobourdin.github.io/projects/sae101.html">
     <meta property="og:title" content="Survival Island - Matéo Bourdin">
-    <meta property="og:description" content="Survival Island - SAE 1.01 - Island Defence Game in C#">
+    <meta property="og:description" content="Survival Island (SAE 1.01) : jeu de combat naval en C# / WPF, développé à trois au premier semestre du BUT Informatique.">
     <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Survival Island - Matéo Bourdin">
-    <meta name="twitter:description" content="Survival Island - SAE 1.01 - Island Defence Game in C#">
+    <meta name="twitter:description" content="Survival Island (SAE 1.01) : jeu de combat naval en C# / WPF, développé à trois au premier semestre du BUT Informatique.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Survival Island - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
@@ -29,199 +29,114 @@
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 </head>
 <body>
-    <!-- Language Switcher -->
     <div class="language-switcher">
         <button class="lang-btn active" onclick="changeLanguage('fr')">🇫🇷 FR</button>
         <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
     </div>
 
     <div class="container">
-        <!-- Back Button -->
-        <a href="../index.html#projets" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
+        <a href="../index.html#projets" class="back-btn" data-i18n="nav.back">← Retour au portfolio</a>
 
-        <!-- Hero Section -->
         <div class="hero project-hero">
             <h1>🏝️ Survival Island</h1>
-            <h2 data-i18n="hero.subtitle">SAE 1.01 - Jeu de Défense d'Île en C#</h2>
-            <p data-i18n="hero.description">
-                Jeu de défense d'île développé en C# où le joueur doit protéger son île contre des vagues infinies d'ennemis.
-                Projet collaboratif réalisé dans le cadre de la SAE 1.01 du BUT Informatique, premier semestre.
-            </p>
-
+            <h2 data-i18n="hero.subtitle">SAE 1.01 - Jeu de combat naval en C# / WPF</h2>
+            <p data-i18n="hero.description">Jeu de survie développé à trois : aux commandes d'un navire, le joueur défend son île contre des vagues de bateaux ennemis, gagne de l'expérience et améliore son île et son armement.</p>
             <div class="badges">
                 <span class="badge">C#</span>
-                <span class="badge">.NET</span>
-                <span class="badge" data-i18n="hero.badge.defense">Tower Defense</span>
-                <span class="badge" data-i18n="hero.badge.academic">Projet Académique</span>
+                <span class="badge">.NET 8</span>
+                <span class="badge">WPF</span>
                 <span class="badge">SAE 1.01</span>
             </div>
-
-            <a href="https://github.com/ForWarZz/Survival-Island" class="github-btn" target="_blank" data-i18n="hero.github">
-                💻 Voir sur GitHub
-            </a>
+            <a href="https://github.com/ForWarZz/Survival-Island" class="github-btn" target="_blank" data-i18n="hero.github">💻 Voir sur GitHub</a>
         </div>
 
-        <!-- Video Section -->
         <div class="section">
-            <h3 data-i18n="video.title">🎬 Vidéo de Présentation</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="video.description">
-                Découvrez le gameplay et les fonctionnalités du jeu en vidéo.
-            </p>
-            <div class="video-container">
-                <iframe
-                    src="https://www.youtube.com/embed/wv9BdxhGc3s"
-                    title="Survival Island - Présentation"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+            <h3 data-i18n="stats.title">📊 Le projet en chiffres</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">205</div>
+                    <div class="stat-label" data-i18n="stats.commits">Commits</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-i18n="stats.linesN">~2 900</div>
+                    <div class="stat-label" data-i18n="stats.lines">Lignes de C#</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label" data-i18n="stats.team">Développeurs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label" data-i18n="stats.days">Jours de développement</div>
+                </div>
             </div>
         </div>
 
-        <!-- Description Section -->
+        <div class="section">
+            <h3 data-i18n="video.title">🎬 Vidéo de présentation</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="video.description">Le gameplay et les fonctionnalités du jeu en vidéo.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/wv9BdxhGc3s" title="Survival Island" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <div class="section">
             <h3 data-i18n="about.title">📖 À propos du projet</h3>
-            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">
-                Survival Island est un jeu de défense d'île développé en équipe dans le cadre de la SAE 1.01 (Situation d'Apprentissage et d'Évaluation)
-                au premier semestre du BUT Informatique. Le joueur doit défendre son île située au centre de l'écran contre des vagues
-                d'ennemis qui apparaissent aléatoirement et se rapprochent progressivement.
-            </p>
-
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">Projet de la SAE 1.01 (premier semestre du BUT), réalisé en décembre 2024 avec Morgan Battig et Axel Benard. L'île se trouve au centre d'une carte maritime ; le joueur pilote un navire suivi par la caméra, détruit les ennemis qui convergent vers l'île et récupère des objets pour progresser.</p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h4 data-i18n="features.gameplay.title">🎮 Gameplay de Défense</h4>
-                    <p data-i18n="features.gameplay.desc">Le joueur reste au centre de l'écran et doit gérer sa vie, ses dégâts et sa vitesse de tir pour survivre.</p>
+                    <h4 data-i18n="features.ship.title">⛵ Navire et caméra</h4>
+                    <p data-i18n="features.ship.desc">Pilotage avec accélération et décélération, caméra qui suit le navire sur une carte plus grande que l'écran.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.waves.title">🌊 Système de Vagues</h4>
-                    <p data-i18n="features.waves.desc">Les ennemis apparaissent par vagues progressives qui deviennent de plus en plus difficiles.</p>
+                    <h4 data-i18n="features.waves.title">🌊 Vagues d'ennemis</h4>
+                    <p data-i18n="features.waves.desc">Les navires ennemis apparaissent hors de l'écran et visent l'île, avec une difficulté croissante à chaque vague.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.enemies.title">👾 Ennemis Intelligents</h4>
-                    <p data-i18n="features.enemies.desc">Génération aléatoire d'ennemis qui se rapprochent de l'île et tirent sur le joueur.</p>
+                    <h4 data-i18n="features.modes.title">💥 Modes de tir</h4>
+                    <p data-i18n="features.modes.desc">Tir classique, double, dans quatre directions ou en « pompe », et choix du navire dans un menu dédié.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.scoring.title">🏆 Système de Points</h4>
-                    <p data-i18n="features.scoring.desc">Accumulation de points par vague réussie avec suivi des performances.</p>
+                    <h4 data-i18n="features.progress.title">📈 Progression</h4>
+                    <p data-i18n="features.progress.desc">Expérience gagnée en combat, points d'amélioration pour l'île et objets récompense qui rendent de la vie ou de l'expérience.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.map.title">🗺️ Map Dynamique</h4>
-                    <p data-i18n="features.map.desc">Carte avec bordures et obstacles pour une expérience de jeu stratégique.</p>
+                    <h4 data-i18n="features.map.title">🗺️ Carte</h4>
+                    <p data-i18n="features.map.desc">Mer générée par tuiles, avec des rochers et des obstacles à contourner.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.team.title">👥 Développement en Équipe</h4>
-                    <p data-i18n="features.team.desc">Projet collaboratif avec gestion de version Git et travail d'équipe.</p>
+                    <h4 data-i18n="features.audio.title">🎵 Son et musique</h4>
+                    <p data-i18n="features.audio.desc">Musiques, effets sonores des canons et menu de réglage audio.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Technical Stack Section -->
         <div class="section">
-            <h3 data-i18n="tech.title">🛠️ Technologies Utilisées</h3>
+            <h3 data-i18n="role.title">🧑‍💻 Mon rôle</h3>
+            <p style="color: var(--text-light); line-height: 1.8;" data-i18n="role.description">J'ai développé la première version des ennemis, les modes de tir et leurs visuels, les classes de navires et le menu pour en changer, les objets récompense, l'accélération du navire ainsi que toute la partie son et musique.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-i18n="tech.title">🛠️ Technologies</h3>
             <div class="tech-stack">
                 <div class="tech-item">C#</div>
-                <div class="tech-item">.NET Framework</div>
-                <div class="tech-item">Visual Studio</div>
-                <div class="tech-item">Git</div>
-                <div class="tech-item">Game Development</div>
-                <div class="tech-item">OOP</div>
+                <div class="tech-item">.NET 8</div>
+                <div class="tech-item">WPF / XAML</div>
+                <div class="tech-item">UML</div>
+                <div class="tech-item">Git / GitHub</div>
             </div>
-
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte Pédagogique</h4>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.contextInfo.desc">
-                Ce projet a été réalisé dans le cadre de la <strong>SAE 1.01 - Implémentation d'un besoin client</strong> au premier semestre
-                du BUT Informatique à l'IUT d'Annecy. Il s'agit du premier projet de développement en équipe, permettant de mettre en
-                pratique les compétences en programmation orientée objet, en gestion de projet et en travail collaboratif avec Git.
-            </p>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte pédagogique</h4>
+            <p style="color: var(--text-light); line-height: 1.8;" data-i18n="tech.contextDesc">La SAE 1.01 « Implémentation d'un besoin client » est le premier projet en équipe du BUT Informatique : programmation orientée objet, conception UML (diagramme de classes) et travail collaboratif avec Git.</p>
         </div>
 
-        <!-- Features Techniques Section -->
-        <div class="section">
-            <h3 data-i18n="features.tech.title">⚙️ Fonctionnalités Développées</h3>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4 data-i18n="features.tech.player.title">🎯 Système de Joueur</h4>
-                    <p data-i18n="features.tech.player.desc">Gestion des statistiques du joueur : points de vie, dégâts, vitesse de tir et position centrée.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="features.tech.island.title">🏝️ Île à Défendre</h4>
-                    <p data-i18n="features.tech.island.desc">Interface d'amélioration de l'île avec barre de vie et système de défense.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="features.tech.ai.title">🤖 IA Ennemie</h4>
-                    <p data-i18n="features.tech.ai.desc">Ennemis avec position aléatoire qui se rapprochent intelligemment de l'île et attaquent.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="features.tech.progression.title">📈 Progression</h4>
-                    <p data-i18n="features.tech.progression.desc">Système de vagues avec difficulté croissante et comptage de points par vague.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Future Features Section -->
-        <div class="section">
-            <h3 data-i18n="future.title">🚀 Fonctionnalités Futures</h3>
-            <p style="color: var(--text-light); margin-bottom: 1rem;" data-i18n="future.description">
-                Le projet prévoit l'ajout d'un mode multijoueur innovant :
-            </p>
-            <div class="feature-card">
-                <h4 data-i18n="future.multiplayer.title">🎮 Mode Multijoueur à 4 Équipes</h4>
-                <p data-i18n="future.multiplayer.desc">
-                    Mode de jeu compétitif où 4 équipes de différentes couleurs s'affrontent pour détruire les bases adverses.
-                    Chaque équipe doit défendre son île tout en attaquant les îles ennemies dans une bataille stratégique épique.
-                </p>
-            </div>
-        </div>
-
-        <!-- Team Section -->
-        <div class="section">
-            <h3 data-i18n="team.title">👥 Équipe de Développement</h3>
-            <p style="color: var(--text-light); margin-bottom: 1rem;" data-i18n="team.description">
-                Projet réalisé en collaboration avec 2 contributeurs dans le cadre de la SAE 1.01.
-            </p>
-            <div class="tech-stack">
-                <div class="tech-item" data-i18n="team.role.dev">Développeur</div>
-                <div class="tech-item" data-i18n="team.role.git">Gestion Git</div>
-                <div class="tech-item" data-i18n="team.role.design">Game Design</div>
-            </div>
-        </div>
-
-        <!-- Learning Outcomes Section -->
-        <div class="section">
-            <h3 data-i18n="learning.title">🎓 Compétences Acquises</h3>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4 data-i18n="learning.oop.title">📦 Programmation Orientée Objet</h4>
-                    <p data-i18n="learning.oop.desc">Conception et implémentation de classes pour le joueur, les ennemis et la carte de jeu.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="learning.git.title">🔀 Gestion de Version</h4>
-                    <p data-i18n="learning.git.desc">Utilisation de Git pour le travail collaboratif, gestion des branches et résolution de conflits.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="learning.team.title">👥 Travail d'Équipe</h4>
-                    <p data-i18n="learning.team.desc">Communication, répartition des tâches et coordination pour mener à bien le projet.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="learning.gamedev.title">🎮 Développement de Jeu</h4>
-                    <p data-i18n="learning.gamedev.desc">Boucle de jeu, gestion des collisions, système de vagues et équilibrage du gameplay.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- GitHub CTA -->
         <div class="section" style="text-align: center; background: var(--primary-lighter);">
-            <h3 style="margin-bottom: 1.5rem;" data-i18n="cta.title">🌟 Découvrez le Code Source</h3>
-            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);" data-i18n="cta.description">
-                Le projet complet est disponible sur GitHub avec tout le code source et les commits de développement.
-            </p>
-            <a href="https://github.com/ForWarZz/Survival-Island" class="github-btn" target="_blank" data-i18n="cta.button">
-                Explorer le Repository GitHub
-            </a>
+            <h3 style="margin-bottom: 1.5rem;" data-i18n="cta.title">🌟 Le code source</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);" data-i18n="cta.description">Le projet complet est disponible sur GitHub : 205 commits en douze jours.</p>
+            <a href="https://github.com/ForWarZz/Survival-Island" class="github-btn" target="_blank" data-i18n="cta.button">Voir le dépôt GitHub</a>
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <p data-i18n="footer.project">SAE 1.01 - Implémentation d'un besoin client</p>
         <p data-i18n="footer.context">Projet réalisé en décembre 2024 à l'IUT d'Annecy</p>
@@ -229,288 +144,162 @@
     </div>
 
     <script>
-        // i18n translations
         const translations = {
-            fr: {
-                nav: {
-                    back: "← Retour au Portfolio"
-                },
-                hero: {
-                    subtitle: "SAE 1.01 - Jeu de Défense d'Île en C#",
-                    description: "Jeu de défense d'île développé en C# où le joueur doit protéger son île contre des vagues infinies d'ennemis. Projet collaboratif réalisé dans le cadre de la SAE 1.01 du BUT Informatique, premier semestre.",
-                    badge: {
-                        defense: "Tower Defense",
-                        academic: "Projet Académique"
-                    },
-                    github: "💻 Voir sur GitHub"
-                },
-                video: {
-                    title: "🎬 Vidéo de Présentation",
-                    description: "Découvrez le gameplay et les fonctionnalités du jeu en vidéo."
-                },
-                about: {
-                    title: "📖 À propos du projet",
-                    description: "Survival Island est un jeu de défense d'île développé en équipe dans le cadre de la SAE 1.01 (Situation d'Apprentissage et d'Évaluation) au premier semestre du BUT Informatique. Le joueur doit défendre son île située au centre de l'écran contre des vagues d'ennemis qui apparaissent aléatoirement et se rapprochent progressivement."
-                },
-                features: {
-                    gameplay: {
-                        title: "🎮 Gameplay de Défense",
-                        desc: "Le joueur reste au centre de l'écran et doit gérer sa vie, ses dégâts et sa vitesse de tir pour survivre."
-                    },
-                    waves: {
-                        title: "🌊 Système de Vagues",
-                        desc: "Les ennemis apparaissent par vagues progressives qui deviennent de plus en plus difficiles."
-                    },
-                    enemies: {
-                        title: "👾 Ennemis Intelligents",
-                        desc: "Génération aléatoire d'ennemis qui se rapprochent de l'île et tirent sur le joueur."
-                    },
-                    scoring: {
-                        title: "🏆 Système de Points",
-                        desc: "Accumulation de points par vague réussie avec suivi des performances."
-                    },
-                    map: {
-                        title: "🗺️ Map Dynamique",
-                        desc: "Carte avec bordures et obstacles pour une expérience de jeu stratégique."
-                    },
-                    team: {
-                        title: "👥 Développement en Équipe",
-                        desc: "Projet collaboratif avec gestion de version Git et travail d'équipe."
-                    },
-                    tech: {
-                        title: "⚙️ Fonctionnalités Développées",
-                        player: {
-                            title: "🎯 Système de Joueur",
-                            desc: "Gestion des statistiques du joueur : points de vie, dégâts, vitesse de tir et position centrée."
-                        },
-                        island: {
-                            title: "🏝️ Île à Défendre",
-                            desc: "Interface d'amélioration de l'île avec barre de vie et système de défense."
-                        },
-                        ai: {
-                            title: "🤖 IA Ennemie",
-                            desc: "Ennemis avec position aléatoire qui se rapprochent intelligemment de l'île et attaquent."
-                        },
-                        progression: {
-                            title: "📈 Progression",
-                            desc: "Système de vagues avec difficulté croissante et comptage de points par vague."
-                        }
-                    }
-                },
-                tech: {
-                    title: "🛠️ Technologies Utilisées",
-                    context: "Contexte Pédagogique",
-                    contextInfo: {
-                        desc: "Ce projet a été réalisé dans le cadre de la <strong>SAE 1.01 - Implémentation d'un besoin client</strong> au premier semestre du BUT Informatique à l'IUT d'Annecy. Il s'agit du premier projet de développement en équipe, permettant de mettre en pratique les compétences en programmation orientée objet, en gestion de projet et en travail collaboratif avec Git."
-                    }
-                },
-                future: {
-                    title: "🚀 Fonctionnalités Futures",
-                    description: "Le projet prévoit l'ajout d'un mode multijoueur innovant :",
-                    multiplayer: {
-                        title: "🎮 Mode Multijoueur à 4 Équipes",
-                        desc: "Mode de jeu compétitif où 4 équipes de différentes couleurs s'affrontent pour détruire les bases adverses. Chaque équipe doit défendre son île tout en attaquant les îles ennemies dans une bataille stratégique épique."
-                    }
-                },
-                team: {
-                    title: "👥 Équipe de Développement",
-                    description: "Projet réalisé en collaboration avec 2 contributeurs dans le cadre de la SAE 1.01.",
-                    role: {
-                        dev: "Développeur",
-                        git: "Gestion Git",
-                        design: "Game Design"
-                    }
-                },
-                learning: {
-                    title: "🎓 Compétences Acquises",
-                    oop: {
-                        title: "📦 Programmation Orientée Objet",
-                        desc: "Conception et implémentation de classes pour le joueur, les ennemis et la carte de jeu."
-                    },
-                    git: {
-                        title: "🔀 Gestion de Version",
-                        desc: "Utilisation de Git pour le travail collaboratif, gestion des branches et résolution de conflits."
-                    },
-                    team: {
-                        title: "👥 Travail d'Équipe",
-                        desc: "Communication, répartition des tâches et coordination pour mener à bien le projet."
-                    },
-                    gamedev: {
-                        title: "🎮 Développement de Jeu",
-                        desc: "Boucle de jeu, gestion des collisions, système de vagues et équilibrage du gameplay."
-                    }
-                },
-                cta: {
-                    title: "🌟 Découvrez le Code Source",
-                    description: "Le projet complet est disponible sur GitHub avec tout le code source et les commits de développement.",
-                    button: "Explorer le Repository GitHub"
-                },
-                footer: {
-                    project: "SAE 1.01 - Implémentation d'un besoin client",
-                    context: "Projet réalisé en décembre 2024 à l'IUT d'Annecy"
-                }
+    "fr": {
+        "nav": {
+            "back": "← Retour au portfolio"
+        },
+        "hero": {
+            "subtitle": "SAE 1.01 - Jeu de combat naval en C# / WPF",
+            "description": "Jeu de survie développé à trois : aux commandes d'un navire, le joueur défend son île contre des vagues de bateaux ennemis, gagne de l'expérience et améliore son île et son armement.",
+            "github": "💻 Voir sur GitHub"
+        },
+        "stats": {
+            "title": "📊 Le projet en chiffres",
+            "commits": "Commits",
+            "linesN": "~2 900",
+            "lines": "Lignes de C#",
+            "team": "Développeurs",
+            "days": "Jours de développement"
+        },
+        "video": {
+            "title": "🎬 Vidéo de présentation",
+            "description": "Le gameplay et les fonctionnalités du jeu en vidéo."
+        },
+        "about": {
+            "title": "📖 À propos du projet",
+            "description": "Projet de la SAE 1.01 (premier semestre du BUT), réalisé en décembre 2024 avec Morgan Battig et Axel Benard. L'île se trouve au centre d'une carte maritime ; le joueur pilote un navire suivi par la caméra, détruit les ennemis qui convergent vers l'île et récupère des objets pour progresser."
+        },
+        "features": {
+            "ship": {
+                "title": "⛵ Navire et caméra",
+                "desc": "Pilotage avec accélération et décélération, caméra qui suit le navire sur une carte plus grande que l'écran."
             },
-            en: {
-                nav: {
-                    back: "← Back to Portfolio"
-                },
-                hero: {
-                    subtitle: "SAE 1.01 - Island Defence Game in C#",
-                    description: "Island defence game developed in C# where the player must protect their island against infinite waves of enemies. Collaborative project completed as part of SAE 1.01 for the Computer Science BUT, first semester.",
-                    badge: {
-                        defense: "Tower Defence",
-                        academic: "Academic Project"
-                    },
-                    github: "💻 View on GitHub"
-                },
-                video: {
-                    title: "🎬 Presentation Video",
-                    description: "Discover the gameplay and features of the game in video."
-                },
-                about: {
-                    title: "📖 About the Project",
-                    description: "Survival Island is an island defence game developed as a team in the context of SAE 1.01 (Learning and Assessment Situation) in the first semester of the Computer Science BUT. The player must defend their island located at the centre of the screen against waves of enemies that appear randomly and progressively approach."
-                },
-                features: {
-                    gameplay: {
-                        title: "🎮 Defence Gameplay",
-                        desc: "The player stays at the centre of the screen and must manage their health, damage, and firing speed to survive."
-                    },
-                    waves: {
-                        title: "🌊 Wave System",
-                        desc: "Enemies appear in progressive waves that become increasingly difficult."
-                    },
-                    enemies: {
-                        title: "👾 Smart Enemies",
-                        desc: "Random enemy generation that intelligently approaches the island and shoots at the player."
-                    },
-                    scoring: {
-                        title: "🏆 Scoring System",
-                        desc: "Points accumulation per successful wave with performance tracking."
-                    },
-                    map: {
-                        title: "🗺️ Dynamic Map",
-                        desc: "Map with borders and obstacles for a strategic gaming experience."
-                    },
-                    team: {
-                        title: "👥 Team Development",
-                        desc: "Collaborative project with Git version control and teamwork."
-                    },
-                    tech: {
-                        title: "⚙️ Developed Features",
-                        player: {
-                            title: "🎯 Player System",
-                            desc: "Player statistics management: health points, damage, firing speed and centred position."
-                        },
-                        island: {
-                            title: "🏝️ Island to Defend",
-                            desc: "Island upgrade interface with health bar and defence system."
-                        },
-                        ai: {
-                            title: "🤖 Enemy AI",
-                            desc: "Enemies with random position that intelligently approach the island and attack."
-                        },
-                        progression: {
-                            title: "📈 Progression",
-                            desc: "Wave system with increasing difficulty and points counting per wave."
-                        }
-                    }
-                },
-                tech: {
-                    title: "🛠️ Technologies Used",
-                    context: "Educational Context",
-                    contextInfo: {
-                        desc: "This project was completed as part of <strong>SAE 1.01 - Client Need Implementation</strong> in the first semester of the Computer Science BUT at IUT Annecy. It is the first team development project, allowing to put into practice skills in object-oriented programming, project management and collaborative work with Git."
-                    }
-                },
-                future: {
-                    title: "🚀 Future Features",
-                    description: "The project plans to add an innovative multiplayer mode:",
-                    multiplayer: {
-                        title: "🎮 4-Team Multiplayer Mode",
-                        desc: "Competitive game mode where 4 teams of different colours compete to destroy enemy bases. Each team must defend their island while attacking enemy islands in an epic strategic battle."
-                    }
-                },
-                team: {
-                    title: "👥 Development Team",
-                    description: "Project completed in collaboration with 2 contributors as part of SAE 1.01.",
-                    role: {
-                        dev: "Developer",
-                        git: "Git Management",
-                        design: "Game Design"
-                    }
-                },
-                learning: {
-                    title: "🎓 Skills Acquired",
-                    oop: {
-                        title: "📦 Object-Oriented Programming",
-                        desc: "Design and implementation of classes for player, enemies and game map."
-                    },
-                    git: {
-                        title: "🔀 Version Control",
-                        desc: "Using Git for collaborative work, branch management and conflict resolution."
-                    },
-                    team: {
-                        title: "👥 Teamwork",
-                        desc: "Communication, task distribution and coordination to successfully complete the project."
-                    },
-                    gamedev: {
-                        title: "🎮 Game Development",
-                        desc: "Game loop, collision management, wave system and gameplay balancing."
-                    }
-                },
-                cta: {
-                    title: "🌟 Discover the Source Code",
-                    description: "The complete project is available on GitHub with all the source code and development commits.",
-                    button: "Explore the GitHub Repository"
-                },
-                footer: {
-                    project: "SAE 1.01 - Client Need Implementation",
-                    context: "Project completed in December 2024 at IUT Annecy"
-                }
+            "waves": {
+                "title": "🌊 Vagues d'ennemis",
+                "desc": "Les navires ennemis apparaissent hors de l'écran et visent l'île, avec une difficulté croissante à chaque vague."
+            },
+            "modes": {
+                "title": "💥 Modes de tir",
+                "desc": "Tir classique, double, dans quatre directions ou en « pompe », et choix du navire dans un menu dédié."
+            },
+            "progress": {
+                "title": "📈 Progression",
+                "desc": "Expérience gagnée en combat, points d'amélioration pour l'île et objets récompense qui rendent de la vie ou de l'expérience."
+            },
+            "map": {
+                "title": "🗺️ Carte",
+                "desc": "Mer générée par tuiles, avec des rochers et des obstacles à contourner."
+            },
+            "audio": {
+                "title": "🎵 Son et musique",
+                "desc": "Musiques, effets sonores des canons et menu de réglage audio."
             }
-        };
-
-        // Get saved language or default to French
+        },
+        "role": {
+            "title": "🧑‍💻 Mon rôle",
+            "description": "J'ai développé la première version des ennemis, les modes de tir et leurs visuels, les classes de navires et le menu pour en changer, les objets récompense, l'accélération du navire ainsi que toute la partie son et musique."
+        },
+        "tech": {
+            "title": "🛠️ Technologies",
+            "context": "Contexte pédagogique",
+            "contextDesc": "La SAE 1.01 « Implémentation d'un besoin client » est le premier projet en équipe du BUT Informatique : programmation orientée objet, conception UML (diagramme de classes) et travail collaboratif avec Git."
+        },
+        "cta": {
+            "title": "🌟 Le code source",
+            "description": "Le projet complet est disponible sur GitHub : 205 commits en douze jours.",
+            "button": "Voir le dépôt GitHub"
+        },
+        "footer": {
+            "project": "SAE 1.01 - Implémentation d'un besoin client",
+            "context": "Projet réalisé en décembre 2024 à l'IUT d'Annecy"
+        }
+    },
+    "en": {
+        "nav": {
+            "back": "← Back to portfolio"
+        },
+        "hero": {
+            "subtitle": "SAE 1.01 - Naval combat game in C# / WPF",
+            "description": "Survival game built by a team of three: at the helm of a ship, the player defends their island against waves of enemy ships, earns experience and upgrades the island and their weapons.",
+            "github": "💻 View on GitHub"
+        },
+        "stats": {
+            "title": "📊 The project in numbers",
+            "commits": "Commits",
+            "linesN": "~2,900",
+            "lines": "Lines of C#",
+            "team": "Developers",
+            "days": "Days of development"
+        },
+        "video": {
+            "title": "🎬 Presentation video",
+            "description": "The gameplay and features of the game on video."
+        },
+        "about": {
+            "title": "📖 About the project",
+            "description": "SAE 1.01 project (first semester of the BUT), built in December 2024 with Morgan Battig and Axel Benard. The island sits at the centre of a sea map; the player steers a ship followed by the camera, destroys the enemies heading for the island and collects items to progress."
+        },
+        "features": {
+            "ship": {
+                "title": "⛵ Ship and camera",
+                "desc": "Steering with acceleration and deceleration, and a camera that follows the ship across a map larger than the screen."
+            },
+            "waves": {
+                "title": "🌊 Enemy waves",
+                "desc": "Enemy ships spawn off-screen and head for the island, with difficulty increasing every wave."
+            },
+            "modes": {
+                "title": "💥 Firing modes",
+                "desc": "Classic, double, four-way and \"shotgun\" fire, plus a menu to choose your ship."
+            },
+            "progress": {
+                "title": "📈 Progression",
+                "desc": "Experience earned in combat, upgrade points for the island and reward items that restore health or experience."
+            },
+            "map": {
+                "title": "🗺️ Map",
+                "desc": "Tile-based sea with rocks and obstacles to steer around."
+            },
+            "audio": {
+                "title": "🎵 Sound and music",
+                "desc": "Music, cannon sound effects and an audio settings menu."
+            }
+        },
+        "role": {
+            "title": "🧑‍💻 My role",
+            "description": "I built the first version of the enemies, the firing modes and their visuals, the ship classes and the menu to switch between them, the reward items, the ship's acceleration and the whole sound and music system."
+        },
+        "tech": {
+            "title": "🛠️ Technologies",
+            "context": "Educational context",
+            "contextDesc": "SAE 1.01 \"Implementing a client need\" is the first team project of the BUT: object-oriented programming, UML design (class diagram) and collaborative work with Git."
+        },
+        "cta": {
+            "title": "🌟 Source code",
+            "description": "The full project is available on GitHub: 205 commits in twelve days.",
+            "button": "View the GitHub repository"
+        },
+        "footer": {
+            "project": "SAE 1.01 - Implementing a client need",
+            "context": "Project completed in December 2024 at IUT d'Annecy"
+        }
+    }
+};
         let currentLang = localStorage.getItem('preferredLanguage') || 'fr';
-
-        // Change language function
         function changeLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('preferredLanguage', lang);
-
-            // Update HTML lang attribute
             document.documentElement.lang = lang;
-
-            // Update all elements with data-i18n
             document.querySelectorAll('[data-i18n]').forEach(element => {
-                const keys = element.getAttribute('data-i18n').split('.');
-                let translation = translations[lang];
-
-                for (const key of keys) {
-                    translation = translation[key];
-                }
-
-                element.innerHTML = translation;
+                const value = element.getAttribute('data-i18n').split('.').reduce((o, k) => o && o[k], translations[lang]);
+                if (typeof value === 'string') element.textContent = value;
             });
-
-            // Update active button
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.onclick.toString().includes(`'${lang}'`)) {
-                    btn.classList.add('active');
-                }
+                btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${lang}'`));
             });
         }
-
-        // Initialize language on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            if (currentLang === 'en') {
-                changeLanguage('en');
-            } else {
-                changeLanguage('fr');
-            }
-        });
+        document.addEventListener('DOMContentLoaded', () => changeLanguage(currentLang === 'en' ? 'en' : 'fr'));
     </script>
     <script src="../theme.js"></script>
 </body>

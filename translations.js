@@ -108,11 +108,11 @@ const translations = {
                 dates: "2024 – 2025",
                 intro: "Programmation orientée objet en C#, premières interfaces graphiques et bases de données, et premiers projets en équipe avec Git.",
                 s1: "Programmation orientée objet (C#)",
-                s2: "Interfaces graphiques (WPF, MVVM)",
+                s2: "Interfaces graphiques (WPF, XAML)",
                 s3: "Bases de données relationnelles (SQL, PostgreSQL)",
                 s4: "Conception UML",
                 s5: "Gestion de version (Git)",
-                p1: "Survival Island — jeu de défense en C# (SAE 1.01)",
+                p1: "Survival Island — jeu de combat naval en C# / WPF (SAE 1.01)",
                 p2: "Cave à vin Nicolas — C# / WPF, PostgreSQL (SAE 2.01)",
             },
             y2: {
@@ -122,12 +122,13 @@ const translations = {
                 s1: "Algorithmique avancée en Python (récursivité, arbres)",
                 s2: "Optimisation et bases de données avancées (JSONB, MongoDB)",
                 s3: "Architecture réseau (sous-réseaux, VLAN, routage RIP/OSPF)",
-                s4: "Développement mobile (Flutter)",
+                s4: "Développement mobile (Flutter) et clients lourds (WinUI 3, MVVM)",
                 s5: "Langages formels et automates",
                 s6: "Gestion de projet et économie (TCO, VAN, TIR)",
                 p1: "CUBE Bikes — e-commerce ASP.NET Core / Vue 3 (SAE 3.01 / 4.01)",
                 p2: "Clone Twitter/X — Laravel, Redis, WebSockets, Docker (R4.08)",
-                p3: "Stage chez Lappi Soft — système Discovery Diary sous Unity"
+                p3: "Stage chez Lappi Soft — système Discovery Diary sous Unity",
+                p4: "TD : API REST ASP.NET Core + EF Core et client WinUI 3 en MVVM, testés avec MSTest et Moq"
             },
             y3: {
                 title: "3e année — Qualité, DevOps et IA",
@@ -264,9 +265,10 @@ const translations = {
             },
             survival: {
                 title: 'Survival Island',
-                description: 'Jeu de défense d\'île développé en C# où le joueur doit protéger son île contre des vagues d\'ennemis. Le joueur reste au centre de l\'écran et doit gérer sa vie, ses dégâts et sa vitesse de tir. Système de vagues progressives avec génération aléatoire d\'ennemis qui se rapprochent de l\'île. Développement collaboratif avec gestion de version Git.',
+                description: 'Jeu de combat naval développé à trois en C# / WPF : aux commandes d\'un navire, le joueur défend son île contre des vagues de bateaux ennemis, gagne de l\'expérience et améliore son île et son armement. Mon rôle : ennemis, modes de tir, classes de navires, objets récompense, son et musique.',
                 context: 'Contexte :',
-                contextText: 'Projet de développement de jeux en équipe - BUT Informatique 1re année',
+                contextText: 'SAE 1.01 - BUT Informatique 1re année',
+                techText: 'C#, .NET 8, WPF, UML',
                 tech: 'Technologies :'
             }
         },
@@ -413,11 +415,11 @@ const translations = {
                 dates: "2024 – 2025",
                 intro: "Object-oriented programming in C#, first user interfaces and databases, and first team projects with Git.",
                 s1: "Object-oriented programming (C#)",
-                s2: "User interfaces (WPF, MVVM)",
+                s2: "User interfaces (WPF, XAML)",
                 s3: "Relational databases (SQL, PostgreSQL)",
                 s4: "UML design",
                 s5: "Version control (Git)",
-                p1: "Survival Island — defence game in C# (SAE 1.01)",
+                p1: "Survival Island — naval combat game in C# / WPF (SAE 1.01)",
                 p2: "Nicolas wine cellar — C# / WPF, PostgreSQL (SAE 2.01)",
             },
             y2: {
@@ -427,12 +429,13 @@ const translations = {
                 s1: "Advanced algorithms in Python (recursion, trees)",
                 s2: "Database optimisation and advanced databases (JSONB, MongoDB)",
                 s3: "Network architecture (subnetting, VLANs, RIP/OSPF routing)",
-                s4: "Mobile development (Flutter)",
+                s4: "Mobile development (Flutter) and desktop clients (WinUI 3, MVVM)",
                 s5: "Formal languages and automata",
                 s6: "Project management and economics (TCO, NPV, IRR)",
                 p1: "CUBE Bikes — ASP.NET Core / Vue 3 e-commerce (SAE 3.01 / 4.01)",
                 p2: "Twitter/X clone — Laravel, Redis, WebSockets, Docker (R4.08)",
-                p3: "Internship at Lappi Soft — Discovery Diary system in Unity"
+                p3: "Internship at Lappi Soft — Discovery Diary system in Unity",
+                p4: "Labs: ASP.NET Core + EF Core REST API and a WinUI 3 MVVM client, tested with MSTest and Moq"
             },
             y3: {
                 title: "3rd year — Quality, DevOps and AI",
@@ -569,9 +572,10 @@ const translations = {
             },
             survival: {
                 title: 'Survival Island',
-                description: 'Island defence game developed in C# where the player must protect their island against waves of enemies. The player stays at the centre of the screen and must manage their health, damage, and firing speed. Progressive wave system with random enemy generation approaching the island. Collaborative development with Git version control.',
+                description: 'Naval combat game built by a team of three in C# / WPF: at the helm of a ship, the player defends their island against waves of enemy ships, earns experience and upgrades the island and their weapons. My role: enemies, firing modes, ship classes, reward items, sound and music.',
                 context: 'Context:',
-                contextText: 'Team game development project - 1st year Computer Science BUT',
+                contextText: 'SAE 1.01 - 1st year Computer Science BUT',
+                techText: 'C#, .NET 8, WPF, UML',
                 tech: 'Technologies:'
             }
         },
