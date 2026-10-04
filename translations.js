@@ -114,7 +114,6 @@ const translations = {
                 s5: "Gestion de version (Git)",
                 p1: "Survival Island — jeu de défense en C# (SAE 1.01)",
                 p2: "Cave à vin Nicolas — WPF/MVVM, PostgreSQL, API REST (SAE 2.01)",
-                                p3: "Space Battle — jeu C# en équipe"
             },
             y2: {
                 title: "2e année — Full-stack et premier stage",
@@ -250,11 +249,6 @@ const translations = {
                 description: 'Clone de réseau social développé en équipe de 4 avec Laravel 13 / PHP 8.3, PostgreSQL, Redis et Livewire/Alpine.js, incluant des fonctionnalités temps réel via WebSockets (Laravel Reverb) et un assistant IA façon Grok basé sur l\'API Gemini, déployé avec Docker. Mon rôle : frontend et gestion des médias (upload photo/vidéo, infinite scroll, édition de profil, fonctionnalités temps réel).',
                 context: 'Contexte :',
                 contextText: 'Projet de groupe R408A1 - BUT Informatique 2e année',
-                tech: 'Technologies :'
-            },
-            spacebattle: {
-                title: 'Space Battle',
-                description: 'Jeu en C# développé en équipe utilisant la programmation orientée objet et les principes de conception d\'interface utilisateur. Implémentation du rendu graphique, de la gestion audio et travail collaboratif avec Git.',
                 tech: 'Technologies :'
             },
             sae201: {
@@ -421,7 +415,6 @@ const translations = {
                 s5: "Version control (Git)",
                 p1: "Survival Island — defence game in C# (SAE 1.01)",
                 p2: "Nicolas wine cellar — WPF/MVVM, PostgreSQL, REST API (SAE 2.01)",
-                                p3: "Space Battle — team game in C#"
             },
             y2: {
                 title: "2nd year — Full-stack and first internship",
@@ -557,11 +550,6 @@ const translations = {
                 description: 'Social network clone developed by a team of 4 with Laravel 13 / PHP 8.3, PostgreSQL, Redis and Livewire/Alpine.js, including real-time features via WebSockets (Laravel Reverb) and a Grok-like AI assistant powered by the Gemini API, deployed with Docker. My role: frontend and media management (photo/video upload, infinite scroll, profile editing, real-time features).',
                 context: 'Context:',
                 contextText: 'R408A1 group project - 2nd year Computer Science BUT',
-                tech: 'Technologies:'
-            },
-            spacebattle: {
-                title: 'Space Battle',
-                description: 'C# game developed as a team using object-oriented programming and user interface design principles. Implementation of graphics rendering, audio management, and collaborative development with Git.',
                 tech: 'Technologies:'
             },
             sae201: {
