@@ -1,8 +1,8 @@
 const translations = {
     fr: {
         meta: {
-            title: 'Mateo - Étudiant Développeur | Portfolio',
-            description: 'Mateo, étudiant en 3ème année de BUT Informatique (parcours RA) à l\'IUT Annecy. Développeur passionné recherchant un stage de 16 semaines à partir du 19 janvier 2027.'
+            title: 'Matéo Bourdin - Étudiant en informatique | Portfolio',
+            description: 'Matéo Bourdin, étudiant en 3e et dernière année de Bachelor (BUT) Informatique à l\'IUT d\'Annecy. Développeur full-stack (C#/.NET, Vue.js, Python) en recherche d\'un stage de 16 semaines dès le 19 janvier 2027.'
         },
         nav: {
             home: 'Accueil',
@@ -23,7 +23,7 @@ const translations = {
             availability: '⚡ Disponible pour un stage de 16 semaines dès le 19 janvier 2027',
             greeting: 'Salut, je suis',
             title: 'Développeur & Étudiant en Informatique',
-            description: 'Étudiant en 3ème année de BUT Informatique (parcours Réalisation d\'Applications) à l\'IUT d\'Annecy, passionné par le développement web, les bases de données et la création d\'applications conviviales. Fort d\'un stage de BUT2 chez Lappi Soft, je recherche un stage de 16 semaines à partir du 19 janvier 2027 pour mettre en pratique mes compétences et apprendre au sein d\'une équipe dynamique.',
+            description: 'Étudiant en 3e et dernière année de Bachelor (BUT) Informatique, parcours Réalisation d\'Applications, à l\'IUT d\'Annecy. Développeur full-stack (C#/.NET, Vue.js, Python) fort d\'une première expérience en studio de jeux vidéo, je m\'appuie sur un solide bagage en mathématiques et en data/IA, domaine dans lequel j\'aimerais poursuivre en master. Je recherche un stage de 16 semaines à partir du 19 janvier 2027.',
             contact: '📩 Me contacter',
             downloadCV: '📄 Télécharger mon CV',
             projects: '🚀 Voir mes projets'
@@ -35,7 +35,7 @@ const translations = {
         stats: {
             education: 'Informatique à l\'IUT Annecy',
             projects: 'Projets développés',
-            champion: 'Champion & 3ème',
+            champion: 'Champion & 3e',
             sports: 'France de Polo et Saut d\'Obstacles',
             languages: '3',
             languagesText: 'Langues parlées',
@@ -59,8 +59,8 @@ const translations = {
             lookingFor: 'Recherche active',
             featured: '⭐ En vedette',
             lappisoft: {
-                dates: 'Avril - Juin 2026',
-                title: 'Stage Développeur Unity - Lappi Soft',
+                dates: 'Avril – juin 2026',
+                title: 'Développeur logiciel (Unity/C#) - Lappi Soft',
                 description: 'Studio de jeux vidéo indépendant (Pers-Jussy) dirigé par Maxime Bernard. Conception et développement en autonomie du système Discovery Diary (journal découvrable in-game) pour le jeu The Inspector sous Unity : ~2 400 lignes réparties sur 12 scripts C#, Notification Manager, Big Notification synchronisée à l\'audio, outil éditeur PSB Importer, persistance via variables Lua et support de 5 langues.',
                 perf: 'Gain de performance :',
                 perfText: '2 → 84 FPS sur la scène de test',
@@ -78,16 +78,16 @@ const translations = {
             },
             internship: {
                 title: 'Stage BUT3 Informatique',
-                description: 'Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement logiciel, développement web ou administration de bases de données. Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Vue 3, PHP/Laravel, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l\'étranger.',
+                description: 'Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement logiciel, développement web ou data/IA. Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Python, Vue 3, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l\'étranger.',
                 duration: 'Durée :',
                 weeks: '16 semaines',
                 start: 'Début :',
                 date: '19 janvier 2027',
                 domains: 'Domaines :',
-                domainsText: 'Développement Web, Bases de données, Développement logiciel'
+                domainsText: 'Développement logiciel, développement web, data & IA'
             },
             magicalsky: {
-                since: 'Depuis Fév. 2025',
+                since: 'Depuis févr. 2025',
                 type: 'Bénévolat Informatique',
                 title: 'Game Designer - MagicalSky',
                 description: 'Game designer sur le serveur Minecraft MagicalSky (magicalsky.fr). Création et configuration de mobs avec MythicMobs, développement d\'outils personnalisés avec MMOItems. Création de serveurs privés et plugins avec Paper. Modélisation 3D de mobs avec Blockbench, compétence acquise grâce à mon expérience CATIA à l\'ENIB. Force de proposition pour de nouvelles fonctionnalités et solutions techniques. Travail collaboratif au sein d\'une équipe de 13-14 personnes.',
@@ -169,9 +169,9 @@ const translations = {
                 school: 'Lycée :'
             },
             science: {
-                title: 'Concours de Sciences',
-                description: 'Lauréat du concours de sciences en classe de Première, démontrant des compétences exceptionnelles en sciences expérimentales et résolution de problèmes.',
-                winner: '1ère place',
+                title: 'Cordées de la réussite 2022',
+                description: 'Lauréat (1re place) du concours Cordées de la réussite en classe de Première : analyse d\'un réseau de lycéens par la théorie des graphes, avec Python et Graphviz.',
+                winner: '1re place',
                 school: 'Lycée :'
             }
         },
@@ -194,6 +194,9 @@ const translations = {
             summer2024: 'Été 2024',
             summer2023: 'Été 2023',
             sinceDec2024: 'Depuis déc. 2024',
+            y2025_2026: '2025 – 2026',
+            spring2026: 'Printemps 2026',
+            personal: 'Personnel',
             ongoing: 'En développement',
             dec2024: 'Déc. 2024',
             spring2024: 'Printemps 2024',
@@ -224,10 +227,10 @@ const translations = {
             viewProject: 'Voir le projet →',
             viewSite: 'Vous êtes dessus ! →',
             portfolio: {
-                title: 'Portfolio Personnel - Cas d\'Étude BUT2/BUT3',
-                description: 'Développement d\'un site portfolio responsive et bilingue (FR/EN) développé depuis décembre 2024 et toujours en évolution. Utilisation de HTML5, CSS3 et JavaScript vanilla pour créer une interface moderne avec animations, système de traduction i18n, formulaire de contact sécurisé via Formspree, et déploiement automatisé sur GitHub Pages. Ce projet démontre mes compétences en développement web front-end et design UX/UI.',
+                title: 'Portfolio personnel bilingue',
+                description: 'Site portfolio responsive et bilingue (FR/EN), lancé en décembre 2024 et toujours en évolution : HTML5, CSS3 et JavaScript vanilla, animations, système de traduction i18n, formulaire de contact via Formspree, vérifications automatiques à chaque modification (GitHub Actions) et déploiement sur GitHub Pages.',
                 context: 'Contexte :',
-                contextText: 'Projet universitaire visant à créer une vitrine professionnelle de mes compétences et projets',
+                contextText: 'Projet personnel, vitrine professionnelle de mes compétences et de mes projets',
                 tech: 'Technologies :'
             },
             zelda: {
@@ -256,6 +259,7 @@ const translations = {
                 description: 'Application desktop de gestion de cave à vin pour l\'enseigne Nicolas, développée en C# avec WPF et une architecture MVVM. Conception UML, base de données PostgreSQL et API REST pour la communication client-serveur.',
                 context: 'Contexte :',
                 contextText: 'Situation d\'Apprentissage et d\'Évaluation - BUT Informatique',
+                techText: 'C#, WPF, MVVM, PostgreSQL, API REST, UML',
                 tech: 'Technologies :'
             },
             survival: {
@@ -283,7 +287,7 @@ const translations = {
             email: '📧 Formulaire de contact'
         },
         footer: {
-            copyright: '© 2026 Mateo - Étudiant Développeur | IUT Annecy',
+            copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
             signature: 'Créé avec passion 🚀'
         },
         cvModal: {
@@ -302,8 +306,8 @@ const translations = {
     },
     en: {
         meta: {
-            title: 'Mateo - Student Developer | Portfolio',
-            description: 'Mateo, 3rd-year Computer Science student (Application Development track) at IUT Annecy. Passionate developer seeking a 16-week internship starting January 19, 2027.'
+            title: 'Matéo Bourdin - Computer Science Student | Portfolio',
+            description: 'Matéo Bourdin, final-year Bachelor\'s student in Computer Science (BUT) at IUT d\'Annecy. Full-stack developer (C#/.NET, Vue.js, Python) seeking a 16-week internship starting on 19 January 2027.'
         },
         nav: {
             home: 'Home',
@@ -321,10 +325,10 @@ const translations = {
             contact: 'Contact'
         },
         hero: {
-            availability: '⚡ Available for a 16-week internship from January 19, 2027',
+            availability: '⚡ Available for a 16-week internship from 19 January 2027',
             greeting: 'Hi, I\'m',
             title: 'Developer & Computer Science Student',
-            description: '3rd-year Computer Science student (Application Development track) at IUT Annecy, passionate about web development, databases and creating user-friendly applications. Having completed a BUT2 internship at Lappi Soft, I\'m looking for a 16-week internship starting January 19, 2027 to apply my skills and learn within a dynamic team.',
+            description: 'In the third and final year of a Bachelor\'s degree in Computer Science (BUT Informatique, Application Development track) at IUT d\'Annecy. A full-stack developer (C#/.NET, Vue.js, Python) with first professional experience in a video game studio, I bring a strong background in maths and data/AI, the field I hope to pursue in a Master\'s. I am seeking a 16-week internship starting on 19 January 2027.',
             contact: '📩 Contact me',
             downloadCV: '📄 Download my CV',
             projects: '🚀 View my projects'
@@ -341,7 +345,7 @@ const translations = {
             languages: '3',
             languagesText: 'Languages spoken',
             internship: 'Internship',
-            seeking: 'Actively seeking from January 19, 2027'
+            seeking: 'Actively seeking from 19 January 2027'
         },
         languages: {
             tag: '🌍 Languages',
@@ -360,9 +364,9 @@ const translations = {
             lookingFor: 'Actively seeking',
             featured: '⭐ Featured',
             lappisoft: {
-                dates: 'April - June 2026',
-                title: 'Unity Developer Internship - Lappi Soft',
-                description: 'Independent video game studio (Pers-Jussy) led by Maxime Bernard. Designed and developed, independently, the Discovery Diary system (an in-game discoverable journal) for the game The Inspector in Unity: ~2,400 lines across 12 C# scripts, Notification Manager, Big Notification synced to audio, PSB Importer editor tool, persistence via Lua variables, and support for 5 languages.',
+                dates: 'April – June 2026',
+                title: 'Software Developer (Unity/C#) - Lappi Soft',
+                description: 'Independent video game studio (Pers-Jussy) led by Maxime Bernard. Independently designed and developed the Discovery Diary system (an in-game journal the player fills while exploring) for the game The Inspector in Unity: ~2,400 lines across 12 C# scripts, a Notification Manager, audio-synced Big Notifications, a PSB Importer editor tool, persistence via Lua variables and support for 5 languages.',
                 perf: 'Performance gain:',
                 perfText: '2 → 84 FPS on the test scene',
                 stack: 'Stack:',
@@ -371,27 +375,27 @@ const translations = {
             },
             intersport: {
                 title: 'Sales Associate - Intersport',
-                description: 'Personalized customer advice on sports equipment, inventory management and stocking. Development of customer relations and teamwork skills in a dynamic commercial environment.'
+                description: 'Personalised customer advice on sports equipment, inventory management and stocking. Development of customer relations and teamwork skills in a dynamic commercial environment.'
             },
             carrefour: {
                 title: 'Bakery Employee - Carrefour Market',
                 description: 'Preparation and presentation of bakery products, quality control and compliance with hygiene standards. Customer relationship management and teamwork in a demanding environment.'
             },
             internship: {
-                title: 'BUT3 Computer Science Internship',
-                description: 'I am actively seeking a 16-week internship starting January 19, 2027 in software development, web development, or database administration. Objective: to put into practice my skills in C#/ASP.NET Core, Vue 3, PHP/Laravel, PostgreSQL and contribute to concrete projects in a company, in France or abroad.',
+                title: '3rd-year Computer Science Internship',
+                description: 'I am actively seeking a 16-week internship starting on 19 January 2027 in software development, web development or data/AI. Objective: to put into practice my skills in C#/ASP.NET Core, Python, Vue 3, PostgreSQL and contribute to concrete projects in a company, in France or abroad.',
                 duration: 'Duration:',
                 weeks: '16 weeks',
                 start: 'Start:',
-                date: 'January 19, 2027',
+                date: '19 January 2027',
                 domains: 'Areas:',
-                domainsText: 'Web Development, Databases, Software Development'
+                domainsText: 'Software development, web development, data & AI'
             },
             magicalsky: {
                 since: 'Since Feb. 2025',
                 type: 'IT Volunteering',
                 title: 'Game Designer - MagicalSky',
-                description: 'Game designer on the Minecraft server MagicalSky (magicalsky.fr). Creation and configuration of mobs with MythicMobs, development of custom tools with MMOItems. Creation of private servers and plugins with Paper. 3D mob modeling with Blockbench, a skill acquired through my CATIA experience at ENIB. Proactive in proposing new features and technical solutions. Collaborative work within a team of 13-14 people.',
+                description: 'Game designer on the Minecraft server MagicalSky (magicalsky.fr). Creation and configuration of mobs with MythicMobs, development of custom tools with MMOItems. Creation of private servers and plugins with Paper. 3D mob modelling with Blockbench, a skill acquired through my CATIA experience at ENIB. Proactive in proposing new features and technical solutions. Collaborative work within a team of 13-14 people.',
                 skills: 'Skills:',
                 skillsText: 'Java, MythicMobs, MMOItems, Paper, Blockbench, Teamwork',
                 details: 'View details'
@@ -464,14 +468,14 @@ const translations = {
                 school: 'School:'
             },
             bac: {
-                title: 'French Baccalaureate with honors',
+                title: 'French Baccalauréat (high-school diploma)',
                 description: 'General Baccalaureate with specializations in Mathematics and NSI (Computer Science).',
                 mention: 'With Distinction',
                 school: 'High School:'
             },
             science: {
-                title: 'Science Competition',
-                description: 'Winner of the science competition in 11th grade, demonstrating exceptional skills in experimental sciences and problem solving.',
+                title: 'Cordées de la réussite 2022',
+                description: '1st place in the Cordées de la réussite competition (a French equal-opportunity programme) in 11th grade: graph-theory analysis of a network of high-school students, with Python and Graphviz.',
                 winner: '1st place',
                 school: 'High School:'
             }
@@ -495,6 +499,9 @@ const translations = {
             summer2024: 'Summer 2024',
             summer2023: 'Summer 2023',
             sinceDec2024: 'Since Dec. 2024',
+            y2025_2026: '2025 – 2026',
+            spring2026: 'Spring 2026',
+            personal: 'Personal',
             ongoing: 'In active development',
             dec2024: 'Dec. 2024',
             spring2024: 'Spring 2024',
@@ -525,15 +532,15 @@ const translations = {
             viewProject: 'View project →',
             viewSite: 'You are on it! →',
             portfolio: {
-                title: 'Personal Portfolio - BUT2/BUT3 Case Study',
-                description: 'Development of a responsive and bilingual (FR/EN) portfolio website developed since December 2024 and still evolving. Using HTML5, CSS3 and vanilla JavaScript to create a modern interface with animations, i18n translation system, secure contact form via Formspree, and automated deployment on GitHub Pages. This project demonstrates my front-end web development and UX/UI design skills.',
+                title: 'Bilingual personal portfolio',
+                description: 'Responsive, bilingual (FR/EN) portfolio website, started in December 2024 and still evolving: HTML5, CSS3 and vanilla JavaScript, animations, an i18n translation system, a contact form via Formspree, automated checks on every change (GitHub Actions) and deployment on GitHub Pages.',
                 context: 'Context:',
-                contextText: 'University project aimed at creating a professional showcase of my skills and projects',
+                contextText: 'Personal project, a professional showcase of my skills and projects',
                 tech: 'Technologies:'
             },
             zelda: {
                 title: 'Zelda II: The Adventure of Link',
-                description: 'Complete recreation of the classic Zelda 2 game in Python with colorful ASCII graphics and ANSI sequences. Development of a complete RPG system including side-scrolling combat, open world exploration, random encounters, interactive NPCs and inventory management. Use of termios for non-blocking input handling and creation of simple enemy AI.',
+                description: 'Complete recreation of the classic Zelda 2 game in Python with colourful ASCII graphics and ANSI sequences. Development of a complete RPG system including side-scrolling combat, open world exploration, random encounters, interactive NPCs and inventory management. Use of termios for non-blocking input handling and creation of simple enemy AI.',
                 context: 'Context:',
                 contextText: 'Advanced programming project completed in preparatory year at ENIB',
                 tech: 'Technologies:'
@@ -557,11 +564,12 @@ const translations = {
                 description: 'Wine cellar management desktop application for the Nicolas wine retailer, built in C# with WPF and an MVVM architecture. UML design, PostgreSQL database and REST API for client-server communication.',
                 context: 'Context:',
                 contextText: 'Learning and Assessment Situation - Computer Science BUT',
+                techText: 'C#, WPF, MVVM, PostgreSQL, REST API, UML',
                 tech: 'Technologies:'
             },
             survival: {
                 title: 'Survival Island',
-                description: 'Island defense game developed in C# where the player must protect their island against waves of enemies. The player stays at the center of the screen and must manage their health, damage, and firing speed. Progressive wave system with random enemy generation approaching the island. Collaborative development with Git version control.',
+                description: 'Island defence game developed in C# where the player must protect their island against waves of enemies. The player stays at the centre of the screen and must manage their health, damage, and firing speed. Progressive wave system with random enemy generation approaching the island. Collaborative development with Git version control.',
                 context: 'Context:',
                 contextText: 'Team game development project - 1st year Computer Science BUT',
                 tech: 'Technologies:'
@@ -579,12 +587,12 @@ const translations = {
         },
         contact: {
             title: '🚀 Let\'s work together!',
-            subtitle: 'I\'m available for a 16-week internship starting January 19, 2027',
+            subtitle: 'I\'m available for a 16-week internship starting on 19 January 2027',
             emailBtn: 'Contact me',
             email: '📧 Contact form'
         },
         footer: {
-            copyright: '© 2026 Mateo - Student Developer | IUT Annecy',
+            copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
             signature: 'Created with passion 🚀'
         },
         cvModal: {
