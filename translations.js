@@ -102,6 +102,8 @@ const translations = {
             description: "Les matières, projets et travaux marquants de chaque année du Bachelor (BUT) Informatique à l’IUT d’Annecy",
             subjects: "Matières clés",
             projects: "Projets & réalisations",
+            security: "Sécurité",
+            securityText: "Audit de mes dépôts (octobre 2026) : des identifiants de développement, aujourd'hui inactifs, figurent encore dans l'historique de projets de 1re et 2e année. Je les laisse visibles comme trace honnête de mon apprentissage. Depuis la 3e année, aucun secret réel dans mes dépôts, et ce portfolio vérifie automatiquement l'absence de secrets dans tout son historique (gitleaks) à chaque modification.",
             current: "En cours",
             y1: {
                 title: "1re année — Les fondamentaux",
@@ -410,6 +412,8 @@ const translations = {
             description: "The courses, projects and key work of each year of my Bachelor’s degree in Computer Science (BUT) at IUT d’Annecy",
             subjects: "Key courses",
             projects: "Projects & achievements",
+            security: "Security",
+            securityText: "Audit of my repositories (October 2026): development credentials, now inactive, still appear in the history of some first- and second-year projects. I have left them visible as an honest record of my learning. Since my third year, my repositories contain no real secrets, and this portfolio automatically scans its full history for secrets (gitleaks) on every change.",
             current: "In progress",
             y1: {
                 title: "1st year — The fundamentals",

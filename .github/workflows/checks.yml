@@ -28,6 +28,18 @@ jobs:
       - name: Check internal links and #anchors
         run: python3 scripts/check-links.py
 
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan the full history for secrets (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   external-links:
     runs-on: ubuntu-latest
     steps:
