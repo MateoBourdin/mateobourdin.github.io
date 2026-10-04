@@ -113,7 +113,7 @@ const translations = {
                 s4: "Conception UML",
                 s5: "Gestion de version (Git)",
                 p1: "Survival Island — jeu de défense en C# (SAE 1.01)",
-                p2: "Cave à vin Nicolas — WPF/MVVM, PostgreSQL, API REST (SAE 2.01)",
+                p2: "Cave à vin Nicolas — C# / WPF, PostgreSQL (SAE 2.01)",
             },
             y2: {
                 title: "2e année — Full-stack et premier stage",
@@ -256,10 +256,10 @@ const translations = {
             },
             sae201: {
                 title: 'Cave à vin Nicolas - SAE 2.01',
-                description: 'Application desktop de gestion de cave à vin pour l\'enseigne Nicolas, développée en C# avec WPF et une architecture MVVM. Conception UML, base de données PostgreSQL et API REST pour la communication client-serveur.',
+                description: 'Application desktop de gestion de stock pour l\'enseigne Nicolas, développée en binôme en C# / WPF : recherche de vins, demandes d\'approvisionnement validées par le responsable, commandes fournisseurs et fiches clients, sur une base PostgreSQL.',
                 context: 'Contexte :',
                 contextText: 'Situation d\'Apprentissage et d\'Évaluation - BUT Informatique',
-                techText: 'C#, WPF, MVVM, PostgreSQL, API REST, UML',
+                techText: 'C#, .NET 8, WPF, PostgreSQL, UML',
                 tech: 'Technologies :'
             },
             survival: {
@@ -418,7 +418,7 @@ const translations = {
                 s4: "UML design",
                 s5: "Version control (Git)",
                 p1: "Survival Island — defence game in C# (SAE 1.01)",
-                p2: "Nicolas wine cellar — WPF/MVVM, PostgreSQL, REST API (SAE 2.01)",
+                p2: "Nicolas wine cellar — C# / WPF, PostgreSQL (SAE 2.01)",
             },
             y2: {
                 title: "2nd year — Full-stack and first internship",
@@ -469,7 +469,7 @@ const translations = {
             },
             bac: {
                 title: 'French Baccalauréat (high-school diploma)',
-                description: 'General Baccalaureate with specializations in Mathematics and NSI (Computer Science).',
+                description: 'General Baccalaureate with specialisations in Mathematics and NSI (Computer Science).',
                 mention: 'With Distinction',
                 school: 'High School:'
             },
@@ -561,10 +561,10 @@ const translations = {
             },
             sae201: {
                 title: 'Nicolas wine cellar - SAE 2.01',
-                description: 'Wine cellar management desktop application for the Nicolas wine retailer, built in C# with WPF and an MVVM architecture. UML design, PostgreSQL database and REST API for client-server communication.',
+                description: 'Stock management desktop application for the Nicolas wine retailer, built by a team of two in C# / WPF: wine search, restocking requests approved by the manager, supplier orders and customer records, on a PostgreSQL database.',
                 context: 'Context:',
                 contextText: 'Learning and Assessment Situation - Computer Science BUT',
-                techText: 'C#, WPF, MVVM, PostgreSQL, REST API, UML',
+                techText: 'C#, .NET 8, WPF, PostgreSQL, UML',
                 tech: 'Technologies:'
             },
             survival: {

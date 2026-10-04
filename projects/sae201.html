@@ -11,18 +11,18 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SAE201 - Application C# Desktop - Programmation Orientée Objet">
+    <meta name="description" content="Cave à vin Nicolas (SAE 2.01) : application desktop C# / WPF de gestion de stock pour l'enseigne Nicolas, avec PostgreSQL.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mateobourdin.github.io/projects/sae201.html">
-    <meta property="og:title" content="SAE201 - Application C# - Portfolio Project">
-    <meta property="og:description" content="SAE201 - Application C# Desktop - Programmation Orientée Objet">
+    <meta property="og:title" content="Cave à vin Nicolas - Matéo Bourdin">
+    <meta property="og:description" content="Cave à vin Nicolas (SAE 2.01) : application desktop C# / WPF de gestion de stock pour l'enseigne Nicolas, avec PostgreSQL.">
     <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SAE201 - Application C# - Portfolio Project">
-    <meta name="twitter:description" content="SAE201 - Application C# Desktop - Programmation Orientée Objet">
+    <meta name="twitter:title" content="Cave à vin Nicolas - Matéo Bourdin">
+    <meta name="twitter:description" content="Cave à vin Nicolas (SAE 2.01) : application desktop C# / WPF de gestion de stock pour l'enseigne Nicolas, avec PostgreSQL.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
-    <title>SAE 2.01 - Cave à vin Nicolas - Portfolio</title>
+    <title>Cave à vin Nicolas - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
@@ -36,476 +36,246 @@
     </div>
 
     <div class="container">
-        <!-- Back Button -->
-        <a href="../index.html#projets" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
+        <a href="../index.html#projets" class="back-btn" data-i18n="nav.back">← Retour au portfolio</a>
 
-        <!-- Hero Section -->
         <div class="hero project-hero">
             <h1>🍷 Cave à vin Nicolas</h1>
-            <h2 data-i18n="hero.subtitle">SAE 2.01 - Application de gestion de cave à vin (WPF/MVVM)</h2>
-            <p data-i18n="hero.description">
-                Application desktop développée en C# avec Visual Studio dans le cadre de la SAE201.
-                Projet mettant en œuvre les concepts avancés de programmation orientée objet et les bonnes pratiques
-                de développement logiciel du BUT Informatique.
-            </p>
-
+            <h2 data-i18n="hero.subtitle">SAE 2.01 - Application de gestion de stock pour les caves Nicolas</h2>
+            <p data-i18n="hero.description">Application desktop développée en binôme pour l'enseigne de cavistes Nicolas : recherche de vins, demandes d'approvisionnement, commandes fournisseurs et fiches clients, sur une base PostgreSQL, avec des droits différents selon le rôle de l'employé.</p>
             <div class="badges">
                 <span class="badge">C#</span>
-                <span class="badge">.NET</span>
-                <span class="badge">Visual Studio</span>
-                <span class="badge" data-i18n="hero.badge.oop">POO Avancée</span>
-                <span class="badge">SAE201</span>
+                <span class="badge">.NET 8</span>
+                <span class="badge">WPF</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">SAE 2.01</span>
             </div>
-
-            <a href="https://github.com/MateoBourdin/SAE201-Dev" class="github-btn" target="_blank" data-i18n="hero.github">
-                💻 Voir sur GitHub
-            </a>
+            <a href="https://github.com/MateoBourdin/SAE201-Dev" class="github-btn" target="_blank" data-i18n="hero.github">💻 Voir sur GitHub</a>
         </div>
 
-        <!-- Stats Section -->
         <div class="section">
-            <h3 data-i18n="stats.title">📊 Statistiques du Projet</h3>
+            <h3 data-i18n="stats.title">📊 Le projet en chiffres</h3>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">75+</div>
+                    <div class="stat-number">75</div>
                     <div class="stat-label" data-i18n="stats.commits">Commits</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">C#</div>
+                    <div class="stat-number" data-i18n="stats.linesN">~4 300</div>
+                    <div class="stat-label" data-i18n="stats.lines">Lignes de C#</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">S2</div>
-                    <div class="stat-label" data-i18n="stats.semester">Semestre 2</div>
+                    <div class="stat-number">13</div>
+                    <div class="stat-label" data-i18n="stats.screens">Écrans (pages et fenêtres)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label" data-i18n="stats.team">Développeurs</div>
                 </div>
             </div>
         </div>
 
-        <!-- Description Section -->
         <div class="section">
             <h3 data-i18n="about.title">📖 À propos du projet</h3>
-            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">
-                Ce projet a été développé dans le cadre de la SAE201 - Développement d'une application au second semestre
-                du BUT Informatique. Il s'agit d'une application desktop en C# utilisant Visual Studio et mettant en pratique
-                les concepts de programmation orientée objet, les patterns de conception et les bonnes pratiques de développement.
-            </p>
-
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">Projet de fin de première année (SAE 2.01), réalisé en juin 2025 avec Kilyan Gibert. L'application couvre le quotidien d'une cave Nicolas : un vendeur recherche un vin, crée une demande d'approvisionnement ou une fiche client ; le responsable valide les demandes et les transforme en commandes fournisseurs.</p>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h4 data-i18n="features.oop.title">📦 Programmation Orientée Objet</h4>
-                    <p data-i18n="features.oop.desc">Architecture logicielle utilisant les principes SOLID, l'encapsulation, l'héritage et le polymorphisme.</p>
+                    <h4 data-i18n="features.login.title">🔐 Connexion et rôles</h4>
+                    <p data-i18n="features.login.desc">Connexion avec les identifiants de l'employé sur la base PostgreSQL. Les actions de validation sont réservées au responsable.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.architecture.title">🏗️ Architecture Logicielle</h4>
-                    <p data-i18n="features.architecture.desc">Conception d'une architecture modulaire et maintenable avec séparation des responsabilités.</p>
+                    <h4 data-i18n="features.search.title">🔍 Recherche de vins</h4>
+                    <p data-i18n="features.search.desc">Catalogue filtrable et fiche détaillée de chaque vin (appellation, prix, stock).</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.ui.title">🖥️ Interface Utilisateur</h4>
-                    <p data-i18n="features.ui.desc">Développement d'une interface desktop moderne et intuitive avec .NET Framework.</p>
+                    <h4 data-i18n="features.requests.title">📦 Demandes d'approvisionnement</h4>
+                    <p data-i18n="features.requests.desc">Création des demandes par les vendeurs, suivi de leur état et validation par le responsable.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.patterns.title">🎨 Design Patterns</h4>
-                    <p data-i18n="features.patterns.desc">Implémentation de patterns de conception pour une meilleure structuration du code.</p>
+                    <h4 data-i18n="features.orders.title">🚚 Commandes fournisseurs</h4>
+                    <p data-i18n="features.orders.desc">Création des commandes à partir des demandes validées, avec le détail de chaque ligne et son fournisseur.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.testing.title">🧪 Tests et Débogage</h4>
-                    <p data-i18n="features.testing.desc">Mise en place de tests unitaires et gestion des erreurs avec des pratiques de débogage.</p>
+                    <h4 data-i18n="features.clients.title">👥 Gestion des clients</h4>
+                    <p data-i18n="features.clients.desc">Recherche, consultation et ajout de fiches clients dans des fenêtres dédiées.</p>
                 </div>
                 <div class="feature-card">
-                    <h4 data-i18n="features.git.title">🔀 Gestion de Version</h4>
-                    <p data-i18n="features.git.desc">Utilisation avancée de Git pour le versioning et la traçabilité du code.</p>
+                    <h4 data-i18n="features.errors.title">🛡️ Robustesse</h4>
+                    <p data-i18n="features.errors.desc">Gestion des erreurs avec try/catch, messages explicites pour l'utilisateur et journal des erreurs dans un fichier.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Technical Stack Section -->
         <div class="section">
-            <h3 data-i18n="tech.title">🛠️ Technologies Utilisées</h3>
+            <h3 data-i18n="tech.title">🛠️ Technologies</h3>
             <div class="tech-stack">
                 <div class="tech-item">C#</div>
-                <div class="tech-item">.NET Framework</div>
-                <div class="tech-item">Visual Studio</div>
-                <div class="tech-item">Git</div>
-                <div class="tech-item">Windows Forms / WPF</div>
-                <div class="tech-item">OOP</div>
+                <div class="tech-item">.NET 8</div>
+                <div class="tech-item">WPF / XAML</div>
+                <div class="tech-item">PostgreSQL (Npgsql)</div>
+                <div class="tech-item">UML</div>
+                <div class="tech-item">Git / GitHub</div>
             </div>
-
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte Pédagogique</h4>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.contextInfo.desc">
-                La <strong>SAE201 - Développement d'une application</strong> est un projet majeur du second semestre du BUT Informatique.
-                Il permet de consolider les compétences en développement logiciel avec un focus sur la programmation orientée objet,
-                la conception d'architecture et l'implémentation de fonctionnalités complexes dans un environnement de développement professionnel.
-            </p>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.archTitle">Architecture</h4>
+            <p style="color: var(--text-light); line-height: 1.8;" data-i18n="tech.arch">Les classes métier (Vin, Client, Demande, Commande, Employé…) portent les requêtes SQL ; l'accès à la base passe par une connexion unique (patron singleton). L'interface WPF s'organise en pages XAML affichées dans la fenêtre principale, avec un menu de navigation, des fenêtres pour les créations et de la liaison de données (data binding) vers des collections observables. La conception a commencé par un diagramme de classes UML.</p>
         </div>
 
-        <!-- OOP Concepts Section -->
-        <div class="section">
-            <h3 data-i18n="oop.title">🎯 Concepts de POO Mis en Pratique</h3>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4 data-i18n="oop.encapsulation.title">🔒 Encapsulation</h4>
-                    <p data-i18n="oop.encapsulation.desc">Protection des données avec des modificateurs d'accès et des propriétés pour un code plus sûr.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="oop.inheritance.title">🧬 Héritage</h4>
-                    <p data-i18n="oop.inheritance.desc">Hiérarchie de classes pour la réutilisation du code et l'extension des fonctionnalités.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="oop.polymorphism.title">🎭 Polymorphisme</h4>
-                    <p data-i18n="oop.polymorphism.desc">Méthodes virtuelles et interfaces pour un code flexible et extensible.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="oop.abstraction.title">🎨 Abstraction</h4>
-                    <p data-i18n="oop.abstraction.desc">Classes abstraites et interfaces pour définir des contrats clairs entre composants.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Learning Outcomes Section -->
-        <div class="section">
-            <h3 data-i18n="learning.title">🎓 Compétences Développées</h3>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4 data-i18n="learning.dev.title">💻 Développement Logiciel</h4>
-                    <p data-i18n="learning.dev.desc">Maîtrise de C# et du framework .NET pour créer des applications desktop robustes.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="learning.design.title">📐 Conception Logicielle</h4>
-                    <p data-i18n="learning.design.desc">Analyse des besoins, modélisation UML et conception d'architecture logicielle.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="learning.practices.title">✨ Bonnes Pratiques</h4>
-                    <p data-i18n="learning.practices.desc">Application des conventions de codage, documentation et principes de clean code.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="learning.tools.title">🔧 Outils de Développement</h4>
-                    <p data-i18n="learning.tools.desc">Utilisation professionnelle de Visual Studio, Git et outils de débogage.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Management Section -->
-        <div class="section">
-            <h3 data-i18n="management.title">📋 Gestion de Projet</h3>
-            <p style="color: var(--text-light); margin-bottom: 1rem;" data-i18n="management.description">
-                Le projet SAE201 inclut également des aspects de gestion de projet :
-            </p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4 data-i18n="management.planning.title">📅 Planification</h4>
-                    <p data-i18n="management.planning.desc">Organisation du travail avec définition d'objectifs et respect des délais.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="management.versioning.title">🔀 Versioning</h4>
-                    <p data-i18n="management.versioning.desc">Gestion des versions avec Git et documentation des changements.</p>
-                </div>
-                <div class="feature-card">
-                    <h4 data-i18n="management.quality.title">✅ Assurance Qualité</h4>
-                    <p data-i18n="management.quality.desc">Tests, revue de code et validation des fonctionnalités développées.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- GitHub CTA -->
         <div class="section" style="text-align: center; background: var(--primary-lighter);">
-            <h3 style="margin-bottom: 1.5rem;" data-i18n="cta.title">🌟 Découvrez le Code Source</h3>
-            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);" data-i18n="cta.description">
-                Le projet complet est disponible sur GitHub avec plus de 75 commits documentés.
-            </p>
-            <a href="https://github.com/MateoBourdin/SAE201-Dev" class="github-btn" target="_blank" data-i18n="cta.button">
-                Explorer le Repository GitHub
-            </a>
+            <h3 style="margin-bottom: 1.5rem;" data-i18n="cta.title">🌟 Le code source</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);" data-i18n="cta.description">Le projet complet est disponible sur GitHub : 75 commits sur deux semaines de développement.</p>
+            <a href="https://github.com/MateoBourdin/SAE201-Dev" class="github-btn" target="_blank" data-i18n="cta.button">Voir le dépôt GitHub</a>
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
-        <p data-i18n="footer.project">SAE201 - Développement d'une application</p>
-        <p data-i18n="footer.context">Projet réalisé au printemps 2025 à l'IUT d'Annecy</p>
-        <p>© 2025 - Application C# - BUT Informatique</p>
+        <p data-i18n="footer.project">SAE 2.01 - Développement d'une application</p>
+        <p data-i18n="footer.context">Projet réalisé en juin 2025 à l'IUT d'Annecy</p>
+        <p>© 2026 - Matéo Bourdin</p>
     </div>
 
     <script>
-        // i18n translations
         const translations = {
-            fr: {
-                nav: {
-                    back: "← Retour au Portfolio"
-                },
-                hero: {
-                    subtitle: "SAE 2.01 - Application de gestion de cave à vin (WPF/MVVM)",
-                    description: "Application desktop développée en C# avec Visual Studio dans le cadre de la SAE201. Projet mettant en œuvre les concepts avancés de programmation orientée objet et les bonnes pratiques de développement logiciel du BUT Informatique.",
-                    badge: {
-                        oop: "POO Avancée"
-                    },
-                    github: "💻 Voir sur GitHub"
-                },
-                stats: {
-                    title: "📊 Statistiques du Projet",
-                    commits: "Commits",
-                    semester: "Semestre 2"
-                },
-                about: {
-                    title: "📖 À propos du projet",
-                    description: "Ce projet a été développé dans le cadre de la SAE201 - Développement d'une application au second semestre du BUT Informatique. Il s'agit d'une application desktop en C# utilisant Visual Studio et mettant en pratique les concepts de programmation orientée objet, les patterns de conception et les bonnes pratiques de développement."
-                },
-                features: {
-                    oop: {
-                        title: "📦 Programmation Orientée Objet",
-                        desc: "Architecture logicielle utilisant les principes SOLID, l'encapsulation, l'héritage et le polymorphisme."
-                    },
-                    architecture: {
-                        title: "🏗️ Architecture Logicielle",
-                        desc: "Conception d'une architecture modulaire et maintenable avec séparation des responsabilités."
-                    },
-                    ui: {
-                        title: "🖥️ Interface Utilisateur",
-                        desc: "Développement d'une interface desktop moderne et intuitive avec .NET Framework."
-                    },
-                    patterns: {
-                        title: "🎨 Design Patterns",
-                        desc: "Implémentation de patterns de conception pour une meilleure structuration du code."
-                    },
-                    testing: {
-                        title: "🧪 Tests et Débogage",
-                        desc: "Mise en place de tests unitaires et gestion des erreurs avec des pratiques de débogage."
-                    },
-                    git: {
-                        title: "🔀 Gestion de Version",
-                        desc: "Utilisation avancée de Git pour le versioning et la traçabilité du code."
-                    }
-                },
-                tech: {
-                    title: "🛠️ Technologies Utilisées",
-                    context: "Contexte Pédagogique",
-                    contextInfo: {
-                        desc: "La <strong>SAE201 - Développement d'une application</strong> est un projet majeur du second semestre du BUT Informatique. Il permet de consolider les compétences en développement logiciel avec un focus sur la programmation orientée objet, la conception d'architecture et l'implémentation de fonctionnalités complexes dans un environnement de développement professionnel."
-                    }
-                },
-                oop: {
-                    title: "🎯 Concepts de POO Mis en Pratique",
-                    encapsulation: {
-                        title: "🔒 Encapsulation",
-                        desc: "Protection des données avec des modificateurs d'accès et des propriétés pour un code plus sûr."
-                    },
-                    inheritance: {
-                        title: "🧬 Héritage",
-                        desc: "Hiérarchie de classes pour la réutilisation du code et l'extension des fonctionnalités."
-                    },
-                    polymorphism: {
-                        title: "🎭 Polymorphisme",
-                        desc: "Méthodes virtuelles et interfaces pour un code flexible et extensible."
-                    },
-                    abstraction: {
-                        title: "🎨 Abstraction",
-                        desc: "Classes abstraites et interfaces pour définir des contrats clairs entre composants."
-                    }
-                },
-                learning: {
-                    title: "🎓 Compétences Développées",
-                    dev: {
-                        title: "💻 Développement Logiciel",
-                        desc: "Maîtrise de C# et du framework .NET pour créer des applications desktop robustes."
-                    },
-                    design: {
-                        title: "📐 Conception Logicielle",
-                        desc: "Analyse des besoins, modélisation UML et conception d'architecture logicielle."
-                    },
-                    practices: {
-                        title: "✨ Bonnes Pratiques",
-                        desc: "Application des conventions de codage, documentation et principes de clean code."
-                    },
-                    tools: {
-                        title: "🔧 Outils de Développement",
-                        desc: "Utilisation professionnelle de Visual Studio, Git et outils de débogage."
-                    }
-                },
-                management: {
-                    title: "📋 Gestion de Projet",
-                    description: "Le projet SAE201 inclut également des aspects de gestion de projet :",
-                    planning: {
-                        title: "📅 Planification",
-                        desc: "Organisation du travail avec définition d'objectifs et respect des délais."
-                    },
-                    versioning: {
-                        title: "🔀 Versioning",
-                        desc: "Gestion des versions avec Git et documentation des changements."
-                    },
-                    quality: {
-                        title: "✅ Assurance Qualité",
-                        desc: "Tests, revue de code et validation des fonctionnalités développées."
-                    }
-                },
-                cta: {
-                    title: "🌟 Découvrez le Code Source",
-                    description: "Le projet complet est disponible sur GitHub avec plus de 75 commits documentés.",
-                    button: "Explorer le Repository GitHub"
-                },
-                footer: {
-                    project: "SAE201 - Développement d'une application",
-                    context: "Projet réalisé au printemps 2025 à l'IUT d'Annecy"
-                }
+    "fr": {
+        "nav": {
+            "back": "← Retour au portfolio"
+        },
+        "hero": {
+            "subtitle": "SAE 2.01 - Application de gestion de stock pour les caves Nicolas",
+            "description": "Application desktop développée en binôme pour l'enseigne de cavistes Nicolas : recherche de vins, demandes d'approvisionnement, commandes fournisseurs et fiches clients, sur une base PostgreSQL, avec des droits différents selon le rôle de l'employé.",
+            "github": "💻 Voir sur GitHub"
+        },
+        "stats": {
+            "title": "📊 Le projet en chiffres",
+            "commits": "Commits",
+            "lines": "Lignes de C#",
+            "screens": "Écrans (pages et fenêtres)",
+            "team": "Développeurs",
+            "linesN": "~4 300"
+        },
+        "about": {
+            "title": "📖 À propos du projet",
+            "description": "Projet de fin de première année (SAE 2.01), réalisé en juin 2025 avec Kilyan Gibert. L'application couvre le quotidien d'une cave Nicolas : un vendeur recherche un vin, crée une demande d'approvisionnement ou une fiche client ; le responsable valide les demandes et les transforme en commandes fournisseurs."
+        },
+        "features": {
+            "login": {
+                "title": "🔐 Connexion et rôles",
+                "desc": "Connexion avec les identifiants de l'employé sur la base PostgreSQL. Les actions de validation sont réservées au responsable."
             },
-            en: {
-                nav: {
-                    back: "← Back to Portfolio"
-                },
-                hero: {
-                    subtitle: "SAE 2.01 - Wine cellar management application (WPF/MVVM)",
-                    description: "Desktop application developed in C# with Visual Studio as part of SAE201. Project implementing advanced object-oriented programming concepts and software development best practices for the Computer Science BUT.",
-                    badge: {
-                        oop: "Advanced OOP"
-                    },
-                    github: "💻 View on GitHub"
-                },
-                stats: {
-                    title: "📊 Project Statistics",
-                    commits: "Commits",
-                    semester: "Semester 2"
-                },
-                about: {
-                    title: "📖 About the Project",
-                    description: "This project was developed as part of SAE201 - Application Development in the second semester of the Computer Science BUT. It is a C# desktop application using Visual Studio that puts into practice object-oriented programming concepts, design patterns and development best practices."
-                },
-                features: {
-                    oop: {
-                        title: "📦 Object-Oriented Programming",
-                        desc: "Software architecture using SOLID principles, encapsulation, inheritance and polymorphism."
-                    },
-                    architecture: {
-                        title: "🏗️ Software Architecture",
-                        desc: "Design of modular and maintainable architecture with separation of concerns."
-                    },
-                    ui: {
-                        title: "🖥️ User Interface",
-                        desc: "Development of modern and intuitive desktop interface with .NET Framework."
-                    },
-                    patterns: {
-                        title: "🎨 Design Patterns",
-                        desc: "Implementation of design patterns for better code structure."
-                    },
-                    testing: {
-                        title: "🧪 Testing and Debugging",
-                        desc: "Implementation of unit tests and error handling with debugging practices."
-                    },
-                    git: {
-                        title: "🔀 Version Control",
-                        desc: "Advanced use of Git for versioning and code traceability."
-                    }
-                },
-                tech: {
-                    title: "🛠️ Technologies Used",
-                    context: "Educational Context",
-                    contextInfo: {
-                        desc: "<strong>SAE201 - Application Development</strong> is a major project of the second semester of the Computer Science BUT. It allows to consolidate skills in software development with a focus on object-oriented programming, architecture design and implementation of complex features in a professional development environment."
-                    }
-                },
-                oop: {
-                    title: "🎯 OOP Concepts in Practice",
-                    encapsulation: {
-                        title: "🔒 Encapsulation",
-                        desc: "Data protection with access modifiers and properties for safer code."
-                    },
-                    inheritance: {
-                        title: "🧬 Inheritance",
-                        desc: "Class hierarchy for code reuse and feature extension."
-                    },
-                    polymorphism: {
-                        title: "🎭 Polymorphism",
-                        desc: "Virtual methods and interfaces for flexible and extensible code."
-                    },
-                    abstraction: {
-                        title: "🎨 Abstraction",
-                        desc: "Abstract classes and interfaces to define clear contracts between components."
-                    }
-                },
-                learning: {
-                    title: "🎓 Skills Developed",
-                    dev: {
-                        title: "💻 Software Development",
-                        desc: "Mastery of C# and .NET framework to create robust desktop applications."
-                    },
-                    design: {
-                        title: "📐 Software Design",
-                        desc: "Requirements analysis, UML modelling and software architecture design."
-                    },
-                    practices: {
-                        title: "✨ Best Practices",
-                        desc: "Application of coding conventions, documentation and clean code principles."
-                    },
-                    tools: {
-                        title: "🔧 Development Tools",
-                        desc: "Professional use of Visual Studio, Git and debugging tools."
-                    }
-                },
-                management: {
-                    title: "📋 Project Management",
-                    description: "The SAE201 project also includes project management aspects:",
-                    planning: {
-                        title: "📅 Planning",
-                        desc: "Work organisation with goal definition and deadline compliance."
-                    },
-                    versioning: {
-                        title: "🔀 Versioning",
-                        desc: "Version management with Git and documentation of changes."
-                    },
-                    quality: {
-                        title: "✅ Quality Assurance",
-                        desc: "Testing, code review and validation of developed features."
-                    }
-                },
-                cta: {
-                    title: "🌟 Discover the Source Code",
-                    description: "The complete project is available on GitHub with over 75 documented commits.",
-                    button: "Explore the GitHub Repository"
-                },
-                footer: {
-                    project: "SAE201 - Application Development",
-                    context: "Project completed in spring 2025 at IUT Annecy"
-                }
+            "search": {
+                "title": "🔍 Recherche de vins",
+                "desc": "Catalogue filtrable et fiche détaillée de chaque vin (appellation, prix, stock)."
+            },
+            "requests": {
+                "title": "📦 Demandes d'approvisionnement",
+                "desc": "Création des demandes par les vendeurs, suivi de leur état et validation par le responsable."
+            },
+            "orders": {
+                "title": "🚚 Commandes fournisseurs",
+                "desc": "Création des commandes à partir des demandes validées, avec le détail de chaque ligne et son fournisseur."
+            },
+            "clients": {
+                "title": "👥 Gestion des clients",
+                "desc": "Recherche, consultation et ajout de fiches clients dans des fenêtres dédiées."
+            },
+            "errors": {
+                "title": "🛡️ Robustesse",
+                "desc": "Gestion des erreurs avec try/catch, messages explicites pour l'utilisateur et journal des erreurs dans un fichier."
             }
-        };
+        },
+        "tech": {
+            "title": "🛠️ Technologies",
+            "archTitle": "Architecture",
+            "arch": "Les classes métier (Vin, Client, Demande, Commande, Employé…) portent les requêtes SQL ; l'accès à la base passe par une connexion unique (patron singleton). L'interface WPF s'organise en pages XAML affichées dans la fenêtre principale, avec un menu de navigation, des fenêtres pour les créations et de la liaison de données (data binding) vers des collections observables. La conception a commencé par un diagramme de classes UML."
+        },
+        "cta": {
+            "title": "🌟 Le code source",
+            "description": "Le projet complet est disponible sur GitHub : 75 commits sur deux semaines de développement.",
+            "button": "Voir le dépôt GitHub"
+        },
+        "footer": {
+            "project": "SAE 2.01 - Développement d'une application",
+            "context": "Projet réalisé en juin 2025 à l'IUT d'Annecy"
+        }
+    },
+    "en": {
+        "nav": {
+            "back": "← Back to portfolio"
+        },
+        "hero": {
+            "subtitle": "SAE 2.01 - Stock management application for Nicolas wine shops",
+            "description": "Desktop application built by a team of two for the Nicolas wine retailer: wine search, restocking requests, supplier orders and customer records on a PostgreSQL database, with permissions that depend on the employee's role.",
+            "github": "💻 View on GitHub"
+        },
+        "stats": {
+            "title": "📊 The project in numbers",
+            "commits": "Commits",
+            "lines": "Lines of C#",
+            "screens": "Screens (pages and windows)",
+            "team": "Developers",
+            "linesN": "~4,300"
+        },
+        "about": {
+            "title": "📖 About the project",
+            "description": "End-of-first-year project (SAE 2.01), built in June 2025 with Kilyan Gibert. The application covers the day-to-day work of a Nicolas wine shop: a sales assistant searches for a wine, creates a restocking request or a customer record; the manager approves requests and turns them into supplier orders."
+        },
+        "features": {
+            "login": {
+                "title": "🔐 Login and roles",
+                "desc": "Login with the employee's own PostgreSQL credentials. Approval actions are restricted to the manager."
+            },
+            "search": {
+                "title": "🔍 Wine search",
+                "desc": "Filterable catalogue and a detailed record for each wine (appellation, price, stock)."
+            },
+            "requests": {
+                "title": "📦 Restocking requests",
+                "desc": "Requests created by sales assistants, status tracking and approval by the manager."
+            },
+            "orders": {
+                "title": "🚚 Supplier orders",
+                "desc": "Orders created from approved requests, with the detail of each line and its supplier."
+            },
+            "clients": {
+                "title": "👥 Customer management",
+                "desc": "Search, view and add customer records in dedicated windows."
+            },
+            "errors": {
+                "title": "🛡️ Robustness",
+                "desc": "Error handling with try/catch, clear messages for the user and an error log written to a file."
+            }
+        },
+        "tech": {
+            "title": "🛠️ Technologies",
+            "archTitle": "Architecture",
+            "arch": "Domain classes (Wine, Client, Request, Order, Employee…) hold the SQL queries; database access goes through a single shared connection (singleton pattern). The WPF interface is organised into XAML pages shown in the main window, with a navigation menu, separate windows for creation forms and data binding to observable collections. Design started from a UML class diagram."
+        },
+        "cta": {
+            "title": "🌟 Source code",
+            "description": "The full project is available on GitHub: 75 commits over two weeks of development.",
+            "button": "View the GitHub repository"
+        },
+        "footer": {
+            "project": "SAE 2.01 - Application development",
+            "context": "Project completed in June 2025 at IUT d'Annecy"
+        }
+    }
+};
 
-        // Get saved language or default to French
         let currentLang = localStorage.getItem('preferredLanguage') || 'fr';
 
-        // Change language function
         function changeLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('preferredLanguage', lang);
-
-            // Update HTML lang attribute
             document.documentElement.lang = lang;
-
-            // Update all elements with data-i18n
             document.querySelectorAll('[data-i18n]').forEach(element => {
-                const keys = element.getAttribute('data-i18n').split('.');
-                let translation = translations[lang];
-
-                for (const key of keys) {
-                    translation = translation[key];
-                }
-
-                element.innerHTML = translation;
+                const value = element.getAttribute('data-i18n').split('.').reduce((o, k) => o && o[k], translations[lang]);
+                if (typeof value === 'string') element.textContent = value;
             });
-
-            // Update active button
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.onclick.toString().includes(`'${lang}'`)) {
-                    btn.classList.add('active');
-                }
+                btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${lang}'`));
             });
         }
 
-        // Initialize language on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            if (currentLang === 'en') {
-                changeLanguage('en');
-            } else {
-                changeLanguage('fr');
-            }
-        });
+        document.addEventListener('DOMContentLoaded', () => changeLanguage(currentLang === 'en' ? 'en' : 'fr'));
     </script>
     <script src="../theme.js"></script>
 </body>

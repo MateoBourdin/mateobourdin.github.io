@@ -11,18 +11,18 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jouer a Zelda II: The Adventure of Link directement dans le navigateur">
+    <meta name="description" content="Jouer à Zelda II: The Adventure of Link directement dans le navigateur">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mateobourdin.github.io/projects/zelda-play.html">
-    <meta property="og:title" content="Jouer a Zelda II - Portfolio Project">
-    <meta property="og:description" content="Jouer a Zelda II: The Adventure of Link directement dans le navigateur">
+    <meta property="og:title" content="Jouer à Zelda II - Matéo Bourdin">
+    <meta property="og:description" content="Jouer à Zelda II: The Adventure of Link directement dans le navigateur">
     <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jouer a Zelda II - Portfolio Project">
-    <meta name="twitter:description" content="Jouer a Zelda II: The Adventure of Link directement dans le navigateur">
+    <meta name="twitter:title" content="Jouer à Zelda II - Matéo Bourdin">
+    <meta name="twitter:description" content="Jouer à Zelda II: The Adventure of Link directement dans le navigateur">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
-    <title>Jouer a Zelda II - Portfolio Project</title>
+    <title>Jouer à Zelda II - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
     <style>
@@ -81,39 +81,54 @@
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 </head>
 <body>
+    <div class="language-switcher">
+        <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+
     <div class="container play-wrap">
-        <a href="zelda.html" class="back-btn">← Retour a la page du projet</a>
+        <a href="zelda.html" class="back-btn" data-i18n="back">← Retour à la page du projet</a>
 
         <div class="hero project-hero">
-            <h1>🗡️ Zelda II — Joue directement ici</h1>
-            <p>
-                Le jeu tourne entierement dans ton navigateur grace a
-                <strong>Pyodide</strong> (Python compile en WebAssembly) : aucun serveur,
-                aucune installation, tout s'execute en local sur ta machine.
-            </p>
+            <h1 data-i18n="title">🗡️ Zelda II — Jouez directement ici</h1>
+            <p data-i18n="intro">Le jeu tourne entièrement dans votre navigateur grâce à Pyodide (Python compilé en WebAssembly) : aucun serveur, aucune installation, tout s'exécute en local sur votre machine.</p>
         </div>
 
         <div class="section">
-            <div id="status-line">Chargement de l'environnement Python (Pyodide)...</div>
+            <div id="status-line">Chargement de l'environnement Python (Pyodide)…</div>
             <div id="loading-progress"><div id="loading-bar"></div></div>
             <div id="terminal-shell">
                 <div id="terminal"></div>
             </div>
 
             <div class="controls-hint">
-                <span class="key-badge">Z Q S D — se deplacer</span>
-                <span class="key-badge">Espace — sauter en combat</span>
-                <span class="key-badge">M — attaquer</span>
-                <span class="key-badge">C — s'accroupir</span>
-                <span class="key-badge">Entree — parler aux PNJ</span>
-                <span class="key-badge">Esc — quitter</span>
+                <span class="key-badge" data-i18n="keys.move">Z Q S D — se déplacer</span>
+                <span class="key-badge" data-i18n="keys.jump">Espace — sauter en combat</span>
+                <span class="key-badge" data-i18n="keys.attack">M — attaquer</span>
+                <span class="key-badge" data-i18n="keys.crouch">C — s'accroupir</span>
+                <span class="key-badge" data-i18n="keys.talk">Entrée — parler aux PNJ</span>
+                <span class="key-badge" data-i18n="keys.quit">Échap — quitter</span>
             </div>
-            <p style="margin-top:1rem; color: var(--text-light); font-size: 0.9rem;">
-                Recharge la page pour recommencer une partie.
-            </p>
+            <p style="margin-top:1rem; color: var(--text-light); font-size: 0.9rem;" data-i18n="restart">Rechargez la page pour recommencer une partie.</p>
+            <p style="margin-top:0.25rem; color: var(--text-light); font-size: 0.9rem;" data-i18n="note">Les textes du jeu sont en français, comme dans la version d'origine.</p>
         </div>
     </div>
 
+    <script>
+        const translations = {"fr": {"back": "← Retour à la page du projet", "title": "🗡️ Zelda II — Jouez directement ici", "intro": "Le jeu tourne entièrement dans votre navigateur grâce à Pyodide (Python compilé en WebAssembly) : aucun serveur, aucune installation, tout s'exécute en local sur votre machine.", "keys": {"move": "Z Q S D — se déplacer", "jump": "Espace — sauter en combat", "attack": "M — attaquer", "crouch": "C — s'accroupir", "talk": "Entrée — parler aux PNJ", "quit": "Échap — quitter"}, "restart": "Rechargez la page pour recommencer une partie.", "st": {"loading": "Chargement de Pyodide (WebAssembly)…", "fetch": "Récupération des fichiers du jeu… ", "init": "Initialisation du jeu…", "ready": "Prêt ! Entrez votre nom puis appuyez sur Entrée.", "welcome": "Bienvenue dans Zelda II: The Adventure of Link", "name": "Entrez le nom de votre personnage puis appuyez sur Entrée : ", "over": "Partie terminée. Rechargez la page pour recommencer.", "error": "Erreur au chargement : "}, "note": "Les textes du jeu sont en français, comme dans la version d'origine."}, "en": {"back": "← Back to the project page", "title": "🗡️ Zelda II — Play it right here", "intro": "The game runs entirely in your browser thanks to Pyodide (Python compiled to WebAssembly): no server, no installation, everything runs locally on your machine.", "keys": {"move": "Z Q S D — move", "jump": "Space — jump in combat", "attack": "M — attack", "crouch": "C — crouch", "talk": "Enter — talk to NPCs", "quit": "Esc — quit"}, "restart": "Reload the page to start a new game.", "st": {"loading": "Loading Pyodide (WebAssembly)…", "fetch": "Downloading game files… ", "init": "Starting the game…", "ready": "Ready! Type your name and press Enter.", "welcome": "Welcome to Zelda II: The Adventure of Link", "name": "Type your character's name and press Enter: ", "over": "Game over. Reload the page to play again.", "error": "Loading error: "}, "note": "In-game text is in French, as in the original version."}};
+        let L = translations[localStorage.getItem('preferredLanguage') === 'en' ? 'en' : 'fr'];
+        function changeLanguage(lang) {
+            try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
+            L = translations[lang];
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const v = el.getAttribute('data-i18n').split('.').reduce((o, k) => o && o[k], L);
+                if (typeof v === 'string') el.textContent = v;
+            });
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+        }
+        changeLanguage(localStorage.getItem('preferredLanguage') === 'en' ? 'en' : 'fr');
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
     <script>
@@ -151,7 +166,7 @@
         let tickHandle = null;
 
         async function boot() {
-            statusLine.textContent = "Chargement de Pyodide (WebAssembly)...";
+            statusLine.textContent = L.st.loading;
             loadingBar.style.width = "10%";
             const pyodide = await loadPyodide();
             loadingBar.style.width = "35%";
@@ -167,11 +182,11 @@
                 const text = await res.text();
                 pyodide.FS.writeFile(WORKDIR + "/" + f.name, text);
                 fetched++;
-                statusLine.textContent = `Récupération des fichiers du jeu... (${fetched}/${filesToFetch.length})`;
+                statusLine.textContent = `${L.st.fetch}(${fetched}/${filesToFetch.length})`;
                 loadingBar.style.width = (35 + (fetched / filesToFetch.length) * 55) + "%";
             }
 
-            statusLine.textContent = "Initialisation du jeu...";
+            statusLine.textContent = L.st.init;
             loadingBar.style.width = "95%";
 
             pyodide.runPython(`
@@ -185,10 +200,10 @@ os.chdir("${WORKDIR}")
 
             loadingBar.style.width = "100%";
             loadingProgress.style.display = "none";
-            statusLine.textContent = "Pret ! Entre ton nom puis appuie sur Entree.";
+            statusLine.textContent = L.st.ready;
             mode = "name-entry";
-            term.write("Bienvenue dans Zelda II: The Adventure of Link\r\n");
-            term.write("Entre le nom de ton personnage puis appuie sur Entree : ");
+            term.write(L.st.welcome + "\r\n");
+            term.write(L.st.name);
         }
 
         function startGame(name) {
@@ -200,7 +215,7 @@ os.chdir("${WORKDIR}")
                 if (!alive) {
                     clearInterval(tickHandle);
                     mode = "ended";
-                    statusLine.textContent = "Partie terminee. Recharge la page pour recommencer.";
+                    statusLine.textContent = L.st.over;
                 }
             }, 200);
         }
@@ -246,7 +261,7 @@ os.chdir("${WORKDIR}")
         }, true);
 
         boot().catch((err) => {
-            statusLine.textContent = "Erreur au chargement : " + err;
+            statusLine.textContent = L.st.error + err;
             loadingProgress.style.display = "none";
             console.error(err);
         });
