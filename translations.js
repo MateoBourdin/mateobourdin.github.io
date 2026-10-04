@@ -243,7 +243,7 @@ const translations = {
             },
             cubebikes: {
                 title: 'CUBE Bikes - Plateforme E-commerce',
-                description: 'Plateforme e-commerce full-stack pour une boutique de vélos : backend ASP.NET Core 8 / Entity Framework Core / PostgreSQL avec authentification JWT + Google OAuth, 2FA par TOTP, paiement Stripe Checkout et pattern Repository/Service ; frontend Vue 3 / Pinia / Tailwind CSS avec recherche à facettes, sélecteur de magasin sur carte Leaflet et disponibilité produit par taille et par magasin. Projet récurrent ayant évolué de la SAE 3.01 (Laravel/PostgreSQL) à la SAE 4.01 (ASP.NET Core/Vue 3).',
+                description: 'Plateforme e-commerce full-stack pour une boutique de vélos : backend ASP.NET Core 8 / Entity Framework Core / PostgreSQL avec authentification JWT + Google OAuth, 2FA par TOTP, paiement Stripe Checkout et pattern Repository/Service ; frontend Vue 3 / Pinia / Tailwind CSS avec recherche à facettes, sélecteur de magasin sur carte Leaflet et disponibilité produit par taille et par magasin. Projet récurrent ayant évolué de la SAE 3.01 (Laravel/PostgreSQL) à la SAE 4.01 (ASP.NET Core/Vue 3). Mon rôle : le sélecteur de magasin et la disponibilité par magasin, côté API et côté interface.',
                 context: 'Contexte :',
                 contextText: 'Projet fil rouge sur plusieurs semestres - BUT Informatique',
                 disclaimer: "Projet académique fictif : ce n'est pas le site officiel de la marque CUBE et il n'y a aucun lien avec elle.",
@@ -251,7 +251,7 @@ const translations = {
             },
             twitterclone: {
                 title: 'Clone Twitter/X',
-                description: 'Clone de réseau social développé en équipe de 4 avec Laravel 13 / PHP 8.3, PostgreSQL, Redis et Livewire/Alpine.js, incluant des fonctionnalités temps réel via WebSockets (Laravel Reverb) et un assistant IA façon Grok basé sur l\'API Gemini, déployé avec Docker. Mon rôle : frontend et gestion des médias (upload photo/vidéo, infinite scroll, édition de profil, fonctionnalités temps réel).',
+                description: 'Clone de réseau social développé en équipe de 4 avec Laravel 13 / PHP 8.3, PostgreSQL, Redis et Livewire/Alpine.js, incluant des fonctionnalités temps réel via WebSockets (Laravel Reverb) et un assistant IA façon Grok basé sur l\'API Gemini, déployé avec Docker. Mon rôle : l\'envoi de médias (jusqu\'à 4 photos ou vidéos par tweet, aperçu, validation et stockage).',
                 context: 'Contexte :',
                 contextText: 'Projet de groupe R408A1 - BUT Informatique 2e année',
                 tech: 'Technologies :'
@@ -551,7 +551,7 @@ const translations = {
             },
             cubebikes: {
                 title: 'CUBE Bikes - E-commerce Platform',
-                description: 'Full-stack e-commerce platform for a bike shop: ASP.NET Core 8 / Entity Framework Core / PostgreSQL backend with JWT + Google OAuth authentication, TOTP 2FA, Stripe Checkout payment and Repository/Service pattern; Vue 3 / Pinia / Tailwind CSS frontend with faceted search, a Leaflet map store selector and per-size/per-store product availability. A recurring project that evolved from SAE 3.01 (Laravel/PostgreSQL) to SAE 4.01 (ASP.NET Core/Vue 3).',
+                description: 'Full-stack e-commerce platform for a bike shop: ASP.NET Core 8 / Entity Framework Core / PostgreSQL backend with JWT + Google OAuth authentication, TOTP 2FA, Stripe Checkout payment and Repository/Service pattern; Vue 3 / Pinia / Tailwind CSS frontend with faceted search, a Leaflet map store selector and per-size/per-store product availability. A recurring project that evolved from SAE 3.01 (Laravel/PostgreSQL) to SAE 4.01 (ASP.NET Core/Vue 3). My role: the store selector and per-store availability, on both the API and the interface.',
                 context: 'Context:',
                 contextText: 'Multi-semester flagship project - Computer Science BUT',
                 disclaimer: "Fictional academic project: this is not the official CUBE website and it has no connection with the brand.",
@@ -559,7 +559,7 @@ const translations = {
             },
             twitterclone: {
                 title: 'Twitter/X Clone',
-                description: 'Social network clone developed by a team of 4 with Laravel 13 / PHP 8.3, PostgreSQL, Redis and Livewire/Alpine.js, including real-time features via WebSockets (Laravel Reverb) and a Grok-like AI assistant powered by the Gemini API, deployed with Docker. My role: frontend and media management (photo/video upload, infinite scroll, profile editing, real-time features).',
+                description: 'Social network clone developed by a team of 4 with Laravel 13 / PHP 8.3, PostgreSQL, Redis and Livewire/Alpine.js, including real-time features via WebSockets (Laravel Reverb) and a Grok-like AI assistant powered by the Gemini API, deployed with Docker. My role: media uploads (up to 4 photos or videos per tweet, previews, validation and storage).',
                 context: 'Context:',
                 contextText: 'R408A1 group project - 2nd year Computer Science BUT',
                 tech: 'Technologies:'
