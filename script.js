@@ -111,6 +111,14 @@ function changeLanguage(lang) {
         }
     });
 
+    // Update translated image alt texts
+    document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+        const translation = getNestedTranslation(translations[lang], element.getAttribute('data-i18n-alt'));
+        if (translation) {
+            element.setAttribute('alt', translation);
+        }
+    });
+
     // Update active button
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');

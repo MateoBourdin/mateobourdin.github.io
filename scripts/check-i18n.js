@@ -86,7 +86,7 @@ function resolveKey(tree, keyPath) {
 
 function main() {
     const htmlFiles = listHtmlFiles(ROOT, []);
-    const keyPattern = /data-i18n="([^"]+)"/g;
+    const keyPattern = /data-i18n(?:-alt)?="([^"]+)"/g;
     const failures = [];
     let checkedKeys = 0;
     let checkedFiles = 0;

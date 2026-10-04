@@ -1,5 +1,13 @@
 const translations = {
     fr: {
+        shots: {
+            cube: "Sélecteur de magasin CUBE Bikes sur carte Leaflet (données de démonstration)",
+            twitter: "Modèle conceptuel de données du clone Twitter/X",
+            sae201: "Diagramme des classes métier de l’application Cave à vin",
+            portfolio: "Page d’accueil du portfolio",
+            survival: "Capture de jeu de Survival Island",
+            zelda: "Carte du jeu Zelda en mode texte"
+        },
         meta: {
             title: 'Matéo Bourdin - Étudiant en informatique | Portfolio',
             description: 'Matéo Bourdin, étudiant en 3e et dernière année de Bachelor (BUT) Informatique à l\'IUT d\'Annecy. Développeur full-stack (C#/.NET, Vue.js, Python) en recherche d\'un stage de 16 semaines dès le 19 janvier 2027.'
@@ -310,6 +318,14 @@ const translations = {
         }
     },
     en: {
+        shots: {
+            cube: "CUBE Bikes store selector on a Leaflet map (demo data)",
+            twitter: "Conceptual data model of the Twitter/X clone",
+            sae201: "Domain class diagram of the wine cellar application",
+            portfolio: "Portfolio home page",
+            survival: "Survival Island gameplay screenshot",
+            zelda: "Map of the text-mode Zelda game"
+        },
         meta: {
             title: 'Matéo Bourdin - Computer Science Student | Portfolio',
             description: 'Matéo Bourdin, final-year Bachelor\'s student in Computer Science (BUT) at IUT d\'Annecy. Full-stack developer (C#/.NET, Vue.js, Python) seeking a 16-week internship starting on 19 January 2027.'
