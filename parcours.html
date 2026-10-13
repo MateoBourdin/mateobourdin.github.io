@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours | Matéo Bourdin</title>
+    <meta name="description" content="Expérience, formation et années de BUT Informatique de Matéo Bourdin (IUT d'Annecy).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/parcours.html">
+    <meta property="og:title" content="Parcours | Matéo Bourdin">
+    <meta property="og:description" content="Expérience, formation et années de BUT Informatique de Matéo Bourdin (IUT d'Annecy).">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Parcours | Matéo Bourdin">
+    <meta name="twitter:description" content="Expérience, formation et années de BUT Informatique de Matéo Bourdin (IUT d'Annecy).">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="journey">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" class="active" aria-current="page" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="cours.html" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page header -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="journey.tag">🧭 Mon parcours</span></span>
+                <h1 data-i18n="journey.title">Parcours</h1>
+                <p data-i18n="journey.description">Mon expérience professionnelle, ma formation et le détail de chaque année de BUT.</p>
+            </div>
+            <div class="page-subnav reveal">
+                <a href="#experience" class="chip-link" data-i18n="nav.experience">Expérience</a>
+                <a href="#formation" class="chip-link" data-i18n="nav.education">Formation</a>
+                <a href="#parcours-but" class="chip-link" data-i18n="nav.butYears">Parcours BUT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><span data-i18n="experience.tag">💼 Mon parcours</span></span>
+                <h2 data-i18n="experience.title">Expérience Professionnelle</h2>
+                <p data-i18n="experience.description">Mes expériences professionnelles en entreprise</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Stage BUT Informatique - 19 Janvier 2027 -->
+                <div class="project-card reveal" style="border: 3px solid var(--accent-green);">
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--accent-green), var(--primary));">💼</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="experience.lookingFor">Recherche active</span>
+                            <span class="project-tag" data-i18n="tags.jan2027">19 janvier 2027</span>
+                        </div>
+                        <h3 data-i18n="experience.internship.title">Stage BUT3 Informatique</h3>
+                        <p data-i18n="experience.internship.description">Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement logiciel, développement web ou data/IA. Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Python, Vue 3, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l'étranger.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="experience.internship.duration">Durée :</strong> <span data-i18n="experience.internship.weeks">16 semaines</span><br>
+                            <strong data-i18n="experience.internship.start">Début :</strong> <span data-i18n="experience.internship.date">19 janvier 2027</span><br>
+                            <strong data-i18n="experience.internship.domains">Domaines :</strong> <span data-i18n="experience.internship.domainsText">Développement logiciel, développement web, data & IA</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stage Lappi Soft - Avril-Juin 2026 (Expérience phare) -->
+                <div class="project-card reveal featured-experience">
+                    <div class="featured-badge" data-i18n="experience.featured">⭐ En vedette</div>
+                    <div class="project-image project-shot"><img src="img/projects/lappisoft-diary-card.webp" alt="Le carnet Discovery Diary dans The Inspector (Unity)" data-i18n-alt="shots.lappi" loading="lazy" decoding="async" style="object-position: center;"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" style="background: var(--accent-orange); color: white;" data-i18n="experience.lappisoft.dates">Avril – juin 2026</span>
+                            <span class="project-tag" data-i18n="tags.internshipBut2">Stage BUT2</span>
+                        </div>
+                        <h3 data-i18n="experience.lappisoft.title">Développeur logiciel (Unity/C#) - Lappi Soft</h3>
+                        <p data-i18n="experience.lappisoft.description">Studio de jeux vidéo indépendant (Pers-Jussy) dirigé par Maxime Bernard. Conception et développement en autonomie du système Discovery Diary (journal découvrable in-game) pour le jeu The Inspector sous Unity : ~2 400 lignes réparties sur 12 scripts C#, Notification Manager, Big Notification synchronisée à l'audio, outil éditeur PSB Importer, persistance via variables Lua et support de 5 langues.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="experience.lappisoft.perf">Gain de performance :</strong> <span data-i18n="experience.lappisoft.perfText">2 → 84 FPS sur la scène de test</span><br>
+                            <strong data-i18n="experience.lappisoft.stack">Stack :</strong> <span data-i18n="experience.lappisoft.stackText">Unity 2019.4.41f1, C#, Pixel Crushers Dialogue System</span>
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="projects/lappisoft.html" class="btn btn-secondary"><span data-i18n="experience.lappisoft.details">Voir le détail</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MagicalSky -->
+                <div class="project-card reveal featured-experience">
+                    <div class="featured-badge" data-i18n="experience.featured">⭐ En vedette</div>
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--primary), var(--accent-purple));">🎮</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="experience.magicalsky.since">Depuis févr. 2025</span>
+                            <span class="project-tag" style="background: var(--primary); color: white;" data-i18n="experience.magicalsky.type">Bénévolat Informatique</span>
+                        </div>
+                        <h3 data-i18n="experience.magicalsky.title">Game Designer - MagicalSky</h3>
+                        <p data-i18n="experience.magicalsky.description">Game designer sur le serveur Minecraft MagicalSky (magicalsky.fr). Création et configuration de mobs avec MythicMobs, développement d'outils personnalisés avec MMOItems. Création de serveurs privés et plugins avec Paper. Modélisation 3D de mobs avec Blockbench, compétence acquise grâce à mon expérience CATIA à l'ENIB. Force de proposition pour de nouvelles fonctionnalités et solutions techniques. Travail collaboratif au sein d'une équipe de 13-14 personnes.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="experience.magicalsky.skills">Compétences :</strong> <span data-i18n="experience.magicalsky.skillsText">Java, MythicMobs, MMOItems, Paper, Blockbench, Travail d'équipe</span>
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="projects/magicalsky.html" class="btn btn-secondary"><span data-i18n="experience.magicalsky.details">Voir le détail</span></a>
+                            <a href="https://magicalsky.fr" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">magicalsky.fr</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intersport - Été 2024 -->
+                <div class="project-card reveal">
+                    <div class="project-image">🏬</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="tags.summer2024">Été 2024</span>
+                            <span class="project-tag" style="background: var(--accent-purple); color: white;" data-i18n="tags.seasonal">Emploi saisonnier</span>
+                        </div>
+                        <h3 data-i18n="experience.intersport.title">Vendeur - Intersport</h3>
+                        <p data-i18n="experience.intersport.description">Conseil personnalisé aux clients sur les équipements sportifs, gestion des stocks et mise en rayon. Développement de compétences en relation client et travail d'équipe dans un environnement commercial dynamique.</p>
+                    </div>
+                </div>
+
+                <!-- Carrefour Market - Été 2023 -->
+                <div class="project-card reveal">
+                    <div class="project-image">🥖</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="tags.summer2023">Été 2023</span>
+                            <span class="project-tag" style="background: var(--accent-purple); color: white;" data-i18n="tags.seasonal">Emploi saisonnier</span>
+                        </div>
+                        <h3 data-i18n="experience.carrefour.title">Employé Boulangerie - Carrefour Market</h3>
+                        <p data-i18n="experience.carrefour.description">Préparation et mise en valeur des produits de boulangerie, contrôle qualité et respect des normes d'hygiène. Gestion de la relation client et travail en équipe dans un contexte exigeant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="formation">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><span data-i18n="education.tag">🎓 Ma formation</span></span>
+                <h2 data-i18n="education.title">Parcours Académique</h2>
+                <p data-i18n="education.description">Mon cursus et mes diplômes</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-image">🎓</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="tags.sept2024">Sept. 2024 - 2027</span>
+                            <span class="project-tag" data-i18n="education.current">En cours</span>
+                        </div>
+                        <h3 data-i18n="education.but.title">Bachelor (BUT) Informatique - 3e et dernière année (parcours RA)</h3>
+                        <p data-i18n="education.but.description">Formation en informatique à l'IUT d'Annecy, parcours Réalisation d'Applications : développement d'applications, architecture logicielle et gestion de bases de données.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="education.but.school">École :</strong> IUT Annecy - Université Savoie Mont Blanc
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image">⚙️</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">2023 - 2024</span>
+                        </div>
+                        <h3 data-i18n="education.enib.title">Année Préparatoire - ENIB</h3>
+                        <p data-i18n="education.enib.description">Année préparatoire intégrée à l'École Nationale d'Ingénieurs de Brest.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="education.enib.school">École :</strong> ENIB - Brest
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image">📚</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">2023</span>
+                            <span class="project-tag" data-i18n="education.bac.mention">Mention Bien</span>
+                        </div>
+                        <h3 data-i18n="education.bac.title">Baccalauréat avec mention</h3>
+                        <p data-i18n="education.bac.description">Baccalauréat général avec spécialités Mathématiques et NSI (Numérique et Sciences Informatiques).</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="education.bac.school">Lycée :</strong> Lycée Sainte-Thérèse - Quimper
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image">🏅</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">2022</span>
+                            <span class="project-tag" data-i18n="education.science.winner">1re place</span>
+                        </div>
+                        <h3 data-i18n="education.science.title">Cordées de la réussite 2022</h3>
+                        <p data-i18n="education.science.description">Lauréat (1re place) du concours Cordées de la réussite en classe de Première : analyse d'un réseau de lycéens par la théorie des graphes, avec Python et Graphviz.</p>
+                        <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">
+                            <strong data-i18n="education.science.school">Lycée :</strong> Lycée Sainte-Thérèse - Quimper
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUT year by year -->
+    <section id="parcours-but">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><span data-i18n="butYears.tag">📚 Année par année</span></span>
+                <h2 data-i18n="butYears.title">Mon parcours en BUT</h2>
+                <p data-i18n="butYears.description">Les matières, projets et travaux marquants de chaque année du Bachelor (BUT) Informatique à l’IUT d’Annecy</p>
+            </div>
+            <div class="projects-grid but-years-grid">
+                <div class="project-card but-year reveal">
+                    <div class="project-image">🧠</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="butYears.y3.dates">2026 – 2027</span>
+                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="butYears.current">En cours</span>
+                        </div>
+                        <h3 data-i18n="butYears.y3.title">3e année — Qualité, DevOps et IA</h3>
+                        <p data-i18n="butYears.y3.intro">Dernière année, avec des cours dispensés en anglais à l’initiative de l’IUT et de ses étudiants : qualité logicielle, automatisation et premiers modèles d’IA, avant un stage de 16 semaines dès janvier 2027.</p>
+                        <div class="but-year-block">
+                            <strong data-i18n="butYears.subjects">Matières clés</strong>
+                            <ul>
+                                <li><span data-i18n="butYears.y3.s1">Qualité de développement (SOLID, tests, DTO)</span></li>
+                                <li><span data-i18n="butYears.y3.s2">Programmation avancée (Flask, SQLAlchemy, InfluxDB)</span></li>
+                                <li><span data-i18n="butYears.y3.s3">Virtualisation et automatisation (Docker, GitLab CI/CD, Kubernetes)</span></li>
+                                <li><span data-i18n="butYears.y3.s4">Modélisation mathématique (régression, descente de gradient, ACP)</span></li>
+                                <li><span data-i18n="butYears.y3.s5">Calcul parallèle (NumPy, Joblib, Numba)</span></li>
+                                <li><span data-i18n="butYears.y3.s6">Modélisation 3D et scripting (Blender, Python)</span></li>
+                            </ul>
+                        </div>
+                        <div class="but-year-block">
+                            <strong data-i18n="butYears.projects">Projets & réalisations</strong>
+                            <ul>
+                                <li><span data-i18n="butYears.y3.p1">API ASP.NET Core : repository générique, DTO avec AutoMapper, refactoring SOLID</span></li>
+                                <li><span data-i18n="butYears.y3.p2">Tests unitaires (Moq) et d’intégration sur une vraie base PostgreSQL</span></li>
+                                <li><span data-i18n="butYears.y3.p3">Application Flask + TensorFlow (reconnaissance de chiffres MNIST) déployée sous Docker</span></li>
+                                <li><span data-i18n="butYears.y3.p4">Pipelines GitLab CI/CD : artefacts, règles, variables protégées, GitLab Pages</span></li>
+                                <li><span data-i18n="butYears.y3.p5">Régression linéaire et descente de gradient implémentées de zéro</span></li>
+                                <li><span data-i18n="butYears.y3.p6">Veille technologique en groupe sur WebAssembly</span></li>
+                            </ul>
+                        </div>
+                        <div class="but-year-block">
+                            <strong data-i18n="butYears.security">Sécurité</strong>
+                            <p style="margin: 0; color: var(--text-light); font-size: 0.9rem; line-height: 1.6;" data-i18n="butYears.securityText">Audit de mes dépôts (octobre 2026) : des identifiants de développement, aujourd'hui inactifs, figurent encore dans l'historique de projets de 1re et 2e année. Je les laisse visibles comme trace honnête de mon apprentissage. Depuis la 3e année, aucun secret réel dans mes dépôts, et ce portfolio vérifie automatiquement l'absence de secrets dans tout son historique (gitleaks) à chaque modification.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card but-year reveal">
+                    <div class="project-image">🚀</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="butYears.y2.dates">2025 – 2026</span>
+                        </div>
+                        <h3 data-i18n="butYears.y2.title">2e année — Full-stack et premier stage</h3>
+                        <p data-i18n="butYears.y2.intro">Applications web complètes en équipe, bases de données avancées, réseaux et mobile, puis un stage de 8 semaines en studio de jeux vidéo. Major de promotion en mathématiques, 16,5/20 de moyenne au dernier semestre.</p>
+                        <div class="but-year-block">
+                            <strong data-i18n="butYears.subjects">Matières clés</strong>
+                            <ul>
+                                <li><span data-i18n="butYears.y2.s1">Algorithmique avancée en Python (récursivité, arbres)</span></li>
+                                <li><span data-i18n="butYears.y2.s2">Optimisation et bases de données avancées (JSONB, MongoDB)</span></li>
+                                <li><span data-i18n="butYears.y2.s3">Architecture réseau (sous-réseaux, VLAN, routage RIP/OSPF)</span></li>
+                                <li><span data-i18n="butYears.y2.s4">Développement mobile (Flutter) et clients lourds (WinUI 3, MVVM)</span></li>
+                                <li><span data-i18n="butYears.y2.s5">Langages formels et automates</span></li>
+                                <li><span data-i18n="butYears.y2.s6">Gestion de projet et économie (TCO, VAN, TIR)</span></li>
+                            </ul>
+                        </div>
+                        <div class="but-year-block">
+                            <strong data-i18n="butYears.projects">Projets & réalisations</strong>
+                            <ul>
+                                <li><a href="projects/cubebikes.html" class="but-year-link"><span data-i18n="butYears.y2.p1">CUBE Bikes — e-commerce ASP.NET Core / Vue 3 (SAE 3.01 / 4.01)</span> →</a></li>
+                                <li><a href="projects/twitterclone.html" class="but-year-link"><span data-i18n="butYears.y2.p2">Clone Twitter/X — Laravel, Redis, WebSockets, Docker (R4.08)</span> →</a></li>
+                                <li><a href="projects/lappisoft.html" class="but-year-link"><span data-i18n="butYears.y2.p3">Stage chez Lappi Soft — système Discovery Diary sous Unity</span> →</a></li>
+                                <li><span data-i18n="butYears.y2.p4">TD : API REST ASP.NET Core + EF Core et client WinUI 3 en MVVM, testés avec MSTest et Moq</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card but-year reveal">
+                    <div class="project-image">🌱</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="butYears.y1.dates">2024 – 2025</span>
+                        </div>
+                        <h3 data-i18n="butYears.y1.title">1re année — Les fondamentaux</h3>
+                        <p data-i18n="butYears.y1.intro">Programmation orientée objet en C#, premières interfaces graphiques et bases de données, et premiers projets en équipe avec Git.</p>
+                        <div class="but-year-block">
+                            <strong data-i18n="butYears.subjects">Matières clés</strong>
+                            <ul>
+                                <li><span data-i18n="butYears.y1.s1">Programmation orientée objet (C#)</span></li>
+                                <li><span data-i18n="butYears.y1.s2">Interfaces graphiques (WPF, XAML)</span></li>
+                                <li><span data-i18n="butYears.y1.s3">Bases de données relationnelles (SQL, PostgreSQL)</span></li>
+                                <li><span data-i18n="butYears.y1.s4">Conception UML</span></li>
+                                <li><span data-i18n="butYears.y1.s5">Gestion de version (Git)</span></li>
+                            </ul>
+                        </div>
+                        <div class="but-year-block">
+                            <strong data-i18n="butYears.projects">Projets & réalisations</strong>
+                            <ul>
+                                <li><a href="projects/sae101.html" class="but-year-link"><span data-i18n="butYears.y1.p1">Survival Island — jeu de combat naval en C# / WPF (SAE 1.01)</span> →</a></li>
+                                <li><a href="projects/sae201.html" class="but-year-link"><span data-i18n="butYears.y1.p2">Cave à vin Nicolas — C# / WPF, PostgreSQL (SAE 2.01)</span> →</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

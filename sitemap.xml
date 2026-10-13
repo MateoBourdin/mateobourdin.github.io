@@ -6,6 +6,26 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://mateobourdin.github.io/parcours.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/projets.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/cours.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/competences.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://mateobourdin.github.io/contact.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>

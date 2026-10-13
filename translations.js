@@ -9,6 +9,12 @@ const translations = {
             survival: "Capture de jeu de Survival Island",
             zelda: "Carte du jeu Zelda en mode texte"
         },
+        metaPages: {
+            journey: 'Parcours | Matéo Bourdin',
+            projects: 'Projets | Matéo Bourdin',
+            now: 'Cours actuels | Matéo Bourdin',
+            skills: 'Compétences | Matéo Bourdin'
+        },
         meta: {
             title: 'Matéo Bourdin - Étudiant en informatique | Portfolio',
             description: 'Matéo Bourdin, étudiant en 3e et dernière année de Bachelor (BUT) Informatique à l\'IUT d\'Annecy. Développeur full-stack (C#/.NET, Vue.js, Python) en recherche d\'un stage de 16 semaines dès le 19 janvier 2027.'
@@ -18,7 +24,8 @@ const translations = {
             about: 'À propos',
             experience: 'Expérience',
             education: 'Formation',
-            now: 'En ce moment',
+            journey: 'Parcours',
+            now: 'Cours actuels',
             butYears: 'Parcours BUT',
             projects: 'Projets',
             projectsCategoryWeb: 'Applications web',
@@ -41,6 +48,22 @@ const translations = {
         about: {
             tag: '👨‍💻 À propos de moi',
             title: 'Qui suis-je ?'
+        },
+        journey: {
+            tag: '🧭 Mon parcours',
+            title: 'Parcours',
+            description: 'Mon expérience professionnelle, ma formation et le détail de chaque année de BUT.'
+        },
+        home: {
+            tag: '🧭 Découvrir',
+            title: 'Par où commencer ?',
+            more: 'Voir →',
+            cards: {
+                journey: { title: 'Parcours', text: 'Expérience, formation et le détail de mes trois années de BUT.' },
+                projects: { title: 'Projets', text: 'Applications web, jeux et logiciels, classés par catégorie.' },
+                now: { title: 'Cours actuels', text: 'Ce que j’apprends cette année, avec des extraits de mon code.' },
+                skills: { title: 'Compétences', text: 'Langages, frameworks, outils et langues.' }
+            }
         },
         stats: {
             education: 'Informatique à l\'IUT Annecy',
@@ -170,7 +193,7 @@ const translations = {
             },
             "code": {
                 "title": "Extraits de code — Qualité de développement",
-                "note": "Le dépôt est privé car il s’agit d’un travail noté de l’IUT. Voici des extraits tels qu’ils sont dans mon code ; le dépôt complet est disponible sur demande.",
+                "note": "Extraits tels qu’ils sont dans mon code. Le dépôt complet du cours est public sur GitHub.",
                 "e1": "Séparer les rôles : lecture, écriture et requêtes DTO",
                 "e1why": "Chaque contrôleur ne dépend que de ce dont il a besoin (principe de ségrégation des interfaces).",
                 "e2": "Entité → DTO avec AutoMapper",
@@ -184,7 +207,9 @@ const translations = {
                 "portfolio": "Code source de ce portfolio",
                 "r401": "R4.01 : web service ASP.NET Core et son client",
                 "r404": "R4.04 : application de notation de films (MVVM, MSTest)",
-                "r403": "R4.03 : application console .NET"
+                "r403": "R4.03 : application console .NET",
+                "qdd": "Qualité de dev : dépôt complet (TPRevision)",
+                "gitlab": "Profil GitLab"
             }
         },
         butYears: {
@@ -410,6 +435,12 @@ const translations = {
             survival: "Survival Island gameplay screenshot",
             zelda: "Map of the text-mode Zelda game"
         },
+        metaPages: {
+            journey: 'Background | Matéo Bourdin',
+            projects: 'Projects | Matéo Bourdin',
+            now: 'Current courses | Matéo Bourdin',
+            skills: 'Skills | Matéo Bourdin'
+        },
         meta: {
             title: 'Matéo Bourdin - Computer Science Student | Portfolio',
             description: 'Matéo Bourdin, final-year Bachelor\'s student in Computer Science (BUT) at IUT d\'Annecy. Full-stack developer (C#/.NET, Vue.js, Python) seeking a 16-week internship starting on 19 January 2027.'
@@ -419,7 +450,8 @@ const translations = {
             about: 'About',
             experience: 'Experience',
             education: 'Education',
-            now: 'Right now',
+            journey: 'Background',
+            now: 'Current courses',
             butYears: 'BUT years',
             projects: 'Projects',
             projectsCategoryWeb: 'Web apps',
@@ -442,6 +474,22 @@ const translations = {
         about: {
             tag: '👨‍💻 About me',
             title: 'Who am I?'
+        },
+        journey: {
+            tag: '🧭 My background',
+            title: 'Background',
+            description: 'My work experience, my education and a breakdown of each year of my Bachelor (BUT).'
+        },
+        home: {
+            tag: '🧭 Explore',
+            title: 'Where to start?',
+            more: 'See →',
+            cards: {
+                journey: { title: 'Background', text: 'Experience, education and a breakdown of my three BUT years.' },
+                projects: { title: 'Projects', text: 'Web apps, games and software, sorted by category.' },
+                now: { title: 'Current courses', text: 'What I’m learning this year, with excerpts of my code.' },
+                skills: { title: 'Skills', text: 'Languages, frameworks, tools and spoken languages.' }
+            }
         },
         stats: {
             education: 'Computer Science at IUT Annecy',
@@ -571,7 +619,7 @@ const translations = {
             },
             "code": {
                 "title": "Code excerpts — Software quality",
-                "note": "The repository is private because it is graded university work. These excerpts are taken as-is from my code; the full repository is available on request.",
+                "note": "Excerpts taken as-is from my code. The full course repository is public on GitHub.",
                 "e1": "Separating roles: read, write and DTO queries",
                 "e1why": "Each controller depends only on what it needs (interface segregation principle).",
                 "e2": "Entity → DTO with AutoMapper",
@@ -585,7 +633,9 @@ const translations = {
                 "portfolio": "Source code of this portfolio",
                 "r401": "R4.01: ASP.NET Core web service and its client",
                 "r404": "R4.04: film-rating app (MVVM, MSTest)",
-                "r403": "R4.03: .NET console application"
+                "r403": "R4.03: .NET console application",
+                "qdd": "Software quality: full repository (TPRevision)",
+                "gitlab": "GitLab profile"
             }
         },
         butYears: {

@@ -56,34 +56,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// CV Modal functionality
+// CV Modal functionality (only on pages that have the CV button)
 const cvModal = document.getElementById('cvModal');
 const downloadCVBtn = document.getElementById('downloadCVBtn');
 const closeCVModal = document.getElementById('closeCVModal');
 
-// Open modal
-downloadCVBtn.addEventListener('click', () => {
-    cvModal.classList.add('active');
-});
+if (cvModal && downloadCVBtn && closeCVModal) {
+    downloadCVBtn.addEventListener('click', () => {
+        cvModal.classList.add('active');
+    });
 
-// Close modal when clicking close button
-closeCVModal.addEventListener('click', () => {
-    cvModal.classList.remove('active');
-});
-
-// Close modal when clicking outside
-cvModal.addEventListener('click', (e) => {
-    if (e.target === cvModal) {
+    closeCVModal.addEventListener('click', () => {
         cvModal.classList.remove('active');
-    }
-});
+    });
 
-// Close modal when pressing Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && cvModal.classList.contains('active')) {
-        cvModal.classList.remove('active');
-    }
-});
+    cvModal.addEventListener('click', (e) => {
+        if (e.target === cvModal) {
+            cvModal.classList.remove('active');
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cvModal.classList.contains('active')) {
+            cvModal.classList.remove('active');
+        }
+    });
+}
 
 // Get nested translation value
 function getNestedTranslation(obj, path) {
@@ -99,8 +97,9 @@ function changeLanguage(lang) {
     document.documentElement.lang = lang;
 
     // Update meta tags
-    document.title = translations[lang].meta.title;
-    document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].meta.description);
+    const page = document.body.dataset.page;
+    document.title = (translations[lang].metaPages && translations[lang].metaPages[page]) || translations[lang].meta.title;
+    if (!page || page === 'home') document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].meta.description);
 
     // Update all elements with data-i18n
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -140,67 +139,26 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
 changeLanguage(savedLang);
 
-// Project Filters Functionality
+// Project filter (academic / personal), on the projects page only.
+// Category sections left with no visible project are hidden too.
 const filterButtons = document.querySelectorAll('.filter-btn');
-const techFilterButtons = document.querySelectorAll('.tech-filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
 
-let currentTypeFilter = 'all';
-let currentTechFilter = 'all';
-
-// Type filter (Academic/Personal/All)
 filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        // Update active state
-        filterButtons.forEach(b => {
-            b.classList.remove('active');
-            b.style.background = 'white';
-            b.style.color = 'var(--primary)';
-        });
-        btn.classList.add('active');
-        btn.style.background = 'var(--primary)';
-        btn.style.color = 'white';
+        filterButtons.forEach(b => b.classList.toggle('active', b === btn));
+        const filter = btn.getAttribute('data-filter');
 
-        // Get filter value
-        currentTypeFilter = btn.getAttribute('data-filter');
-        applyFilters();
+        document.querySelectorAll('.project-category').forEach(section => {
+            let visible = 0;
+            section.querySelectorAll('.project-card').forEach(card => {
+                const show = filter === 'all' || card.getAttribute('data-type') === filter;
+                card.style.display = show ? '' : 'none';
+                if (show) {
+                    visible++;
+                    card.classList.add('active');
+                }
+            });
+            section.hidden = visible === 0;
+        });
     });
 });
-
-// Tech filter (Python/Web/Database/All)
-techFilterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Update active state
-        techFilterButtons.forEach(b => {
-            b.classList.remove('active');
-            b.style.background = 'white';
-            b.style.color = 'var(--accent-purple)';
-        });
-        btn.classList.add('active');
-        btn.style.background = 'var(--accent-purple)';
-        btn.style.color = 'white';
-
-        // Get filter value
-        currentTechFilter = btn.getAttribute('data-tech');
-        applyFilters();
-    });
-});
-
-// Apply both filters
-function applyFilters() {
-    projectCards.forEach(card => {
-        const cardType = card.getAttribute('data-type');
-        const cardTech = card.getAttribute('data-tech') || '';
-
-        const typeMatch = currentTypeFilter === 'all' || cardType === currentTypeFilter;
-        const techMatch = currentTechFilter === 'all' || cardTech.includes(currentTechFilter);
-
-        if (typeMatch && techMatch) {
-            card.style.display = '';
-            // Re-trigger reveal animation
-            setTimeout(() => card.classList.add('active'), 100);
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}

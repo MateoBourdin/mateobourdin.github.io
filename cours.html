@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours actuels | Matéo Bourdin</title>
+    <meta name="description" content="Les cours de 3e année de BUT Informatique que suit Matéo Bourdin, avec des extraits de code.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/cours.html">
+    <meta property="og:title" content="Cours actuels | Matéo Bourdin">
+    <meta property="og:description" content="Les cours de 3e année de BUT Informatique que suit Matéo Bourdin, avec des extraits de code.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cours actuels | Matéo Bourdin">
+    <meta name="twitter:description" content="Les cours de 3e année de BUT Informatique que suit Matéo Bourdin, avec des extraits de code.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="now">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="cours.html" class="active" aria-current="page" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Right now: current 3rd-year courses -->
+    <section id="en-cours" class="page-hero">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><span data-i18n="now.tag">🛠️ En ce moment</span></span>
+                <h1 data-i18n="now.title">Ce sur quoi je travaille cette année</h1>
+                <p data-i18n="now.description">Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais et des extraits de mon code. Mis à jour le 13 octobre 2026.</p>
+            </div>
+            <div class="projects-grid now-grid">
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">🧪 <span data-i18n="now.c1.label">Qualité de développement</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c1.title">Une API ASP.NET Core propre et testée</h3>
+                        <p class="now-intro" data-i18n="now.c1.intro">TD fil rouge TPRevision : une API REST de gestion de produits (EF Core, PostgreSQL), refactorée selon les principes SOLID.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c1.b1">Interfaces séparées par rôle (lecture, écriture, requêtes DTO)</span></li>
+                            <li><span data-i18n="now.c1.b2">DTO et AutoMapper pour ne jamais exposer les entités</span></li>
+                            <li><span data-i18n="now.c1.b3">Tests unitaires (MSTest, Moq) et tests d’intégration sur une vraie base PostgreSQL</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c1.now">client Blazor Server en MVVM qui consomme l’API</span></p>
+                        <div class="now-techs"><span class="now-tech">C#</span><span class="now-tech">ASP.NET Core</span><span class="now-tech">EF Core</span><span class="now-tech">AutoMapper</span><span class="now-tech">MSTest</span><span class="now-tech">Moq</span><span class="now-tech">Blazor</span></div>
+                            <a href="#extraits" class="but-year-link"><span data-i18n="now.c1.link">Voir les extraits de code</span> ↓</a>
+                    </div>
+                </article>
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">🐍 <span data-i18n="now.c2.label">Programmation avancée (R5.A.05)</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c2.title">Flask, données et IA</h3>
+                        <p class="now-intro" data-i18n="now.c2.intro">TP en groupe, déployés avec Docker Compose sur un serveur de l’IUT.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c2.b1">Flask-SQLAlchemy sur la base de données Chinook</span></li>
+                            <li><span data-i18n="now.c2.b2">Tableau de bord de séries temporelles avec InfluxDB</span></li>
+                            <li><span data-i18n="now.c2.b3">Reconnaissance de chiffres manuscrits (MNIST) avec TensorFlow, servie par Flask</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c2.now">une application Flask complète à rendre (base de données, upload d’images, modèles d’IA)</span></p>
+                        <div class="now-techs"><span class="now-tech">Python</span><span class="now-tech">Flask</span><span class="now-tech">SQLAlchemy</span><span class="now-tech">InfluxDB</span><span class="now-tech">TensorFlow</span><span class="now-tech">Docker Compose</span></div>
+                    </div>
+                </article>
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">🌦️ <span data-i18n="now.c3.label">SAE 5.01 — projet de groupe</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c3.title">Astraeus, plateforme éducative sur la météo</h3>
+                        <p class="now-intro" data-i18n="now.c3.intro">Équipe Scrum de 4 : exploration 4D des phénomènes, quiz et WeatherGuessr, un jeu où le joueur affronte la prévision d’un modèle.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c3.b1">Mon rôle : la partie IA et le traitement des données</span></li>
+                            <li><span data-i18n="now.c3.b2">Notre propre modèle de prévision à base de réseaux de neurones, en commençant par un LSTM sur la température</span></li>
+                            <li><span data-i18n="now.c3.b3">Prévision jusqu’à 3 jours, calculée pendant que le joueur devine</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c3.now">cahier des charges et conception</span></p>
+                        <div class="now-techs"><span class="now-tech">Python</span><span class="now-tech">LSTM</span><span class="now-tech">Scrum</span></div>
+                    </div>
+                </article>
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">📐 <span data-i18n="now.c4.label">Modélisation mathématique</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c4.title">Les maths derrière le machine learning</h3>
+                        <p class="now-intro" data-i18n="now.c4.intro">Les bases théoriques des modèles que j’utilise ailleurs, codées à la main en Python.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c4.b1">Exploration de données avec NumPy et pandas</span></li>
+                            <li><span data-i18n="now.c4.b2">Régression linéaire et descente de gradient implémentées de zéro</span></li>
+                            <li><span data-i18n="now.c4.b3">ACP, régression logistique, perceptron et problème du XOR</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c4.now">réseaux de neurones, en lien avec le modèle d’Astraeus</span></p>
+                        <div class="now-techs"><span class="now-tech">NumPy</span><span class="now-tech">pandas</span><span class="now-tech">Joblib</span><span class="now-tech">Numba</span></div>
+                    </div>
+                </article>
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">⚙️ <span data-i18n="now.c5.label">Virtualisation et automatisation</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c5.title">Docker, CI/CD et Kubernetes</h3>
+                        <p class="now-intro" data-i18n="now.c5.intro">Automatiser la construction, les tests et le déploiement.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c5.b1">Pipelines GitLab CI/CD : étapes, artefacts, règles, variables protégées</span></li>
+                            <li><span data-i18n="now.c5.b2">Publication d’un site avec GitLab Pages</span></li>
+                            <li><span data-i18n="now.c5.b3">Conteneurs Docker et premiers déploiements sur Kubernetes</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c5.now">appliqué à ce portfolio : vérifications automatiques à chaque modification</span></p>
+                        <div class="now-techs"><span class="now-tech">Docker</span><span class="now-tech">GitLab CI/CD</span><span class="now-tech">Kubernetes</span><span class="now-tech">GitHub Actions</span></div>
+                            <a href="https://github.com/MateoBourdin/mateobourdin.github.io/blob/main/.github/workflows/checks.yml" class="but-year-link" target="_blank" rel="noopener noreferrer"><span data-i18n="now.c5.link">Voir la CI du portfolio</span> ↗</a>
+                    </div>
+                </article>
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">🎨 <span data-i18n="now.c6.label">Création numérique et veille</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c6.title">3D, image et technologies émergentes</h3>
+                        <p class="now-intro" data-i18n="now.c6.intro">Des cours plus créatifs, dont une partie en anglais.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c6.b1">Blender : modélisation, textures et UV mapping d’un personnage</span></li>
+                            <li><span data-i18n="now.c6.b2">Photoshop, cours en anglais : « Avatarize yourself », un avatar créé à partir de ma photo</span></li>
+                            <li><span data-i18n="now.c6.b3">Veille technologique en groupe sur WebAssembly</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c6.now">retouche de l’avatar et synthèse de la veille</span></p>
+                        <div class="now-techs"><span class="now-tech">Blender</span><span class="now-tech">Photoshop</span><span class="now-tech">WebAssembly</span></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="now-code reveal" id="extraits">
+                <h3 data-i18n="now.code.title">Extraits de code — Qualité de développement</h3>
+                <p class="now-note" data-i18n="now.code.note">Extraits tels qu’ils sont dans mon code. Le dépôt complet du cours est public sur GitHub.</p>
+                <details class="now-excerpt" open>
+                    <summary data-i18n="now.code.e1">Séparer les rôles : lecture, écriture et requêtes DTO</summary>
+                    <p class="now-why" data-i18n="now.code.e1why">Chaque contrôleur ne dépend que de ce dont il a besoin (principe de ségrégation des interfaces).</p>
+                    <div class="code-preview"><pre><code class="language-csharp"><span class="keyword">public</span> <span class="keyword">interface</span> IReadable&lt;T&gt; <span class="keyword">where</span> T : <span class="keyword">class</span>
+{
+    Task&lt;IEnumerable&lt;T&gt;&gt; GetAllAsync();
+    Task&lt;T?&gt; GetByIdAsync(int id);
+}
+
+<span class="keyword">public</span> <span class="keyword">interface</span> IWritable&lt;T&gt; <span class="keyword">where</span> T : <span class="keyword">class</span>
+{
+    Task AddAsync(T entity);
+    Task UpdateAsync(T entity);
+    Task DeleteAsync(int id);
+    Task SaveAsync();
+}
+
+<span class="keyword">public</span> <span class="keyword">interface</span> IDataRepository&lt;T&gt; : IReadable&lt;T&gt;, IWritable&lt;T&gt; <span class="keyword">where</span> T : <span class="keyword">class</span>
+{
+}
+
+<span class="keyword">public</span> <span class="keyword">interface</span> IQueryService&lt;TListDto, TDetailDto&gt;
+    <span class="keyword">where</span> TListDto : <span class="keyword">class</span>
+    <span class="keyword">where</span> TDetailDto : <span class="keyword">class</span>
+{
+    Task&lt;IEnumerable&lt;TListDto&gt;&gt; GetAllDtoAsync();
+    Task&lt;TDetailDto?&gt; GetByIdDtoAsync(int id);
+}</code></pre></div>
+                </details>
+                <details class="now-excerpt">
+                    <summary data-i18n="now.code.e2">Entité → DTO avec AutoMapper</summary>
+                    <p class="now-why" data-i18n="now.code.e2why">Le client reçoit des données prêtes à afficher, et l’état « en réapprovisionnement » est calculé côté serveur.</p>
+                    <div class="code-preview"><pre><code class="language-csharp">CreateMap&lt;Produit, ProduitDetailDto&gt;()
+    .ForMember(dest =&gt; dest.Id, opt =&gt; opt.MapFrom(src =&gt; src.IdProduit))
+    .ForMember(dest =&gt; dest.Nom, opt =&gt; opt.MapFrom(src =&gt; src.NomProduit))
+    .ForMember(dest =&gt; dest.Type, opt =&gt; opt.MapFrom(src =&gt; src.TypeProduitNavigation.NomTypeProduit))
+    .ForMember(dest =&gt; dest.Marque, opt =&gt; opt.MapFrom(src =&gt; src.MarqueNavigation.NomMarque))
+    .ForMember(dest =&gt; dest.Stock, opt =&gt; opt.MapFrom(src =&gt; src.stockReel))
+    .ForMember(dest =&gt; dest.EnReappro, opt =&gt; opt.MapFrom(src =&gt; src.stockReel &lt; src.stockMin));</code></pre></div>
+                </details>
+                <details class="now-excerpt">
+                    <summary data-i18n="now.code.e3">Test d’intégration sur une vraie base PostgreSQL</summary>
+                    <p class="now-why" data-i18n="now.code.e3why">Le test crée un produit via le contrôleur, le relit, et vérifie le DTO renvoyé, au format Given / When / Then.</p>
+                    <div class="code-preview"><pre><code class="language-csharp"><span class="comment">// When : création via le contrôleur</span>
+<span class="keyword">var</span> postResult = <span class="keyword">await</span> _controller.PostProduct(nouveauProduit);
+
+<span class="comment">// Then : la création renvoie 201 CreatedAtAction</span>
+<span class="keyword">var</span> createdResult = postResult.Result as CreatedAtActionResult;
+Assert.IsNotNull(createdResult);
+Assert.AreEqual(201, createdResult.StatusCode);
+
+<span class="keyword">var</span> produitCree = createdResult.Value as Produit;
+Assert.IsNotNull(produitCree);
+
+<span class="comment">// When : relecture via le contrôleur (renvoie un ProduitDetailDto)</span>
+<span class="keyword">var</span> getResult = <span class="keyword">await</span> _controller.GetProductById(produitCree.IdProduit);
+
+<span class="comment">// Then : le produit persisté est bien retourné avec 200 OK</span>
+<span class="keyword">var</span> produitRelu = (getResult.Result as OkObjectResult)?.Value as ProduitDetailDto;
+Assert.IsNotNull(produitRelu);
+Assert.AreEqual(<span class="string">"iPhone 17"</span>, produitRelu.Nom);
+Assert.AreEqual(<span class="string">"Apple"</span>, produitRelu.Marque);
+Assert.IsFalse(produitRelu.EnReappro);</code></pre></div>
+                </details>
+            </div>
+
+            <div class="now-repos reveal">
+                <h3 data-i18n="now.repos.title">Mon code en ligne</h3>
+                <div class="now-repo-list">
+                    <a href="https://github.com/MateoBourdin/Qualite_de_dev" target="_blank" rel="noopener noreferrer" class="now-repo now-repo-main"><span data-i18n="now.repos.qdd">Qualité de dev : dépôt complet (TPRevision)</span> ↗</a>
+                    <a href="https://gitlab.com/brd.mateo" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.gitlab">Profil GitLab</span> ↗</a>
+                    <a href="https://github.com/MateoBourdin" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.github">Profil GitHub</span> ↗</a>
+                    <a href="https://github.com/MateoBourdin/mateobourdin.github.io" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.portfolio">Code source de ce portfolio</span> ↗</a>
+                    <a href="https://github.com/MateoBourdin/R401_TP2" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.r401">R4.01 : web service ASP.NET Core et son client</span> ↗</a>
+                    <a href="https://github.com/MateoBourdin/R4.04-TD4-AppClient" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.r404">R4.04 : application de notation de films (MVVM, MSTest)</span> ↗</a>
+                    <a href="https://github.com/MateoBourdin/R403_TP3console" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.r403">R4.03 : application console .NET</span> ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

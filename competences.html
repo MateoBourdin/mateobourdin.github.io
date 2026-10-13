@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences | Matéo Bourdin</title>
+    <meta name="description" content="Langages, frameworks, outils et langues de Matéo Bourdin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/competences.html">
+    <meta property="og:title" content="Compétences | Matéo Bourdin">
+    <meta property="og:description" content="Langages, frameworks, outils et langues de Matéo Bourdin.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compétences | Matéo Bourdin">
+    <meta name="twitter:description" content="Langages, frameworks, outils et langues de Matéo Bourdin.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="skills">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="cours.html" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" class="active" aria-current="page" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Skills -->
+    <section id="competences" class="page-hero">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><span data-i18n="skills.tag">💡 Mes compétences</span></span>
+                <h1 data-i18n="skills.title">Technologies & Outils</h1>
+                <p data-i18n="skills.description">Un large éventail de compétences acquises durant ma formation, mon stage et mes projets personnels</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">⚙️</span>
+                        <span data-i18n="skills.backend">Backend</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C# / ASP.NET Core <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                        <span class="skill-tag">Java <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                        <span class="skill-tag">PHP / Laravel <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                        <span class="skill-tag">Python / Flask <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">🌐</span>
+                        <span data-i18n="skills.frontend">Frontend & Mobile</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Vue 3 <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                        <span class="skill-tag">HTML/CSS/JS <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                        <span class="skill-tag">WPF / WinUI 3 (MVVM) <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                        <span class="skill-tag">Flutter <span class="skill-level" data-i18n="skills.level.basic">notions</span></span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">💾</span>
+                        <span data-i18n="skills.databases">Données</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                        <span class="skill-tag">Entity Framework Core <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                        <span class="skill-tag">MongoDB <span class="skill-level" data-i18n="skills.level.basic">notions</span></span>
+                        <span class="skill-tag">NumPy / pandas <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                        <span class="skill-tag">TensorFlow <span class="skill-level" data-i18n="skills.level.basic">notions</span></span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">🛠️</span>
+                        <span data-i18n="skills.tools">Outils & DevOps</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git/GitHub <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                        <span class="skill-tag">Docker <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                        <span class="skill-tag">GitLab CI/CD <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                        <span class="skill-tag">Kubernetes <span class="skill-level" data-i18n="skills.level.learning">en cours</span></span>
+                        <span class="skill-tag">Azure DevOps <span class="skill-level" data-i18n="skills.level.basic">notions</span></span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">🐧</span>
+                        <span data-i18n="skills.system">Système</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Windows Server <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                        <span class="skill-tag">Linux <span class="skill-level" data-i18n="skills.level.intermediate">intermédiaire</span></span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>
+                        <span class="icon">🤖</span>
+                        <span data-i18n="skills.ai">Intelligence Artificielle</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Claude Code <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                        <span class="skill-tag"><span data-i18n="skills.aiAssisted">Dév. assisté par IA</span> <span class="skill-level" data-i18n="skills.level.advanced">confirmé</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section id="langues">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag"><span data-i18n="languages.tag">🌍 Langues</span></span>
+                <h2 data-i18n="languages.title">Compétences Linguistiques</h2>
+            </div>
+            <div class="skills-grid reveal" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="skill-category">
+                    <h3>
+                        <span class="icon">🇫🇷</span>
+                        <span data-i18n="languages.french">Français</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-i18n="languages.native">Langue maternelle</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>
+                        <span class="icon">🇬🇧</span>
+                        <span data-i18n="languages.english">Anglais</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-i18n="languages.advanced">C1 - Avancé</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>
+                        <span class="icon">🇮🇹</span>
+                        <span data-i18n="languages.italian">Italien</span>
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag" data-i18n="languages.intermediate">B2 - Intermédiaire supérieur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
