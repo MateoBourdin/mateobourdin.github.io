@@ -18,6 +18,7 @@ const translations = {
             about: 'À propos',
             experience: 'Expérience',
             education: 'Formation',
+            now: 'En ce moment',
             butYears: 'Parcours BUT',
             projects: 'Projets',
             projectsCategoryWeb: 'Applications web',
@@ -103,6 +104,87 @@ const translations = {
                 skills: 'Compétences :',
                 skillsText: 'Java, MythicMobs, MMOItems, Paper, Blockbench, Travail d\'équipe',
                 details: 'Voir le détail'
+            }
+        },
+        now: {
+            "tag": "🛠️ En ce moment",
+            "title": "Ce sur quoi je travaille cette année",
+            "description": "Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais et des extraits de mon code. Mis à jour le 13 octobre 2026.",
+            "status": "En cours",
+            "next": "En ce moment",
+            "c1": {
+                "label": "Qualité de développement",
+                "title": "Une API ASP.NET Core propre et testée",
+                "intro": "TD fil rouge TPRevision : une API REST de gestion de produits (EF Core, PostgreSQL), refactorée selon les principes SOLID.",
+                "b1": "Interfaces séparées par rôle (lecture, écriture, requêtes DTO)",
+                "b2": "DTO et AutoMapper pour ne jamais exposer les entités",
+                "b3": "Tests unitaires (MSTest, Moq) et tests d’intégration sur une vraie base PostgreSQL",
+                "now": "client Blazor Server en MVVM qui consomme l’API",
+                "link": "Voir les extraits de code"
+            },
+            "c2": {
+                "label": "Programmation avancée (R5.A.05)",
+                "title": "Flask, données et IA",
+                "intro": "TP en groupe, déployés avec Docker Compose sur un serveur de l’IUT.",
+                "b1": "Flask-SQLAlchemy sur la base de données Chinook",
+                "b2": "Tableau de bord de séries temporelles avec InfluxDB",
+                "b3": "Reconnaissance de chiffres manuscrits (MNIST) avec TensorFlow, servie par Flask",
+                "now": "une application Flask complète à rendre (base de données, upload d’images, modèles d’IA)"
+            },
+            "c3": {
+                "label": "SAE 5.01 — projet de groupe",
+                "title": "Astraeus, plateforme éducative sur la météo",
+                "intro": "Équipe Scrum de 4 : exploration 4D des phénomènes, quiz et WeatherGuessr, un jeu où le joueur affronte la prévision d’un modèle.",
+                "b1": "Mon rôle : la partie IA et le traitement des données",
+                "b2": "Notre propre modèle de prévision à base de réseaux de neurones, en commençant par un LSTM sur la température",
+                "b3": "Prévision jusqu’à 3 jours, calculée pendant que le joueur devine",
+                "now": "cahier des charges et conception"
+            },
+            "c4": {
+                "label": "Modélisation mathématique",
+                "title": "Les maths derrière le machine learning",
+                "intro": "Les bases théoriques des modèles que j’utilise ailleurs, codées à la main en Python.",
+                "b1": "Exploration de données avec NumPy et pandas",
+                "b2": "Régression linéaire et descente de gradient implémentées de zéro",
+                "b3": "ACP, régression logistique, perceptron et problème du XOR",
+                "now": "réseaux de neurones, en lien avec le modèle d’Astraeus"
+            },
+            "c5": {
+                "label": "Virtualisation et automatisation",
+                "title": "Docker, CI/CD et Kubernetes",
+                "intro": "Automatiser la construction, les tests et le déploiement.",
+                "b1": "Pipelines GitLab CI/CD : étapes, artefacts, règles, variables protégées",
+                "b2": "Publication d’un site avec GitLab Pages",
+                "b3": "Conteneurs Docker et premiers déploiements sur Kubernetes",
+                "now": "appliqué à ce portfolio : vérifications automatiques à chaque modification",
+                "link": "Voir la CI du portfolio"
+            },
+            "c6": {
+                "label": "Création numérique et veille",
+                "title": "3D, image et technologies émergentes",
+                "intro": "Des cours plus créatifs, dont une partie en anglais.",
+                "b1": "Blender : modélisation, textures et UV mapping d’un personnage",
+                "b2": "Photoshop, cours en anglais : « Avatarize yourself », un avatar créé à partir de ma photo",
+                "b3": "Veille technologique en groupe sur WebAssembly",
+                "now": "retouche de l’avatar et synthèse de la veille"
+            },
+            "code": {
+                "title": "Extraits de code — Qualité de développement",
+                "note": "Le dépôt est privé car il s’agit d’un travail noté de l’IUT. Voici des extraits tels qu’ils sont dans mon code ; le dépôt complet est disponible sur demande.",
+                "e1": "Séparer les rôles : lecture, écriture et requêtes DTO",
+                "e1why": "Chaque contrôleur ne dépend que de ce dont il a besoin (principe de ségrégation des interfaces).",
+                "e2": "Entité → DTO avec AutoMapper",
+                "e2why": "Le client reçoit des données prêtes à afficher, et l’état « en réapprovisionnement » est calculé côté serveur.",
+                "e3": "Test d’intégration sur une vraie base PostgreSQL",
+                "e3why": "Le test crée un produit via le contrôleur, le relit, et vérifie le DTO renvoyé, au format Given / When / Then."
+            },
+            "repos": {
+                "title": "Mon code en ligne",
+                "github": "Profil GitHub",
+                "portfolio": "Code source de ce portfolio",
+                "r401": "R4.01 : web service ASP.NET Core et son client",
+                "r404": "R4.04 : application de notation de films (MVVM, MSTest)",
+                "r403": "R4.03 : application console .NET"
             }
         },
         butYears: {
@@ -337,6 +419,7 @@ const translations = {
             about: 'About',
             experience: 'Experience',
             education: 'Education',
+            now: 'Right now',
             butYears: 'BUT years',
             projects: 'Projects',
             projectsCategoryWeb: 'Web apps',
@@ -422,6 +505,87 @@ const translations = {
                 skills: 'Skills:',
                 skillsText: 'Java, MythicMobs, MMOItems, Paper, Blockbench, Teamwork',
                 details: 'View details'
+            }
+        },
+        now: {
+            "tag": "🛠️ Right now",
+            "title": "What I’m working on this year",
+            "description": "The 3rd-year courses I’m currently taking (semester 5, September to December 2026), what I do in each and excerpts of my code. Updated 13 October 2026.",
+            "status": "In progress",
+            "next": "Right now",
+            "c1": {
+                "label": "Software quality",
+                "title": "A clean, tested ASP.NET Core API",
+                "intro": "Running assignment TPRevision: a product-management REST API (EF Core, PostgreSQL), refactored along SOLID principles.",
+                "b1": "Interfaces split by role (read, write, DTO queries)",
+                "b2": "DTOs and AutoMapper so entities are never exposed",
+                "b3": "Unit tests (MSTest, Moq) and integration tests against a real PostgreSQL database",
+                "now": "a Blazor Server MVVM client consuming the API",
+                "link": "See the code excerpts"
+            },
+            "c2": {
+                "label": "Advanced programming (R5.A.05)",
+                "title": "Flask, data and AI",
+                "intro": "Group labs, deployed with Docker Compose on a university server.",
+                "b1": "Flask-SQLAlchemy on the Chinook database",
+                "b2": "Time-series dashboard with InfluxDB",
+                "b3": "Handwritten digit recognition (MNIST) with TensorFlow, served by Flask",
+                "now": "a complete Flask application to hand in (database, image upload, AI models)"
+            },
+            "c3": {
+                "label": "SAE 5.01 — group project",
+                "title": "Astraeus, an educational weather platform",
+                "intro": "Scrum team of 4: 4D exploration of weather phenomena, quizzes and WeatherGuessr, a game where players compete against a model’s forecast.",
+                "b1": "My role: the AI and data-processing part",
+                "b2": "Our own neural-network forecasting model, starting with an LSTM on temperature",
+                "b3": "Forecasts up to 3 days ahead, computed while the player is guessing",
+                "now": "specifications and design"
+            },
+            "c4": {
+                "label": "Mathematical modelling",
+                "title": "The maths behind machine learning",
+                "intro": "The theory behind the models I use elsewhere, coded by hand in Python.",
+                "b1": "Data exploration with NumPy and pandas",
+                "b2": "Linear regression and gradient descent implemented from scratch",
+                "b3": "PCA, logistic regression, perceptron and the XOR problem",
+                "now": "neural networks, tied to the Astraeus model"
+            },
+            "c5": {
+                "label": "Virtualisation and automation",
+                "title": "Docker, CI/CD and Kubernetes",
+                "intro": "Automating builds, tests and deployment.",
+                "b1": "GitLab CI/CD pipelines: stages, artifacts, rules, protected variables",
+                "b2": "Publishing a site with GitLab Pages",
+                "b3": "Docker containers and first deployments on Kubernetes",
+                "now": "applied to this portfolio: automatic checks on every change",
+                "link": "See the portfolio’s CI"
+            },
+            "c6": {
+                "label": "Digital creation and tech watch",
+                "title": "3D, imaging and emerging tech",
+                "intro": "More creative courses, partly taught in English.",
+                "b1": "Blender: modelling, texturing and UV-mapping a character",
+                "b2": "Photoshop, taught in English: “Avatarize yourself”, an avatar made from my own photo",
+                "b3": "Group technology watch on WebAssembly",
+                "now": "finishing the avatar and writing up the tech watch"
+            },
+            "code": {
+                "title": "Code excerpts — Software quality",
+                "note": "The repository is private because it is graded university work. These excerpts are taken as-is from my code; the full repository is available on request.",
+                "e1": "Separating roles: read, write and DTO queries",
+                "e1why": "Each controller depends only on what it needs (interface segregation principle).",
+                "e2": "Entity → DTO with AutoMapper",
+                "e2why": "The client gets display-ready data, and the “restocking” flag is computed server-side.",
+                "e3": "Integration test against a real PostgreSQL database",
+                "e3why": "The test creates a product through the controller, reads it back and checks the returned DTO, in Given / When / Then form."
+            },
+            "repos": {
+                "title": "My code online",
+                "github": "GitHub profile",
+                "portfolio": "Source code of this portfolio",
+                "r401": "R4.01: ASP.NET Core web service and its client",
+                "r404": "R4.04: film-rating app (MVVM, MSTest)",
+                "r403": "R4.03: .NET console application"
             }
         },
         butYears: {

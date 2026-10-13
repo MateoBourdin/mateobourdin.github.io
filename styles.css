@@ -152,6 +152,7 @@ nav {
 }
 
 .nav-links a {
+    white-space: nowrap;
     text-decoration: none;
     color: var(--text);
     font-weight: 600;
@@ -1980,4 +1981,240 @@ footer p, .footer p {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Right now: current courses */
+.now-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
+    align-items: stretch;
+}
+
+.now-card .project-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.now-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-tag.now-live {
+    background: var(--accent-green);
+    color: white;
+}
+
+.now-intro {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.now-list {
+    margin: 0 0 0.9rem;
+    padding-left: 1.1rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.now-list li::marker {
+    color: var(--primary);
+}
+
+.now-next {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    border-left: 3px solid var(--accent-green);
+    padding-left: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.now-next strong {
+    color: var(--text);
+}
+
+.now-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+}
+
+.now-tech {
+    font-size: 0.75rem;
+    border: 1px solid var(--primary-lighter);
+    color: var(--text-light);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+}
+
+.now-card .but-year-link {
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+}
+
+.now-code,
+.now-repos {
+    margin-top: 3rem;
+    background: var(--surface);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(33, 29, 24, 0.05);
+    scroll-margin-top: 90px;
+}
+
+.now-code h3,
+.now-repos h3 {
+    margin-bottom: 0.5rem;
+}
+
+.now-note {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.now-excerpt {
+    border-top: 1px solid var(--primary-lighter);
+    padding: 0.9rem 0;
+}
+
+.now-excerpt summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.now-excerpt summary:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.now-why {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0.6rem 0 0;
+}
+
+.now-excerpt .code-preview {
+    margin: 0.75rem 0 0;
+    padding: 1rem 1.1rem;
+}
+
+.now-excerpt .code-preview code {
+    font-size: 0.82rem;
+}
+
+.now-repo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.now-repo {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--primary-lighter);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.now-repo:hover {
+    background: var(--primary-lighter);
+}
+
+@media (max-width: 600px) {
+    .now-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .now-code,
+    .now-repos {
+        padding: 1.25rem;
+    }
+}
+
+/* The full menu needs ~1150px: below that, use the burger menu */
+@media (max-width: 1150px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .burger-menu {
+        display: flex;
+        order: 2;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .lang-switcher {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        order: 4;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        background: var(--header-bg-scrolled);
+        backdrop-filter: blur(12px);
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        box-shadow: 0 4px 20px rgba(33, 29, 24, 0.1);
+        margin-top: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--primary-lighter);
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        padding: 0.5rem 0 0;
+        min-width: 0;
+    }
+
+    .nav-dropdown-menu a {
+        text-align: center;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+}
+
+/* Keep the desktop menu on one line now that it has one more entry */
+@media (min-width: 1151px) and (max-width: 1360px) {
+    .nav-links {
+        gap: 1.1rem;
+        font-size: 0.9rem;
+    }
 }
