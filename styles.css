@@ -2375,3 +2375,15 @@ section.page-hero + section {
         padding-top: 110px;
     }
 }
+
+.now-code-group {
+    margin: 1.5rem 0 0.4rem;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.now-src {
+    color: var(--primary);
+    font-weight: 600;
+    white-space: nowrap;
+}

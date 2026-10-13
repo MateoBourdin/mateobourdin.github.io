@@ -175,12 +175,13 @@ const translations = {
             "c5": {
                 "label": "Virtualisation et automatisation",
                 "title": "Docker, CI/CD et Kubernetes",
-                "intro": "Automatiser la construction, les tests et le déploiement.",
-                "b1": "Pipelines GitLab CI/CD : étapes, artefacts, règles, variables protégées",
-                "b2": "Publication d’un site avec GitLab Pages",
-                "b3": "Conteneurs Docker et premiers déploiements sur Kubernetes",
+                "intro": "18 exercices de pipelines GitLab CI/CD, tous publics sur GitLab.",
+                "b1": "Images Docker construites et publiées dans le registre GitLab, puis testées ensemble (API + PostgreSQL) dans le pipeline",
+                "b2": "Tests de bout en bout (Cypress), de charge (k6) et sur plusieurs versions en parallèle (Python 3.8 à 3.11, Node 16 à 20)",
+                "b3": "Analyse de sécurité automatique (Bandit, Safety, npm audit), variables protégées et GitLab Pages",
                 "now": "appliqué à ce portfolio : vérifications automatiques à chaque modification",
-                "link": "Voir la CI du portfolio"
+                "link": "Voir la CI du portfolio",
+                "gitlab": "Voir mes 18 exercices sur GitLab"
             },
             "c6": {
                 "label": "Création numérique et veille",
@@ -192,14 +193,20 @@ const translations = {
                 "now": "retouche de l’avatar et synthèse de la veille"
             },
             "code": {
-                "title": "Extraits de code — Qualité de développement",
+                "title": "Extraits de code",
                 "note": "Extraits tels qu’ils sont dans mon code. Le dépôt complet du cours est public sur GitHub.",
                 "e1": "Séparer les rôles : lecture, écriture et requêtes DTO",
                 "e1why": "Chaque contrôleur ne dépend que de ce dont il a besoin (principe de ségrégation des interfaces).",
                 "e2": "Entité → DTO avec AutoMapper",
                 "e2why": "Le client reçoit des données prêtes à afficher, et l’état « en réapprovisionnement » est calculé côté serveur.",
                 "e3": "Test d’intégration sur une vraie base PostgreSQL",
-                "e3why": "Le test crée un produit via le contrôleur, le relit, et vérifie le DTO renvoyé, au format Given / When / Then."
+                "e3why": "Le test crée un produit via le contrôleur, le relit, et vérifie le DTO renvoyé, au format Given / When / Then.",
+                "g1": "Qualité de développement (C#)",
+                "g2": "Virtualisation et automatisation (GitLab CI/CD)",
+                "e4": "Construire les images Docker puis tester l’API avec une vraie base",
+                "e4why": "Un modèle de job réutilisé (.docker), deux images publiées dans le registre GitLab, puis un test d’intégration qui ne démarre qu’une fois le backend construit.",
+                "e5": "Tester sur plusieurs versions de Python en parallèle",
+                "e5why": "Une matrice lance la même suite de tests sur quatre versions de Python à la fois, et garde un rapport par version."
             },
             "repos": {
                 "title": "Mon code en ligne",
@@ -209,7 +216,7 @@ const translations = {
                 "r404": "R4.04 : application de notation de films (MVVM, MSTest)",
                 "r403": "R4.03 : application console .NET",
                 "qdd": "Qualité de dev : dépôt complet (TPRevision)",
-                "gitlab": "Profil GitLab"
+                "gitlab": "GitLab CI/CD : mes 18 exercices"
             }
         },
         butYears: {
@@ -601,12 +608,13 @@ const translations = {
             "c5": {
                 "label": "Virtualisation and automation",
                 "title": "Docker, CI/CD and Kubernetes",
-                "intro": "Automating builds, tests and deployment.",
-                "b1": "GitLab CI/CD pipelines: stages, artifacts, rules, protected variables",
-                "b2": "Publishing a site with GitLab Pages",
-                "b3": "Docker containers and first deployments on Kubernetes",
+                "intro": "18 GitLab CI/CD pipeline exercises, all public on GitLab.",
+                "b1": "Docker images built and pushed to the GitLab registry, then tested together (API + PostgreSQL) in the pipeline",
+                "b2": "End-to-end (Cypress), load (k6) and multi-version tests in parallel (Python 3.8 to 3.11, Node 16 to 20)",
+                "b3": "Automatic security scanning (Bandit, Safety, npm audit), protected variables and GitLab Pages",
                 "now": "applied to this portfolio: automatic checks on every change",
-                "link": "See the portfolio’s CI"
+                "link": "See the portfolio’s CI",
+                "gitlab": "See my 18 exercises on GitLab"
             },
             "c6": {
                 "label": "Digital creation and tech watch",
@@ -618,14 +626,20 @@ const translations = {
                 "now": "finishing the avatar and writing up the tech watch"
             },
             "code": {
-                "title": "Code excerpts — Software quality",
+                "title": "Code excerpts",
                 "note": "Excerpts taken as-is from my code. The full course repository is public on GitHub.",
                 "e1": "Separating roles: read, write and DTO queries",
                 "e1why": "Each controller depends only on what it needs (interface segregation principle).",
                 "e2": "Entity → DTO with AutoMapper",
                 "e2why": "The client gets display-ready data, and the “restocking” flag is computed server-side.",
                 "e3": "Integration test against a real PostgreSQL database",
-                "e3why": "The test creates a product through the controller, reads it back and checks the returned DTO, in Given / When / Then form."
+                "e3why": "The test creates a product through the controller, reads it back and checks the returned DTO, in Given / When / Then form.",
+                "g1": "Software quality (C#)",
+                "g2": "Virtualisation and automation (GitLab CI/CD)",
+                "e4": "Build the Docker images, then test the API against a real database",
+                "e4why": "A reusable job template (.docker), two images pushed to the GitLab registry, then an integration test that only starts once the backend is built.",
+                "e5": "Test on several Python versions in parallel",
+                "e5why": "A matrix runs the same test suite on four Python versions at once and keeps one report per version."
             },
             "repos": {
                 "title": "My code online",
@@ -635,7 +649,7 @@ const translations = {
                 "r404": "R4.04: film-rating app (MVVM, MSTest)",
                 "r403": "R4.03: .NET console application",
                 "qdd": "Software quality: full repository (TPRevision)",
-                "gitlab": "GitLab profile"
+                "gitlab": "GitLab CI/CD: my 18 exercises"
             }
         },
         butYears: {

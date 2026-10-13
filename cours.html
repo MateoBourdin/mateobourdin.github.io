@@ -141,14 +141,15 @@
                             <span class="project-tag now-live" data-i18n="now.status">En cours</span>
                         </div>
                         <h3 data-i18n="now.c5.title">Docker, CI/CD et Kubernetes</h3>
-                        <p class="now-intro" data-i18n="now.c5.intro">Automatiser la construction, les tests et le déploiement.</p>
+                        <p class="now-intro" data-i18n="now.c5.intro">18 exercices de pipelines GitLab CI/CD, tous publics sur GitLab.</p>
                         <ul class="now-list">
-                            <li><span data-i18n="now.c5.b1">Pipelines GitLab CI/CD : étapes, artefacts, règles, variables protégées</span></li>
-                            <li><span data-i18n="now.c5.b2">Publication d’un site avec GitLab Pages</span></li>
-                            <li><span data-i18n="now.c5.b3">Conteneurs Docker et premiers déploiements sur Kubernetes</span></li>
+                            <li><span data-i18n="now.c5.b1">Images Docker construites et publiées dans le registre GitLab, puis testées ensemble (API + PostgreSQL) dans le pipeline</span></li>
+                            <li><span data-i18n="now.c5.b2">Tests de bout en bout (Cypress), de charge (k6) et sur plusieurs versions en parallèle (Python 3.8 à 3.11, Node 16 à 20)</span></li>
+                            <li><span data-i18n="now.c5.b3">Analyse de sécurité automatique (Bandit, Safety, npm audit), variables protégées et GitLab Pages</span></li>
                         </ul>
                         <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c5.now">appliqué à ce portfolio : vérifications automatiques à chaque modification</span></p>
-                        <div class="now-techs"><span class="now-tech">Docker</span><span class="now-tech">GitLab CI/CD</span><span class="now-tech">Kubernetes</span><span class="now-tech">GitHub Actions</span></div>
+                        <div class="now-techs"><span class="now-tech">Docker</span><span class="now-tech">GitLab CI/CD</span><span class="now-tech">Kubernetes</span><span class="now-tech">Cypress</span><span class="now-tech">k6</span><span class="now-tech">GitHub Actions</span></div>
+                            <a href="https://gitlab.com/bourdin_mateo/virtualisation" class="but-year-link" target="_blank" rel="noopener noreferrer"><span data-i18n="now.c5.gitlab">Voir mes 18 exercices sur GitLab</span> ↗</a>
                             <a href="https://github.com/MateoBourdin/mateobourdin.github.io/blob/main/.github/workflows/checks.yml" class="but-year-link" target="_blank" rel="noopener noreferrer"><span data-i18n="now.c5.link">Voir la CI du portfolio</span> ↗</a>
                     </div>
                 </article>
@@ -172,7 +173,8 @@
             </div>
 
             <div class="now-code reveal" id="extraits">
-                <h3 data-i18n="now.code.title">Extraits de code — Qualité de développement</h3>
+                <h3 data-i18n="now.code.title">Extraits de code</h3>
+                <h4 class="now-code-group" data-i18n="now.code.g1">Qualité de développement (C#)</h4>
                 <p class="now-note" data-i18n="now.code.note">Extraits tels qu’ils sont dans mon code. Le dépôt complet du cours est public sur GitHub.</p>
                 <details class="now-excerpt" open>
                     <summary data-i18n="now.code.e1">Séparer les rôles : lecture, écriture et requêtes DTO</summary>
@@ -238,13 +240,59 @@ Assert.AreEqual(<span class="string">"iPhone 17"</span>, produitRelu.Nom);
 Assert.AreEqual(<span class="string">"Apple"</span>, produitRelu.Marque);
 Assert.IsFalse(produitRelu.EnReappro);</code></pre></div>
                 </details>
+                <h4 class="now-code-group" data-i18n="now.code.g2">Virtualisation et automatisation (GitLab CI/CD)</h4>
+                <details class="now-excerpt">
+                    <summary data-i18n="now.code.e4">Construire les images Docker puis tester l’API avec une vraie base</summary>
+                    <p class="now-why"><span data-i18n="now.code.e4why">Un modèle de job réutilisé (.docker), deux images publiées dans le registre GitLab, puis un test d’intégration qui ne démarre qu’une fois le backend construit.</span> <a href="https://gitlab.com/bourdin_mateo/virtualisation/ex12/-/blob/main/.gitlab-ci.yml" target="_blank" rel="noopener noreferrer" class="now-src">Ex12 ↗</a></p>
+                    <div class="code-preview"><pre><code class="language-yaml"><span class="keyword">.docker:</span>
+<span class="keyword">  image:</span> docker:latest
+<span class="keyword">  services:</span>
+<span class="keyword">    - docker:</span>dind
+<span class="keyword">  before_script:</span>
+    - echo <span class="string">"$CI_REGISTRY_PASSWORD"</span> | docker login -u <span class="string">"$CI_REGISTRY_USER"</span> --password-stdin <span class="string">"$CI_REGISTRY"</span>
+
+<span class="keyword">build-backend:</span>
+<span class="keyword">  extends:</span> .docker
+<span class="keyword">  stage:</span> build
+<span class="keyword">  script:</span>
+    - docker build -t <span class="string">"$BACKEND_IMAGE"</span> ./backend
+    - docker push <span class="string">"$BACKEND_IMAGE"</span>
+
+<span class="keyword">integration-test:</span>
+<span class="keyword">  extends:</span> .docker
+<span class="keyword">  stage:</span> integration
+<span class="keyword">  needs:</span>
+    - build-backend
+<span class="keyword">  script:</span>
+    - docker network create test-net
+    - docker pull <span class="string">"$BACKEND_IMAGE"</span>
+    <span class="comment"># (…) démarrage de PostgreSQL et de l'API sur le réseau test-net</span>
+    - docker run --rm --network test-net curlimages/curl -sf http://backend:3000/api/db-health
+    - docker run --rm --network test-net curlimages/curl -sf http://backend:3000/api/health</code></pre></div>
+                </details>
+                <details class="now-excerpt">
+                    <summary data-i18n="now.code.e5">Tester sur plusieurs versions de Python en parallèle</summary>
+                    <p class="now-why"><span data-i18n="now.code.e5why">Une matrice lance la même suite de tests sur quatre versions de Python à la fois, et garde un rapport par version.</span> <a href="https://gitlab.com/bourdin_mateo/virtualisation/ex16/-/blob/main/.gitlab-ci.yml" target="_blank" rel="noopener noreferrer" class="now-src">ex16 ↗</a></p>
+                    <div class="code-preview"><pre><code class="language-yaml"><span class="keyword">test-python:</span>
+<span class="keyword">  stage:</span> test
+<span class="keyword">  parallel:</span>
+<span class="keyword">    matrix:</span>
+<span class="keyword">      - PYTHON_VERSION:</span> [<span class="string">"3.8"</span>, <span class="string">"3.9"</span>, <span class="string">"3.10"</span>, <span class="string">"3.11"</span>]
+<span class="keyword">  image:</span> python:$PYTHON_VERSION-slim
+<span class="keyword">  script:</span>
+    - pip install --no-cache-dir pytest pytest-json-report
+    - pytest python/test_calc.py --json-report --json-report-file=report_python_$PYTHON_VERSION.json
+<span class="keyword">  artifacts:</span>
+<span class="keyword">    paths:</span>
+      - report_python_$PYTHON_VERSION.json</code></pre></div>
+                </details>
             </div>
 
             <div class="now-repos reveal">
                 <h3 data-i18n="now.repos.title">Mon code en ligne</h3>
                 <div class="now-repo-list">
                     <a href="https://github.com/MateoBourdin/Qualite_de_dev" target="_blank" rel="noopener noreferrer" class="now-repo now-repo-main"><span data-i18n="now.repos.qdd">Qualité de dev : dépôt complet (TPRevision)</span> ↗</a>
-                    <a href="https://gitlab.com/brd.mateo" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.gitlab">Profil GitLab</span> ↗</a>
+                    <a href="https://gitlab.com/bourdin_mateo/virtualisation" target="_blank" rel="noopener noreferrer" class="now-repo now-repo-main"><span data-i18n="now.repos.gitlab">GitLab CI/CD : mes 18 exercices</span> ↗</a>
                     <a href="https://github.com/MateoBourdin" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.github">Profil GitHub</span> ↗</a>
                     <a href="https://github.com/MateoBourdin/mateobourdin.github.io" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.portfolio">Code source de ce portfolio</span> ↗</a>
                     <a href="https://github.com/MateoBourdin/R401_TP2" target="_blank" rel="noopener noreferrer" class="now-repo"><span data-i18n="now.repos.r401">R4.01 : web service ASP.NET Core et son client</span> ↗</a>
