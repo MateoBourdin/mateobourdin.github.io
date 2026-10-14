@@ -10,6 +10,10 @@ const translations = {
             zelda: "Carte du jeu Zelda en mode texte"
         },
         metaPages: {
+            coursFlask: "Flask, données et IA | Matéo Bourdin",
+            coursAspnet: "API ASP.NET Core, qualité et tests | Matéo Bourdin",
+            coursMaths: "Modélisation mathématique et IA | Matéo Bourdin",
+            coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
             coursAspnet: "API ASP.NET Core, qualité et tests | Matéo Bourdin",
             coursMaths: "Modélisation mathématique et IA | Matéo Bourdin",
             coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
@@ -101,6 +105,27 @@ const translations = {
                 "l4": "Tests unitaires avec Moq, tests du mapping et test d’intégration sur PostgreSQL.",
                 "nextTitle": "La suite",
                 "next": "Un contrôleur générique pour factoriser le code, puis un client Blazor Server en MVVM qui consommera cette API."
+            },
+            "flask": {
+                "tag": "🧠 Cours actuel · BUT3",
+                "title": "Flask, données et IA",
+                "desc": "Une app Flask reliée à SQLite, à InfluxDB puis à des réseaux de neurones : mes TP relancés, et leurs modèles à essayer ici.",
+                "p1": "Le module de programmation avancée en Python : construire des applications web avec Flask, les relier à une base relationnelle puis à une base de séries temporelles, et y brancher des modèles d’intelligence artificielle.",
+                "s1": "TP relancés pour récupérer leurs vraies sorties",
+                "s2": "modèles de mon app qui tournent dans le navigateur",
+                "s3": "requêtes SQL grâce au chargement groupé",
+                "s4": "bugs trouvés en lançant le code",
+                "learnTitle": "Ce que j’y ai appris",
+                "l1t": "Structurer une app Flask",
+                "l1": "Application factory, Blueprints, gabarits Jinja et API JSON.",
+                "l2t": "Un ORM bien utilisé",
+                "l2": "Modèles SQLAlchemy 2.0, relations, et le chargement des données sans requêtes en trop.",
+                "l3t": "Séries temporelles",
+                "l3": "InfluxDB et le langage Flux pour un tableau de bord météo, devises et cryptomonnaies.",
+                "l4t": "Mettre un modèle en ligne",
+                "l4": "Prétraiter une image, interroger un CNN Keras et renvoyer la prédiction, le tout dans Docker.",
+                "nextTitle": "La suite",
+                "next": "Le rendu final est une application Flask complète qui réunit base de données, envoi d’images et modèles d’IA."
             }
         },
         meta: {
@@ -529,10 +554,10 @@ const translations = {
             "storageTitle": "Cookies et stockage local",
             "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien.",
             "thirdTitle": "Contenus tiers",
-            "thirdText": "Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
+            "thirdText": "Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Les modèles d’IA des pages de cours s’exécutent dans votre navigateur : les dessins et photos que vous leur soumettez ne sont envoyés nulle part. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
             "policies": "Politiques de confidentialité des services cités :",
             "ipTitle": "Propriété intellectuelle et crédits",
-            "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les pages de cours reprennent uniquement mon propre travail (code, résultats, notes de révision) ; les supports des enseignants n’y sont pas publiés et les données des démonstrations d’API sont fictives. Les logos et marques cités appartiennent à leurs propriétaires."
+            "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les pages de cours reprennent uniquement mon propre travail (code, résultats, notes de révision) ; les supports des enseignants n’y sont pas publiés et les données des démonstrations d’API sont fictives. Les démos utilisent aussi des jeux de données publics : la base Chinook (Luis Rocha, licence MIT), MNIST (Yann LeCun et Corinna Cortes, CC BY-SA 3.0), Fashion-MNIST (Zalando Research, licence MIT) et CIFAR-10 (Alex Krizhevsky). Les logos et marques cités appartiennent à leurs propriétaires."
         },
         games: {
             "back": "← Arcade",
@@ -627,6 +652,10 @@ const translations = {
             zelda: "Map of the text-mode Zelda game"
         },
         metaPages: {
+            coursFlask: "Flask, data and AI | Matéo Bourdin",
+            coursAspnet: "ASP.NET Core API, quality and testing | Matéo Bourdin",
+            coursMaths: "Mathematical modelling and AI | Matéo Bourdin",
+            coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
             coursAspnet: "ASP.NET Core API, quality and testing | Matéo Bourdin",
             coursMaths: "Mathematical modelling and AI | Matéo Bourdin",
             coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
@@ -718,6 +747,27 @@ const translations = {
                 "l4": "Unit tests with Moq, mapping tests and an integration test against PostgreSQL.",
                 "nextTitle": "What comes next",
                 "next": "A generic controller to remove duplication, then a Blazor Server client in MVVM that will consume this API."
+            },
+            "flask": {
+                "tag": "🧠 Current course · Year 3",
+                "title": "Flask, data and AI",
+                "desc": "A Flask app wired to SQLite, then InfluxDB, then neural networks: my labs re-run, and their models to try right here.",
+                "p1": "The advanced Python programming module: building web apps with Flask, connecting them to a relational database and a time-series database, and plugging in artificial intelligence models.",
+                "s1": "labs re-run to capture their real output",
+                "s2": "models from my app running in your browser",
+                "s3": "SQL queries thanks to batched loading",
+                "s4": "bugs found by running the code",
+                "learnTitle": "What I learned",
+                "l1t": "Structuring a Flask app",
+                "l1": "Application factory, Blueprints, Jinja templates and a JSON API.",
+                "l2t": "Using an ORM well",
+                "l2": "SQLAlchemy 2.0 models, relationships, and loading data without extra queries.",
+                "l3t": "Time series",
+                "l3": "InfluxDB and the Flux language for a weather, currency and crypto dashboard.",
+                "l4t": "Putting a model online",
+                "l4": "Preprocessing an image, querying a Keras CNN and returning the prediction, all inside Docker.",
+                "nextTitle": "What comes next",
+                "next": "The final deliverable is a complete Flask application combining a database, image uploads and AI models."
             }
         },
         meta: {
@@ -1146,10 +1196,10 @@ const translations = {
             "storageTitle": "Cookies and local storage",
             "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and progress in the mini-games and the revision quizzes on the course pages. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing.",
             "thirdTitle": "Third-party content",
-            "thirdText": "Fonts, libraries (including Pyodide, which runs Python in the demos), game files (images, music, sounds) and course demo files are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
+            "thirdText": "Fonts, libraries (including Pyodide, which runs Python in the demos), game files (images, music, sounds) and course demo files are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. The AI models on the course pages run in your browser: the drawings and photos you give them are not sent anywhere. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
             "policies": "Privacy policies of the services mentioned:",
             "ipTitle": "Intellectual property and credits",
-            "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. Course pages only show my own work (code, results, revision notes); teaching materials are not published and the API demo data is made up. The logos and brands mentioned belong to their owners."
+            "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. Course pages only show my own work (code, results, revision notes); teaching materials are not published and the API demo data is made up. The demos also use public datasets: the Chinook database (Luis Rocha, MIT licence), MNIST (Yann LeCun and Corinna Cortes, CC BY-SA 3.0), Fashion-MNIST (Zalando Research, MIT licence) and CIFAR-10 (Alex Krizhevsky). The logos and brands mentioned belong to their owners."
         },
         games: {
             "back": "← Arcade",

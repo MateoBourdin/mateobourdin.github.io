@@ -234,3 +234,47 @@ html[lang="fr"] .cours-fr-note { display: none; }
 .cnn-bar b { font-weight: 500; text-align: right; }
 .cours-term .ok { color: #6cc4a3; } .cours-term .ko { color: #f87171; }
 @media (max-width: 760px) { .cnn-ui { grid-template-columns: 1fr; } .cnn-grid { grid-template-columns: repeat(6, 1fr); } }
+
+/* ---- R5.A.05 : Flask ---- */
+.flask-browser { border: 1px solid var(--primary-lighter); border-radius: 12px; overflow: hidden; background: #fff; min-width: 0; }
+.flask-bar { display: flex; align-items: center; gap: .5rem; padding: .45rem .7rem; background: #eef0f6; color: #333; font: .8rem 'JetBrains Mono', Consolas, monospace; border-bottom: 1px solid #dde1ea; overflow-wrap: anywhere; }
+.flask-bar .http { margin: 0; font-size: .75rem; }
+.flask-frame { max-height: 420px; overflow: auto; padding: 1rem 2rem; font-family: Arial, sans-serif; line-height: 1.5; color: #000; background: #fff; }
+.flask-frame h1 { all: revert; font-family: Arial, sans-serif; margin: .3em 0 .25rem; color: #000; font-size: 2em; }
+.flask-frame p { color: #000; margin: 1em 0; }
+.flask-frame .count { margin-top: 0; color: #555; }
+.flask-frame .artist-name { font-weight: bold; }
+.flask-frame .album-list { margin-left: 20px; list-style: circle; }
+.flask-frame .records { padding-left: 1.25rem; list-style: disc; }
+.flask-frame .records > li { margin-bottom: .75rem; }
+.flask-frame ul ul li { margin: 0; }
+.tp2-wrap { display: grid; grid-template-columns: minmax(180px, 250px) minmax(0, 1fr); gap: 1rem; }
+.tp2-wrap > * { min-width: 0; }
+.tp2-strat { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; font-size: .9rem; }
+.tp2-strat select, .tp3-form select, .tp3-form input[type=text], .tp4-ctrl select { font: inherit; padding: .35rem .5rem; border-radius: 8px; border: 1px solid var(--primary-lighter); background: var(--light); color: var(--text); max-width: 100%; }
+.tp3-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .8rem 1rem; margin: .8rem 0; }
+.tp3-form fieldset { border: 1px solid var(--primary-lighter); border-radius: 10px; padding: .5rem .8rem; min-width: 0; }
+.tp3-form legend { font-weight: 700; font-size: .85rem; padding: 0 .3rem; }
+.tp3-form label { display: inline-flex; gap: .3rem; align-items: center; margin: .15rem .6rem .15rem 0; font-size: .9rem; }
+.tp3-url { font: .82rem 'JetBrains Mono', Consolas, monospace; overflow-wrap: anywhere; background: var(--light); border-radius: 8px; padding: .5rem .7rem; }
+.tp4-app { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+.tp4-app > * { min-width: 0; }
+#tp4Canvas { width: 100%; max-width: 280px; aspect-ratio: 1; border: 1px solid #333; border-radius: 6px; touch-action: none; cursor: crosshair; background: #fff; display: block; }
+.tp4-ctrl { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; font-size: .9rem; }
+.tp4-ctrl label { display: inline-flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.tp4-in { display: flex; gap: .6rem; align-items: center; font-size: .85rem; margin: .4rem 0; }
+#tp4In { width: 84px; height: 84px; image-rendering: pixelated; border: 1px solid var(--primary-lighter); border-radius: 4px; background: #000; }
+.tp4-samples { display: grid; grid-template-columns: repeat(auto-fill, minmax(34px, 1fr)); gap: 4px; margin-top: .6rem; }
+.tp4-thumb { padding: 0; border: 2px solid transparent; border-radius: 4px; background: none; cursor: pointer; line-height: 0; }
+.tp4-thumb canvas { width: 100%; aspect-ratio: 1; image-rendering: pixelated; border-radius: 2px; }
+.tp4-thumb.on { border-color: var(--primary); }
+.tp4-result { font-family: 'JetBrains Mono', Consolas, monospace; font-weight: 700; margin: 0 0 .5rem; }
+.tp4-warn { margin: .5rem 0; }
+.tp4-index { font: .85rem 'JetBrains Mono', Consolas, monospace; margin: .4rem 0 .8rem; padding-left: 1.2rem; }
+.tp4-index .ko { color: #dc2626; } .tp4-index .ok { color: #2da160; }
+@media (max-width: 760px) {
+    .tp2-wrap, .tp4-app { grid-template-columns: minmax(0, 1fr); }
+    .flask-frame { padding: .8rem 1rem; }
+}
+#tp3Read .ko { color: #dc2626; font-weight: 600; }
+.tp4-ctrl .btn { padding: .45rem .95rem; font-size: .85rem; }

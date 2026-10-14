@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask, données et IA | Matéo Bourdin</title>
+    <meta name="description" content="Mes TP de R5.A.05 en BUT3 : Flask-SQLAlchemy, InfluxDB et Flux, et quatre CNN Keras servis par Flask, à essayer dans le navigateur, avec une fiche de révision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/cours-flask.html">
+    <meta property="og:title" content="Flask, données et IA | Matéo Bourdin">
+    <meta property="og:description" content="Mes TP de R5.A.05 en BUT3 : Flask-SQLAlchemy, InfluxDB et Flux, et quatre CNN Keras servis par Flask, à essayer dans le navigateur, avec une fiche de révision.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flask, données et IA | Matéo Bourdin">
+    <meta name="twitter:description" content="Mes TP de R5.A.05 en BUT3 : Flask-SQLAlchemy, InfluxDB et Flux, et quatre CNN Keras servis par Flask, à essayer dans le navigateur, avec une fiche de révision.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cours/cours.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="coursFlask">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="jeux.html" data-i18n="nav.arcade">Arcade</a></li>
+                    <li><a href="cours.html" class="active" aria-current="page" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero cours-hero">
+        <div class="container">
+            <a href="cours.html" class="cours-back" data-i18n="courses.back">← Tous mes cours</a>
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="courses.flask.tag">🧠 Cours actuel · BUT3</span></span>
+                <h1 data-i18n="courses.flask.title">Flask, données et IA</h1>
+                <p data-i18n="courses.flask.desc">Une app Flask reliée à SQLite, à InfluxDB puis à des réseaux de neurones : mes TP relancés, et leurs modèles à essayer ici.</p>
+                <div class="cours-meta"><span>Python</span><span>Flask</span><span>SQLAlchemy</span><span>InfluxDB · Flux</span><span>TensorFlow · Keras</span><span>Docker</span></div>
+                <div class="cours-links"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cours-tabs-bar">
+        <div class="container">
+            <div class="cours-tabs" role="tablist" aria-label="Sections du cours">
+                <button type="button" class="cours-tab" role="tab" id="t-presentation" aria-controls="tab-presentation" data-tab="presentation" data-i18n="courses.tabs.presentation">Présentation</button>
+                <button type="button" class="cours-tab" role="tab" id="t-rendus" aria-controls="tab-rendus" data-tab="rendus" data-i18n="courses.tabs.rendus">Rendus et démos</button>
+                <button type="button" class="cours-tab" role="tab" id="t-reviser" aria-controls="tab-reviser" data-tab="reviser" data-i18n="courses.tabs.reviser">Réviser</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+    <section class="cours-panel" id="tab-presentation" role="tabpanel" aria-labelledby="t-presentation">
+        <div class="container">
+            <p class="cours-lead" data-i18n="courses.flask.p1">Le module de programmation avancée en Python : construire des applications web avec Flask, les relier à une base relationnelle puis à une base de séries temporelles, et y brancher des modèles d’intelligence artificielle.</p>
+            <div class="cours-stats">
+                <div class="cours-stat"><b>3</b><span data-i18n="courses.flask.s1">TP relancés pour récupérer leurs vraies sorties</span></div>
+                <div class="cours-stat"><b>4</b><span data-i18n="courses.flask.s2">modèles de mon app qui tournent dans le navigateur</span></div>
+                <div class="cours-stat"><b>205 → 2</b><span data-i18n="courses.flask.s3">requêtes SQL grâce au chargement groupé</span></div>
+                <div class="cours-stat"><b>4</b><span data-i18n="courses.flask.s4">bugs trouvés en lançant le code</span></div>
+            </div>
+            <h2 data-i18n="courses.flask.learnTitle">Ce que j’y ai appris</h2>
+            <div class="cours-grid">
+                <div class="cours-card"><span class="cours-card-icon">🧩</span><h3 data-i18n="courses.flask.l1t">Structurer une app Flask</h3><p data-i18n="courses.flask.l1">Application factory, Blueprints, gabarits Jinja et API JSON.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">🗄️</span><h3 data-i18n="courses.flask.l2t">Un ORM bien utilisé</h3><p data-i18n="courses.flask.l2">Modèles SQLAlchemy 2.0, relations, et le chargement des données sans requêtes en trop.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">📈</span><h3 data-i18n="courses.flask.l3t">Séries temporelles</h3><p data-i18n="courses.flask.l3">InfluxDB et le langage Flux pour un tableau de bord météo, devises et cryptomonnaies.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">🧠</span><h3 data-i18n="courses.flask.l4t">Mettre un modèle en ligne</h3><p data-i18n="courses.flask.l4">Prétraiter une image, interroger un CNN Keras et renvoyer la prédiction, le tout dans Docker.</p></div>
+            </div>
+            <h2 data-i18n="courses.flask.nextTitle">La suite</h2>
+            <p data-i18n="courses.flask.next">Le rendu final est une application Flask complète qui réunit base de données, envoi d’images et modèles d’IA.</p>
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-rendus" role="tabpanel" aria-labelledby="t-rendus" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            
+            <h2>Trois TP, une même app Flask qui grandit</h2>
+            <p>Chaque TP tourne dans son conteneur Docker sur le serveur Flask de l’IUT, où je travaille en SSH avec mon groupe (groupe 5). Je les ai relancés ici, tels quels, pour récupérer leurs vraies sorties.</p>
+            <div class="cours-kpis"><span class="cours-kpi"><b>TP2</b> Flask-SQLAlchemy</span><span class="cours-kpi"><b>TP3</b> InfluxDB et Flux</span><span class="cours-kpi"><b>TP4</b> 4 CNN Keras servis par Flask</span></div>
+            <nav class="cours-toc" aria-label="TP"><a href="#tp2" class="cours-goto">TP2 · Chinook</a><a href="#tp3" class="cours-goto">TP3 · InfluxDB</a><a href="#tp4" class="cours-goto">TP4 · IA</a><a href="#constats" class="cours-goto">Constats</a></nav>
+
+            <h2 id="tp2">TP2 · Flask-SQLAlchemy sur la base Chinook</h2>
+            <p>Une application Flask organisée en <em>application factory</em> (<code>create_app</code>) avec un <em>Blueprint</em>, deux modèles SQLAlchemy 2.0 (<code>Artist</code> 1 → n <code>Album</code>) et un seul gabarit Jinja qui change d’affichage selon <code>mode</code>.</p>
+            <div class="cours-demo">
+                <p>Clique sur une route : la page est rendue avec mon gabarit et les vraies données de <code>chinook.db</code> (275 artistes, 347 albums), et tu vois le SQL que SQLAlchemy a réellement envoyé.</p>
+                <div class="tp2-wrap">
+                    <div><div class="cours-api-list" id="tp2Routes" role="group" aria-label="Routes"></div></div>
+                    <div>
+                        <div class="flask-browser"><div class="flask-bar" id="tp2Url"></div><div class="flask-frame" id="tp2Frame"></div></div>
+                        <div class="tp2-strat" id="tp2StratRow"><label for="tp2Strategy">Chargement des albums :</label>
+                            <select id="tp2Strategy"><option value="selectin" selected>selectinload (mon code)</option><option value="lazy">sans option (lazy)</option><option value="joined">joinedload</option></select></div>
+                        <div id="tp2Sql"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cours-box retenir"><span class="cours-box-title">Le problème N+1, mesuré</span><p>Sans option, afficher les albums des 204 artistes coûte <b>205 requêtes</b> : une pour les artistes, puis une par artiste dès que le gabarit lit <code>artist.albums</code>. Avec <code>selectinload</code> (mon code) : <b>2 requêtes</b>, la seconde avec un <code>IN (…)</code>. Avec <code>joinedload</code> : <b>1 requête</b> avec jointure.</p></div>
+            <div class="cours-files" data-files="flask-tp2"></div>
+
+            <h2 id="tp3">TP3 · Dashboard InfluxDB</h2>
+            <p>Un tableau de bord façon Grafana : Flask interroge un serveur InfluxDB 2 de l’IUT (séries temporelles météo, devises, cryptomonnaies et CPU) en langage <b>Flux</b>, puis dessine les courbes avec Chart.js. Le serveur InfluxDB n’est joignable que depuis le réseau de l’IUT : je ne peux pas rejouer les données ici, mais je peux rejouer ce que fait mon code.</p>
+            <div class="cours-demo">
+                <p>Le formulaire du dashboard, et les requêtes Flux exactes que <code>build_dashboard()</code> en tire :</p>
+                <form class="tp3-form" id="tp3Form">
+                    <fieldset><legend>Ville (tag <code>location</code>)</legend><input type="text" id="tp3Loc" value="annecy" aria-label="Ville"> <button type="button" class="btn btn-secondary" id="tp3Evil" style="margin-top:.4rem;padding:.3rem .6rem;font-size:.8rem">Tester une injection</button></fieldset>
+                    <fieldset><legend>Devise de base</legend><select id="tp3Base" aria-label="Devise de base"><option>USD</option><option>EUR</option></select></fieldset>
+                    <fieldset><legend>Devises cotées</legend><div id="tp3Quotes"></div></fieldset>
+                    <fieldset><legend>Cryptomonnaies</legend><div id="tp3Symbols"></div></fieldset>
+                </form>
+                <p class="cours-source">URL envoyée par le formulaire :</p>
+                <div class="tp3-url" id="tp3Url"></div>
+                <p class="cours-source" id="tp3Read"></p>
+                <div class="cours-box piege" id="tp3Inject" hidden><span class="cours-box-title">Injection Flux</span><p>La valeur est collée telle quelle dans la requête : le guillemet ferme la chaîne et la suite devient du code Flux. InfluxDB OSS 2 ne gère pas les requêtes paramétrées : il faut <b>valider</b> la valeur, par exemple vérifier qu’elle fait partie de <code>get_tag_values("weather", "location")</code>, que mon code calcule déjà.</p></div>
+                <div id="tp3Out"></div>
+            </div>
+            <div class="cours-files" data-files="flask-tp3"></div>
+            <p class="cours-source">Le jeton InfluxDB est masqué (<code>***</code>). Le gabarit <code>index.html</code> (650 lignes de HTML/CSS, Chart.js) n’est pas reproduit.</p>
+
+            <h2 id="tp4">TP4 · Servir des modèles d’IA avec Flask</h2>
+            <p>Une route par page (<code>/model/&lt;nom&gt;</code>) et une API <code>POST /predict/&lt;nom&gt;</code> qui reçoit une image en base64, la prétraite avec Pillow, la passe au modèle Keras (mis en cache après le premier chargement) et renvoie <code>{"class", "confidence"}</code> en JSON. Quatre modèles pré-entraînés au format <code>.h5</code> :</p>
+            <table class="cours-table"><thead><tr><th>Modèle</th><th>Entrée</th><th>Architecture</th><th>Paramètres</th><th>Précision mesurée</th></tr></thead><tbody>
+                <tr><td>MNIST</td><td>28×28 gris</td><td>4 conv + BatchNorm, 2 pool, dense 256</td><td>330 730</td><td>99,6 % sur 5 000 chiffres*</td></tr>
+                <tr><td>Fashion-MNIST</td><td>28×28 gris</td><td>3 conv, 2 pool, dense 64, <b>sans softmax</b></td><td>93 322</td><td>95,4 % sur les 10 000 images de test</td></tr>
+                <tr><td>CIFAR-10</td><td>32×32 couleur</td><td>4 conv, 2 pool, dense 512</td><td>1 250 858</td><td>78,3 % sur les 10 000 images de test</td></tr>
+                <tr><td>CIFAR-100</td><td>32×32 couleur</td><td>6 conv (ELU), 3 pool, dense 1024</td><td>6 777 060</td><td>non mesurée (pas de jeu de test ici)</td></tr>
+            </tbody></table>
+            <p class="cours-source">* Échantillon MNIST de la bibliothèque mlxtend, tiré du jeu d’entraînement : le chiffre est sans doute optimiste.</p>
+
+            <h3>Ce que montrait mon app sur le serveur</h3>
+            <p>Mon script de test, relancé sur le code tel quel :</p>
+            <div class="cours-term">$ bash tests/run_tests.sh
+Testing TP4 Flask app at http://localhost:5005
+GET / -&gt; 200
+GET /model/mnist -&gt; 200
+GET /model/fashion_mnist -&gt; 200
+GET /model/cifar10 -&gt; 200
+GET /model/cifar100 -&gt; 200
+POST /predict/mnist with blank image -&gt;
+{
+  &quot;class&quot;: 1,
+  &quot;confidence&quot;: 0.9634141325950623
+}
+
+POST /predict/fashion_mnist (expect error if model missing) -&gt;
+{
+  &quot;error&quot;: &quot;model file not found on server&quot;
+}
+
+All tests executed.</div>
+            <p>La page d’accueil liste les modèles :</p>
+            <ul class="tp4-index"><li>MNIST - <span class="ok">available</span></li><li>Fashion-MNIST - <span class="ko">missing (place model file)</span></li><li>CIFAR-10 - <span class="ko">missing (place model file)</span></li><li>CIFAR-100 - <span class="ko">missing (place model file)</span></li></ul>
+            <p>Les trois fichiers sont pourtant dans <code>app/models/</code>, mais <code>MODELS_DIR</code> pointe vers <code>models/</code>. En corrigeant ce chemin, un nouveau problème apparaît (un 7 tracé, envoyé aux quatre modèles) :</p>
+            <div class="cours-term">mnist (200, &#x27;{\n  &quot;class&quot;: 7,\n  &quot;confidence&quot;: 0.9999961853027344\n}\n&#x27;)
+fashion_mnist (200, &#x27;{\n  &quot;class&quot;: 5,\n  &quot;confidence&quot;: 10.078102111816406\n}\n&#x27;)
+cifar10 (500, &#x27;{\n  &quot;error&quot;: &quot;pop expected at most 1 argument, got 2&quot;\n}\n&#x27;)
+cifar100 (500, &#x27;{\n  &quot;error&quot;: &quot;pop expected at most 1 argument, got 2&quot;\n}\n&#x27;)</div>
+
+            <h3>Les quatre modèles, dans ton navigateur</h3>
+            <div class="cours-demo" id="tp4App">
+                <p>Les poids viennent des fichiers <code>.h5</code> de mon app, convertis pour JavaScript (BatchNorm fusionné, poids sur 8 bits : même classe prédite que le modèle d’origine dans 97,6 à 100 % des cas). Le prétraitement reprend celui de <code>exo.py</code>, et la réponse affichée est celle que renverrait mon API.</p>
+                <div class="tp4-ctrl"><label>Modèle <select id="tp4Model" aria-label="Modèle"><option value="mnist">MNIST (chiffres)</option><option value="fashion_mnist">Fashion-MNIST (vêtements)</option><option value="cifar10">CIFAR-10 (10 catégories)</option><option value="cifar100">CIFAR-100 (100 catégories, 6,8 Mo)</option></select></label></div>
+                <div class="tp4-app">
+                    <div>
+                        <h4 id="tp4Title" style="margin:.2rem 0">MNIST</h4>
+                        <p class="cours-source" id="tp4DrawHint"></p>
+                        <canvas id="tp4Canvas" width="280" height="280" aria-label="Zone de dessin"></canvas>
+                        <div class="tp4-ctrl"><button type="button" class="btn btn-secondary" id="tp4Clear">Clear</button><button type="button" class="btn btn-primary" id="tp4Predict">Predict</button>
+                            <label class="btn btn-secondary" style="cursor:pointer">Photo… <input type="file" id="tp4File" accept="image/*" hidden></label></div>
+                        <div class="tp4-ctrl" id="tp4PreRow"><label>Prétraitement <select id="tp4Pre"><option value="exo" selected>comme exo.py</option><option value="mnist">façon MNIST (recadré, centré)</option></select></label></div>
+                        <div class="tp4-in"><canvas id="tp4In" width="28" height="28"></canvas><span>Ce que reçoit le réseau</span></div>
+                        <p class="cours-source" style="margin-bottom:0">Images de test :</p>
+                        <div class="tp4-samples" id="tp4Samples"></div>
+                    </div>
+                    <div id="tp4Out" aria-live="polite"></div>
+                </div>
+            </div>
+            <div class="cours-box retenir"><span class="cours-box-title">Le prétraitement compte autant que le modèle</span><p>MNIST a été construit avec des chiffres recadrés dans 20×20 pixels puis centrés par leur centre de masse dans 28×28. Mon app réduit tout le canevas de 280 à 28 pixels en « plus proche voisin » : un chiffre dessiné petit ou dans un coin arrive très différent de ce que le réseau a appris. Compare les deux prétraitements sur un chiffre tracé en petit, dans un coin.</p></div>
+            <div class="cours-files" data-files="flask-tp4"></div>
+
+            <h2 id="constats">Ce que l’exécution a révélé</h2>
+            <div class="cours-box constat"><span class="cours-box-title">TP4 · Trois modèles sur quatre inutilisables</span><p>Mauvais dossier (<code>models/</code> au lieu de <code>app/models/</code>), puis, une fois corrigé, CIFAR-10 et CIFAR-100 ne se chargent pas : ils ont été enregistrés avec Keras 2.0 et 2.2, et <code>tensorflow&gt;=2.15</code> installe Keras 3, qui ne lit plus ces anciens <code>.h5</code> (« pop expected at most 1 argument »). Solution : reconstruire l’architecture en Keras 3 et charger seulement les poids, comme je l’ai fait pour cette page, puis réenregistrer au format <code>.keras</code>.</p></div>
+            <div class="cours-box constat"><span class="cours-box-title">TP4 · Une « confiance » de 1008 %</span><p>Le modèle Fashion-MNIST se termine par une couche <code>Dense(10)</code> sans activation : <code>predict()</code> renvoie des logits, et <code>np.max(preds)</code> vaut 10,08 sur mon 7 tracé. Il faut appliquer <code>tf.nn.softmax</code> avant de parler de probabilité.</p></div>
+            <div class="cours-box constat"><span class="cours-box-title">TP4 · Une image blanche reconnue comme un « 1 » à 96 %</span><p>Un réseau de classification choisit toujours une classe, même pour une image vide. Il faut refuser les entrées vides en amont, ou fixer un seuil de confiance.</p></div>
+            <div class="cours-box constat"><span class="cours-box-title">TP3 · Une seule devise prise en compte</span><p>Le formulaire envoie <code>?quotes=EUR&amp;quotes=GBP&amp;quotes=CHF</code>, mais <code>index()</code> lit <code>request.args.get("quotes")</code>, qui ne renvoie que la première valeur. Il faut <code>request.args.getlist("quotes")</code>, comme le fait déjà la route <code>/query</code> (même problème pour <code>symbols</code>).</p></div>
+            <div class="cours-box piege"><span class="cours-box-title">Autres points relevés</span><ul>
+                <li><b>Sécurité :</b> les trois apps tournent en <code>debug=True</code> sur <code>0.0.0.0</code>. Le débogueur Werkzeug permet d’exécuter du Python depuis le navigateur en cas d’erreur : à ne jamais exposer sur un serveur partagé.</li>
+                <li><b>Secret :</b> le jeton InfluxDB est écrit en clair dans <code>docker-compose.yml</code>. Il devrait être dans un fichier <code>.env</code> non versionné.</li>
+                <li><b>Injection :</b> le TP3 construit ses requêtes Flux avec des f-strings à partir de l’URL (<code>bucket</code>, <code>location</code>…).</li>
+                <li><b>Code mort :</b> <code>heatindex.html</code> n’a pas de route (404) et son script cherche des éléments qui n’existent pas ; <code>draw.html</code> appelle <code>/predict</code> (inexistant) et lit <code>json.digit</code> au lieu de <code>json.class</code>. La page MNIST n’a donc pas de zone de dessin, contrairement à ce qu’annonce l’accueil.</li>
+                <li><b>Docker :</b> les trois <code>docker-compose.yml</code> publient le même port 5005, donc un seul TP peut tourner à la fois. Bon point du TP4 : <code>requirements.txt</code> est copié avant le code pour garder le calque <code>pip install</code> en cache.</li>
+                <li><b>TP2 :</b> le cas « No album available » du gabarit ne peut jamais s’afficher, car la jointure exclut déjà les 71 artistes sans album.</li>
+            </ul></div>
+
+            <h3>La suite</h3>
+            <p>Le rendu final du module est une application Flask complète qui réunit tout : base de données, envoi d’images et modèles d’IA.</p>
+
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-reviser" role="tabpanel" aria-labelledby="t-reviser" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            
+            <h2>Fiche de révision</h2>
+            <nav class="cours-toc" aria-label="Sommaire de la fiche">
+                <a href="#r-flask" class="cours-goto">Flask</a><a href="#r-jinja" class="cours-goto">Jinja2</a><a href="#r-sqla" class="cours-goto">SQLAlchemy</a><a href="#r-influx" class="cours-goto">InfluxDB et Flux</a><a href="#r-ia" class="cours-goto">Servir un modèle</a><a href="#r-docker" class="cours-goto">Docker</a><a href="#r-secu" class="cours-goto">Sécurité</a><a href="#quiz" class="cours-goto">Quiz</a>
+            </nav>
+
+            <details class="cours-fiche" id="r-flask" open><summary>1. Flask : routes, requêtes, réponses</summary><div>
+                <pre class="cours-src" data-lang="py" data-title="application factory + Blueprint (mon TP2)">def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(config_class)
+    db.init_app(app)
+    from app.routes import main_bp
+    app.register_blueprint(main_bp)
+    return app
+
+main_bp = Blueprint("main", __name__)
+
+@main_bp.route("/artists")
+def artists():
+    rows = Artist.query.order_by(Artist.Name).all()
+    return render_template("artists.html", items=rows)</pre>
+                <ul>
+                    <li><b>Application factory</b> : créer l’app dans une fonction, pour pouvoir en créer plusieurs (tests, configurations différentes) et éviter les imports circulaires.</li>
+                    <li><b>Blueprint</b> : un groupe de routes enregistré sur l’app ; <code>url_for("main.artists")</code>.</li>
+                    <li>Paramètres d’URL : <code>@app.route("/model/&lt;model_name&gt;")</code> ; convertisseurs <code>&lt;int:id&gt;</code>, <code>&lt;path:p&gt;</code>.</li>
+                    <li>Méthodes : <code>methods=["POST"]</code>. Corps JSON : <code>request.get_json()</code> ; formulaire : <code>request.form</code> ; fichier : <code>request.files["image"]</code>.</li>
+                    <li>Query string : <code>request.args.get("k", défaut)</code> donne <b>une</b> valeur, <code>request.args.getlist("k")</code> donne toutes les valeurs d’un paramètre répété.</li>
+                    <li>Réponse JSON : <code>return jsonify(obj), 400</code> (le tuple fixe le code HTTP). Erreur : <code>abort(404)</code>.</li>
+                    <li><code>app.run(host="0.0.0.0")</code> pour écouter hors du conteneur ; le serveur intégré n’est fait que pour le développement (en production : Gunicorn).</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-jinja"><summary>2. Gabarits Jinja2</summary><div>
+                <ul>
+                    <li><code>{{ variable }}</code> affiche (échappé automatiquement contre le XSS) ; <code>{% if %}…{% elif %}…{% endif %}</code> ; <code>{% for x in liste %}…{% else %}(liste vide){% endfor %}</code>.</li>
+                    <li>Héritage : <code>{% extends "base.html" %}</code> et <code>{% block content %}{% endblock %}</code> pour ne pas répéter l’en-tête.</li>
+                    <li>Liens et fichiers statiques : <code>{{ url_for('static', filename='style.css') }}</code>.</li>
+                    <li><code>|safe</code> désactive l’échappement : uniquement pour du HTML de confiance.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-sqla"><summary>3. Flask-SQLAlchemy (SQLAlchemy 2.0)</summary><div>
+                <pre class="cours-src" data-lang="py" data-title="modèles typés et relation 1 → n">class Artist(db.Model):
+    __tablename__ = "artists"
+    ArtistId: Mapped[int] = mapped_column(primary_key=True)
+    Name: Mapped[str]
+    albums: Mapped[list["Album"]] = relationship(back_populates="artist")
+
+class Album(db.Model):
+    __tablename__ = "albums"
+    AlbumId: Mapped[int] = mapped_column(primary_key=True)
+    ArtistId: Mapped[int] = mapped_column(ForeignKey("artists.ArtistId"))
+    artist: Mapped[Artist] = relationship(back_populates="albums")</pre>
+                <ul>
+                    <li>Configuration : <code>SQLALCHEMY_DATABASE_URI = "sqlite:///chemin/chinook.db"</code> ; <code>SQLALCHEMY_ECHO = True</code> pour voir le SQL.</li>
+                    <li><code>back_populates</code> relie les deux côtés de la relation ; la clé étrangère est du côté « n ».</li>
+                    <li>Requêtes : <code>Model.query.filter_by(Name="AC/DC").first()</code> (style 1.x) ou <code>db.session.execute(select(Artist).where(...)).scalars()</code> (style 2.0).</li>
+                    <li>Écrire : <code>db.session.add(obj)</code> puis <code>db.session.commit()</code> ; en cas d’erreur <code>rollback()</code>.</li>
+                </ul>
+                <table class="cours-table"><thead><tr><th>Chargement</th><th>Requêtes pour 204 artistes</th><th>Quand l’utiliser</th></tr></thead><tbody>
+                    <tr><td>lazy (défaut)</td><td>1 + 204</td><td>on n’accède à la relation que rarement</td></tr>
+                    <tr><td><code>selectinload</code></td><td>2</td><td>relation « vers plusieurs », listes</td></tr>
+                    <tr><td><code>joinedload</code></td><td>1</td><td>relation « vers un », ou peu de lignes</td></tr></tbody></table>
+            </div></details>
+
+            <details class="cours-fiche" id="r-influx"><summary>4. InfluxDB et Flux</summary><div>
+                <ul>
+                    <li><b>Série temporelle</b> : des mesures horodatées. InfluxDB est optimisé pour en écrire et en agréger beaucoup.</li>
+                    <li><b>Bucket</b> : la base (avec une durée de rétention). <b>Measurement</b> : l’équivalent d’une table (<code>weather_current</code>).</li>
+                    <li><b>Tag</b> : métadonnée indexée, texte, pour filtrer et grouper (<code>location</code>, <code>symbol</code>). <b>Field</b> : la valeur mesurée, non indexée (<code>temperature_2m</code>, <code>price</code>).</li>
+                    <li>Point = measurement + tags + fields + horodatage. Une <b>série</b> = une combinaison measurement + tags + field.</li>
+                </ul>
+                <pre class="cours-src" data-lang="flux" data-title="une requête Flux se lit comme un pipeline">from(bucket: "weather")
+  |> range(start: -7d)                                     // fenêtre de temps (obligatoire)
+  |> filter(fn: (r) => r._measurement == "weather_current")
+  |> filter(fn: (r) => r.location == "annecy")             // filtre sur un tag
+  |> filter(fn: (r) => r._field == "temperature_2m")
+  |> aggregateWindow(every: 1h, fn: mean, createEmpty: false)  // une moyenne par heure</pre>
+                <ul>
+                    <li>Colonnes du résultat : <code>_time</code>, <code>_value</code>, <code>_field</code>, <code>_measurement</code> et les tags.</li>
+                    <li>Découvrir le schéma : <code>schema.measurements()</code>, <code>schema.fieldKeys()</code>, <code>schema.tagValues()</code> (import <code>"influxdata/influxdb/schema"</code>).</li>
+                    <li>Client Python : <code>InfluxDBClient(url, token, org).query_api().query(flux)</code> renvoie des tables de records ; penser à <code>client.close()</code>.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-ia"><summary>5. Servir un modèle d’IA avec Flask</summary><div>
+                <ul>
+                    <li>Charger le modèle <b>une seule fois</b> (au démarrage ou dans un cache), jamais à chaque requête.</li>
+                    <li>Le prétraitement doit reproduire celui de l’entraînement : taille (28×28, 32×32), canaux, normalisation (<code>/255</code>), couleurs (MNIST : trait blanc sur fond noir, d’où l’<code>invert</code>), cadrage.</li>
+                    <li>Forme d’entrée Keras : <code>(batch, hauteur, largeur, canaux)</code>, d’où <code>reshape(1, 28, 28, 1)</code>.</li>
+                    <li><code>np.argmax(preds)</code> donne la classe ; la confiance n’est une probabilité que si la dernière couche est un <b>softmax</b>.</li>
+                    <li>Image reçue en base64 (data URL) : retirer le préfixe <code>data:image/png;base64,</code>, puis <code>base64.b64decode</code> et <code>Image.open(io.BytesIO(...))</code>.</li>
+                    <li>Formats : <code>.h5</code> (ancien, dépend de la version de Keras) et <code>.keras</code> (Keras 3). Fixer les versions dans <code>requirements.txt</code>.</li>
+                    <li>Rappel CNN : convolution (filtres appris) → activation (ReLU) → pooling (réduit la taille) → … → aplatissement → couches denses → softmax.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-docker"><summary>6. Flask dans Docker</summary><div>
+                <pre class="cours-src" data-lang="docker" data-title="Dockerfile de mon TP4">FROM python:3.12-slim
+WORKDIR /TP4
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt   # gardé en cache tant que requirements.txt ne change pas
+COPY . .
+EXPOSE 5005
+CMD ["python", "exo.py"]</pre>
+                <ul>
+                    <li><code>ports: "5005:5005"</code> = port de l’hôte : port du conteneur. Deux services ne peuvent pas publier le même port de l’hôte.</li>
+                    <li><code>volumes: - .:/TP4</code> monte le code : pratique en développement (rechargement), à éviter en production.</li>
+                    <li>Variables d’environnement : <code>environment:</code> ou <code>env_file: .env</code>, lues avec <code>os.getenv()</code>.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-secu"><summary>7. Sécurité d’une app Flask</summary><div>
+                <ul>
+                    <li><b>Injection</b> : ne jamais coller une entrée utilisateur dans du SQL ou du Flux. SQLAlchemy paramètre ses requêtes (<code>?</code>) ; pour Flux, valider la valeur contre une liste autorisée.</li>
+                    <li><b>Secrets</b> (jetons, mots de passe, <code>SECRET_KEY</code>) : variables d’environnement, fichier <code>.env</code> dans <code>.gitignore</code>, jamais dans le dépôt.</li>
+                    <li><b>Mode debug</b> : désactivé en production (débogueur interactif = exécution de code à distance).</li>
+                    <li><b>Envoi de fichiers</b> : limiter la taille (<code>MAX_CONTENT_LENGTH</code>), vérifier le type, <code>secure_filename()</code> pour le nom.</li>
+                    <li><b>XSS</b> : Jinja échappe par défaut ; ne pas utiliser <code>|safe</code> sur des données utilisateur.</li>
+                </ul>
+            </div></details>
+
+            <h2 id="quiz">Quiz</h2>
+            <div class="cours-quiz" data-quiz="flask"></div>
+            <h2 id="cartes">Cartes mémo</h2>
+            <div class="cours-cards" data-cards="flask"></div>
+
+        </div>
+    </section>
+    </main>
+<script>
+window.COURS_QUIZ = Object.assign(window.COURS_QUIZ || {}, { flask: [
+ { q: 'L’URL <code>/?quotes=EUR&amp;quotes=GBP</code> arrive. Que renvoie <code>request.args.get("quotes")</code> ?', c: ['"EUR"', '["EUR", "GBP"]', '"EUR,GBP"', 'None'], a: 0, w: 'get() renvoie la première valeur. Pour toutes les valeurs : request.args.getlist("quotes"). C’est le bug de mon dashboard TP3.' },
+ { q: 'Pourquoi utiliser une <em>application factory</em> (<code>create_app()</code>) ?', c: ['Pour créer l’app avec différentes configurations (tests…) et éviter les imports circulaires', 'Pour que Flask soit plus rapide', 'C’est obligatoire avec les Blueprints', 'Pour activer le mode debug'], a: 0, w: 'Les extensions (db = SQLAlchemy()) sont créées sans app, puis liées par db.init_app(app) dans la factory.' },
+ { q: 'Combien de requêtes SQL pour afficher 204 artistes et leurs albums sans option de chargement ?', c: ['205', '1', '2', '204'], a: 0, w: 'Problème N+1 : 1 requête pour les artistes + 1 par artiste quand le gabarit lit artist.albums. selectinload : 2 ; joinedload : 1.' },
+ { q: 'Que fait <code>back_populates="artist"</code> ?', c: ['Relie les deux côtés d’une relation bidirectionnelle', 'Crée la clé étrangère', 'Charge les albums automatiquement', 'Supprime en cascade'], a: 0, w: 'Album.artist et Artist.albums restent synchronisés. La clé étrangère est déclarée par ForeignKey sur Album.ArtistId.' },
+ { q: 'Dans InfluxDB, quelle est la différence entre un tag et un field ?', c: ['Le tag est indexé et sert à filtrer ; le field est la valeur mesurée, non indexée', 'Le field est indexé, pas le tag', 'Le tag contient des nombres, le field du texte', 'Aucune'], a: 0, w: 'location, symbol, quote sont des tags ; temperature_2m, price, rate sont des fields.' },
+ { q: 'Que fait <code>aggregateWindow(every: 1h, fn: mean)</code> ?', c: ['Calcule une moyenne par tranche d’une heure', 'Garde la dernière heure de données', 'Répète la requête toutes les heures', 'Trie par heure'], a: 0, w: 'C’est le « downsampling » : moins de points à dessiner, courbes plus lisibles.' },
+ { q: 'Quelle étape est obligatoire dans une requête Flux sur un bucket ?', c: ['range()', 'filter()', 'aggregateWindow()', 'limit()'], a: 0, w: 'from() |> range() : InfluxDB exige une borne de temps pour ne pas lire tout le bucket.' },
+ { q: 'Comment éviter l’injection dans une requête Flux construite avec un paramètre d’URL sur InfluxDB OSS 2 ?', c: ['Vérifier que la valeur appartient à une liste autorisée (ex. les valeurs du tag)', 'Utiliser une f-string', 'Mettre la valeur en majuscules', 'Utiliser POST au lieu de GET'], a: 0, w: 'Les requêtes paramétrées n’existent pas en OSS 2 : il faut une liste blanche. Mon code calcule déjà get_tag_values("weather", "location").' },
+ { q: 'Un modèle se termine par <code>Dense(10)</code> sans activation. Que vaut <code>np.max(model.predict(x))</code> ?', c: ['Un logit, qui peut dépasser 1', 'Une probabilité entre 0 et 1', 'La classe prédite', 'Toujours 1'], a: 0, w: 'Mon app affichait « conf 1008 % » avec Fashion-MNIST. Il faut appliquer tf.nn.softmax.' },
+ { q: 'Pourquoi inverser l’image dessinée avant de l’envoyer au modèle MNIST ?', c: ['MNIST contient des chiffres blancs sur fond noir', 'Pour réduire sa taille', 'Pour la convertir en couleur', 'Ce n’est pas utile'], a: 0, w: 'Le canevas est en noir sur blanc ; sans inversion, l’entrée ne ressemble pas aux données d’entraînement.' },
+ { q: 'Quelle forme de tableau attend un CNN Keras pour une image MNIST ?', c: ['(1, 28, 28, 1)', '(28, 28)', '(784,)', '(1, 1, 28, 28)'], a: 0, w: '(batch, hauteur, largeur, canaux) : Keras place les canaux en dernier par défaut.' },
+ { q: 'Où charger le modèle Keras dans une app Flask ?', c: ['Une fois, au démarrage ou dans un cache', 'Dans chaque requête /predict', 'Dans le gabarit', 'Dans le navigateur'], a: 0, w: 'Charger un .h5 prend du temps et de la mémoire. Mon TP4 utilise un dictionnaire models_cache.' },
+ { q: 'Pourquoi mes modèles CIFAR <code>.h5</code> ne se chargent-ils pas avec <code>tensorflow&gt;=2.15</code> ?', c: ['Ils ont été enregistrés avec Keras 2 et TensorFlow récent installe Keras 3', 'Les fichiers sont corrompus', 'Il manque le GPU', 'Flask ne lit pas le HDF5'], a: 0, w: 'Erreur « pop expected at most 1 argument ». Solution : reconstruire l’architecture, charger les poids, réenregistrer en .keras, et fixer les versions.' },
+ { q: 'Pourquoi <code>app.run(host="0.0.0.0")</code> dans un conteneur ?', c: ['Pour écouter sur toutes les interfaces, pas seulement localhost du conteneur', 'Pour activer HTTPS', 'Pour choisir le port', 'Pour le mode debug'], a: 0, w: 'Avec 127.0.0.1, le serveur ne serait joignable que depuis l’intérieur du conteneur, même avec ports: publié.' },
+ { q: 'Pourquoi <code>debug=True</code> est-il dangereux sur un serveur accessible ?', c: ['Le débogueur Werkzeug permet d’exécuter du code Python depuis le navigateur', 'Il ralentit les requêtes', 'Il désactive les templates', 'Il efface la base'], a: 0, w: 'En cas d’erreur, la page de débogage propose une console interactive. En production : debug=False et un serveur comme Gunicorn.' },
+ { q: 'Dans un Dockerfile Python, pourquoi copier <code>requirements.txt</code> avant le reste du code ?', c: ['Pour que le calque pip install reste en cache quand seul le code change', 'Parce que Docker l’exige', 'Pour réduire la taille de l’image', 'Pour lancer les tests'], a: 0, w: 'Chaque instruction crée un calque ; s’il ne change pas, Docker le réutilise. Mon TP4 le fait.' },
+ { q: 'Que renvoie <code>return jsonify({"error": "unknown model"}), 400</code> ?', c: ['Une réponse JSON avec le code HTTP 400', 'Une page HTML 400', 'Une exception', 'Un code 200 avec le JSON'], a: 0, w: 'Le second élément du tuple fixe le code de statut.' },
+ { q: 'Que fait <code>{% for a in items %}…{% else %}…{% endfor %}</code> en Jinja ?', c: ['La partie else s’affiche si la liste est vide', 'else s’exécute après chaque tour', 'else s’affiche à la fin de la boucle', 'C’est une erreur de syntaxe'], a: 0, w: 'Dans mon TP2 elle ne s’affiche jamais : la jointure a déjà exclu les artistes sans album.' }
+]});
+window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { flask: [
+ ['Blueprint', 'Groupe de routes enregistré sur l’app : register_blueprint().'],
+ ['create_app()', 'Application factory : crée et configure l’app.'],
+ ['request.args.get / getlist', 'Une valeur / toutes les valeurs d’un paramètre d’URL.'],
+ ['request.get_json()', 'Lit le corps JSON d’une requête POST.'],
+ ['jsonify(obj), 400', 'Réponse JSON avec un code HTTP.'],
+ ['render_template', 'Rend un gabarit Jinja2 avec des variables.'],
+ ['{{ x }} / {% %}', 'Afficher (échappé) / instruction Jinja.'],
+ ['Mapped / mapped_column', 'Colonnes typées de SQLAlchemy 2.0.'],
+ ['relationship + back_populates', 'Relation bidirectionnelle entre deux modèles.'],
+ ['N+1', '1 requête pour la liste + 1 par élément pour la relation.'],
+ ['selectinload', '2 requêtes : la liste puis un IN (…).'],
+ ['joinedload', '1 requête avec une jointure.'],
+ ['db.session.commit()', 'Valide les ajouts et modifications.'],
+ ['Bucket', 'Base InfluxDB avec une durée de rétention.'],
+ ['Measurement', 'Équivalent d’une table dans InfluxDB.'],
+ ['Tag', 'Métadonnée indexée pour filtrer (location, symbol).'],
+ ['Field', 'Valeur mesurée, non indexée (temperature, price).'],
+ ['range()', 'Fenêtre de temps, obligatoire en Flux.'],
+ ['aggregateWindow', 'Agrégation par tranche de temps (moyenne par heure…).'],
+ ['Softmax', 'Transforme des logits en probabilités qui somment à 1.'],
+ ['(1, 28, 28, 1)', 'Forme d’entrée : batch, hauteur, largeur, canaux.'],
+ ['Prétraitement', 'Doit reproduire celui de l’entraînement (taille, couleurs, échelle).'],
+ ['host="0.0.0.0"', 'Écouter hors du conteneur.'],
+ ['debug=True', 'Jamais en production : console Python dans le navigateur.'],
+ ['.env', 'Secrets hors du code, fichier non versionné.']
+]});
+</script>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="cours/flask-data.js"></script>
+    <script src="cours/flask-nn.js"></script>
+    <script src="cours/flask-demos.js"></script>
+    <script src="cours/cours.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
