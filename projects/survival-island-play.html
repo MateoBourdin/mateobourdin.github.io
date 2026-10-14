@@ -11,16 +11,16 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jouer à Survival Island (SAE 1.01, C# / WPF) directement dans le navigateur : portage JavaScript fidèle du jeu de combat naval, avec ses sprites, ses vagues et ses classes de tir.">
+    <meta name="description" content="Jouer à Survival Island (SAE 1.01, C# / WPF) directement dans le navigateur : traduction JavaScript à l'identique du jeu de combat naval.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mateobourdin.github.io/projects/survival-island-play.html">
     <meta property="og:title" content="Jouer à Survival Island - Matéo Bourdin">
-    <meta property="og:description" content="Jouer à Survival Island (SAE 1.01, C# / WPF) directement dans le navigateur : portage JavaScript fidèle du jeu de combat naval, avec ses sprites, ses vagues et ses classes de tir.">
+    <meta property="og:description" content="Jouer à Survival Island (SAE 1.01, C# / WPF) directement dans le navigateur : traduction JavaScript à l'identique du jeu de combat naval.">
     <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jouer à Survival Island - Matéo Bourdin">
-    <meta name="twitter:description" content="Jouer à Survival Island (SAE 1.01, C# / WPF) directement dans le navigateur : portage JavaScript fidèle du jeu de combat naval, avec ses sprites, ses vagues et ses classes de tir.">
+    <meta name="twitter:description" content="Jouer à Survival Island (SAE 1.01, C# / WPF) directement dans le navigateur : traduction JavaScript à l'identique du jeu de combat naval.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Jouer à Survival Island - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
@@ -33,6 +33,8 @@
         .si-port-card h4 { margin: 0 0 .5rem; }
         .si-port-card ul { margin: 0; padding-left: 1.1rem; color: var(--text-light); font-size: .92rem; line-height: 1.6; }
         .controls-hint { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+        .si-tactile { display: none; margin-top: 1rem; padding: .8rem 1rem; border-radius: 10px; background: var(--primary-lighter); color: var(--primary-dark); }
+        @media (hover: none) and (pointer: coarse) { .si-tactile { display: block; } }
         .key-badge { background: var(--primary-lighter); color: var(--primary-dark); padding: .35rem .75rem; border-radius: 8px; font-size: .85rem; }
     </style>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -54,15 +56,14 @@
         </div>
 
         <div class="section">
-            <div class="si-stage" id="siStage">
+            <div class="si-stage" id="siStage" data-quitter="sae101.html">
                 <canvas tabindex="0" aria-label="Survival Island"></canvas>
             </div>
+            <p class="si-tactile" data-i18n="touch">Comme la version d'origine, le jeu se joue au clavier et à la souris : ouvrez cette page sur un ordinateur.</p>
             <div class="controls-hint">
                 <span class="key-badge" data-i18n="keys.aim">Souris — viser</span>
-                <span class="key-badge" data-i18n="keys.fire">Clic gauche / Espace — tirer</span>
+                <span class="key-badge" data-i18n="keys.fire">Clic gauche — tirer</span>
                 <span class="key-badge" data-i18n="keys.move">Z / clic droit — avancer</span>
-                <span class="key-badge" data-i18n="keys.up">E — améliorations (1 à 4 pour acheter)</span>
-                <span class="key-badge" data-i18n="keys.map">M — mini-carte</span>
                 <span class="key-badge" data-i18n="keys.pause">Échap — pause</span>
             </div>
         </div>
@@ -76,22 +77,21 @@
             <h3 data-i18n="port.title">🔁 Du C# / WPF au JavaScript</h3>
             <div class="si-port-grid">
                 <div class="si-port-card">
-                    <h4 data-i18n="port.keptTitle">Repris du code d'origine</h4>
+                    <h4 data-i18n="port.keptTitle">Identique au dépôt GitHub</h4>
                     <ul>
-                        <li data-i18n="port.k1">Boucle à temps delta de MoteurJeu (CompositionTarget.Rendering → requestAnimationFrame)</li>
-                        <li data-i18n="port.k2">Collisions en rectangles orientés de Collision.cs, avec le test du segment avant pour la proue</li>
-                        <li data-i18n="port.k3">IA des pirates (Ennemi.cs) : cap vers l'île, détection du joueur à 300 px, tir à l'arrivée</li>
-                        <li data-i18n="port.k4">Vagues, coffres, niveaux, améliorations et les 10 classes de tir avec leurs valeurs exactes</li>
-                        <li data-i18n="port.k5">Sprites d'origine de l'équipe, convertis en WebP</li>
+                        <li data-i18n="port.k1">Mêmes classes traduites une à une : MoteurJeu, GestionCarte, GestionVagues, GestionSons, Bateau, Joueur, Ennemi, Ile, Collision</li>
+                        <li data-i18n="port.k2">Mêmes constantes (Constante.cs), mêmes règles, même IA des pirates et mêmes 10 classes de tir</li>
+                        <li data-i18n="port.k3">Même interface que MainWindow.xaml : menu Paramètres / Quitter, HUD, améliorations, menu des classes, fin de partie, fenêtres Audio et Changer Bateau</li>
+                        <li data-i18n="port.k4">Mêmes images, mêmes musiques et mêmes sons (convertis en WebP et MP3 pour le web)</li>
                     </ul>
                 </div>
                 <div class="si-port-card">
-                    <h4 data-i18n="port.webTitle">Adapté pour le web</h4>
+                    <h4 data-i18n="port.webTitle">Seules différences</h4>
                     <ul>
-                        <li data-i18n="port.w1">Mini-carte, contrôles tactiles et bouton de tir automatique pour le mobile</li>
-                        <li data-i18n="port.w2">Sons générés en WebAudio à la place des fichiers audio et des musiques</li>
-                        <li data-i18n="port.w3">Menu des classes réellement proposé au niveau 5 (une comparaison de chaîne l'empêchait avant le niveau 15)</li>
-                        <li data-i18n="port.w4">La partie se met en pause pendant le choix de classe et quand l'onglet est quitté</li>
+                        <li data-i18n="port.w1">Traduction anglaise de l'interface</li>
+                        <li data-i18n="port.w2">Bug corrigé : le choix de classe est proposé au niveau 5 (le code comparait « classique » à « CLASSIQUE » et ne le proposait qu'au niveau 15)</li>
+                        <li data-i18n="port.w3">Bug corrigé : un clic sur une classe pouvait l'appliquer plusieurs fois (gestionnaires de clic ajoutés à chaque affichage)</li>
+                        <li data-i18n="port.w4">Bug corrigé : le curseur « Son » des réglages audio n'avait aucun effet</li>
                     </ul>
                 </div>
             </div>
@@ -107,20 +107,20 @@
             fr: {
                 back: "← Retour à la page du projet",
                 title: "🏝️ Survival Island — Jouez directement ici",
-                intro: "Le jeu d'origine est une application de bureau C# / WPF, qui ne peut pas tourner dans un navigateur. Je l'ai donc porté en JavaScript (Canvas 2D) en reprenant classe par classe le code de la SAE : mêmes constantes, mêmes règles, mêmes sprites. Rien à installer, tout s'exécute sur votre machine.",
-                keys: { aim: "Souris — viser", fire: "Clic gauche / Espace — tirer", move: "Z / clic droit — avancer", up: "E — améliorations (1 à 4 pour acheter)", map: "M — mini-carte", pause: "Échap — pause" },
+                intro: "Le jeu d'origine est une application de bureau C# / WPF, qui ne peut pas tourner dans un navigateur. Je l'ai donc traduit en JavaScript (Canvas 2D) classe par classe, à l'identique du dépôt GitHub : mêmes règles, même interface, mêmes images et mêmes sons. Rien à installer, tout s'exécute sur votre machine.",
+                touch: "Comme la version d'origine, le jeu se joue au clavier et à la souris : ouvrez cette page sur un ordinateur.",
+                keys: { aim: "Souris — viser", fire: "Clic gauche — tirer", move: "Z / clic droit — avancer", pause: "Échap — pause" },
                 how: { title: "🎯 Le principe", text: "Aux commandes de ton navire, défends l'île au centre de la carte. Toutes les 20 secondes, une vague de pirates arrive des bords de la mer et vient bombarder l'île. Coule-les, casse les coffres pour gagner de l'expérience et des soins, puis dépense tes points d'amélioration. Au niveau 5, choisis une classe de tir, puis une seconde évolution au niveau 15. La partie s'arrête quand l'île tombe." },
                 port: {
-                    title: "🔁 Du C# / WPF au JavaScript", keptTitle: "Repris du code d'origine", webTitle: "Adapté pour le web",
-                    k1: "Boucle à temps delta de MoteurJeu (CompositionTarget.Rendering → requestAnimationFrame)",
-                    k2: "Collisions en rectangles orientés de Collision.cs, avec le test du segment avant pour la proue",
-                    k3: "IA des pirates (Ennemi.cs) : cap vers l'île, détection du joueur à 300 px, tir à l'arrivée",
-                    k4: "Vagues, coffres, niveaux, améliorations et les 10 classes de tir avec leurs valeurs exactes",
-                    k5: "Sprites d'origine de l'équipe, convertis en WebP",
-                    w1: "Mini-carte, contrôles tactiles et bouton de tir automatique pour le mobile",
-                    w2: "Sons générés en WebAudio à la place des fichiers audio et des musiques",
-                    w3: "Menu des classes réellement proposé au niveau 5 (une comparaison de chaîne l'empêchait avant le niveau 15)",
-                    w4: "La partie se met en pause pendant le choix de classe et quand l'onglet est quitté"
+                    title: "🔁 Du C# / WPF au JavaScript", keptTitle: "Identique au dépôt GitHub", webTitle: "Seules différences",
+                    k1: "Mêmes classes traduites une à une : MoteurJeu, GestionCarte, GestionVagues, GestionSons, Bateau, Joueur, Ennemi, Ile, Collision",
+                    k2: "Mêmes constantes (Constante.cs), mêmes règles, même IA des pirates et mêmes 10 classes de tir",
+                    k3: "Même interface que MainWindow.xaml : menu Paramètres / Quitter, HUD, améliorations, menu des classes, fin de partie, fenêtres Audio et Changer Bateau",
+                    k4: "Mêmes images, mêmes musiques et mêmes sons (convertis en WebP et MP3 pour le web)",
+                    w1: "Traduction anglaise de l'interface",
+                    w2: "Bug corrigé : le choix de classe est proposé au niveau 5 (le code comparait « classique » à « CLASSIQUE » et ne le proposait qu'au niveau 15)",
+                    w3: "Bug corrigé : un clic sur une classe pouvait l'appliquer plusieurs fois (gestionnaires de clic ajoutés à chaque affichage)",
+                    w4: "Bug corrigé : le curseur « Son » des réglages audio n'avait aucun effet"
                 },
                 credits: "Projet réalisé à trois au premier semestre du BUT. Le code source C# est disponible sur GitHub.",
                 github: "💻 Code C# sur GitHub"
@@ -128,20 +128,20 @@
             en: {
                 back: "← Back to the project page",
                 title: "🏝️ Survival Island — Play it right here",
-                intro: "The original game is a C# / WPF desktop app, which can't run in a browser. So I ported it to JavaScript (Canvas 2D), class by class from the project's code: same constants, same rules, same sprites. Nothing to install, everything runs on your machine.",
-                keys: { aim: "Mouse — aim", fire: "Left click / Space — fire", move: "Z / right click — sail", up: "E — upgrades (1 to 4 to buy)", map: "M — minimap", pause: "Esc — pause" },
+                intro: "The original game is a C# / WPF desktop app, which can't run in a browser. So I translated it to JavaScript (Canvas 2D) class by class, identical to the GitHub repository: same rules, same interface, same images and same sounds. Nothing to install, everything runs on your machine.",
+                touch: "Like the original, the game is played with a keyboard and mouse: open this page on a computer.",
+                keys: { aim: "Mouse — aim", fire: "Left click — fire", move: "Z / right click — sail", pause: "Esc — pause" },
                 how: { title: "🎯 How it works", text: "At the helm of your ship, defend the island in the middle of the map. Every 20 seconds, a wave of pirates sails in from the edges of the sea to shell the island. Sink them, break chests for experience and healing, then spend your upgrade points. At level 5 pick a firing class, then a second evolution at level 15. The game ends when the island falls." },
                 port: {
-                    title: "🔁 From C# / WPF to JavaScript", keptTitle: "Kept from the original code", webTitle: "Adapted for the web",
-                    k1: "MoteurJeu's delta-time loop (CompositionTarget.Rendering → requestAnimationFrame)",
-                    k2: "Oriented-rectangle collisions from Collision.cs, with the front-edge test for the bow",
-                    k3: "Pirate AI (Ennemi.cs): heads for the island, spots the player within 300 px, fires on arrival",
-                    k4: "Waves, chests, levels, upgrades and all 10 firing classes with their exact values",
-                    k5: "The team's original sprites, converted to WebP",
-                    w1: "Minimap, touch controls and an auto-fire button for mobile",
-                    w2: "Sounds generated with WebAudio instead of the audio files and music",
-                    w3: "Class menu actually offered at level 5 (a string comparison blocked it until level 15)",
-                    w4: "The game pauses while picking a class and when you leave the tab"
+                    title: "🔁 From C# / WPF to JavaScript", keptTitle: "Identical to the GitHub repository", webTitle: "Only differences",
+                    k1: "Same classes translated one by one: MoteurJeu, GestionCarte, GestionVagues, GestionSons, Bateau, Joueur, Ennemi, Ile, Collision",
+                    k2: "Same constants (Constante.cs), same rules, same pirate AI and the same 10 firing classes",
+                    k3: "Same interface as MainWindow.xaml: Settings / Quit menu, HUD, upgrades, class menu, game over screen, Audio and Change Ship windows",
+                    k4: "Same images, music and sounds (converted to WebP and MP3 for the web)",
+                    w1: "English translation of the interface",
+                    w2: "Bug fixed: the class choice is offered at level 5 (the code compared \"classique\" with \"CLASSIQUE\" and only offered it at level 15)",
+                    w3: "Bug fixed: one click on a class could apply it several times (click handlers were added on every display)",
+                    w4: "Bug fixed: the \"Sound\" slider in the audio settings had no effect"
                 },
                 credits: "Built by a team of three in the first semester of the BUT. The C# source code is on GitHub.",
                 github: "💻 C# code on GitHub"

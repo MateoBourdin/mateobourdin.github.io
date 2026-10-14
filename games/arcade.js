@@ -1,8 +1,8 @@
 // Arcade : affiche les records enregistrés dans ce navigateur pour chaque jeu.
 (() => {
     const T = {
-        fr: { best: 'Ton record', none: 'Pas encore joué', rating: 'Ton classement', daily: 'Bug du jour', dailyDone: 'fait aujourd’hui', dailyTodo: 'à faire aujourd’hui', gates: 'portes', points: 'points', wave: 'vague' },
-        en: { best: 'Your best', none: 'Not played yet', rating: 'Your rating', daily: 'Daily bug', dailyDone: 'done today', dailyTodo: 'waiting for you today', gates: 'gates', points: 'points', wave: 'wave' }
+        fr: { best: 'Ton record', none: 'Pas encore joué', rating: 'Ton classement', daily: 'Bug du jour', dailyDone: 'fait aujourd’hui', dailyTodo: 'à faire aujourd’hui', gates: 'portes', points: 'points' },
+        en: { best: 'Your best', none: 'Not played yet', rating: 'Your rating', daily: 'Daily bug', dailyDone: 'done today', dailyTodo: 'waiting for you today', gates: 'gates', points: 'points' }
     };
     function profile() {
         try { return JSON.parse(localStorage.getItem('bugProfile-v1')); } catch (e) { return null; }
@@ -17,9 +17,6 @@
         const ski = Game.best('ski'), naval = Game.best('naval');
         set('arcadeSki', ski ? `${t.best} : <b>${ski}</b> ${t.gates}` : t.none);
         set('arcadeNaval', naval ? `${t.best} : <b>${naval}</b> ${t.points}` : t.none);
-        let surv = 0;
-        try { surv = parseInt(localStorage.getItem('best-survival') || '0', 10) || 0; } catch (e) { /* stockage indisponible */ }
-        set('arcadeSurvival', surv ? `${t.best} : ${t.wave} <b>${surv}</b>` : t.none);
         const p = profile();
         if (p && p.played) {
             const done = p.daily && p.daily.results && p.daily.results[today()];

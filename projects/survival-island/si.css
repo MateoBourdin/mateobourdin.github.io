@@ -1,118 +1,115 @@
-/* Survival Island — interface du jeu (couleurs reprises de MainWindow.xaml : brun #6d5445) */
+/* Survival Island — interface reprise de MainWindow.xaml (positions, tailles et couleurs d'origine) */
 .si-stage {
-    --si-brown: #6d5445;
-    --si-brown-dark: #4f3c31;
-    --si-sand: #f6e7c8;
+    --si-brun: #6d5445;
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    min-height: 420px;
-    max-height: calc(100vh - 140px);
-    border-radius: 14px;
+    height: min(80vh, 820px);
+    min-height: 600px;
     overflow: hidden;
-    background: #a9e3f7;
-    box-shadow: 0 12px 34px rgba(0, 0, 0, .28);
+    background: #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 6px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .25);
     user-select: none;
     -webkit-user-select: none;
-    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
-    color: #fff;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    color: #000;
+    line-height: 1.3;
 }
-.si-stage:fullscreen { max-height: none; border-radius: 0; aspect-ratio: auto; width: 100vw; height: 100vh; }
-.si-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: crosshair; outline: none; }
-.si-stage canvas:focus-visible { box-shadow: inset 0 0 0 3px #ffd166; }
+.si-stage [hidden] { display: none !important; }
+.si-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+.si-stencil { font-family: Stencil, 'Stencil Std', 'Arial Black', Impact, sans-serif; text-transform: uppercase; letter-spacing: .02em; }
+.si-chargement { position: absolute; inset: 0; display: grid; place-items: center; font-size: 16px; color: var(--si-brun); }
 
-.si-hud[hidden], .si-overlay[hidden], .si-upgrades[hidden], .si-respawn[hidden], .si-dot[hidden], .si-plus[hidden] { display: none !important; }
-.si-hud { position: absolute; inset: 0; pointer-events: none; }
-.si-hud button { pointer-events: auto; }
+/* Menu (barre blanche de 20 px) */
+.si-menubar { position: absolute; top: 0; left: 0; right: 0; height: 20px; background: #fff; display: flex; z-index: 30; border-bottom: 1px solid #e5e5e5; }
+.si-mb { font: inherit; border: 0; background: #fff; padding: 0 8px; height: 20px; cursor: default; color: #000; }
+.si-mb:hover, .si-mb[aria-expanded="true"] { background: #e5f1fb; outline: 1px solid #cce4f7; }
+.si-menuitem { position: relative; }
+.si-dropdown { position: absolute; top: 20px; left: 0; min-width: 170px; background: #f2f2f2; border: 1px solid #ccc; box-shadow: 2px 2px 3px rgba(0,0,0,.25); padding: 2px 0; display: grid; }
+.si-dropdown button { font: inherit; text-align: left; border: 0; background: none; padding: 4px 24px; cursor: default; color: #000; }
+.si-dropdown button:hover { background: #91c9f7; }
 
-.si-bars { position: absolute; top: 12px; left: 12px; display: grid; gap: 6px; width: min(260px, 42%); }
-.si-bar { display: grid; grid-template-columns: 4.2em 1fr auto; align-items: center; gap: 8px; font-size: .8rem; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
-.si-bar-track { height: 12px; background: #444; border-radius: 6px; overflow: hidden; border: 1px solid rgba(0,0,0,.35); }
-.si-bar-fill { height: 100%; width: 100%; transition: width .15s; }
-.si-bar-boat .si-bar-fill { background: #9c220e; }
-.si-bar-island .si-bar-fill { background: #59a214; }
-.si-bar-val { font-variant-numeric: tabular-nums; font-size: .75rem; }
+/* HUD */
+.si-statut { position: absolute; top: 39px; left: 50%; transform: translateX(-50%); font-size: 16px; color: var(--si-brun); white-space: nowrap; z-index: 5; }
+.si-vagueinfo { position: absolute; top: 39px; left: 25px; color: var(--si-brun); z-index: 5; }
+.si-vagueinfo div { margin-bottom: 5px; }
+.si-joueurstats { position: absolute; top: 39px; right: 25px; color: var(--si-brun); z-index: 5; }
+.si-hudjoueur { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: grid; justify-items: center; z-index: 5; }
+.si-pb { width: 300px; height: 20px; background: #444; border: 1px solid #bcbcbc; }
+.si-pb div { height: 100%; width: 100%; }
+.si-pb-ile div { background: #9c220e; }
+.si-pb-joueur { margin-top: 25px; }
+.si-pb-joueur div { background: #59a214; }
+.si-pbtxt { font-weight: 700; }
+.si-gridamelio { position: absolute; right: 50px; bottom: 32px; z-index: 6; }
+.si-btnamelio { width: 330px; height: 50px; border-radius: 10px; border: 1px solid var(--si-brun); background: var(--si-brun); color: #fff; font: inherit; font-size: 18px; cursor: default; }
+.si-ellipse { position: absolute; width: 20px; height: 20px; border-radius: 50%; background: red; right: 48px; bottom: 15px; pointer-events: none; }
+.si-amelio { position: absolute; right: 50px; bottom: 87px; width: 330px; height: 350px; background: rgba(0,0,0,.2); z-index: 6; }
+.si-amelio-tete { background: var(--si-brun); height: 50px; color: #fff; text-align: center; }
+.si-amelio-tete > div:first-child { font-size: 22px; line-height: 1.2; }
+.si-amelio-niv { text-align: left; padding-left: 125px; }
+.si-amelio-xp { height: 60px; display: flex; align-items: center; }
+.si-amelio-xpcol { width: 200px; display: grid; justify-items: center; white-space: nowrap; font-size: 11px; overflow: hidden; }
+.si-pb-xp { width: 150px; height: 20px; margin-top: 5px; background: #e6e6e6; }
+.si-pb-xp div { background: #06b025; }
+.si-small { margin-top: 5px; font-size: 12px; }
+.si-tiny { margin-left: 20px; font-size: 9px; }
+.si-pastille { margin-left: 10px; width: 50px; height: 50px; border-radius: 50%; background: #000; color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center; }
+.si-amelio-ligne { height: 60px; display: grid; grid-template-columns: auto 1fr 50px; align-items: center; padding: 0 22px 0 18px; font-size: 20px; white-space: nowrap; }
+.si-amelio-ligne b { padding-left: 4px; }
+.si-amelio-ligne b { font-weight: 400; }
+.si-rond { width: 50px; height: 50px; border-radius: 50%; border: 0; background: rgba(0,0,0,.1); font: inherit; font-size: 12px; cursor: default; color: #000; }
+.si-rond:hover { background: rgba(0,0,0,.18); }
 
-.si-wave { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,.35); border-radius: 10px; padding: 8px 12px; font-size: .8rem; display: grid; gap: 2px; text-align: right; }
-.si-wave b { font-size: .95rem; font-variant-numeric: tabular-nums; }
+/* Écrans (menuAccueil, spParametres, spMenuFin) */
+.si-ecran { position: absolute; inset: 20px 0 0 0; display: grid; place-items: center; z-index: 10; overflow: auto; }
+.si-ecran-pause { background: rgba(0,0,0,.31); }
+.si-pile { display: grid; width: 370px; }
+.si-logo { width: 370px; height: 371px; margin-bottom: 30px; }
+.si-ecran-pause .si-logo { width: 260px; height: 261px; justify-self: center; }
+.si-pause { font-size: 36px; color: #fff; text-align: center; margin-bottom: 50px; }
+.si-bouton { height: 40px; background: var(--si-brun); border: 1px solid var(--si-brun); color: #fff; font: inherit; font-size: 18px; cursor: default; }
+.si-bouton.si-stencil { font-family: Stencil, 'Stencil Std', 'Arial Black', Impact, sans-serif; }
+.si-bouton:hover { background: #7d6252; }
+.si-panneau { width: 370px; background: rgba(0,0,0,.2); display: grid; }
+.si-entete { height: 70px; background: var(--si-brun); color: #fff; font-size: 36px; display: grid; place-items: center; }
+.si-entete-fin { height: 50px; margin-bottom: 20px; }
+.si-fin-ligne { height: 50px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; padding-left: 25px; font-size: 18px; color: #3c2c23; }
+.si-fin-q { font-size: 18px; color: #3c2c23; text-align: center; margin-bottom: 10px; }
+.si-bouton-petit { width: 100px; justify-self: center; margin-bottom: 10px; }
 
-.si-status { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); max-width: min(520px, 40%); text-align: center; background: rgba(0,0,0,.35); padding: 6px 12px; border-radius: 10px; font-size: .82rem; font-weight: 600; }
-.si-status-go { background: rgba(156, 34, 14, .8); }
+/* menuClasse : Grid gris, opacité 0.9 */
+.si-menuclasse { position: absolute; inset: 0; background: rgba(128,128,128,.9); z-index: 20; display: grid; grid-template-rows: auto 1fr; justify-items: center; }
+.si-classe-titre { margin-top: 50px; font-size: 24px; font-weight: 700; color: #fff; }
+.si-classe-images, .si-classe-boutons { position: absolute; left: 50%; top: 50%; display: flex; align-items: center; }
+.si-classe-images { transform: translate(-50%, calc(-50% - 85px)); gap: 40px; }
+.si-classe-images img, .si-classe-vide { width: 100px; height: 100px; object-fit: fill; }
+.si-classe-boutons { transform: translate(-50%, -50%); gap: 40px; }
+.si-wpf { font: inherit; background: #dddddd; border: 1px solid #707070; color: #000; cursor: default; padding: 0 10px; }
+.si-wpf:hover { background: #bee6fd; border-color: #3c7fb1; }
+.si-classe-boutons .si-wpf { width: 100px; height: 50px; }
 
-.si-tools { position: absolute; left: 12px; bottom: 12px; display: flex; gap: 6px; flex-wrap: wrap; max-width: 60%; }
-.si-btn { font: inherit; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: #fff; background: var(--si-brown); border: 2px solid var(--si-brown-dark); border-radius: 10px; padding: .7rem 1.4rem; cursor: pointer; transition: transform .1s, background .15s; }
-.si-btn:hover { background: #7d6252; }
-.si-btn:active { transform: translateY(1px); }
-.si-btn:focus-visible, .si-boat:focus-visible, .si-class:focus-visible, .si-plus:focus-visible, .si-link:focus-visible { outline: 3px solid #ffd166; outline-offset: 2px; }
-.si-btn-big { font-size: 1.15rem; padding: .85rem 2.6rem; }
-.si-btn-small { font-size: .72rem; padding: .45rem .75rem; position: relative; }
-.si-autofire { display: none; }
-.si-touch .si-autofire, .si-autofire[aria-pressed="true"] { display: inline-block; }
-@media (pointer: coarse) { .si-autofire { display: inline-block; } }
-.si-autofire[aria-pressed="true"] { background: #9c220e; }
-.si-dot { position: absolute; top: -4px; right: -4px; width: 12px; height: 12px; border-radius: 50%; background: #ffd166; box-shadow: 0 0 0 2px var(--si-brown-dark); }
+.si-reapparition { position: absolute; inset: 0; background: rgba(0,0,0,.2); display: grid; place-items: center; z-index: 15; pointer-events: none; }
+.si-reapparition span { font-size: 28px; color: var(--si-brun); margin-top: 39px; text-align: center; padding: 0 1rem; }
 
-.si-upgrades { position: absolute; left: 12px; bottom: 56px; width: 250px; background: rgba(0,0,0,.55); border-radius: 12px; padding: 10px 12px; font-size: .8rem; pointer-events: auto; backdrop-filter: blur(2px); }
-.si-up-head { display: flex; justify-content: space-between; margin-bottom: 6px; }
-.si-xp { position: relative; height: 16px; background: #444; border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
-.si-xp-fill { height: 100%; width: 0; background: #2a9df4; transition: width .15s; }
-.si-xp span { position: absolute; inset: 0; text-align: center; font-size: .7rem; line-height: 16px; font-weight: 700; }
-.si-up-row { display: grid; grid-template-columns: 1fr auto 28px; align-items: center; gap: 8px; padding: 3px 0; }
-.si-plus { width: 26px; height: 26px; border-radius: 7px; border: 0; background: rgba(255,255,255,.18); color: #fff; font: inherit; font-weight: 800; cursor: pointer; }
-.si-plus:hover:not(:disabled) { background: #59a214; }
-.si-plus:disabled { opacity: .35; cursor: default; }
+/* Fenêtres de dialogue Windows (ShowDialog) */
+.si-modal { position: absolute; inset: 0; z-index: 40; display: grid; place-items: center; background: rgba(0,0,0,.08); }
+.si-win { max-width: calc(100% - 20px); background: #fff; border: 1px solid #7a7a7a; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+.si-win-titre { height: 30px; display: flex; align-items: center; justify-content: space-between; padding-left: 10px; border-bottom: 1px solid #eee; }
+.si-win-x { width: 46px; height: 30px; border: 0; background: none; font-size: 13px; cursor: default; color: #000; }
+.si-win-x:hover { background: #e81123; color: #fff; }
+.si-win-corps { padding: 18px 16px 20px; display: grid; justify-items: center; gap: 10px; }
+.si-audio { display: grid; grid-template-columns: auto auto; gap: 18px 14px; align-items: center; }
+.si-audio label { display: flex; align-items: center; gap: 10px; }
+.si-audio input { width: 130px; }
+.si-wpf-mini { height: 22px; }
+.si-wpf-valider { width: 100px; height: 22px; padding: 0; }
+.si-choixbateau { display: flex; align-items: center; gap: 30px; height: 215px; }
+.si-fleche { width: 20px; height: 30px; padding: 0; }
+.si-msg { margin: 0 0 6px; }
+.si-msg-boutons { display: flex; gap: 8px; justify-self: end; }
+.si-msg-boutons .si-wpf { width: 75px; height: 24px; }
 
-.si-respawn { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,.35); font-size: 1.2rem; font-weight: 800; text-align: center; padding: 1rem; }
-
-.si-overlay { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(0, 25, 45, .55); padding: 16px; overflow-y: auto; }
-.si-overlay-light { background: rgba(0, 25, 45, .35); }
-.si-card { background: var(--si-sand); color: var(--si-brown-dark); border: 3px solid var(--si-brown); border-radius: 16px; padding: 1.2rem 1.6rem; text-align: center; display: grid; gap: .7rem; justify-items: center; max-width: 440px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
-.si-card-wide { max-width: 640px; }
-.si-card p { margin: 0; }
-.si-logo { width: 160px; height: auto; margin: -.4rem 0 -.2rem; }
-.si-title { margin: 0; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--si-brown); }
-.si-label { font-weight: 800; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
-.si-help { font-size: .78rem; opacity: .85; line-height: 1.45; }
-.si-best { font-weight: 700; font-size: .85rem; }
-.si-new { font-weight: 800; color: #9c220e; }
-.si-link { background: none; border: 0; color: var(--si-brown); font: inherit; font-size: .82rem; font-weight: 700; text-decoration: underline; cursor: pointer; padding: .2rem; }
-.si-boats { display: flex; gap: .5rem; }
-.si-boat { width: 52px; height: 70px; border-radius: 10px; border: 2px solid transparent; background: rgba(109, 84, 69, .12); cursor: pointer; padding: 4px; display: grid; place-items: center; }
-.si-boat img { height: 58px; width: auto; }
-.si-boat.is-on { border-color: var(--si-brown); background: rgba(109, 84, 69, .28); }
-.si-stats { display: flex; gap: 1.2rem; }
-.si-stats div { display: grid; }
-.si-stats b { font-size: 1.6rem; color: var(--si-brown); }
-.si-stats span { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; }
-.si-classes { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; width: 100%; }
-.si-class { display: grid; gap: .3rem; justify-items: center; padding: .6rem; border-radius: 12px; border: 2px solid var(--si-brown); background: #fff8ea; color: var(--si-brown-dark); font: inherit; cursor: pointer; transition: transform .12s, background .12s; }
-.si-class:hover { transform: translateY(-2px); background: #fff; }
-.si-class img { width: 100%; max-width: 120px; aspect-ratio: 1; object-fit: contain; border-radius: 8px; background: #bfe9f7; }
-.si-class b { font-size: .9rem; }
-.si-class span { font-size: .72rem; line-height: 1.3; }
-
-@media (max-width: 700px) {
-    .si-stage { aspect-ratio: 4 / 5; min-height: 0; max-height: calc(100vh - 110px); border-radius: 10px; }
-    .si-bars { top: 8px; left: 8px; width: 52%; gap: 4px; }
-    .si-bar { grid-template-columns: 3.2em 1fr; gap: 6px; font-size: .68rem; line-height: 1.2; }
-    .si-bar-track { height: 9px; }
-    .si-bar-val { display: none; }
-    .si-wave { top: 8px; right: 8px; font-size: .64rem; line-height: 1.25; padding: 5px 8px; gap: 0; }
-    .si-wave b { font-size: .78rem; }
-    .si-status { top: 66px; left: 8px; right: 8px; transform: none; max-width: none; font-size: .7rem; line-height: 1.35; padding: 5px 8px; }
-    .si-tools { left: 8px; bottom: 8px; gap: 5px; max-width: 62%; }
-    .si-btn-small { font-size: .62rem; padding: .4rem .55rem; }
-    .si-upgrades { left: 8px; bottom: 76px; width: min(240px, calc(100% - 16px)); font-size: .74rem; }
-    .si-respawn { font-size: .95rem; }
-    .si-card { padding: .9rem; gap: .5rem; }
-    .si-title { font-size: 1.05rem; }
-    .si-logo { width: 110px; }
-    .si-btn-big { font-size: 1rem; padding: .7rem 2rem; }
-    .si-classes { grid-template-columns: 1fr; gap: .45rem; }
-    .si-class { grid-template-columns: 52px 1fr; justify-items: start; text-align: left; column-gap: .6rem; padding: .45rem .6rem; }
-    .si-class img { grid-row: span 2; width: 52px; }
-    .si-stats b { font-size: 1.3rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .si-bar-fill, .si-xp-fill, .si-class, .si-btn { transition: none; }
-}
+.si-stage button:focus-visible, .si-stage input:focus-visible { outline: 2px dotted #000; outline-offset: 1px; }
