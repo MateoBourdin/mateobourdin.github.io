@@ -444,10 +444,12 @@ const translations = {
             "rightsTitle": "Vos droits",
             "rightsText": "Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.",
             "storageTitle": "Cookies et stockage local",
-            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores aux mini-jeux. Ces informations ne quittent pas votre appareil.",
+            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien.",
             "thirdTitle": "Contenus tiers",
-            "thirdText": "Les polices et les bibliothèques sont hébergées sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island (YouTube peut alors déposer des cookies) et la carte OpenStreetMap de la page Contact. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
-            "policies": "Politiques de confidentialité des services cités :"
+            "thirdText": "Les polices, les bibliothèques et les fichiers des jeux (images, musiques, sons) sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
+            "policies": "Politiques de confidentialité des services cités :",
+            "ipTitle": "Propriété intellectuelle et crédits",
+            "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les logos et marques cités appartiennent à leurs propriétaires."
         },
         games: {
             "back": "← Arcade",
@@ -976,10 +978,12 @@ const translations = {
             "rightsTitle": "Your rights",
             "rightsText": "You can request access to, correction or deletion of your data, or object to its processing, by writing to mateo.bourdin@etu.univ-smb.fr. If you believe your rights are not respected, you can lodge a complaint with the CNIL (French data protection authority).",
             "storageTitle": "Cookies and local storage",
-            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores in the mini-games. This information never leaves your device.",
+            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and progress in the mini-games. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing.",
             "thirdTitle": "Third-party content",
-            "thirdText": "Fonts and libraries are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page (YouTube may then set cookies) and the OpenStreetMap map on the Contact page. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
-            "policies": "Privacy policies of the services mentioned:"
+            "thirdText": "Fonts, libraries and game files (images, music, sounds) are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
+            "policies": "Privacy policies of the services mentioned:",
+            "ipTitle": "Intellectual property and credits",
+            "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. The logos and brands mentioned belong to their owners."
         },
         games: {
             "back": "← Arcade",
