@@ -407,8 +407,12 @@ const translations = {
         emulations: {
             tag: '🕹️ Jouable en ligne',
             title: 'Mini-jeux et émulations',
-            description: 'Des mini-jeux développés pour ce portfolio et un de mes projets émulé : tout tourne dans le navigateur, sans rien installer',
+            description: 'Des mini-jeux développés pour ce portfolio et deux de mes projets rendus jouables : tout tourne dans le navigateur, sans rien installer',
             play: 'Jouer →',
+            survival: {
+                title: 'Survival Island',
+                description: 'Ma SAE 1.01 en C# / WPF, portée en JavaScript pour le navigateur'
+            },
             zelda: {
                 title: 'Zelda II: The Adventure of Link',
                 description: 'Jeu terminal Python, émulé via Pyodide (Python/WebAssembly)'
@@ -440,7 +444,7 @@ const translations = {
             "rightsTitle": "Vos droits",
             "rightsText": "Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.",
             "storageTitle": "Cookies et stockage local",
-            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores aux mini-jeux. Ces informations ne quittent pas votre appareil.",
+            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et réglages des jeux (bateau choisi, son). Ces informations ne quittent pas votre appareil.",
             "thirdTitle": "Contenus tiers",
             "thirdText": "Les polices et les bibliothèques sont hébergées sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island (YouTube peut alors déposer des cookies) et la carte OpenStreetMap de la page Contact. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
             "policies": "Politiques de confidentialité des services cités :"
@@ -500,6 +504,7 @@ const translations = {
             "skiText": "Slalom à ski sur la piste de Combloux : passe les portes, évite les sapins, la vitesse ne fait qu’augmenter.",
             "navalText": "Clin d’œil à Survival Island : le canon de l’île repousse des vagues de bateaux de plus en plus nombreuses.",
             "zeldaText": "Mon jeu terminal en Python, exécuté dans le navigateur grâce à Pyodide (Python compilé en WebAssembly).",
+            "survivalText": "Ma SAE 1.01 (C# / WPF) portée classe par classe en JavaScript : défends l’île contre les pirates, améliore ton navire et choisis ta classe de tir.",
             "techTitle": "Sous le capot",
             "tech1": "Aucune librairie pour les mini-jeux : JavaScript, Canvas 2D et requestAnimationFrame.",
             "tech2": "Zelda tourne avec Pyodide et xterm.js, hébergés sur ce site : aucune requête vers un service tiers.",
@@ -934,8 +939,12 @@ const translations = {
         emulations: {
             tag: '🕹️ Playable online',
             title: 'Mini-games and emulations',
-            description: 'Mini-games built for this portfolio and one of my projects emulated: everything runs in the browser, no install required',
+            description: 'Mini-games built for this portfolio and two of my projects made playable: everything runs in the browser, no install required',
             play: 'Play →',
+            survival: {
+                title: 'Survival Island',
+                description: 'My C# / WPF first-year project, ported to JavaScript for the browser'
+            },
             zelda: {
                 title: 'Zelda II: The Adventure of Link',
                 description: 'Python terminal game, emulated via Pyodide (Python/WebAssembly)'
@@ -967,7 +976,7 @@ const translations = {
             "rightsTitle": "Your rights",
             "rightsText": "You can request access to, correction or deletion of your data, or object to its processing, by writing to mateo.bourdin@etu.univ-smb.fr. If you believe your rights are not respected, you can lodge a complaint with the CNIL (French data protection authority).",
             "storageTitle": "Cookies and local storage",
-            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores in the mini-games. This information never leaves your device.",
+            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and game settings (chosen ship, sound). This information never leaves your device.",
             "thirdTitle": "Third-party content",
             "thirdText": "Fonts and libraries are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page (YouTube may then set cookies) and the OpenStreetMap map on the Contact page. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
             "policies": "Privacy policies of the services mentioned:"
@@ -1027,6 +1036,7 @@ const translations = {
             "skiText": "Ski slalom on the Combloux slope: go through the gates, avoid the fir trees, and the speed keeps rising.",
             "navalText": "A nod to Survival Island: the island’s cannon fends off ever larger waves of boats.",
             "zeldaText": "My Python terminal game, running in the browser thanks to Pyodide (Python compiled to WebAssembly).",
+            "survivalText": "My first-year C# / WPF project, ported class by class to JavaScript: defend the island from pirates, upgrade your ship and pick a firing class.",
             "techTitle": "Under the hood",
             "tech1": "No library for the mini-games: JavaScript, 2D Canvas and requestAnimationFrame.",
             "tech2": "Zelda runs on Pyodide and xterm.js, hosted on this site: no request to any third-party service.",
