@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défends l’île | Matéo Bourdin</title>
+    <meta name="description" content="Un clin d’œil à Survival Island, mon premier projet de BUT : cette fois, c’est l’île qui se défend. Les bateaux ennemis arrivent par vagues, de plus en plus nombreux et rapides.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/jeu-ile.html">
+    <meta property="og:title" content="Défends l’île | Matéo Bourdin">
+    <meta property="og:description" content="Un clin d’œil à Survival Island, mon premier projet de BUT : cette fois, c’est l’île qui se défend. Les bateaux ennemis arrivent par vagues, de plus en plus nombreux et rapides.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Défends l’île | Matéo Bourdin">
+    <meta name="twitter:description" content="Un clin d’œil à Survival Island, mon premier projet de BUT : cette fois, c’est l’île qui se défend. Les bateaux ennemis arrivent par vagues, de plus en plus nombreux et rapides.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="naval">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" class="active" aria-current="page" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="cours.html" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page header -->
+    <section class="page-hero game-hero">
+        <div class="container">
+            <a href="projets.html#emulations" class="game-back" data-i18n="games.back">← Tous les projets</a>
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="games.naval.tag">🏝️ Mini-jeu</span></span>
+                <h1 data-i18n="games.naval.title">Défends l’île</h1>
+                <p data-i18n="games.naval.desc">Un clin d’œil à Survival Island, mon premier projet de BUT : cette fois, c’est l’île qui se défend. Les bateaux ennemis arrivent par vagues, de plus en plus nombreux et rapides.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-section">
+        <div class="container game-wrap game-wrap-wide">
+            <div class="game-hud" aria-live="polite">
+                <span><span data-i18n="games.naval.score">Score</span> <b id="navalScore">0</b></span>
+                <span><span data-i18n="games.naval.wave">Vague</span> <b id="navalWave">–</b></span>
+                <span><span data-i18n="games.naval.hp">Vie de l’île</span> <b id="navalHp">10 / 10</b></span>
+                <span><span data-i18n="games.naval.best">Record</span> <b id="navalBest">0</b></span>
+            </div>
+            <canvas id="navalCanvas" class="game-canvas" width="640" height="480" aria-label="Défends l’île"></canvas>
+            <div class="game-notes">
+                <p class="game-controls-text" data-i18n="games.naval.controls">Commandes : vise avec la souris et clique pour tirer (maintiens pour un tir continu). Au clavier : flèches ← → pour viser, Espace pour tirer, P pour la pause. Sur mobile : touche l’endroit où tirer.</p>
+                <h2 data-i18n="games.howTitle">Comment c’est fait</h2>
+                <p data-i18n="games.naval.how">Canvas 2D sans librairie : vagues générées, collisions cercle/cercle, bateaux lourds à 3 points de vie, et l’île regagne un point de vie à chaque vague terminée.</p>
+                <a href="https://github.com/MateoBourdin/mateobourdin.github.io/blob/main/games/naval.js" target="_blank" rel="noopener noreferrer" class="but-year-link"><span data-i18n="games.source">Voir le code source</span> ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="games/common.js"></script>
+    <script src="script.js"></script>
+    <script src="games/naval.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

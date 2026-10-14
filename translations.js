@@ -14,7 +14,10 @@ const translations = {
             projects: 'Projets | Matéo Bourdin',
             now: 'Cours actuels | Matéo Bourdin',
             skills: 'Compétences | Matéo Bourdin',
-            legal: 'Mentions légales et confidentialité | Matéo Bourdin'
+            legal: 'Mentions légales et confidentialité | Matéo Bourdin',
+            ski: 'Descente à Combloux | Matéo Bourdin',
+            naval: 'Défends l’île | Matéo Bourdin',
+            bug: 'Trouve le bug | Matéo Bourdin'
         },
         meta: {
             title: 'Matéo Bourdin - Étudiant en informatique | Portfolio',
@@ -401,8 +404,8 @@ const translations = {
         },
         emulations: {
             tag: '🕹️ Jouable en ligne',
-            title: 'Émulations disponibles',
-            description: 'Certains projets tournent directement dans le navigateur, sans rien installer',
+            title: 'Mini-jeux et émulations',
+            description: 'Des mini-jeux développés pour ce portfolio et un de mes projets émulé : tout tourne dans le navigateur, sans rien installer',
             play: 'Jouer →',
             zelda: {
                 title: 'Zelda II: The Adventure of Link',
@@ -435,10 +438,53 @@ const translations = {
             "rightsTitle": "Vos droits",
             "rightsText": "Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.",
             "storageTitle": "Cookies et stockage local",
-            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, pour les conserver d’une page à l’autre. Ces informations ne quittent pas votre appareil.",
+            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores aux mini-jeux. Ces informations ne quittent pas votre appareil.",
             "thirdTitle": "Contenus tiers",
             "thirdText": "Les polices et les bibliothèques sont hébergées sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island (YouTube peut alors déposer des cookies) et la carte OpenStreetMap de la page Contact. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
             "policies": "Politiques de confidentialité des services cités :"
+        },
+        games: {
+            "back": "← Tous les projets",
+            "source": "Voir le code source",
+            "howTitle": "Comment c’est fait",
+            "ski": {
+                "short": "Slalom à ski entre les portes, en JavaScript (Canvas)",
+                "title": "Descente à Combloux",
+                "tag": "⛷️ Mini-jeu",
+                "desc": "Un slalom entre les portes, sur la piste de Combloux où je skie depuis toujours. Passe dans les portes, évite les sapins : la vitesse augmente à chaque seconde.",
+                "controls": "Commandes : flèches ← → (ou Q/A et D) pour tourner, Espace pour partir, P pour la pause. Sur mobile : garde le doigt à gauche ou à droite du skieur, ou utilise les boutons.",
+                "how": "Canvas 2D et requestAnimationFrame, sans aucune librairie : environ 300 lignes de JavaScript. Les portes rétrécissent et se rapprochent au fil de la descente.",
+                "score": "Portes",
+                "best": "Record",
+                "lives": "Vies",
+                "left": "◀ Gauche",
+                "right": "Droite ▶"
+            },
+            "naval": {
+                "short": "Défense d’île par vagues, clin d’œil à Survival Island",
+                "title": "Défends l’île",
+                "tag": "🏝️ Mini-jeu",
+                "desc": "Un clin d’œil à Survival Island, mon premier projet de BUT : cette fois, c’est l’île qui se défend. Les bateaux ennemis arrivent par vagues, de plus en plus nombreux et rapides.",
+                "controls": "Commandes : vise avec la souris et clique pour tirer (maintiens pour un tir continu). Au clavier : flèches ← → pour viser, Espace pour tirer, P pour la pause. Sur mobile : touche l’endroit où tirer.",
+                "how": "Canvas 2D sans librairie : vagues générées, collisions cercle/cercle, bateaux lourds à 3 points de vie, et l’île regagne un point de vie à chaque vague terminée.",
+                "score": "Score",
+                "best": "Record",
+                "wave": "Vague",
+                "hp": "Vie de l’île"
+            },
+            "bug": {
+                "short": "Quiz de code chronométré : C#, Python, JS, SQL, Docker",
+                "title": "Trouve le bug",
+                "tag": "🐛 Mini-jeu",
+                "desc": "Six extraits de code en C#, Python, JavaScript, Vue, SQL et Docker. Chacun contient une ligne fautive : trouve-la avant la fin du chrono. Les bugs viennent d’erreurs que j’ai croisées en cours ou en projet.",
+                "controls": "Commandes : souris ou toucher pour choisir une ligne, ou Tab puis Entrée au clavier.",
+                "start": "Commencer",
+                "intro": "20 secondes par extrait. Plus tu réponds vite, plus tu marques de points.",
+                "score": "Score",
+                "best": "Record",
+                "again": "Rejouer",
+                "how": "Une page en HTML/JS sans canvas : les lignes sont de vrais boutons, donc le jeu se joue aussi entièrement au clavier (Tab puis Entrée)."
+            }
         },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
@@ -474,7 +520,10 @@ const translations = {
             projects: 'Projects | Matéo Bourdin',
             now: 'Current courses | Matéo Bourdin',
             skills: 'Skills | Matéo Bourdin',
-            legal: 'Legal notice and privacy | Matéo Bourdin'
+            legal: 'Legal notice and privacy | Matéo Bourdin',
+            ski: 'Combloux Downhill | Matéo Bourdin',
+            naval: 'Defend the Island | Matéo Bourdin',
+            bug: 'Spot the Bug | Matéo Bourdin'
         },
         meta: {
             title: 'Matéo Bourdin - Computer Science Student | Portfolio',
@@ -861,8 +910,8 @@ const translations = {
         },
         emulations: {
             tag: '🕹️ Playable online',
-            title: 'Available Emulations',
-            description: 'Some projects run directly in the browser, no install required',
+            title: 'Mini-games and emulations',
+            description: 'Mini-games built for this portfolio and one of my projects emulated: everything runs in the browser, no install required',
             play: 'Play →',
             zelda: {
                 title: 'Zelda II: The Adventure of Link',
@@ -895,10 +944,53 @@ const translations = {
             "rightsTitle": "Your rights",
             "rightsText": "You can request access to, correction or deletion of your data, or object to its processing, by writing to mateo.bourdin@etu.univ-smb.fr. If you believe your rights are not respected, you can lodge a complaint with the CNIL (French data protection authority).",
             "storageTitle": "Cookies and local storage",
-            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, so they persist from page to page. This information never leaves your device.",
+            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores in the mini-games. This information never leaves your device.",
             "thirdTitle": "Third-party content",
             "thirdText": "Fonts and libraries are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page (YouTube may then set cookies) and the OpenStreetMap map on the Contact page. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
             "policies": "Privacy policies of the services mentioned:"
+        },
+        games: {
+            "back": "← All projects",
+            "source": "View the source code",
+            "howTitle": "How it’s made",
+            "ski": {
+                "short": "Ski slalom through the gates, in JavaScript (Canvas)",
+                "title": "Combloux Downhill",
+                "tag": "⛷️ Mini-game",
+                "desc": "A slalom through the gates on the Combloux slope where I have always skied. Go through the gates and avoid the fir trees: speed increases every second.",
+                "controls": "Controls: ← → arrows (or A/Q and D) to turn, Space to start, P to pause. On mobile: hold your finger left or right of the skier, or use the buttons.",
+                "how": "2D Canvas and requestAnimationFrame, no library at all: about 300 lines of JavaScript. Gates get narrower and closer as you go down.",
+                "score": "Gates",
+                "best": "Best",
+                "lives": "Lives",
+                "left": "◀ Left",
+                "right": "Right ▶"
+            },
+            "naval": {
+                "short": "Wave-based island defence, a nod to Survival Island",
+                "title": "Defend the Island",
+                "tag": "🏝️ Mini-game",
+                "desc": "A nod to Survival Island, my first BUT project: this time the island defends itself. Enemy boats arrive in waves, more and more numerous and fast.",
+                "controls": "Controls: aim with the mouse and click to fire (hold for continuous fire). Keyboard: ← → arrows to aim, Space to fire, P to pause. On mobile: tap where you want to shoot.",
+                "how": "2D Canvas with no library: generated waves, circle/circle collisions, heavy boats with 3 hit points, and the island regains one health point after each wave.",
+                "score": "Score",
+                "best": "Best",
+                "wave": "Wave",
+                "hp": "Island health"
+            },
+            "bug": {
+                "short": "Timed code quiz: C#, Python, JS, SQL, Docker",
+                "title": "Spot the Bug",
+                "tag": "🐛 Mini-game",
+                "desc": "Six code snippets in C#, Python, JavaScript, Vue, SQL and Docker. Each has one faulty line: find it before the timer runs out. The bugs come from mistakes I’ve met in class or in projects.",
+                "controls": "Controls: mouse or tap to pick a line, or Tab then Enter on the keyboard.",
+                "start": "Start",
+                "intro": "20 seconds per snippet. The faster you answer, the more points you score.",
+                "score": "Score",
+                "best": "Best",
+                "again": "Play again",
+                "how": "Plain HTML/JS page, no canvas: lines are real buttons, so the game is fully playable with the keyboard (Tab then Enter)."
+            }
         },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',

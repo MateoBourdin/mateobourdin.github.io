@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trouve le bug | Matéo Bourdin</title>
+    <meta name="description" content="Six extraits de code en C#, Python, JavaScript, Vue, SQL et Docker. Chacun contient une ligne fautive : trouve-la avant la fin du chrono. Les bugs viennent d’erreurs que j’ai croisées en cours ou en projet.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/jeu-bug.html">
+    <meta property="og:title" content="Trouve le bug | Matéo Bourdin">
+    <meta property="og:description" content="Six extraits de code en C#, Python, JavaScript, Vue, SQL et Docker. Chacun contient une ligne fautive : trouve-la avant la fin du chrono. Les bugs viennent d’erreurs que j’ai croisées en cours ou en projet.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trouve le bug | Matéo Bourdin">
+    <meta name="twitter:description" content="Six extraits de code en C#, Python, JavaScript, Vue, SQL et Docker. Chacun contient une ligne fautive : trouve-la avant la fin du chrono. Les bugs viennent d’erreurs que j’ai croisées en cours ou en projet.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="bug">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" class="active" aria-current="page" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="cours.html" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page header -->
+    <section class="page-hero game-hero">
+        <div class="container">
+            <a href="projets.html#emulations" class="game-back" data-i18n="games.back">← Tous les projets</a>
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="games.bug.tag">🐛 Mini-jeu</span></span>
+                <h1 data-i18n="games.bug.title">Trouve le bug</h1>
+                <p data-i18n="games.bug.desc">Six extraits de code en C#, Python, JavaScript, Vue, SQL et Docker. Chacun contient une ligne fautive : trouve-la avant la fin du chrono. Les bugs viennent d’erreurs que j’ai croisées en cours ou en projet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-section">
+        <div class="container game-wrap game-wrap-wide">
+            <div id="bugStart" class="bug-card">
+                <p data-i18n="games.bug.intro">20 secondes par extrait. Plus tu réponds vite, plus tu marques de points.</p>
+                <p class="bug-best-line"><span data-i18n="games.bug.best">Record</span> : <b id="bugBestStart">0</b></p>
+                <button type="button" id="bugBegin" class="btn btn-primary" data-i18n="games.bug.start">Commencer</button>
+            </div>
+            <div id="bugPlay" class="bug-card" hidden>
+                <div class="bug-top">
+                    <span id="bugRound"></span>
+                    <span class="bug-lang" id="bugLang"></span>
+                    <span><span data-i18n="games.bug.score">Score</span> <b id="bugScore">0</b></span>
+                    <span id="bugTime"></span>
+                </div>
+                <div class="bug-timer"><div id="bugBar"></div></div>
+                <p class="bug-hint" id="bugHint"></p>
+                <div id="bugCode" class="bug-code"></div>
+                <div id="bugFeedback" class="bug-feedback" hidden aria-live="polite">
+                    <p id="bugVerdict"></p>
+                    <p id="bugExplain"></p>
+                    <button type="button" id="bugNext" class="btn btn-primary"></button>
+                </div>
+            </div>
+            <div id="bugEnd" class="bug-card" hidden>
+                <p class="bug-final" id="bugFinal"></p>
+                <p id="bugFound"></p>
+                <p class="bug-record" id="bugRecord" hidden></p>
+                <p class="bug-best-line"><span data-i18n="games.bug.best">Record</span> : <b id="bugBest">0</b></p>
+                <button type="button" id="bugReplay" class="btn btn-primary"></button>
+            </div>
+            <div class="game-notes">
+                <p class="game-controls-text" data-i18n="games.bug.controls">Commandes : souris ou toucher pour choisir une ligne, ou Tab puis Entrée au clavier.</p>
+                <h2 data-i18n="games.howTitle">Comment c’est fait</h2>
+                <p data-i18n="games.bug.how">Une page en HTML/JS sans canvas : les lignes sont de vrais boutons, donc le jeu se joue aussi entièrement au clavier (Tab puis Entrée).</p>
+                <a href="https://github.com/MateoBourdin/mateobourdin.github.io/blob/main/games/bug.js" target="_blank" rel="noopener noreferrer" class="but-year-link"><span data-i18n="games.source">Voir le code source</span> ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="games/common.js"></script>
+    <script src="script.js"></script>
+    <script src="games/bug.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
