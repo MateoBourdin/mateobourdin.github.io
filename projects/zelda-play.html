@@ -24,7 +24,7 @@
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Jouer à Zelda II - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css" integrity="sha384-LJcOxlx9IMbNXDqJ2axpfEQKkAYbFjJfhXexLfiRJhjDU81mzgkiQq8rkV0j6dVh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../vendor/xterm/xterm.css">
     <style>
         .play-wrap {
             max-width: 1320px;
@@ -114,6 +114,8 @@
         </div>
     </div>
 
+    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a></footer>
+
     <script>
         const translations = {"fr": {"back": "← Retour à la page du projet", "title": "🗡️ Zelda II — Jouez directement ici", "intro": "Le jeu tourne entièrement dans votre navigateur grâce à Pyodide (Python compilé en WebAssembly) : aucun serveur, aucune installation, tout s'exécute en local sur votre machine.", "keys": {"move": "Z Q S D — se déplacer", "jump": "Espace — sauter en combat", "attack": "M — attaquer", "crouch": "C — s'accroupir", "talk": "Entrée — parler aux PNJ", "quit": "Échap — quitter"}, "restart": "Rechargez la page pour recommencer une partie.", "st": {"loading": "Chargement de Pyodide (WebAssembly)…", "fetch": "Récupération des fichiers du jeu… ", "init": "Initialisation du jeu…", "ready": "Prêt ! Entrez votre nom puis appuyez sur Entrée.", "welcome": "Bienvenue dans Zelda II: The Adventure of Link", "name": "Entrez le nom de votre personnage puis appuyez sur Entrée : ", "over": "Partie terminée. Rechargez la page pour recommencer.", "error": "Erreur au chargement : "}, "note": "Les textes du jeu sont en français, comme dans la version d'origine."}, "en": {"back": "← Back to the project page", "title": "🗡️ Zelda II — Play it right here", "intro": "The game runs entirely in your browser thanks to Pyodide (Python compiled to WebAssembly): no server, no installation, everything runs locally on your machine.", "keys": {"move": "Z Q S D — move", "jump": "Space — jump in combat", "attack": "M — attack", "crouch": "C — crouch", "talk": "Enter — talk to NPCs", "quit": "Esc — quit"}, "restart": "Reload the page to start a new game.", "st": {"loading": "Loading Pyodide (WebAssembly)…", "fetch": "Downloading game files… ", "init": "Starting the game…", "ready": "Ready! Type your name and press Enter.", "welcome": "Welcome to Zelda II: The Adventure of Link", "name": "Type your character's name and press Enter: ", "over": "Game over. Reload the page to play again.", "error": "Loading error: "}, "note": "In-game text is in French, as in the original version."}};
         let L = translations[localStorage.getItem('preferredLanguage') === 'en' ? 'en' : 'fr'];
@@ -129,8 +131,8 @@
         }
         changeLanguage(localStorage.getItem('preferredLanguage') === 'en' ? 'en' : 'fr');
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js" integrity="sha384-/nfmYPUzWMS6v2atn8hbljz7NE0EI1iGx34lJaNzyVjWGDzMv+ciUZUeJpKA3Glc" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js" integrity="sha384-i3R37b3tF+HWudsUf1VSEOY2YxwSNMqY8DQa9Z0O3xh+NkJ9o+yjcGyIi5huj+nB" crossorigin="anonymous"></script>
+    <script src="../vendor/xterm/xterm.js"></script>
+    <script src="../vendor/pyodide/pyodide.js"></script>
     <script>
         const GAME_BASE = "zelda-game/";
         const PY_FILES = ["Background.py", "Player.py", "Monster.py", "PNJ.py", "webio.py", "webmain.py"];
@@ -168,7 +170,7 @@
         async function boot() {
             statusLine.textContent = L.st.loading;
             loadingBar.style.width = "10%";
-            const pyodide = await loadPyodide();
+            const pyodide = await loadPyodide({ indexURL: '../vendor/pyodide/' });
             loadingBar.style.width = "35%";
             pyodide.FS.mkdirTree(WORKDIR);
 

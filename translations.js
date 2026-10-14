@@ -13,7 +13,8 @@ const translations = {
             journey: 'Parcours | Matéo Bourdin',
             projects: 'Projets | Matéo Bourdin',
             now: 'Cours actuels | Matéo Bourdin',
-            skills: 'Compétences | Matéo Bourdin'
+            skills: 'Compétences | Matéo Bourdin',
+            legal: 'Mentions légales et confidentialité | Matéo Bourdin'
         },
         meta: {
             title: 'Matéo Bourdin - Étudiant en informatique | Portfolio',
@@ -414,9 +415,35 @@ const translations = {
             emailBtn: 'Me contacter',
             email: '📧 Formulaire de contact'
         },
+        legal: {
+            "tag": "⚖️ Informations légales",
+            "title": "Mentions légales et confidentialité",
+            "description": "Qui édite ce site, qui l’héberge, et ce qu’il advient de vos données.",
+            "updated": "Dernière mise à jour : 14 octobre 2026",
+            "editorTitle": "Éditeur du site",
+            "editorText": "Ce site est le portfolio personnel de Matéo Bourdin, étudiant en BUT Informatique à l’IUT d’Annecy. Il est édité à titre non professionnel.",
+            "editorContact": "Contact : mateo.bourdin@etu.univ-smb.fr ou le formulaire de la page Contact.",
+            "hostTitle": "Hébergeur",
+            "hostText": "GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.",
+            "dataTitle": "Données personnelles",
+            "dataIntro": "Ce site ne contient ni outil de statistiques, ni publicité, ni cookie de suivi. Les seules données personnelles traitées sont celles que vous envoyez via le formulaire de contact.",
+            "formTitle": "Formulaire de contact",
+            "formWhat": "Données collectées : votre nom, votre adresse e-mail, le sujet et le contenu de votre message.",
+            "formWhy": "Finalité : uniquement vous répondre. Base légale : mon intérêt légitime à traiter les demandes qui me sont adressées.",
+            "formWho": "Destinataires : moi seul. Le formulaire est acheminé par Formspree, Inc. (États-Unis), qui me transmet le message par e-mail.",
+            "formHow": "Durée de conservation : les messages sont supprimés au plus tard 12 mois après notre dernier échange.",
+            "rightsTitle": "Vos droits",
+            "rightsText": "Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.",
+            "storageTitle": "Cookies et stockage local",
+            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, pour les conserver d’une page à l’autre. Ces informations ne quittent pas votre appareil.",
+            "thirdTitle": "Contenus tiers",
+            "thirdText": "Les polices et les bibliothèques sont hébergées sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island (YouTube peut alors déposer des cookies) et la carte OpenStreetMap de la page Contact. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
+            "policies": "Politiques de confidentialité des services cités :"
+        },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
-            signature: 'Créé avec passion 🚀'
+            signature: 'Créé avec passion 🚀',
+            legal: 'Mentions légales et confidentialité'
         },
         cvModal: {
             title: '📄 Choisissez la langue',
@@ -446,7 +473,8 @@ const translations = {
             journey: 'Background | Matéo Bourdin',
             projects: 'Projects | Matéo Bourdin',
             now: 'Current courses | Matéo Bourdin',
-            skills: 'Skills | Matéo Bourdin'
+            skills: 'Skills | Matéo Bourdin',
+            legal: 'Legal notice and privacy | Matéo Bourdin'
         },
         meta: {
             title: 'Matéo Bourdin - Computer Science Student | Portfolio',
@@ -847,9 +875,35 @@ const translations = {
             emailBtn: 'Contact me',
             email: '📧 Contact form'
         },
+        legal: {
+            "tag": "⚖️ Legal information",
+            "title": "Legal notice and privacy",
+            "description": "Who publishes this site, who hosts it, and what happens to your data.",
+            "updated": "Last updated: 14 October 2026",
+            "editorTitle": "Publisher",
+            "editorText": "This site is the personal portfolio of Matéo Bourdin, a Computer Science (BUT) student at IUT d’Annecy. It is published on a non-professional basis.",
+            "editorContact": "Contact: mateo.bourdin@etu.univ-smb.fr or the form on the Contact page.",
+            "hostTitle": "Host",
+            "hostText": "GitHub, Inc. (GitHub Pages service), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.",
+            "dataTitle": "Personal data",
+            "dataIntro": "This site has no analytics, no advertising and no tracking cookies. The only personal data processed is what you send through the contact form.",
+            "formTitle": "Contact form",
+            "formWhat": "Data collected: your name, email address, subject and message.",
+            "formWhy": "Purpose: only to reply to you. Legal basis: my legitimate interest in handling the requests sent to me.",
+            "formWho": "Recipients: me only. The form is relayed by Formspree, Inc. (United States), which forwards the message to me by email.",
+            "formHow": "Retention: messages are deleted at the latest 12 months after our last exchange.",
+            "rightsTitle": "Your rights",
+            "rightsText": "You can request access to, correction or deletion of your data, or object to its processing, by writing to mateo.bourdin@etu.univ-smb.fr. If you believe your rights are not respected, you can lodge a complaint with the CNIL (French data protection authority).",
+            "storageTitle": "Cookies and local storage",
+            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, so they persist from page to page. This information never leaves your device.",
+            "thirdTitle": "Third-party content",
+            "thirdText": "Fonts and libraries are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page (YouTube may then set cookies) and the OpenStreetMap map on the Contact page. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
+            "policies": "Privacy policies of the services mentioned:"
+        },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
-            signature: 'Created with passion 🚀'
+            signature: 'Created with passion 🚀',
+            legal: 'Legal notice and privacy'
         },
         cvModal: {
             title: '📄 Choose Language',

@@ -105,6 +105,8 @@
                         📨 Envoyer le message
                     </button>
 
+                    <p class="form-privacy"><span data-i18n="contact.form.privacy">Vos nom, e-mail et message sont transmis par le service Formspree (États-Unis) et servent uniquement à vous répondre. Ils sont supprimés au plus tard 12 mois après notre dernier échange.</span> <a href="mentions-legales.html#donnees" data-i18n="contact.form.privacyLink">En savoir plus et exercer vos droits</a></p>
+
                     <div id="formStatus" class="form-status"></div>
                 </form>
             </div>
@@ -146,13 +148,10 @@
                 </div>
 
                 <div class="map-container">
-                    <!-- OpenStreetMap embedded map for 613 rue de la Gare, Reignier-Ésery -->
-                    <iframe
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=6.258%2C46.132%2C6.268%2C46.142&layer=mapnik&marker=46.137%2C6.263"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <div class="embed-facade" data-src="https://www.openstreetmap.org/export/embed.html?bbox=6.258%2C46.132%2C6.268%2C46.142&amp;layer=mapnik&amp;marker=46.137%2C6.263" data-title="Carte OpenStreetMap">
+                        <p data-i18n="contact.location.mapConsent">La carte est fournie par OpenStreetMap, qui recevra votre adresse IP si vous l’affichez.</p>
+                        <button type="button" class="embed-load btn btn-primary" data-i18n="contact.location.mapShow">🗺️ Afficher la carte</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,6 +162,7 @@
         <div class="container">
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
             <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
         </div>
     </footer>
 
@@ -218,6 +218,8 @@
                     },
                     form: {
                         title: '📬 Envoyez-moi un message',
+                        privacy: 'Vos nom, e-mail et message sont transmis par le service Formspree (États-Unis) et servent uniquement à vous répondre. Ils sont supprimés au plus tard 12 mois après notre dernier échange.',
+                        privacyLink: 'En savoir plus et exercer vos droits',
                         subtitle: 'Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais',
                         name: 'Nom *',
                         email: 'Email *',
@@ -244,12 +246,15 @@
                         institution: 'Localisation',
                         address: 'Adresse :',
                         availability: 'Disponibilité :',
-                        availabilityText: 'Stage à partir du 19 janvier 2027 (16 semaines)'
+                        availabilityText: 'Stage à partir du 19 janvier 2027 (16 semaines)',
+                        mapConsent: 'La carte est fournie par OpenStreetMap, qui recevra votre adresse IP si vous l’affichez.',
+                        mapShow: '🗺️ Afficher la carte'
                     }
                 },
                 footer: {
                     copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
-                    signature: 'Créé avec passion 🚀'
+                    signature: 'Créé avec passion 🚀',
+                    legal: 'Mentions légales et confidentialité'
                 }
             },
             en: {
@@ -274,6 +279,8 @@
                     },
                     form: {
                         title: '📬 Send me a message',
+                        privacy: 'Your name, email and message are sent through the Formspree service (United States) and are only used to reply to you. They are deleted at the latest 12 months after our last exchange.',
+                        privacyLink: 'Learn more and exercise your rights',
                         subtitle: 'Fill out the form below and I will get back to you as soon as possible',
                         name: 'Name *',
                         email: 'Email *',
@@ -300,12 +307,15 @@
                         institution: 'Location',
                         address: 'Address:',
                         availability: 'Availability:',
-                        availabilityText: 'Internship from 19 January 2027 (16 weeks)'
+                        availabilityText: 'Internship from 19 January 2027 (16 weeks)',
+                        mapConsent: 'The map is provided by OpenStreetMap, which will receive your IP address if you display it.',
+                        mapShow: '🗺️ Show the map'
                     }
                 },
                 footer: {
                     copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
-                    signature: 'Created with passion 🚀'
+                    signature: 'Created with passion 🚀',
+                    legal: 'Legal notice and privacy'
                 }
             }
         };
@@ -409,6 +419,7 @@
             }
         });
     </script>
+    <script src="embeds.js"></script>
     <script src="theme.js"></script>
 </body>
 </html>

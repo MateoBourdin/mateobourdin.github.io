@@ -76,8 +76,11 @@
             <h3 data-i18n="video.title">🎬 Vidéo de présentation</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="video.description">Le gameplay et les fonctionnalités du jeu en vidéo.</p>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/wv9BdxhGc3s" title="Survival Island" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="embed-facade" data-src="https://www.youtube-nocookie.com/embed/wv9BdxhGc3s?autoplay=1" data-title="Survival Island" data-allow="autoplay; encrypted-media; picture-in-picture">
+                    <p data-i18n="video.consent">Cette vidéo est hébergée par YouTube. En la lançant, vous acceptez que YouTube dépose des cookies et reçoive votre adresse IP.</p>
+                    <button type="button" class="embed-load btn btn-primary" data-i18n="video.play">▶ Lancer la vidéo</button>
+                    <a href="https://www.youtube.com/watch?v=wv9BdxhGc3s" target="_blank" rel="noopener noreferrer" class="embed-alt" data-i18n="video.open">Ou la regarder directement sur YouTube ↗</a>
+                </div>
             </div>
         </div>
 
@@ -143,6 +146,8 @@
         <p>© 2026 - Matéo Bourdin</p>
     </div>
 
+    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a></footer>
+
     <script>
         const translations = {
     "fr": {
@@ -164,7 +169,10 @@
         },
         "video": {
             "title": "🎬 Vidéo de présentation",
-            "description": "Le gameplay et les fonctionnalités du jeu en vidéo."
+            "description": "Le gameplay et les fonctionnalités du jeu en vidéo.",
+            "consent": "Cette vidéo est hébergée par YouTube. En la lançant, vous acceptez que YouTube dépose des cookies et reçoive votre adresse IP.",
+            "play": "▶ Lancer la vidéo",
+            "open": "Ou la regarder directement sur YouTube ↗"
         },
         "about": {
             "title": "📖 À propos du projet",
@@ -234,7 +242,10 @@
         },
         "video": {
             "title": "🎬 Presentation video",
-            "description": "The gameplay and features of the game on video."
+            "description": "The gameplay and features of the game on video.",
+            "consent": "This video is hosted by YouTube. By playing it, you agree that YouTube sets cookies and receives your IP address.",
+            "play": "▶ Play the video",
+            "open": "Or watch it directly on YouTube ↗"
         },
         "about": {
             "title": "📖 About the project",
@@ -301,6 +312,7 @@
         }
         document.addEventListener('DOMContentLoaded', () => changeLanguage(currentLang === 'en' ? 'en' : 'fr'));
     </script>
+    <script src="../embeds.js"></script>
     <script src="../theme.js"></script>
 </body>
 </html>

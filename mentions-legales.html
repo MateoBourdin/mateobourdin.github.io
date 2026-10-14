@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions légales et confidentialité | Matéo Bourdin</title>
+    <meta name="description" content="Mentions légales, hébergeur et informations sur les données personnelles du portfolio de Matéo Bourdin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/mentions-legales.html">
+    <meta property="og:title" content="Mentions légales et confidentialité | Matéo Bourdin">
+    <meta property="og:description" content="Mentions légales, hébergeur et informations sur les données personnelles du portfolio de Matéo Bourdin.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mentions légales et confidentialité | Matéo Bourdin">
+    <meta name="twitter:description" content="Mentions légales, hébergeur et informations sur les données personnelles du portfolio de Matéo Bourdin.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="legal">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="cours.html" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page header -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="legal.tag">⚖️ Informations légales</span></span>
+                <h1 data-i18n="legal.title">Mentions légales et confidentialité</h1>
+                <p data-i18n="legal.description">Qui édite ce site, qui l’héberge, et ce qu’il advient de vos données.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="legal-section">
+        <div class="container legal-content">
+            <p class="legal-updated" data-i18n="legal.updated">Dernière mise à jour : 14 octobre 2026</p>
+
+            <h2 data-i18n="legal.editorTitle">Éditeur du site</h2>
+            <p data-i18n="legal.editorText">Ce site est le portfolio personnel de Matéo Bourdin, étudiant en BUT Informatique à l’IUT d’Annecy. Il est édité à titre non professionnel.</p>
+            <p data-i18n="legal.editorContact">Contact : mateo.bourdin@etu.univ-smb.fr ou le formulaire de la page Contact.</p>
+
+            <h2 data-i18n="legal.hostTitle">Hébergeur</h2>
+            <p data-i18n="legal.hostText">GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+
+            <h2 id="donnees" data-i18n="legal.dataTitle">Données personnelles</h2>
+            <p data-i18n="legal.dataIntro">Ce site ne contient ni outil de statistiques, ni publicité, ni cookie de suivi. Les seules données personnelles traitées sont celles que vous envoyez via le formulaire de contact.</p>
+            <h3 data-i18n="legal.formTitle">Formulaire de contact</h3>
+            <ul>
+                <li><span data-i18n="legal.formWhat">Données collectées : votre nom, votre adresse e-mail, le sujet et le contenu de votre message.</span></li>
+                <li><span data-i18n="legal.formWhy">Finalité : uniquement vous répondre. Base légale : mon intérêt légitime à traiter les demandes qui me sont adressées.</span></li>
+                <li><span data-i18n="legal.formWho">Destinataires : moi seul. Le formulaire est acheminé par Formspree, Inc. (États-Unis), qui me transmet le message par e-mail.</span></li>
+                <li><span data-i18n="legal.formHow">Durée de conservation : les messages sont supprimés au plus tard 12 mois après notre dernier échange.</span></li>
+            </ul>
+            <h3 data-i18n="legal.rightsTitle">Vos droits</h3>
+            <p data-i18n="legal.rightsText">Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.</p>
+
+            <h2 data-i18n="legal.storageTitle">Cookies et stockage local</h2>
+            <p data-i18n="legal.storageText">Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, pour les conserver d’une page à l’autre. Ces informations ne quittent pas votre appareil.</p>
+
+            <h2 data-i18n="legal.thirdTitle">Contenus tiers</h2>
+            <p data-i18n="legal.thirdText">Les polices et les bibliothèques sont hébergées sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island (YouTube peut alors déposer des cookies) et la carte OpenStreetMap de la page Contact. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.</p>
+            <p data-i18n="legal.policies">Politiques de confidentialité des services cités :</p>
+            <ul>
+                <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Formspree</a></li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">YouTube (Google)</a></li>
+                <li><a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></li>
+                <li><a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">CNIL</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

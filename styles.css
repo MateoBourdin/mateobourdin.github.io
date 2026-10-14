@@ -1,4 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+/* Fonts are self-hosted: no request to Google Fonts (privacy) */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('fonts/manrope-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/manrope-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('fonts/manrope-latin-800-normal.woff2') format('woff2');
+}
 
 :root {
     --primary: #6c7bd9;
@@ -2386,4 +2435,106 @@ section.page-hero + section {
     color: var(--primary);
     font-weight: 600;
     white-space: nowrap;
+}
+
+/* ---------- Privacy: click-to-load embeds, form notice, legal page ---------- */
+.embed-facade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    min-height: 260px;
+    padding: 2rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 1rem;
+    border: 1px dashed var(--primary-light);
+    background: var(--primary-lighter);
+    color: var(--text);
+}
+
+.embed-facade p {
+    max-width: 520px;
+    font-size: 0.92rem;
+    color: var(--text-light);
+}
+
+.embed-alt {
+    font-size: 0.88rem;
+    color: var(--primary);
+}
+
+.video-container > .embed-facade {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    min-height: 0;
+}
+
+.map-container > .embed-facade {
+    height: 100%;
+    margin: 0;
+}
+
+.form-privacy {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+}
+
+.form-privacy a,
+.footer-legal,
+.mini-footer a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-content {
+    max-width: 820px;
+}
+
+.legal-content h2 {
+    font-size: 1.35rem;
+    margin: 2.25rem 0 0.75rem;
+}
+
+.legal-content h3 {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.legal-content p,
+.legal-content li {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.legal-content ul {
+    padding-left: 1.2rem;
+}
+
+.legal-content a {
+    color: var(--primary);
+}
+
+.legal-updated {
+    font-size: 0.85rem;
+}
+
+.mini-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+section.page-hero:has(+ .legal-section) {
+    padding-bottom: 1rem;
+}
+
+.legal-section {
+    padding-top: 0;
 }
