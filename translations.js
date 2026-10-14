@@ -10,6 +10,9 @@ const translations = {
             zelda: "Carte du jeu Zelda en mode texte"
         },
         metaPages: {
+            coursAspnet: "API ASP.NET Core, qualité et tests | Matéo Bourdin",
+            coursMaths: "Modélisation mathématique et IA | Matéo Bourdin",
+            coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
             coursMaths: "Modélisation mathématique et IA | Matéo Bourdin",
             coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
             coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
@@ -76,6 +79,28 @@ const translations = {
                 "l4": "Du perceptron et du XOR jusqu’aux CNN, LSTM et Transformers avec Keras.",
                 "linkTitle": "Le lien avec mon projet",
                 "link": "Ces notions servent directement dans la SAE Astraeus, où je m’occupe du modèle de prévision météo (un LSTM) du jeu WeatherGuessr."
+            },
+            "aspnet": {
+                "tag": "🧪 Cours actuel · BUT3",
+                "title": "API ASP.NET Core, qualité et tests",
+                "desc": "Une API REST construite séance après séance : architecture SOLID, DTO, AutoMapper et tests, lancée et testée pour de vrai.",
+                "github": "Le dépôt sur GitHub",
+                "p1": "Le cours de qualité de développement suit un TD fil rouge : une API REST de gestion de produits en ASP.NET Core, enrichie séance après séance jusqu’à une architecture propre et testée.",
+                "s1": "tests au vert",
+                "s2": "commits sur 5 semaines",
+                "s3": "interfaces séparées par rôle",
+                "s4": "bugs trouvés en lançant l’API",
+                "learnTitle": "Ce que j’y ai appris",
+                "l1t": "Une architecture en couches",
+                "l1": "Contrôleurs, dépôts et accès aux données séparés, reliés par injection de dépendances.",
+                "l2t": "Les principes SOLID",
+                "l2": "Des interfaces petites et ciblées, des dépendances vers des abstractions.",
+                "l3t": "DTO et AutoMapper",
+                "l3": "Ne jamais exposer les entités : des objets de transfert calculés directement par la base.",
+                "l4t": "Tester pour de vrai",
+                "l4": "Tests unitaires avec Moq, tests du mapping et test d’intégration sur PostgreSQL.",
+                "nextTitle": "La suite",
+                "next": "Un contrôleur générique pour factoriser le code, puis un client Blazor Server en MVVM qui consommera cette API."
             }
         },
         meta: {
@@ -507,7 +532,7 @@ const translations = {
             "thirdText": "Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
             "policies": "Politiques de confidentialité des services cités :",
             "ipTitle": "Propriété intellectuelle et crédits",
-            "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les logos et marques cités appartiennent à leurs propriétaires."
+            "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les pages de cours reprennent uniquement mon propre travail (code, résultats, notes de révision) ; les supports des enseignants n’y sont pas publiés et les données des démonstrations d’API sont fictives. Les logos et marques cités appartiennent à leurs propriétaires."
         },
         games: {
             "back": "← Arcade",
@@ -602,6 +627,9 @@ const translations = {
             zelda: "Map of the text-mode Zelda game"
         },
         metaPages: {
+            coursAspnet: "ASP.NET Core API, quality and testing | Matéo Bourdin",
+            coursMaths: "Mathematical modelling and AI | Matéo Bourdin",
+            coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
             coursMaths: "Mathematical modelling and AI | Matéo Bourdin",
             coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
             coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
@@ -668,6 +696,28 @@ const translations = {
                 "l4": "From the perceptron and XOR to CNNs, LSTMs and Transformers with Keras.",
                 "linkTitle": "How it connects to my project",
                 "link": "These skills feed straight into the Astraeus project, where I build the weather forecasting model (an LSTM) for the WeatherGuessr game."
+            },
+            "aspnet": {
+                "tag": "🧪 Current course · Year 3",
+                "title": "ASP.NET Core API, quality and testing",
+                "desc": "A REST API built session after session: SOLID architecture, DTOs, AutoMapper and tests, actually run and tested.",
+                "github": "The repository on GitHub",
+                "p1": "The development quality course follows one running lab: a product management REST API in ASP.NET Core, improved session after session into a clean, tested architecture.",
+                "s1": "passing tests",
+                "s2": "commits over 5 weeks",
+                "s3": "interfaces split by role",
+                "s4": "bugs found by running the API",
+                "learnTitle": "What I learned",
+                "l1t": "A layered architecture",
+                "l1": "Controllers, repositories and data access kept apart, wired together through dependency injection.",
+                "l2t": "SOLID principles",
+                "l2": "Small, focused interfaces and dependencies on abstractions.",
+                "l3t": "DTOs and AutoMapper",
+                "l3": "Never expose entities: transfer objects computed directly by the database.",
+                "l4t": "Testing for real",
+                "l4": "Unit tests with Moq, mapping tests and an integration test against PostgreSQL.",
+                "nextTitle": "What comes next",
+                "next": "A generic controller to remove duplication, then a Blazor Server client in MVVM that will consume this API."
             }
         },
         meta: {
@@ -1099,7 +1149,7 @@ const translations = {
             "thirdText": "Fonts, libraries (including Pyodide, which runs Python in the demos), game files (images, music, sounds) and course demo files are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
             "policies": "Privacy policies of the services mentioned:",
             "ipTitle": "Intellectual property and credits",
-            "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. The logos and brands mentioned belong to their owners."
+            "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. Course pages only show my own work (code, results, revision notes); teaching materials are not published and the API demo data is made up. The logos and brands mentioned belong to their owners."
         },
         games: {
             "back": "← Arcade",

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API ASP.NET Core, qualité et tests | Matéo Bourdin</title>
+    <meta name="description" content="TPRevision, mon API REST ASP.NET Core en BUT3 : architecture SOLID, EF Core, DTO, AutoMapper et tests, avec les vraies réponses de l’API et une fiche de révision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/cours-aspnet.html">
+    <meta property="og:title" content="API ASP.NET Core, qualité et tests | Matéo Bourdin">
+    <meta property="og:description" content="TPRevision, mon API REST ASP.NET Core en BUT3 : architecture SOLID, EF Core, DTO, AutoMapper et tests, avec les vraies réponses de l’API et une fiche de révision.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="API ASP.NET Core, qualité et tests | Matéo Bourdin">
+    <meta name="twitter:description" content="TPRevision, mon API REST ASP.NET Core en BUT3 : architecture SOLID, EF Core, DTO, AutoMapper et tests, avec les vraies réponses de l’API et une fiche de révision.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cours/cours.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="coursAspnet">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="jeux.html" data-i18n="nav.arcade">Arcade</a></li>
+                    <li><a href="cours.html" class="active" aria-current="page" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero cours-hero">
+        <div class="container">
+            <a href="cours.html" class="cours-back" data-i18n="courses.back">← Tous mes cours</a>
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="courses.aspnet.tag">🧪 Cours actuel · BUT3</span></span>
+                <h1 data-i18n="courses.aspnet.title">API ASP.NET Core, qualité et tests</h1>
+                <p data-i18n="courses.aspnet.desc">Une API REST construite séance après séance : architecture SOLID, DTO, AutoMapper et tests, lancée et testée pour de vrai.</p>
+                <div class="cours-meta"><span>C# · .NET 8</span><span>ASP.NET Core</span><span>EF Core</span><span>PostgreSQL</span><span>AutoMapper</span><span>MSTest · Moq</span></div>
+                <div class="cours-links"><a href="https://github.com/MateoBourdin/Qualite_de_dev" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><span data-i18n="courses.aspnet.github">Le dépôt sur GitHub</span> ↗</a></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cours-tabs-bar">
+        <div class="container">
+            <div class="cours-tabs" role="tablist" aria-label="Sections du cours">
+                <button type="button" class="cours-tab" role="tab" id="t-presentation" aria-controls="tab-presentation" data-tab="presentation" data-i18n="courses.tabs.presentation">Présentation</button>
+                <button type="button" class="cours-tab" role="tab" id="t-rendus" aria-controls="tab-rendus" data-tab="rendus" data-i18n="courses.tabs.rendus">Rendus et démos</button>
+                <button type="button" class="cours-tab" role="tab" id="t-reviser" aria-controls="tab-reviser" data-tab="reviser" data-i18n="courses.tabs.reviser">Réviser</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+    <section class="cours-panel" id="tab-presentation" role="tabpanel" aria-labelledby="t-presentation">
+        <div class="container">
+            <p class="cours-lead" data-i18n="courses.aspnet.p1">Le cours de qualité de développement suit un TD fil rouge : une API REST de gestion de produits en ASP.NET Core, enrichie séance après séance jusqu’à une architecture propre et testée.</p>
+            <div class="cours-stats">
+                <div class="cours-stat"><b>20/20</b><span data-i18n="courses.aspnet.s1">tests au vert</span></div>
+                <div class="cours-stat"><b>12</b><span data-i18n="courses.aspnet.s2">commits sur 5 semaines</span></div>
+                <div class="cours-stat"><b>9</b><span data-i18n="courses.aspnet.s3">interfaces séparées par rôle</span></div>
+                <div class="cours-stat"><b>2</b><span data-i18n="courses.aspnet.s4">bugs trouvés en lançant l’API</span></div>
+            </div>
+            <h2 data-i18n="courses.aspnet.learnTitle">Ce que j’y ai appris</h2>
+            <div class="cours-grid">
+                <div class="cours-card"><span class="cours-card-icon">🧱</span><h3 data-i18n="courses.aspnet.l1t">Une architecture en couches</h3><p data-i18n="courses.aspnet.l1">Contrôleurs, dépôts et accès aux données séparés, reliés par injection de dépendances.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">📏</span><h3 data-i18n="courses.aspnet.l2t">Les principes SOLID</h3><p data-i18n="courses.aspnet.l2">Des interfaces petites et ciblées, des dépendances vers des abstractions.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">🔁</span><h3 data-i18n="courses.aspnet.l3t">DTO et AutoMapper</h3><p data-i18n="courses.aspnet.l3">Ne jamais exposer les entités : des objets de transfert calculés directement par la base.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">✅</span><h3 data-i18n="courses.aspnet.l4t">Tester pour de vrai</h3><p data-i18n="courses.aspnet.l4">Tests unitaires avec Moq, tests du mapping et test d’intégration sur PostgreSQL.</p></div>
+            </div>
+            <h2 data-i18n="courses.aspnet.nextTitle">La suite</h2>
+            <p data-i18n="courses.aspnet.next">Un contrôleur générique pour factoriser le code, puis un client Blazor Server en MVVM qui consommera cette API.</p>
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-rendus" role="tabpanel" aria-labelledby="t-rendus" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            
+            <h2>Le TD fil rouge : TPRevision</h2>
+            <p>Une API REST de gestion de produits, marques et types de produits, construite au fil des séances : EF Core et PostgreSQL, dépôts, DTO, AutoMapper et tests. Tout le code vient de mon dépôt public <a href="https://github.com/MateoBourdin/Qualite_de_dev" target="_blank" rel="noopener noreferrer">Qualite_de_dev ↗</a>.</p>
+            <div class="cours-kpis"><span class="cours-kpi"><b>12</b> commits du 4 septembre au 9 octobre</span><span class="cours-kpi"><b>20 / 20</b> tests au vert</span><span class="cours-kpi"><b>9</b> interfaces</span><span class="cours-kpi"><b>4</b> DTO</span></div>
+
+            <h3>Architecture</h3>
+            <svg viewBox="0 0 760 300" role="img" aria-label="Architecture : contrôleur, interfaces, dépôt, DbContext EF Core, PostgreSQL ; AutoMapper produit les DTO" style="width:100%;max-width:760px;display:block;margin:1rem 0">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor" fill-opacity=".6"/></marker></defs>
+  <g font-size="13" text-anchor="middle" fill="currentColor">
+    <rect x="10" y="120" width="120" height="60" rx="10" fill="#6c7bd9" fill-opacity=".14" stroke="#6c7bd9"/><text x="70" y="146">Client HTTP</text><text x="70" y="164" font-size="11" opacity=".7">Swagger, Blazor</text>
+    <rect x="170" y="120" width="140" height="60" rx="10" fill="#6c7bd9" fill-opacity=".14" stroke="#6c7bd9"/><text x="240" y="146">ProductController</text><text x="240" y="164" font-size="11" opacity=".7">routes, codes HTTP</text>
+    <rect x="350" y="40" width="170" height="56" rx="10" fill="#3f8f74" fill-opacity=".14" stroke="#3f8f74"/><text x="435" y="64">IQueryService&lt;Dto&gt;</text><text x="435" y="82" font-size="11" opacity=".7">lecture → DTO</text>
+    <rect x="350" y="204" width="170" height="56" rx="10" fill="#3f8f74" fill-opacity=".14" stroke="#3f8f74"/><text x="435" y="228">IProduitRepository</text><text x="435" y="246" font-size="11" opacity=".7">IReadable + IWritable…</text>
+    <rect x="560" y="120" width="150" height="60" rx="10" fill="#d97706" fill-opacity=".14" stroke="#d97706"/><text x="635" y="146">ProduitRepository</text><text x="635" y="164" font-size="11" opacity=".7">implémente les deux</text>
+    <rect x="560" y="226" width="150" height="56" rx="10" fill="#8a74d6" fill-opacity=".14" stroke="#8a74d6"/><text x="635" y="250">DbProduitsContext</text><text x="635" y="268" font-size="11" opacity=".7">EF Core → PostgreSQL</text>
+    <rect x="560" y="14" width="150" height="56" rx="10" fill="#8a74d6" fill-opacity=".14" stroke="#8a74d6"/><text x="635" y="38">AutoMapper</text><text x="635" y="56" font-size="11" opacity=".7">MappingProfile, ProjectTo</text>
+  </g>
+  <g stroke="currentColor" stroke-opacity=".55" stroke-width="1.6" fill="none" marker-end="url(#ar)">
+    <path d="M130 150 H166"/><path d="M310 140 L346 72"/><path d="M310 160 L346 228"/><path d="M520 68 L556 136"/><path d="M520 232 L556 166"/><path d="M635 180 V222"/><path d="M635 120 V74"/>
+  </g>
+  <text x="380" y="150" font-size="11" fill="currentColor" opacity=".65" text-anchor="middle">le contrôleur ne connaît</text>
+  <text x="380" y="164" font-size="11" fill="currentColor" opacity=".65" text-anchor="middle">que des interfaces</text>
+</svg>
+            <p>Le contrôleur reçoit ses dépendances par injection (constructeur principal C# 12) et ne dépend que d’interfaces. Les interfaces sont découpées par rôle : lire, écrire, lire avec les détails, chercher, et produire des DTO. <code>ProduitRepository</code> les implémente toutes ; les tests, eux, remplacent chaque interface par un faux objet (Moq).</p>
+            <div class="cours-files" data-files="aspnet-repo"></div>
+            <div class="cours-files" data-files="aspnet-api"></div>
+            <div class="cours-files" data-files="aspnet-model"></div>
+            <p class="cours-source">La chaîne de connexion de développement est masquée ici.</p>
+
+            <h3 id="api">L’API en fonctionnement</h3>
+            <div class="cours-demo">
+                <p>J’ai lancé l’API (<code>dotnet run</code>, .NET 8) sur une base PostgreSQL locale créée par mes migrations EF Core, remplie avec un petit <b>jeu de données de démonstration</b> (6 produits, 4 marques, 4 types). Les réponses ci-dessous sont celles qu’elle a réellement renvoyées.</p>
+                <div class="cours-api"><div class="cours-api-list" id="apiList" role="group" aria-label="Requêtes"></div><div class="cours-api-out" id="apiOut" aria-live="polite"></div></div>
+            </div>
+
+            <h3 id="tests">Les tests</h3>
+            <p>Trois familles : tests unitaires des contrôleurs avec des dépôts simulés (Moq), tests du profil AutoMapper, et un test d’intégration qui crée puis relit un produit dans une vraie base PostgreSQL. Relancés pour cette page sur le dernier commit qui compile :</p>
+            <div class="cours-term">$ dotnet test TPRevisionTests
+  <span class="ok">Passed</span> GetAllMarque_ReturnsAllMarquesWithNbProduits [83 ms]
+  <span class="ok">Passed</span> GetMarqueById_ReturnsMarque_WhenIdExists [6 ms]
+  <span class="ok">Passed</span> GetMarqueById_ReturnsNotFound_WhenIdDoesNotExist [&lt; 1 ms]
+  <span class="ok">Passed</span> ShowIdGetAllProducts [5 ms]
+  <span class="ok">Passed</span> GetAllProducts_ReturnsEmptyList_WhenNoProductsExist [1 ms]
+  <span class="ok">Passed</span> GetProductById_ReturnsProduct_WhenIdExists [1 ms]
+  <span class="ok">Passed</span> GetProductById_ReturnsNotFound_WhenIdDoesNotExist [&lt; 1 ms]
+  <span class="ok">Passed</span> GetProductById_ReturnsEnReappro_WhenStockBelowMin [&lt; 1 ms]
+  <span class="ok">Passed</span> PostProduit_ThenGetProduit_ReturnsCreatedAndPersistedProduit [1 s]
+  <span class="ok">Passed</span> GetAllProduct_ReturnsAllTypesWithNbProduits [9 ms]
+  <span class="ok">Passed</span> GetProductById_ReturnsType_WhenIdExists [3 ms]
+  <span class="ok">Passed</span> GetProductById_ReturnsNotFound_WhenIdDoesNotExist [1 ms]
+  <span class="ok">Passed</span> Configuration_IsValid [71 ms]
+  <span class="ok">Passed</span> Map_ProduitToProduitDto_UsesNavigationNames [33 ms]
+  <span class="ok">Passed</span> Map_ProduitToProduitDetailDto_EnReappro_TrueWhenStockBelowMin [29 ms]
+  <span class="ok">Passed</span> Map_ProduitToProduitDetailDto_EnReappro_FalseWhenStockAboveMin [30 ms]
+  <span class="ok">Passed</span> Map_ProduitToProduitDetailDto_EnReappro_FalseWhenStockIsNull [29 ms]
+  <span class="ok">Passed</span> Map_MarqueToMarqueDto_CountsProduits [21 ms]
+  <span class="ok">Passed</span> Map_MarqueToMarqueDto_ZeroProduitsWhenEmpty [24 ms]
+  <span class="ok">Passed</span> Map_TypeProduitToTypeProduitDto_CountsProduits [21 ms]
+Total tests: 20
+     <span class="ok">Passed</span>: 20
+ Total time: 2.9960 Seconds
+</div>
+            <div class="cours-files" data-files="aspnet-tests"></div>
+
+            <h3 id="constats">Ce que l’exécution a révélé</h3>
+            <div class="cours-box constat"><span class="cours-box-title">Stock NULL → erreur 500</span><p><code>GET /Product/GetById/6</code> plante : le mapping <code>EnReappro = stockReel &lt; stockMin</code> est traduit en SQL par <code>ProjectTo</code>, et une comparaison avec NULL donne NULL, impossible à mettre dans un <code>bool</code>. Le test <code>EnReappro_FalseWhenStockIsNull</code> passe pourtant : il teste le mapping en mémoire, sans la base. Correctif possible : <code>src.stockReel != null &amp;&amp; src.stockMin != null &amp;&amp; src.stockReel &lt; src.stockMin</code>.</p></div>
+            <div class="cours-box constat"><span class="cours-box-title">Créer un produit renvoie 400</span><p><code>POST /Product/AddProduct</code> prend l’entité <code>Produit</code> en entrée ; ses navigations non nullables (<code>MarqueNavigation</code>, <code>TypeProduitNavigation</code>) deviennent obligatoires pour la validation. Un DTO d’entrée ne contenant que les identifiants règle le problème et évite d’exposer l’entité.</p></div>
+            <div class="cours-box piege"><span class="cours-box-title">Autres points relevés</span><ul>
+                <li>Routes incohérentes : <code>/Product/…</code> mais <code>/api/marque/…</code>, et des actions nommées <code>AddProduct</code> dans le contrôleur des marques (copier-coller). C’est ce que vise le contrôleur générique en cours.</li>
+                <li>PATCH est nommé <code>ModifyProduct</code> et PUT <code>ModifyProductPartially</code> : en REST, c’est l’inverse (PUT remplace, PATCH modifie partiellement).</li>
+                <li><code>UpdateAsync</code> et <code>DeleteAsync</code> ne sont pas attendus (<code>await</code>) dans le contrôleur, et <code>SaveAsync</code> n’est pas appelé après la mise à jour.</li>
+                <li><code>DELETE</code> renvoie 204 même si l’identifiant n’existe pas ; chaque action déclare les 8 codes de retour possibles.</li>
+            </ul></div>
+
+            <h3 id="encours">En cours : le contrôleur générique</h3>
+            <p>Le dernier commit (« a finir chez moi ») amorce un <code>CrudController&lt;T&gt;</code> pour factoriser les trois contrôleurs ; il ne compile pas encore (les dépendances ne sont pas injectées). Les tests ci-dessus tournent donc sur le commit précédent. La suite du module : un client Blazor Server en MVVM qui consommera l’API (projet <code>ClientBlazor</code>, pour l’instant le modèle de départ).</p>
+            <div class="cours-files" data-files="aspnet-wip"></div>
+
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-reviser" role="tabpanel" aria-labelledby="t-reviser" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            
+            <h2>Fiche de révision</h2>
+            <nav class="cours-toc" aria-label="Sommaire de la fiche">
+                <a href="#r-rest" class="cours-goto">REST et HTTP</a><a href="#r-aspnet" class="cours-goto">ASP.NET Core</a><a href="#r-ef" class="cours-goto">EF Core</a><a href="#r-solid" class="cours-goto">SOLID</a><a href="#r-dto" class="cours-goto">DTO et AutoMapper</a><a href="#r-tests" class="cours-goto">Tests</a><a href="#r-blazor" class="cours-goto">Blazor et MVVM</a><a href="#quiz" class="cours-goto">Quiz</a>
+            </nav>
+
+            <details class="cours-fiche" id="r-rest" open><summary>1. REST, verbes et codes HTTP</summary><div>
+                <table class="cours-table"><thead><tr><th>Verbe</th><th>Rôle</th><th>Idempotent</th><th>Réponse type</th></tr></thead><tbody>
+                    <tr><td><code>GET</code></td><td>Lire</td><td>oui</td><td>200 OK, 404</td></tr>
+                    <tr><td><code>POST</code></td><td>Créer</td><td>non</td><td>201 Created + en-tête Location (<code>CreatedAtAction</code>)</td></tr>
+                    <tr><td><code>PUT</code></td><td>Remplacer entièrement</td><td>oui</td><td>200 ou 204</td></tr>
+                    <tr><td><code>PATCH</code></td><td>Modifier partiellement</td><td>pas forcément</td><td>200 ou 204</td></tr>
+                    <tr><td><code>DELETE</code></td><td>Supprimer</td><td>oui</td><td>204 No Content, 404</td></tr></tbody></table>
+                <table class="cours-table"><tbody>
+                    <tr><td><b>200</b> OK</td><td><b>201</b> Created</td><td><b>204</b> No Content</td></tr>
+                    <tr><td><b>400</b> Bad Request (entrée invalide)</td><td><b>401</b> non authentifié</td><td><b>403</b> authentifié mais interdit</td></tr>
+                    <tr><td><b>404</b> Not Found</td><td><b>409</b> Conflict</td><td><b>500</b> erreur serveur</td></tr></tbody></table>
+                <ul><li>Une ressource = un nom au pluriel : <code>GET /api/produits/2</code> plutôt que <code>/Product/GetById/2</code>.</li><li>Sans état (stateless) : chaque requête porte tout ce qu’il faut pour être traitée.</li><li>Idempotent : répéter la requête donne le même état final.</li></ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-aspnet"><summary>2. ASP.NET Core Web API</summary><div>
+                <pre class="cours-src" data-lang="cs" data-title="Program.cs : enregistrer les services">builder.Services.AddDbContext&lt;DbProduitsContext&gt;(o =&gt; o.UseNpgsql(cs));
+builder.Services.AddScoped&lt;IProduitRepository, ProduitRepository&gt;();
+builder.Services.AddScoped&lt;IQueryService&lt;ProduitDto, ProduitDetailDto&gt;, ProduitRepository&gt;();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddControllers();</pre>
+                <table class="cours-table"><thead><tr><th>Durée de vie</th><th>Une instance par…</th><th>Exemple</th></tr></thead><tbody>
+                    <tr><td><code>AddTransient</code></td><td>injection</td><td>service léger sans état</td></tr>
+                    <tr><td><code>AddScoped</code></td><td>requête HTTP</td><td>DbContext, dépôts</td></tr>
+                    <tr><td><code>AddSingleton</code></td><td>application</td><td>cache, configuration</td></tr></tbody></table>
+                <ul>
+                    <li><code>[ApiController]</code> : validation automatique du modèle (400 si invalide), binding intelligent.</li>
+                    <li><code>[Route("api/[controller]")]</code>, <code>[HttpGet("{id}")]</code> : routage par attributs.</li>
+                    <li><code>ActionResult&lt;T&gt;</code> permet de renvoyer soit un T (200), soit un résultat (<code>NotFound()</code>, <code>BadRequest()</code>).</li>
+                    <li><code>CreatedAtAction(nameof(GetById), new { id }, obj)</code> : 201 + URL de la nouvelle ressource.</li>
+                    <li>Toujours <code>await</code> les méthodes asynchrones, sinon l’action peut répondre avant la fin de l’opération.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-ef"><summary>3. Entity Framework Core</summary><div>
+                <ul>
+                    <li><b>DbContext</b> = session avec la base ; <b>DbSet&lt;T&gt;</b> = une table. Approche « database first » (scaffold) ou « code first » (migrations).</li>
+                    <li>Annotations : <code>[Table]</code>, <code>[Column]</code>, <code>[Key]</code>, <code>[StringLength]</code>, <code>[ForeignKey]</code>, <code>[InverseProperty]</code> ; ou configuration fluente dans <code>OnModelCreating</code>.</li>
+                    <li>Propriétés de navigation : <code>MarqueNavigation</code> (vers un) et <code>produits</code> (vers plusieurs). Chargement explicite avec <code>.Include(p =&gt; p.MarqueNavigation)</code>.</li>
+                    <li>Migrations : <code>dotnet ef migrations add Nom</code>, <code>dotnet ef database update</code>.</li>
+                    <li><code>SaveChangesAsync()</code> envoie les ajouts, modifications et suppressions suivis par le contexte. <code>ExecuteDeleteAsync()</code> supprime directement en SQL, sans suivi.</li>
+                    <li><code>AsNoTracking()</code> pour la lecture seule ; <code>ProjectTo&lt;Dto&gt;()</code> fait calculer la projection par la base (seules les colonnes utiles sont lues).</li>
+                    <li>Cycles de sérialisation (produit → marque → produits…) : <code>ReferenceHandler.IgnoreCycles</code> ou, mieux, renvoyer des DTO.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-solid"><summary>4. Les principes SOLID, illustrés par TPRevision</summary><div>
+                <table class="cours-table"><thead><tr><th>Principe</th><th>Idée</th><th>Dans mon TD</th></tr></thead><tbody>
+                    <tr><td><b>S</b> responsabilité unique</td><td>Une classe, une raison de changer</td><td>Le contrôleur gère HTTP, le dépôt l’accès aux données, le profil le mapping</td></tr>
+                    <tr><td><b>O</b> ouvert/fermé</td><td>Étendre sans modifier</td><td>Nouvelle entité = nouvelle implémentation des mêmes interfaces génériques</td></tr>
+                    <tr><td><b>L</b> substitution de Liskov</td><td>Une implémentation remplace son abstraction sans surprise</td><td>Le faux dépôt Moq remplace <code>ProduitRepository</code> dans les tests</td></tr>
+                    <tr><td><b>I</b> ségrégation des interfaces</td><td>Des petites interfaces ciblées</td><td><code>IReadable</code>, <code>IWritable</code>, <code>IDetailReadable</code>, <code>ISearchable</code>, <code>IQueryService</code></td></tr>
+                    <tr><td><b>D</b> inversion des dépendances</td><td>Dépendre d’abstractions, injectées</td><td>Le contrôleur reçoit des interfaces par son constructeur</td></tr></tbody></table>
+                <div class="cours-box retenir"><span class="cours-box-title">Pattern Repository</span><p>Isoler l’accès aux données derrière une interface : le reste de l’application ne sait pas qu’il y a EF Core et PostgreSQL derrière, et on peut le simuler dans les tests.</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-dto"><summary>5. DTO et AutoMapper</summary><div>
+                <ul>
+                    <li><b>DTO</b> (Data Transfer Object) : l’objet qui sort (ou entre) par l’API. On n’expose pas l’entité : pas de cycles, pas de colonnes internes, un contrat stable même si la base change.</li>
+                    <li>DTO de liste (léger) et DTO de détail : <code>ProduitDto</code> / <code>ProduitDetailDto</code>. Un DTO d’entrée pour POST/PUT.</li>
+                    <li>AutoMapper : <code>CreateMap&lt;Source, Dest&gt;().ForMember(d =&gt; d.Nom, o =&gt; o.MapFrom(s =&gt; s.NomProduit))</code>.</li>
+                    <li><code>mapper.Map&lt;Dto&gt;(entite)</code> en mémoire ; <code>query.ProjectTo&lt;Dto&gt;(config)</code> traduit le mapping en SQL (attention aux expressions qui se comportent différemment en SQL, comme la comparaison avec NULL).</li>
+                    <li>Tester la configuration : <code>config.AssertConfigurationIsValid()</code> (mon test <code>Configuration_IsValid</code>).</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-tests"><summary>6. Tests avec MSTest et Moq</summary><div>
+                <pre class="cours-src" data-lang="cs" data-title="un test unitaire, structure Given / When / Then">[TestMethod]
+public async Task GetProductById_ReturnsNotFound_WhenIdDoesNotExist()
+{
+    // Given : le service simulé ne trouve rien
+    _queryServiceMock.Setup(qs =&gt; qs.GetByIdDtoAsync(999))
+                     .ReturnsAsync((ProduitDetailDto)null);
+    // When
+    var actionResult = await _controller.GetProductById(999);
+    // Then
+    Assert.IsInstanceOfType(actionResult.Result, typeof(NotFoundResult));
+}</pre>
+                <ul>
+                    <li>MSTest : <code>[TestClass]</code>, <code>[TestMethod]</code>, <code>[TestInitialize]</code> (avant chaque test), <code>[TestCleanup]</code>, <code>Assert.AreEqual / IsNotNull / IsInstanceOfType</code>.</li>
+                    <li>Moq : <code>new Mock&lt;IInterface&gt;()</code>, <code>.Setup(...).ReturnsAsync(...)</code>, <code>.Verify(m =&gt; m.SaveAsync(), Times.Once)</code>, <code>mock.Object</code> pour l’injecter.</li>
+                    <li>Unitaire = une classe isolée, dépendances simulées, rapide. Intégration = plusieurs couches réelles (ici une vraie base PostgreSQL recréée avec <code>EnsureDeleted/EnsureCreated</code>).</li>
+                    <li>Nommer un test : <code>Methode_Resultat_Condition</code>.</li>
+                    <li>Base InMemory : pratique mais ne reproduit pas le SQL (contraintes, NULL) ; mon bug du stock NULL ne se voit qu’avec une vraie base.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-blazor"><summary>7. Ce qui arrive : Blazor Server et MVVM</summary><div>
+                <ul>
+                    <li><b>Blazor Server</b> : des composants <code>.razor</code> (HTML + C#) exécutés sur le serveur ; l’interface est mise à jour dans le navigateur via une connexion SignalR.</li>
+                    <li><b>MVVM</b> : la Vue (composant) s’affiche à partir d’un ViewModel qui expose l’état et les commandes ; le Modèle et les services (appels à l’API par <code>HttpClient</code>) restent à part.</li>
+                    <li>CommunityToolkit.Mvvm : <code>[ObservableProperty]</code> génère la propriété notifiante, <code>[RelayCommand]</code> la commande.</li>
+                </ul>
+            </div></details>
+
+            <h2 id="quiz">Quiz</h2>
+            <div class="cours-quiz" data-quiz="aspnet"></div>
+            <h2 id="cartes">Cartes mémo</h2>
+            <div class="cours-cards" data-cards="aspnet"></div>
+
+        </div>
+    </section>
+    </main>
+<script>
+window.COURS_QUIZ = Object.assign(window.COURS_QUIZ || {}, { aspnet: [
+ { q: 'Quel code HTTP doit renvoyer une création réussie ?', c: ['201 Created', '200 OK', '204 No Content', '202 Accepted'], a: 0, w: 'CreatedAtAction renvoie 201 avec l’en-tête Location qui pointe vers la nouvelle ressource.' },
+ { q: 'Quelle est la différence entre PUT et PATCH ?', c: ['PUT remplace la ressource, PATCH la modifie partiellement', 'PUT modifie partiellement, PATCH remplace', 'Aucune', 'PATCH crée la ressource'], a: 0, w: 'Dans TPRevision, les noms sont inversés (PATCH « ModifyProduct », PUT « ModifyProductPartially ») : à corriger.' },
+ { q: 'Quelle durée de vie convient à un DbContext ?', c: ['Scoped (une instance par requête)', 'Singleton', 'Transient', 'Static'], a: 0, w: 'AddDbContext l’enregistre en Scoped : une instance par requête HTTP, ni partagée entre utilisateurs, ni recréée à chaque injection.' },
+ { q: 'Que fait <code>[ApiController]</code> ?', c: ['Valide automatiquement le modèle et répond 400 s’il est invalide', 'Ajoute l’authentification', 'Génère Swagger', 'Rend les actions asynchrones'], a: 0, w: 'C’est pour cela que le POST de TPRevision répond 400 : les navigations non nullables de l’entité sont jugées obligatoires.' },
+ { q: 'Pourquoi renvoyer des DTO plutôt que les entités ?', c: ['Pour maîtriser le contrat de l’API et éviter cycles et données internes', 'Parce que les entités ne sont pas sérialisables', 'Pour aller plus vite à l’écriture', 'C’est obligatoire avec EF Core'], a: 0, w: 'GetAllWithDetails montre les entités brutes : listes imbriquées, cycles produit → marque → produits. Le DTO ne contient que ce dont le client a besoin.' },
+ { q: 'Que fait <code>ProjectTo&lt;ProduitDto&gt;()</code> ?', c: ['Traduit le mapping AutoMapper en requête SQL', 'Charge toutes les entités puis les mappe en mémoire', 'Crée la table', 'Valide le DTO'], a: 0, w: 'La projection est faite par la base : seules les colonnes utiles sont lues. Revers : les expressions suivent la logique SQL (NULL), d’où le 500 sur un stock NULL.' },
+ { q: 'Quel principe SOLID applique le découpage en IReadable, IWritable, ISearchable… ?', c: ['Ségrégation des interfaces', 'Ouvert/fermé', 'Substitution de Liskov', 'Responsabilité unique'], a: 0, w: 'Interface Segregation : un client ne dépend que des méthodes qu’il utilise.' },
+ { q: 'Le contrôleur reçoit <code>IProduitRepository</code> par son constructeur. Quel principe est appliqué ?', c: ['Inversion des dépendances', 'Ségrégation des interfaces', 'Ouvert/fermé', 'Aucun'], a: 0, w: 'Il dépend d’une abstraction, fournie par le conteneur d’injection : on peut la remplacer par un faux objet dans les tests.' },
+ { q: 'Avec Moq, comment simuler une méthode asynchrone qui renvoie une liste ?', c: ['mock.Setup(m => m.GetAllDtoAsync()).ReturnsAsync(liste)', 'mock.Returns(liste)', 'mock.Object = liste', 'new Mock(liste)'], a: 0, w: 'Setup choisit l’appel à simuler, ReturnsAsync fournit le résultat de la tâche. mock.Object est l’instance à injecter.' },
+ { q: 'Pourquoi le test « EnReappro_FalseWhenStockIsNull » passe-t-il alors que l’API renvoie 500 ?', c: ['Il teste le mapping en mémoire, pas sa traduction SQL', 'Le test est mal écrit', 'La base est vide', 'Le test est ignoré'], a: 0, w: 'En C#, null < 5 vaut false. En SQL, NULL < 5 vaut NULL. Seul un test d’intégration sur une vraie base le révèle.' },
+ { q: 'Que fait <code>.Include(p => p.MarqueNavigation)</code> ?', c: ['Charge la marque liée dans la même requête', 'Ajoute une marque', 'Filtre par marque', 'Crée la clé étrangère'], a: 0, w: 'Chargement explicite (eager loading) des propriétés de navigation, avec une jointure SQL.' },
+ { q: 'Quelle commande applique les migrations à la base ?', c: ['dotnet ef database update', 'dotnet ef migrations add', 'dotnet build', 'dotnet ef dbcontext scaffold'], a: 0, w: 'migrations add crée une migration ; database update l’applique. scaffold génère les entités depuis une base existante.' },
+ { q: 'Que renvoie une action qui ne trouve pas la ressource ?', c: ['NotFound() → 404', 'Ok(null) → 200', 'BadRequest() → 400', 'NoContent() → 204'], a: 0, w: 'Mon test GetProductById_ReturnsNotFound_WhenIdDoesNotExist vérifie exactement ce cas.' },
+ { q: 'Pourquoi faut-il <code>await</code> <code>repo.UpdateAsync(...)</code> dans le contrôleur ?', c: ['Sinon l’action peut répondre avant la fin de l’opération (et les erreurs sont perdues)', 'Pour que ça compile', 'Pour la performance', 'Ce n’est pas utile'], a: 0, w: 'Sans await, la tâche continue en arrière-plan : réponse envoyée trop tôt, exceptions non observées, et ici SaveAsync n’est même pas appelé.' },
+ { q: 'Différence entre test unitaire et test d’intégration ?', c: ['L’unitaire isole une classe avec des dépendances simulées ; l’intégration fait collaborer de vraies couches', 'L’unitaire est plus lent', 'L’intégration n’utilise pas de framework', 'Aucune'], a: 0, w: 'TPRevision a les deux : contrôleurs avec Moq, et un test qui écrit puis relit un produit dans PostgreSQL.' },
+ { q: 'À quoi sert <code>[TestInitialize]</code> ?', c: ['Exécuter une préparation avant chaque test', 'Exécuter le test une seule fois', 'Ignorer un test', 'Nettoyer après les tests'], a: 0, w: 'Chaque test repart d’objets neufs (mocks, contrôleur) : les tests restent indépendants. [TestCleanup] fait l’inverse.' },
+ { q: 'Dans Blazor Server, où s’exécute le code C# des composants ?', c: ['Sur le serveur, l’interface est mise à jour via SignalR', 'Dans le navigateur en WebAssembly', 'Dans une base de données', 'Dans un service worker'], a: 0, w: 'Blazor WebAssembly exécuterait le code dans le navigateur ; Blazor Server le garde côté serveur.' }
+]});
+window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { aspnet: [
+ ['201 Created', 'Création réussie, avec l’URL de la ressource (CreatedAtAction).'],
+ ['204 No Content', 'Succès sans corps de réponse (souvent DELETE, PUT).'],
+ ['400 / 404 / 500', 'Entrée invalide / ressource introuvable / erreur serveur.'],
+ ['Idempotent', 'Répéter la requête laisse le même état : GET, PUT, DELETE.'],
+ ['AddScoped', 'Une instance par requête HTTP (DbContext, dépôts).'],
+ ['ActionResult&lt;T&gt;', 'Renvoie un T (200) ou un résultat HTTP (NotFound, BadRequest…).'],
+ ['DbContext', 'Session avec la base ; DbSet = une table.'],
+ ['Include', 'Charge une navigation dans la même requête (jointure).'],
+ ['Migration', 'Évolution versionnée du schéma : migrations add, database update.'],
+ ['DTO', 'Objet de transfert : le contrat de l’API, pas l’entité.'],
+ ['ProjectTo', 'Mapping AutoMapper traduit en SQL.'],
+ ['ForMember / MapFrom', 'Règle de mapping d’une propriété dans AutoMapper.'],
+ ['S de SOLID', 'Responsabilité unique : une raison de changer.'],
+ ['O de SOLID', 'Ouvert à l’extension, fermé à la modification.'],
+ ['L de SOLID', 'Une implémentation remplace son abstraction sans surprise.'],
+ ['I de SOLID', 'Plusieurs petites interfaces plutôt qu’une grosse.'],
+ ['D de SOLID', 'Dépendre d’abstractions injectées, pas d’implémentations.'],
+ ['Repository', 'Interface qui isole l’accès aux données.'],
+ ['Moq Setup / ReturnsAsync', 'Choisir l’appel simulé / fournir son résultat asynchrone.'],
+ ['Moq Verify', 'Vérifier qu’une méthode a été appelée (Times.Once…).'],
+ ['Given / When / Then', 'Préparer, agir, vérifier (équivalent AAA).'],
+ ['Test d’intégration', 'Plusieurs couches réelles ensemble, ici avec PostgreSQL.'],
+ ['NULL en SQL', 'NULL &lt; 5 vaut NULL (pas false) : piège des projections.'],
+ ['Blazor Server', 'Composants .razor exécutés sur le serveur, UI via SignalR.'],
+ ['MVVM', 'Vue liée à un ViewModel qui expose état et commandes.']
+]});
+</script>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="cours/aspnet-data.js"></script>
+    <script src="cours/aspnet-demos.js"></script>
+    <script src="cours/cours.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
