@@ -10,6 +10,7 @@ const translations = {
             zelda: "Carte du jeu Zelda en mode texte"
         },
         metaPages: {
+            coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
             journey: 'Parcours | Matéo Bourdin',
             projects: 'Projets | Matéo Bourdin',
             now: 'Cours actuels | Matéo Bourdin',
@@ -19,6 +20,40 @@ const translations = {
             ski: 'Descente à Combloux | Matéo Bourdin',
             naval: 'Défends l’île | Matéo Bourdin',
             bug: 'Trouve le bug | Matéo Bourdin'
+        },
+        courses: {
+            "back": "← Tous mes cours",
+            "detail": "Page détaillée : rendus, démos et révisions →",
+            "frNote": "Detailed write-ups and revision notes are in French: they are my own study notes.",
+            "tabs": {
+                "presentation": "Présentation",
+                "rendus": "Rendus et démos",
+                "reviser": "Réviser"
+            },
+            "docker": {
+                "tag": "🐳 Cours actuel · BUT3",
+                "title": "Docker, CI/CD et Kubernetes",
+                "desc": "Des images Docker aux pipelines GitLab complets : 18 exercices publics, rejoués et expliqués.",
+                "gitlab": "Mes exercices sur GitLab",
+                "p1": "Dans ce module de virtualisation, j’ai construit 18 pipelines GitLab CI/CD, du « Hello World » jusqu’aux tests de bout en bout. Chaque exercice est un dépôt public avec son historique et le résultat de son dernier pipeline.",
+                "s1": "dépôts GitLab publics",
+                "s2": "pipelines au vert",
+                "s3": "types de tests automatisés",
+                "s4": "jobs dans les derniers pipelines",
+                "learnTitle": "Ce que j’y ai appris",
+                "l1t": "Construire des images",
+                "l1": "Écrire des Dockerfile légers, ordonner les couches pour le cache et publier dans un registre avec des tags fiables.",
+                "l2t": "Orchestrer un pipeline",
+                "l2": "Étapes, dépendances entre jobs, artefacts, cache, jobs manuels, modèles réutilisables et matrices de versions.",
+                "l3t": "Tester à tous les niveaux",
+                "l3": "Lint, tests unitaires, intégration avec une vraie base, bout en bout dans un navigateur, charge et benchmark.",
+                "l4t": "Sécuriser la chaîne",
+                "l4": "Analyse du code et des dépendances, variables protégées et masquées, identifiants jamais écrits dans les logs.",
+                "applyTitle": "Appliqué à ce portfolio",
+                "apply": "Ce site utilise les mêmes principes : à chaque modification, GitHub Actions vérifie les traductions, le HTML, les liens et l’absence de secrets avant la mise en ligne.",
+                "nextTitle": "La suite du module",
+                "next": "Kubernetes arrive dans la prochaine partie du cours. Cette page sera complétée au fil des séances."
+            }
         },
         meta: {
             title: 'Matéo Bourdin - Étudiant en informatique | Portfolio',
@@ -444,9 +479,9 @@ const translations = {
             "rightsTitle": "Vos droits",
             "rightsText": "Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.",
             "storageTitle": "Cookies et stockage local",
-            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien.",
+            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien.",
             "thirdTitle": "Contenus tiers",
-            "thirdText": "Les polices, les bibliothèques et les fichiers des jeux (images, musiques, sons) sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
+            "thirdText": "Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
             "policies": "Politiques de confidentialité des services cités :",
             "ipTitle": "Propriété intellectuelle et crédits",
             "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les logos et marques cités appartiennent à leurs propriétaires."
@@ -544,6 +579,7 @@ const translations = {
             zelda: "Map of the text-mode Zelda game"
         },
         metaPages: {
+            coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
             journey: 'Background | Matéo Bourdin',
             projects: 'Projects | Matéo Bourdin',
             now: 'Current courses | Matéo Bourdin',
@@ -553,6 +589,40 @@ const translations = {
             ski: 'Combloux Downhill | Matéo Bourdin',
             naval: 'Defend the Island | Matéo Bourdin',
             bug: 'Spot the Bug | Matéo Bourdin'
+        },
+        courses: {
+            "back": "← All my courses",
+            "detail": "Detailed page: deliverables, demos and revision →",
+            "frNote": "Detailed write-ups and revision notes are in French: they are my own study notes.",
+            "tabs": {
+                "presentation": "Overview",
+                "rendus": "Work and demos",
+                "reviser": "Revise"
+            },
+            "docker": {
+                "tag": "🐳 Current course · Year 3",
+                "title": "Docker, CI/CD and Kubernetes",
+                "desc": "From Docker images to complete GitLab pipelines: 18 public exercises, replayed and explained.",
+                "gitlab": "My exercises on GitLab",
+                "p1": "In this virtualisation module, I built 18 GitLab CI/CD pipelines, from “Hello World” to end-to-end tests. Each exercise is a public repository with its history and the result of its latest pipeline.",
+                "s1": "public GitLab repositories",
+                "s2": "green pipelines",
+                "s3": "kinds of automated tests",
+                "s4": "jobs in the latest pipelines",
+                "learnTitle": "What I learned",
+                "l1t": "Building images",
+                "l1": "Writing lean Dockerfiles, ordering layers for caching and publishing to a registry with reliable tags.",
+                "l2t": "Orchestrating a pipeline",
+                "l2": "Stages, job dependencies, artifacts, cache, manual jobs, reusable templates and version matrices.",
+                "l3t": "Testing at every level",
+                "l3": "Linting, unit tests, integration against a real database, end-to-end in a browser, load tests and benchmarks.",
+                "l4t": "Securing the chain",
+                "l4": "Code and dependency scanning, protected and masked variables, credentials never written to logs.",
+                "applyTitle": "Applied to this portfolio",
+                "apply": "This site follows the same principles: on every change, GitHub Actions checks translations, HTML, links and leaked secrets before publishing.",
+                "nextTitle": "Next in the module",
+                "next": "Kubernetes comes in the next part of the course. This page will be updated as sessions go on."
+            }
         },
         meta: {
             title: 'Matéo Bourdin - Computer Science Student | Portfolio',
@@ -978,9 +1048,9 @@ const translations = {
             "rightsTitle": "Your rights",
             "rightsText": "You can request access to, correction or deletion of your data, or object to its processing, by writing to mateo.bourdin@etu.univ-smb.fr. If you believe your rights are not respected, you can lodge a complaint with the CNIL (French data protection authority).",
             "storageTitle": "Cookies and local storage",
-            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and progress in the mini-games. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing.",
+            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and progress in the mini-games and the revision quizzes on the course pages. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing.",
             "thirdTitle": "Third-party content",
-            "thirdText": "Fonts, libraries and game files (images, music, sounds) are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
+            "thirdText": "Fonts, libraries (including Pyodide, which runs Python in the demos), game files (images, music, sounds) and course demo files are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
             "policies": "Privacy policies of the services mentioned:",
             "ipTitle": "Intellectual property and credits",
             "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. The logos and brands mentioned belong to their owners."

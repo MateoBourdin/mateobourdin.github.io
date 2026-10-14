@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker, CI/CD et Kubernetes | Matéo Bourdin</title>
+    <meta name="description" content="18 pipelines GitLab CI/CD réalisés en BUT3 : images Docker, registre, tests unitaires, d’intégration, de bout en bout, de charge et de sécurité, avec démos et fiche de révision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/cours-docker.html">
+    <meta property="og:title" content="Docker, CI/CD et Kubernetes | Matéo Bourdin">
+    <meta property="og:description" content="18 pipelines GitLab CI/CD réalisés en BUT3 : images Docker, registre, tests unitaires, d’intégration, de bout en bout, de charge et de sécurité, avec démos et fiche de révision.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Docker, CI/CD et Kubernetes | Matéo Bourdin">
+    <meta name="twitter:description" content="18 pipelines GitLab CI/CD réalisés en BUT3 : images Docker, registre, tests unitaires, d’intégration, de bout en bout, de charge et de sécurité, avec démos et fiche de révision.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cours/cours.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="coursDocker">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="jeux.html" data-i18n="nav.arcade">Arcade</a></li>
+                    <li><a href="cours.html" class="active" aria-current="page" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero cours-hero">
+        <div class="container">
+            <a href="cours.html" class="cours-back" data-i18n="courses.back">← Tous mes cours</a>
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="courses.docker.tag">🐳 Cours actuel · BUT3</span></span>
+                <h1 data-i18n="courses.docker.title">Docker, CI/CD et Kubernetes</h1>
+                <p data-i18n="courses.docker.desc">Des images Docker aux pipelines GitLab complets : 18 exercices publics, rejoués et expliqués.</p>
+                <div class="cours-meta"><span>18 dépôts GitLab</span><span>Docker</span><span>GitLab CI/CD</span><span>Cypress</span><span>k6</span><span>Sécurité</span></div>
+                <div class="cours-links"><a href="https://gitlab.com/bourdin_mateo/virtualisation" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><span data-i18n="courses.docker.gitlab">Mes exercices sur GitLab</span> ↗</a></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cours-tabs-bar">
+        <div class="container">
+            <div class="cours-tabs" role="tablist" aria-label="Sections du cours">
+                <button type="button" class="cours-tab" role="tab" id="t-presentation" aria-controls="tab-presentation" data-tab="presentation" data-i18n="courses.tabs.presentation">Présentation</button>
+                <button type="button" class="cours-tab" role="tab" id="t-rendus" aria-controls="tab-rendus" data-tab="rendus" data-i18n="courses.tabs.rendus">Rendus et démos</button>
+                <button type="button" class="cours-tab" role="tab" id="t-reviser" aria-controls="tab-reviser" data-tab="reviser" data-i18n="courses.tabs.reviser">Réviser</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+    <section class="cours-panel" id="tab-presentation" role="tabpanel" aria-labelledby="t-presentation">
+        <div class="container">
+            <p class="cours-lead" data-i18n="courses.docker.p1">Dans ce module de virtualisation, j’ai construit 18 pipelines GitLab CI/CD, du « Hello World » jusqu’aux tests de bout en bout. Chaque exercice est un dépôt public avec son historique et le résultat de son dernier pipeline.</p>
+            <div class="cours-stats">
+                <div class="cours-stat"><b>18</b><span data-i18n="courses.docker.s1">dépôts GitLab publics</span></div>
+                <div class="cours-stat"><b>17</b><span data-i18n="courses.docker.s2">pipelines au vert</span></div>
+                <div class="cours-stat"><b>7</b><span data-i18n="courses.docker.s3">types de tests automatisés</span></div>
+                <div class="cours-stat"><b>32</b><span data-i18n="courses.docker.s4">jobs dans les derniers pipelines</span></div>
+            </div>
+            <h2 data-i18n="courses.docker.learnTitle">Ce que j’y ai appris</h2>
+            <div class="cours-grid">
+                <div class="cours-card"><span class="cours-card-icon">🐳</span><h3 data-i18n="courses.docker.l1t">Construire des images</h3><p data-i18n="courses.docker.l1">Écrire des Dockerfile légers, ordonner les couches pour le cache et publier dans un registre avec des tags fiables.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">⚙️</span><h3 data-i18n="courses.docker.l2t">Orchestrer un pipeline</h3><p data-i18n="courses.docker.l2">Étapes, dépendances entre jobs, artefacts, cache, jobs manuels, modèles réutilisables et matrices de versions.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">🧪</span><h3 data-i18n="courses.docker.l3t">Tester à tous les niveaux</h3><p data-i18n="courses.docker.l3">Lint, tests unitaires, intégration avec une vraie base, bout en bout dans un navigateur, charge et benchmark.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">🔐</span><h3 data-i18n="courses.docker.l4t">Sécuriser la chaîne</h3><p data-i18n="courses.docker.l4">Analyse du code et des dépendances, variables protégées et masquées, identifiants jamais écrits dans les logs.</p></div>
+            </div>
+            <h2 data-i18n="courses.docker.applyTitle">Appliqué à ce portfolio</h2>
+            <p data-i18n="courses.docker.apply">Ce site utilise les mêmes principes : à chaque modification, GitHub Actions vérifie les traductions, le HTML, les liens et l’absence de secrets avant la mise en ligne.</p>
+            <h2 data-i18n="courses.docker.nextTitle">La suite du module</h2>
+            <p data-i18n="courses.docker.next">Kubernetes arrive dans la prochaine partie du cours. Cette page sera complétée au fil des séances.</p>
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-rendus" role="tabpanel" aria-labelledby="t-rendus" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            <h2>Les 18 exercices</h2>
+            <p>Pour chaque exercice : ce qu’il fait, son pipeline et ses fichiers. Les pipelines affichent le <b>statut et la durée réels</b> de chaque job lors du dernier passage sur GitLab (données publiques de l’API GitLab) ; « Rejouer » les anime en accéléré. Les sorties de terminal ont été obtenues en <b>relançant le code de l’exercice</b> pour cette page, sur une autre machine que les runners GitLab.</p>
+            <nav class="cours-toc" aria-label="Groupes d’exercices"><a href="#g-bases" class="cours-goto">Images</a><a href="#g-web" class="cours-goto">Web</a><a href="#g-pages" class="cours-goto">Pages</a><a href="#g-qualite" class="cours-goto">Tests</a><a href="#g-perf" class="cours-goto">Perf et sécurité</a><a href="#demos" class="cours-goto">Démos</a></nav>
+            <h3 id="g-bases">1. Premiers pas et images Docker</h3>
+            <details class="cours-ex" id="ex-ex1">
+                <summary><span class="cours-ex-num">ex1</span><span class="cours-ex-title">Premier pipeline<small>Un job, une image, un script</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Le pipeline le plus simple possible : un seul job <code>hello</code> qui démarre un conteneur <code>alpine</code> sur un runner partagé de GitLab et y exécute <code>echo "Hello World"</code>. Sans <code>stages:</code>, le job atterrit dans l’étape par défaut <code>test</code>.</p>
+                    <div class="cours-pipeline" data-pipeline="ex1"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex1">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex1" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex1"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex2">
+                <summary><span class="cours-ex-num">ex2</span><span class="cours-ex-title">Construire et publier une image<small>Docker-in-Docker et registre GitLab</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Le job démarre le service <code>docker:dind</code> (un démon Docker dans un conteneur), se connecte au registre du projet avec <code>--password-stdin</code> pour ne pas exposer le mot de passe, puis construit et pousse l’image sous deux tags : le SHA court du commit (immuable) et <code>latest</code> (mobile).</p>
+                    <div class="cours-pipeline" data-pipeline="ex2"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex2">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex2" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex2"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex3">
+                <summary><span class="cours-ex-num">ex3</span><span class="cours-ex-title">Installer Python dans une image Alpine<small><code>apk add --no-cache</code> et test de l’image</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>On part d’<code>alpine</code> et on installe Python avec <code>apk add --no-cache</code> (pas de cache d’index dans l’image, donc une couche plus légère). Le pipeline lance l’image avec <code>docker run --rm</code> avant de la pousser : si elle ne démarre pas, rien n’est publié.</p>
+                    <div class="cours-pipeline" data-pipeline="ex3"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex3">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex3" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex3"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex4">
+                <summary><span class="cours-ex-num">ex4</span><span class="cours-ex-title">Vérifier la version de Python<small>La commande par défaut <code>CMD</code></small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Même base que ex3, mais la commande par défaut de l’image (<code>CMD</code>) affiche la version installée : le log du job sert de preuve de ce que contient l’image.</p>
+                    <div class="cours-pipeline" data-pipeline="ex4"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex4">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex4" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex4"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex5">
+                <summary><span class="cours-ex-num">ex5</span><span class="cours-ex-title">Application Python avec dépendances<small>Image officielle et cache des couches</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Image <code>python:3.13-alpine</code>, dépendance <code>rich</code> épinglée dans <code>requirements.txt</code>. L’ordre compte : on copie <code>requirements.txt</code> et on installe <em>avant</em> de copier <code>app.py</code>, pour que modifier le code ne relance pas l’installation des dépendances.</p>
+                    <div class="cours-pipeline" data-pipeline="ex5"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex5">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex5" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex5"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex6">
+                <summary><span class="cours-ex-num">ex6</span><span class="cours-ex-title">Séparer construction et exécution<small>Deux étapes, dont une manuelle</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Le pipeline construit l’image dans <code>build</code>, puis un second job la tire du registre et l’exécute dans <code>run</code>. Ce job est en <code>when: manual</code> : il attend un clic, comme un déploiement qu’on déclenche volontairement.</p>
+                    <div class="cours-pipeline" data-pipeline="ex6"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex6">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex6" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex6"></div>
+                </div>
+            </details><h3 id="g-web">2. Applications web conteneurisées</h3>
+            <details class="cours-ex" id="ex-ex7">
+                <summary><span class="cours-ex-num">ex7</span><span class="cours-ex-title">Serveur PHP + Apache<small>Image <code>php:8.3-apache</code></small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Une page <code>phpinfo()</code> servie par Apache dans l’image officielle PHP. <code>EXPOSE 80</code> documente le port écouté, sans l’ouvrir : c’est <code>docker run -p</code> qui publie un port.</p>
+                    <div class="cours-pipeline" data-pipeline="ex7"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex7">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex7" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex7"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex8">
+                <summary><span class="cours-ex-num">ex8</span><span class="cours-ex-title">Pipeline complet : lint, build, test, release<small>L’image testée avant d’être publiée en <code>latest</code></small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Le premier vrai pipeline de livraison :</p>
+                    <ul><li><b>lint</b> : <code>php -l</code> vérifie la syntaxe (<code>allow_failure: true</code> : un échec ne bloque pas) ;</li><li><b>build</b> : construit l’image taguée par SHA et transmet son nom aux jobs suivants par un <b>artefact</b> <code>image.txt</code> ;</li><li><b>test</b> : lance le conteneur, interroge la page avec <code>curl</code> dans le conteneur et cherche « PHP Version » ;</li><li><b>release</b> : manuel, seulement sur <code>main</code>, retague l’image testée en <code>latest</code>.</li></ul>
+                    <p>Le modèle <code>.docker</code> (job caché, préfixé par un point) factorise l’image, le service et la connexion au registre, réutilisés avec <code>extends</code>.</p>
+                    <div class="cours-pipeline" data-pipeline="ex8"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex8">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex8" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex8"></div>
+                </div>
+            </details><h3 id="g-pages">3. Publier un site avec GitLab Pages</h3>
+            <details class="cours-ex" id="ex-ex9">
+                <summary><span class="cours-ex-num">ex9</span><span class="cours-ex-title">Mon portfolio sur GitLab Pages<small>Le job spécial <code>pages</code></small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Un job nommé <code>pages</code> qui publie le dossier <code>public/</code> en artefact suffit à GitLab pour mettre le site en ligne. J’y ai déployé une copie de ce portfolio (non reproduite ici). Le site est en accès restreint aux membres du projet.</p>
+                    <div class="cours-pipeline" data-pipeline="ex9"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex9">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex9" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex9"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex10">
+                <summary><span class="cours-ex-num">ex10</span><span class="cours-ex-title">Un sketch Processing en ligne<small>GitLab Pages + Processing.js</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Même principe avec un sketch Processing : un arbre fractal dont l’angle suit la souris. <a href="#demo-ex10" class="cours-goto">Le voir tourner plus bas ↓</a> · <a href="https://ex10-4b8e4a.gitlab.io/" target="_blank" rel="noopener noreferrer">site GitLab Pages ↗</a></p>
+                    <div class="cours-pipeline" data-pipeline="ex10"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex10">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex10" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex10"></div>
+                </div>
+            </details><h3 id="g-qualite">4. Qualité, tests et intégration</h3>
+            <details class="cours-ex" id="ex-ex11">
+                <summary><span class="cours-ex-num">ex11</span><span class="cours-ex-title">Projet Node : lint, tests, build<small>ESLint, Jest, cache npm</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Trois étapes sur <code>node:22-alpine</code>. <code>npm ci</code> installe exactement ce que fixe <code>package-lock.json</code>, et le <b>cache</b> (clé = le lockfile) évite de retélécharger les paquets à chaque job. Le build produit <code>dist/</code>, conservé une semaine en <b>artefact</b>.</p>
+                    <div class="cours-box piege"><span class="cours-box-title">Constat en relisant le dépôt</span><p><code>node_modules/</code> et <code>dist/</code> ont été commités (le <code>.gitignore</code> est vide). Ils sont régénérés par le pipeline : ils devraient être ignorés.</p></div>
+                    <div class="cours-pipeline" data-pipeline="ex11"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex11">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex11" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex11"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex12">
+                <summary><span class="cours-ex-num">ex12</span><span class="cours-ex-title">Test d’intégration API + PostgreSQL<small>Deux images, un réseau, une vraie base</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Deux images construites en parallèle : un backend Express qui parle à PostgreSQL et un frontend nginx. Le test d’intégration crée un réseau Docker, démarre <code>postgres:16-alpine</code>, attend qu’il soit prêt avec <code>pg_isready</code> dans une boucle, lance le backend sur le même réseau, puis appelle <code>/api/health</code> et <code>/api/db-health</code> depuis un conteneur <code>curl</code>. Sur le réseau, le nom du conteneur sert de nom d’hôte (<code>http://backend:3000</code>, <code>DB_HOST=db</code>).</p>
+                    <svg viewBox="0 0 640 170" role="img" aria-label="Réseau test-net : curl appelle backend:3000 qui interroge db:5432" style="width:100%;max-width:640px;display:block;margin:.5rem 0">
+                        <rect x="4" y="4" width="632" height="162" rx="14" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="6 5"/>
+                        <text x="18" y="26" font-size="13" fill="currentColor" opacity=".7">réseau Docker « test-net »</text>
+                        <g font-size="14" text-anchor="middle"><rect x="24" y="62" width="150" height="62" rx="10" fill="#6c7bd9" fill-opacity=".15" stroke="#6c7bd9"/><text x="99" y="90" fill="currentColor">curlimages/curl</text><text x="99" y="110" font-size="12" fill="currentColor" opacity=".7">smoke tests</text>
+                        <rect x="245" y="62" width="150" height="62" rx="10" fill="#3f8f74" fill-opacity=".15" stroke="#3f8f74"/><text x="320" y="90" fill="currentColor">backend</text><text x="320" y="110" font-size="12" fill="currentColor" opacity=".7">Express :3000</text>
+                        <rect x="466" y="62" width="150" height="62" rx="10" fill="#d97706" fill-opacity=".15" stroke="#d97706"/><text x="541" y="90" fill="currentColor">db</text><text x="541" y="110" font-size="12" fill="currentColor" opacity=".7">postgres:16 :5432</text></g>
+                        <g stroke="currentColor" stroke-opacity=".6" stroke-width="2" fill="none"><path d="M174 93 H240"/><path d="M395 93 H461"/></g>
+                        <g fill="currentColor" fill-opacity=".6"><path d="M240 88 l8 5 l-8 5z"/><path d="M461 88 l8 5 l-8 5z"/></g>
+                        <text x="207" y="84" font-size="11" text-anchor="middle" fill="currentColor" opacity=".7">GET /api/*</text><text x="428" y="84" font-size="11" text-anchor="middle" fill="currentColor" opacity=".7">SELECT 1</text>
+                    </svg>
+                    <div class="cours-pipeline" data-pipeline="ex12"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex12">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex12" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex12"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex16">
+                <summary><span class="cours-ex-num">ex16</span><span class="cours-ex-title">Matrices de versions<small><code>parallel:matrix</code> : 7 jobs en parallèle</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Les mêmes tests sur Python 3.8, 3.9, 3.10, 3.11 et Node 16, 18, 20. <code>parallel: matrix</code> crée un job par valeur de la variable, et l’image est choisie avec cette variable (<code>python:$PYTHON_VERSION-slim</code>). Chaque job produit son rapport JSON en artefact. <a href="#demo-tests" class="cours-goto">Lancer ces tests ici ↓</a></p>
+                    <div class="cours-pipeline" data-pipeline="ex16"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex16">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex16" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex16"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-endtoendtesting">
+                <summary><span class="cours-ex-num">ex17</span><span class="cours-ex-title">Tests de bout en bout avec Cypress<small>Pipeline en échec : cause trouvée et corrigée en local</small></span><span class="cours-ex-status st-failed">Pipeline ✕</span></summary>
+                <div class="cours-ex-body">
+                    <p>Cypress ouvre la page dans un vrai navigateur et vérifie le titre puis le message affiché au clic. Le pipeline a échoué : en relançant le job, l’erreur est <code>Could not find a Cypress configuration file</code>. La config est rangée dans <code>cypress/e2e/</code> et le test à la racine, alors que Cypress attend l’inverse. <a href="#demo-e2e" class="cours-goto">Voir la correction et rejouer le scénario ↓</a></p>
+                    <div class="cours-pipeline" data-pipeline="endtoendtesting"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="endtoendtesting">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/endtoendtesting" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="endtoendtesting"></div>
+                </div>
+            </details><h3 id="g-perf">5. Performance et sécurité</h3>
+            <details class="cours-ex" id="ex-ex13">
+                <summary><span class="cours-ex-num">ex13</span><span class="cours-ex-title">Benchmark Python contre Node.js<small>Deux mesures en parallèle, une comparaison</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Deux serveurs HTTP minimalistes, mesurés en parallèle : <code>pytest-benchmark</code> côté Python, <code>autocannon</code> côté Node. Le job <code>compare</code> récupère les deux rapports (artefacts des jobs dont il a besoin, via <code>needs</code>) et affiche les latences.</p>
+                    <div class="cours-term">$ python3 compare.py  <span class="dim"># relancé ici, pas sur un runner GitLab</span>
+Python  -&gt; avg: 6.88 ms, max: 9.03 ms
+Node.js -&gt; avg: 0.06 ms, max: 30.00 ms</div>
+                    <div class="cours-box constat"><span class="cours-box-title">Attention à ce que l’on compare</span><p>Côté Python, le test chronomètre un lot de 10 requêtes concurrentes (5 répétitions) ; côté Node, autocannon donne la latence moyenne d’<em>une</em> requête sur 5 secondes de charge. Les deux chiffres ne mesurent pas la même chose : pour comparer, il faut le même outil et la même charge sur les deux serveurs.</p></div>
+                    <div class="cours-pipeline" data-pipeline="ex13"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex13">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex13" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex13"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex15">
+                <summary><span class="cours-ex-num">ex15</span><span class="cours-ex-title">Test de charge avec k6<small>5 utilisateurs virtuels pendant 10 s</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>k6 simule 5 utilisateurs qui enchaînent des requêtes pendant 10 secondes et vérifie chaque réponse (<code>check</code> : statut 200). L’image <code>grafana/k6</code> a un point d’entrée qu’il faut neutraliser (<code>entrypoint: [""]</code>) pour que GitLab puisse lancer son propre shell. La cible est le site de démonstration public de k6.</p>
+                    <div class="cours-pipeline" data-pipeline="ex15"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex15">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex15" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex15"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-ex14">
+                <summary><span class="cours-ex-num">ex14</span><span class="cours-ex-title">Analyse de sécurité automatique<small>Bandit, Safety, npm audit</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>Trois analyses en parallèle dans une seule étape : <b>Bandit</b> lit le code Python à la recherche de motifs dangereux (analyse statique, SAST) ; <b>Safety</b> et <b>npm audit</b> comparent les dépendances aux bases de vulnérabilités connues (SCA). Les rapports JSON sont gardés en artefacts.</p>
+                    <div class="cours-term">$ bandit -r python  <span class="dim"># relancé ici</span>
+Test results:
+	<span class="ok">No issues identified.</span>
+Code scanned:
+	Total lines of code: 7
+
+$ npm audit
+<span class="ok">found 0 vulnerabilities</span></div>
+                    <div class="cours-box piege"><span class="cours-box-title">À savoir</span><p>Chaque commande se termine par <code>|| true</code> : le job est toujours vert, même si une faille est trouvée. Pratique pour collecter des rapports ; pour bloquer une livraison, il faudrait laisser le job échouer.</p></div>
+                    <div class="cours-pipeline" data-pipeline="ex14"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="ex14">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/ex14" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="ex14"></div>
+                </div>
+            </details>
+            <details class="cours-ex" id="ex-exextra">
+                <summary><span class="cours-ex-num">extra</span><span class="cours-ex-title">Variables protégées et branches protégées<small>Un secret disponible seulement là où il faut</small></span><span class="cours-ex-status st-success">Pipeline ✓</span></summary>
+                <div class="cours-ex-body">
+                    <p>La variable <code>DEPLOY_TOKEN</code> est déclarée <b>protégée</b> dans les réglages CI/CD : GitLab ne l’injecte que dans les pipelines des branches ou tags protégés. Le job affiche donc soit « non disponible », soit la longueur du jeton. L’exercice l’affichait aussi en clair pour le constater ; en vrai, on coche aussi <b>Masquer</b> pour que GitLab le remplace par <code>[MASKED]</code> dans les logs, et on ne l’affiche jamais.</p>
+                    <div class="cours-pipeline" data-pipeline="exextra"></div>
+                    <div class="cours-pipeline-actions"><button type="button" class="cours-btn ghost" data-replay="exextra">▶ Rejouer le pipeline</button><a href="https://gitlab.com/bourdin_mateo/virtualisation/exextra" target="_blank" rel="noopener noreferrer">Dépôt GitLab ↗</a></div>
+                    <div class="cours-files" data-files="exextra"></div>
+                </div>
+            </details>
+
+            <h2 id="demos">Démos dans le navigateur</h2>
+            <p>Le code des exercices, exécuté pour de vrai dans cette page.</p>
+
+            <div class="cours-demo" id="demo-tests">
+                <div class="cours-demo-head"><h3>Tests unitaires (ex11 et ex16)</h3></div>
+                <p>Les fichiers de test des dépôts, lancés tels quels avec un mini-lanceur compatible Jest pour le JavaScript, et avec Python compilé en WebAssembly (Pyodide) pour <code>test_calc.py</code>.</p>
+                <div class="cours-pipeline-actions" style="margin-bottom:.6rem">
+                    <label><input type="radio" name="jestProj" value="ex11" checked> ex11 · <code>test/index.test.js</code></label>
+                    <label><input type="radio" name="jestProj" value="ex16"> ex16 · <code>node/calc.test.js</code></label>
+                    <button type="button" class="cours-btn" id="jestRun">▶ Lancer les tests JS</button>
+                </div>
+                <div class="cours-term" id="jestTerm" aria-live="polite"><span class="dim">Résultat ici.</span></div>
+                <div class="cours-pipeline-actions"><button type="button" class="cours-btn" id="pyRun">▶ Lancer les tests Python (ex16)</button><span>Télécharge environ 10 Mo la première fois, depuis ce site.</span></div>
+                <div class="cours-term" id="pyTerm" aria-live="polite"><span class="dim">Résultat ici.</span></div>
+                <p class="cours-source">Pour comparaison, la sortie de <code>pytest -v</code> et de <code>jest</code> relancés en ligne de commande :</p>
+                <div class="cours-term">python/test_calc.py::test_add <span class="ok">PASSED</span>            [ 33%]
+python/test_calc.py::test_divide <span class="ok">PASSED</span>         [ 66%]
+python/test_calc.py::test_divide_by_zero <span class="ok">PASSED</span> [100%]
+<span class="ok">3 passed</span> in 0.02s
+
+<span class="ok">PASS</span> ./calc.test.js
+  <span class="ok">✓</span> adds 2 + 3 to equal 5 (2 ms)
+  <span class="ok">✓</span> divides 10 / 2 to equal 5
+  <span class="ok">✓</span> divide by zero throws (4 ms)
+Tests:       <span class="ok">3 passed</span>, 3 total</div>
+            </div>
+
+            <div class="cours-demo" id="demo-e2e">
+                <div class="cours-demo-head"><h3>Tests de bout en bout (ex17, Cypress)</h3><button type="button" class="cours-btn" id="e2eRun">▶ Rejouer le scénario</button></div>
+                <p>L’application testée tourne ci-dessous ; le bouton exécute les étapes de <code>home.cy.js</code> sur cette page.</p>
+                <iframe class="cours-frame" id="e2eFrame" title="Application de l’exercice e2e" sandbox="allow-scripts allow-same-origin"></iframe>
+                <div class="cours-term" id="e2eTerm" aria-live="polite"><span class="dim">Journal du scénario ici.</span></div>
+                <h4>Pourquoi le pipeline GitLab a échoué</h4>
+                <div class="cours-term">$ npx cypress run   <span class="dim"># dépôt tel quel</span>
+<span class="ko">Could not find a Cypress configuration file in this folder</span></div>
+                <p>Correction testée sur une copie locale (le dépôt n’a pas été modifié) : déplacer <code>cypress.config.js</code> à la racine, ranger le test dans <code>cypress/e2e/home.cy.js</code> et ajouter <code>supportFile: false</code>, car le projet n’a pas de fichier de support.</p>
+                <pre class="cours-src" data-lang="js" data-title="cypress.config.js (corrigé)">const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    baseUrl: "http://localhost:8080",
+    supportFile: false,
+    setupNodeEvents(on, config) {},
+  },
+});</pre>
+                <div class="cours-term">  Running:  home.cy.js
+  Page d'accueil
+    <span class="ok">✓</span> affiche le titre (140ms)
+    <span class="ok">✓</span> affiche un message au clic sur le bouton (168ms)
+  <span class="ok">2 passing</span> (372ms)
+    <span class="ok">✔  All specs passed!</span></div>
+            </div>
+
+            <div class="cours-demo" id="demo-ex10">
+                <div class="cours-demo-head"><h3>Le sketch de ex10</h3></div>
+                <p><code>sketch.pde</code> traduit de Processing en JavaScript, ligne pour ligne : déplacez la souris ou le doigt pour changer l’angle des branches.</p>
+                <canvas id="ex10Canvas" width="800" height="500" aria-label="Arbre fractal interactif"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-reviser" role="tabpanel" aria-labelledby="t-reviser" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            <h2>Fiche de révision</h2>
+            <p>Tout ce qu’il faut savoir, illustré par les exercices. Ouvre une section, puis vérifie-toi avec le quiz et les cartes en bas de page.</p>
+            <nav class="cours-toc" aria-label="Sommaire de la fiche">
+                <a href="#r-docker" class="cours-goto">Docker</a><a href="#r-dockerfile" class="cours-goto">Dockerfile</a><a href="#r-cmd" class="cours-goto">Commandes</a><a href="#r-registre" class="cours-goto">Registre et tags</a><a href="#r-ci" class="cours-goto">GitLab CI</a><a href="#r-vars" class="cours-goto">Variables</a><a href="#r-tests" class="cours-goto">Types de tests</a><a href="#r-secu" class="cours-goto">Sécurité</a><a href="#r-pieges" class="cours-goto">Pièges</a><a href="#quiz" class="cours-goto">Quiz</a>
+            </nav>
+
+            <details class="cours-fiche" id="r-docker" open><summary>1. Conteneur, image, machine virtuelle</summary><div>
+                <table class="cours-table"><thead><tr><th></th><th>Machine virtuelle</th><th>Conteneur</th></tr></thead><tbody>
+                    <tr><td><b>Isole</b></td><td>Un système complet, avec son noyau, sur un hyperviseur</td><td>Des processus, qui partagent le noyau de l’hôte</td></tr>
+                    <tr><td><b>Démarrage</b></td><td>Dizaines de secondes</td><td>Moins d’une seconde</td></tr>
+                    <tr><td><b>Taille</b></td><td>Plusieurs Go</td><td>Quelques Mo (alpine ≈ 8 Mo)</td></tr>
+                    <tr><td><b>Usage</b></td><td>Faire tourner un autre OS, isolation forte</td><td>Livrer une appli avec ses dépendances, à l’identique partout</td></tr></tbody></table>
+                <ul>
+                    <li><b>Image</b> : modèle en lecture seule, empilement de <b>couches</b> (une par instruction du Dockerfile qui modifie le système de fichiers).</li>
+                    <li><b>Conteneur</b> : instance en cours d’exécution d’une image, avec une couche inscriptible par-dessus. On peut lancer plusieurs conteneurs depuis la même image.</li>
+                    <li><b>Registre</b> : serveur qui stocke les images (Docker Hub, registre GitLab). On y fait <code>push</code> et <code>pull</code>.</li>
+                </ul>
+                <div class="cours-box retenir"><span class="cours-box-title">À retenir</span><p>Image = recette figée ; conteneur = plat servi. Un conteneur est jetable : ce qui doit survivre va dans un volume ou une base.</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-dockerfile"><summary>2. Écrire un Dockerfile</summary><div>
+                <table class="cours-table"><thead><tr><th>Instruction</th><th>Rôle</th><th>Vu dans</th></tr></thead><tbody>
+                    <tr><td><code>FROM</code></td><td>Image de base (toujours en premier)</td><td>tous</td></tr>
+                    <tr><td><code>RUN</code></td><td>Exécute une commande à la construction et crée une couche</td><td>ex3, ex5</td></tr>
+                    <tr><td><code>WORKDIR</code></td><td>Dossier courant pour la suite (créé s’il n’existe pas)</td><td>ex5, ex12</td></tr>
+                    <tr><td><code>COPY</code></td><td>Copie des fichiers du contexte de build dans l’image</td><td>ex5, ex7</td></tr>
+                    <tr><td><code>CMD</code></td><td>Commande par défaut au démarrage, remplaçable par <code>docker run image autre-commande</code></td><td>ex2 à ex5</td></tr>
+                    <tr><td><code>ENTRYPOINT</code></td><td>Programme toujours lancé ; <code>CMD</code> devient ses arguments</td><td>image k6 (ex15)</td></tr>
+                    <tr><td><code>EXPOSE</code></td><td>Documente un port ; ne le publie pas (<code>-p</code> le fait)</td><td>ex7, ex12</td></tr>
+                    <tr><td><code>ENV</code> / <code>ARG</code></td><td>Variable d’environnement (exécution) / variable de build</td><td>—</td></tr></tbody></table>
+                <pre class="cours-src" data-lang="docker" data-title="ex5/Dockerfile : l’ordre qui profite du cache">FROM python:3.13-alpine
+WORKDIR /app
+COPY requirements.txt .          # change rarement
+RUN pip install --no-cache-dir -r requirements.txt
+COPY app.py .                    # change souvent : en dernier
+CMD ["python", "app.py"]</pre>
+                <div class="cours-box retenir"><span class="cours-box-title">Cache des couches</span><p>Docker réutilise une couche tant que l’instruction et ses fichiers n’ont pas changé. Dès qu’une couche change, <b>toutes les suivantes sont reconstruites</b>. On met donc en haut ce qui bouge peu (dépendances) et en bas ce qui bouge souvent (code).</p></div>
+                <ul>
+                    <li>Images légères : <code>alpine</code>, variantes <code>-slim</code> ; <code>apk add --no-cache</code> et <code>pip install --no-cache-dir</code> évitent de garder les caches dans l’image.</li>
+                    <li>Forme « exec » <code>CMD ["python", "app.py"]</code> (tableau) plutôt que la forme shell : le programme reçoit directement les signaux d’arrêt.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-cmd"><summary>3. Les commandes Docker à connaître</summary><div>
+                <pre class="cours-src" data-lang="sh" data-title="aide-mémoire">docker build -t monimage:1.0 .        # construire depuis le Dockerfile du dossier courant
+docker run --rm monimage:1.0           # lancer, puis supprimer le conteneur à l'arrêt
+docker run -d --name web -p 8080:80 monimage   # en arrière-plan, nommé, port publié
+docker exec web curl -sf http://localhost/      # commande dans un conteneur qui tourne (ex8)
+docker logs backend                    # journaux du conteneur (ex12)
+docker ps / docker ps -a               # conteneurs actifs / tous
+docker pull image:tag && docker push image:tag
+docker tag image:sha image:latest      # un même contenu, un autre nom (ex8, release)
+docker network create test-net         # réseau où les conteneurs se trouvent par leur nom (ex12)
+echo "$PASS" | docker login -u "$USER" --password-stdin "$REGISTRY"</pre>
+                <table class="cours-table"><tbody>
+                    <tr><td><code>-d</code></td><td>détaché (arrière-plan)</td><td><code>--rm</code></td><td>supprimé à l’arrêt</td></tr>
+                    <tr><td><code>-p h:c</code></td><td>port hôte → conteneur</td><td><code>-e K=V</code></td><td>variable d’environnement</td></tr>
+                    <tr><td><code>-v</code></td><td>volume (données persistantes)</td><td><code>--network</code></td><td>rejoindre un réseau</td></tr></tbody></table>
+            </div></details>
+
+            <details class="cours-fiche" id="r-registre"><summary>4. Registre et stratégie de tags</summary><div>
+                <ul>
+                    <li><code>$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA</code> : tag <b>immuable</b>, relié à un commit précis. On sait exactement ce qui tourne et on peut revenir en arrière.</li>
+                    <li><code>latest</code> : tag <b>mobile</b>, qui pointe vers la dernière version publiée. Pratique, mais ambigu : à ne mettre à jour qu’après les tests (ex8, job <code>release</code> manuel).</li>
+                    <li>Connexion au registre avec <code>--password-stdin</code> : le mot de passe passe par l’entrée standard, il n’apparaît ni dans la commande, ni dans l’historique.</li>
+                </ul>
+                <div class="cours-box retenir"><span class="cours-box-title">Le schéma d’ex8</span><p>build (tag SHA) → test de <em>cette</em> image → release qui retague la même image en <code>latest</code>. On publie ce qu’on a testé, sans reconstruire.</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-ci"><summary>5. Anatomie d’un pipeline GitLab CI</summary><div>
+                <pre class="cours-src" data-lang="yaml" data-title=".gitlab-ci.yml commenté (inspiré d’ex8 et ex11)">stages: [lint, build, test, release]   # ordre des étapes
+
+.docker:                    # job caché (point) = modèle réutilisable
+  image: docker:latest
+  services: [docker:dind]   # démon Docker à côté du job
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+
+build-image:
+  extends: .docker          # hérite du modèle
+  stage: build
+  script:
+    - docker build -t "$IMAGE:$CI_COMMIT_SHORT_SHA" .
+    - echo "$IMAGE:$CI_COMMIT_SHORT_SHA" > image.txt
+  artifacts:                # fichiers transmis aux jobs suivants
+    paths: [image.txt]
+    expire_in: 1 week
+
+test-image:
+  extends: .docker
+  stage: test
+  needs: [build-image]      # démarre dès que build-image a fini
+
+release-image:
+  stage: release
+  when: manual              # attend un clic
+  only: [main]              # seulement sur main (rules: est la syntaxe moderne)</pre>
+                <table class="cours-table"><thead><tr><th>Mot-clé</th><th>À quoi il sert</th></tr></thead><tbody>
+                    <tr><td><code>stages</code></td><td>Ordre des étapes ; les jobs d’une même étape tournent en parallèle</td></tr>
+                    <tr><td><code>image</code> / <code>services</code></td><td>Conteneur du job / conteneurs annexes (base, <code>docker:dind</code>)</td></tr>
+                    <tr><td><code>before_script</code> / <code>script</code></td><td>Commandes de préparation / commandes du job (le job échoue au premier code de sortie non nul)</td></tr>
+                    <tr><td><code>artifacts</code></td><td>Fichiers <b>produits</b> par un job, téléchargeables et transmis aux jobs suivants</td></tr>
+                    <tr><td><code>cache</code></td><td>Fichiers <b>réutilisés</b> d’un pipeline à l’autre pour aller plus vite (ex : <code>node_modules</code>, clé = lockfile)</td></tr>
+                    <tr><td><code>needs</code></td><td>Dépendances explicites : le job démarre dès que ceux-ci sont finis, sans attendre toute l’étape</td></tr>
+                    <tr><td><code>dependencies</code></td><td>De quels jobs récupérer les artefacts</td></tr>
+                    <tr><td><code>extends</code></td><td>Hériter d’un job (souvent caché, préfixé par <code>.</code>)</td></tr>
+                    <tr><td><code>when: manual</code></td><td>Job déclenché à la main</td></tr>
+                    <tr><td><code>allow_failure</code></td><td>Un échec n’arrête pas le pipeline (affiché en orange)</td></tr>
+                    <tr><td><code>only</code> / <code>rules</code></td><td>Conditions d’exécution (branche, tag, variables…)</td></tr>
+                    <tr><td><code>parallel: matrix</code></td><td>Un job par combinaison de variables (ex16 : 7 jobs)</td></tr>
+                    <tr><td><code>pages</code></td><td>Job spécial : son artefact <code>public/</code> devient un site GitLab Pages</td></tr></tbody></table>
+                <div class="cours-box piege"><span class="cours-box-title">Cache ou artefact ?</span><p>Artefact = un <b>résultat</b> qu’on veut garder ou passer au job suivant (rapport, binaire, <code>image.txt</code>). Cache = une <b>accélération</b>, qui peut disparaître sans casser le pipeline (dépendances téléchargées).</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-vars"><summary>6. Variables prédéfinies utiles</summary><div>
+                <table class="cours-table"><tbody>
+                    <tr><td><code>CI_REGISTRY</code></td><td>Adresse du registre GitLab</td></tr>
+                    <tr><td><code>CI_REGISTRY_IMAGE</code></td><td>Chemin de l’image du projet dans le registre</td></tr>
+                    <tr><td><code>CI_REGISTRY_USER</code> / <code>CI_REGISTRY_PASSWORD</code></td><td>Identifiants temporaires du job pour le registre</td></tr>
+                    <tr><td><code>CI_COMMIT_SHORT_SHA</code></td><td>8 premiers caractères du commit</td></tr>
+                    <tr><td><code>CI_COMMIT_BRANCH</code></td><td>Branche du pipeline</td></tr>
+                    <tr><td><code>CI_COMMIT_REF_PROTECTED</code></td><td><code>true</code> si la branche ou le tag est protégé (exextra)</td></tr></tbody></table>
+            </div></details>
+
+            <details class="cours-fiche" id="r-tests"><summary>7. Les types de tests automatisés</summary><div>
+                <table class="cours-table"><thead><tr><th>Type</th><th>Question posée</th><th>Outil (exercice)</th></tr></thead><tbody>
+                    <tr><td>Lint</td><td>Le code respecte-t-il la syntaxe et les règles ?</td><td>ESLint (ex11), <code>php -l</code> (ex8)</td></tr>
+                    <tr><td>Unitaire</td><td>Une fonction isolée fait-elle ce qu’elle doit ?</td><td>Jest (ex11, ex16), pytest (ex16)</td></tr>
+                    <tr><td>Intégration</td><td>Les briques fonctionnent-elles ensemble ?</td><td>API + PostgreSQL sur un réseau Docker (ex12)</td></tr>
+                    <tr><td>Smoke test</td><td>Le service démarre-t-il et répond-il ?</td><td><code>curl -sf /api/health</code> (ex12), <code>grep "PHP Version"</code> (ex8)</td></tr>
+                    <tr><td>Bout en bout</td><td>Le parcours utilisateur marche-t-il dans un vrai navigateur ?</td><td>Cypress (ex17)</td></tr>
+                    <tr><td>Charge</td><td>Le service tient-il sous plusieurs utilisateurs ?</td><td>k6 (ex15)</td></tr>
+                    <tr><td>Benchmark</td><td>Quelle solution est la plus rapide ?</td><td>pytest-benchmark, autocannon (ex13)</td></tr>
+                    <tr><td>Sécurité</td><td>Le code ou ses dépendances ont-ils des failles connues ?</td><td>Bandit, Safety, npm audit (ex14)</td></tr></tbody></table>
+                <div class="cours-box retenir"><span class="cours-box-title">Pyramide des tests</span><p>Beaucoup de tests unitaires (rapides, précis), moins de tests d’intégration, peu de tests de bout en bout (lents, fragiles, mais au plus près de l’utilisateur).</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-secu"><summary>8. Sécurité de la chaîne CI/CD</summary><div>
+                <ul>
+                    <li><b>SAST</b> (analyse statique du code) : Bandit cherche des motifs risqués (mot de passe en dur, <code>eval</code>, <code>subprocess</code> avec shell…).</li>
+                    <li><b>SCA</b> (analyse des dépendances) : Safety et npm audit comparent les versions utilisées aux vulnérabilités publiées (CVE).</li>
+                    <li><b>Variable protégée</b> : injectée seulement dans les pipelines des branches et tags protégés. <b>Variable masquée</b> : remplacée par <code>[MASKED]</code> dans les logs. Pour un jeton de déploiement : les deux.</li>
+                    <li>Ne jamais écrire un secret dans le dépôt ni l’afficher dans un log ; <code>docker login --password-stdin</code> plutôt que <code>-p</code>.</li>
+                    <li>Épingler les versions (<code>rich==13.9.4</code>, <code>postgres:16-alpine</code>) rend les builds reproductibles ; <code>latest</code> partout rend le résultat imprévisible.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-pieges"><summary>9. Pièges rencontrés dans mes exercices</summary><div>
+                <ul>
+                    <li><b>Cypress (ex17)</b> : fichier de config au mauvais endroit, donc pipeline rouge. La structure attendue : <code>cypress.config.js</code> à la racine, tests dans <code>cypress/e2e/*.cy.js</code>.</li>
+                    <li><b>Benchmark (ex13)</b> : deux outils qui ne mesurent pas la même chose ne se comparent pas directement.</li>
+                    <li><b><code>|| true</code> (ex14)</b> : le job ne peut plus échouer ; à réserver à la collecte de rapports.</li>
+                    <li><b>Dépendances commitées (ex11)</b> : <code>node_modules/</code> et <code>dist/</code> doivent être dans <code>.gitignore</code>.</li>
+                    <li><b>Attendre un service (ex12)</b> : un conteneur « démarré » n’est pas forcément « prêt » ; on boucle sur <code>pg_isready</code> avant de lancer le backend.</li>
+                    <li><b>Point d’entrée d’une image (ex15)</b> : <code>entrypoint: [""]</code> pour que GitLab exécute ses propres commandes dans l’image k6.</li>
+                </ul>
+            </div></details>
+
+            <h2 id="quiz">Quiz</h2>
+            <div class="cours-quiz" data-quiz="docker"></div>
+            <h2 id="cartes">Cartes mémo</h2>
+            <div class="cours-cards" data-cards="docker"></div>
+        </div>
+    </section>
+    </main>
+<script>
+window.COURS_QUIZ = Object.assign(window.COURS_QUIZ || {}, { docker: [
+ { q: 'Quelle est la différence principale entre un conteneur et une machine virtuelle ?', c: ['Le conteneur partage le noyau de l’hôte', 'Le conteneur a son propre noyau', 'La VM démarre plus vite', 'Le conteneur ne peut lancer qu’un seul fichier'], a: 0, w: 'Un conteneur isole des processus qui utilisent le noyau de la machine hôte ; une VM embarque un système complet avec son noyau, d’où sa lourdeur.' },
+ { q: 'Dans ex5, pourquoi copier <code>requirements.txt</code> avant <code>app.py</code> ?', c: ['Pour profiter du cache des couches', 'Parce que pip l’exige', 'Pour réduire la taille de l’image', 'Pour que CMD trouve le fichier'], a: 0, w: 'Tant que requirements.txt ne change pas, la couche du pip install est réutilisée ; modifier app.py ne reconstruit que la dernière couche.' },
+ { q: 'Que fait <code>EXPOSE 80</code> ?', c: ['Il documente le port écouté, sans le publier', 'Il ouvre le port 80 sur l’hôte', 'Il démarre Apache', 'Il redirige le port 80 vers le 8080'], a: 0, w: 'EXPOSE est informatif. C’est docker run -p 8080:80 qui publie réellement un port sur la machine hôte.' },
+ { q: 'Pourquoi taguer l’image avec <code>$CI_COMMIT_SHORT_SHA</code> en plus de <code>latest</code> ?', c: ['Pour avoir un tag immuable relié à un commit précis', 'Parce que latest est interdit sur GitLab', 'Pour compresser l’image', 'Pour la rendre privée'], a: 0, w: 'Le tag SHA désigne toujours la même image : on sait ce qui est déployé et on peut revenir en arrière. latest bouge à chaque publication.' },
+ { q: 'À quoi sert le service <code>docker:dind</code> ?', c: ['Fournir un démon Docker pour construire des images dans le job', 'Télécharger les images plus vite', 'Héberger le registre', 'Exécuter les tests Python'], a: 0, w: 'Docker-in-Docker : le job (image docker:latest, le client) parle à un démon Docker lancé à côté en service, pour pouvoir faire docker build et docker push.' },
+ { q: 'Dans ex8, comment le job de test connaît-il le nom exact de l’image construite ?', c: ['Par l’artefact image.txt du job de build', 'Par le cache', 'Par une variable globale', 'Il reconstruit l’image'], a: 0, w: 'Le build écrit le nom complet de l’image dans image.txt, déclaré en artefact ; les jobs suivants le récupèrent et le lisent avec $(cat image.txt).' },
+ { q: 'Quelle est la différence entre <code>cache</code> et <code>artifacts</code> ?', c: ['Le cache accélère, l’artefact transmet un résultat', 'Ce sont deux noms pour la même chose', 'L’artefact accélère, le cache transmet un résultat', 'Le cache est réservé à Docker'], a: 0, w: 'Le cache (ex : node_modules, clé = lockfile) peut disparaître sans casser le pipeline. Un artefact est un résultat produit (rapport, dist/, image.txt) gardé et passé aux jobs suivants.' },
+ { q: 'Que permet <code>needs:</code> sur un job ?', c: ['Démarrer dès que les jobs listés ont fini, sans attendre toute l’étape', 'Rendre le job manuel', 'Relancer le job en cas d’échec', 'Partager le cache'], a: 0, w: 'needs crée un graphe de dépendances : le job n’attend que les jobs dont il a besoin, et récupère leurs artefacts.' },
+ { q: 'Combien de jobs crée la matrice d’ex16 ?', c: ['7', '2', '4', '12'], a: 0, w: '4 versions de Python (3.8 à 3.11) + 3 versions de Node (16, 18, 20) = 7 jobs, tous dans l’étape test.' },
+ { q: 'Pourquoi le pipeline Cypress (ex17) a-t-il échoué ?', c: ['Le fichier de configuration n’était pas à la racine du projet', 'Le test était faux', 'Le serveur http ne démarrait pas', 'Cypress n’est pas compatible avec GitLab'], a: 0, w: 'Relancé, le job affiche « Could not find a Cypress configuration file ». Cypress attend cypress.config.js à la racine et les tests dans cypress/e2e/.' },
+ { q: 'Dans ex14, que change <code>|| true</code> après chaque analyse ?', c: ['Le job réussit toujours, même si une faille est trouvée', 'Il rend l’analyse plus précise', 'Il masque les secrets', 'Il exécute l’analyse deux fois'], a: 0, w: 'Le code de sortie de la commande est ignoré. Utile pour collecter des rapports, mais le pipeline ne bloquera jamais une dépendance vulnérable.' },
+ { q: 'Bandit, Safety, npm audit : lequel analyse le <em>code source</em> plutôt que les dépendances ?', c: ['Bandit', 'Safety', 'npm audit', 'Aucun'], a: 0, w: 'Bandit fait de l’analyse statique (SAST) du code Python ; Safety et npm audit vérifient les versions des dépendances (SCA).' },
+ { q: 'Une variable CI/CD <b>protégée</b>…', c: ['n’est injectée que dans les pipelines des branches et tags protégés', 'est cachée dans les logs', 'est chiffrée dans le dépôt', 'ne peut être lue que par le propriétaire'], a: 0, w: 'Protégée = disponible seulement sur les refs protégées (exextra). Masquée = remplacée par [MASKED] dans les logs. Un jeton de déploiement doit être les deux.' },
+ { q: 'Dans ex12, comment le backend trouve-t-il la base de données ?', c: ['Par le nom du conteneur « db » sur le réseau Docker commun', 'Par l’adresse 127.0.0.1', 'Par une variable CI_DATABASE', 'Par un volume partagé'], a: 0, w: 'Sur un réseau Docker créé par l’utilisateur, chaque conteneur est joignable par son nom : DB_HOST=db, et le test appelle http://backend:3000.' },
+ { q: 'Pourquoi boucler sur <code>pg_isready</code> avant de lancer le backend ?', c: ['Un conteneur démarré n’est pas forcément prêt à accepter des connexions', 'Pour créer la base', 'Pour charger les données', 'Pour vérifier la version de PostgreSQL'], a: 0, w: 'PostgreSQL met quelques secondes à initialiser ; sans attente, le backend échouerait à se connecter et le test serait instable.' },
+ { q: 'Que fait un job nommé <code>pages</code> qui publie <code>public/</code> en artefact ?', c: ['Il met en ligne un site GitLab Pages', 'Il génère la documentation', 'Il crée une page wiki', 'Rien de spécial'], a: 0, w: 'Le nom pages est réservé : GitLab publie le contenu de l’artefact public/ comme site statique (ex9, ex10).' },
+ { q: 'Pourquoi <code>entrypoint: [""]</code> pour l’image <code>grafana/k6</code> ?', c: ['Pour que GitLab puisse lancer son shell au lieu du programme k6', 'Pour accélérer k6', 'Pour cacher les logs', 'Pour utiliser k6 en mode cloud'], a: 0, w: 'L’image k6 a k6 comme point d’entrée ; GitLab a besoin d’un shell pour exécuter les lignes de script. On vide donc l’entrypoint.' },
+ { q: 'Avec <code>when: manual</code> et <code>only: [main]</code>, le job release d’ex8…', c: ['n’existe que sur main et attend un clic', 'tourne automatiquement sur toutes les branches', 'tourne seulement si les tests échouent', 'est ignoré'], a: 0, w: 'only limite le job à la branche main ; when: manual le met en attente d’un déclenchement humain, comme une mise en production volontaire.' }
+]});
+window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { docker: [
+ ['Image', 'Modèle en lecture seule, fait de couches empilées ; on la construit avec docker build.'],
+ ['Conteneur', 'Instance qui tourne d’une image, avec une couche inscriptible ; jetable.'],
+ ['Couche (layer)', 'Résultat d’une instruction du Dockerfile ; mise en cache tant qu’elle ne change pas.'],
+ ['<code>RUN</code> vs <code>CMD</code>', 'RUN s’exécute à la construction ; CMD est la commande par défaut au démarrage du conteneur.'],
+ ['<code>CMD</code> vs <code>ENTRYPOINT</code>', 'ENTRYPOINT est toujours lancé ; CMD fournit ses arguments par défaut et se remplace facilement.'],
+ ['<code>docker run --rm</code>', 'Supprime le conteneur dès qu’il s’arrête.'],
+ ['<code>docker exec</code>', 'Exécute une commande dans un conteneur déjà démarré.'],
+ ['docker:dind', 'Démon Docker lancé en service pour construire et pousser des images depuis un job.'],
+ ['<code>--password-stdin</code>', 'Passe le mot de passe par l’entrée standard : invisible dans la commande et l’historique.'],
+ ['Tag SHA', 'Tag immuable relié à un commit : traçabilité et retour arrière.'],
+ ['<code>stages</code>', 'Ordre des étapes ; les jobs d’une même étape tournent en parallèle.'],
+ ['Artefact', 'Résultat d’un job, gardé et transmis aux suivants (rapport, dist/, image.txt).'],
+ ['Cache', 'Fichiers réutilisés entre pipelines pour accélérer (node_modules, clé = lockfile).'],
+ ['<code>needs</code>', 'Le job démarre dès que les jobs listés ont fini et récupère leurs artefacts.'],
+ ['<code>extends</code> + job caché', 'Modèle commun (préfixé par un point) dont héritent plusieurs jobs.'],
+ ['<code>parallel: matrix</code>', 'Un job par combinaison de variables : tester plusieurs versions en même temps.'],
+ ['SAST', 'Analyse statique du code source (Bandit).'],
+ ['SCA', 'Analyse des dépendances face aux vulnérabilités connues (Safety, npm audit).'],
+ ['Variable protégée', 'Injectée seulement sur les branches et tags protégés.'],
+ ['Variable masquée', 'Remplacée par [MASKED] dans les logs.'],
+ ['Smoke test', 'Vérification minimale : le service démarre et répond (curl /api/health).'],
+ ['Test de charge', 'Plusieurs utilisateurs virtuels pendant une durée donnée (k6 : 5 VUs, 10 s).']
+]});
+</script>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="cours/docker-data.js"></script>
+    <script src="cours/docker-demos.js"></script>
+    <script src="cours/cours.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

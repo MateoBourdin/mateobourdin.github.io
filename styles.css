@@ -3498,3 +3498,6 @@ section.page-hero:has(+ .arcade-section) {
     background: var(--primary-dark);
     transform: translateY(-1px);
 }
+
+/* Lien vers la page détaillée d'un cours */
+.now-detail { display: inline-flex; margin: .4rem 0 .6rem; font-size: .9rem; padding: .6rem 1.1rem; }
