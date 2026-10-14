@@ -15,6 +15,7 @@ const translations = {
             now: 'Cours actuels | Matéo Bourdin',
             skills: 'Compétences | Matéo Bourdin',
             legal: 'Mentions légales et confidentialité | Matéo Bourdin',
+            arcade: 'Arcade | Matéo Bourdin',
             ski: 'Descente à Combloux | Matéo Bourdin',
             naval: 'Défends l’île | Matéo Bourdin',
             bug: 'Trouve le bug | Matéo Bourdin'
@@ -29,6 +30,7 @@ const translations = {
             experience: 'Expérience',
             education: 'Formation',
             journey: 'Parcours',
+            arcade: 'Arcade',
             now: 'Cours actuels',
             butYears: 'Parcours BUT',
             projects: 'Projets',
@@ -444,7 +446,7 @@ const translations = {
             "policies": "Politiques de confidentialité des services cités :"
         },
         games: {
-            "back": "← Tous les projets",
+            "back": "← Arcade",
             "source": "Voir le code source",
             "howTitle": "Comment c’est fait",
             "ski": {
@@ -473,18 +475,37 @@ const translations = {
                 "hp": "Vie de l’île"
             },
             "bug": {
-                "short": "Quiz de code chronométré : C#, Python, JS, SQL, Docker",
+                "short": "Puzzles de code classés façon échecs : Elo, Rush, Survie, Bug du jour",
                 "title": "Trouve le bug",
                 "tag": "🐛 Mini-jeu",
-                "desc": "Six extraits de code en C#, Python, JavaScript, Vue, SQL et Docker. Chacun contient une ligne fautive : trouve-la avant la fin du chrono. Les bugs viennent d’erreurs que j’ai croisées en cours ou en projet.",
-                "controls": "Commandes : souris ou toucher pour choisir une ligne, ou Tab puis Entrée au clavier.",
+                "desc": "46 bugs réels à débusquer en C#, Python, JavaScript, Vue, SQL et Docker, du débutant à l’expert. Un classement Elo qui s’adapte à ton niveau, des modes Rush, Survie et Bug du jour, des indices, des succès et des statistiques détaillées.",
+                "controls": "Commandes : clique sur la ligne fautive ou tape son numéro (1 à 9), H pour un indice, Entrée pour continuer, Échap pour revenir aux modes.",
                 "start": "Commencer",
                 "intro": "20 secondes par extrait. Plus tu réponds vite, plus tu marques de points.",
                 "score": "Score",
                 "best": "Record",
                 "again": "Rejouer",
-                "how": "Une page en HTML/JS sans canvas : les lignes sont de vrais boutons, donc le jeu se joue aussi entièrement au clavier (Tab puis Entrée)."
+                "how": "Le classement suit la formule Elo des échecs : chaque bug a sa propre difficulté, et ton score monte plus si tu résous un bug plus dur que ton niveau. Un indice divise le gain. Tout tourne en JavaScript sans librairie, et ta progression reste dans ton navigateur."
             }
+        },
+        arcade: {
+            "open": "🕹️ Ouvrir l’Arcade",
+            "tag": "🕹️ Arcade",
+            "title": "Arcade",
+            "desc": "Des jeux développés pour ce portfolio et un de mes projets émulé dans le navigateur. Tout est jouable au clavier, à la souris et au tactile, sans installation ni inscription.",
+            "featured": "À la une",
+            "featuredText": "Mon jeu le plus abouti : des puzzles de code classés comme aux échecs, avec un classement Elo, 5 modes de jeu, des succès et des statistiques.",
+            "play": "Jouer",
+            "others": "Les autres jeux",
+            "skiText": "Slalom à ski sur la piste de Combloux : passe les portes, évite les sapins, la vitesse ne fait qu’augmenter.",
+            "navalText": "Clin d’œil à Survival Island : le canon de l’île repousse des vagues de bateaux de plus en plus nombreuses.",
+            "zeldaText": "Mon jeu terminal en Python, exécuté dans le navigateur grâce à Pyodide (Python compilé en WebAssembly).",
+            "techTitle": "Sous le capot",
+            "tech1": "Aucune librairie pour les mini-jeux : JavaScript, Canvas 2D et requestAnimationFrame.",
+            "tech2": "Zelda tourne avec Pyodide et xterm.js, hébergés sur ce site : aucune requête vers un service tiers.",
+            "tech3": "Records et progression stockés uniquement dans ton navigateur, rien n’est envoyé.",
+            "tech4": "Jouable au clavier, à la souris et au tactile, et respect du réglage « réduire les animations ».",
+            "source": "Voir le code des jeux sur GitHub"
         },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
@@ -521,6 +542,7 @@ const translations = {
             now: 'Current courses | Matéo Bourdin',
             skills: 'Skills | Matéo Bourdin',
             legal: 'Legal notice and privacy | Matéo Bourdin',
+            arcade: 'Arcade | Matéo Bourdin',
             ski: 'Combloux Downhill | Matéo Bourdin',
             naval: 'Defend the Island | Matéo Bourdin',
             bug: 'Spot the Bug | Matéo Bourdin'
@@ -535,6 +557,7 @@ const translations = {
             experience: 'Experience',
             education: 'Education',
             journey: 'Background',
+            arcade: 'Arcade',
             now: 'Current courses',
             butYears: 'BUT years',
             projects: 'Projects',
@@ -950,7 +973,7 @@ const translations = {
             "policies": "Privacy policies of the services mentioned:"
         },
         games: {
-            "back": "← All projects",
+            "back": "← Arcade",
             "source": "View the source code",
             "howTitle": "How it’s made",
             "ski": {
@@ -979,18 +1002,37 @@ const translations = {
                 "hp": "Island health"
             },
             "bug": {
-                "short": "Timed code quiz: C#, Python, JS, SQL, Docker",
+                "short": "Chess-style rated code puzzles: Elo, Rush, Survival, Daily bug",
                 "title": "Spot the Bug",
                 "tag": "🐛 Mini-game",
-                "desc": "Six code snippets in C#, Python, JavaScript, Vue, SQL and Docker. Each has one faulty line: find it before the timer runs out. The bugs come from mistakes I’ve met in class or in projects.",
-                "controls": "Controls: mouse or tap to pick a line, or Tab then Enter on the keyboard.",
+                "desc": "46 real bugs to hunt down in C#, Python, JavaScript, Vue, SQL and Docker, from beginner to expert. An Elo rating that adapts to your level, Rush, Survival and Daily modes, hints, achievements and detailed statistics.",
+                "controls": "Controls: click the faulty line or type its number (1 to 9), H for a hint, Enter to continue, Esc to go back to the modes.",
                 "start": "Start",
                 "intro": "20 seconds per snippet. The faster you answer, the more points you score.",
                 "score": "Score",
                 "best": "Best",
                 "again": "Play again",
-                "how": "Plain HTML/JS page, no canvas: lines are real buttons, so the game is fully playable with the keyboard (Tab then Enter)."
+                "how": "The rating follows the chess Elo formula: each bug has its own difficulty, and your score rises more when you solve a bug above your level. A hint reduces the gain. Everything runs in plain JavaScript, and your progress stays in your browser."
             }
+        },
+        arcade: {
+            "open": "🕹️ Open the Arcade",
+            "tag": "🕹️ Arcade",
+            "title": "Arcade",
+            "desc": "Games built for this portfolio, plus one of my projects emulated in the browser. Everything plays with keyboard, mouse or touch, with no install and no sign-up.",
+            "featured": "Featured",
+            "featuredText": "My most complete game: chess-style rated code puzzles, with an Elo rating, 5 game modes, achievements and statistics.",
+            "play": "Play",
+            "others": "More games",
+            "skiText": "Ski slalom on the Combloux slope: go through the gates, avoid the fir trees, and the speed keeps rising.",
+            "navalText": "A nod to Survival Island: the island’s cannon fends off ever larger waves of boats.",
+            "zeldaText": "My Python terminal game, running in the browser thanks to Pyodide (Python compiled to WebAssembly).",
+            "techTitle": "Under the hood",
+            "tech1": "No library for the mini-games: JavaScript, 2D Canvas and requestAnimationFrame.",
+            "tech2": "Zelda runs on Pyodide and xterm.js, hosted on this site: no request to any third-party service.",
+            "tech3": "Records and progress are stored only in your browser, nothing is sent.",
+            "tech4": "Playable with keyboard, mouse and touch, and respects the “reduce motion” setting.",
+            "source": "See the games’ code on GitHub"
         },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',

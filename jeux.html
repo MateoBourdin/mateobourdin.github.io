@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade | Matéo Bourdin</title>
+    <meta name="description" content="Des jeux développés pour ce portfolio et un de mes projets émulé dans le navigateur. Tout est jouable au clavier, à la souris et au tactile, sans installation ni inscription.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/jeux.html">
+    <meta property="og:title" content="Arcade | Matéo Bourdin">
+    <meta property="og:description" content="Des jeux développés pour ce portfolio et un de mes projets émulé dans le navigateur. Tout est jouable au clavier, à la souris et au tactile, sans installation ni inscription.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arcade | Matéo Bourdin">
+    <meta name="twitter:description" content="Des jeux développés pour ce portfolio et un de mes projets émulé dans le navigateur. Tout est jouable au clavier, à la souris et au tactile, sans installation ni inscription.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="arcade">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="jeux.html" class="active" aria-current="page" data-i18n="nav.arcade">Arcade</a></li>
+                    <li><a href="cours.html" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page header -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="arcade.tag">🕹️ Arcade</span></span>
+                <h1 data-i18n="arcade.title">Arcade</h1>
+                <p data-i18n="arcade.desc">Des jeux développés pour ce portfolio et un de mes projets émulé dans le navigateur. Tout est jouable au clavier, à la souris et au tactile, sans installation ni inscription.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="arcade-section">
+        <div class="container">
+            <a href="jeu-bug.html" class="arcade-featured reveal">
+                <img src="img/games/bug.webp" alt="Trouve le bug" width="640" height="400">
+                <div class="arcade-featured-body">
+                    <span class="arcade-badge" data-i18n="arcade.featured">À la une</span>
+                    <h2 data-i18n="games.bug.title">Trouve le bug</h2>
+                    <p data-i18n="arcade.featuredText">Mon jeu le plus abouti : des puzzles de code classés comme aux échecs, avec un classement Elo, 5 modes de jeu, des succès et des statistiques.</p>
+                    <div class="project-tags"><span class="project-tag">JavaScript</span><span class="project-tag">Elo</span><span class="project-tag">46 puzzles</span><span class="project-tag">FR / EN</span></div>
+                    <p class="arcade-stat" id="arcadeBug"></p>
+                    <span class="btn btn-primary"><span data-i18n="arcade.play">Jouer</span> →</span>
+                </div>
+            </a>
+
+            <h2 class="category-title" data-i18n="arcade.others">Les autres jeux</h2>
+            <div class="arcade-grid">
+                <a href="jeu-ski.html" class="arcade-card reveal">
+                    <img src="img/games/ski.webp" alt="Descente à Combloux" loading="lazy" width="640" height="400">
+                    <div class="arcade-card-body">
+                        <h3 data-i18n="games.ski.title">Descente à Combloux</h3>
+                        <p data-i18n="arcade.skiText">Slalom à ski sur la piste de Combloux : passe les portes, évite les sapins, la vitesse ne fait qu’augmenter.</p>
+                        <div class="project-tags"><span class="project-tag">Canvas 2D</span><span class="project-tag">Tactile</span></div>
+                        <p class="arcade-stat" id="arcadeSki"></p>
+                        <span class="arcade-play"><span data-i18n="arcade.play">Jouer</span> →</span>
+                    </div>
+                </a>
+                <a href="jeu-ile.html" class="arcade-card reveal">
+                    <img src="img/games/naval.webp" alt="Défends l’île" loading="lazy" width="640" height="400">
+                    <div class="arcade-card-body">
+                        <h3 data-i18n="games.naval.title">Défends l’île</h3>
+                        <p data-i18n="arcade.navalText">Clin d’œil à Survival Island : le canon de l’île repousse des vagues de bateaux de plus en plus nombreuses.</p>
+                        <div class="project-tags"><span class="project-tag">Canvas 2D</span><span class="project-tag">Vagues</span></div>
+                        <p class="arcade-stat" id="arcadeNaval"></p>
+                        <span class="arcade-play"><span data-i18n="arcade.play">Jouer</span> →</span>
+                    </div>
+                </a>
+                <a href="projects/zelda-play.html" class="arcade-card reveal">
+                    <img src="img/games/zelda.webp" alt="Zelda II: The Adventure of Link" loading="lazy" width="640" height="400">
+                    <div class="arcade-card-body">
+                        <h3 data-i18n="emulations.zelda.title">Zelda II: The Adventure of Link</h3>
+                        <p data-i18n="arcade.zeldaText">Mon jeu terminal en Python, exécuté dans le navigateur grâce à Pyodide (Python compilé en WebAssembly).</p>
+                        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Pyodide</span><span class="project-tag">WebAssembly</span></div>
+                        
+                        <span class="arcade-play"><span data-i18n="arcade.play">Jouer</span> →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="arcade-tech reveal">
+                <h2 data-i18n="arcade.techTitle">Sous le capot</h2>
+                <ul>
+                    <li data-i18n="arcade.tech1">Aucune librairie pour les mini-jeux : JavaScript, Canvas 2D et requestAnimationFrame.</li>
+                    <li data-i18n="arcade.tech2">Zelda tourne avec Pyodide et xterm.js, hébergés sur ce site : aucune requête vers un service tiers.</li>
+                    <li data-i18n="arcade.tech3">Records et progression stockés uniquement dans ton navigateur, rien n’est envoyé.</li>
+                    <li data-i18n="arcade.tech4">Jouable au clavier, à la souris et au tactile, et respect du réglage « réduire les animations ».</li>
+                </ul>
+                <a href="https://github.com/MateoBourdin/mateobourdin.github.io/tree/main/games" target="_blank" rel="noopener noreferrer" class="but-year-link"><span data-i18n="arcade.source">Voir le code des jeux sur GitHub</span> ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="games/common.js"></script>
+    <script src="script.js"></script>
+    <script src="games/arcade.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
