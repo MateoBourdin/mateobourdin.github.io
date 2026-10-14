@@ -1,7 +1,7 @@
 /* Pages de cours détaillées : onglets, fiches de révision, quiz, cartes, pipelines, explorateurs */
 
 .cours-hero { padding-bottom: 2rem; }
-.cours-hero .section-header { max-width: 860px; margin-bottom: 0; }
+.cours-hero .section-header { max-width: 860px; margin: 0 auto; }
 .cours-back { display: inline-block; margin-bottom: 1rem; color: var(--primary-dark); font-weight: 600; text-decoration: none; }
 .cours-back:hover { text-decoration: underline; }
 .cours-meta { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-top: 1rem; }
@@ -24,7 +24,7 @@
 .cours-panel p, .cours-panel li { color: var(--text-light); line-height: 1.7; }
 .cours-panel ul, .cours-panel ol { padding-left: 1.3rem; }
 .cours-panel strong { color: var(--text); }
-.cours-lead { font-size: 1.08rem; max-width: 860px; }
+.cours-lead { font-size: 1.08rem; }
 .cours-fr-note { background: var(--primary-lighter); color: var(--primary-dark); border-radius: 10px; padding: .7rem 1rem; font-size: .9rem; margin-bottom: 1.5rem; }
 html[lang="fr"] .cours-fr-note { display: none; }
 
