@@ -1,0 +1,9 @@
+# Default gitleaks rules, plus an allowlist for third-party minified libraries
+# copied as-is into vendor/ (xterm, Pyodide): their identifiers trigger
+# false positives of the generic-api-key rule.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Vendored third-party libraries"
+paths = ['''^vendor/''']
