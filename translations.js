@@ -10,6 +10,8 @@ const translations = {
             zelda: "Carte du jeu Zelda en mode texte"
         },
         metaPages: {
+            coursMaths: "Modélisation mathématique et IA | Matéo Bourdin",
+            coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
             coursDocker: "Docker, CI/CD et Kubernetes | Matéo Bourdin",
             journey: 'Parcours | Matéo Bourdin',
             projects: 'Projets | Matéo Bourdin',
@@ -53,6 +55,27 @@ const translations = {
                 "apply": "Ce site utilise les mêmes principes : à chaque modification, GitHub Actions vérifie les traductions, le HTML, les liens et l’absence de secrets avant la mise en ligne.",
                 "nextTitle": "La suite du module",
                 "next": "Kubernetes arrive dans la prochaine partie du cours. Cette page sera complétée au fil des séances."
+            },
+            "maths": {
+                "tag": "📐 Cours actuel · BUT3",
+                "title": "Modélisation mathématique et IA",
+                "desc": "Des statistiques aux réseaux de neurones : 8 TD, leurs résultats, et les modèles qui tournent dans le navigateur.",
+                "p1": "Le module qui relie les mathématiques à l’intelligence artificielle : de NumPy et de l’analyse de données jusqu’aux réseaux de neurones convolutifs et aux Transformers. Chaque notion est travaillée dans un notebook Python, et mes résultats sont repris ici.",
+                "s1": "TD en notebooks Jupyter",
+                "s2": "CNN sur Fashion-MNIST",
+                "s3": "CNN sur CIFAR-10",
+                "s4": "démos qui tournent dans le navigateur",
+                "learnTitle": "Ce que j’y ai appris",
+                "l1t": "Explorer des données",
+                "l1": "Nettoyer, filtrer et visualiser avec pandas, matplotlib et seaborn, et mesurer ce que coûte vraiment le calcul parallèle.",
+                "l2t": "Les maths des modèles",
+                "l2": "ACP par valeurs propres, régression par équation normale et par descente de gradient codée de zéro.",
+                "l3t": "Classer et évaluer",
+                "l3": "Régression logistique, arbres et forêts, matrice de confusion, rappel, précision et courbe ROC.",
+                "l4t": "Réseaux de neurones",
+                "l4": "Du perceptron et du XOR jusqu’aux CNN, LSTM et Transformers avec Keras.",
+                "linkTitle": "Le lien avec mon projet",
+                "link": "Ces notions servent directement dans la SAE Astraeus, où je m’occupe du modèle de prévision météo (un LSTM) du jeu WeatherGuessr."
             }
         },
         meta: {
@@ -210,8 +233,8 @@ const translations = {
                 "intro": "Les bases théoriques des modèles que j’utilise ailleurs, codées à la main en Python.",
                 "b1": "Exploration de données avec NumPy et pandas",
                 "b2": "Régression linéaire et descente de gradient implémentées de zéro",
-                "b3": "ACP, régression logistique, perceptron et problème du XOR",
-                "now": "réseaux de neurones, en lien avec le modèle d’Astraeus"
+                "b3": "ACP, classification, perceptron et XOR, puis CNN, LSTM et Transformers",
+                "now": "réseaux récurrents et Transformers, en lien avec le LSTM d’Astraeus"
             },
             "c5": {
                 "label": "Virtualisation et automatisation",
@@ -579,6 +602,8 @@ const translations = {
             zelda: "Map of the text-mode Zelda game"
         },
         metaPages: {
+            coursMaths: "Mathematical modelling and AI | Matéo Bourdin",
+            coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
             coursDocker: "Docker, CI/CD and Kubernetes | Matéo Bourdin",
             journey: 'Background | Matéo Bourdin',
             projects: 'Projects | Matéo Bourdin',
@@ -622,6 +647,27 @@ const translations = {
                 "apply": "This site follows the same principles: on every change, GitHub Actions checks translations, HTML, links and leaked secrets before publishing.",
                 "nextTitle": "Next in the module",
                 "next": "Kubernetes comes in the next part of the course. This page will be updated as sessions go on."
+            },
+            "maths": {
+                "tag": "📐 Current course · Year 3",
+                "title": "Mathematical modelling and AI",
+                "desc": "From statistics to neural networks: 8 lab sessions, their results, and models running in your browser.",
+                "p1": "The module that links mathematics to artificial intelligence: from NumPy and data analysis to convolutional networks and Transformers. Every topic is worked on in a Python notebook, and my results are shown here.",
+                "s1": "labs in Jupyter notebooks",
+                "s2": "CNN on Fashion-MNIST",
+                "s3": "CNN on CIFAR-10",
+                "s4": "demos running in the browser",
+                "learnTitle": "What I learned",
+                "l1t": "Exploring data",
+                "l1": "Cleaning, filtering and plotting with pandas, matplotlib and seaborn, and measuring what parallel computing really costs.",
+                "l2t": "The maths behind models",
+                "l2": "PCA through eigenvalues, regression through the normal equation and through gradient descent coded from scratch.",
+                "l3t": "Classifying and evaluating",
+                "l3": "Logistic regression, trees and forests, confusion matrix, recall, precision and ROC curve.",
+                "l4t": "Neural networks",
+                "l4": "From the perceptron and XOR to CNNs, LSTMs and Transformers with Keras.",
+                "linkTitle": "How it connects to my project",
+                "link": "These skills feed straight into the Astraeus project, where I build the weather forecasting model (an LSTM) for the WeatherGuessr game."
             }
         },
         meta: {
@@ -779,8 +825,8 @@ const translations = {
                 "intro": "The theory behind the models I use elsewhere, coded by hand in Python.",
                 "b1": "Data exploration with NumPy and pandas",
                 "b2": "Linear regression and gradient descent implemented from scratch",
-                "b3": "PCA, logistic regression, perceptron and the XOR problem",
-                "now": "neural networks, tied to the Astraeus model"
+                "b3": "PCA, classification, the perceptron and XOR, then CNNs, LSTMs and Transformers",
+                "now": "recurrent networks and Transformers, tied to the Astraeus LSTM"
             },
             "c5": {
                 "label": "Virtualisation and automation",

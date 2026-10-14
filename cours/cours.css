@@ -184,3 +184,51 @@ html[lang="fr"] .cours-fr-note { display: none; }
     .cours-panel[hidden] { display: block !important; }
     .cours-fiche > div { display: block !important; }
 }
+
+/* Figures (résultats de notebooks) */
+.cours-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.cours-fig { margin: 0; background: var(--surface); border: 1px solid var(--primary-lighter); border-radius: 12px; padding: .6rem; }
+.cours-fig img { width: 100%; height: auto; display: block; border-radius: 8px; background: #fff; }
+.cours-fig figcaption { font-size: .82rem; color: var(--text-light); margin-top: .45rem; line-height: 1.45; }
+.cours-td { border-top: 1px solid var(--primary-lighter); padding-top: 1.2rem; margin-top: 2.2rem; scroll-margin-top: calc(var(--cours-header-h, 100px) + 70px); }
+.cours-td-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem; }
+.cours-td-head h2 { margin: 0 !important; }
+.cours-td-head .cours-ex-num { font-size: .9rem; }
+.cours-kpis { display: flex; flex-wrap: wrap; gap: .6rem; margin: .8rem 0; }
+.cours-kpi { background: var(--primary-lighter); color: var(--primary-dark); border-radius: 10px; padding: .45rem .8rem; font-size: .88rem; font-weight: 600; }
+.cours-kpi b { font-size: 1.05rem; }
+
+/* Démos maths */
+.cours-ctrl { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: center; margin: .6rem 0 1rem; font-size: .9rem; color: var(--text-light); }
+.cours-ctrl label { display: inline-flex; align-items: center; gap: .45rem; }
+.cours-ctrl input[type="range"] { width: 150px; accent-color: var(--primary); }
+.cours-ctrl select { font: inherit; padding: .35rem .5rem; border-radius: 8px; border: 1px solid var(--primary-lighter); background: var(--surface); color: var(--text); }
+.cours-plots { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+.cours-plots canvas, .cours-plot { width: 100%; height: 260px; background: var(--light); border-radius: 10px; display: block; }
+.cours-demo .cours-out { font-size: .9rem; color: var(--text-light); margin-top: .7rem; line-height: 1.6; }
+.cours-demo .cours-out b { color: var(--text); }
+.cours-img-pair { display: flex; flex-wrap: wrap; gap: 1rem; }
+.cours-img-pair figure { margin: 0; }
+.cours-img-pair canvas { width: 220px; max-width: 42vw; height: auto; image-rendering: auto; border-radius: 8px; background: #000; display: block; }
+.cours-img-pair figcaption { font-size: .8rem; color: var(--text-light); margin-top: .3rem; text-align: center; }
+#percCanvas { width: 280px; max-width: 100%; height: 280px; background: var(--light); border-radius: 10px; }
+.cours-flex { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: flex-start; }
+.cours-flex > .cours-term { flex: 1 1 260px; margin: 0; }
+.cnn-ui { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(260px, 1fr); gap: 1.2rem; }
+.cnn-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+.cnn-thumb { padding: 0; border: 2px solid transparent; border-radius: 6px; background: #000; cursor: pointer; aspect-ratio: 1; overflow: hidden; }
+.cnn-thumb canvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+.cnn-thumb.wrong { border-color: #dc2626; }
+.cnn-thumb.on { outline: 3px solid var(--primary); outline-offset: 1px; }
+.cnn-side { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start; }
+#cnnBig { width: 112px; height: 112px; image-rendering: pixelated; border-radius: 8px; background: #000; }
+#cnnDraw { width: 196px; height: 196px; border-radius: 10px; background: #000; touch-action: none; cursor: crosshair; }
+.cnn-pred { font-size: .92rem; margin-bottom: .5rem; color: var(--text-light); }
+.cnn-pred b { color: var(--text); }
+.cnn-bar { display: grid; grid-template-columns: 96px 1fr 52px; gap: .4rem; align-items: center; font-size: .78rem; color: var(--text-light); margin: 2px 0; }
+.cnn-bar i { height: 10px; border-radius: 99px; background: var(--primary-light); display: block; }
+.cnn-bar.best i { background: var(--primary); }
+.cnn-bar.best span, .cnn-bar.best b { color: var(--text); font-weight: 700; }
+.cnn-bar b { font-weight: 500; text-align: right; }
+.cours-term .ok { color: #6cc4a3; } .cours-term .ko { color: #f87171; }
+@media (max-width: 760px) { .cnn-ui { grid-template-columns: 1fr; } .cnn-grid { grid-template-columns: repeat(6, 1fr); } }

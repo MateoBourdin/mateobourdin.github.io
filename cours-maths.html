@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modélisation mathématique et IA | Matéo Bourdin</title>
+    <meta name="description" content="Mes TD de modélisation mathématique en BUT3 : analyse de données, ACP, régression, classification, CNN et Transformers, avec démos interactives et fiche de révision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/cours-maths.html">
+    <meta property="og:title" content="Modélisation mathématique et IA | Matéo Bourdin">
+    <meta property="og:description" content="Mes TD de modélisation mathématique en BUT3 : analyse de données, ACP, régression, classification, CNN et Transformers, avec démos interactives et fiche de révision.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Modélisation mathématique et IA | Matéo Bourdin">
+    <meta name="twitter:description" content="Mes TD de modélisation mathématique en BUT3 : analyse de données, ACP, régression, classification, CNN et Transformers, avec démos interactives et fiche de révision.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cours/cours.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body data-page="coursMaths">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Matéo Bourdin</a>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+                    <li><a href="projets.html" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="jeux.html" data-i18n="nav.arcade">Arcade</a></li>
+                    <li><a href="cours.html" class="active" aria-current="page" data-i18n="nav.now">Cours actuels</a></li>
+                    <li><a href="competences.html" data-i18n="nav.skills">Compétences</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="fr" title="Français">🇫🇷</button>
+                    <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero cours-hero">
+        <div class="container">
+            <a href="cours.html" class="cours-back" data-i18n="courses.back">← Tous mes cours</a>
+            <div class="section-header">
+                <span class="section-tag"><span data-i18n="courses.maths.tag">📐 Cours actuel · BUT3</span></span>
+                <h1 data-i18n="courses.maths.title">Modélisation mathématique et IA</h1>
+                <p data-i18n="courses.maths.desc">Des statistiques aux réseaux de neurones : 8 TD, leurs résultats, et les modèles qui tournent dans le navigateur.</p>
+                <div class="cours-meta"><span>8 TD</span><span>NumPy · pandas</span><span>scikit-learn</span><span>Keras</span><span>CNN</span><span>Transformer</span></div>
+                <div class="cours-links"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cours-tabs-bar">
+        <div class="container">
+            <div class="cours-tabs" role="tablist" aria-label="Sections du cours">
+                <button type="button" class="cours-tab" role="tab" id="t-presentation" aria-controls="tab-presentation" data-tab="presentation" data-i18n="courses.tabs.presentation">Présentation</button>
+                <button type="button" class="cours-tab" role="tab" id="t-rendus" aria-controls="tab-rendus" data-tab="rendus" data-i18n="courses.tabs.rendus">Rendus et démos</button>
+                <button type="button" class="cours-tab" role="tab" id="t-reviser" aria-controls="tab-reviser" data-tab="reviser" data-i18n="courses.tabs.reviser">Réviser</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+    <section class="cours-panel" id="tab-presentation" role="tabpanel" aria-labelledby="t-presentation">
+        <div class="container">
+            <p class="cours-lead" data-i18n="courses.maths.p1">Le module qui relie les mathématiques à l’intelligence artificielle : de NumPy et de l’analyse de données jusqu’aux réseaux de neurones convolutifs et aux Transformers. Chaque notion est travaillée dans un notebook Python, et mes résultats sont repris ici.</p>
+            <div class="cours-stats">
+                <div class="cours-stat"><b>8</b><span data-i18n="courses.maths.s1">TD en notebooks Jupyter</span></div>
+                <div class="cours-stat"><b>90,7 %</b><span data-i18n="courses.maths.s2">CNN sur Fashion-MNIST</span></div>
+                <div class="cours-stat"><b>83,9 %</b><span data-i18n="courses.maths.s3">CNN sur CIFAR-10</span></div>
+                <div class="cours-stat"><b>6</b><span data-i18n="courses.maths.s4">démos qui tournent dans le navigateur</span></div>
+            </div>
+            <h2 data-i18n="courses.maths.learnTitle">Ce que j’y ai appris</h2>
+            <div class="cours-grid">
+                <div class="cours-card"><span class="cours-card-icon">📊</span><h3 data-i18n="courses.maths.l1t">Explorer des données</h3><p data-i18n="courses.maths.l1">Nettoyer, filtrer et visualiser avec pandas, matplotlib et seaborn, et mesurer ce que coûte vraiment le calcul parallèle.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">📐</span><h3 data-i18n="courses.maths.l2t">Les maths des modèles</h3><p data-i18n="courses.maths.l2">ACP par valeurs propres, régression par équation normale et par descente de gradient codée de zéro.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">🎯</span><h3 data-i18n="courses.maths.l3t">Classer et évaluer</h3><p data-i18n="courses.maths.l3">Régression logistique, arbres et forêts, matrice de confusion, rappel, précision et courbe ROC.</p></div>
+                <div class="cours-card"><span class="cours-card-icon">🧠</span><h3 data-i18n="courses.maths.l4t">Réseaux de neurones</h3><p data-i18n="courses.maths.l4">Du perceptron et du XOR jusqu’aux CNN, LSTM et Transformers avec Keras.</p></div>
+            </div>
+            <h2 data-i18n="courses.maths.linkTitle">Le lien avec mon projet</h2>
+            <p data-i18n="courses.maths.link">Ces notions servent directement dans la SAE Astraeus, où je m’occupe du modèle de prévision météo (un LSTM) du jeu WeatherGuessr.</p>
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-rendus" role="tabpanel" aria-labelledby="t-rendus" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            <h2>Mes TD et leurs résultats</h2>
+            <p>Les chiffres et les graphiques viennent de mes notebooks. Les démos refont les calculs dans ton navigateur, avec le même code traduit en JavaScript ; quand un résultat a été réentraîné ou relancé pour cette page, c’est indiqué.</p>
+            <nav class="cours-toc" aria-label="TD"><a href="#td1" class="cours-goto">TD1 · EDA</a><a href="#td3" class="cours-goto">TD3 · ACP</a><a href="#td4" class="cours-goto">TD4 · Régression</a><a href="#td5" class="cours-goto">TD5 · Classification</a><a href="#td6" class="cours-goto">TD6 · CNN</a><a href="#td7" class="cours-goto">TD7 · CIFAR-10</a><a href="#td8" class="cours-goto">TD8 · Séquences</a></nav>
+            
+            <section class="cours-td" id="td1">
+                <div class="cours-td-head"><span class="cours-ex-num">TD1</span><h2>Python, NumPy, parallélisme et analyse exploratoire</h2></div>
+                <p class="cours-source" style="margin-top:.4rem">Trois exercices : bases NumPy, comparaison des bibliothèques de calcul parallèle, puis analyse exploratoire de données (EDA) avec pandas, matplotlib et seaborn.</p>
+                
+                <h3>Les opérations NumPy, résultats de mon notebook</h3>
+                <div class="cours-term">A = [[1 2]        B = [[5 6]
+     [3 4]]            [7 8]]
+np.dot(A, B)      = [[19 22] [43 50]]     <span class="dim"># produit matriciel</span>
+np.multiply(A, B) = [[ 5 12] [21 32]]     <span class="dim"># élément par élément (= A * B)</span>
+np.inner(A, B)    = [[17 23] [39 53]]     <span class="dim"># ligne de A · ligne de B</span>
+np.outer(A, B)    = matrice 4×4          <span class="dim"># chaque élément de A × chaque élément de B</span>
+4 / 3.5 = 1.142857 · 4 // 3.5 = 1.0 · 4 % 3.5 = 0.5
+tan(45°) = 0.9999999999999999 · degrees(arctan(1)) = 45.0</div>
+                <h3>Paralléliser n’est pas toujours plus rapide</h3>
+                <div class="cours-term">%timeit [math.sqrt(i**2) for i in range(16)]                     <span class="ok">944 ns</span>
+%timeit Parallel(n_jobs=16)(delayed(math.sqrt)(i**2) for ...)       <span class="ko">11 ms</span>   <span class="dim">(≈ 12 000 × plus lent)</span>
+%timeit math_operator(a_inp, b_inp, "add")                         <span class="ok">657 ns</span>
+%timeit vec_math_operator(np.random.rand(3, 4), 2, 'add')          <span class="ko">10.1 µs</span> <span class="dim">(np.vectorize = une boucle Python)</span>
+
+<span class="dim"># TD1 ex2, tableau de 10 éléments</span>
+numpy_vectorize   8.24 µs · multithreading 649 µs · dask 1.98 ms · joblib 10.8 ms</div>
+                <div class="cours-box constat"><span class="cours-box-title">Ce que montrent ces mesures</span><p>Créer des processus ou des threads coûte cher : sur de petites tâches, ce coût fixe écrase le gain du parallélisme. Joblib ou multiprocessing ne deviennent rentables que sur de gros calculs (essayer avec 10⁶ éléments). Et <code>np.vectorize</code> n’est qu’une boucle Python déguisée : la vraie vectorisation, ce sont les opérations NumPy natives.</p></div>
+                <h3>Analyse exploratoire : mes scripts relancés</h3>
+                <p>Mes scripts <code>VideoGamesDataAnalysis.py</code> et <code>nbaDataAnalysis.py</code>, exécutés tels quels pour cette page, et un graphique du notebook (boîte à moustaches sur l’enquête INCA2).</p>
+                <div class="cours-figs">
+                    <figure class="cours-fig"><img src="cours/maths/img/td1-jeux-top10.webp" alt="Top 10 des jeux les plus vendus" loading="lazy"><figcaption>Top 10 des jeux les plus vendus : <code>nlargest(10, "Global_Sales")</code> puis <code>barplot</code>.</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td1-nba-salaires.webp" alt="Distribution des salaires NBA" loading="lazy"><figcaption>Distribution des salaires NBA : histogramme + densité (<code>kde=True</code>), une distribution très asymétrique.</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td1-boxplot.webp" alt="Valeurs extrêmes de &lt;code&gt;qte_brute&lt;/code&gt; (INCA2)" loading="lazy"><figcaption>Valeurs extrêmes de <code>qte_brute</code> (INCA2) : tout point au-delà de 1,5 × l’écart interquartile.</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td1-temperatures.webp" alt="Série temporelle des températures (1981-1990)" loading="lazy"><figcaption>Série temporelle des températures (1981-1990) : la saisonnalité saute aux yeux.</figcaption></figure>
+                </div>
+                <div class="cours-box piege"><span class="cours-box-title">Deux erreurs à reconnaître, repérées en relisant mes graphiques</span>
+                    <ul><li><b>Axe illisible</b> : dans <code>Video_Games.csv</code>, <code>User_Score</code> contient « tbd » ; pandas lit donc la colonne comme du texte et le nuage de points trie les notes comme des mots. Il faut <code>pd.to_numeric(df["User_Score"], errors="coerce")</code> avant de tracer.</li>
+                    <li><b>Camembert à 30 parts</b> : la masse salariale par équipe devient illisible. Mon propre résumé du TD le dit : camembert = peu de catégories ; ici, des barres triées.</li></ul></div>
+                <div class="cours-figs">
+                    <figure class="cours-fig"><img src="cours/maths/img/td1-jeux-scatter.webp" alt="Note critique vs note des joueurs" loading="lazy"><figcaption>Note critique vs note des joueurs : l’axe vertical est faussé par la colonne lue en texte.</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td1-nba-camembert.webp" alt="Masse salariale par équipe" loading="lazy"><figcaption>Masse salariale par équipe : trop de catégories pour un camembert.</figcaption></figure>
+                </div>
+            </section>
+            <section class="cours-td" id="td3">
+                <div class="cours-td-head"><span class="cours-ex-num">TD3</span><h2>Réduction de dimension : l’ACP</h2></div>
+                <p class="cours-source" style="margin-top:.4rem">Iris et Wine, puis compression et débruitage d’une image. Le notebook est titré « TD 2 » dans le sujet.</p>
+                
+                <div class="cours-kpis"><span class="cours-kpi">Wine : PC1 <b>36,2 %</b>, PC2 <b>19,2 %</b></span><span class="cours-kpi"><b>8</b> composantes pour 90 %</span><span class="cours-kpi">Image : <b>55</b> composantes pour 95 %</span><span class="cours-kpi">72 composantes : <b>96,24 %</b> de variance</span></div>
+                <pre class="cours-src" data-lang="py" data-title="TD3 · ACP sur Wine (extrait de mon notebook)">wine = pd.read_csv(&#x27;wine.csv&#x27;)
+X = wine.drop(columns=[&#x27;Wine&#x27;])
+y = wine[&#x27;Wine&#x27;]
+
+# Standardisation (indispensable : les échelles diffèrent
+# énormément, ex. Proline ~1000 vs Hue ~1)
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+n_features = X.shape[1]
+pca = PCA(n_components=n_features)
+pca_values = pca.fit_transform(X_scaled)
+
+var = pca.explained_variance_ratio_
+var1 = np.cumsum(np.round(var, decimals=4) * 100)
+
+# Nombre de composantes pour atteindre 90% de variance
+n_90 = np.argmax(var1 &gt;= 90) + 1
+print(f&quot;{n_90} composantes suffisent pour expliquer &gt;= 90% de la variance.&quot;)</pre>
+                <div class="cours-demo" id="demo-pca">
+                    <div class="cours-demo-head"><h3>Démo : l’ACP recalculée dans le navigateur</h3></div>
+                    <p>Même chaîne que le notebook : standardisation (comme <code>StandardScaler</code>), matrice de covariance, valeurs et vecteurs propres (méthode de Jacobi), projection sur PC1 et PC2. Sur Wine, on retrouve exactement 36,20 % et 19,21 % (le signe d’un axe est arbitraire : une composante peut ressortir inversée par rapport au notebook).</p>
+                    <div class="cours-ctrl"><label>Jeu de données <select id="pcaSet"><option value="wine">Wine (13 variables)</option><option value="iris">Iris (4 variables)</option></select></label></div>
+                    <div class="cours-plots"><canvas id="pcaScree" class="cours-plot"></canvas><canvas id="pcaScatter" class="cours-plot"></canvas></div>
+                    <div class="cours-out" id="pcaOut"></div>
+                </div>
+                <div class="cours-figs">
+                    <figure class="cours-fig"><img src="cours/maths/img/td3-wine-scree.webp" alt="Mon scree plot sur Wine" loading="lazy"><figcaption>Mon scree plot sur Wine : variance par composante et cumulée, seuil de 90 %.</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td3-wine-pc1pc2.webp" alt="Projection des 178 vins sur PC1/PC2" loading="lazy"><figcaption>Projection des 178 vins sur PC1/PC2 : les 3 classes se séparent presque sans recouvrement.</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td3-wine-biplot.webp" alt="Biplot" loading="lazy"><figcaption>Biplot : flèches = contribution de chaque variable aux deux premiers axes.</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td3-wine-loadings.webp" alt="Contributions des variables aux 6 premières composantes." loading="lazy"><figcaption>Contributions des variables aux 6 premières composantes.</figcaption></figure>
+                </div>
+                <div class="cours-demo" id="demo-img">
+                    <div class="cours-demo-head"><h3>Démo : compresser une image par ACP</h3></div>
+                    <p>Comme dans le TD : chaque ligne de pixels est un individu, chaque colonne une variable. On garde les k premières composantes et on reconstruit avec <code>inverse_transform</code>. L’image du TD n’est pas reprise ici (visuel sous droits) : choisis une capture de mes projets, ou une image à toi qui reste sur ton appareil.</p>
+                    <div class="cours-ctrl">
+                        <label>Image <select id="imgSrc"><option value="img/projects/cubebikes.webp">CUBE Bikes (SAE 4.01)</option><option value="img/projects/survival-island.webp">Survival Island</option><option value="img/projects/zelda.webp">Zelda II (terminal)</option><option value="img/projects/portfolio.webp">Portfolio</option></select></label>
+                        <label>ou <input type="file" id="imgFile" accept="image/*"></label>
+                        <label>k = <b id="imgKV">10</b> <input type="range" id="imgK" min="1" max="120" value="10"></label>
+                    </div>
+                    <div class="cours-img-pair"><figure><canvas id="imgOrig"></canvas><figcaption>Originale (niveaux de gris)</figcaption></figure><figure><canvas id="imgRec"></canvas><figcaption>Reconstruite avec k composantes</figcaption></figure></div>
+                    <div class="cours-out" id="imgOut">Calcul…</div>
+                </div>
+                <div class="cours-box constat"><span class="cours-box-title">Une erreur de mon notebook, utile à retenir</span><p>Dans une première cellule, j’ai appliqué la PCA à <code>iris.corr()</code> (la matrice de corrélation 4×4) au lieu des 150 fleurs : on obtient « 98,7 % sur PC1 », un chiffre faux. L’ACP s’applique aux <b>individus</b> standardisés ; refaite correctement : 72,96 % puis 95,81 % cumulés.</p></div>
+                <div class="cours-figs"><figure class="cours-fig"><img src="cours/maths/img/td3-iris-scree-corr.webp" alt="Le scree plot de la version fautive" loading="lazy"><figcaption>Le scree plot de la version fautive : une seule composante semble tout expliquer.</figcaption></figure><figure class="cours-fig"><img src="cours/maths/img/td3-iris-pairplot.webp" alt="Iris" loading="lazy"><figcaption>Iris : pairplot coloré par variété ; les pétales séparent déjà Setosa.</figcaption></figure></div>
+            </section>
+            <section class="cours-td" id="td4">
+                <div class="cours-td-head"><span class="cours-ex-num">TD4</span><h2>Régression linéaire et descente de gradient</h2></div>
+                <p class="cours-source" style="margin-top:.4rem">Prédire la pluie à partir de la température puis de l’humidité, évaluer le modèle (MSE, RMSE, MAE), puis retrouver les coefficients par descente de gradient codée de zéro.</p>
+                
+                <div class="cours-kpis"><span class="cours-kpi">Température : r = <b>−0,31</b> (p = 0,28)</span><span class="cours-kpi">Humidité : r = <b>0,18</b></span><span class="cours-kpi">MSE <b>108,02</b> · RMSE <b>10,39</b> · MAE <b>6,50</b></span><span class="cours-kpi">Stabilisation à l’itération <b>28</b></span></div>
+                <pre class="cours-src" data-lang="py" data-title="TD4 · ma descente de gradient">def gradient_descent(X, Y, learning_rate=0.01, n_iter=1000):
+    a = 0
+    b = 0
+    n = len(X)
+    L = []
+    for it in range(n_iter):
+        da = 0
+        db = 0
+        for i in range(n):
+            pred = a * X[i] + b
+            erreur = pred - Y[i]
+            da += erreur * X[i]
+            db += erreur
+        da = (2/n) * da
+        db = (2/n) * db
+        a = a - learning_rate * da
+        b = b - learning_rate * db
+        L.append([it, a, b, ((1/n) * sum((a*X[i]+b - Y[i])**2 for i in range(n)))])
+    return a, b, L
+
+x_min, x_max = min(x), max(x)
+x_norm = [(xi - x_min) / (x_max - x_min) for xi in x]
+a, b, L_gradiant_result = gradient_descent(x_norm, y, learning_rate=0.5, n_iter=100)</pre>
+                <div class="cours-demo" id="demo-gd">
+                    <div class="cours-demo-head"><h3>Démo : ma descente de gradient, pas à pas</h3><button type="button" class="cours-btn" id="gdRun">▶ Animer</button></div>
+                    <p>La fonction ci-dessus traduite ligne pour ligne. Avec l’humidité, un pas de 0,5 et 100 itérations, on retrouve exactement les valeurs du notebook : a = 7,5451, b = 1,8212, MSE = 108,0229.</p>
+                    <div class="cours-ctrl">
+                        <label>Variable <select id="gdVar"><option value="hum">Humidité (comme le notebook)</option><option value="temp">Température</option></select></label>
+                        <label>Pas = <b id="gdLrV">0.5</b> <input type="range" id="gdLr" min="0.05" max="1.3" step="0.05" value="0.5"></label>
+                        <label>Itérations = <b id="gdItV">100</b> <input type="range" id="gdIt" min="5" max="400" step="5" value="100"></label>
+                    </div>
+                    <div class="cours-plots"><canvas id="gdFit" class="cours-plot"></canvas><canvas id="gdMse" class="cours-plot"></canvas></div>
+                    <div class="cours-out" id="gdOut"></div>
+                </div>
+                <div class="cours-box piege"><span class="cours-box-title">Piège trouvé en vérifiant les chiffres</span><p>La descente de gradient du notebook tourne sur l’<b>humidité</b>, pas sur la température : la cellule précédente avait réaffecté <code>x</code>. Dans un notebook, l’ordre d’exécution compte ; renommer les variables (<code>x_temp</code>, <code>x_hum</code>) évite ce genre de surprise.</p></div>
+                <div class="cours-figs">
+                    <figure class="cours-fig"><img src="cours/maths/img/td4-temperature.webp" alt="Pluie en fonction de la température" loading="lazy"><figcaption>Pluie en fonction de la température : corrélation faible et une valeur extrême (39,8 mm).</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td4-convergence.webp" alt="Convergence du MSE et détection de la stabilisation (ε = 0,01)." loading="lazy"><figcaption>Convergence du MSE et détection de la stabilisation (ε = 0,01).</figcaption></figure>
+                    <figure class="cours-fig"><img src="cours/maths/img/td4-surface.webp" alt="Surface de coût MSE(a, b) et trajectoire de la descente jusqu’au minimum." loading="lazy"><figcaption>Surface de coût MSE(a, b) et trajectoire de la descente jusqu’au minimum.</figcaption></figure>
+                </div>
+                <h3>Régression multiple : l’équation normale</h3>
+                <p>Sur 100 000 points générés avec w = [2 ; 3,4], <code>np.linalg.inv(X.T @ X) @ X.T @ Y</code> retrouve <b>[2,008 ; 3,417]</b>. Le biais b = 4,2 n’est pas estimé : il manquait une colonne de 1 dans X.</p>
+            </section>
+            <section class="cours-td" id="td5">
+                <div class="cours-td-head"><span class="cours-ex-num">TD5</span><h2>Classification : régression logistique, arbres et perceptron</h2></div>
+                <p class="cours-source" style="margin-top:.4rem">Régression logistique évaluée (matrice de confusion, ROC), forêt aléatoire sur Iris, puis le perceptron et le problème du XOR.</p>
+                
+                <div class="cours-kpis"><span class="cours-kpi">Logistique : exactitude <b>0,99</b>, rappel <b>1,0</b></span><span class="cours-kpi">Forêt aléatoire (Iris) : <b>95,6 %</b></span><span class="cours-kpi">Arbre profondeur 3 : <b>95,6 %</b></span><span class="cours-kpi">XOR résolu par un réseau <b>2-2-1</b></span></div>
+                <div class="cours-demo" id="demo-logit">
+                    <div class="cours-demo-head"><h3>Démo : le seuil de décision</h3></div>
+                    <p>Les 100 points de test du TD (régénérés avec <code>np.random.seed(0)</code>) et les probabilités du modèle. Déplace le seuil : la matrice de confusion, le rappel et la précision changent, la courbe ROC non. Relancé ici, le modèle obtient 0,99 d’exactitude et 0,979 de rappel (1,0 dans mon notebook : l’écart vient de la version de scikit-learn).</p>
+                    <div class="cours-ctrl"><label>Seuil = <b id="logitThV">0.50</b> <input type="range" id="logitTh" min="0.02" max="0.98" step="0.01" value="0.5"></label></div>
+                    <div class="cours-plots"><canvas id="logitScatter" class="cours-plot"></canvas><canvas id="logitRoc" class="cours-plot"></canvas></div>
+                    <div class="cours-flex" style="margin-top:.8rem"><div id="logitCm"></div><div class="cours-out" id="logitOut" style="flex:1 1 240px"></div></div>
+                </div>
+                <div class="cours-box piege"><span class="cours-box-title">Deux erreurs dans ma version du notebook</span><ul><li>Le <code>StandardScaler</code> est calculé, mais le modèle est entraîné sur <code>X_train</code> au lieu de <code>X_train_s</code>.</li><li>Le modèle « polynomial » est entraîné sur <code>X_train</code> au lieu de <code>X_train_p</code> : c’est en fait le même modèle linéaire, d’où des scores identiques.</li></ul></div>
+                <div class="cours-figs"><figure class="cours-fig"><img src="cours/maths/img/td5-logit-confusion.webp" alt="Matrice de confusion de mon notebook" loading="lazy"><figcaption>Matrice de confusion de mon notebook : 1 faux positif sur 100.</figcaption></figure><figure class="cours-fig"><img src="cours/maths/img/td5-logit-roc.webp" alt="Courbe ROC" loading="lazy"><figcaption>Courbe ROC : AUC = 1,00.</figcaption></figure><figure class="cours-fig"><img src="cours/maths/img/td5-arbre.webp" alt="Arbre de décision (profondeur 3)" loading="lazy"><figcaption>Arbre de décision (profondeur 3) : la largeur du pétale isole Setosa dès la racine.</figcaption></figure></div>
+                <p>Importance des variables (forêt de 100 arbres) : longueur du pétale <b>0,46</b>, largeur du pétale <b>0,41</b>, longueur du sépale 0,10, largeur du sépale 0,03.</p>
+                <div class="cours-demo" id="demo-perc">
+                    <div class="cours-demo-head"><h3>Démo : perceptron et XOR</h3><button type="button" class="cours-btn" id="percRun">▶ Réentraîner</button></div>
+                    <p>Ma fonction <code>train()</code> (pas de 0,1, 1000 époques) et mon réseau entraîné par rétropropagation (sigmoïde, pas de 0,5, 10 000 époques), en JavaScript. Le fond montre la décision du modèle sur tout le plan.</p>
+                    <div class="cours-ctrl">
+                        <span>Porte :</span><label><input type="radio" name="percGate" value="AND"> AND</label><label><input type="radio" name="percGate" value="OR"> OR</label><label><input type="radio" name="percGate" value="NAND"> NAND</label><label><input type="radio" name="percGate" value="XOR" checked> XOR</label>
+                    </div>
+                    <div class="cours-ctrl">
+                        <span>Modèle :</span><label><input type="radio" name="percModel" value="perc" checked> perceptron</label><label><input type="radio" name="percModel" value="mlp2"> réseau 2-2-1</label><label><input type="radio" name="percModel" value="mlp4"> réseau 2-4-1</label><label>graine <input type="number" id="percSeed" value="0" min="0" max="99" style="width:4.5em"></label>
+                    </div>
+                    <div class="cours-flex"><canvas id="percCanvas" width="280" height="280" aria-label="Frontière de décision"></canvas><div class="cours-term" id="percOut"></div></div>
+                </div>
+                <pre class="cours-src" data-lang="py" data-title="TD5 · résoudre XOR : deux méthodes (extrait de mon notebook)"># MÉTHODE 1 : plusieurs perceptrons assemblés à la main
+#    XOR(a, b) = AND( OR(a, b), NAND(a, b) )
+w_or,   b_or   = train(X, np.array([0, 1, 1, 1]))   # neurone caché 1
+w_nand, b_nand = train(X, np.array([1, 1, 1, 0]))   # neurone caché 2
+H = np.column_stack([neuron(X, w_or, b_or), neuron(X, w_nand, b_nand)])
+w_and, b_and = train(H, np.array([0, 1, 1, 0]))     # neurone de sortie
+
+# MÉTHODE 2 : vrai réseau 2 -&gt; 2 -&gt; 1 entraîné par rétropropagation
+for epoch in range(10000):
+    H = sigmoid(X @ W1 + b1)                       # propagation avant
+    out = sigmoid(H @ W2 + b2)
+    err_out = (out - Y) * out * (1 - out)          # erreur du neurone de sortie
+    err_hid = (err_out @ W2.T) * H * (1 - H)       # erreur renvoyée aux neurones cachés
+    W2 -= lr * H.T @ err_out                       # descente de gradient
+    b2 -= lr * err_out.sum(axis=0, keepdims=True)
+    W1 -= lr * X.T @ err_hid
+    b1 -= lr * err_hid.sum(axis=0, keepdims=True)</pre>
+                <div class="cours-term">=== Méthode 1 : OR + NAND -> AND ===
+[0 0] -> cachée [0 1] -> sortie 0  (attendu 0)
+[0 1] -> cachée [1 1] -> sortie 1  (attendu 1)
+[1 0] -> cachée [1 1] -> sortie 1  (attendu 1)
+[1 1] -> cachée [1 0] -> sortie 0  (attendu 0)
+=== Méthode 2 : réseau 2-2-1 + rétropropagation ===
+[0 0] -> 0.015 -> 0 · [0 1] -> 0.984 -> 1 · [1 0] -> 0.983 -> 1 · [1 1] -> 0.021 -> 0</div>
+            </section>
+            <section class="cours-td" id="td6">
+                <div class="cours-td-head"><span class="cours-ex-num">TD6</span><h2>Réseau de neurones convolutif sur Fashion-MNIST</h2></div>
+                <p class="cours-source" style="margin-top:.4rem">60 000 images de vêtements en 28×28, 10 classes. Un CNN d’une couche de convolution, entraîné 75 époques.</p>
+                
+                <div class="cours-kpis"><span class="cours-kpi">Exactitude test : <b>90,73 %</b></span><span class="cours-kpi"><b>173 738</b> paramètres</span><span class="cours-kpi">75 époques · lots de 4096</span></div>
+                <pre class="cours-src" data-lang="py" data-title="TD6 · le modèle">cnn_model = Sequential([
+    Conv2D(filters=32, kernel_size=3, activation=&#x27;relu&#x27;, input_shape=image_shape),
+    MaxPooling2D(pool_size=2),
+    Dropout(0.2),
+    Flatten(),
+    Dense(32, activation=&#x27;relu&#x27;),
+    Dense(10, activation=&#x27;softmax&#x27;)
+])
+cnn_model.compile(loss=&#x27;sparse_categorical_crossentropy&#x27;, optimizer=&#x27;AdamW&#x27;, metrics=[&#x27;accuracy&#x27;])
+history = cnn_model.fit(x_train, y_train, batch_size=4096, epochs=75,
+                        validation_data=(x_validate, y_validate))</pre>
+                <div class="cours-demo" id="demo-cnn">
+                    <div class="cours-demo-head"><h3>Démo : le CNN qui tourne dans ton navigateur</h3></div>
+                    <p>Même architecture, même découpage et mêmes réglages, réentraînée pour cette page (exactitude test : <b id="cnnRetrain">91,51 %, contre 90,73 % dans mon notebook</b>), puis exportée (≈ 340 Ko). La convolution, le max-pooling et les couches denses sont recalculés en JavaScript, sans bibliothèque.</p>
+                    <button type="button" class="cours-btn" id="cnnLoad">Charger le modèle</button>
+                    <div id="cnnUi" hidden>
+                        <p class="cours-source" id="cnnAcc"></p>
+                        <div class="cnn-ui">
+                            <div><div class="cnn-grid" id="cnnGrid"></div><p class="cours-source" style="margin-top:.5rem">Clique sur une image de test (bordure rouge = erreur du modèle), ou dessine ci-dessous.</p>
+                                <div class="cnn-side"><canvas id="cnnDraw" width="196" height="196" aria-label="Zone de dessin"></canvas><div><button type="button" class="cours-btn ghost" id="cnnClear">Effacer</button><p class="cours-source" style="max-width:220px;margin-top:.5rem">Dessine un vêtement en blanc, en remplissant bien le cadre comme les images du jeu de données.</p></div></div></div>
+                            <div><div class="cnn-side"><canvas id="cnnBig" width="28" height="28" aria-label="Image analysée"></canvas><div id="cnnOut" style="flex:1 1 220px"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cours-figs"><figure class="cours-fig"><img src="cours/maths/img/td6-courbes.webp" alt="Mes courbes d’apprentissage" loading="lazy"><figcaption>Mes courbes d’apprentissage : entraînement et validation restent proches, pas de surapprentissage marqué.</figcaption></figure><figure class="cours-fig"><img src="cours/maths/img/td6-predictions.webp" alt="Prédictions de mon modèle sur 25 images de test." loading="lazy"><figcaption>Prédictions de mon modèle sur 25 images de test.</figcaption></figure></div>
+            </section>
+            <section class="cours-td" id="td7">
+                <div class="cours-td-head"><span class="cours-ex-num">TD7</span><h2>Perceptron multicouche contre CNN sur CIFAR-10</h2></div>
+                <p class="cours-source" style="margin-top:.4rem">50 000 images couleur 32×32 en 10 classes. Le même problème, deux architectures.</p>
+                
+                <table class="cours-table"><thead><tr><th>Modèle</th><th>Paramètres</th><th>Exactitude test</th></tr></thead><tbody>
+                    <tr><td>MLP : Flatten → 256 → 128 → 64 → 10</td><td>828 490</td><td><b>47,54 %</b></td></tr>
+                    <tr><td>CNN : 3 blocs (2 Conv + BatchNorm + MaxPool), Dense 1024</td><td>2 397 226</td><td><b>83,87 %</b></td></tr></tbody></table>
+                <div class="cours-figs"><figure class="cours-fig"><img src="cours/maths/img/td7-mlp.webp" alt="MLP" loading="lazy"><figcaption>MLP : la validation plafonne vers 48 %, l’aplatissement perd la structure de l’image.</figcaption></figure><figure class="cours-fig"><img src="cours/maths/img/td7-cnn.webp" alt="CNN avec EarlyStopping et ReduceLROnPlateau" loading="lazy"><figcaption>CNN avec EarlyStopping et ReduceLROnPlateau : 84 % en validation.</figcaption></figure></div>
+                <p>Le CNN exploite la proximité des pixels (filtres locaux partagés) là où le MLP traite 3 072 valeurs indépendantes. BatchNormalization stabilise l’entraînement, EarlyStopping garde les meilleurs poids, ReduceLROnPlateau divise le pas par 10 quand la validation stagne.</p>
+            </section>
+            <section class="cours-td" id="td8">
+                <div class="cours-td-head"><span class="cours-ex-num">TD8</span><h2>Séquences : RNN, LSTM et Transformer</h2></div>
+                <p class="cours-source" style="margin-top:.4rem">Prédire le mot suivant dans <em>Les Aventures de Sherlock Holmes</em> (domaine public, Project Gutenberg) : 109 137 séquences de 10 mots, vocabulaire de 5 000 mots.</p>
+                
+                <table class="cours-table"><thead><tr><th>Modèle</th><th>Paramètres</th><th>Époques</th><th>Temps</th><th>Val. loss</th><th>Val. exactitude</th><th>Perplexité</th></tr></thead><tbody>
+                    <tr><td>SimpleRNN</td><td>989 704</td><td>13</td><td>270 s</td><td>5,400</td><td>13,5 %</td><td>221</td></tr>
+                    <tr><td>LSTM</td><td>1 063 816</td><td>15</td><td>505 s</td><td>5,371</td><td>14,5 %</td><td>215</td></tr>
+                    <tr><td>Transformer</td><td>695 688</td><td>14</td><td>458 s</td><td>5,370</td><td>13,9 %</td><td>215</td></tr></tbody></table>
+                <figure class="cours-fig"><img src="cours/maths/img/td8-courbes.webp" alt="Loss et exactitude" loading="lazy"><figcaption>Loss et exactitude : la validation remonte vite, d’où l’EarlyStopping.</figcaption></figure>
+                <h3>Génération de texte (amorce : « the detective think that the case is »)</h3>
+                <div class="cours-term">SimpleRNN  greedy  : … is a little man and i have been a little man and i have been a
+LSTM       greedy  : … is a very good man and i have been a little man and i have a
+SimpleRNN  beam(3) : … is it is possible that i should be happy to think that he was a little
+SimpleRNN  temp 1.5: … is into she early clue is foot is done your slip surely now only breakfast of</div>
+                <p>Le mode glouton tourne en boucle, une température élevée produit du texte incohérent, la recherche en faisceau trouve des phrases plus probables. Les trois modèles font jeu égal ici : avec 10 mots de contexte, la mémoire longue du LSTM et l’attention du Transformer n’ont pas l’occasion de faire la différence.</p>
+                <pre class="cours-src" data-lang="py" data-title="TD8 · le bloc Transformer construit à la main">class TransformerBlock(layers.Layer):
+    # self-attention + feed-forward, each followed by residual connection and normalization
+    def __init__(self, embed_dim, num_heads, ff_dim, rate=0.1, **kwargs):
+        super().__init__(**kwargs)
+        self.att = layers.MultiHeadAttention(num_heads=num_heads, key_dim=embed_dim)
+        self.ffn = Sequential([layers.Dense(ff_dim, activation=&#x27;relu&#x27;), layers.Dense(embed_dim)])
+        self.norm1 = layers.LayerNormalization(epsilon=1e-6)
+        self.norm2 = layers.LayerNormalization(epsilon=1e-6)
+        self.drop1 = layers.Dropout(rate)
+        self.drop2 = layers.Dropout(rate)
+
+    def call(self, inputs, training=False):
+        attn_output = self.att(inputs, inputs)                 # each word looks at every word
+        attn_output = self.drop1(attn_output, training=training)
+        out1 = self.norm1(inputs + attn_output)                # residual connection (Add &amp; Norm)
+        ffn_output = self.ffn(out1)
+        ffn_output = self.drop2(ffn_output, training=training)
+        return self.norm2(out1 + ffn_output)</pre>
+            </section>
+        </div>
+    </section>
+
+    <section class="cours-panel" id="tab-reviser" role="tabpanel" aria-labelledby="t-reviser" hidden>
+        <div class="container">
+            <p class="cours-fr-note" data-i18n="courses.frNote">Detailed write-ups and revision notes are in French: they are my own study notes.</p>
+            
+            <h2>Fiche de révision</h2>
+            <p>Les notions des TD1 à TD8, avec les formules à connaître et mes propres résultats comme exemples. Le quiz et les cartes sont en bas de page.</p>
+            <nav class="cours-toc" aria-label="Sommaire de la fiche">
+                <a href="#r-numpy" class="cours-goto">NumPy</a><a href="#r-para" class="cours-goto">Parallélisme</a><a href="#r-eda" class="cours-goto">EDA</a><a href="#r-acp" class="cours-goto">ACP</a><a href="#r-reg" class="cours-goto">Régression</a><a href="#r-logit" class="cours-goto">Logistique</a><a href="#r-metrics" class="cours-goto">Métriques</a><a href="#r-arbres" class="cours-goto">Arbres</a><a href="#r-perc" class="cours-goto">Perceptron</a><a href="#r-train" class="cours-goto">Entraîner</a><a href="#r-cnn" class="cours-goto">CNN</a><a href="#r-seq" class="cours-goto">Séquences</a><a href="#quiz" class="cours-goto">Quiz</a>
+            </nav>
+
+            <details class="cours-fiche" id="r-numpy" open><summary>1. NumPy et bases de Python</summary><div>
+                <table class="cours-table"><thead><tr><th>Opération</th><th>Ce qu’elle calcule</th><th>[[1,2],[3,4]] et [[5,6],[7,8]]</th></tr></thead><tbody>
+                    <tr><td><code>np.dot(A, B)</code> / <code>A @ B</code></td><td>Produit matriciel (ligne × colonne)</td><td>[[19, 22], [43, 50]]</td></tr>
+                    <tr><td><code>np.multiply(A, B)</code> / <code>A * B</code></td><td>Élément par élément</td><td>[[5, 12], [21, 32]]</td></tr>
+                    <tr><td><code>np.inner(A, B)</code></td><td>Ligne de A · ligne de B</td><td>[[17, 23], [39, 53]]</td></tr>
+                    <tr><td><code>np.outer(A, B)</code></td><td>Chaque élément × chaque élément (aplatis)</td><td>matrice 4×4</td></tr></tbody></table>
+                <ul>
+                    <li>Moyenne x̄ = Σxᵢ / n · variance σ² = Σ(xᵢ − x̄)² / n · écart-type σ = √σ² · médiane = valeur centrale <b>après tri</b> (moyenne des deux centrales si n est pair).</li>
+                    <li><code>/</code> division réelle, <code>//</code> division entière (vers le bas), <code>%</code> reste : 4 / 3,5 = 1,14 ; 4 // 3,5 = 1,0 ; 4 % 3,5 = 0,5.</li>
+                    <li><code>tan</code> donne un rapport à partir d’un angle (en radians), <code>arctan</code> fait l’inverse : <code>np.degrees(np.arctan(1))</code> = 45.</li>
+                    <li><code>np.random.seed(n)</code> fixe le hasard : mêmes tirages à chaque exécution (reproductibilité).</li>
+                    <li><code>np.linspace(a, b, n)</code> : n points régulièrement espacés de a à b inclus ; <code>np.arange</code> : avec un pas, b exclu.</li>
+                </ul>
+                <div class="cours-box piege"><span class="cours-box-title">Piège</span><p>Pour une médiane faite à la main, trier d’abord le tableau. <code>np.median</code> le fait pour toi.</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-para"><summary>2. Threads, processus et vitesse de calcul</summary><div>
+                <table class="cours-table"><thead><tr><th>Outil</th><th>Principe</th><th>Quand l’utiliser</th></tr></thead><tbody>
+                    <tr><td>Vectorisation NumPy</td><td>Opérations sur tout le tableau, en C</td><td>Toujours en premier choix</td></tr>
+                    <tr><td><code>threading</code></td><td>Plusieurs fils dans un même processus (mémoire partagée) ; le GIL empêche le vrai parallélisme du Python pur</td><td>Attentes (réseau, fichiers, <code>sleep</code>)</td></tr>
+                    <tr><td><code>multiprocessing</code>, Joblib</td><td>Plusieurs processus, un par cœur ; coût de démarrage et de copie des données</td><td>Gros calculs CPU</td></tr>
+                    <tr><td>Numba <code>@njit</code></td><td>Compile la fonction en code machine au premier appel (JIT)</td><td>Boucles numériques lourdes</td></tr>
+                    <tr><td>Dask</td><td>Découpe un tableau en morceaux (<code>chunks</code>) traités en parallèle</td><td>Données plus grandes que la mémoire</td></tr></tbody></table>
+                <div class="cours-box retenir"><span class="cours-box-title">À retenir</span><p>Le parallélisme a un coût fixe. Mesuré au TD1 : 944 ns en séquentiel contre 11 ms avec Joblib pour 16 racines carrées. Il ne paie que si chaque tâche est longue.</p></div>
+                <ul><li><code>%timeit</code> répète la mesure et donne moyenne ± écart-type.</li><li>Thread = unité d’exécution légère dans un processus ; cœur = unité matérielle qui exécute des instructions.</li><li>Octets → Go : diviser par 1024³.</li></ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-eda"><summary>3. Analyse exploratoire avec pandas</summary><div>
+                <pre class="cours-src" data-lang="py" data-title="les réflexes de départ">df = pd.read_csv("fichier.csv", sep=";", encoding="latin1")
+df.head(10); df.tail(10)          # premières / dernières lignes
+df.shape; df.dtypes; df.info()    # taille, types, valeurs non nulles
+df.describe()                     # moyenne, écart-type, quartiles
+df.isna().sum()                   # valeurs manquantes par colonne
+df = df[df["libmarq"] != "x"]     # filtrer des lignes
+df = df.drop(["libmarq"], axis=1) # supprimer une colonne
+df.groupby("Team")["Salary"].sum().sort_values(ascending=False)
+df.nlargest(10, "Global_Sales")</pre>
+                <ul>
+                    <li><code>.loc[label]</code> sélectionne par <b>étiquette</b> d’index (et de colonne) ; <code>.iloc[i]</code> par <b>position</b> (0, 1, 2…). Après un filtrage, l’étiquette 369835 n’est plus à la position 369835.</li>
+                    <li>Valeur extrême (boîte à moustaches) : en dehors de [Q1 − 1,5 × IQR ; Q3 + 1,5 × IQR], avec IQR = Q3 − Q1.</li>
+                </ul>
+                <table class="cours-table"><thead><tr><th>Objectif</th><th>Graphique</th></tr></thead><tbody>
+                    <tr><td>Évolution dans le temps</td><td><code>plot</code></td></tr><tr><td>Comparer des catégories</td><td><code>bar</code> / <code>barh</code> (noms longs)</td></tr>
+                    <tr><td>Distribution d’une variable</td><td><code>hist</code>, <code>boxplot</code>, <code>violinplot</code></td></tr><tr><td>Relation entre deux variables</td><td><code>scatter</code></td></tr>
+                    <tr><td>Proportions, peu de catégories</td><td><code>pie</code></td></tr><tr><td>Matrice (corrélations)</td><td><code>imshow</code>, <code>sns.heatmap</code></td></tr>
+                    <tr><td>Toutes les paires de variables</td><td><code>sns.pairplot</code></td></tr></tbody></table>
+                <div class="cours-box piege"><span class="cours-box-title">Vérifier les types avant de tracer</span><p>Une colonne numérique qui contient un texte (« tbd ») devient <code>object</code> : convertir avec <code>pd.to_numeric(..., errors="coerce")</code>.</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-acp"><summary>4. Analyse en composantes principales (ACP)</summary><div>
+                <ol>
+                    <li><b>Standardiser</b> chaque variable : z = (x − moyenne) / écart-type. Sans ça, la variable de plus grande échelle (Proline ≈ 1000) écrase les autres (Hue ≈ 1).</li>
+                    <li>Calculer la <b>matrice de covariance</b> (ou de corrélation) des variables standardisées.</li>
+                    <li>Ses <b>vecteurs propres</b> sont les axes principaux, ses <b>valeurs propres</b> la variance portée par chaque axe.</li>
+                    <li>Trier par variance décroissante, garder k axes, <b>projeter</b> les individus dessus.</li>
+                </ol>
+                <ul>
+                    <li>Variance expliquée de l’axe k = λₖ / Σλ. On choisit k avec le <b>scree plot</b> (coude) ou un seuil de variance cumulée (90 %, 95 %).</li>
+                    <li><b>Loadings</b> = coordonnées des vecteurs propres : quelles variables construisent chaque axe (Wine : Flavanoids, Phenols et OD pour PC1 ; Color.int et Alcohol pour PC2).</li>
+                    <li>Les composantes sont non corrélées entre elles ; l’ACP est linéaire et non supervisée (elle ignore les classes).</li>
+                    <li>Image : chaque ligne de pixels = un individu. Garder k composantes = compresser ; <code>inverse_transform</code> reconstruit. Débruitage : le bruit se loge dans les dernières composantes, on les met à zéro.</li>
+                </ul>
+                <pre class="cours-src" data-lang="py" data-title="scikit-learn">X_scaled = StandardScaler().fit_transform(X)
+pca = PCA(n_components=k)
+scores = pca.fit_transform(X_scaled)       # coordonnées des individus
+pca.explained_variance_ratio_              # part de variance par axe
+pca.components_                            # vecteurs propres (loadings)
+X_rec = pca.inverse_transform(scores)      # reconstruction</pre>
+            </div></details>
+
+            <details class="cours-fiche" id="r-reg"><summary>5. Régression linéaire et descente de gradient</summary><div>
+                <ul>
+                    <li>Modèle : ŷ = wᵀx + b. Moindres carrés : minimiser ‖y − Xw‖².</li>
+                    <li><b>Équation normale</b> : w* = (XᵀX)⁻¹ Xᵀy (solution unique si XᵀX est inversible). Ajouter une colonne de 1 à X pour estimer le biais.</li>
+                    <li><b>Descente de gradient</b> sur MSE = (1/n) Σ(a·xᵢ + b − yᵢ)² :<br>∂MSE/∂a = (2/n) Σ eᵢ·xᵢ ; ∂MSE/∂b = (2/n) Σ eᵢ ; puis a ← a − η·∂a et b ← b − η·∂b.</li>
+                    <li>Le <b>pas</b> η : trop grand, ça diverge ; trop petit, c’est lent. <b>Normaliser</b> x (min-max dans [0, 1]) rend la surface de coût mieux conditionnée.</li>
+                    <li><code>stats.linregress(x, y)</code> renvoie pente, ordonnée, r, p-value et erreur standard. p = 0,28 au TD4 : la pente n’est pas significative.</li>
+                    <li>Mini-batch SGD : le gradient est calculé sur un petit lot à chaque pas (plus rapide, plus bruité).</li>
+                </ul>
+                <table class="cours-table"><thead><tr><th>Métrique</th><th>Formule</th><th>Lecture</th></tr></thead><tbody>
+                    <tr><td>MSE</td><td>(1/n) Σ(ŷ − y)²</td><td>Pénalise fort les grosses erreurs</td></tr>
+                    <tr><td>RMSE</td><td>√MSE</td><td>Dans l’unité de y</td></tr>
+                    <tr><td>MAE</td><td>(1/n) Σ|ŷ − y|</td><td>Moins sensible aux valeurs extrêmes</td></tr>
+                    <tr><td>R²</td><td>1 − SS_res / SS_tot</td><td>Part de variance expliquée (1 = parfait)</td></tr>
+                    <tr><td>r</td><td>cov(x, y) / (σx σy)</td><td>Corrélation linéaire, entre −1 et 1 ; r² = R² en régression simple</td></tr></tbody></table>
+            </div></details>
+
+            <details class="cours-fiche" id="r-logit"><summary>6. Régression logistique</summary><div>
+                <ul>
+                    <li>z = θ₀ + θ₁x₁ + … + θₙxₙ, puis probabilité p = σ(z) = 1 / (1 + e⁻ᶻ), entre 0 et 1.</li>
+                    <li>Prédiction : 1 si p ≥ 0,5 (seuil réglable), sinon 0. La frontière de décision z = 0 est une droite (un hyperplan).</li>
+                    <li>Coût : entropie croisée J(θ) = −(1/m) Σ [y log p + (1 − y) log(1 − p)], minimisée par descente de gradient.</li>
+                    <li><code>PolynomialFeatures(degree=3)</code> ajoute des termes x₁², x₁x₂… : la frontière devient courbe.</li>
+                    <li>Normaliser : <code>fit_transform</code> sur le train, <code>transform</code> seulement sur le test (jamais de fit sur le test).</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-metrics"><summary>7. Évaluer un classifieur</summary><div>
+                <table class="cours-table"><thead><tr><th></th><th>prédit 0</th><th>prédit 1</th></tr></thead><tbody><tr><th>réel 0</th><td>VN (vrai négatif)</td><td>FP (faux positif)</td></tr><tr><th>réel 1</th><td>FN (faux négatif)</td><td>VP (vrai positif)</td></tr></tbody></table>
+                <ul>
+                    <li><b>Exactitude</b> (accuracy) = (VP + VN) / total : trompeuse si les classes sont déséquilibrées.</li>
+                    <li><b>Rappel</b> (recall, sensibilité) = VP / (VP + FN) : part des positifs retrouvés. À privilégier quand rater un positif coûte cher (dépistage).</li>
+                    <li><b>Précision</b> = VP / (VP + FP) : part des alertes justes.</li>
+                    <li><b>F1</b> = 2 · précision · rappel / (précision + rappel).</li>
+                    <li><b>Courbe ROC</b> : taux de vrais positifs en fonction du taux de faux positifs, pour tous les seuils. <b>AUC</b> = aire sous la courbe : 0,5 = hasard, 1 = parfait.</li>
+                    <li>Découpage train / validation / test : on règle sur la validation, on rend compte une seule fois sur le test.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-arbres"><summary>8. Arbres de décision et forêts aléatoires</summary><div>
+                <ul>
+                    <li>Un arbre pose des questions « variable ≤ seuil ? » qui séparent au mieux les classes (critère de Gini ou entropie). <code>max_depth</code> limite la profondeur pour éviter le par-cœur.</li>
+                    <li>Forêt aléatoire : beaucoup d’arbres entraînés sur des échantillons tirés au hasard (bagging) et des sous-ensembles de variables ; on vote. Plus robuste qu’un arbre seul.</li>
+                    <li><code>feature_importances_</code> : contribution de chaque variable aux découpes (Iris : les pétales).</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-perc"><summary>9. Perceptron, XOR et rétropropagation</summary><div>
+                <ul>
+                    <li>Perceptron : sortie = step(w·x + b). Règle d’apprentissage : w ← w + η (y − ŷ) x et b ← b + η (y − ŷ).</li>
+                    <li>Il ne sait séparer que des classes <b>linéairement séparables</b> (AND, OR, NAND oui ; XOR non : aucune droite ne sépare (0,1),(1,0) de (0,0),(1,1)).</li>
+                    <li>Solution : une couche cachée. À la main, XOR = AND(OR, NAND) ; ou un réseau 2-2-1 entraîné.</li>
+                    <li>Rétropropagation : on remplace la marche (non dérivable) par une sigmoïde σ, de dérivée σ(1 − σ). L’erreur de sortie est renvoyée vers les neurones cachés (règle de dérivation en chaîne), puis chaque poids descend son gradient.</li>
+                    <li>Avec 2 neurones cachés, l’entraînement peut rester bloqué (sorties à 0,5) : minimum local. 4 neurones cachés convergent presque toujours.</li>
+                </ul>
+                <table class="cours-table"><thead><tr><th>Activation</th><th>Formule</th><th>Usage</th></tr></thead><tbody>
+                    <tr><td>Sigmoïde</td><td>1 / (1 + e⁻ˣ)</td><td>Sortie binaire (probabilité)</td></tr><tr><td>Tanh</td><td>(eˣ − e⁻ˣ) / (eˣ + e⁻ˣ)</td><td>Cachée, centrée en 0 (RNN)</td></tr>
+                    <tr><td>ReLU</td><td>max(0, x)</td><td>Couches cachées des réseaux profonds</td></tr><tr><td>Softmax</td><td>eᶻⁱ / Σ eᶻʲ</td><td>Sortie multiclasse (somme = 1)</td></tr></tbody></table>
+            </div></details>
+
+            <details class="cours-fiche" id="r-train"><summary>10. Entraîner un réseau de neurones</summary><div>
+                <ul>
+                    <li><b>Époque</b> = un passage sur tout le jeu d’entraînement ; <b>lot</b> (batch) = nombre d’exemples par mise à jour des poids. 48 000 images en lots de 4096 → 12 pas par époque.</li>
+                    <li>Perte : <code>sparse_categorical_crossentropy</code> si les étiquettes sont des entiers, <code>categorical_crossentropy</code> si elles sont en one-hot.</li>
+                    <li>Optimiseurs : SGD (± momentum), Adam, AdamW (Adam + décroissance de poids découplée), RMSprop…</li>
+                    <li><b>Surapprentissage</b> : la perte d’entraînement baisse mais celle de validation remonte. Remèdes : Dropout, plus de données, régularisation, EarlyStopping.</li>
+                    <li><b>EarlyStopping</b>(patience, <code>restore_best_weights=True</code>) arrête quand la validation ne s’améliore plus et garde les meilleurs poids. <b>ReduceLROnPlateau</b> réduit le pas quand la validation stagne.</li>
+                    <li><b>BatchNormalization</b> normalise les activations d’une couche par lot : entraînement plus rapide et plus stable.</li>
+                    <li>Normaliser les pixels (÷ 255) et appliquer exactement le même prétraitement au test.</li>
+                </ul>
+            </div></details>
+
+            <details class="cours-fiche" id="r-cnn"><summary>11. Réseaux convolutifs (CNN)</summary><div>
+                <ul>
+                    <li><b>Convolution</b> : un filtre (noyau 3×3) glisse sur l’image ; chaque position donne une somme pondérée. Les poids sont partagés sur toute l’image : peu de paramètres, détection des motifs où qu’ils soient.</li>
+                    <li>Taille de sortie = (n − k + 2p) / s + 1 : 28×28, noyau 3, sans padding, pas 1 → 26×26. <code>padding='same'</code> garde la taille.</li>
+                    <li><b>Max-pooling</b> 2×2 : garde le maximum de chaque bloc, divise la taille par 2 (26 → 13).</li>
+                    <li><b>Flatten</b> → couches denses → <b>softmax</b> sur les classes.</li>
+                </ul>
+                <table class="cours-table"><thead><tr><th>Couche du TD6</th><th>Sortie</th><th>Paramètres</th></tr></thead><tbody>
+                    <tr><td>Conv2D 32 filtres 3×3</td><td>26×26×32</td><td>3×3×1×32 + 32 = <b>320</b></td></tr>
+                    <tr><td>MaxPooling2D 2×2</td><td>13×13×32</td><td>0</td></tr><tr><td>Dropout 0,2 · Flatten</td><td>5 408</td><td>0</td></tr>
+                    <tr><td>Dense 32 (ReLU)</td><td>32</td><td>5 408×32 + 32 = <b>173 088</b></td></tr>
+                    <tr><td>Dense 10 (softmax)</td><td>10</td><td>32×10 + 10 = <b>330</b></td></tr>
+                    <tr><td colspan="2"><b>Total</b></td><td><b>173 738</b></td></tr></tbody></table>
+                <div class="cours-box retenir"><span class="cours-box-title">Paramètres d’une Conv2D</span><p>(hauteur × largeur du noyau × canaux d’entrée + 1) × nombre de filtres. Une Dense : (entrées + 1) × sorties.</p></div>
+            </div></details>
+
+            <details class="cours-fiche" id="r-seq"><summary>12. Séquences : RNN, LSTM, Transformer</summary><div>
+                <ul>
+                    <li><b>Embedding</b> : chaque mot (un entier) devient un vecteur appris ; des mots aux contextes proches ont des vecteurs proches.</li>
+                    <li><b>RNN</b> : hₜ = tanh(Wₓ xₜ + Wₕ hₜ₋₁ + b), mêmes poids à chaque pas. Limite : le gradient s’évanouit en remontant le temps (vanishing gradient), le début des longues séquences est oublié.</li>
+                    <li><b>LSTM</b> : une cellule mémoire cₜ et trois portes (oubli, entrée, sortie). cₜ = fₜ ⊙ cₜ₋₁ + iₜ ⊙ c̃ₜ ; mise à jour par addition, le gradient circule mieux. 4 fois plus de paramètres qu’un RNN de même taille.</li>
+                    <li><b>Transformer</b> : plus de récurrence, tous les mots en parallèle. Attention(Q, K, V) = softmax(QKᵀ / √dₖ) V. Multi-têtes : plusieurs attentions en parallèle. Encodage de position obligatoire, connexions résiduelles + LayerNorm.</li>
+                    <li><b>Perplexité</b> = e^loss : nombre moyen de mots entre lesquels le modèle hésite (≈ 215 au TD8, sur 5 000 mots).</li>
+                    <li>Génération : glouton (le plus probable, boucle), température (&lt; 1 prudent, &gt; 1 créatif), top-k, top-p (noyau), recherche en faisceau (beam search).</li>
+                </ul>
+            </div></details>
+
+            <h2 id="quiz">Quiz</h2>
+            <div class="cours-quiz" data-quiz="maths"></div>
+            <h2 id="cartes">Cartes mémo</h2>
+            <div class="cours-cards" data-cards="maths"></div>
+
+        </div>
+    </section>
+    </main>
+<script>
+window.COURS_QUIZ = Object.assign(window.COURS_QUIZ || {}, { maths: [
+ { q: 'Avec A = [[1,2],[3,4]] et B = [[5,6],[7,8]], que vaut <code>A * B</code> en NumPy ?', c: ['[[5, 12], [21, 32]]', '[[19, 22], [43, 50]]', '[[17, 23], [39, 53]]', 'Une erreur'], a: 0, w: 'L’opérateur * multiplie élément par élément (comme np.multiply). Le produit matriciel s’écrit A @ B ou np.dot(A, B) et donne [[19, 22], [43, 50]].' },
+ { q: 'Que vaut <code>4 // 3.5</code> en Python ?', c: ['1.0', '1.142857', '0.5', '1'], a: 0, w: '// est la division entière (arrondie vers le bas) ; avec un float, le résultat est 1.0. 4 % 3.5 vaut 0.5 (le reste).' },
+ { q: 'Pourquoi Joblib a-t-il été 12 000 fois plus lent qu’une simple boucle au TD1 ?', c: ['Le coût de création des processus dépasse le calcul (16 racines carrées)', 'Joblib n’utilise qu’un cœur', 'math.sqrt est incompatible avec Joblib', 'À cause du GIL'], a: 0, w: 'Le parallélisme a un coût fixe (lancer des processus, copier les données). Sur une tâche minuscule, ce coût domine : il ne paie que pour de gros calculs.' },
+ { q: 'Quelle est la différence entre <code>.loc</code> et <code>.iloc</code> ?', c: ['.loc sélectionne par étiquette, .iloc par position', '.loc par position, .iloc par étiquette', '.loc pour les lignes, .iloc pour les colonnes', 'Aucune'], a: 0, w: '.loc[369835] cherche l’étiquette d’index 369835 ; .iloc[0] prend la première ligne quelle que soit son étiquette. Après un filtrage, les deux diffèrent.' },
+ { q: 'Une colonne de notes contient « tbd ». Que faire avant de tracer un nuage de points ?', c: ['pd.to_numeric(col, errors="coerce")', 'col.astype(str)', 'Supprimer la colonne', 'Rien, matplotlib s’adapte'], a: 0, w: 'La colonne est lue en texte (object) : l’axe trie alors les valeurs comme des mots. to_numeric avec errors="coerce" transforme « tbd » en NaN et le reste en nombres.' },
+ { q: 'Pourquoi standardiser les variables avant une ACP sur Wine ?', c: ['Pour que les variables à grande échelle (Proline ≈ 1000) n’écrasent pas les autres', 'Pour que l’ACP soit plus rapide', 'Parce que l’ACP exige des valeurs entre 0 et 1', 'Pour supprimer les valeurs manquantes'], a: 0, w: 'L’ACP maximise la variance : sans standardisation, la variable de plus grande variance numérique dominerait le premier axe, quelle que soit son importance réelle.' },
+ { q: 'Sur Wine, PC1 explique 36,2 % et PC2 19,21 % de la variance. Que vaut la variance cumulée des deux ?', c: ['55,41 %', '36,2 %', '19,21 %', '100 %'], a: 0, w: 'On additionne les parts : 36,20 + 19,21 = 55,41 %. Il faut 8 composantes pour dépasser 90 %.' },
+ { q: 'Dans une ACP, que représentent les valeurs propres de la matrice de covariance ?', c: ['La variance portée par chaque axe principal', 'Les coordonnées des individus', 'Les moyennes des variables', 'Le nombre de classes'], a: 0, w: 'Chaque vecteur propre est un axe, sa valeur propre est la variance des données projetées sur cet axe. Variance expliquée = λₖ / Σλ.' },
+ { q: 'Pourquoi le résultat « 98,7 % sur PC1 » de mon premier essai sur Iris était-il faux ?', c: ['La PCA était appliquée à la matrice de corrélation au lieu des données', 'Les données n’étaient pas standardisées', 'Il fallait 2 composantes', 'Iris contient des valeurs manquantes'], a: 0, w: 'pca.fit_transform(iris.corr()) traite les 4 lignes de la matrice 4×4 comme des individus. Il faut l’appliquer aux 150 fleurs standardisées : 72,96 % sur PC1.' },
+ { q: 'Quelle est la formule de l’équation normale de la régression linéaire ?', c: ['w* = (XᵀX)⁻¹ Xᵀy', 'w* = Xᵀy', 'w* = (XXᵀ)⁻¹ y', 'w* = X⁻¹ y'], a: 0, w: 'En annulant la dérivée de ‖y − Xw‖², on obtient XᵀX w = Xᵀy, d’où w* = (XᵀX)⁻¹Xᵀy si XᵀX est inversible.' },
+ { q: 'Dans ma descente de gradient, que se passe-t-il si le pas d’apprentissage est trop grand ?', c: ['Les coefficients oscillent puis divergent', 'La convergence est plus lente', 'Le MSE final est plus petit', 'Rien'], a: 0, w: 'Chaque pas dépasse le minimum de plus en plus loin. Dans la démo, au-delà d’environ 1,2 sur l’humidité normalisée, a et b explosent.' },
+ { q: 'Quelle est la mise à jour de b dans ma descente de gradient ?', c: ['b ← b − η · (2/n) Σ (a·xᵢ + b − yᵢ)', 'b ← b + η · Σ yᵢ', 'b ← b − η · (2/n) Σ (a·xᵢ + b − yᵢ)·xᵢ', 'b ← moyenne(y)'], a: 0, w: 'La dérivée du MSE par rapport à b est (2/n) Σ eᵢ (sans le facteur xᵢ, réservé à a). On soustrait le gradient multiplié par le pas.' },
+ { q: 'Le RMSE de mon modèle pluie/humidité vaut 10,39. Qu’est-ce que ça signifie ?', c: ['L’erreur typique est d’environ 10 mm de pluie', 'Le modèle se trompe 10 fois sur 100', 'R² = 10,39 %', 'La pente vaut 10,39'], a: 0, w: 'RMSE = √MSE, dans l’unité de la cible. Avec des pluies de 0 à 40 mm, c’est une erreur énorme : l’humidité prédit mal la pluie (r = 0,18).' },
+ { q: 'Quelle fonction transforme z en probabilité dans la régression logistique ?', c: ['La sigmoïde 1 / (1 + e⁻ᶻ)', 'ReLU', 'tanh', 'La fonction marche'], a: 0, w: 'La sigmoïde ramène tout réel entre 0 et 1. On prédit 1 si la probabilité dépasse le seuil (0,5 par défaut).' },
+ { q: 'Le rappel (recall) se calcule comme…', c: ['VP / (VP + FN)', 'VP / (VP + FP)', '(VP + VN) / total', 'VN / (VN + FP)'], a: 0, w: 'Le rappel est la part des vrais positifs retrouvés. VP / (VP + FP) est la précision, (VP + VN) / total l’exactitude.' },
+ { q: 'En baissant le seuil de décision de 0,5 à 0,2, en général…', c: ['Le rappel augmente et la précision baisse', 'Le rappel et la précision augmentent', 'L’AUC change', 'Rien ne change'], a: 0, w: 'Plus d’exemples sont déclarés positifs : on rate moins de vrais positifs (rappel ↑) mais on fait plus de fausses alertes (précision ↓). L’AUC, elle, ne dépend pas du seuil.' },
+ { q: 'Une AUC de 0,5 signifie que le classifieur…', c: ['ne fait pas mieux que le hasard', 'est parfait', 'se trompe toujours', 'a un rappel de 50 %'], a: 0, w: 'La courbe ROC suit alors la diagonale. 1 = séparation parfaite (mon TD5 : 1,00).' },
+ { q: 'Quelle erreur expliquait des scores identiques pour mon modèle « polynomial » ?', c: ['Il était entraîné sur X_train au lieu de X_train_p', 'Le degré était trop faible', 'Les données étaient trop simples', 'Il manquait max_iter'], a: 0, w: 'clf_poly.fit(X_train, y_train) ignore les termes polynomiaux calculés dans X_train_p : c’était le même modèle linéaire.' },
+ { q: 'Pourquoi un perceptron seul ne peut-il pas apprendre XOR ?', c: ['XOR n’est pas linéairement séparable', 'Le pas d’apprentissage est trop petit', 'Il faut plus d’époques', 'La fonction marche n’est pas assez précise'], a: 0, w: 'Le perceptron trace une seule droite. Aucune droite ne sépare (0,1) et (1,0) d’un côté, (0,0) et (1,1) de l’autre. Il faut une couche cachée.' },
+ { q: 'Comment ai-je construit XOR avec trois perceptrons ?', c: ['XOR = AND(OR, NAND)', 'XOR = OR(AND, AND)', 'XOR = NAND(NAND)', 'XOR = OR(NOT, AND)'], a: 0, w: 'OR et NAND forment la couche cachée ; le neurone de sortie fait un AND de leurs sorties. Les 4 cas sont alors bien classés.' },
+ { q: 'Pourquoi remplacer la fonction marche par une sigmoïde pour entraîner un réseau ?', c: ['La rétropropagation a besoin d’une fonction dérivable', 'La sigmoïde est plus rapide', 'La marche ne donne que des 0', 'Pour avoir des sorties négatives'], a: 0, w: 'La rétropropagation calcule des gradients par dérivation en chaîne ; la marche a une dérivée nulle partout (sauf en 0). La sigmoïde a pour dérivée σ(1 − σ).' },
+ { q: 'Combien de paramètres a une couche <code>Conv2D(32, 3)</code> sur une image en niveaux de gris ?', c: ['320', '288', '32', '9'], a: 0, w: '3×3 poids × 1 canal × 32 filtres = 288, plus 32 biais = 320 (vérifié par model.summary() au TD6).' },
+ { q: 'Une image 28×28 passe dans une convolution 3×3 sans padding puis un max-pooling 2×2. Taille finale ?', c: ['13×13', '14×14', '26×26', '12×12'], a: 0, w: 'Convolution : 28 − 3 + 1 = 26. Pooling 2×2 : 26 / 2 = 13. Avec 32 filtres, Flatten donne 13×13×32 = 5 408 valeurs.' },
+ { q: 'Que fait une couche <code>Dropout(0.2)</code> ?', c: ['Désactive au hasard 20 % des neurones pendant l’entraînement', 'Supprime 20 % des données', 'Réduit le pas de 20 %', 'Arrête l’entraînement à 20 %'], a: 0, w: 'Le dropout empêche les neurones de trop compter les uns sur les autres et limite le surapprentissage. Il est inactif en prédiction.' },
+ { q: 'Pourquoi le CNN atteint 84 % sur CIFAR-10 quand le MLP plafonne à 48 % ?', c: ['Les filtres exploitent la structure spatiale de l’image', 'Il a moins de paramètres', 'Il s’entraîne plus longtemps', 'Il utilise une sigmoïde'], a: 0, w: 'Le MLP aplatit l’image en 3 072 valeurs sans notion de voisinage. Les convolutions repèrent des motifs locaux (bords, textures) partout dans l’image avec des poids partagés.' },
+ { q: 'Que fait EarlyStopping avec <code>restore_best_weights=True</code> ?', c: ['Arrête quand la validation ne s’améliore plus et garde les meilleurs poids', 'Arrête après un nombre fixe d’époques', 'Réduit le pas d’apprentissage', 'Sauvegarde le modèle à chaque époque'], a: 0, w: 'Il surveille val_loss : après « patience » époques sans amélioration, il s’arrête et revient aux poids de la meilleure époque, avant le surapprentissage.' },
+ { q: 'Quel problème le LSTM résout-il par rapport au RNN simple ?', c: ['L’évanouissement du gradient sur les longues séquences', 'Le temps de calcul', 'Le nombre de paramètres', 'Le besoin d’embeddings'], a: 0, w: 'Sa cellule mémoire est mise à jour par addition, contrôlée par des portes : le gradient traverse mieux le temps et les dépendances lointaines sont conservées.' },
+ { q: 'Dans Attention(Q, K, V) = softmax(QKᵀ / √dₖ) V, à quoi sert la division par √dₖ ?', c: ['Éviter des scores trop grands qui saturent le softmax', 'Normaliser V', 'Ajouter la position des mots', 'Réduire le nombre de têtes'], a: 0, w: 'Les produits scalaires grandissent avec la dimension ; sans mise à l’échelle, le softmax devient presque one-hot et les gradients s’écrasent.' },
+ { q: 'La perplexité d’un modèle de langage vaut…', c: ['e^loss', 'loss²', '1 − exactitude', 'la taille du vocabulaire'], a: 0, w: 'Perplexité = e^(entropie croisée). 215 au TD8 : le modèle hésite en moyenne entre ~215 mots (1 = certitude, 5 000 = hasard sur ce vocabulaire).' },
+ { q: 'Augmenter la température lors de la génération de texte…', c: ['rend les tirages plus variés, et souvent incohérents', 'rend le texte plus prudent', 'accélère la génération', 'change les poids du modèle'], a: 0, w: 'On divise les logits par la température : au-dessus de 1, la distribution s’aplatit et des mots improbables sortent plus souvent.' }
+]});
+window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { maths: [
+ ['<code>np.dot</code> vs <code>*</code>', 'dot = produit matriciel ; * = élément par élément.'],
+ ['Variance', 'σ² = Σ(xᵢ − x̄)² / n ; écart-type = √σ².'],
+ ['<code>.loc</code> / <code>.iloc</code>', 'Étiquette d’index / position entière.'],
+ ['Valeur extrême (IQR)', 'Hors de [Q1 − 1,5·IQR ; Q3 + 1,5·IQR].'],
+ ['GIL', 'Verrou de CPython : un seul thread exécute du Python à la fois ; threads utiles pour les attentes, processus pour le calcul.'],
+ ['Numba <code>@njit</code>', 'Compile la fonction en code machine au premier appel.'],
+ ['Standardiser', 'z = (x − moyenne) / écart-type.'],
+ ['Variance expliquée', 'λₖ / Σλ : part de l’information portée par l’axe k.'],
+ ['Scree plot', 'Variance par composante ; on coupe au coude ou à un seuil cumulé.'],
+ ['Loadings', 'Coordonnées des vecteurs propres : poids des variables dans chaque axe.'],
+ ['Équation normale', 'w* = (XᵀX)⁻¹ Xᵀy.'],
+ ['Gradient du MSE en a', '(2/n) Σ (a·xᵢ + b − yᵢ)·xᵢ.'],
+ ['Pas d’apprentissage', 'Trop grand : divergence ; trop petit : lenteur.'],
+ ['MSE / RMSE / MAE', 'Moyenne des carrés / sa racine (unité de y) / moyenne des valeurs absolues.'],
+ ['R²', '1 − SS_res / SS_tot : part de variance expliquée.'],
+ ['Sigmoïde', 'σ(z) = 1 / (1 + e⁻ᶻ), dérivée σ(1 − σ).'],
+ ['Entropie croisée binaire', '−[y log p + (1 − y) log(1 − p)].'],
+ ['Précision', 'VP / (VP + FP).'],
+ ['Rappel', 'VP / (VP + FN).'],
+ ['AUC', 'Aire sous la courbe ROC : 0,5 hasard, 1 parfait.'],
+ ['Forêt aléatoire', 'Beaucoup d’arbres sur des échantillons et variables tirés au hasard, puis vote.'],
+ ['Règle du perceptron', 'w ← w + η (y − ŷ) x ; b ← b + η (y − ŷ).'],
+ ['XOR', 'Pas linéairement séparable : il faut une couche cachée (AND(OR, NAND)).'],
+ ['ReLU', 'max(0, x).'],
+ ['Softmax', 'eᶻⁱ / Σ eᶻʲ : des probabilités qui somment à 1.'],
+ ['Époque / lot', 'Un passage complet sur les données / nombre d’exemples par mise à jour.'],
+ ['Dropout', 'Neurones désactivés au hasard pendant l’entraînement contre le surapprentissage.'],
+ ['BatchNormalization', 'Normalise les activations par lot : entraînement plus stable.'],
+ ['Taille après convolution', '(n − k + 2p) / s + 1.'],
+ ['Paramètres Conv2D', '(k × k × canaux + 1) × filtres.'],
+ ['Max-pooling 2×2', 'Garde le maximum de chaque bloc : taille divisée par 2.'],
+ ['Vanishing gradient', 'Le gradient s’écrase en remontant le temps : le RNN oublie le début.'],
+ ['Portes du LSTM', 'Oubli, entrée, sortie ; cₜ = fₜ⊙cₜ₋₁ + iₜ⊙c̃ₜ.'],
+ ['Attention', 'softmax(QKᵀ / √dₖ) V.'],
+ ['Perplexité', 'e^loss : nombre moyen de mots entre lesquels le modèle hésite.']
+]});
+</script>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
+            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="cours/maths-data.js"></script>
+    <script src="cours/maths-demos.js"></script>
+    <script src="cours/cours.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
