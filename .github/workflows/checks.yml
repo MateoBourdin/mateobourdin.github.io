@@ -56,12 +56,15 @@ jobs:
           # probe gets 405 by design, not because the endpoint is broken),
           # the latter are free serverless services known to occasionally
           # 503 under load, which isn't something this repo can fix.
+          # Links to this repo's own source files are skipped too: GitHub
+          # throttles blob pages from CI runners (503), and those files are
+          # in the checkout, so their existence is already guaranteed.
           args: >-
             --no-progress
             --max-retries 3
             --retry-wait-time 5
             --timeout 20
             --accept 100..=103,200..=299,429,999
-            --exclude 'formspree\.io|github-readme-stats\.vercel\.app|github-readme-streak-stats\.herokuapp\.com'
+            --exclude 'formspree\.io|github-readme-stats\.vercel\.app|github-readme-streak-stats\.herokuapp\.com|github\.com/MateoBourdin/mateobourdin\.github\.io/blob/'
             './**/*.html'
           fail: true
