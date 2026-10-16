@@ -234,7 +234,7 @@ const translations = {
                 domainsText: 'Développement logiciel, développement web, data & IA'
             },
             magicalsky: {
-                since: 'Depuis févr. 2025',
+                since: 'Févr. 2025 – mars 2026',
                 type: 'Bénévolat Informatique',
                 title: 'Game Designer - MagicalSky',
                 description: 'Game designer sur le serveur Minecraft MagicalSky (magicalsky.fr). Création et configuration de mobs avec MythicMobs, développement d\'outils personnalisés avec MMOItems. Création de serveurs privés et plugins avec Paper. Modélisation 3D de mobs avec Blockbench, compétence acquise grâce à mon expérience CATIA à l\'ENIB. Force de proposition pour de nouvelles fonctionnalités et solutions techniques. Travail collaboratif au sein d\'une équipe de 13-14 personnes.',
@@ -536,7 +536,7 @@ const translations = {
             "tag": "⚖️ Informations légales",
             "title": "Mentions légales et confidentialité",
             "description": "Qui édite ce site, qui l’héberge, et ce qu’il advient de vos données.",
-            "updated": "Dernière mise à jour : 14 octobre 2026",
+            "updated": "Dernière mise à jour : 16 octobre 2026",
             "editorTitle": "Éditeur du site",
             "editorText": "Ce site est le portfolio personnel de Matéo Bourdin, étudiant en BUT Informatique à l’IUT d’Annecy. Il est édité à titre non professionnel.",
             "editorContact": "Contact : mateo.bourdin@etu.univ-smb.fr ou le formulaire de la page Contact.",
@@ -876,7 +876,7 @@ const translations = {
                 domainsText: 'Software development, web development, data & AI'
             },
             magicalsky: {
-                since: 'Since Feb. 2025',
+                since: 'Feb. 2025 – Mar. 2026',
                 type: 'IT Volunteering',
                 title: 'Game Designer - MagicalSky',
                 description: 'Game designer on the Minecraft server MagicalSky (magicalsky.fr). Creation and configuration of mobs with MythicMobs, development of custom tools with MMOItems. Creation of private servers and plugins with Paper. 3D mob modelling with Blockbench, a skill acquired through my CATIA experience at ENIB. Proactive in proposing new features and technical solutions. Collaborative work within a team of 13-14 people.',
@@ -1178,7 +1178,7 @@ const translations = {
             "tag": "⚖️ Legal information",
             "title": "Legal notice and privacy",
             "description": "Who publishes this site, who hosts it, and what happens to your data.",
-            "updated": "Last updated: 14 October 2026",
+            "updated": "Last updated: 16 October 2026",
             "editorTitle": "Publisher",
             "editorText": "This site is the personal portfolio of Matéo Bourdin, a Computer Science (BUT) student at IUT d’Annecy. It is published on a non-professional basis.",
             "editorContact": "Contact: mateo.bourdin@etu.univ-smb.fr or the form on the Contact page.",
