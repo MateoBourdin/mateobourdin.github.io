@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fianchetto : application web d'échecs de Matéo Bourdin. Bots, analyse de parties Chess.com et Lichess avec Stockfish, bilans et problèmes, dans le navigateur.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mateobourdin.github.io/projects/fianchetto.html">
+    <meta property="og:title" content="Fianchetto - Matéo Bourdin">
+    <meta property="og:description" content="Fianchetto : application web d'échecs de Matéo Bourdin. Bots, analyse de parties Chess.com et Lichess avec Stockfish, bilans et problèmes, dans le navigateur.">
+    <meta property="og:image" content="https://mateobourdin.github.io/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fianchetto - Matéo Bourdin">
+    <meta name="twitter:description" content="Fianchetto : application web d'échecs de Matéo Bourdin. Bots, analyse de parties Chess.com et Lichess avec Stockfish, bilans et problèmes, dans le navigateur.">
+    <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
+    <title>Fianchetto - Matéo Bourdin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <style>
+        .fz-steps { counter-reset: s; list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: .75rem; }
+        .fz-steps li { counter-increment: s; position: relative; padding-left: 2.6rem; color: var(--text-light); line-height: 1.6; }
+        .fz-steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: .9rem; }
+        .fz-steps b { color: var(--text); }
+        .fz-cta-row { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <a href="../projets.html#web" class="back-btn" data-i18n="nav.back">← Retour au Portfolio</a>
+
+        <div class="hero project-hero">
+            <h1>♝ Fianchetto</h1>
+            <h2 data-i18n="hero.subtitle">Analyse de parties et entraînement aux échecs, dans le navigateur</h2>
+            <p data-i18n="hero.description">Une application web d’échecs complète : jouer contre des bots, importer ses parties Chess.com ou Lichess et obtenir un rapport d’analyse détaillé avec Stockfish, puis s’entraîner sur ses propres erreurs. Tout tourne dans le navigateur, sans serveur ni compte.</p>
+            <div class="badges">
+                <span class="badge">JavaScript (ES modules)</span>
+                <span class="badge">Stockfish · WebAssembly</span>
+                <span class="badge">Web Workers</span>
+                <span class="badge">Canvas · SVG</span>
+                <span class="badge" data-i18n="hero.badge.nobuild">Sans build ni serveur</span>
+                <span class="badge" data-i18n="hero.badge.personal">Projet personnel</span>
+            </div>
+            <a href="https://github.com/MateoBourdin/fianchetto" class="github-btn" target="_blank" rel="noopener noreferrer" data-i18n="hero.github">Voir sur GitHub</a>
+        </div>
+
+        <figure class="project-figure">
+            <img src="../img/projects/fianchetto.webp" alt="" loading="lazy" decoding="async">
+            <figcaption data-i18n="shot.caption">Le rapport d’analyse de « l’Opéra » de Morphy (1858) : précision, niveau estimé, catégorie de chaque coup et graphe d’évaluation.</figcaption>
+        </figure>
+
+        <div class="emulation-banner">
+            <div class="emulation-banner-text">
+                <span class="icon">♟️</span>
+                <span data-i18n="banner.title">Utilisable tout de suite dans le navigateur — Stockfish tourne sur ton appareil, aucune donnée envoyée</span>
+            </div>
+            <a href="https://mateobourdin.github.io/fianchetto/" class="emulation-play-btn" target="_blank" rel="noopener" data-i18n="banner.button">Ouvrir Fianchetto →</a>
+        </div>
+
+        <div class="section">
+            <h3 data-i18n="about.title">📖 À propos du projet</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--text-light);" data-i18n="about.description">Je joue sur Chess.com et je voulais des bilans détaillés de mes parties sans abonnement. J’ai donc écrit ma propre application : le moteur Stockfish (compilé en WebAssembly) analyse chaque position dans un Web Worker, et tout le reste — classification des coups, précision, commentaires, bilans — est codé à partir de formules publiques. L’interface, le logo et les icônes sont originaux.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="features.review.title">🔍 Rapport de partie</h4>
+                    <p data-i18n="features.review.desc">Précision et niveau estimé par joueur, 11 catégories de coups, précision par phase, nom de l’ouverture, moments clés, temps par coup et commentaire en français pour chaque coup.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.import.title">📥 Import direct</h4>
+                    <p data-i18n="features.import.desc">Parties récupérées par les API publiques de Chess.com et de Lichess, ou PGN collé. Les rapports sont gardés en cache pour se rouvrir instantanément.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.explore.title">🧭 Exploration libre</h4>
+                    <p data-i18n="features.explore.desc">On déplace n’importe quelle pièce pendant l’analyse : la variante est classée en direct, avec 3 lignes moteur qui s’affinent et les menaces adverses.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.train.title">🎯 S’entraîner sur ses erreurs</h4>
+                    <p data-i18n="features.train.desc">« Réessayer ce coup », « Devine le coup », et un mode Problèmes qui transforme les fautes de tes parties en exercices.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.batch.title">📊 Bilan multi-parties</h4>
+                    <p data-i18n="features.batch.desc">Analyse en lot des 5 à 30 dernières parties : typologie des erreurs, erreurs en zeitnot, statistiques par ouverture et conseils personnalisés.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="features.bots.title">🤖 Six bots</h4>
+                    <p data-i18n="features.bots.desc">De 500 à 2500 Elo, avec chacun sa personnalité : erreurs volontaires dosées, qualité de chaque coup affichée en direct et classement Elo (formule FIDE).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 data-i18n="preview.title">🎬 Aperçu</h3>
+        <figure class="project-figure">
+            <img src="../img/projects/fianchetto-exploration.webp" alt="" loading="lazy" decoding="async">
+            <figcaption data-i18n="preview.explore">Exploration libre : variante jouée sur l’échiquier, lignes moteur en continu</figcaption>
+        </figure>
+        <figure class="project-figure">
+            <img src="../img/projects/fianchetto-bilan.webp" alt="" loading="lazy" decoding="async">
+            <figcaption data-i18n="preview.batch">Bilan de 5 parties : précision par phase, types d’erreurs, ouvertures et conseils</figcaption>
+        </figure>
+        <figure class="project-figure">
+            <img src="../img/projects/fianchetto-partage.webp" alt="" loading="lazy" decoding="async">
+            <figcaption data-i18n="preview.share">Carte de partage 1200×630 générée dans le navigateur (canvas)</figcaption>
+        </figure>
+        <figure class="project-figure">
+            <img src="../img/projects/fianchetto-icones.webp" alt="" loading="lazy" decoding="async">
+            <figcaption data-i18n="preview.icons">Les 11 icônes de classification, dessinées pour le projet</figcaption>
+        </figure>
+        </div>
+
+        <div class="section">
+            <h3 data-i18n="method.title">⚙️ Comment l’analyse fonctionne</h3>
+            <ol class="fz-steps">
+                <li data-i18n="method.s1"><b>Évaluer</b> chaque position avec Stockfish (2 meilleures lignes), dans un Web Worker pour ne jamais bloquer l’interface.</li>
+                <li data-i18n="method.s2"><b>Convertir</b> l’évaluation en probabilité de gain avec la courbe logistique publiée par Lichess.</li>
+                <li data-i18n="method.s3"><b>Classer</b> chaque coup selon les points de probabilité perdus : moins de 2 % excellent, 5 % bon, 10 % imprécision, 20 % erreur, au-delà gaffe.</li>
+                <li data-i18n="method.s4"><b>Règles spéciales</b> : « Génial » pour un sacrifice correct, « Coup unique » quand la 2ᵉ option perd au moins 15 points, « Occasion manquée » quand on ne punit pas l’erreur adverse.</li>
+                <li data-i18n="method.s5"><b>Vérifier</b> chaque erreur détectée par une analyse plus profonde avant de la confirmer, pour éliminer les faux positifs dus à l’horizon du moteur.</li>
+            </ol>
+            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="method.code">Probabilité de gain et précision d’un coup (js/core/review.js)</h4>
+            <div class="code-preview">
+                <pre><code><span class="comment">/** Probabilité de gain des Blancs (0–100) pour un score en centipions. */</span>
+<span class="keyword">export function</span> <span class="function">winPercent</span>(cp) {
+  <span class="keyword">const</span> c = Math.<span class="function">max</span>(<span class="number">-1000</span>, Math.<span class="function">min</span>(<span class="number">1000</span>, cp));
+  <span class="keyword">return</span> <span class="number">50</span> + <span class="number">50</span> * (<span class="number">2</span> / (<span class="number">1</span> + Math.<span class="function">exp</span>(<span class="number">-0.00368208</span> * c)) - <span class="number">1</span>);
+}
+
+<span class="comment">/** Précision d'un coup (0–100) à partir de la perte de probabilité de gain. */</span>
+<span class="keyword">export function</span> <span class="function">moveAccuracy</span>(lossPct) {
+  <span class="keyword">const</span> raw = <span class="number">103.1668100711649</span> * Math.<span class="function">exp</span>(<span class="number">-0.04354415386753951</span> * Math.<span class="function">max</span>(<span class="number">0</span>, lossPct))
+            - <span class="number">3.166924740191411</span> + <span class="number">1</span>;
+  <span class="keyword">return</span> Math.<span class="function">max</span>(<span class="number">0</span>, Math.<span class="function">min</span>(<span class="number">100</span>, raw));
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 data-i18n="tech.title">🛠️ Technologies</h3>
+            <div class="tech-stack">
+                <div class="tech-item">JavaScript ES2022</div>
+                <div class="tech-item">Stockfish (WASM)</div>
+                <div class="tech-item">UCI</div>
+                <div class="tech-item">Web Workers</div>
+                <div class="tech-item">chess.js</div>
+                <div class="tech-item">Canvas 2D · SVG</div>
+                <div class="tech-item">localStorage</div>
+                <div class="tech-item">Fetch · API Chess.com / Lichess</div>
+                <div class="tech-item">Node.js (tests)</div>
+                <div class="tech-item">GitHub Pages</div>
+            </div>
+            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.architecture">Architecture</h4>
+            <div class="code-preview">
+                <pre><code>index.html            <span class="comment"># Coquille de l'application (4 vues)</span>
+css/style.css         <span class="comment"># Thème « ardoise &amp; ambre », responsive</span>
+js/app.js             <span class="comment"># Routage, moteurs partagés, statut</span>
+js/core/              <span class="comment"># Logique pure, testable sans navigateur</span>
+  engine.js           <span class="comment"># Pilote UCI de Stockfish (file d'attente, MultiPV)</span>
+  review.js           <span class="comment"># Probabilité de gain, classification, précision, commentaires</span>
+  pgn.js              <span class="comment"># Lecteur PGN (commentaires, variantes, horloges, FEN)</span>
+  openings.js         <span class="comment"># Livre d'ouvertures indexé par position (119 lignes)</span>
+js/ui/                <span class="comment"># Échiquier maison, icônes SVG, carte de partage (canvas)</span>
+js/views/             <span class="comment"># Jouer, Analyse, rapport, bilan, Problèmes, Profil</span>
+js/importers.js       <span class="comment"># Clients des API Chess.com et Lichess</span>
+vendor/               <span class="comment"># Stockfish (WebAssembly), chess.js</span>
+tests/                <span class="comment"># Tests Node avec le vrai Stockfish</span></code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 data-i18n="challenges.title">🎓 Défis techniques</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4 data-i18n="challenges.engine.title">⚡ Piloter un moteur UCI</h4>
+                    <p data-i18n="challenges.engine.desc">Une file d’attente de commandes vers Stockfish, partagée entre l’analyse continue, les bots et les rapports, avec annulation des calculs devenus inutiles.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="challenges.board.title">♟️ Un échiquier maison</h4>
+                    <p data-i18n="challenges.board.desc">Glisser-déposer à la souris et au doigt, animations, flèches et surbrillances, sans bibliothèque d’interface.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-i18n="challenges.tests.title">✅ Tester sans navigateur</h4>
+                    <p data-i18n="challenges.tests.desc">La logique d’analyse est pure et testée sous Node avec le vrai Stockfish ; le pack de problèmes hors ligne est vérifié automatiquement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center; background: var(--primary-lighter);">
+            <h3 style="margin-bottom: 1.5rem;" data-i18n="cta.title">🌟 Code source et démo</h3>
+            <p style="font-size: 1.125rem; margin-bottom: 1.75rem; color: var(--text-light);" data-i18n="cta.description">Le projet est publié sous licence GPL-3.0 (imposée par Stockfish), sans étape de build : le dépôt est servi tel quel par GitHub Pages.</p>
+            <div class="fz-cta-row">
+                <a href="https://mateobourdin.github.io/fianchetto/" class="github-btn" target="_blank" rel="noopener" data-i18n="cta.live">Ouvrir l’application</a>
+                <a href="https://github.com/MateoBourdin/fianchetto" class="github-btn" target="_blank" rel="noopener noreferrer" data-i18n="cta.button">Explorer le dépôt GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p data-i18n="footer.project">Projet personnel, 2026</p>
+        <p>© 2026 - Matéo Bourdin</p>
+        <p style="font-size: 0.875rem;" data-i18n="footer.disclaimer">Projet indépendant, sans affiliation avec Chess.com ni Lichess : ces noms ne servent qu’à désigner les sources d’import.</p>
+    </div>
+
+    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a></footer>
+
+    <script>
+        const translations = {
+ "fr": {
+  "nav": {
+   "back": "← Retour au Portfolio"
+  },
+  "hero": {
+   "subtitle": "Analyse de parties et entraînement aux échecs, dans le navigateur",
+   "description": "Une application web d’échecs complète : jouer contre des bots, importer ses parties Chess.com ou Lichess et obtenir un rapport d’analyse détaillé avec Stockfish, puis s’entraîner sur ses propres erreurs. Tout tourne dans le navigateur, sans serveur ni compte.",
+   "badge": {
+    "personal": "Projet personnel",
+    "nobuild": "Sans build ni serveur"
+   },
+   "github": "Voir sur GitHub"
+  },
+  "shot": {
+   "caption": "Le rapport d’analyse de « l’Opéra » de Morphy (1858) : précision, niveau estimé, catégorie de chaque coup et graphe d’évaluation."
+  },
+  "banner": {
+   "title": "Utilisable tout de suite dans le navigateur — Stockfish tourne sur ton appareil, aucune donnée envoyée",
+   "button": "Ouvrir Fianchetto →"
+  },
+  "about": {
+   "title": "📖 À propos du projet",
+   "description": "Je joue sur Chess.com et je voulais des bilans détaillés de mes parties sans abonnement. J’ai donc écrit ma propre application : le moteur Stockfish (compilé en WebAssembly) analyse chaque position dans un Web Worker, et tout le reste — classification des coups, précision, commentaires, bilans — est codé à partir de formules publiques. L’interface, le logo et les icônes sont originaux."
+  },
+  "features": {
+   "review": {
+    "title": "🔍 Rapport de partie",
+    "desc": "Précision et niveau estimé par joueur, 11 catégories de coups, précision par phase, nom de l’ouverture, moments clés, temps par coup et commentaire en français pour chaque coup."
+   },
+   "import": {
+    "title": "📥 Import direct",
+    "desc": "Parties récupérées par les API publiques de Chess.com et de Lichess, ou PGN collé. Les rapports sont gardés en cache pour se rouvrir instantanément."
+   },
+   "explore": {
+    "title": "🧭 Exploration libre",
+    "desc": "On déplace n’importe quelle pièce pendant l’analyse : la variante est classée en direct, avec 3 lignes moteur qui s’affinent et les menaces adverses."
+   },
+   "train": {
+    "title": "🎯 S’entraîner sur ses erreurs",
+    "desc": "« Réessayer ce coup », « Devine le coup », et un mode Problèmes qui transforme les fautes de tes parties en exercices."
+   },
+   "batch": {
+    "title": "📊 Bilan multi-parties",
+    "desc": "Analyse en lot des 5 à 30 dernières parties : typologie des erreurs, erreurs en zeitnot, statistiques par ouverture et conseils personnalisés."
+   },
+   "bots": {
+    "title": "🤖 Six bots",
+    "desc": "De 500 à 2500 Elo, avec chacun sa personnalité : erreurs volontaires dosées, qualité de chaque coup affichée en direct et classement Elo (formule FIDE)."
+   }
+  },
+  "preview": {
+   "title": "🎬 Aperçu",
+   "explore": "Exploration libre : variante jouée sur l’échiquier, lignes moteur en continu",
+   "batch": "Bilan de 5 parties : précision par phase, types d’erreurs, ouvertures et conseils",
+   "share": "Carte de partage 1200×630 générée dans le navigateur (canvas)",
+   "icons": "Les 11 icônes de classification, dessinées pour le projet"
+  },
+  "method": {
+   "title": "⚙️ Comment l’analyse fonctionne",
+   "s1": "<b>Évaluer</b> chaque position avec Stockfish (2 meilleures lignes), dans un Web Worker pour ne jamais bloquer l’interface.",
+   "s2": "<b>Convertir</b> l’évaluation en probabilité de gain avec la courbe logistique publiée par Lichess.",
+   "s3": "<b>Classer</b> chaque coup selon les points de probabilité perdus : moins de 2 % excellent, 5 % bon, 10 % imprécision, 20 % erreur, au-delà gaffe.",
+   "s4": "<b>Règles spéciales</b> : « Génial » pour un sacrifice correct, « Coup unique » quand la 2ᵉ option perd au moins 15 points, « Occasion manquée » quand on ne punit pas l’erreur adverse.",
+   "s5": "<b>Vérifier</b> chaque erreur détectée par une analyse plus profonde avant de la confirmer, pour éliminer les faux positifs dus à l’horizon du moteur.",
+   "code": "Probabilité de gain et précision d’un coup (js/core/review.js)"
+  },
+  "tech": {
+   "title": "🛠️ Technologies",
+   "architecture": "Architecture"
+  },
+  "challenges": {
+   "title": "🎓 Défis techniques",
+   "engine": {
+    "title": "⚡ Piloter un moteur UCI",
+    "desc": "Une file d’attente de commandes vers Stockfish, partagée entre l’analyse continue, les bots et les rapports, avec annulation des calculs devenus inutiles."
+   },
+   "board": {
+    "title": "♟️ Un échiquier maison",
+    "desc": "Glisser-déposer à la souris et au doigt, animations, flèches et surbrillances, sans bibliothèque d’interface."
+   },
+   "tests": {
+    "title": "✅ Tester sans navigateur",
+    "desc": "La logique d’analyse est pure et testée sous Node avec le vrai Stockfish ; le pack de problèmes hors ligne est vérifié automatiquement."
+   }
+  },
+  "cta": {
+   "title": "🌟 Code source et démo",
+   "description": "Le projet est publié sous licence GPL-3.0 (imposée par Stockfish), sans étape de build : le dépôt est servi tel quel par GitHub Pages.",
+   "button": "Explorer le dépôt GitHub",
+   "live": "Ouvrir l’application"
+  },
+  "footer": {
+   "project": "Projet personnel, 2026",
+   "disclaimer": "Projet indépendant, sans affiliation avec Chess.com ni Lichess : ces noms ne servent qu’à désigner les sources d’import."
+  }
+ },
+ "en": {
+  "nav": {
+   "back": "← Back to Portfolio"
+  },
+  "hero": {
+   "subtitle": "Chess game review and training, in the browser",
+   "description": "A complete chess web app: play against bots, import your Chess.com or Lichess games and get a detailed Stockfish review, then train on your own mistakes. Everything runs in the browser, with no server and no account.",
+   "badge": {
+    "personal": "Personal project",
+    "nobuild": "No build, no server"
+   },
+   "github": "View on GitHub"
+  },
+  "shot": {
+   "caption": "The review of Morphy’s “Opera Game” (1858): accuracy, estimated rating, the category of every move and the evaluation graph."
+  },
+  "banner": {
+   "title": "Ready to use in your browser — Stockfish runs on your device, no data is sent anywhere",
+   "button": "Open Fianchetto →"
+  },
+  "about": {
+   "title": "📖 About the project",
+   "description": "I play on Chess.com and wanted detailed reviews of my games without a subscription, so I wrote my own app: the Stockfish engine (compiled to WebAssembly) analyses every position in a Web Worker, and everything else — move classification, accuracy, comments, reports — is coded from public formulas. The interface, logo and icons are original."
+  },
+  "features": {
+   "review": {
+    "title": "🔍 Game review",
+    "desc": "Accuracy and estimated rating per player, 11 move categories, accuracy per phase, opening name, key moments, time per move and a comment for every move."
+   },
+   "import": {
+    "title": "📥 Direct import",
+    "desc": "Games fetched through the public Chess.com and Lichess APIs, or pasted as PGN. Reviews are cached so they reopen instantly."
+   },
+   "explore": {
+    "title": "🧭 Free exploration",
+    "desc": "Move any piece during the review: the variation is classified live, with 3 engine lines refining in real time and the opponent’s threats."
+   },
+   "train": {
+    "title": "🎯 Train on your mistakes",
+    "desc": "“Retry this move”, “Guess the move”, and a Puzzles mode that turns the mistakes from your games into exercises."
+   },
+   "batch": {
+    "title": "📊 Multi-game report",
+    "desc": "Batch analysis of your last 5 to 30 games: types of mistakes, time-trouble errors, statistics per opening and personalised advice."
+   },
+   "bots": {
+    "title": "🤖 Six bots",
+    "desc": "From 500 to 2500 Elo, each with its own personality: measured deliberate mistakes, live move quality and an Elo rating (FIDE formula)."
+   }
+  },
+  "preview": {
+   "title": "🎬 Preview",
+   "explore": "Free exploration: a variation played on the board, continuous engine lines",
+   "batch": "Report on 5 games: accuracy per phase, types of mistakes, openings and advice",
+   "share": "1200×630 share card generated in the browser (canvas)",
+   "icons": "The 11 classification icons, drawn for the project"
+  },
+  "method": {
+   "title": "⚙️ How the review works",
+   "s1": "<b>Evaluate</b> every position with Stockfish (2 best lines), in a Web Worker so the interface never freezes.",
+   "s2": "<b>Convert</b> the evaluation into a winning probability with the logistic curve published by Lichess.",
+   "s3": "<b>Classify</b> each move by the probability points it loses: under 2% excellent, 5% good, 10% inaccuracy, 20% mistake, beyond that a blunder.",
+   "s4": "<b>Special rules</b>: “Brilliant” for a sound sacrifice, “Only move” when the 2nd option loses at least 15 points, “Missed chance” when the opponent’s mistake goes unpunished.",
+   "s5": "<b>Verify</b> every detected mistake with a deeper search before confirming it, to remove false positives caused by the engine’s horizon.",
+   "code": "Winning probability and move accuracy (js/core/review.js)"
+  },
+  "tech": {
+   "title": "🛠️ Technologies",
+   "architecture": "Architecture"
+  },
+  "challenges": {
+   "title": "🎓 Technical challenges",
+   "engine": {
+    "title": "⚡ Driving a UCI engine",
+    "desc": "A command queue to Stockfish shared between continuous analysis, bots and reviews, cancelling computations that are no longer needed."
+   },
+   "board": {
+    "title": "♟️ A custom board",
+    "desc": "Mouse and touch drag-and-drop, animations, arrows and highlights, with no UI library."
+   },
+   "tests": {
+    "title": "✅ Testing without a browser",
+    "desc": "The review logic is pure and tested in Node with the real Stockfish; the offline puzzle pack is checked automatically."
+   }
+  },
+  "cta": {
+   "title": "🌟 Source code and demo",
+   "description": "The project is released under the GPL-3.0 licence (required by Stockfish), with no build step: the repository is served as is by GitHub Pages.",
+   "button": "Explore the GitHub repository",
+   "live": "Open the app"
+  },
+  "footer": {
+   "project": "Personal project, 2026",
+   "disclaimer": "Independent project, not affiliated with Chess.com or Lichess: those names are only used to refer to the import sources."
+  }
+ }
+};
+
+        let currentLang = 'fr';
+        try { currentLang = localStorage.getItem('preferredLanguage') || 'fr'; } catch (e) {}
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            try { localStorage.setItem('preferredLanguage', lang); } catch (e) {}
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                let tr = translations[lang];
+                for (const key of element.getAttribute('data-i18n').split('.')) tr = tr && tr[key];
+                if (typeof tr === 'string') element.innerHTML = tr;
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.onclick.toString().includes(`'${lang}'`));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => changeLanguage(currentLang === 'en' ? 'en' : 'fr'));
+    </script>
+    <script src="../theme.js"></script>
+    <script src="../search.js" defer></script>
+</body>
+</html>

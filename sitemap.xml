@@ -56,6 +56,16 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://mateobourdin.github.io/projects/fianchetto.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/fianchetto/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://mateobourdin.github.io/projects/zelda-play.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>

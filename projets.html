@@ -129,6 +129,32 @@
                         <a href="projects/twitterclone.html" class="btn btn-secondary" style="margin-top: 1rem;"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
                     </div>
                 </div>
+                <!-- Fianchetto -->
+                <div class="project-card reveal" data-type="personal" data-tech="web" style="border: 3px solid var(--accent-orange);">
+                    <div class="project-image project-shot"><img src="img/projects/fianchetto.webp" alt="Rapport d’analyse d’une partie dans Fianchetto" data-i18n-alt="shots.fianchetto" loading="lazy" decoding="async" style="object-position: left top;"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="tags.ongoing">En développement</span>
+                            <span class="project-tag" data-i18n="tags.oct2026">Oct. 2026</span>
+                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.personal">Personnel</span>
+                        </div>
+                        <h3 data-i18n="projects.fianchetto.title">Fianchetto — analyse de parties d’échecs</h3>
+                        <p data-i18n="projects.fianchetto.description">Application web d’échecs qui tourne entièrement dans le navigateur : bots de 500 à 2500 Elo, import des parties Chess.com et Lichess, rapport d’analyse avec Stockfish (WebAssembly) — précision, 11 catégories de coups, commentaires — bilans sur plusieurs parties et problèmes tirés de ses propres erreurs.</p>
+                        <div style="margin-top: 1rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.fianchetto.context">Contexte :</strong>
+                            <span style="color: var(--text-light);" data-i18n="projects.fianchetto.contextText">Projet personnel, pour analyser mes parties Chess.com sans abonnement</span>
+                        </div>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.fianchetto.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">JavaScript (ES modules), Stockfish WebAssembly, Web Workers, Canvas, chess.js, GitHub Pages</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="projects/fianchetto.html" class="btn btn-secondary"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                            <a href="https://mateobourdin.github.io/fianchetto/" target="_blank" rel="noopener" class="btn btn-primary"><span data-i18n="projects.fianchetto.open">Ouvrir l’appli ↗</span></a>
+                            <a href="https://github.com/MateoBourdin/fianchetto" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: var(--dark); border-color: var(--dark);">💻 GitHub</a>
+                        </div>
+                    </div>
+                </div>
                 <!-- Portfolio Site -->
                 <div class="project-card reveal" data-type="personal" data-tech="web" style="border: 3px solid var(--accent-orange);">
                     <div class="project-image project-shot"><img src="img/projects/portfolio.webp" alt="Page d’accueil du portfolio" data-i18n-alt="shots.portfolio" loading="lazy" decoding="async" style="object-position: left top;"></div>
@@ -312,5 +338,6 @@
     <script src="translations.js"></script>
     <script src="script.js"></script>
     <script src="theme.js"></script>
+    <script src="search.js" defer></script>
 </body>
 </html>

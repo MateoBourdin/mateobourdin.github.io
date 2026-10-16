@@ -2,6 +2,7 @@ const translations = {
     fr: {
         shots: {
             lappi: "Le carnet Discovery Diary dans The Inspector (Unity)",
+            fianchetto: "Rapport d’analyse d’une partie dans Fianchetto",
             cube: "Sélecteur de magasin CUBE Bikes sur carte Leaflet (données de démonstration)",
             twitter: "Modèle conceptuel de données du clone Twitter/X",
             sae201: "Diagramme des classes métier de l’application Cave à vin",
@@ -434,6 +435,7 @@ const translations = {
             summer2024: 'Été 2024',
             summer2023: 'Été 2023',
             sinceDec2024: 'Depuis déc. 2024',
+            oct2026: 'Oct. 2026',
             y2025_2026: '2025 – 2026',
             spring2026: 'Printemps 2026',
             personal: 'Personnel',
@@ -466,6 +468,14 @@ const translations = {
             learnMore: 'En savoir plus →',
             viewProject: 'Voir le projet →',
             viewSite: 'Vous êtes dessus ! →',
+            fianchetto: {
+                title: 'Fianchetto — analyse de parties d’échecs',
+                description: 'Application web d’échecs qui tourne entièrement dans le navigateur : bots de 500 à 2500 Elo, import des parties Chess.com et Lichess, rapport d’analyse avec Stockfish (WebAssembly) — précision, 11 catégories de coups, commentaires — bilans sur plusieurs parties et problèmes tirés de ses propres erreurs.',
+                context: 'Contexte :',
+                contextText: 'Projet personnel, pour analyser mes parties Chess.com sans abonnement',
+                tech: 'Technologies :',
+                open: 'Ouvrir l’appli ↗'
+            },
             portfolio: {
                 title: 'Portfolio personnel bilingue',
                 description: 'Site portfolio responsive et bilingue (FR/EN), lancé en décembre 2024 et toujours en évolution : HTML5, CSS3 et JavaScript vanilla, animations, système de traduction i18n, formulaire de contact via Formspree, vérifications automatiques à chaque modification (GitHub Actions) et déploiement sur GitHub Pages.',
@@ -552,12 +562,12 @@ const translations = {
             "rightsTitle": "Vos droits",
             "rightsText": "Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.",
             "storageTitle": "Cookies et stockage local",
-            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien.",
+            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien. L’application d’échecs Fianchetto, servie sur le même domaine, garde de la même façon dans votre navigateur vos parties, analyses, classements et réglages.",
             "thirdTitle": "Contenus tiers",
-            "thirdText": "Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Les modèles d’IA des pages de cours s’exécutent dans votre navigateur : les dessins et photos que vous leur soumettez ne sont envoyés nulle part. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
+            "thirdText": "Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Les modèles d’IA des pages de cours s’exécutent dans votre navigateur : les dessins et photos que vous leur soumettez ne sont envoyés nulle part. Dans Fianchetto, le moteur Stockfish tourne aussi dans votre navigateur ; seules deux actions contactent un service externe : importer des parties (votre navigateur interroge les API publiques de Chess.com ou de Lichess avec le pseudo saisi) et charger un problème en ligne (API de Lichess). Ce service reçoit alors votre adresse IP et le pseudo demandé. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
             "policies": "Politiques de confidentialité des services cités :",
             "ipTitle": "Propriété intellectuelle et crédits",
-            "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les pages de cours reprennent uniquement mon propre travail (code, résultats, notes de révision) ; les supports des enseignants n’y sont pas publiés et les données des démonstrations d’API sont fictives. Les démos utilisent aussi des jeux de données publics : la base Chinook (Luis Rocha, licence MIT), MNIST (Yann LeCun et Corinna Cortes, CC BY-SA 3.0), Fashion-MNIST (Zalando Research, licence MIT) et CIFAR-10 (Alex Krizhevsky). Les logos et marques cités appartiennent à leurs propriétaires."
+            "ipText": "Les textes, le code et la mise en page de ce site sont de moi, sauf mention contraire. Survival Island (SAE 1.01) a été réalisé à trois : son code, ses images, ses musiques et ses sons proviennent du dépôt GitHub du projet (ForWarZz/Survival-Island). Zelda II: The Adventure of Link est un projet hommage non commercial ; The Legend of Zelda est une marque déposée de Nintendo. Les pages de cours reprennent uniquement mon propre travail (code, résultats, notes de révision) ; les supports des enseignants n’y sont pas publiés et les données des démonstrations d’API sont fictives. Fianchetto embarque Stockfish (GPL-3.0), chess.js (BSD-2-Clause), les pièces Cburnett (CC BY-SA 3.0) et des problèmes de la base Lichess (CC0) ; son code est publié sous GPL-3.0. Les démos utilisent aussi des jeux de données publics : la base Chinook (Luis Rocha, licence MIT), MNIST (Yann LeCun et Corinna Cortes, CC BY-SA 3.0), Fashion-MNIST (Zalando Research, licence MIT) et CIFAR-10 (Alex Krizhevsky). Les logos et marques cités appartiennent à leurs propriétaires."
         },
         games: {
             "back": "← Arcade",
@@ -644,6 +654,7 @@ const translations = {
     en: {
         shots: {
             lappi: "The Discovery Diary notebook in The Inspector (Unity)",
+            fianchetto: "Game review report in Fianchetto",
             cube: "CUBE Bikes store selector on a Leaflet map (demo data)",
             twitter: "Conceptual data model of the Twitter/X clone",
             sae201: "Domain class diagram of the wine cellar application",
@@ -1076,6 +1087,7 @@ const translations = {
             summer2024: 'Summer 2024',
             summer2023: 'Summer 2023',
             sinceDec2024: 'Since Dec. 2024',
+            oct2026: 'Oct. 2026',
             y2025_2026: '2025 – 2026',
             spring2026: 'Spring 2026',
             personal: 'Personal',
@@ -1108,6 +1120,14 @@ const translations = {
             learnMore: 'Learn more →',
             viewProject: 'View project →',
             viewSite: 'You are on it! →',
+            fianchetto: {
+                title: 'Fianchetto — chess game review',
+                description: 'A chess web app that runs entirely in the browser: bots from 500 to 2500 Elo, Chess.com and Lichess game import, a Stockfish (WebAssembly) review — accuracy, 11 move categories, comments — multi-game reports and puzzles built from your own mistakes.',
+                context: 'Context:',
+                contextText: 'Personal project, to review my Chess.com games without a subscription',
+                tech: 'Technologies:',
+                open: 'Open the app ↗'
+            },
             portfolio: {
                 title: 'Bilingual personal portfolio',
                 description: 'Responsive, bilingual (FR/EN) portfolio website, started in December 2024 and still evolving: HTML5, CSS3 and vanilla JavaScript, animations, an i18n translation system, a contact form via Formspree, automated checks on every change (GitHub Actions) and deployment on GitHub Pages.',
@@ -1194,12 +1214,12 @@ const translations = {
             "rightsTitle": "Your rights",
             "rightsText": "You can request access to, correction or deletion of your data, or object to its processing, by writing to mateo.bourdin@etu.univ-smb.fr. If you believe your rights are not respected, you can lodge a complaint with the CNIL (French data protection authority).",
             "storageTitle": "Cookies and local storage",
-            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and progress in the mini-games and the revision quizzes on the course pages. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing.",
+            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and progress in the mini-games and the revision quizzes on the course pages. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing. The Fianchetto chess app, served on the same domain, likewise keeps your games, reviews, ratings and settings in your browser.",
             "thirdTitle": "Third-party content",
-            "thirdText": "Fonts, libraries (including Pyodide, which runs Python in the demos), game files (images, music, sounds) and course demo files are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. The AI models on the course pages run in your browser: the drawings and photos you give them are not sent anywhere. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
+            "thirdText": "Fonts, libraries (including Pyodide, which runs Python in the demos), game files (images, music, sounds) and course demo files are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. The AI models on the course pages run in your browser: the drawings and photos you give them are not sent anywhere. In Fianchetto, the Stockfish engine also runs in your browser; only two actions contact an external service: importing games (your browser queries the public Chess.com or Lichess APIs with the username you enter) and loading an online puzzle (Lichess API). That service then receives your IP address and the requested username. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
             "policies": "Privacy policies of the services mentioned:",
             "ipTitle": "Intellectual property and credits",
-            "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. Course pages only show my own work (code, results, revision notes); teaching materials are not published and the API demo data is made up. The demos also use public datasets: the Chinook database (Luis Rocha, MIT licence), MNIST (Yann LeCun and Corinna Cortes, CC BY-SA 3.0), Fashion-MNIST (Zalando Research, MIT licence) and CIFAR-10 (Alex Krizhevsky). The logos and brands mentioned belong to their owners."
+            "ipText": "The text, code and layout of this site are mine unless stated otherwise. Survival Island (first-year project SAE 1.01) was built by a team of three: its code, images, music and sounds come from the project's GitHub repository (ForWarZz/Survival-Island). Zelda II: The Adventure of Link is a non-commercial tribute project; The Legend of Zelda is a registered trademark of Nintendo. Course pages only show my own work (code, results, revision notes); teaching materials are not published and the API demo data is made up. Fianchetto bundles Stockfish (GPL-3.0), chess.js (BSD-2-Clause), the Cburnett pieces (CC BY-SA 3.0) and puzzles from the Lichess database (CC0); its code is released under GPL-3.0. The demos also use public datasets: the Chinook database (Luis Rocha, MIT licence), MNIST (Yann LeCun and Corinna Cortes, CC BY-SA 3.0), Fashion-MNIST (Zalando Research, MIT licence) and CIFAR-10 (Alex Krizhevsky). The logos and brands mentioned belong to their owners."
         },
         games: {
             "back": "← Arcade",
