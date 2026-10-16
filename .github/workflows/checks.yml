@@ -28,6 +28,9 @@ jobs:
       - name: Check internal links and #anchors
         run: python3 scripts/check-links.py
 
+      - name: Check the search index is up to date
+        run: node scripts/build-search-index.js --check
+
   secrets:
     runs-on: ubuntu-latest
     steps:
