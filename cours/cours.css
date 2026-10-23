@@ -278,3 +278,11 @@ html[lang="fr"] .cours-fr-note { display: none; }
 }
 #tp3Read .ko { color: #dc2626; font-weight: 600; }
 .tp4-ctrl .btn { padding: .45rem .95rem; font-size: .85rem; }
+/* Onglets : les trois tiennent sur un téléphone */
+@media (max-width: 480px) {
+    .cours-tabs { gap: .15rem; justify-content: space-between; }
+    .cours-tab { padding: .55rem .7rem; font-size: .88rem; }
+}
+@media (max-width: 370px) {
+    .cours-tab { padding: .5rem .5rem; font-size: .82rem; }
+}
