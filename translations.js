@@ -247,17 +247,17 @@ const translations = {
         now: {
             "tag": "🛠️ En ce moment",
             "title": "Ce sur quoi je travaille cette année",
-            "description": "Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais et des extraits de mon code. Mis à jour le 13 octobre 2026.",
+            "description": "Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais et des extraits de mon code. Mis à jour le 4 novembre 2026.",
             "status": "En cours",
             "next": "En ce moment",
             "c1": {
                 "label": "Qualité de développement",
                 "title": "Une API ASP.NET Core propre et testée",
                 "intro": "TD fil rouge TPRevision : une API REST de gestion de produits (EF Core, PostgreSQL), refactorée selon les principes SOLID.",
-                "b1": "Interfaces séparées par rôle (lecture, écriture, requêtes DTO)",
+                "b1": "Interfaces séparées par rôle et contrôleur CRUD générique",
                 "b2": "DTO et AutoMapper pour ne jamais exposer les entités",
                 "b3": "Tests unitaires (MSTest, Moq) et tests d’intégration sur une vraie base PostgreSQL",
-                "now": "client Blazor Server en MVVM qui consomme l’API",
+                "now": "client Blazor Server en MVVM (MVVM Toolkit) qui consomme l’API",
                 "link": "Voir les extraits de code"
             },
             "c2": {
@@ -272,11 +272,11 @@ const translations = {
             "c3": {
                 "label": "SAE 5.01 — projet de groupe",
                 "title": "Astraeus, plateforme éducative sur la météo",
-                "intro": "Équipe Scrum de 4 : exploration 4D des phénomènes, quiz et WeatherGuessr, un jeu où le joueur affronte la prévision d’un modèle.",
+                "intro": "Équipe Scrum de 4, sprints de 2 semaines sur Azure DevOps : exploration 4D des phénomènes, quiz et WeatherGuessr, un jeu où le joueur affronte la prévision d’un modèle.",
                 "b1": "Mon rôle : la partie IA et le traitement des données",
-                "b2": "Notre propre modèle de prévision à base de réseaux de neurones, en commençant par un LSTM sur la température",
+                "b2": "Notre propre modèle de prévision à base de réseaux de neurones (un LSTM pour commencer) qui prévoit les conditions météo, pas seulement la température",
                 "b3": "Prévision jusqu’à 3 jours, calculée pendant que le joueur devine",
-                "now": "cahier des charges et conception"
+                "now": "premier sprint, lancé en novembre 2026"
             },
             "c4": {
                 "label": "Modélisation mathématique",
@@ -302,10 +302,20 @@ const translations = {
                 "label": "Création numérique et veille",
                 "title": "3D, image et technologies émergentes",
                 "intro": "Des cours plus créatifs, dont une partie en anglais.",
-                "b1": "Blender : modélisation, textures et UV mapping d’un personnage",
+                "b1": "Blender : modélisation, textures et UV mapping d’un personnage, puis rigging avec Rigify",
                 "b2": "Photoshop, cours en anglais : « Avatarize yourself », un avatar créé à partir de ma photo",
                 "b3": "Veille technologique en groupe sur WebAssembly",
-                "now": "retouche de l’avatar et synthèse de la veille"
+                "b4": "« Domain Adaptation » : un sujet d’IA expliqué en anglais à la classe, en groupe de 3",
+                "now": "rigging du personnage sous Blender et retouche de l’avatar"
+            },
+            "c7": {
+                "label": "Nouvelles bases de données (R5.A.10)",
+                "title": "Séries temporelles avec InfluxDB 3 et Grafana",
+                "intro": "TD noté en binôme, sur une machine virtuelle Ubuntu de l’IUT.",
+                "b1": "Mise en place d’InfluxDB 3, une base pensée pour les mesures horodatées",
+                "b2": "Données réelles de deux sources : NOAA et Open-Meteo",
+                "b3": "Tableaux de bord Grafana branchés sur InfluxDB",
+                "now": "étape 1 du TD, sur les données NOAA et Open-Meteo"
             },
             "code": {
                 "title": "Extraits de code",
@@ -546,7 +556,7 @@ const translations = {
             "tag": "⚖️ Informations légales",
             "title": "Mentions légales et confidentialité",
             "description": "Qui édite ce site, qui l’héberge, et ce qu’il advient de vos données.",
-            "updated": "Dernière mise à jour : 16 octobre 2026",
+            "updated": "Dernière mise à jour : 4 novembre 2026",
             "editorTitle": "Éditeur du site",
             "editorText": "Ce site est le portfolio personnel de Matéo Bourdin, étudiant en BUT Informatique à l’IUT d’Annecy. Il est édité à titre non professionnel. Directeur de la publication : Matéo Bourdin.",
             "editorContact": "Contact : mateo.bourdin@etu.univ-smb.fr ou le formulaire de la page Contact.",
@@ -900,17 +910,17 @@ const translations = {
         now: {
             "tag": "🛠️ Right now",
             "title": "What I’m working on this year",
-            "description": "The 3rd-year courses I’m currently taking (semester 5, September to December 2026), what I do in each and excerpts of my code. Updated 13 October 2026.",
+            "description": "The 3rd-year courses I’m currently taking (semester 5, September to December 2026), what I do in each and excerpts of my code. Updated 4 November 2026.",
             "status": "In progress",
             "next": "Right now",
             "c1": {
                 "label": "Software quality",
                 "title": "A clean, tested ASP.NET Core API",
                 "intro": "Running assignment TPRevision: a product-management REST API (EF Core, PostgreSQL), refactored along SOLID principles.",
-                "b1": "Interfaces split by role (read, write, DTO queries)",
+                "b1": "Interfaces split by role and a generic CRUD controller",
                 "b2": "DTOs and AutoMapper so entities are never exposed",
                 "b3": "Unit tests (MSTest, Moq) and integration tests against a real PostgreSQL database",
-                "now": "a Blazor Server MVVM client consuming the API",
+                "now": "a Blazor Server MVVM client (MVVM Toolkit) consuming the API",
                 "link": "See the code excerpts"
             },
             "c2": {
@@ -925,11 +935,11 @@ const translations = {
             "c3": {
                 "label": "SAE 5.01 — group project",
                 "title": "Astraeus, an educational weather platform",
-                "intro": "Scrum team of 4: 4D exploration of weather phenomena, quizzes and WeatherGuessr, a game where players compete against a model’s forecast.",
+                "intro": "Scrum team of 4, two-week sprints on Azure DevOps: 4D exploration of weather phenomena, quizzes and WeatherGuessr, a game where players compete against a model’s forecast.",
                 "b1": "My role: the AI and data-processing part",
-                "b2": "Our own neural-network forecasting model, starting with an LSTM on temperature",
+                "b2": "Our own neural-network forecasting model (an LSTM to start with) that predicts weather conditions, not just temperature",
                 "b3": "Forecasts up to 3 days ahead, computed while the player is guessing",
-                "now": "specifications and design"
+                "now": "first sprint, started in November 2026"
             },
             "c4": {
                 "label": "Mathematical modelling",
@@ -955,10 +965,20 @@ const translations = {
                 "label": "Digital creation and tech watch",
                 "title": "3D, imaging and emerging tech",
                 "intro": "More creative courses, partly taught in English.",
-                "b1": "Blender: modelling, texturing and UV-mapping a character",
+                "b1": "Blender: modelling, texturing and UV-mapping a character, then rigging it with Rigify",
                 "b2": "Photoshop, taught in English: “Avatarize yourself”, an avatar made from my own photo",
                 "b3": "Group technology watch on WebAssembly",
-                "now": "finishing the avatar and writing up the tech watch"
+                "b4": "“Domain Adaptation”: an AI topic explained in English to the class, in a group of 3",
+                "now": "rigging the character in Blender and finishing the avatar"
+            },
+            "c7": {
+                "label": "New databases (R5.A.10)",
+                "title": "Time series with InfluxDB 3 and Grafana",
+                "intro": "Graded assignment in pairs, on an Ubuntu virtual machine at the university.",
+                "b1": "Setting up InfluxDB 3, a database built for timestamped measurements",
+                "b2": "Real data from two sources: NOAA and Open-Meteo",
+                "b3": "Grafana dashboards connected to InfluxDB",
+                "now": "step 1 of the assignment, on the NOAA and Open-Meteo data"
             },
             "code": {
                 "title": "Code excerpts",
@@ -1199,7 +1219,7 @@ const translations = {
             "tag": "⚖️ Legal information",
             "title": "Legal notice and privacy",
             "description": "Who publishes this site, who hosts it, and what happens to your data.",
-            "updated": "Last updated: 16 October 2026",
+            "updated": "Last updated: 4 November 2026",
             "editorTitle": "Publisher",
             "editorText": "This site is the personal portfolio of Matéo Bourdin, a Computer Science (BUT) student at IUT d’Annecy. It is published on a non-professional basis. Publication director: Matéo Bourdin.",
             "editorContact": "Contact: mateo.bourdin@etu.univ-smb.fr or the form on the Contact page.",
