@@ -60,8 +60,8 @@ a { color: inherit; text-decoration: none; }
 .band .t { font-weight: bold; font-size: 10.5pt; color: #d9a3ac; margin-top: 4pt; }
 .content { padding: 10pt 20pt 0 18pt; }
 .acc { background: #f4f6f8; border-left: 2.5pt solid #8a3542; padding: 6pt 9pt 6pt 13.5pt; font-style: italic; font-size: 9pt; color: #3a4a58; line-height: 1.38; }
-.m-h { background: #2b2d33; color: #fff; font-size: 8.8pt; text-transform: uppercase; padding: 3pt 8pt; margin: 8pt 0 5pt 0; }
-.job { margin-bottom: 5pt; }
+.m-h { background: #2b2d33; color: #fff; font-size: 8.8pt; text-transform: uppercase; padding: 3pt 8pt; margin: 7pt 0 4pt 0; }
+.job { margin-bottom: 4pt; }
 .jt { font-weight: bold; font-size: 9.4pt; color: #2b2d33; }
 .badge { display: inline-block; background: #8a3542; color: #fff; font-weight: normal; font-size: 7.4pt; border-radius: 6pt; padding: 1pt 7pt; margin-left: 6pt; vertical-align: 1pt; }
 .org { font-style: italic; font-size: 8.3pt; color: #5a6b78; margin-top: 1pt; }
@@ -138,7 +138,7 @@ P = lambda txt: link(txt, PORTFOLIO)  # noqa: E731
 
 FR = dict(
     lang="fr", doc_title="CV - Matéo Bourdin",
-    keywords="Stage, développeur, C#, .NET, ASP.NET Core, Vue.js, Python, SQL, PostgreSQL, Docker, GitLab CI/CD, BUT Informatique",
+    keywords="Stage, développeur, C#, .NET, ASP.NET Core, Vue.js, Python, SQL, PostgreSQL, Power BI, Grafana, Azure, Docker, GitLab CI/CD, BUT Informatique",
     title="Étudiant en Informatique — Bachelor (BUT), 3e année",
     h=dict(contact="Contact", langs="Langues", soft="Compétences transversales", misc="Divers",
            refs="Références", refnote="Coordonnées sur demande", pfd="Code, architecture et démos de chaque projet",
@@ -161,8 +161,8 @@ FR = dict(
            ["Préparation des produits, contrôle qualité"])],
     skills=[("Backend", "C# / ASP.NET Core (confirmé), Python / Flask (confirmé), Java (intermédiaire), PHP / Laravel (intermédiaire)"),
             ("Frontend / Mobile", "Vue 3 (confirmé), HTML / CSS / JS (confirmé), Flutter (notions)"),
-            ("Données & IA", "SQL / PostgreSQL (confirmé), EF Core (intermédiaire), MongoDB (notions) · NumPy, pandas (confirmé), TensorFlow (notions) : régression, ACP, classification d’images"),
-            ("DevOps & qualité", "Git (confirmé), Docker Compose, GitLab CI/CD (intermédiaire), Kubernetes (en cours) · Tests automatisés unitaires et d’intégration (MSTest, Moq), qualité de code · Linux, Windows Server · Code assisté par IA (Claude Code)")],
+            ("Données & IA", "SQL / PostgreSQL (confirmé), EF Core (intermédiaire), MongoDB (notions) · NumPy, pandas (confirmé), TensorFlow (notions) : régression, ACP, classification d’images · Power BI, Grafana"),
+            ("DevOps & qualité", "Git (confirmé), Docker Compose, GitLab CI/CD (intermédiaire), Kubernetes (en cours), Azure / Azure DevOps · Tests automatisés unitaires et d’intégration (MSTest, Moq), qualité de code · Linux, Windows Server · Code assisté par IA (Claude Code)")],
     projects=[("CUBE Bikes — Plateforme e-commerce (projet fictif)", "API REST ASP.NET Core / EF Core, frontend Vue 3 + Pinia, auth JWT, Stripe, PostgreSQL ; première version en Laravel. Équipe de 5, IUT Annecy."),
               ("Clone Twitter/X — Réseau social", "Laravel/PHP, PostgreSQL, Redis, WebSockets, conteneurisé avec Docker. Équipe de 4, IUT Annecy."),
               ("TP de 3e année", "API ASP.NET Core testée (Moq, intégration PostgreSQL), appli Flask + TensorFlow sous Docker, pipelines GitLab CI/CD. IUT Annecy.")],
@@ -191,7 +191,7 @@ FR = dict(
 
 EN = dict(
     lang="en", doc_title="Resume - Matéo Bourdin",
-    keywords="Internship, software developer, C#, .NET, ASP.NET Core, Vue.js, Python, SQL, PostgreSQL, Docker, GitLab CI/CD, Computer Science",
+    keywords="Internship, software developer, C#, .NET, ASP.NET Core, Vue.js, Python, SQL, PostgreSQL, Power BI, Grafana, Azure, Docker, GitLab CI/CD, Computer Science",
     title="Computer Science Student — Bachelor’s degree (BUT), 3rd year",
     h=dict(contact="Contact", langs="Languages", soft="Soft skills", misc="Interests",
            refs="References", refnote="Contact details available on request", pfd="Code, architecture and demos for every project",
@@ -213,8 +213,8 @@ EN = dict(
            ["Prepared bakery products, carried out quality checks"])],
     skills=[("Back end", "C# / ASP.NET Core (advanced), Python / Flask (advanced), Java (intermediate), PHP / Laravel (intermediate)"),
             ("Front end / Mobile", "Vue 3 (advanced), HTML / CSS / JS (advanced), Flutter (basic)"),
-            ("Data &amp; AI", "SQL / PostgreSQL (advanced), EF Core (intermediate), MongoDB (basic) · NumPy, pandas (advanced), TensorFlow (basic): regression, PCA, image classification"),
-            ("DevOps &amp; quality", "Git (advanced), Docker Compose, GitLab CI/CD (intermediate), Kubernetes (in progress) · Automated unit and integration testing (MSTest, Moq), code quality · Linux, Windows Server · AI-assisted coding (Claude Code)")],
+            ("Data &amp; AI", "SQL / PostgreSQL (advanced), EF Core (intermediate), MongoDB (basic) · NumPy, pandas (advanced), TensorFlow (basic): regression, PCA, image classification · Power BI and Grafana dashboards"),
+            ("DevOps &amp; quality", "Git (advanced), Docker Compose, GitLab CI/CD (intermediate), Kubernetes (in progress), Azure / Azure DevOps · Automated unit and integration testing (MSTest, Moq), code quality · Linux, Windows Server · AI-assisted coding (Claude Code)")],
     projects=[("CUBE Bikes — E-commerce platform (fictional)", "ASP.NET Core / EF Core REST API, Vue 3 + Pinia front end, JWT authentication, Stripe, PostgreSQL; first version in Laravel. Team of 5, IUT Annecy."),
               ("Twitter/X Clone — Social network", "Laravel/PHP, PostgreSQL, Redis, WebSockets, containerised with Docker. Team of 4, IUT Annecy."),
               ("3rd-year labs", "ASP.NET Core API with unit and integration tests (Moq, PostgreSQL), Flask + TensorFlow app on Docker, GitLab CI/CD pipelines. IUT Annecy.")],
