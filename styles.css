@@ -3537,3 +3537,13 @@ html.site-search-open { overflow: hidden; }
     .site-search-box { max-width: none; max-height: 100%; height: 100%; border-radius: 0; border: none; }
     .site-search-keys { display: none; }
 }
+
+/* Date de dernière mise à jour du site, en bas de page */
+.footer-updated {
+    font-size: 0.82rem;
+    opacity: 0.75;
+}
+
+.mini-updated {
+    font-size: 0.82rem;
+}

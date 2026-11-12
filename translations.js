@@ -647,7 +647,8 @@ const translations = {
         footer: {
             copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
             signature: 'Créé avec passion 🚀',
-            legal: 'Mentions légales et confidentialité'
+            legal: 'Mentions légales et confidentialité',
+            updated: 'Dernière mise à jour : 12 novembre 2026'
         },
         cvModal: {
             title: '📄 Choisissez la langue',
@@ -1311,7 +1312,8 @@ const translations = {
         footer: {
             copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
             signature: 'Created with passion 🚀',
-            legal: 'Legal notice and privacy'
+            legal: 'Legal notice and privacy',
+            updated: 'Last updated: 12 November 2026'
         },
         cvModal: {
             title: '📄 Choose Language',
