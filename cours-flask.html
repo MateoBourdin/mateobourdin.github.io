@@ -6,6 +6,8 @@
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+                var s = localStorage.getItem('siteStyle');
+                if (s === 'espace' || s === 'retro' || s === 'maths') document.documentElement.setAttribute('data-style', s);
             } catch (e) {}
         })();
     </script>
@@ -24,6 +26,7 @@
     <meta name="twitter:description" content="Mes TP de R5.A.05 en BUT3 : Flask-SQLAlchemy, InfluxDB et Flux, et quatre CNN Keras servis par Flask, à essayer dans le navigateur, avec une fiche de révision.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes.css">
     <link rel="stylesheet" href="cours/cours.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -416,7 +419,7 @@ window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { flask: [
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
             <p data-i18n="footer.signature">Créé avec passion 🚀</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
-            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 26 novembre 2026</p>
+            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 27 novembre 2026</p>
         </div>
     </footer>
 
@@ -427,6 +430,7 @@ window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { flask: [
     <script src="cours/flask-demos.js"></script>
     <script src="cours/cours.js"></script>
     <script src="theme.js"></script>
+    <script src="style-switcher.js"></script>
     <script src="search.js" defer></script>
 </body>
 </html>

@@ -575,7 +575,7 @@ const translations = {
             "tag": "⚖️ Informations légales",
             "title": "Mentions légales et confidentialité",
             "description": "Qui édite ce site, qui l’héberge, et ce qu’il advient de vos données.",
-            "updated": "Dernière mise à jour : 26 novembre 2026",
+            "updated": "Dernière mise à jour : 27 novembre 2026",
             "editorTitle": "Éditeur du site",
             "editorText": "Ce site est le portfolio personnel de Matéo Bourdin, étudiant en BUT Informatique à l’IUT d’Annecy. Il est édité à titre non professionnel. Directeur de la publication : Matéo Bourdin.",
             "editorContact": "Contact : mateo.bourdin@etu.univ-smb.fr ou le formulaire de la page Contact.",
@@ -592,7 +592,7 @@ const translations = {
             "rightsTitle": "Vos droits",
             "rightsText": "Vous pouvez demander l’accès à vos données, leur rectification, leur effacement, leur portabilité ou la limitation de leur traitement, ou vous opposer à ce traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.",
             "storageTitle": "Cookies et stockage local",
-            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien. L’application d’échecs Fianchetto, servie sur le même domaine, garde de la même façon dans votre navigateur vos parties, analyses, classements et réglages.",
+            "storageText": "Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue, le thème clair ou sombre et le style d’affichage que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien. L’application d’échecs Fianchetto, servie sur le même domaine, garde de la même façon dans votre navigateur vos parties, analyses, classements et réglages.",
             "thirdTitle": "Contenus tiers",
             "thirdText": "Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Les modèles d’IA des pages de cours s’exécutent dans votre navigateur : les dessins et photos que vous leur soumettez ne sont envoyés nulle part. Dans Fianchetto, le moteur Stockfish tourne aussi dans votre navigateur ; seules trois actions contactent un service externe : importer des parties (votre navigateur interroge les API publiques de Chess.com ou de Lichess avec le pseudo saisi), charger un problème en ligne (API de Lichess) et envoyer un message par la boîte à idées (Formspree, comme le formulaire de contact). Ce service reçoit alors votre adresse IP et les informations transmises. La version en ligne de CUBE Bikes (SAE 3.01) est un site externe, hébergé sur un autre serveur que ce portfolio : elle ne s’ouvre que si vous cliquez sur son lien, et elle a sa propre bannière cookies, où vous pouvez tout refuser. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.",
             "policies": "Politiques de confidentialité des services cités :",
@@ -667,7 +667,7 @@ const translations = {
             copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
             signature: 'Créé avec passion 🚀',
             legal: 'Mentions légales et confidentialité',
-            updated: 'Dernière mise à jour : 26 novembre 2026'
+            updated: 'Dernière mise à jour : 27 novembre 2026'
         },
         cvModal: {
             title: '📄 Choisissez la langue',
@@ -1259,7 +1259,7 @@ const translations = {
             "tag": "⚖️ Legal information",
             "title": "Legal notice and privacy",
             "description": "Who publishes this site, who hosts it, and what happens to your data.",
-            "updated": "Last updated: 26 November 2026",
+            "updated": "Last updated: 27 November 2026",
             "editorTitle": "Publisher",
             "editorText": "This site is the personal portfolio of Matéo Bourdin, a Computer Science (BUT) student at IUT d’Annecy. It is published on a non-professional basis. Publication director: Matéo Bourdin.",
             "editorContact": "Contact: mateo.bourdin@etu.univ-smb.fr or the form on the Contact page.",
@@ -1276,7 +1276,7 @@ const translations = {
             "rightsTitle": "Your rights",
             "rightsText": "You can request access to, correction, deletion or portability of your data, or restriction of its processing, or object to that processing, by writing to mateo.bourdin@etu.univ-smb.fr. If you believe your rights are not respected, you can lodge a complaint with the CNIL (French data protection authority).",
             "storageTitle": "Cookies and local storage",
-            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language and the light or dark theme you choose, and your best scores and progress in the mini-games and the revision quizzes on the course pages. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing. The Fianchetto chess app, served on the same domain, likewise keeps your games, reviews, ratings and settings in your browser.",
+            "storageText": "This site sets no cookies. It only stores in your browser (local storage) the language, the light or dark theme and the display style you choose, and your best scores and progress in the mini-games and the revision quizzes on the course pages. This information never leaves your device and you can clear it from your browser settings. The Survival Island demo stores nothing. The Fianchetto chess app, served on the same domain, likewise keeps your games, reviews, ratings and settings in your browser.",
             "thirdTitle": "Third-party content",
             "thirdText": "Fonts, libraries (including Pyodide, which runs Python in the demos), game files (images, music, sounds) and course demo files are hosted on this site. Two external contents only load if you click on them: the YouTube video on the Survival Island page and the OpenStreetMap map on the Contact page. When you click, that service receives your IP address and the name of this site (not the address of the page you are on), and YouTube may set cookies. The AI models on the course pages run in your browser: the drawings and photos you give them are not sent anywhere. In Fianchetto, the Stockfish engine also runs in your browser; only three actions contact an external service: importing games (your browser queries the public Chess.com or Lichess APIs with the username you enter), loading an online puzzle (Lichess API) and sending a message through the ideas box (Formspree, like the contact form). That service then receives your IP address and the information sent. The live version of CUBE Bikes (SAE 3.01) is an external site, hosted on a different server from this portfolio: it only opens if you click its link, and it has its own cookie banner, where you can refuse everything. Like any host, GitHub receives visitors’ IP addresses to run and secure the service.",
             "policies": "Privacy policies of the services mentioned:",
@@ -1351,7 +1351,7 @@ const translations = {
             copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
             signature: 'Created with passion 🚀',
             legal: 'Legal notice and privacy',
-            updated: 'Last updated: 26 November 2026'
+            updated: 'Last updated: 27 November 2026'
         },
         cvModal: {
             title: '📄 Choose Language',

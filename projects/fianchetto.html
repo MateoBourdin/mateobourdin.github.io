@@ -6,6 +6,8 @@
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+                var s = localStorage.getItem('siteStyle');
+                if (s === 'espace' || s === 'retro' || s === 'maths') document.documentElement.setAttribute('data-style', s);
             } catch (e) {}
         })();
     </script>
@@ -24,6 +26,7 @@
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Fianchetto - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../themes.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -216,7 +219,7 @@ tests/                <span class="comment"># Tests Node avec le vrai Stockfish<
         <p style="font-size: 0.875rem;" data-i18n="footer.disclaimer">Projet indépendant, sans affiliation avec Chess.com ni Lichess : ces noms ne servent qu’à désigner les sources d’import.</p>
     </div>
 
-    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a><br><span class="mini-updated">Mis à jour le 26 novembre 2026 · Updated 26 November 2026</span></footer>
+    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a><br><span class="mini-updated">Mis à jour le 27 novembre 2026 · Updated 27 November 2026</span></footer>
 
     <script>
         const translations = {
@@ -434,6 +437,7 @@ tests/                <span class="comment"># Tests Node avec le vrai Stockfish<
         document.addEventListener('DOMContentLoaded', () => changeLanguage(currentLang === 'en' ? 'en' : 'fr'));
     </script>
     <script src="../theme.js"></script>
+    <script src="../style-switcher.js"></script>
     <script src="../search.js" defer></script>
 </body>
 </html>

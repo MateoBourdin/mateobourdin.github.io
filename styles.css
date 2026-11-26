@@ -1880,8 +1880,10 @@ footer p, .footer p {
         display: none;
     }
 
+    /* L'en-tête mobile passe sur deux lignes (logo + menu, puis langue et style) :
+       l'accueil doit commencer sous lui pour ne pas masquer le badge de disponibilité. */
     .hero {
-        padding-top: 100px;
+        padding-top: calc(var(--header-h, 160px) + 1.5rem);
     }
 
     .hero h1 {
