@@ -51,7 +51,7 @@ function makeStub() {
 // (bouchons à la place des globales du navigateur), sans eval ni new Function.
 function evalTranslations(jsSource) {
     const sandbox = { document: makeStub(), window: makeStub(), localStorage: makeStub(), navigator: makeStub() };
-    return vm.runInNewContext(
+    return vm.runInNewContext( // NOSONAR : script de CI qui exécute translations.js de ce dépôt, jamais une entrée externe
         jsSource + '\n;typeof translations !== "undefined" ? translations : undefined;',
         sandbox, { timeout: 5000 }
     );
