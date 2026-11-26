@@ -14,7 +14,9 @@
     // Styles disponibles (les suivants seront ajoutés au fur et à mesure)
     var STYLES = [
         { id: 'sobre', fr: 'Sobre', en: 'Plain' },
-        { id: 'espace', fr: 'Mine spatiale', en: 'Space mining' }
+        { id: 'espace', fr: 'Mine spatiale', en: 'Space mining' },
+        { id: 'retro', fr: 'Rétro', en: 'Retro' },
+        { id: 'maths', fr: 'Maths', en: 'Maths' }
     ];
     var ALLOWED = STYLES.map(function (s) { return s.id; });
 
@@ -83,7 +85,49 @@
                 document.body.appendChild(el);
                 setTimeout(function () { el.remove(); }, 650);
             });
+        } else if (st === 'retro') {
+            var pal = ['#ffd23f', '#3be8ff', '#ff4fa3', '#ffd23f', '#3be8ff', '#ff4fa3', '#ffd23f', '#3be8ff'];
+            pal.forEach(function (c, i) {
+                var a = (Math.PI * 2 * i) / pal.length;
+                spawn('style-fx-pixel', x, y, c, Math.round(Math.cos(a) * 40 / 10) * 10, Math.round(Math.sin(a) * 40 / 10) * 10, 0, 500);
+            });
+        } else if (st === 'maths') {
+            // Points sur une parabole y = -k(t - 1/2)^2 au-dessus du clic, posés l'un après l'autre
+            for (var i = 0; i <= 8; i++) {
+                var t = i / 8, px = (t - 0.5) * 120, py = -60 * (1 - Math.pow(2 * t - 1, 2)) - 10;
+                spawn('style-fx-dot', x + px, y + py, null, 0, 0, i * 35, 520);
+            }
         }
+    }
+    function spawn(cls, x, y, c, dx, dy, delay, life) {
+        var el = document.createElement('span');
+        el.className = 'style-fx ' + cls;
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        if (c) el.style.setProperty('--c', c);
+        el.style.setProperty('--dx', dx + 'px');
+        el.style.setProperty('--dy', dy + 'px');
+        if (delay) el.style.animationDelay = delay + 'ms';
+        document.body.appendChild(el);
+        setTimeout(function () { el.remove(); }, life + (delay || 0));
+    }
+
+    // ---- Style Maths : coordonnées (x ; y) près du curseur, origine au centre de l'écran ----
+    var coords = null;
+    var finePointer = window.matchMedia('(pointer: fine)');
+    function track(e) {
+        if (current() !== 'maths' || reduce.matches || !finePointer.matches) { if (coords) coords.hidden = true; return; }
+        if (!coords) {
+            coords = document.createElement('span');
+            coords.className = 'maths-coords';
+            coords.setAttribute('aria-hidden', 'true');
+            document.body.appendChild(coords);
+        }
+        var fx = function (v) { return (v / 50).toFixed(1).replace('.', lang() === 'en' ? '.' : ','); };
+        coords.hidden = false;
+        coords.style.left = e.clientX + 'px';
+        coords.style.top = e.clientY + 'px';
+        coords.textContent = '(' + fx(e.clientX - window.innerWidth / 2) + (lang() === 'en' ? ', ' : ' ; ') + fx(window.innerHeight / 2 - e.clientY) + ')';
     }
 
     function init() {
@@ -99,6 +143,13 @@
         }
         apply(current());
         render();
+        // Hauteur réelle de l'en-tête (deux lignes sur mobile), utilisée par styles.css
+        var header = document.querySelector('header');
+        if (header && 'ResizeObserver' in window) {
+            new ResizeObserver(function () {
+                document.documentElement.style.setProperty('--header-h', Math.ceil(header.getBoundingClientRect().height) + 'px');
+            }).observe(header);
+        }
         document.addEventListener('click', function (e) {
             if (e.target.closest && e.target.closest('.lang-btn')) setTimeout(render, 0);
         });
@@ -106,6 +157,8 @@
             var t = e.target.closest && e.target.closest('.btn, .project-link, .github-btn, .back-btn, .style-btn');
             if (t) burst(e.clientX, e.clientY);
         });
+        document.addEventListener('pointermove', track, { passive: true });
+        document.documentElement.addEventListener('mouseleave', function () { if (coords) coords.hidden = true; });
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

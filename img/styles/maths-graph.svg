@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="400" viewBox="0 0 560 400" fill="none">
+<style>
+.c{stroke-dasharray:900;stroke-dashoffset:900;animation:d 2.4s ease-out .3s forwards}
+.p{stroke-dasharray:6 5}
+.pw{animation:d2 2s ease-out 1.4s both}
+.pt{opacity:0;animation:f .4s ease-out 2.6s forwards}
+@keyframes d{to{stroke-dashoffset:0}}
+@keyframes d2{from{opacity:0}to{opacity:1}}
+@keyframes f{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.c,.pw,.pt{animation:none;stroke-dashoffset:0;opacity:1}}
+</style>
+<path d="M20 300H545M538 294l8 6-8 6" stroke="#14213d" stroke-width="1.8"/>
+<path d="M80 390V15M74 22l6-8 6 8" stroke="#14213d" stroke-width="1.8"/>
+<path class="c" d="M20 300C70 210 110 210 155 300S240 390 285 300S370 210 415 300S500 390 545 300" stroke="#1f4fa3" stroke-width="2.4"/>
+<path class="p pw" d="M130 60Q280 560 430 60" stroke="#c0392b" stroke-width="2"/>
+<g class="pt"><circle cx="355" cy="245" r="5" fill="#c0392b"/><path d="M355 245V300M355 245H80" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="3 4"/></g>
+<text x="548" y="322" font-family="STIX Two Text,Georgia,serif" font-style="italic" font-size="20" fill="#14213d">x</text>
+<text x="92" y="22" font-family="STIX Two Text,Georgia,serif" font-style="italic" font-size="20" fill="#14213d">y</text>
+<text x="62" y="322" font-family="STIX Two Text,Georgia,serif" font-style="italic" font-size="18" fill="#14213d">O</text>
+<text x="150" y="40" font-family="Caveat,cursive" font-size="26" fill="#1f4fa3">f(x) = sin x</text>
+<text x="420" y="58" font-family="Caveat,cursive" font-size="26" fill="#c0392b">g(x) = x²</text>
+</svg>

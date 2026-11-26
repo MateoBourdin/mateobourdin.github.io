@@ -7,7 +7,7 @@
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
                 var s = localStorage.getItem('siteStyle');
-                if (s === 'espace') document.documentElement.setAttribute('data-style', s);
+                if (s === 'espace' || s === 'retro' || s === 'maths') document.documentElement.setAttribute('data-style', s);
             } catch (e) {}
         })();
     </script>
@@ -118,7 +118,7 @@
             <ul>
                 <li><a href="vendor/pyodide/LICENSE">Pyodide (MPL-2.0)</a> · <a href="vendor/pyodide/LICENSE-Python.txt">Python (PSF License)</a></li>
                 <li><a href="vendor/xterm/LICENSE">xterm.js (MIT)</a></li>
-                <li><a href="fonts/LICENSE-Inter.txt">Inter (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-Manrope.txt">Manrope (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-ChakraPetch.txt">Chakra Petch (SIL OFL 1.1)</a></li>
+                <li><a href="fonts/LICENSE-Inter.txt">Inter (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-Manrope.txt">Manrope (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-ChakraPetch.txt">Chakra Petch</a> · <a href="fonts/LICENSE-PressStart2P.txt">Press Start 2P</a> · <a href="fonts/LICENSE-VT323.txt">VT323</a> · <a href="fonts/LICENSE-STIXTwoText.txt">STIX Two Text</a> · <a href="fonts/LICENSE-Caveat.txt">Caveat</a> (SIL OFL 1.1)</li>
                 <li><a href="cours/LICENCES-donnees.txt">Chinook, Fashion-MNIST (MIT) · MNIST (CC BY-SA 3.0) · CIFAR-10</a></li>
                 <li><a href="https://mateobourdin.github.io/fianchetto/legal.html" target="_blank" rel="noopener">Fianchetto : mentions légales, confidentialité et licences</a></li>
             </ul>

@@ -9,6 +9,14 @@
 @font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/chakra-petch-latin-600-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/chakra-petch-latin-700-normal.woff2') format('woff2'); }
 
+@font-face { font-family: 'Press Start 2P'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/press-start-2p-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'VT323'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/vt323-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'STIX Two Text'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/stix-two-text-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'STIX Two Text'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/stix-two-text-greek-700-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'STIX Two Text'; font-style: italic; font-weight: 600; font-display: swap; src: url('fonts/stix-two-text-latin-600-italic.woff2') format('woff2'); }
+@font-face { font-family: 'STIX Two Text'; font-style: italic; font-weight: 600; font-display: swap; src: url('fonts/stix-two-text-greek-600-italic.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'Caveat'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/caveat-latin-600-normal.woff2') format('woff2'); }
+
 /* ---------- Sélecteur de style (tous les styles) ---------- */
 .style-switcher { display: flex; gap: 0.25rem; align-items: center; padding-right: 0.4rem; margin-right: 0.15rem; border-right: 1px solid var(--primary-lighter); }
 .style-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; white-space: nowrap; min-width: 2.5rem; height: 2.5rem; padding: 0 0.6rem; border: none; border-radius: 0.375rem; background: transparent; color: var(--text-light); font: 600 0.85rem 'Inter', sans-serif; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
@@ -23,6 +31,7 @@
 .style-fx { position: fixed; pointer-events: none; z-index: 10000; }
 
 /* Un style à thème a sa propre palette : le bouton clair/sombre ne sert plus */
+:root[data-style] .logo { margin-right: 1.5rem; white-space: nowrap; }
 :root[data-style] .theme-toggle-btn { display: none; }
 
 /* ============================================================
@@ -175,8 +184,196 @@
 .style-fx-shard { width: 12px; height: 12px; background: var(--c, #ffb547); box-shadow: 0 0 8px var(--c, #ffb547); transform: translate(-50%, -50%) rotate(45deg); animation: fx-shard 0.55s ease-out forwards; }
 @keyframes fx-shard { to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(225deg) scale(0.3); opacity: 0; } }
 
+/* ============================================================
+   RÉTRO — borne d'arcade et écran cathodique
+   ============================================================ */
+:root[data-style="retro"] {
+    color-scheme: dark;
+    --primary: #ffd23f;
+    --primary-dark: #ffe27a;
+    --primary-light: #ffe9a3;
+    --primary-lighter: #2c1e4a;
+    --text: #f6f0ff;
+    --text-light: #d8ccf0;
+    --dark: #0a0614;
+    --light: #120b1f;
+    --surface: #22163b;
+    --header-bg: rgba(18, 11, 31, 0.92);
+    --header-bg-scrolled: rgba(18, 11, 31, 0.98);
+    --accent-green: #3be8ff;
+    --accent-purple: #ff4fa3;
+    --accent-orange: #3be8ff;
+    --on-primary: #1a0f2e;
+    --retro-pink: #ff4fa3;
+    --retro-cyan: #3be8ff;
+    cursor: url('img/cursors/retro-arrow.svg') 0 0, auto;
+}
+:root[data-style="retro"] :is(a, button, summary, label, select, [role="button"], .btn) {
+    cursor: url('img/cursors/retro-hand.svg') 12 0, pointer;
+}
+:root[data-style="retro"] ::selection { background: #ff4fa3; color: #120b1f; }
+:root[data-style="retro"] body { font-family: 'VT323', 'Courier New', monospace; font-size: 1.05rem; line-height: 1.5; font-size-adjust: 0.55; }
+:root[data-style="retro"] :is(button, input, select, textarea) { font-size-adjust: 0.55; }
+:root[data-style="retro"] :is(h1, h2, h3, h4, .logo, pre, code) { font-size-adjust: none; }
+:root[data-style="retro"] :is(pre, code, kbd, samp, input, textarea, select, .xterm) { font-family: Consolas, 'Courier New', monospace; }
+:root[data-style="retro"] :is(h1, h2, h3, h4, .logo) { font-family: 'Press Start 2P', monospace; font-weight: 400; letter-spacing: 0; line-height: 1.5; }
+:root[data-style="retro"] .hero h1 { font-size: clamp(1.4rem, 3.2vw, 2.3rem); }
+:root[data-style="retro"] .section-header h2 { font-size: clamp(1.1rem, 2.4vw, 1.6rem); }
+:root[data-style="retro"] :is(h3, h4) { font-size: 0.85rem; line-height: 1.7; }
+:root[data-style="retro"] .logo { font-size: 0.7rem; white-space: nowrap; }
+:root[data-style="retro"] .nav-links { gap: 1.4rem; }
+:root[data-style="retro"] .hero h1 .gradient-text { color: var(--primary); text-shadow: 3px 3px 0 var(--retro-pink); }
+:root[data-style="retro"] header { border-bottom: 4px solid var(--retro-pink); backdrop-filter: none; }
+:root[data-style="retro"] .nav-links a { font-size: 1rem; font-weight: 400; }
+:root[data-style="retro"] .nav-links a::after { height: 4px; background: var(--retro-cyan); }
+:root[data-style="retro"] :is(.section-tag, .hero-tag) { border-radius: 0; background: transparent; color: var(--retro-cyan); border: 2px solid var(--retro-cyan); font-size: 0.95rem; font-weight: 400; }
+
+/* Lignes de balayage de l'écran cathodique, par-dessus tout, très légères */
+:root[data-style="retro"] body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0 2px, transparent 2px 4px);
+    animation: retro-flicker 5s steps(2) infinite;
+}
+@keyframes retro-flicker { 0%, 96% { opacity: 0.8; } 98% { opacity: 0.55; } }
+
+/* Boutons : pixel, ombre pleine, s'enfoncent au clic */
+:root[data-style="retro"] :is(.btn, .back-btn, .filter-btn) { border-radius: 0; font-family: 'VT323', monospace; font-size: 1.05rem; font-weight: 400; }
+:root[data-style="retro"] :is(.btn-primary, .back-btn) { box-shadow: 0 5px 0 #b8890f; }
+:root[data-style="retro"] :is(.btn-primary, .back-btn):hover { transform: none; background: var(--primary); box-shadow: 0 5px 0 #b8890f, 0 0 0 3px var(--retro-cyan); }
+:root[data-style="retro"] :is(.btn-primary, .back-btn):active { transform: translateY(5px); box-shadow: none; }
+:root[data-style="retro"] .btn-secondary { background: transparent; color: var(--text); border: 3px solid var(--retro-pink); box-shadow: 0 5px 0 #8a1f57; }
+:root[data-style="retro"] .btn-secondary:hover { background: rgba(255, 79, 163, 0.15); border-color: var(--retro-pink); }
+:root[data-style="retro"] .btn-secondary:active { transform: translateY(5px); box-shadow: none; }
+
+/* Cartes : cadre magenta et ombre cyan qui s'allonge au survol */
+:root[data-style="retro"] :is(.project-card, .skill-category, .feature-card, .stat-card, .contact-item, .emulation-item, .cours-card) {
+    border-radius: 0;
+    border: 4px solid var(--retro-pink);
+    box-shadow: 6px 6px 0 var(--retro-cyan);
+    transition: transform 0.15s steps(3), box-shadow 0.15s steps(3);
+}
+:root[data-style="retro"] :is(.project-card, .skill-category, .feature-card, .stat-card, .contact-item, .emulation-item, .cours-card):hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--retro-cyan); }
+:root[data-style="retro"] :is(.project-tag, .skill-tag, .badge, .tech-item, .hero.project-hero, .lang-switcher, .language-switcher, .lang-btn, .style-btn) { border-radius: 0; }
+:root[data-style="retro"] :is(.project-tag, .skill-tag) { font-size: 0.85rem; }
+:root[data-style="retro"] .project-image { background: #2c1e4a; }
+
+/* Décor de l'accueil : soleil couchant rayé, grille néon en perspective, pièce qui clignote */
+:root[data-style="retro"] .floating-element { display: block; filter: none; opacity: 1; z-index: 0; }
+:root[data-style="retro"] .floating-1 {
+    width: 300px; height: 300px; top: 16%; right: 6%;
+    border-radius: 50%;
+    background: linear-gradient(#ffd23f 0 40%, transparent 40% 46%, #ff9a3c 46% 58%, transparent 58% 63%, #ff4fa3 63% 74%, transparent 74% 79%, #ff4fa3 79% 100%);
+    box-shadow: 0 0 60px rgba(255, 79, 163, 0.35);
+    animation: none;
+}
+:root[data-style="retro"] .floating-2 {
+    width: 140%; height: 220px; left: -20%; right: auto; top: auto; bottom: -40px;
+    border-radius: 0;
+    background:
+        repeating-linear-gradient(90deg, rgba(255, 79, 163, 0.55) 0 2px, transparent 2px 70px),
+        repeating-linear-gradient(0deg, rgba(255, 79, 163, 0.55) 0 2px, transparent 2px 34px);
+    transform: perspective(300px) rotateX(55deg);
+    transform-origin: bottom;
+    animation: retro-grid 1.6s linear infinite;
+}
+@keyframes retro-grid { to { background-position: 0 0, 0 34px; } }
+:root[data-style="retro"] .floating-3 {
+    width: 16px; height: 16px; top: 62%; right: 34%;
+    border-radius: 0;
+    background: #ffd23f;
+    box-shadow: 16px 0 0 #ffd23f, 0 16px 0 #ffd23f, 16px 16px 0 #b8890f;
+    animation: retro-blink 1s steps(2) infinite;
+}
+@keyframes retro-blink { 50% { opacity: 0; } }
+@media (max-width: 900px) { :root[data-style="retro"] :is(.floating-1, .floating-3) { display: none; } }
+
+/* Pixels colorés au clic */
+.style-fx-pixel { width: 10px; height: 10px; background: var(--c, #ffd23f); transform: translate(-50%, -50%); animation: fx-pixel 0.45s steps(4) forwards; }
+@keyframes fx-pixel { to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))); opacity: 0; } }
+
+/* ============================================================
+   MATHS — papier millimétré, repère, formules
+   ============================================================ */
+:root[data-style="maths"] {
+    color-scheme: light;
+    --primary: #1f4fa3;
+    --primary-dark: #163d80;
+    --primary-light: #5c82c4;
+    --primary-lighter: #e6edf8;
+    --text: #14213d;
+    --text-light: #3d4a66;
+    --dark: #14213d;
+    --light: #fbfcfe;
+    --surface: #ffffff;
+    --header-bg: rgba(251, 252, 254, 0.9);
+    --header-bg-scrolled: rgba(251, 252, 254, 0.97);
+    --accent-green: #2e7d5b;
+    --accent-purple: #6b4fa3;
+    --accent-orange: #c0392b;
+    --on-primary: #ffffff;
+    --maths-red: #c0392b;
+    --maths-ink: #14213d;
+    cursor: url('img/cursors/maths-cross.svg') 16 16, crosshair;
+}
+:root[data-style="maths"] :is(a, button, summary, label, select, [role="button"], .btn) {
+    cursor: url('img/cursors/maths-compass.svg') 4 30, pointer;
+}
+:root[data-style="maths"] ::selection { background: #f6d7d3; color: var(--maths-ink); }
+:root[data-style="maths"] body {
+    background-color: #fbfcfe;
+    background-image:
+        linear-gradient(rgba(31, 79, 163, 0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 79, 163, 0.16) 1px, transparent 1px),
+        linear-gradient(rgba(31, 79, 163, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 79, 163, 0.06) 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+}
+:root[data-style="maths"] :is(h1, h2, h3, h4, .logo) { font-family: 'STIX Two Text', Georgia, serif; font-weight: 700; letter-spacing: 0; }
+:root[data-style="maths"] .hero h1 .gradient-text { color: var(--primary); font-style: italic; font-weight: 600; }
+:root[data-style="maths"] header { border-bottom: 1.5px solid var(--maths-ink); }
+:root[data-style="maths"] :is(.section-tag, .hero-tag) { border-radius: 0; background: transparent; color: var(--maths-red); font: 600 1.35rem 'Caveat', cursive; padding: 0.1rem 0.3rem; }
+:root[data-style="maths"] .nav-links a::after { height: 1.5px; background: var(--maths-red); }
+
+/* Sections numérotées comme un manuel : « § 2 — Projets » */
+:root[data-style="maths"] body { counter-reset: maths-sec; }
+:root[data-style="maths"] .section-header h2::before { counter-increment: maths-sec; content: "§ " counter(maths-sec) " — " / ""; color: var(--maths-red); font-weight: 600; }
+
+/* Boutons : encre, se remplissent au survol */
+:root[data-style="maths"] :is(.btn, .back-btn, .filter-btn) { border-radius: 0; font-family: 'STIX Two Text', Georgia, serif; font-weight: 700; font-size: 1.05rem; }
+:root[data-style="maths"] :is(.btn-primary, .back-btn) { box-shadow: 4px 4px 0 rgba(31, 79, 163, 0.25); }
+:root[data-style="maths"] :is(.btn-primary, .back-btn):hover { transform: translate(-1px, -1px); box-shadow: 6px 6px 0 rgba(31, 79, 163, 0.3); }
+:root[data-style="maths"] .btn-secondary { background: #ffffff; color: var(--primary); border: 1.5px solid var(--primary); }
+:root[data-style="maths"] .btn-secondary:hover { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+
+/* Cartes : encadrées comme un théorème, closes par ∎ */
+:root[data-style="maths"] :is(.project-card, .skill-category, .feature-card, .stat-card, .contact-item, .emulation-item, .cours-card) { border-radius: 0; border: 1.5px solid var(--maths-ink); box-shadow: 4px 4px 0 rgba(31, 79, 163, 0.15); position: relative; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+:root[data-style="maths"] :is(.project-card, .skill-category, .feature-card, .stat-card, .contact-item, .emulation-item, .cours-card):hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(31, 79, 163, 0.25); }
+:root[data-style="maths"] :is(.project-card, .skill-category, .feature-card, .stat-card, .contact-item, .emulation-item, .cours-card)::after { content: "∎"; content: "∎" / ""; position: absolute; right: 0.8rem; bottom: 0.4rem; color: var(--maths-ink); font-size: 1rem; }
+:root[data-style="maths"] :is(.project-tag, .skill-tag, .badge, .tech-item, .hero.project-hero, .lang-switcher, .language-switcher, .lang-btn, .style-btn) { border-radius: 0; }
+:root[data-style="maths"] .project-image { background: #e6edf8; }
+
+/* Décor de l'accueil : repère avec sin x et parabole qui se tracent, formules */
+:root[data-style="maths"] .floating-element { display: block; filter: none; opacity: 1; z-index: 0; border-radius: 0; animation: none; background: none; }
+:root[data-style="maths"] .floating-1 { width: 420px; height: 300px; top: 44%; right: 1%; background: url('img/styles/maths-graph.svg') no-repeat center / contain; }
+:root[data-style="maths"] :is(.floating-2, .floating-3) { width: auto; height: auto; font: italic 600 1.45rem 'STIX Two Text', Georgia, serif; color: var(--maths-ink); white-space: nowrap; }
+:root[data-style="maths"] .floating-2 { left: auto; right: 5%; top: 16%; bottom: auto; }
+:root[data-style="maths"] .floating-2::after { content: "∑ 1/n² = π²/6"; content: "∑ 1/n² = π²/6" / ""; }
+:root[data-style="maths"] .floating-3 { top: 27%; bottom: auto; right: 9%; color: var(--maths-red); }
+:root[data-style="maths"] .floating-3::after { content: "e^(iπ) + 1 = 0"; content: "e^(iπ) + 1 = 0" / ""; }
+@media (max-width: 1100px) { :root[data-style="maths"] .floating-element { opacity: 0.25; } }
+
+/* Points qui tracent une parabole au clic */
+.style-fx-dot { width: 7px; height: 7px; border-radius: 50%; background: #c0392b; transform: translate(-50%, -50%) scale(0); animation: fx-dot 0.5s ease-out forwards; }
+@keyframes fx-dot { 30% { transform: translate(-50%, -50%) scale(1); } 100% { transform: translate(-50%, -50%) scale(1); opacity: 0; } }
+/* Coordonnées affichées près du curseur (style Maths) */
+.maths-coords { position: fixed; z-index: 10001; pointer-events: none; font: 600 1.1rem 'Caveat', cursive; color: #c0392b; white-space: nowrap; transform: translate(14px, -26px); }
+
 /* ---------- Moins d'animations si le visiteur l'a demandé ---------- */
 @media (prefers-reduced-motion: reduce) {
     :root[data-style] body::after, :root[data-style] .floating-element, :root[data-style] .btn:hover::after { animation: none !important; }
-    .style-fx { display: none; }
+    .style-fx, .maths-coords { display: none; }
 }
