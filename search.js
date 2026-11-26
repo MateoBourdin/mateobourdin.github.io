@@ -4,7 +4,7 @@
 (() => {
     'use strict';
     const script = document.currentScript;
-    const BASE = script ? script.src.replace(/[^/]*$/, '') : '/';
+    const BASE = script ? script.src.slice(0, script.src.lastIndexOf('/') + 1) : '/';
     const UI = {
         fr: { open: 'Rechercher', placeholder: 'Rechercher un projet, un cours, une techno…', close: 'Fermer', empty: 'Aucun résultat pour', hint: 'Tape au moins 2 lettres. Exemples :', loading: 'Chargement de l’index…', error: 'Impossible de charger l’index de recherche.', results: n => `${n} résultat${n > 1 ? 's' : ''}`, keys: '↑ ↓ pour choisir · Entrée pour ouvrir · Échap pour fermer', external: 'application', pdf: 'PDF' },
         en: { open: 'Search', placeholder: 'Search a project, a course, a technology…', close: 'Close', empty: 'No results for', hint: 'Type at least 2 letters. Examples:', loading: 'Loading the index…', error: 'Could not load the search index.', results: n => `${n} result${n > 1 ? 's' : ''}`, keys: '↑ ↓ to choose · Enter to open · Esc to close', external: 'app', pdf: 'PDF' }
@@ -15,7 +15,15 @@
 
     const norm = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const shortTitle = s => String(s).replace(/\s*[|–-]\s*Matéo Bourdin\s*$/i, '').trim();
+    // Retire le suffixe « | Matéo Bourdin » (ou « – », « - ») des titres, sans regex à retour arrière.
+    const shortTitle = s => {
+        let t = String(s).trim();
+        const NAME = 'matéo bourdin';
+        if (!t.toLowerCase().endsWith(NAME)) return t;
+        const head = t.slice(0, -NAME.length).trimEnd();
+        if (!['|', '–', '-'].includes(head.slice(-1))) return t;
+        return head.slice(0, -1).trim();
+    };
 
     // ---------- Index ----------
     let index = null, loading = null;
@@ -93,9 +101,15 @@
         let start = pos < 0 ? 0 : Math.max(0, pos - 50);
         if (start > 0) { const sp = text.indexOf(' ', start); if (sp > 0 && sp - start < 20) start = sp + 1; }
         let s = text.slice(start, start + len);
-        if (start + len < text.length) s = s.replace(/\s+\S*$/, '') + ' …';
+        if (start + len < text.length) s = dropLastWord(s) + ' …';
         if (start > 0) s = '… ' + s;
         return mark(s, toks);
+    }
+    // Coupe le dernier mot (et les espaces qui le précèdent), comme s.replace(/\s+\S*$/, '').
+    function dropLastWord(s) {
+        let i = s.length - 1;
+        while (i >= 0 && !/\s/.test(s[i])) i--;
+        return i < 0 ? s : s.slice(0, i).trimEnd();
     }
     function mark(s, toks) {
         const n = norm(s); const marks = [];
@@ -167,7 +181,7 @@
     }
     function examples() {
         status.innerHTML = esc(t('hint')) + ' ' + EXAMPLES.map(x => `<button type="button" class="site-search-chip">${esc(x)}</button>`).join(' ');
-        status.querySelectorAll('.site-search-chip').forEach(b => b.addEventListener('click', () => { input.value = b.textContent; run(); input.focus(); }));
+        status.querySelectorAll('.site-search-chip').forEach(b => b.addEventListener('click', () => { input.value = b.textContent; run().catch(console.error); input.focus(); }));
         list.innerHTML = ''; items = []; sel = -1;
     }
     async function run() {
@@ -207,7 +221,7 @@
         document.documentElement.classList.add('site-search-open');
         if (typeof prefill === 'string') input.value = prefill;
         input.focus(); input.select();
-        run();
+        run().catch(console.error);
         load().catch(() => {});
     }
     function close(restore = true) {

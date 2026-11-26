@@ -57,7 +57,7 @@
                 for (let i = 0; i < n; i++) { const e = a * xn[i] + b - y[i]; da += e * xn[i]; db += e; }
                 a -= lr * (2 / n) * da; b -= lr * (2 / n) * db;
                 L.push([it, a, b, mse(a, b)]);
-                if (!isFinite(a)) break;
+                if (!Number.isFinite(a)) break;
             }
             let stab = null;
             for (let i = 1; i < L.length; i++) if (Math.abs(L[i][3] - L[i - 1][3]) < 0.01) { stab = L[i][0]; break; }
@@ -73,13 +73,13 @@
                 const xs = [Math.min(...x), Math.max(...x)];
                 p1.line(xs, xs.map(v => ak * (v - mn) / (mx - mn) + bk), PAL[1], 2.5);
                 p1.line(xs, xs.map(v => slope * v + inter), css('--text-light'), 1, [5, 4]);
-                const ms = L.slice(0, k + 1).map(r => r[3]).filter(isFinite);
-                const hi = Math.min(Math.max(...L.map(r => r[3]).filter(isFinite)), mseOpt * 3);
+                const ms = L.slice(0, k + 1).map(r => r[3]).filter(Number.isFinite);
+                const hi = Math.min(Math.max(...L.map(r => r[3]).filter(Number.isFinite)), mseOpt * 3);
                 const p2 = plot($('#gdMse'), { xmin: 0, xmax: nIt, ymin: Math.floor(mseOpt - 1), ymax: Math.max(hi, mseOpt + 2), xlabel: 'Itération', ylabel: 'MSE' });
                 p2.line(ms.map((_, i) => i), ms.map(v => Math.min(v, Math.max(hi, mseOpt + 2))), PAL[3], 2);
                 if (stab !== null && k >= stab) p2.line([stab, stab], [Math.floor(mseOpt - 1), Math.max(hi, mseOpt + 2)], css('--text'), 1, [4, 4]);
                 const last = L[Math.min(k, L.length - 1)];
-                out.innerHTML = isFinite(last[3])
+                out.innerHTML = Number.isFinite(last[3])
                     ? `itération ${last[0] + 1} · a = <b>${fmt(last[1], 4)}</b> · b = <b>${fmt(last[2], 4)}</b> · MSE = <b>${fmt(last[3], 4)}</b>${stab !== null ? ` · stabilisation (ε = 0,01) à l’itération <b>${stab}</b>` : ''}<br><span class="cours-source">Optimum des moindres carrés : MSE = ${fmt(mseOpt, 4)} (pointillés). Pas trop grand ⇒ divergence, trop petit ⇒ convergence lente.</span>`
                     : '<b>Divergence</b> : le pas d’apprentissage est trop grand, les coefficients explosent.';
             };
@@ -201,7 +201,7 @@
         kIn.addEventListener('input', draw);
         src.addEventListener('change', async () => prepare(await load(src.value)));
         file.addEventListener('change', async () => { const f = file.files[0]; if (!f) return; const url = URL.createObjectURL(f); await prepare(await load(url)); URL.revokeObjectURL(url); });
-        load(src.value).then(prepare);
+        load(src.value).then(prepare).catch(console.error);
     }
 
     // ================= TD5 : perceptron et réseau 2-n-1 =================
@@ -309,7 +309,7 @@
     function initCNN() {
         const box = $('#demo-cnn'); if (!box) return;
         let net = null, samples = null, labels = null;
-        const f16 = h => { const s = (h & 0x8000) ? -1 : 1, e = (h >> 10) & 0x1f, f = h & 0x3ff; return e === 0 ? s * 2 ** -14 * (f / 1024) : e === 31 ? (f ? NaN : s * Infinity) : s * 2 ** (e - 15) * (1 + f / 1024); };
+        const f16 = h => { const s = (h & 0x8000) ? -1 : 1, e = (h >> 10) & 0x1f, f = h & 0x3ff; return e === 0 ? s * 2 ** -14 * (f / 1024) : e === 31 ? (f ? Number.NaN : s * Infinity) : s * 2 ** (e - 15) * (1 + f / 1024); };
         async function load() {
             const [wb, sb] = await Promise.all([fetch('cours/maths/td6-weights.bin').then(r => r.arrayBuffer()), fetch('cours/maths/td6-samples.bin').then(r => r.arrayBuffer())]);
             const u16 = new Uint16Array(wb), all = Float32Array.from(u16, f16);

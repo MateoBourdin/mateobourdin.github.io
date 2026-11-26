@@ -129,7 +129,7 @@
     function preMnistLike(cv) {
         const W = cv.width, H = cv.height, d = cv.getContext('2d').getImageData(0, 0, W, H).data, g = new Float32Array(W * H);
         let x0 = W, y0 = H, x1 = -1, y1 = -1;
-        for (let i = 0; i < W * H; i++) { const v = (255 - L24(d[4 * i], d[4 * i + 1], d[4 * i + 2])) / 255; g[i] = v; if (v > 0.1) { const x = i % W, y = (i / W) | 0; if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; } }
+        for (let i = 0; i < W * H; i++) { const v = (255 - L24(d[4 * i], d[4 * i + 1], d[4 * i + 2])) / 255; g[i] = v; if (v > 0.1) { const x = i % W, y = Math.trunc(i / W); if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; } }
         const out = new Float32Array(784); if (x1 < 0) return out;
         const bw = x1 - x0 + 1, bh = y1 - y0 + 1, f = Math.max(bw, bh) / 20, tw = Math.max(1, Math.round(bw / f)), th = Math.max(1, Math.round(bh / f)), s = new Float32Array(tw * th);
         for (let ty = 0; ty < th; ty++) for (let tx = 0; tx < tw; tx++) {
@@ -172,7 +172,7 @@
         const pos = e => { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * cv.width / r.width, (e.clientY - r.top) * cv.height / r.height]; };
         cv.addEventListener('pointerdown', e => { drawing = true; last = pos(e); cv.setPointerCapture(e.pointerId); ctx.beginPath(); ctx.arc(last[0], last[1], 9, 0, 7); ctx.fillStyle = 'black'; ctx.fill(); });
         cv.addEventListener('pointermove', e => { if (!drawing) return; const p = pos(e); ctx.beginPath(); ctx.moveTo(last[0], last[1]); ctx.lineTo(p[0], p[1]); ctx.stroke(); last = p; });
-        const stop = () => { if (drawing) { drawing = false; predict(); } };
+        const stop = () => { if (drawing) { drawing = false; predict().catch(console.error); } };
         cv.addEventListener('pointerup', stop); cv.addEventListener('pointercancel', stop); cv.addEventListener('pointerleave', stop);
         $('#tp4Clear').addEventListener('click', () => { clear(); out.innerHTML = '<p class="cours-source">Result: -</p>'; $('#tp4In').getContext('2d').clearRect(0, 0, 40, 40); });
         $('#tp4Predict').addEventListener('click', () => predict());
@@ -180,7 +180,7 @@
             const f = e.target.files[0]; if (!f) return;
             const img = new Image(); img.onload = () => {
                 clear(); const s = Math.min(cv.width / img.width, cv.height / img.height), w = img.width * s, h = img.height * s;
-                ctx.drawImage(img, (cv.width - w) / 2, (cv.height - h) / 2, w, h); URL.revokeObjectURL(img.src); predict();
+                ctx.drawImage(img, (cv.width - w) / 2, (cv.height - h) / 2, w, h); URL.revokeObjectURL(img.src); predict().catch(console.error);
             }; img.src = URL.createObjectURL(f);
         });
         pre.addEventListener('change', () => predict());
@@ -204,7 +204,7 @@
                 cc.putImageData(im, 0, 0); b.appendChild(c);
                 b.addEventListener('click', () => {
                     clear(); ctx.imageSmoothingEnabled = m.ch === 3; ctx.drawImage(c, 0, 0, cv.width, cv.height); ctx.imageSmoothingEnabled = true;
-                    grid.querySelectorAll('.on').forEach(x => x.classList.remove('on')); b.classList.add('on'); predict(labels[u8[k]]);
+                    grid.querySelectorAll('.on').forEach(x => x.classList.remove('on')); b.classList.add('on'); predict(labels[u8[k]]).catch(console.error);
                 });
                 grid.appendChild(b);
             }
@@ -236,7 +236,7 @@
                 out.innerHTML = `<p class="cours-source">Erreur : ${esc(e.message)}</p>`;
             }
             busy = false;
-            if (pending) { const t = pending.truth; pending = null; predict(t); }
+            if (pending) { const t = pending.truth; pending = null; predict(t).catch(console.error); }
         }
 
         const setModel = n => {
@@ -244,7 +244,7 @@
             $('#tp4Title').textContent = m.display;
             $('#tp4PreRow').hidden = n !== 'mnist'; if (n !== 'mnist') pre.value = 'exo';
             $('#tp4DrawHint').textContent = n === 'mnist' ? 'Dessine un chiffre, choisis une image de test ou envoie une photo.' : n === 'fashion_mnist' ? 'Choisis une image de test ou envoie la photo d’un vêtement sur fond blanc.' : 'Choisis une image de test ou envoie une photo (elle sera réduite à 32 × 32 pixels).';
-            clear(); out.innerHTML = '<p class="cours-source">Result: -</p>'; loadSamples();
+            clear(); out.innerHTML = '<p class="cours-source">Result: -</p>'; loadSamples().catch(console.error);
         };
         sel.addEventListener('change', () => setModel(sel.value));
         setModel('mnist');

@@ -12,6 +12,7 @@
  *   node scripts/build-search-index.js          rebuild the file
  *   node scripts/build-search-index.js --check  fail if it is out of date (CI)
  */
+const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
 
@@ -47,7 +48,7 @@ function listHtml(dir, out = []) {
         if (e.isDirectory()) listHtml(full, out);
         else if (e.name.endsWith('.html')) out.push(full);
     }
-    return out.sort();
+    return out.sort((a, b) => (a < b ? -1 : Number(a > b)));
 }
 
 // Same approach as check-i18n.js: run the script that declares
@@ -63,10 +64,14 @@ function makeStub() {
         apply() { return makeStub(); },
     });
 }
+// Exécute le script du dépôt qui déclare `translations` dans un contexte vm isolé
+// (bouchons à la place des globales du navigateur), sans eval ni new Function.
 function evalTranslations(src) {
-    const fn = new Function('document', 'window', 'localStorage', 'navigator',
-        src + '\nreturn typeof translations !== "undefined" ? translations : undefined;');
-    return fn(makeStub(), makeStub(), makeStub(), makeStub());
+    const sandbox = { document: makeStub(), window: makeStub(), localStorage: makeStub(), navigator: makeStub() };
+    return vm.runInNewContext( // NOSONAR : script de CI qui exécute translations.js de ce dépôt, jamais une entrée externe
+        src + '\n;typeof translations !== "undefined" ? translations : undefined;',
+        sandbox, { timeout: 5000 }
+    );
 }
 let shared = null;
 function translationsFor(html) {
@@ -83,8 +88,8 @@ const resolve = (tree, key) => key.split('.').reduce((n, k) => (n && typeof n ==
 
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’', lsquo: '‘', laquo: '«', raquo: '»', hellip: '…', mdash: '—', ndash: '–', eacute: 'é', egrave: 'è', agrave: 'à', ccedil: 'ç', times: '×', rarr: '→', larr: '←', middot: '·' };
 const decode = s => s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) =>
-    e[0] === '#' ? String.fromCodePoint(e[1].toLowerCase() === 'x' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10)) : (ENT[e] ?? m));
-const stripTags = s => decode(String(s).replace(/<[^>]*>/g, ' '));
+    e[0] === '#' ? String.fromCodePoint(e[1].toLowerCase() === 'x' ? Number.parseInt(e.slice(2), 16) : Number.parseInt(e.slice(1), 10)) : (ENT[e] ?? m));
+const stripTags = s => decode(String(s).replace(/<[^<>]*>/g, ' '));
 const clean = s => s.replace(/\s+/g, ' ').trim();
 const attr = (a, name) => { const m = a.match(new RegExp(`\\b${name}\\s*=\\s*"([^"]*)"`)); return m ? decode(m[1]) : null; };
 
@@ -109,7 +114,8 @@ function indexPage(file) {
     sections.push(cur);
     const stack = [];            // {tag, i18n, skip, id}
     let heading = null;          // collecting heading text
-    const re = /<!--[\s\S]*?-->|<(\/?)([a-zA-Z][a-zA-Z0-9-]*)((?:\s+[^>]*?)?)\s*(\/?)>|([^<]+)/g;
+    // Commentaire | balise (attributs en un seul bloc, sans quantificateurs adjacents) | texte.
+    const re = /<!--[\s\S]*?-->|<(\/?)([a-zA-Z][a-zA-Z0-9-]*)(\s[^<>]*)?>|([^<]+)/g;
     let m;
     const inSkip = () => stack.some(s => s.skip);
     const inI18n = () => stack.some(s => s.i18n);
@@ -118,14 +124,17 @@ function indexPage(file) {
 
     while ((m = re.exec(body))) {
         if (m[0].startsWith('<!--')) continue;
-        if (m[5] !== undefined) {           // text
+        if (m[4] !== undefined) {           // text
             if (inSkip()) continue;
-            const t = decode(m[5]);
+            const t = decode(m[4]);
             push('fr', t);
             if (!inI18n()) push('en', t);
             continue;
         }
-        const close = m[1] === '/', tag = m[2].toLowerCase(), a = m[3] || '';
+        const close = m[1] === '/', tag = m[2].toLowerCase();
+        const rawA = (m[3] || '').trimEnd();
+        const selfClose = rawA.endsWith('/');
+        const a = selfClose ? rawA.slice(0, -1) : rawA;
         if (close) {
             const i = stack.map(s => s.tag).lastIndexOf(tag);
             if (i >= 0) {
@@ -139,7 +148,7 @@ function indexPage(file) {
             }
             continue;
         }
-        if (VOID.has(tag) || m[4] === '/') continue;
+        if (VOID.has(tag) || selfClose) continue;
         const cls = attr(a, 'class') || '';
         const key = attr(a, 'data-i18n');
         const node = { tag, id: attr(a, 'id'), i18n: !!key, skip: SKIP.has(tag) || BLOCK_SKIP_CLASS.test(cls), heading: false };

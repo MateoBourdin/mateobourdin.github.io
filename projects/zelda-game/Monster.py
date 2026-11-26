@@ -151,7 +151,7 @@ def show(mons):
 
 if __name__=="__main__":
 
-    mon=create("Ganon","F",50,[10,60],300,300,1,True,'Ganon.txt', 'Ganon2.txt')
+    mon=create("Ganon","F",50,[10,60],300,300,1)
     #print(mon.str1)
     #print(str(list(mon.data1[1])))
     show(mon)

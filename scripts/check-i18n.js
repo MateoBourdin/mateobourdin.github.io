@@ -10,6 +10,7 @@
  * = {...}` script rather than sharing one file, so this checks each page
  * against whichever translations object that same page defines or loads.
  */
+const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
 
@@ -46,12 +47,14 @@ function makeStub() {
     });
 }
 
+// Exécute le script du dépôt qui déclare `translations` dans un contexte vm isolé
+// (bouchons à la place des globales du navigateur), sans eval ni new Function.
 function evalTranslations(jsSource) {
-    const fn = new Function(
-        'document', 'window', 'localStorage', 'navigator',
-        jsSource + '\nreturn typeof translations !== "undefined" ? translations : undefined;'
+    const sandbox = { document: makeStub(), window: makeStub(), localStorage: makeStub(), navigator: makeStub() };
+    return vm.runInNewContext( // NOSONAR : script de CI qui exécute translations.js de ce dépôt, jamais une entrée externe
+        jsSource + '\n;typeof translations !== "undefined" ? translations : undefined;',
+        sandbox, { timeout: 5000 }
     );
-    return fn(makeStub(), makeStub(), makeStub(), makeStub());
 }
 
 function findTranslationsForFile(file, text) {
