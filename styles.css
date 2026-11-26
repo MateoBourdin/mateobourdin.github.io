@@ -3547,3 +3547,16 @@ html.site-search-open { overflow: hidden; }
 .mini-updated {
     font-size: 0.82rem;
 }
+
+/* ---- Qualité et CI/CD (page Compétences) ---- */
+.quality-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; align-items: start; }
+.quality-text { color: var(--text-light); margin-bottom: 1.25rem; }
+.pipeline { list-style: none; padding: 0; margin: 0 0 1.25rem; display: grid; gap: .6rem; counter-reset: step; }
+.pipeline li { position: relative; display: grid; grid-template-columns: 2.25rem 1fr; column-gap: .75rem; align-items: center;
+    background: var(--primary-lighter); border-radius: .75rem; padding: .6rem .9rem; }
+.pipeline li + li::before { content: ''; position: absolute; left: 1.95rem; top: -.6rem; height: .6rem; border-left: 2px dashed var(--primary); }
+.pipeline .pipeline-icon { grid-row: span 2; font-size: 1.35rem; text-align: center; }
+.pipeline b { color: var(--text); font-size: .95rem; }
+.pipeline li > span:last-child { color: var(--text-light); font-size: .85rem; }
+.quality-points { margin: 0 0 1.25rem 1.1rem; color: var(--text-light); display: grid; gap: .4rem; font-size: .92rem; }
+.quality-links { display: flex; gap: .5rem; flex-wrap: wrap; }
