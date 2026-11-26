@@ -6,6 +6,8 @@
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+                var s = localStorage.getItem('siteStyle');
+                if (s === 'espace') document.documentElement.setAttribute('data-style', s);
             } catch (e) {}
         })();
     </script>
@@ -25,6 +27,7 @@
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -167,7 +170,7 @@
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
             <p data-i18n="footer.signature">Créé avec passion 🚀</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
-            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 26 novembre 2026</p>
+            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 27 novembre 2026</p>
         </div>
     </footer>
 
@@ -261,7 +264,7 @@
                     copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
                     signature: 'Créé avec passion 🚀',
                     legal: 'Mentions légales et confidentialité',
-                    updated: 'Dernière mise à jour : 26 novembre 2026'
+                    updated: 'Dernière mise à jour : 27 novembre 2026'
                 }
             },
             en: {
@@ -324,7 +327,7 @@
                     copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
                     signature: 'Created with passion 🚀',
                     legal: 'Legal notice and privacy',
-                    updated: 'Last updated: 26 November 2026'
+                    updated: 'Last updated: 27 November 2026'
                 }
             }
         };
@@ -430,6 +433,7 @@
     </script>
     <script src="embeds.js"></script>
     <script src="theme.js"></script>
+    <script src="style-switcher.js"></script>
     <script src="search.js" defer></script>
 </body>
 </html>

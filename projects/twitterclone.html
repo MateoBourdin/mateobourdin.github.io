@@ -6,6 +6,8 @@
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+                var s = localStorage.getItem('siteStyle');
+                if (s === 'espace') document.documentElement.setAttribute('data-style', s);
             } catch (e) {}
         })();
     </script>
@@ -24,6 +26,7 @@
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Clone Twitter/X - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../themes.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -151,7 +154,7 @@
         </div>
     </div>
 
-    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a><br><span class="mini-updated">Mis à jour le 26 novembre 2026 · Updated 26 November 2026</span></footer>
+    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a><br><span class="mini-updated">Mis à jour le 27 novembre 2026 · Updated 27 November 2026</span></footer>
 
     <script>
         // i18n translations
@@ -259,6 +262,7 @@
         });
     </script>
     <script src="../theme.js"></script>
+    <script src="../style-switcher.js"></script>
     <script src="../search.js" defer></script>
 </body>
 </html>

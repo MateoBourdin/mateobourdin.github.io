@@ -1,0 +1,182 @@
+/* ============================================================
+   Styles du site (en plus du style « Sobre » de styles.css).
+   Le style choisi est posé sur <html data-style="…"> par le
+   script en tête de chaque page et par style-switcher.js.
+   Seul l'habillage change : contenu, liens et navigation restent
+   identiques dans tous les styles.
+   ============================================================ */
+
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/chakra-petch-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/chakra-petch-latin-700-normal.woff2') format('woff2'); }
+
+/* ---------- Sélecteur de style (tous les styles) ---------- */
+.style-switcher { display: flex; gap: 0.25rem; align-items: center; padding-right: 0.4rem; margin-right: 0.15rem; border-right: 1px solid var(--primary-lighter); }
+.style-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; white-space: nowrap; min-width: 2.5rem; height: 2.5rem; padding: 0 0.6rem; border: none; border-radius: 0.375rem; background: transparent; color: var(--text-light); font: 600 0.85rem 'Inter', sans-serif; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
+.style-btn:hover { color: var(--primary); background: var(--primary-lighter); }
+.style-btn[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); }
+.style-btn svg { width: 20px; height: 20px; flex: none; }
+.style-btn .style-label { display: none; }
+.style-btn[aria-pressed="true"] .style-label { display: inline; }
+@media (max-width: 768px) { .style-btn[aria-pressed="true"] .style-label { display: none; } }
+
+/* Effets de clic (éléments créés par style-switcher.js) */
+.style-fx { position: fixed; pointer-events: none; z-index: 10000; }
+
+/* Un style à thème a sa propre palette : le bouton clair/sombre ne sert plus */
+:root[data-style] .theme-toggle-btn { display: none; }
+
+/* ============================================================
+   MINE SPATIALE
+   ============================================================ */
+:root[data-style="espace"] {
+    color-scheme: dark;
+    --primary: #ffb547;
+    --primary-dark: #ffc977;
+    --primary-light: #ffd59a;
+    --primary-lighter: #1e2550;
+    --text: #e8ecff;
+    --text-light: #b4bce0;
+    --dark: #05070f;
+    --light: #0b0f24;
+    --surface: #151a3a;
+    --header-bg: rgba(8, 11, 26, 0.82);
+    --header-bg-scrolled: rgba(8, 11, 26, 0.95);
+    --accent-green: #4fd1e8;
+    --accent-purple: #9d8cff;
+    --accent-orange: #4fd1e8;
+    --on-primary: #1a1200;
+    --espace-cyan: #4fd1e8;
+    --espace-line: #2f3870;
+    cursor: url('img/cursors/espace-arrow.svg') 2 2, auto;
+}
+:root[data-style="espace"] :is(a, button, summary, label, select, [role="button"], .btn) {
+    cursor: url('img/cursors/espace-target.svg') 16 16, pointer;
+}
+:root[data-style="espace"] ::selection { background: #ffb547; color: #1a1200; }
+
+/* Champ d'étoiles fixe derrière tout le contenu, qui scintille doucement */
+:root[data-style="espace"] body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 28% 72%, #fff 50%, transparent 51%),
+        radial-gradient(2px 2px at 45% 33%, #cfe9ff 50%, transparent 51%),
+        radial-gradient(1px 1px at 63% 12%, #fff 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 78% 58%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 91% 27%, #ffe7c2 50%, transparent 51%),
+        radial-gradient(1px 1px at 6% 88%, #fff 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 52% 91%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 36% 8%, #fff 50%, transparent 51%),
+        radial-gradient(1px 1px at 85% 82%, #cfe9ff 50%, transparent 51%);
+    background-size: 420px 420px;
+    animation: espace-twinkle 6s ease-in-out infinite alternate;
+}
+@keyframes espace-twinkle { from { opacity: 0.55; } to { opacity: 1; } }
+
+:root[data-style="espace"] :is(h1, h2, h3, h4, .logo) { font-family: 'Chakra Petch', 'Inter', sans-serif; letter-spacing: 0.01em; }
+:root[data-style="espace"] :is(h1, h2) { font-weight: 700; }
+:root[data-style="espace"] .hero h1 .gradient-text { color: var(--primary); text-shadow: 0 0 24px rgba(255, 181, 71, 0.35); }
+:root[data-style="espace"] :is(.section-tag, .hero-tag, .btn, .back-btn, .filter-btn) { font-family: 'Chakra Petch', 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
+:root[data-style="espace"] .nav-links a { font-family: 'Chakra Petch', 'Inter', sans-serif; }
+:root[data-style="espace"] .logo { white-space: nowrap; }
+:root[data-style="espace"] :is(.section-tag, .hero-tag) { border-radius: 0; border: 1px solid var(--espace-cyan); color: var(--espace-cyan); background: rgba(79, 209, 232, 0.08); }
+:root[data-style="espace"] header { border-bottom-color: var(--espace-line); }
+:root[data-style="espace"] .nav-links a::after { background: var(--espace-cyan); box-shadow: 0 0 8px var(--espace-cyan); }
+
+/* Boutons : coins coupés façon interface de vaisseau, balayage lumineux au survol */
+:root[data-style="espace"] :is(.btn, .back-btn) {
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+:root[data-style="espace"] :is(.btn-primary, .back-btn) {
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+:root[data-style="espace"] .back-btn { box-shadow: none; }
+:root[data-style="espace"] :is(.filter-btn, .hero.project-hero) { border-radius: 0; }
+:root[data-style="espace"] .btn-primary { box-shadow: none; }
+:root[data-style="espace"] .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: none; }
+:root[data-style="espace"] .btn-secondary { background: transparent; color: var(--espace-cyan); border: 1px solid var(--espace-cyan); }
+:root[data-style="espace"] .btn-secondary:hover { background: rgba(79, 209, 232, 0.12); border-color: var(--espace-cyan); }
+:root[data-style="espace"] :is(.btn, .back-btn)::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: -60%;
+    width: 40%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-20deg);
+    pointer-events: none;
+}
+:root[data-style="espace"] :is(.btn, .back-btn):hover::after { animation: espace-sweep 0.7s ease; }
+@keyframes espace-sweep { to { left: 120%; } }
+
+/* Cartes : crochets d'angle cyan, qui s'allongent et s'allument au survol (scanner) */
+:root[data-style="espace"] :is(.project-card, .skill-category, .feature-card, .stat-card, .contact-item, .emulation-item, .cours-card) {
+    border-radius: 0;
+    background:
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) top left / 18px 2px no-repeat,
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) top left / 2px 18px no-repeat,
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) top right / 18px 2px no-repeat,
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) top right / 2px 18px no-repeat,
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) bottom left / 18px 2px no-repeat,
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) bottom left / 2px 18px no-repeat,
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) bottom right / 18px 2px no-repeat,
+        linear-gradient(var(--espace-cyan), var(--espace-cyan)) bottom right / 2px 18px no-repeat,
+        var(--surface);
+    box-shadow: inset 0 0 0 1px var(--espace-line);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-size 0.3s ease;
+}
+:root[data-style="espace"] :is(.project-card, .skill-category, .feature-card, .stat-card, .contact-item, .emulation-item, .cours-card):hover {
+    background-size: 36px 2px, 2px 36px, 36px 2px, 2px 36px, 36px 2px, 2px 36px, 36px 2px, 2px 36px, auto;
+    box-shadow: inset 0 0 0 1px var(--espace-cyan), 0 0 28px rgba(79, 209, 232, 0.22);
+}
+:root[data-style="espace"] :is(.project-tag, .skill-tag, .badge, .tech-item) { border-radius: 0; }
+:root[data-style="espace"] .project-image { background: linear-gradient(135deg, #1e2550, #0b0f24); }
+:root[data-style="espace"] :is(.lang-switcher, .language-switcher) { border-radius: 0; box-shadow: inset 0 0 0 1px var(--espace-line); }
+:root[data-style="espace"] .style-switcher { border-right-color: var(--espace-line); }
+
+/* Décor de l'accueil : les trois halos deviennent une planète, un astéroïde et un cristal */
+:root[data-style="espace"] .floating-element { display: block; filter: none; opacity: 1; z-index: 0; }
+@media (max-width: 900px) { :root[data-style="espace"] .floating-element { opacity: 0.35; } }
+:root[data-style="espace"] .floating-1 {
+    width: 380px; height: 380px; top: 14%; bottom: auto; right: -140px;
+    background:
+        radial-gradient(circle at 30% 35%, #1c2048 0 22px, transparent 23px),
+        radial-gradient(circle at 62% 22%, #1c2048 0 14px, transparent 15px),
+        radial-gradient(circle at 55% 62%, #1c2048 0 30px, transparent 31px),
+        #2a2f5c;
+    background-size: 200% 100%;
+    box-shadow: inset -50px -30px 0 rgba(8, 11, 26, 0.55), 0 0 60px rgba(79, 209, 232, 0.15);
+    animation: espace-spin 60s linear infinite;
+}
+@keyframes espace-spin { to { background-position: -200% 0, -200% 0, -200% 0, 0 0; } }
+:root[data-style="espace"] .floating-2 {
+    width: 70px; height: 56px; left: auto; right: 22%; bottom: auto; top: 62%;
+    border-radius: 46% 54% 40% 60% / 55% 45% 55% 45%;
+    background: radial-gradient(circle at 35% 40%, #3a3f6e 0 8px, transparent 9px), #262b55;
+    animation: espace-drift 14s ease-in-out infinite;
+}
+:root[data-style="espace"] .floating-3 {
+    width: 22px; height: 22px; top: 18%; right: 30%;
+    border-radius: 0;
+    background: #ffb547;
+    transform: rotate(45deg);
+    box-shadow: 0 0 18px #ffb547, 34px 26px 0 -6px #4fd1e8;
+    animation: espace-glow 3s ease-in-out infinite alternate;
+}
+@keyframes espace-drift { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(-30px, -18px) rotate(25deg); } }
+@keyframes espace-glow { from { box-shadow: 0 0 8px #ffb547, 34px 26px 0 -6px #4fd1e8; } to { box-shadow: 0 0 26px #ffb547, 34px 26px 0 -6px #4fd1e8; } }
+
+/* Éclats de cristal au clic */
+.style-fx-shard { width: 12px; height: 12px; background: var(--c, #ffb547); box-shadow: 0 0 8px var(--c, #ffb547); transform: translate(-50%, -50%) rotate(45deg); animation: fx-shard 0.55s ease-out forwards; }
+@keyframes fx-shard { to { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(225deg) scale(0.3); opacity: 0; } }
+
+/* ---------- Moins d'animations si le visiteur l'a demandé ---------- */
+@media (prefers-reduced-motion: reduce) {
+    :root[data-style] body::after, :root[data-style] .floating-element, :root[data-style] .btn:hover::after { animation: none !important; }
+    .style-fx { display: none; }
+}

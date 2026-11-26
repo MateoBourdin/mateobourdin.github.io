@@ -6,6 +6,8 @@
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+                var s = localStorage.getItem('siteStyle');
+                if (s === 'espace') document.documentElement.setAttribute('data-style', s);
             } catch (e) {}
         })();
     </script>
@@ -24,6 +26,7 @@
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Jouer à Survival Island - Matéo Bourdin</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" href="survival-island/si.css">
     <style>
         .play-wrap { max-width: 1320px; margin: 0 auto; }
@@ -100,7 +103,7 @@
         </div>
     </div>
 
-    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a><br><span class="mini-updated">Mis à jour le 26 novembre 2026 · Updated 26 November 2026</span></footer>
+    <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a><br><span class="mini-updated">Mis à jour le 27 novembre 2026 · Updated 27 November 2026</span></footer>
 
     <script>
         const translations = {
@@ -171,6 +174,7 @@
         })();
     </script>
     <script src="../theme.js"></script>
+    <script src="../style-switcher.js"></script>
     <script src="../search.js" defer></script>
 </body>
 </html>

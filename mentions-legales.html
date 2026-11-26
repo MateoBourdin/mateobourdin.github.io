@@ -6,6 +6,8 @@
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+                var s = localStorage.getItem('siteStyle');
+                if (s === 'espace') document.documentElement.setAttribute('data-style', s);
             } catch (e) {}
         })();
     </script>
@@ -25,6 +27,7 @@
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -70,7 +73,7 @@
 
     <section class="legal-section">
         <div class="container legal-content">
-            <p class="legal-updated" data-i18n="legal.updated">Dernière mise à jour : 26 novembre 2026</p>
+            <p class="legal-updated" data-i18n="legal.updated">Dernière mise à jour : 27 novembre 2026</p>
 
             <h2 data-i18n="legal.editorTitle">Éditeur du site</h2>
             <p data-i18n="legal.editorText">Ce site est le portfolio personnel de Matéo Bourdin, étudiant en BUT Informatique à l’IUT d’Annecy. Il est édité à titre non professionnel. Directeur de la publication : Matéo Bourdin.</p>
@@ -93,7 +96,7 @@
             <p data-i18n="legal.rightsText">Vous pouvez demander l’accès à vos données, leur rectification, leur effacement, leur portabilité ou la limitation de leur traitement, ou vous opposer à ce traitement, en écrivant à mateo.bourdin@etu.univ-smb.fr. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL.</p>
 
             <h2 data-i18n="legal.storageTitle">Cookies et stockage local</h2>
-            <p data-i18n="legal.storageText">Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue et le thème clair ou sombre que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien. L’application d’échecs Fianchetto, servie sur le même domaine, garde de la même façon dans votre navigateur vos parties, analyses, classements et réglages.</p>
+            <p data-i18n="legal.storageText">Le site ne dépose aucun cookie. Il enregistre seulement dans votre navigateur (stockage local) la langue, le thème clair ou sombre et le style d’affichage que vous choisissez, ainsi que vos meilleurs scores et votre progression aux mini-jeux et aux quiz de révision des pages de cours. Ces informations ne quittent pas votre appareil et vous pouvez les effacer depuis les réglages de votre navigateur. La démo de Survival Island n’enregistre rien. L’application d’échecs Fianchetto, servie sur le même domaine, garde de la même façon dans votre navigateur vos parties, analyses, classements et réglages.</p>
 
             <h2 data-i18n="legal.thirdTitle">Contenus tiers</h2>
             <p data-i18n="legal.thirdText">Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Les modèles d’IA des pages de cours s’exécutent dans votre navigateur : les dessins et photos que vous leur soumettez ne sont envoyés nulle part. Dans Fianchetto, le moteur Stockfish tourne aussi dans votre navigateur ; seules trois actions contactent un service externe : importer des parties (votre navigateur interroge les API publiques de Chess.com ou de Lichess avec le pseudo saisi), charger un problème en ligne (API de Lichess) et envoyer un message par la boîte à idées (Formspree, comme le formulaire de contact). Ce service reçoit alors votre adresse IP et les informations transmises. La version en ligne de CUBE Bikes (SAE 3.01) est un site externe, hébergé sur un autre serveur que ce portfolio : elle ne s’ouvre que si vous cliquez sur son lien, et elle a sa propre bannière cookies, où vous pouvez tout refuser. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.</p>
@@ -115,7 +118,7 @@
             <ul>
                 <li><a href="vendor/pyodide/LICENSE">Pyodide (MPL-2.0)</a> · <a href="vendor/pyodide/LICENSE-Python.txt">Python (PSF License)</a></li>
                 <li><a href="vendor/xterm/LICENSE">xterm.js (MIT)</a></li>
-                <li><a href="fonts/LICENSE-Inter.txt">Inter (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-Manrope.txt">Manrope (SIL OFL 1.1)</a></li>
+                <li><a href="fonts/LICENSE-Inter.txt">Inter (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-Manrope.txt">Manrope (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-ChakraPetch.txt">Chakra Petch (SIL OFL 1.1)</a></li>
                 <li><a href="cours/LICENCES-donnees.txt">Chinook, Fashion-MNIST (MIT) · MNIST (CC BY-SA 3.0) · CIFAR-10</a></li>
                 <li><a href="https://mateobourdin.github.io/fianchetto/legal.html" target="_blank" rel="noopener">Fianchetto : mentions légales, confidentialité et licences</a></li>
             </ul>
@@ -128,13 +131,14 @@
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
             <p data-i18n="footer.signature">Créé avec passion 🚀</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
-            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 26 novembre 2026</p>
+            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 27 novembre 2026</p>
         </div>
     </footer>
 
     <script src="translations.js"></script>
     <script src="script.js"></script>
     <script src="theme.js"></script>
+    <script src="style-switcher.js"></script>
     <script src="search.js" defer></script>
 </body>
 </html>
