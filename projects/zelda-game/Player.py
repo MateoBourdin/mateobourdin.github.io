@@ -214,4 +214,4 @@ if __name__ == "__main__":
     show(P1,get_direction(P1))
     set_pos(P1,(20,52))
     print(get_pos(P1))
-    show(P1)
+    show(P1,get_direction(P1))
