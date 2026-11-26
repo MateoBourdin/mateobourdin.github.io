@@ -13,14 +13,26 @@
     }
     function render() {
         const t = T[Game.lang()];
-        const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+        // Les valeurs viennent du localStorage (modifiable par l'utilisateur) :
+        // on construit le DOM avec textContent, jamais avec innerHTML.
+        const set = (id, before, value, after) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.textContent = before;
+            if (value !== undefined) {
+                const b = document.createElement('b');
+                b.textContent = String(value);
+                el.append(b, after);
+            }
+        };
+        const num = v => (Number.isFinite(Number(v)) ? Number(v) : 0);
         const ski = Game.best('ski'), naval = Game.best('naval');
-        set('arcadeSki', ski ? `${t.best} : <b>${ski}</b> ${t.gates}` : t.none);
-        set('arcadeNaval', naval ? `${t.best} : <b>${naval}</b> ${t.points}` : t.none);
+        if (ski) set('arcadeSki', `${t.best} : `, num(ski), ` ${t.gates}`); else set('arcadeSki', t.none);
+        if (naval) set('arcadeNaval', `${t.best} : `, num(naval), ` ${t.points}`); else set('arcadeNaval', t.none);
         const p = profile();
         if (p && p.played) {
             const done = p.daily && p.daily.results && p.daily.results[today()];
-            set('arcadeBug', `${t.rating} : <b>${p.rating}</b> · ${t.daily} ${done ? '✅ ' + t.dailyDone : '📅 ' + t.dailyTodo}`);
+            set('arcadeBug', `${t.rating} : `, num(p.rating), ` · ${t.daily} ${done ? '✅ ' + t.dailyDone : '📅 ' + t.dailyTodo}`);
         } else set('arcadeBug', `${t.daily} 📅 ${t.dailyTodo}`);
     }
     Game.onLangChange(render);

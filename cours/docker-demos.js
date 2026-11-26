@@ -60,7 +60,9 @@
     // ---- Lanceur de tests JavaScript (API Jest minimale : test, describe, expect) --------
     function makeModule(src, req) {
         const module = { exports: {} };
-        new Function('module', 'exports', 'require', src)(module, module.exports, req);
+        // Exécute les fichiers d'exemple du cours (stockés dans ce dépôt, jamais saisis par l'utilisateur) :
+        // c'est le principe même de ce mini-lanceur de tests Jest dans le navigateur.
+        new Function('module', 'exports', 'require', src)(module, module.exports, req); // NOSONAR
         return module.exports;
     }
     function runJest(project, testFile, deps) {
@@ -83,7 +85,7 @@
             catch (err) { results.push({ name: [...prefix, name], ok: false, err: err.message }); }
         };
         const describe = (name, fn) => { prefix.push(name); fn(); prefix.pop(); };
-        new Function('test', 'it', 'describe', 'expect', 'require', files[testFile])(test, test, describe, expect, req);
+        new Function('test', 'it', 'describe', 'expect', 'require', files[testFile])(test, test, describe, expect, req); // NOSONAR (fichier de test du cours, contenu statique)
         const pass = results.filter(r => r.ok).length;
         let txt = `<span class="${pass === results.length ? 'ok' : 'ko'}">${pass === results.length ? 'PASS' : 'FAIL'}</span> ${e(testFile)}\n`;
         let last = '';
@@ -160,7 +162,7 @@ lines.append(f"\\n{ok} passed, {len(names) - ok} failed in {time.perf_counter() 
         if (!frame || !btn) return;
         const html = F().endtoendtesting['app/index.html'];
         const visit = () => new Promise(r => { frame.onload = () => r(); frame.srcdoc = html; });
-        visit();
+        visit().catch(console.error);
         const wait = ms => new Promise(r => setTimeout(r, ms));
         btn.addEventListener('click', async () => {
             btn.disabled = true;

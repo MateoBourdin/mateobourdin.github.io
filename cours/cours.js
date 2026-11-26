@@ -121,7 +121,7 @@
         const wrap = document.createElement('div');
         wrap.className = 'cours-code';
         wrap.innerHTML = `<div class="cours-code-head"><span>${esc(title || lang || '')}</span><button type="button" class="cours-copy">${fr() ? 'Copier' : 'Copy'}</button></div><pre><code></code></pre>`;
-        wrap.querySelector('code').innerHTML = highlight(code.replace(/\s+$/, ''), lang);
+        wrap.querySelector('code').innerHTML = highlight(code.trimEnd(), lang);
         wrap.querySelector('.cours-copy').addEventListener('click', e => {
             const b = e.currentTarget;
             const done = () => { b.textContent = fr() ? 'Copié ✓' : 'Copied ✓'; setTimeout(() => { b.textContent = fr() ? 'Copier' : 'Copy'; }, 1400); };
@@ -258,7 +258,7 @@
             };
             const end = () => {
                 const pct = Math.round(100 * score / list.length);
-                const best = Math.max(pct, parseInt(store.get(key) || '0', 10) || 0);
+                const best = Math.max(pct, Number.parseInt(store.get(key) || '0', 10) || 0);
                 if (list.length === all.length) store.set(key, String(best));
                 box.innerHTML = `<div class="cq-end"><b class="big">${score} / ${list.length}</b><p>${pct >= 80 ? 'Solide, c’est maîtrisé.' : pct >= 50 ? 'Pas mal : relis les points ratés.' : 'À retravailler : repasse par la fiche.'} · Meilleur score complet : ${best} %</p>
                     <div class="cq-nav" style="justify-content:center"><button type="button" class="cours-btn cq-again">Recommencer</button>${wrong.length ? '<button type="button" class="cours-btn ghost cq-wrong">Refaire mes erreurs (' + wrong.length + ')</button>' : ''}</div></div>`;
@@ -267,7 +267,7 @@
                 if (w) { const ws = wrong.slice(); w.addEventListener('click', () => start(ws)); }
             };
             const intro = () => {
-                const best = parseInt(store.get(key) || '0', 10) || 0;
+                const best = Number.parseInt(store.get(key) || '0', 10) || 0;
                 box.innerHTML = `<div class="cq-end"><p><b>${all.length} questions</b>, ordre et réponses mélangés à chaque fois, explication après chaque réponse.${best ? ' Ton meilleur score : ' + best + ' %.' : ''}</p>
                     <div class="cq-nav" style="justify-content:center"><button type="button" class="cours-btn cq-go">Commencer le quiz</button></div></div>`;
                 box.querySelector('.cq-go').addEventListener('click', () => start());

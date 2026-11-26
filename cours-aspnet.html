@@ -202,10 +202,10 @@ Total tests: 20
                     <tr><td><code>PUT</code></td><td>Remplacer entièrement</td><td>oui</td><td>200 ou 204</td></tr>
                     <tr><td><code>PATCH</code></td><td>Modifier partiellement</td><td>pas forcément</td><td>200 ou 204</td></tr>
                     <tr><td><code>DELETE</code></td><td>Supprimer</td><td>oui</td><td>204 No Content, 404</td></tr></tbody></table>
-                <table class="cours-table"><tbody>
-                    <tr><td><b>200</b> OK</td><td><b>201</b> Created</td><td><b>204</b> No Content</td></tr>
-                    <tr><td><b>400</b> Bad Request (entrée invalide)</td><td><b>401</b> non authentifié</td><td><b>403</b> authentifié mais interdit</td></tr>
-                    <tr><td><b>404</b> Not Found</td><td><b>409</b> Conflict</td><td><b>500</b> erreur serveur</td></tr></tbody></table>
+                <table class="cours-table"><thead><tr><th scope="col">Succès (2xx)</th><th scope="col">Erreurs client (4xx)</th><th scope="col">Autres erreurs (4xx, 5xx)</th></tr></thead><tbody>
+                    <tr><td><b>200</b> OK</td><td><b>400</b> Bad Request (entrée invalide)</td><td><b>404</b> Not Found</td></tr>
+                    <tr><td><b>201</b> Created</td><td><b>401</b> non authentifié</td><td><b>409</b> Conflict</td></tr>
+                    <tr><td><b>204</b> No Content</td><td><b>403</b> authentifié mais interdit</td><td><b>500</b> erreur serveur</td></tr></tbody></table>
                 <ul><li>Une ressource = un nom au pluriel : <code>GET /api/produits/2</code> plutôt que <code>/Product/GetById/2</code>.</li><li>Sans état (stateless) : chaque requête porte tout ce qu’il faut pour être traitée.</li><li>Idempotent : répéter la requête donne le même état final.</li></ul>
             </div></details>
 
@@ -351,7 +351,7 @@ window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { aspnet: [
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
             <p data-i18n="footer.signature">Créé avec passion 🚀</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
-            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 12 novembre 2026</p>
+            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 26 novembre 2026</p>
         </div>
     </footer>
 

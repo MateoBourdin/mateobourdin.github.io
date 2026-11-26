@@ -418,7 +418,7 @@ docker pull image:tag && docker push image:tag
 docker tag image:sha image:latest      # un même contenu, un autre nom (ex8, release)
 docker network create test-net         # réseau où les conteneurs se trouvent par leur nom (ex12)
 echo "$PASS" | docker login -u "$USER" --password-stdin "$REGISTRY"</pre>
-                <table class="cours-table"><tbody>
+                <table class="cours-table"><thead><tr><th scope="col">Option</th><th scope="col">Effet</th><th scope="col">Option</th><th scope="col">Effet</th></tr></thead><tbody>
                     <tr><td><code>-d</code></td><td>détaché (arrière-plan)</td><td><code>--rm</code></td><td>supprimé à l’arrêt</td></tr>
                     <tr><td><code>-p h:c</code></td><td>port hôte → conteneur</td><td><code>-e K=V</code></td><td>variable d’environnement</td></tr>
                     <tr><td><code>-v</code></td><td>volume (données persistantes)</td><td><code>--network</code></td><td>rejoindre un réseau</td></tr></tbody></table>
@@ -479,7 +479,7 @@ release-image:
             </div></details>
 
             <details class="cours-fiche" id="r-vars"><summary>6. Variables prédéfinies utiles</summary><div>
-                <table class="cours-table"><tbody>
+                <table class="cours-table"><thead><tr><th scope="col">Variable</th><th scope="col">Rôle</th></tr></thead><tbody>
                     <tr><td><code>CI_REGISTRY</code></td><td>Adresse du registre GitLab</td></tr>
                     <tr><td><code>CI_REGISTRY_IMAGE</code></td><td>Chemin de l’image du projet dans le registre</td></tr>
                     <tr><td><code>CI_REGISTRY_USER</code> / <code>CI_REGISTRY_PASSWORD</code></td><td>Identifiants temporaires du job pour le registre</td></tr>
@@ -581,7 +581,7 @@ window.COURS_CARDS = Object.assign(window.COURS_CARDS || {}, { docker: [
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
             <p data-i18n="footer.signature">Créé avec passion 🚀</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
-            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 12 novembre 2026</p>
+            <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 26 novembre 2026</p>
         </div>
     </footer>
 
