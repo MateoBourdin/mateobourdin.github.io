@@ -420,6 +420,29 @@ const translations = {
                 school: 'Lycée :'
             }
         },
+        quality: {
+            tag: '🔁 Qualité & CI/CD',
+            title: 'Pipelines et qualité du code',
+            description: 'Je ne livre pas sans vérifier : chaque modification passe par un pipeline automatique avant d’arriver en ligne.',
+            siteTitle: 'Le pipeline de ce portfolio',
+            siteText: 'Chaque pull request sur le dépôt de ce site déclenche GitHub Actions. Le code n’est fusionné, puis publié sur GitHub Pages, que si toutes les étapes sont au vert.',
+            step1: 'Pull request', step1Text: 'une branche par modification',
+            step2: 'Vérifications', step2Text: 'HTML valide, traductions FR/EN complètes, liens internes et externes',
+            step3: 'Secrets', step3Text: 'tout l’historique Git scanné par gitleaks',
+            step4: 'SonarQube Cloud', step4Text: 'analyse statique ; le check échoue si la Quality Gate n’est pas verte',
+            step5: 'Déploiement', step5Text: 'fusion sur main, puis mise en ligne sur GitHub Pages',
+            point1: 'Analyse Sonar « secretless » : authentification OIDC, aucun token stocké dans le dépôt.',
+            point2: 'Actions GitHub épinglées par SHA de commit, pour une chaîne d’approvisionnement maîtrisée.',
+            point3: 'Novembre 2026 : 55 problèmes signalés par Sonar corrigés (dont une faille XSS), notes A en sécurité, fiabilité et maintenabilité.',
+            sonarLink: '🛡️ Tableau de bord SonarQube',
+            actionsLink: '⚙️ Exécutions GitHub Actions',
+            gitlabTitle: 'GitLab CI/CD en BUT3',
+            gitlabText: 'Dans le module de virtualisation, j’ai construit 18 pipelines GitLab CI/CD, du « Hello World » aux tests de bout en bout.',
+            gitlab1: 'Images Docker construites et publiées dans le registre GitLab, avec une stratégie de tags.',
+            gitlab2: 'Tests unitaires, d’intégration, de bout en bout, de charge et de sécurité dans le pipeline.',
+            gitlab3: 'Étapes, dépendances entre jobs, artefacts et variables CI/CD.',
+            gitlabLink: 'Voir les 18 pipelines →'
+        },
         skills: {
             tag: '💡 Mes compétences',
             title: 'Technologies & Outils',
@@ -482,10 +505,11 @@ const translations = {
             },
             portfolio: {
                 title: 'Portfolio personnel bilingue',
-                description: 'Site portfolio responsive et bilingue (FR/EN), lancé en décembre 2024 et toujours en évolution : HTML5, CSS3 et JavaScript vanilla, animations, système de traduction i18n, formulaire de contact via Formspree, vérifications automatiques à chaque modification (GitHub Actions) et déploiement sur GitHub Pages.',
+                description: 'Site portfolio responsive et bilingue (FR/EN), lancé en décembre 2024 et toujours en évolution : HTML5, CSS3 et JavaScript vanilla, animations, système de traduction i18n, formulaire de contact via Formspree. Chaque pull request passe un pipeline GitHub Actions (HTML, traductions, liens, secrets) et la Quality Gate de SonarQube Cloud avant d’être déployée sur GitHub Pages.',
                 context: 'Contexte :',
                 contextText: 'Projet personnel, vitrine professionnelle de mes compétences et de mes projets',
-                tech: 'Technologies :'
+                tech: 'Technologies :',
+                pipeline: '🔁 Pipeline CI/CD'
             },
             zelda: {
                 title: 'Zelda II: The Adventure of Link',
@@ -1080,6 +1104,29 @@ const translations = {
                 school: 'High School:'
             }
         },
+        quality: {
+            tag: '🔁 Quality & CI/CD',
+            title: 'Pipelines and code quality',
+            description: 'I don’t ship without checking: every change goes through an automated pipeline before it goes live.',
+            siteTitle: 'This portfolio’s pipeline',
+            siteText: 'Every pull request on this site’s repository triggers GitHub Actions. Code is merged, then published on GitHub Pages, only when every step is green.',
+            step1: 'Pull request', step1Text: 'one branch per change',
+            step2: 'Checks', step2Text: 'valid HTML, complete FR/EN translations, internal and external links',
+            step3: 'Secrets', step3Text: 'the whole Git history scanned by gitleaks',
+            step4: 'SonarQube Cloud', step4Text: 'static analysis; the check fails unless the Quality Gate is green',
+            step5: 'Deployment', step5Text: 'merge into main, then go live on GitHub Pages',
+            point1: '“Secretless” Sonar analysis: OIDC authentication, no token stored in the repository.',
+            point2: 'GitHub Actions pinned to commit SHAs, for a controlled supply chain.',
+            point3: 'November 2026: 55 issues reported by Sonar fixed (including an XSS flaw), A ratings for security, reliability and maintainability.',
+            sonarLink: '🛡️ SonarQube dashboard',
+            actionsLink: '⚙️ GitHub Actions runs',
+            gitlabTitle: 'GitLab CI/CD in my third year',
+            gitlabText: 'In the virtualisation module, I built 18 GitLab CI/CD pipelines, from “Hello World” to end-to-end tests.',
+            gitlab1: 'Docker images built and pushed to the GitLab registry, with a tagging strategy.',
+            gitlab2: 'Unit, integration, end-to-end, load and security tests in the pipeline.',
+            gitlab3: 'Stages, job dependencies, artifacts and CI/CD variables.',
+            gitlabLink: 'See the 18 pipelines →'
+        },
         skills: {
             tag: '💡 My skills',
             title: 'Technologies & Tools',
@@ -1142,10 +1189,11 @@ const translations = {
             },
             portfolio: {
                 title: 'Bilingual personal portfolio',
-                description: 'Responsive, bilingual (FR/EN) portfolio website, started in December 2024 and still evolving: HTML5, CSS3 and vanilla JavaScript, animations, an i18n translation system, a contact form via Formspree, automated checks on every change (GitHub Actions) and deployment on GitHub Pages.',
+                description: 'Responsive, bilingual (FR/EN) portfolio website, started in December 2024 and still evolving: HTML5, CSS3 and vanilla JavaScript, animations, an i18n translation system, a contact form via Formspree. Every pull request goes through a GitHub Actions pipeline (HTML, translations, links, secrets) and the SonarQube Cloud Quality Gate before being deployed on GitHub Pages.',
                 context: 'Context:',
                 contextText: 'Personal project, a professional showcase of my skills and projects',
-                tech: 'Technologies:'
+                tech: 'Technologies:',
+                pipeline: '🔁 CI/CD pipeline'
             },
             zelda: {
                 title: 'Zelda II: The Adventure of Link',
