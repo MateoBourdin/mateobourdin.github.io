@@ -196,5 +196,5 @@ function main(argv) {
 }
 
 // Fonctions exportées pour les tests (tests/*.test.js) ; le script s'exécute seulement en ligne de commande.
-module.exports = { decode, stripTags, clean, attr, indexPage, listHtml, evalTranslations, translationsFor };
+module.exports = { decode, stripTags, clean, attr, indexPage, listHtml, evalTranslations, translationsFor, main };
 if (require.main === module) main(process.argv);

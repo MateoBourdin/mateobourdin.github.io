@@ -72,3 +72,20 @@ test('listHtml : ignore les dossiers techniques et trie les chemins', () => {
     assert.ok(files.every(f => !/^(vendor|games|fonts|img|scripts|tests|revisions)\//.test(f)));
     assert.deepEqual(files, [...files].sort((a, b) => (a < b ? -1 : Number(a > b))));
 });
+
+test('main : --check confirme un index à jour, et la régénération donne le même fichier', () => {
+    const out = path.join(__dirname, '..', 'search-index.json');
+    const avant = fs.readFileSync(out, 'utf8');
+    const logs = [];
+    const log = console.log;
+    console.log = m => logs.push(String(m));
+    try {
+        idx.main(['--check']);
+        idx.main([]);
+    } finally {
+        console.log = log;
+    }
+    assert.match(logs[0], /up to date/);
+    assert.match(logs[1], /Wrote search-index\.json/);
+    assert.equal(fs.readFileSync(out, 'utf8'), avant, 'l’index régénéré est identique');
+});
