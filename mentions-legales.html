@@ -60,6 +60,8 @@
         </div>
     </header>
 
+    <main id="contenu">
+
     <!-- Page header -->
     <section class="page-hero">
         <div class="container">
@@ -100,6 +102,7 @@
 
             <h2 data-i18n="legal.thirdTitle">Contenus tiers</h2>
             <p data-i18n="legal.thirdText">Les polices, les bibliothèques (dont Pyodide, qui exécute Python dans les démos), les fichiers des jeux (images, musiques, sons) et ceux des démos des cours sont hébergés sur ce site. Deux contenus externes ne se chargent que si vous cliquez dessus : la vidéo YouTube de la page Survival Island et la carte OpenStreetMap de la page Contact. Au clic, le service concerné reçoit votre adresse IP et le nom de ce site (sans l’adresse de la page consultée), et YouTube peut déposer des cookies. Les modèles d’IA des pages de cours s’exécutent dans votre navigateur : les dessins et photos que vous leur soumettez ne sont envoyés nulle part. Dans Fianchetto, le moteur Stockfish tourne aussi dans votre navigateur ; seules trois actions contactent un service externe : importer des parties (votre navigateur interroge les API publiques de Chess.com ou de Lichess avec le pseudo saisi), charger un problème en ligne (API de Lichess) et envoyer un message par la boîte à idées (Formspree, comme le formulaire de contact). Ce service reçoit alors votre adresse IP et les informations transmises. La version en ligne de CUBE Bikes (SAE 3.01) est un site externe, hébergé sur un autre serveur que ce portfolio : elle ne s’ouvre que si vous cliquez sur son lien, et elle a sa propre bannière cookies, où vous pouvez tout refuser. Comme tout hébergeur, GitHub reçoit l’adresse IP des visiteurs pour faire fonctionner et sécuriser le service.</p>
+            <p data-i18n="legal.revText">Le jeu Puffer Cours et mes sites de révision gardent leur progression dans votre navigateur, comme ci-dessus. En mode « Un seul écran », le jeu n’envoie rien. En mode en ligne, et seulement si vous créez ou rejoignez une partie, la mise en relation passe par le serveur public PeerJS (0.peerjs.com), qui reçoit votre adresse IP et le code de la partie ; les navigateurs des joueurs échangent ensuite directement (WebRTC), si bien que chaque joueur peut voir l’adresse IP des autres. Les vidéos de mon site de révision des TP de R5.A.05 sont trop lourdes pour ce site : un lien ouvre, au clic, leur version d’origine hébergée sur claude.ai (Anthropic).</p>
             <p data-i18n="legal.policies">Politiques de confidentialité des services cités :</p>
             <ul>
                 <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -109,6 +112,8 @@
                 <li><a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></li>
                 <li><a href="https://www.chess.com/legal/privacy" target="_blank" rel="noopener noreferrer">Chess.com</a></li>
                 <li><a href="https://lichess.org/privacy" target="_blank" rel="noopener noreferrer">Lichess</a></li>
+                <li><a href="https://peerjs.com/" target="_blank" rel="noopener noreferrer">PeerJS</a></li>
+                <li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Anthropic (claude.ai)</a></li>
                 <li><a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">CNIL</a></li>
             </ul>
 
@@ -118,6 +123,7 @@
             <ul>
                 <li><a href="vendor/pyodide/LICENSE">Pyodide (MPL-2.0)</a> · <a href="vendor/pyodide/LICENSE-Python.txt">Python (PSF License)</a></li>
                 <li><a href="vendor/xterm/LICENSE">xterm.js (MIT)</a></li>
+                <li><a href="vendor/peerjs/LICENSE">PeerJS (MIT)</a></li>
                 <li><a href="fonts/LICENSE-Inter.txt">Inter (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-Manrope.txt">Manrope (SIL OFL 1.1)</a> · <a href="fonts/LICENSE-ChakraPetch.txt">Chakra Petch</a> · <a href="fonts/LICENSE-PressStart2P.txt">Press Start 2P</a> · <a href="fonts/LICENSE-VT323.txt">VT323</a> · <a href="fonts/LICENSE-STIXTwoText.txt">STIX Two Text</a> · <a href="fonts/LICENSE-Caveat.txt">Caveat</a> (SIL OFL 1.1)</li>
                 <li><a href="cours/LICENCES-donnees.txt">Chinook, Fashion-MNIST (MIT) · MNIST (CC BY-SA 3.0) · CIFAR-10</a></li>
                 <li><a href="https://mateobourdin.github.io/fianchetto/legal.html" target="_blank" rel="noopener">Fianchetto : mentions légales, confidentialité et licences</a></li>
@@ -126,10 +132,12 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer>
         <div class="container">
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
-            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p data-i18n="footer.signature">Site conçu et codé par moi, vérifié à chaque modification par GitHub Actions et SonarQube</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
             <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 27 novembre 2026</p>
         </div>

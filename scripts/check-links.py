@@ -33,6 +33,8 @@ def main():
         for raw_url in LINK_ATTR_RE.findall(text):
             if is_external(raw_url) or raw_url.startswith("data:") or raw_url.startswith("javascript:"):
                 continue
+            if "${" in raw_url:  # gabarit JavaScript (`href="#${id}"`), résolu à l'exécution
+                continue
             checked += 1
             parts = urlsplit(raw_url)
             file_part, fragment = parts.path, parts.fragment

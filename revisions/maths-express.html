@@ -1,0 +1,618 @@
+<!doctype html><html lang="fr"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="stylesheet" href="revisions.css">
+<meta name="description" content="Révision express Modèle Mathématique : site de révision réalisé par Matéo Bourdin pour un cours de BUT Informatique.">
+</head><body>
+<nav class="rev-bar" aria-label="Portfolio"><a href="../cours.html#revisions">← Matéo Bourdin · Cours actuels</a><span>Site de révision que je me suis fait pour ce cours</span></nav>
+
+<title>Révision express Modèle Mathématique</title>
+<style>
+/* Layout: single study column, sticky timer bar on top, 4 timed steps as tabs. Highlighter-yellow marks the facts to memorise. */
+:root{
+  --bg:#f2f5f8; --surface:#ffffff; --ink:#14243a; --muted:#5a6779; --line:#dbe2ea;
+  --primary:#0f6e6a; --primary-ink:#ffffff; --primary-soft:#e2f2f0;
+  --mark:#ffe46b; --mark-ink:#14243a;
+  --ok:#1d7443; --ok-bg:#e1f3e8; --bad:#b3261e; --bad-bg:#fbe5e3; --judge-bg:#fff4d1; --judge:#7a5a00;
+  --code-bg:#13202f; --code-ink:#e6edf5;
+  --c-python:#6b4fbb; --c-eda:#a2620e; --c-reg:#0f6e6a; --c-pca:#2456b3; --c-logit:#a3245a;
+  --f-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0e141b; --surface:#16202b; --ink:#e7edf3; --muted:#9ba8b6; --line:#293645;
+  --primary:#46b9b0; --primary-ink:#0a1a19; --primary-soft:#173230;
+  --mark:rgba(255,214,0,.30); --mark-ink:#f4f1df;
+  --ok:#72d49b; --ok-bg:#15331f; --bad:#ff8a80; --bad-bg:#3a1b19; --judge-bg:#3a3113; --judge:#f1d27a;
+  --code-bg:#0a1017; --code-ink:#e6edf5;
+  --c-python:#b9a5f6; --c-eda:#e3a95e; --c-reg:#62d0c7; --c-pca:#93b5ff; --c-logit:#f18db6;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e141b; --surface:#16202b; --ink:#e7edf3; --muted:#9ba8b6; --line:#293645;
+  --primary:#46b9b0; --primary-ink:#0a1a19; --primary-soft:#173230;
+  --mark:rgba(255,214,0,.30); --mark-ink:#f4f1df;
+  --ok:#72d49b; --ok-bg:#15331f; --bad:#ff8a80; --bad-bg:#3a1b19; --judge-bg:#3a3113; --judge:#f1d27a;
+  --code-bg:#0a1017; --code-ink:#e6edf5;
+  --c-python:#b9a5f6; --c-eda:#e3a95e; --c-reg:#62d0c7; --c-pca:#93b5ff; --c-logit:#f18db6;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:15px; line-height:1.55; padding-inline:16px; padding-block:0 48px}
+.wrap{max-width:780px; margin:0 auto}
+h1,h2,h3{font-family:var(--f-display); text-wrap:balance; margin:0; line-height:1.2}
+code,.mono{font-family:var(--f-mono); font-size:.9em}
+mark{background:var(--mark); color:var(--mark-ink); padding:0 .2em; border-radius:3px}
+button{font:inherit; cursor:pointer}
+button:focus-visible,input:focus-visible,.step:focus-visible{outline:2px solid var(--primary); outline-offset:2px}
+
+/* ---- sticky timer bar ---- */
+.bar{position:sticky; top:env(safe-area-inset-top,0px); z-index:10; background:var(--bg); padding-block:12px 10px; margin-inline:-16px; padding-inline:16px; border-bottom:1px solid var(--line)}
+.bar-in{max-width:780px; margin:0 auto; display:flex; flex-direction:column; gap:10px}
+.bar-top{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+.clock{font-family:var(--f-mono); font-variant-numeric:tabular-nums; font-size:28px; font-weight:500; letter-spacing:.02em; min-width:5ch}
+.clock.done{color:var(--ok)}
+.bar-actions{display:flex; gap:8px; margin-left:auto}
+.btn{border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:7px 14px; font-weight:600; font-size:14px}
+.btn.primary{background:var(--primary); border-color:var(--primary); color:var(--primary-ink)}
+.btn:hover{border-color:var(--primary)}
+.track{height:6px; background:var(--line); border-radius:99px; overflow:hidden}
+.track span{display:block; height:100%; width:0; background:var(--primary); transition:width .4s linear}
+.steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px}
+.step{border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:10px; padding:7px 8px; text-align:left; display:flex; flex-direction:column; gap:1px; min-width:0}
+.step .t{font-family:var(--f-mono); font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums}
+.step .n{font-weight:600; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.step.active{border-color:var(--primary); box-shadow:inset 0 0 0 1px var(--primary)}
+.step.now .t::after{content:" · maintenant"; color:var(--primary); font-weight:600}
+.step .sm{display:none}
+@media (max-width:560px){ .step .lg{display:none} .step .sm{display:inline} .step .t{font-size:10px} .step{padding:6px 7px} .step.now .t::after{content:" ●"} .clock{font-size:22px} .bar-top{flex-wrap:nowrap} .bar-actions .btn{padding:6px 11px; font-size:13px} .bar{padding-block:8px 8px} .bar-in{gap:8px} }
+.nudge{display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:var(--primary-soft); border:1px solid var(--primary); border-radius:10px; padding:8px 12px; font-size:14px}
+.nudge b{color:var(--primary)}
+.nudge .btn{margin-left:auto}
+
+/* ---- intro ---- */
+.intro{padding-block:22px 6px; display:flex; flex-direction:column; gap:8px}
+.eyebrow{font-size:12px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary)}
+.intro h1{font-size:clamp(26px,5vw,34px)}
+.intro p{margin:0; color:var(--muted); max-width:62ch}
+
+/* ---- panels ---- */
+.panel{padding-block:18px 0; display:flex; flex-direction:column; gap:16px}
+.panel-head{display:flex; flex-direction:column; gap:4px}
+.panel-head h2{font-size:22px}
+.panel-head p{margin:0; color:var(--muted); max-width:64ch}
+.sheet{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:16px 18px 6px}
+.sheet h3{font-size:17px; display:flex; align-items:center; gap:8px; margin-bottom:6px}
+.dot{width:9px; height:9px; border-radius:50%; background:var(--c); flex:none}
+.rows{display:flex; flex-direction:column}
+.row{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:4px 16px; padding-block:9px; border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .k{font-family:var(--f-mono); font-size:13px; overflow-wrap:anywhere}
+.row .v{font-size:14px}
+@media (max-width:560px){ .row{grid-template-columns:minmax(0,1fr)} }
+
+.cat-python{--c:var(--c-python)} .cat-eda{--c:var(--c-eda)} .cat-reg{--c:var(--c-reg)} .cat-pca{--c:var(--c-pca)} .cat-logit{--c:var(--c-logit)}
+.badge{display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--c); background:color-mix(in srgb, var(--c) 13%, transparent); border-radius:99px; padding:3px 9px}
+
+pre.code{background:var(--code-bg); color:var(--code-ink); font-family:var(--f-mono); font-size:13.5px; line-height:1.5; border-radius:10px; padding:12px 14px; margin:0; overflow-x:auto; white-space:pre}
+
+/* ---- flashcards ---- */
+.fc-stats{display:flex; gap:8px; flex-wrap:wrap; font-size:13px}
+.pill{border:1px solid var(--line); background:var(--surface); border-radius:99px; padding:4px 11px; font-variant-numeric:tabular-nums}
+.pill b{font-weight:700}
+.pill.ok b{color:var(--ok)} .pill.bad b{color:var(--bad)}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:14px; min-height:260px}
+.card .q{font-size:18px; font-weight:600; line-height:1.4}
+.card .a{border-top:1px dashed var(--line); padding-top:14px; font-size:16px; white-space:pre-line}
+.card .a .lbl{display:block; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+.card-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:auto}
+.card-actions .btn{padding:10px 18px; font-size:15px}
+.btn.ok{background:var(--ok-bg); border-color:var(--ok); color:var(--ok)}
+.btn.bad{background:var(--bad-bg); border-color:var(--bad); color:var(--bad)}
+.hint{font-size:12.5px; color:var(--muted)}
+.kbd{font-family:var(--f-mono); font-size:11.5px; border:1px solid var(--line); border-bottom-width:2px; border-radius:5px; padding:0 5px; background:var(--surface)}
+.end{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:12px}
+.end .big{font-family:var(--f-display); font-size:34px; font-variant-numeric:tabular-nums}
+
+/* ---- contrôle ---- */
+.ctrl-list{display:flex; flex-direction:column; gap:12px; counter-reset:q}
+.cq{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:14px 16px; display:flex; flex-direction:column; gap:10px}
+.cq-top{display:flex; gap:10px; align-items:baseline}
+.cq-num{font-family:var(--f-mono); font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; flex:none}
+.cq-q{font-weight:600; min-width:0}
+.cq input{width:100%; border:1px solid var(--line); background:var(--bg); color:var(--ink); border-radius:8px; padding:9px 11px; font-family:var(--f-mono); font-size:14px}
+.cq-res{display:flex; flex-direction:column; gap:8px; border-radius:8px; padding:10px 12px; font-size:14px}
+.cq-res .sol{white-space:pre-line}
+.cq-res .sol b{display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:2px}
+.cq.st-ok .cq-res{background:var(--ok-bg)} .cq.st-ok{border-color:var(--ok)}
+.cq.st-bad .cq-res{background:var(--bad-bg)} .cq.st-bad{border-color:var(--bad)}
+.cq.st-judge .cq-res{background:var(--judge-bg)} .cq.st-judge{border-color:var(--judge)}
+.judge{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+.judge span{font-size:12.5px; color:var(--muted)}
+.judge .btn{padding:5px 12px; font-size:13px}
+.score-box{position:sticky; bottom:12px; background:var(--surface); border:1px solid var(--primary); border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.score-box .s{font-family:var(--f-mono); font-size:20px; font-variant-numeric:tabular-nums}
+.score-box .btn{margin-left:auto}
+
+/* ---- pièges ---- */
+.traps{display:flex; flex-direction:column; gap:10px; list-style:none; padding:0; margin:0; counter-reset:t}
+.traps li{background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--bad); border-radius:10px; padding:11px 14px; counter-increment:t; display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px}
+.traps li::before{content:counter(t); font-family:var(--f-mono); font-size:13px; color:var(--bad); font-weight:600; font-variant-numeric:tabular-nums}
+.foot{margin-top:28px; font-size:13px; color:var(--muted)}
+@media (prefers-reduced-motion: reduce){ .track span{transition:none} }
+</style>
+
+<header class="bar">
+  <div class="bar-in">
+    <div class="bar-top">
+      <div class="clock" id="clock" aria-live="polite">30:00</div>
+      <div class="bar-actions">
+        <button class="btn primary" id="btn-start" type="button">Lancer</button>
+        <button class="btn" id="btn-reset" type="button">Recommencer</button>
+      </div>
+    </div>
+    <div class="track" aria-hidden="true"><span id="track"></span></div>
+    <nav class="steps" id="steps" aria-label="Étapes">
+      <button class="step" data-panel="fiche" type="button"><span class="t">0 → 8 min</span><span class="n"><span class="lg">1 · Fiche flash</span><span class="sm">1 · Fiche</span></span></button>
+      <button class="step" data-panel="cards" type="button"><span class="t">8 → 20 min</span><span class="n"><span class="lg">2 · Flashcards</span><span class="sm">2 · Cartes</span></span></button>
+      <button class="step" data-panel="ctrl" type="button"><span class="t">20 → 28 min</span><span class="n"><span class="lg">3 · Contrôle blanc</span><span class="sm">3 · Contrôle</span></span></button>
+      <button class="step" data-panel="pieges" type="button"><span class="t">28 → 30 min</span><span class="n"><span class="lg">4 · Pièges</span><span class="sm">4 · Pièges</span></span></button>
+    </nav>
+    <div class="nudge" id="nudge" hidden></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+
+  <!-- ================= 1. FICHE ================= -->
+  <section class="panel" id="panel-fiche">
+  <div class="intro" style="padding-block:4px 6px">
+    <span class="eyebrow">Contrôle de mi-parcours · BUT3</span>
+    <h1>30 minutes pour tout revoir</h1>
+    <p>Calé sur le contrôle blanc : questions courtes, sortie de code à prédire, mots à compléter. Lance le minuteur et suis les 4 étapes dans l'ordre : lire, se tester, faire un mini contrôle, relire les pièges.</p>
+  </div>
+    <div class="panel-head">
+      <h2>Fiche flash</h2>
+      <p>Lis une fois, lentement. Ce qui est <mark>surligné</mark> tombe presque sûrement. Pour chaque ligne, cache la colonne de droite et essaie de la dire avant de la lire.</p>
+    </div>
+
+    <div class="sheet cat-python">
+      <h3><span class="dot"></span>Python &amp; NumPy</h3>
+      <div class="rows">
+        <div class="row"><div class="k">/ &nbsp; // &nbsp; % &nbsp; **</div><div class="v">division réelle (10/4 = 2.5) · <mark>division entière</mark> (10//3 = 3) · <mark>modulo = reste</mark> (10%3 = 1, 10%2 = 0) · puissance (2**3 = 8)</div></div>
+        <div class="row"><div class="k">A * B &nbsp;=&nbsp; np.multiply(A, B)</div><div class="v"><mark>Multiplication élément par élément</mark> (mêmes formes)</div></div>
+        <div class="row"><div class="k">A @ B = np.dot = np.matmul</div><div class="v">Produit <b>matriciel</b> (ligne × colonne)</div></div>
+        <div class="row"><div class="k">np.arange(n) · np.arange(a, b, pas)</div><div class="v">0 … n−1 : <mark>la borne de fin est exclue</mark></div></div>
+        <div class="row"><div class="k">np.linspace(a, b, n)</div><div class="v">n points de a à b, <b>b inclus</b></div></div>
+        <div class="row"><div class="k">a[début:fin:pas]</div><div class="v">fin exclue · <mark>a[::2]</mark> un sur deux depuis 0 · a[::-1] inversé · a[-1] dernier</div></div>
+        <div class="row"><div class="k">M[i, j] · M[0, :] · M[:, 0] · a[a &gt; 5]</div><div class="v">case · ligne 0 · colonne 0 · filtre booléen</div></div>
+        <div class="row"><div class="k">.shape · .reshape(r, c) · .T</div><div class="v">forme (lignes, colonnes) · remodeler · transposée</div></div>
+        <div class="row"><div class="k">np.sqrt · np.square · np.exp · np.log · np.abs</div><div class="v"><mark>racine carrée</mark> · carré · exponentielle · ln · valeur absolue</div></div>
+        <div class="row"><div class="k">np.mean · np.median · np.std · np.var</div><div class="v">moyenne · médiane · écart-type · variance (<mark>var = std²</mark>)</div></div>
+        <div class="row"><div class="k">médiane</div><div class="v"><mark>On trie d'abord</mark>, puis valeur du milieu ; taille paire → moyenne des 2 centraux. L'ordre du tableau ne change rien. Robuste aux outliers (pas la moyenne).</div></div>
+        <div class="row"><div class="k">np.argmax · np.argmin</div><div class="v">l'<b>indice</b> du max / du min (pas la valeur)</div></div>
+        <div class="row"><div class="k">axis=0 · axis=1</div><div class="v">résultat <b>par colonne</b> · résultat <b>par ligne</b></div></div>
+        <div class="row"><div class="k">%timeit vs time.time()</div><div class="v"><mark>%timeit</mark> : Jupyter uniquement, <b>répète</b> et donne moyenne ± écart-type. <mark>time.time()</mark> : <b>une seule mesure</b> (fin − début), dans n'importe quel script.</div></div>
+        <div class="row"><div class="k">np.vectorize(f)</div><div class="v">Commodité d'écriture, <b>pas</b> plus rapide (boucle en interne)</div></div>
+        <div class="row"><div class="k">threading.Thread(target=f, args=(x,))</div><div class="v">.start() lance sans bloquer · .join() attend la fin · active_count() = threads vivants</div></div>
+        <div class="row"><div class="k">Parallel(n_jobs=4)(delayed(f)(i) for i in …)</div><div class="v">joblib : répartit les appels sur plusieurs cœurs (n_jobs=-1 = tous)</div></div>
+        <div class="row"><div class="k">@jit(nopython=True)</div><div class="v">Numba compile en code machine ; 1er appel lent (compilation)</div></div>
+      </div>
+    </div>
+
+    <div class="sheet cat-eda">
+      <h3><span class="dot"></span>EDA, pandas, seaborn</h3>
+      <div class="rows">
+        <div class="row"><div class="k">pandas</div><div class="v"><mark>Manipuler des données tabulaires</mark> (DataFrame) : charger, filtrer, nettoyer, agréger</div></div>
+        <div class="row"><div class="k">seaborn</div><div class="v"><mark>Visualisation statistique</mark>, construit sur matplotlib</div></div>
+        <div class="row"><div class="k">matplotlib · numpy · scikit-learn · scipy</div><div class="v">tracés de base · calcul sur tableaux · machine learning · stats et calcul scientifique</div></div>
+        <div class="row"><div class="k">outlier</div><div class="v"><mark>Valeur aberrante</mark> : observation très éloignée du reste des données</div></div>
+        <div class="row"><div class="k">règle IQR</div><div class="v">outlier si &lt; Q1 − 1,5·IQR ou &gt; Q3 + 1,5·IQR, avec IQR = Q3 − Q1</div></div>
+        <div class="row"><div class="k">pd.read_csv(f, sep=';') · df.head() · df.tail()</div><div class="v">charger · <b>5 premières</b> lignes · 5 dernières</div></div>
+        <div class="row"><div class="k">df.shape · df.info() · df.describe()</div><div class="v">(lignes, colonnes) · types et non-nuls · count, mean, std, min, quartiles, max</div></div>
+        <div class="row"><div class="k">df.isnull().sum() · dropna() · fillna(v)</div><div class="v">manquants par colonne · supprimer · remplacer</div></div>
+        <div class="row"><div class="k">.loc · .iloc</div><div class="v">par <b>étiquette</b> · par <b>position</b></div></div>
+        <div class="row"><div class="k">df.drop('col', axis=1)</div><div class="v">supprime une <b>colonne</b> (axis=0 : une ligne)</div></div>
+        <div class="row"><div class="k">df[df['x'] &gt; 3] · groupby · value_counts()</div><div class="v">filtre de lignes · agrégat par groupe · effectifs</div></div>
+        <div class="row"><div class="k">sns.boxplot · histplot · heatmap · pairplot</div><div class="v"><mark>outliers</mark> · distribution · corrélations (df.corr(numeric_only=True), annot=True) · nuages croisés</div></div>
+        <div class="row"><div class="k">corrélation r</div><div class="v">entre −1 et 1 ; 0 = pas de lien linéaire</div></div>
+      </div>
+    </div>
+
+    <div class="sheet cat-reg">
+      <h3><span class="dot"></span>Régression &amp; descente de gradient</h3>
+      <div class="rows">
+        <div class="row"><div class="k">y = a·x + b</div><div class="v">a = pente (slope), b = ordonnée à l'origine (intercept)</div></div>
+        <div class="row"><div class="k">stats.linregress(x, y)</div><div class="v">slope, intercept, r, p, std_err ; R² = r²</div></div>
+        <div class="row"><div class="k">MSE · RMSE · MAE</div><div class="v">moy((ŷ − y)²) · <mark>√MSE, même unité que y</mark> · moy(|ŷ − y|)</div></div>
+        <div class="row"><div class="k">θ ← θ − α · ∂J/∂θ</div><div class="v">mise à jour, α = learning rate</div></div>
+        <div class="row"><div class="k">α trop grand · trop petit</div><div class="v"><mark>diverge</mark> · très lent</div></div>
+        <div class="row"><div class="k">(x − min)/(max − min) · (x − μ)/σ</div><div class="v">min-max → [0, 1] · standardisation</div></div>
+        <div class="row"><div class="k">w* = (XᵀX)⁻¹Xᵀy</div><div class="v">équation normale : np.linalg.inv(X.T @ X) @ X.T @ y</div></div>
+        <div class="row"><div class="k">minibatch SGD</div><div class="v">gradient calculé sur un petit lot à chaque pas</div></div>
+      </div>
+    </div>
+
+    <div class="sheet cat-pca">
+      <h3><span class="dot"></span>PCA (ACP)</h3>
+      <div class="rows">
+        <div class="row"><div class="k">but</div><div class="v">Réduire la dimension en gardant le maximum d'information</div></div>
+        <div class="row"><div class="k">PC1 · PC2</div><div class="v">PC1 explique la <mark>plus grande variance</mark> ; PC2 la plus grande variance restante</div></div>
+        <div class="row"><div class="k">composantes</div><div class="v"><mark>orthogonales</mark> entre elles (non corrélées)</div></div>
+        <div class="row"><div class="k">avant la PCA</div><div class="v"><mark>Standardiser</mark> (StandardScaler) et <b>retirer la cible</b></div></div>
+        <div class="row"><div class="k">PCA(n_components=k).fit_transform(X)</div><div class="v">coordonnées des données dans les nouveaux axes</div></div>
+        <div class="row"><div class="k">explained_variance_ratio_</div><div class="v">part de variance par composante ; np.cumsum(…) = cumulée, on vise 90–95 %</div></div>
+        <div class="row"><div class="k">components_</div><div class="v">loadings : poids de chaque variable dans chaque composante</div></div>
+        <div class="row"><div class="k">image (H, W, C)</div><div class="v">reshape en (H·W, C) avant la PCA, puis revenir en <b>(H, W)</b></div></div>
+        <div class="row"><div class="k">débruitage</div><div class="v">garder les premières composantes (signal), jeter les dernières (bruit), inverse_transform</div></div>
+      </div>
+    </div>
+
+    <div class="sheet cat-logit">
+      <h3><span class="dot"></span>Régression logistique</h3>
+      <div class="rows">
+        <div class="row"><div class="k">usage</div><div class="v"><b>Classification</b> binaire</div></div>
+        <div class="row"><div class="k">σ(z) = 1 / (1 + e^(−z))</div><div class="v">valeurs dans ]0, 1[ ; <mark>σ(0) = 0,5</mark> ; ŷ = 1 si p ≥ 0,5</div></div>
+        <div class="row"><div class="k">Accuracy · Recall · Precision</div><div class="v">(TP+TN)/total · TP/(TP+FN) · TP/(TP+FP)</div></div>
+        <div class="row"><div class="k">ROC · AUC</div><div class="v">TPR vs FPR · AUC 1 = parfait, 0,5 = hasard</div></div>
+        <div class="row"><div class="k">scaler</div><div class="v">fit_transform sur le <b>train</b>, transform sur le test</div></div>
+        <div class="row"><div class="k">predict · predict_proba</div><div class="v">classes 0/1 · probabilités</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. FLASHCARDS ================= -->
+  <section class="panel" id="panel-cards" hidden>
+    <div class="panel-head">
+      <h2>Flashcards</h2>
+      <p>Réponds dans ta tête <b>avant</b> de retourner la carte, puis sois honnête. Les cartes ratées reviennent à la fin du paquet.</p>
+    </div>
+    <div class="fc-stats">
+      <span class="pill">Restantes <b id="fc-left">0</b></span>
+      <span class="pill ok">Sues <b id="fc-ok">0</b></span>
+      <span class="pill bad">À revoir <b id="fc-bad">0</b></span>
+      <button class="btn" id="fc-shuffle" type="button" style="margin-left:auto">Mélanger et recommencer</button>
+    </div>
+    <div id="fc-zone"></div>
+    <p class="hint"><span class="kbd">Espace</span> retourner · <span class="kbd">→</span> je savais · <span class="kbd">←</span> à revoir</p>
+  </section>
+
+  <!-- ================= 3. CONTRÔLE ================= -->
+  <section class="panel" id="panel-ctrl" hidden>
+    <div class="panel-head">
+      <h2>Contrôle blanc</h2>
+      <p>15 questions au format du vrai contrôle. Réponds à tout sans regarder la fiche, puis corrige. Les réponses courtes sont corrigées automatiquement ; pour les phrases, compare avec la correction et note-toi.</p>
+    </div>
+    <div class="ctrl-list" id="ctrl-list"></div>
+    <div class="score-box">
+      <span class="s" id="ctrl-score">— / 15</span>
+      <span class="hint" id="ctrl-hint">Pas encore corrigé</span>
+      <button class="btn primary" id="ctrl-check" type="button">Corriger</button>
+    </div>
+  </section>
+
+  <!-- ================= 4. PIÈGES ================= -->
+  <section class="panel" id="panel-pieges" hidden>
+    <div class="panel-head">
+      <h2>Les 12 pièges à relire</h2>
+      <p>À relire en dernier, et encore une fois demain matin juste avant d'entrer.</p>
+    </div>
+    <ol class="traps">
+      <li><span><code>A * B</code> multiplie élément par élément ; <code>A @ B</code> / <code>np.dot</code> font un produit matriciel.</span></li>
+      <li><span><code>/</code> donne un float (10/4 = 2.5), <code>//</code> le quotient (10//3 = 3), <code>%</code> le reste (10%3 = 1).</span></li>
+      <li><span>La fin d'un slice et la borne de <code>np.arange</code> sont <b>exclues</b>. <code>np.linspace</code> inclut la fin.</span></li>
+      <li><span><code>a[::2]</code> part de l'indice 0 ; <code>a[1::3]</code> part de l'indice 1, puis 4, puis 7.</span></li>
+      <li><span>Médiane : on trie avant. [7, 1, 3, 5] → [1, 3, 5, 7] → (3 + 5)/2 = <b>4.0</b>.</span></li>
+      <li><span><code>np.sqrt</code> = racine, <code>np.square</code> = carré. Ne pas les inverser.</span></li>
+      <li><span><code>axis=0</code> donne un résultat par colonne ; <code>drop(…, axis=1)</code> supprime une colonne.</span></li>
+      <li><span><code>.loc</code> = étiquette, <code>.iloc</code> = position.</span></li>
+      <li><span><code>%timeit</code> ne marche qu'en Jupyter et répète la mesure ; <code>time.time()</code> = une mesure, partout.</span></li>
+      <li><span>PCA : standardiser d'abord, retirer la cible ; PC1 = plus grande <b>variance</b> ; composantes orthogonales.</span></li>
+      <li><span>Learning rate trop grand → divergence ; on normalise x pour l'éviter.</span></li>
+      <li><span>Accuracy trompeuse si les classes sont déséquilibrées : regarder aussi le recall. Scaler : fit sur le train seulement.</span></li>
+    </ol>
+    <p class="foot">Demain matin : relis cette liste et la fiche flash (5 min), pas plus. Le reste est déjà en place.</p>
+  </section>
+</main>
+
+<script>
+/* ================= DATA ================= */
+const CARDS = [
+  {cat:'python', q:"Que vaut 10 // 3 ?", a:"3 — division entière (on garde le quotient)"},
+  {cat:'python', q:"Que vaut 10 % 3 ?", a:"1 — le reste de la division (modulo)"},
+  {cat:'python', q:"Que vaut 10 / 4 en Python 3 ?", a:"2.5 — division réelle, toujours un float"},
+  {cat:'python', q:"Que vaut 2 ** 3 ?", a:"8 — ** est la puissance"},
+  {cat:'python', q:"A et B ont la même taille. Comment les multiplier élément par élément ?", a:"A * B, ou np.multiply(A, B)"},
+  {cat:'python', q:"Comment faire le produit matriciel de A et B ?", a:"A @ B, np.dot(A, B) ou np.matmul(A, B)"},
+  {cat:'python', q:"Qu'affiche ce code ?", code:"print(np.arange(5))", a:"[0 1 2 3 4] — la borne 5 est exclue"},
+  {cat:'python', q:"Qu'affiche ce code ?", code:"print(np.arange(2, 10, 3))", a:"[2 5 8] — de 2 jusqu'à 10 exclu, pas de 3"},
+  {cat:'python', q:"Qu'affiche ce code ?", code:"print(np.linspace(0, 1, 5))", a:"[0.   0.25 0.5  0.75 1.  ] — 5 points, 1 inclus"},
+  {cat:'python', q:"Qu'affiche ce code ?", code:"a = np.arange(10)\nprint(a[2:5])", a:"[2 3 4] — l'indice de fin est exclu"},
+  {cat:'python', q:"Qu'affiche ce code ?", code:"a = np.arange(10)\nprint(a[::-1])", a:"[9 8 7 6 5 4 3 2 1 0] — pas de −1 : tableau inversé"},
+  {cat:'python', q:"Qu'affiche ce code ?", code:"a = np.arange(10)\nprint(a[a > 6])", a:"[7 8 9] — masque booléen"},
+  {cat:'python', q:"Médiane de [3, 1, 4, 2] ?", a:"2.5 — trié : [1, 2, 3, 4], taille paire → moyenne de 2 et 3"},
+  {cat:'python', q:"Moyenne et médiane de [1, 2, 3, 4, 10] ?", a:"Moyenne 4.0, médiane 3.0 — la médiane résiste à la valeur extrême"},
+  {cat:'python', q:"np.____(x) donne la racine carrée de x.", a:"np.sqrt(x)  (np.square(x) donne x²)"},
+  {cat:'python', q:"Quel lien entre variance et écart-type ?", a:"var = std², donc std = √var"},
+  {cat:'python', q:"Qu'affiche ce code ?", code:"print(np.arange(6).reshape(2, 3))", a:"[[0 1 2]\n [3 4 5]] — 2 lignes, 3 colonnes"},
+  {cat:'python', q:"M = np.arange(6).reshape(2, 3). Que donnent M.sum(axis=0) et M.sum(axis=1) ?", a:"axis=0 → [3 5 7] (une somme par colonne)\naxis=1 → [3 12] (une somme par ligne)"},
+  {cat:'python', q:"Que renvoie np.argmax([3, 9, 2]) ?", a:"1 — l'indice du maximum, pas sa valeur"},
+  {cat:'python', q:"Différence entre %timeit et time.time() ?", a:"%timeit (Jupyter uniquement) répète l'exécution et donne moyenne ± écart-type.\ntime.time() donne une seule mesure (fin − début) et marche dans n'importe quel script."},
+  {cat:'python', q:"np.vectorize rend-il le code plus rapide ?", a:"Non. C'est une commodité d'écriture : la boucle tourne toujours en interne."},
+  {cat:'python', q:"Que fait t.join() sur un thread t ?", a:"Le programme attend que t ait terminé"},
+  {cat:'python', q:"Appel joblib qui applique f à 0…9 sur 4 cœurs ?", a:"Parallel(n_jobs=4)(delayed(f)(i) for i in range(10))"},
+  {cat:'python', q:"Que fait @jit(nopython=True) ?", a:"Numba compile la fonction en code machine. 1er appel lent (compilation), les suivants rapides."},
+
+  {cat:'eda', q:"À quoi sert pandas ?", a:"Manipuler des données tabulaires (DataFrame) : charger, filtrer, nettoyer, agréger"},
+  {cat:'eda', q:"À quoi sert seaborn ?", a:"Faire des graphiques statistiques ; il s'appuie sur matplotlib"},
+  {cat:'eda', q:"C'est quoi un outlier ?", a:"Une valeur aberrante : une observation très éloignée du reste des données"},
+  {cat:'eda', q:"Règle de l'IQR pour repérer un outlier ?", a:"Valeur < Q1 − 1,5·IQR ou > Q3 + 1,5·IQR, avec IQR = Q3 − Q1"},
+  {cat:'eda', q:"Quel graphique pour repérer des outliers ?", a:"Le boxplot (boîte à moustaches) : sns.boxplot"},
+  {cat:'eda', q:"Compter les valeurs manquantes de chaque colonne ?", a:"df.isnull().sum()  (ou df.isna().sum())"},
+  {cat:'eda', q:"Que renvoie df.shape ?", a:"Un tuple (nombre de lignes, nombre de colonnes)"},
+  {cat:'eda', q:"Que donne df.describe() ?", a:"count, mean, std, min, 25 %, 50 % (médiane), 75 %, max pour chaque colonne numérique"},
+  {cat:'eda', q:"Que fait df.head() ?", a:"Affiche les 5 premières lignes (df.tail() : les 5 dernières)"},
+  {cat:'eda', q:".loc ou .iloc : lequel sélectionne par position ?", a:".iloc (position entière). .loc sélectionne par étiquette"},
+  {cat:'eda', q:"df.drop('col', axis=?) pour supprimer une colonne ?", a:"axis=1  (axis=0 supprime des lignes)"},
+  {cat:'eda', q:"Afficher la matrice de corrélation en couleurs ?", a:"sns.heatmap(df.corr(numeric_only=True), annot=True)"},
+  {cat:'eda', q:"Entre quelles valeurs varie un coefficient de corrélation ?", a:"Entre −1 et 1. 0 = pas de lien linéaire"},
+
+  {cat:'reg', q:"Formule du MSE ?", a:"MSE = moyenne des (ŷ − y)²"},
+  {cat:'reg', q:"Pourquoi le RMSE plutôt que le MSE ?", a:"RMSE = √MSE est dans la même unité que y, donc plus lisible"},
+  {cat:'reg', q:"Formule du MAE ?", a:"MAE = moyenne des |ŷ − y|"},
+  {cat:'reg', q:"Que renvoie stats.linregress(x, y) ?", a:"slope, intercept, r, p, std_err. R² = r²"},
+  {cat:'reg', q:"Règle de mise à jour en descente de gradient ?", a:"θ ← θ − α · ∂J/∂θ  (α = learning rate)"},
+  {cat:'reg', q:"Learning rate trop grand ? trop petit ?", a:"Trop grand : ça diverge.\nTrop petit : convergence très lente."},
+  {cat:'reg', q:"Normalisation min-max ?", a:"(x − min) / (max − min) → valeurs entre 0 et 1"},
+  {cat:'reg', q:"Équation normale de la régression multiple ?", a:"w* = (XᵀX)⁻¹ Xᵀ y\nnp.linalg.inv(X.T @ X) @ X.T @ y"},
+
+  {cat:'pca', q:"La première composante explique la plus grande ______ des données.", a:"variance"},
+  {cat:'pca', q:"Comment sont les composantes principales entre elles ?", a:"Orthogonales (non corrélées)"},
+  {cat:'pca', q:"Pourquoi standardiser avant une PCA ?", a:"Sinon les variables à grande échelle dominent les composantes"},
+  {cat:'pca', q:"Faut-il garder la colonne cible dans la PCA ?", a:"Non, on la retire : ce n'est pas une variable explicative"},
+  {cat:'pca', q:"Que contient pca.explained_variance_ratio_ ?", a:"La part de variance expliquée par chaque composante"},
+  {cat:'pca', q:"Comment obtenir la variance cumulée ?", a:"np.cumsum(pca.explained_variance_ratio_) ; on garde assez de composantes pour 90–95 %"},
+  {cat:'pca', q:"Débruitage par PCA : on garde quelles composantes ?", a:"Les premières (le signal). Les dernières portent surtout du bruit."},
+
+  {cat:'logit', q:"Formule de la sigmoïde et valeur en 0 ?", a:"σ(z) = 1 / (1 + e^(−z)), valeurs dans ]0, 1[, σ(0) = 0,5"},
+  {cat:'logit', q:"La régression logistique sert à… ?", a:"Faire de la classification (binaire), pas prédire une valeur continue"},
+  {cat:'logit', q:"Formule de l'accuracy ?", a:"(TP + TN) / (TP + TN + FP + FN)"},
+  {cat:'logit', q:"Formule du recall ?", a:"TP / (TP + FN)"},
+  {cat:'logit', q:"AUC = 0,5, ça veut dire quoi ?", a:"Le modèle ne fait pas mieux que le hasard (1 = parfait)"},
+  {cat:'logit', q:"Le StandardScaler : fit sur quoi ?", a:"Sur le train seulement (fit_transform), puis transform sur le test"},
+  {cat:'logit', q:"predict vs predict_proba ?", a:"predict → classes 0/1\npredict_proba → probabilités"},
+];
+const CAT_LABEL = {python:'Python & NumPy', eda:'EDA & Pandas', reg:'Régression', pca:'PCA', logit:'Logistique'};
+
+/* accepted: normalized exact match; "~xxx" = normalized input contains xxx */
+const CTRL = [
+  {q:"Qu'affiche ce code ?", code:"x = np.array([4, 9, 16])\nprint(np.sqrt(x))", sol:"[2. 3. 4.]", acc:["[2. 3. 4.]"]},
+  {q:"Qu'affiche ce code ?", code:"a = 17\nb = 5\nprint(a // b, a % b)", sol:"3 2  (17 = 3×5 + 2)", acc:["3 2"]},
+  {q:"Qu'affiche ce code ?", code:"v = np.arange(1, 11)\nprint(v[1::3])", sol:"[2 5 8]  (v = [1…10], indices 1, 4, 7)", acc:["[2 5 8]"]},
+  {q:"Quelle est la médiane de ce tableau ?", code:"np.array([7, 1, 3, 5])", sol:"4.0  (trié : [1, 3, 5, 7] → (3 + 5)/2)", acc:["4.0","4"]},
+  {q:"Qu'affiche ce code ?", code:"A = np.array([[1, 2], [3, 4]])\nB = np.array([[2, 0], [1, 3]])\nprint(A * B)", sol:"[[ 2  0]\n [ 3 12]]  (élément par élément ; A @ B donnerait [[4 6] [10 12]])", acc:["[[2 0] [3 12]]"]},
+  {q:"Quelle méthode pandas affiche les 5 premières lignes d'un DataFrame df ?", sol:"df.head()", acc:["df.head()","head()","head"]},
+  {q:"Complète : le ______ permet de voir la médiane, les quartiles et les outliers d'une variable.", sol:"boxplot (boîte à moustaches)", acc:["boxplot","sns.boxplot","~moustache","box plot"]},
+  {q:"Complète : les composantes principales d'une PCA sont ______ entre elles.", sol:"orthogonales (non corrélées)", acc:["~orthogon","~noncorrel","~perpendic"]},
+  {q:"Quel lien entre np.var(x) et np.std(x) ?", sol:"var = std²  (std = √var)", acc:["~std²","~std**2","~std^2","~sqrt","~√"]},
+  {q:"Pourquoi faut-il standardiser les données avant une PCA ?", sol:"Pour que les variables à grande échelle ne dominent pas les composantes : chaque variable compte de la même façon.", acc:["~echelle","~domin","~unite"]},
+  {q:"Qu'affiche ce code ?", code:"M = np.arange(12).reshape(3, 4)\nprint(M.shape, M[1, 2])", sol:"(3, 4) 6  (ligne 1 = [4 5 6 7], colonne 2 → 6)", acc:["(3, 4) 6"]},
+  {q:"Quelle est la différence entre %timeit et time.time() ?", sol:"%timeit (Jupyter) répète la mesure et donne moyenne ± écart-type ; time.time() donne une seule mesure, dans n'importe quel script.", acc:["~repet","~plusieurs","~moyenne"]},
+  {q:"Que vaut σ(0) pour la fonction sigmoïde ?", sol:"0,5", acc:["0.5","0,5","1/2"]},
+  {q:"Que se passe-t-il si le learning rate est trop grand ?", sol:"La descente de gradient diverge (la loss explose au lieu de diminuer).", acc:["~diverg","~explos"]},
+  {q:"Que valent la moyenne et la médiane de [2, 4, 6, 100] ? Laquelle est robuste ?", sol:"Moyenne 28.0, médiane 5.0. La médiane est robuste à la valeur extrême 100.", acc:["~28"]},
+];
+
+/* ================= HELPERS ================= */
+const $ = s => document.querySelector(s);
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+function norm(s){
+  return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[\s\[\]\(\),.;'"`]/g,'');
+}
+function autoMatch(input, acc){
+  const n = norm(input);
+  if(!n) return false;
+  return acc.some(a => a.startsWith('~') ? n.includes(norm(a.slice(1))) : n === norm(a));
+}
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+
+/* ================= PANELS / STEPS ================= */
+const PANELS = ['fiche','cards','ctrl','pieges'];
+const STEP_START = [0,8,20,28]; // minutes
+const PANEL_NAME = {fiche:'la fiche flash', cards:'les flashcards', ctrl:'le contrôle blanc', pieges:'les pièges'};
+let activePanel = 'fiche';
+function showPanel(id){
+  activePanel = id;
+  PANELS.forEach(p => { document.getElementById('panel-'+p).hidden = (p !== id); });
+  document.querySelectorAll('.step').forEach(b => b.classList.toggle('active', b.dataset.panel === id));
+  store.set('rev30_panel', id);
+  $('#nudge').hidden = true;
+  window.scrollTo({top:0, behavior:'auto'});
+}
+document.querySelectorAll('.step').forEach(b => b.addEventListener('click', () => showPanel(b.dataset.panel)));
+
+/* ================= TIMER ================= */
+const TOTAL = 30*60;
+let remaining = TOTAL, running = false, endAt = 0, tickId = null, lastStep = 0, wakeLock = null;
+function fmt(s){ const m=Math.floor(s/60), r=s%60; return String(m).padStart(2,'0')+':'+String(r).padStart(2,'0'); }
+function stepIndexAt(elapsedSec){ const m = elapsedSec/60; let i=0; STEP_START.forEach((st,k)=>{ if(m>=st) i=k; }); return i; }
+function render(){
+  $('#clock').textContent = fmt(remaining);
+  $('#clock').classList.toggle('done', remaining===0);
+  const elapsed = TOTAL - remaining;
+  $('#track').style.width = (elapsed/TOTAL*100)+'%';
+  const idx = stepIndexAt(elapsed);
+  document.querySelectorAll('.step').forEach((b,k) => b.classList.toggle('now', (running || elapsed>0) && remaining>0 && k===idx));
+  $('#btn-start').textContent = running ? 'Pause' : (elapsed>0 && remaining>0 ? 'Reprendre' : 'Lancer');
+  if((running) && idx !== lastStep){
+    lastStep = idx;
+    const target = PANELS[idx];
+    if(target !== activePanel) showNudge(`<span><b>${STEP_START[idx]} min.</b> Passe à ${PANEL_NAME[target]}.</span><button class="btn primary" type="button" data-go="${target}">Y aller</button>`);
+  }
+  if(remaining===0 && running){
+    running=false; clearInterval(tickId); releaseWake();
+    showNudge(`<span><b>Terminé.</b> 30 minutes de révision faites. Relis les pièges demain matin et c'est bon.</span>`);
+    $('#btn-start').textContent = 'Lancer';
+  }
+}
+function showNudge(html){
+  const n = $('#nudge'); n.innerHTML = html; n.hidden = false;
+  const go = n.querySelector('[data-go]'); if(go) go.onclick = () => showPanel(go.dataset.go);
+}
+function tick(){ remaining = Math.max(0, Math.round((endAt - Date.now())/1000)); render(); }
+async function requestWake(){ try{ if('wakeLock' in navigator) wakeLock = await navigator.wakeLock.request('screen'); }catch(e){ wakeLock=null; } }
+function releaseWake(){ try{ wakeLock && wakeLock.release(); }catch(e){} wakeLock=null; }
+$('#btn-start').addEventListener('click', () => {
+  if(remaining===0){ remaining = TOTAL; lastStep = 0; }
+  if(running){ running=false; clearInterval(tickId); releaseWake(); render(); return; }
+  running = true; endAt = Date.now() + remaining*1000;
+  lastStep = stepIndexAt(TOTAL-remaining);
+  if(TOTAL-remaining===0) showPanel('fiche');
+  tickId = setInterval(tick, 500); requestWake(); render();
+});
+$('#btn-reset').addEventListener('click', () => {
+  running=false; clearInterval(tickId); releaseWake(); remaining=TOTAL; lastStep=0; $('#nudge').hidden=true; render();
+});
+document.addEventListener('visibilitychange', () => { if(document.visibilityState==='visible' && running) requestWake(); });
+
+/* ================= FLASHCARDS ================= */
+let deck = [], okCount = 0, missed = [], flipped = false, roundTotal = 0;
+function startDeck(cards){
+  deck = shuffle(cards); okCount = 0; missed = []; flipped = false; roundTotal = deck.length;
+  renderCard();
+}
+function renderCard(){
+  $('#fc-left').textContent = deck.length;
+  $('#fc-ok').textContent = okCount;
+  $('#fc-bad').textContent = missed.length;
+  const zone = $('#fc-zone'); zone.innerHTML = '';
+  if(!deck.length){
+    const end = document.createElement('div'); end.className='end';
+    end.innerHTML = `<span class="eyebrow">Paquet terminé</span><span class="big">${okCount} / ${roundTotal}</span>`;
+    const p = document.createElement('p'); p.style.margin='0';
+    p.textContent = missed.length ? `${missed.length} carte(s) à revoir. Refais-les tout de suite, c'est là que tu gagnes des points.` : "Tout est su. Passe au contrôle blanc.";
+    end.appendChild(p);
+    const act = document.createElement('div'); act.className='card-actions';
+    if(missed.length){
+      const b = document.createElement('button'); b.className='btn primary'; b.type='button'; b.textContent=`Revoir les ${missed.length} ratées`;
+      const m = missed.slice(); b.onclick = () => startDeck(m); act.appendChild(b);
+    }
+    const b2 = document.createElement('button'); b2.className='btn'; b2.type='button'; b2.textContent='Tout le paquet'; b2.onclick=()=>startDeck(CARDS); act.appendChild(b2);
+    const b3 = document.createElement('button'); b3.className='btn'; b3.type='button'; b3.textContent='Aller au contrôle blanc'; b3.onclick=()=>showPanel('ctrl'); act.appendChild(b3);
+    end.appendChild(act); zone.appendChild(end); return;
+  }
+  const c = deck[0];
+  const card = document.createElement('div'); card.className = 'card cat-'+c.cat;
+  const badge = document.createElement('span'); badge.className='badge'; badge.textContent = CAT_LABEL[c.cat]; badge.style.alignSelf='flex-start';
+  const q = document.createElement('div'); q.className='q'; q.textContent = c.q;
+  card.append(badge, q);
+  if(c.code){ const pre = document.createElement('pre'); pre.className='code'; pre.textContent = c.code; card.appendChild(pre); }
+  if(flipped){
+    const a = document.createElement('div'); a.className='a';
+    const l = document.createElement('span'); l.className='lbl'; l.textContent='Réponse';
+    a.appendChild(l); a.appendChild(document.createTextNode(c.a)); card.appendChild(a);
+  }
+  const act = document.createElement('div'); act.className='card-actions';
+  if(!flipped){
+    const b = document.createElement('button'); b.className='btn primary'; b.type='button'; b.textContent='Retourner la carte'; b.onclick=flip; act.appendChild(b);
+  } else {
+    const ok = document.createElement('button'); ok.className='btn ok'; ok.type='button'; ok.textContent='Je savais'; ok.onclick=()=>answer(true);
+    const ko = document.createElement('button'); ko.className='btn bad'; ko.type='button'; ko.textContent='À revoir'; ko.onclick=()=>answer(false);
+    act.append(ok, ko);
+  }
+  card.appendChild(act); zone.appendChild(card);
+}
+function flip(){ if(deck.length && !flipped){ flipped = true; renderCard(); } }
+function answer(knew){
+  if(!deck.length || !flipped) return;
+  const c = deck.shift();
+  if(knew) okCount++; else missed.push(c);
+  flipped = false; renderCard();
+}
+$('#fc-shuffle').addEventListener('click', () => startDeck(CARDS));
+document.addEventListener('keydown', e => {
+  if(activePanel !== 'cards') return;
+  const tag = (e.target.tagName||'').toLowerCase();
+  if(tag==='input' || tag==='textarea') return;
+  if(e.key===' ' || e.key==='Enter'){ if(!flipped){ e.preventDefault(); flip(); } }
+  else if(e.key==='ArrowRight'){ answer(true); }
+  else if(e.key==='ArrowLeft'){ answer(false); }
+});
+
+/* ================= CONTRÔLE ================= */
+const ctrlState = CTRL.map(() => null); // null | 'ok' | 'bad' | 'judge'
+let corrected = false;
+function buildCtrl(){
+  const list = $('#ctrl-list'); list.innerHTML='';
+  CTRL.forEach((it,i) => {
+    const box = document.createElement('div'); box.className='cq'; box.id='cq-'+i;
+    const top = document.createElement('div'); top.className='cq-top';
+    const num = document.createElement('span'); num.className='cq-num'; num.textContent = String(i+1).padStart(2,'0');
+    const q = document.createElement('span'); q.className='cq-q'; q.textContent = it.q;
+    top.append(num,q); box.appendChild(top);
+    if(it.code){ const pre=document.createElement('pre'); pre.className='code'; pre.textContent=it.code; box.appendChild(pre); }
+    const inp = document.createElement('input'); inp.type='text'; inp.id='ctrl-in-'+i; inp.autocomplete='off'; inp.spellcheck=false; inp.placeholder='Ta réponse';
+    inp.setAttribute('aria-label','Réponse à la question '+(i+1));
+    box.appendChild(inp);
+    const res = document.createElement('div'); res.className='cq-res'; res.hidden = true; res.id='cq-res-'+i;
+    box.appendChild(res);
+    list.appendChild(box);
+  });
+}
+function renderRes(i){
+  const it = CTRL[i], st = ctrlState[i];
+  const box = document.getElementById('cq-'+i), res = document.getElementById('cq-res-'+i);
+  box.classList.remove('st-ok','st-bad','st-judge'); if(st) box.classList.add('st-'+st);
+  res.hidden = false; res.innerHTML='';
+  const sol = document.createElement('div'); sol.className='sol';
+  const b = document.createElement('b'); b.textContent = 'Correction'; sol.appendChild(b);
+  sol.appendChild(document.createTextNode(it.sol)); res.appendChild(sol);
+  const j = document.createElement('div'); j.className='judge';
+  const lab = document.createElement('span');
+  lab.textContent = st==='judge' ? 'Compare et note-toi :' : (st==='ok' ? 'Juste. Tu peux changer si besoin :' : 'Faux. Tu peux changer si besoin :');
+  const bo = document.createElement('button'); bo.type='button'; bo.className='btn ok'; bo.textContent='✓ Juste'; bo.onclick=()=>{ ctrlState[i]='ok'; renderRes(i); updateScore(); };
+  const bk = document.createElement('button'); bk.type='button'; bk.className='btn bad'; bk.textContent='✗ Faux'; bk.onclick=()=>{ ctrlState[i]='bad'; renderRes(i); updateScore(); };
+  j.append(lab,bo,bk); res.appendChild(j);
+}
+function updateScore(){
+  const ok = ctrlState.filter(s=>s==='ok').length;
+  const judge = ctrlState.filter(s=>s==='judge').length;
+  $('#ctrl-score').textContent = ok + ' / ' + CTRL.length;
+  $('#ctrl-hint').textContent = judge ? `${judge} réponse(s) à juger toi-même` : (ok>=12 ? 'Très bien, tu es prêt.' : ok>=9 ? 'Correct. Relis les pièges.' : 'Refais les flashcards ratées puis réessaie.');
+}
+$('#ctrl-check').addEventListener('click', () => {
+  if(corrected){
+    // reset
+    corrected = false; ctrlState.fill(null);
+    CTRL.forEach((_,i)=>{ document.getElementById('ctrl-in-'+i).value=''; document.getElementById('cq-res-'+i).hidden=true; document.getElementById('cq-'+i).classList.remove('st-ok','st-bad','st-judge'); });
+    $('#ctrl-score').textContent='— / 15'; $('#ctrl-hint').textContent='Pas encore corrigé'; $('#ctrl-check').textContent='Corriger';
+    window.scrollTo({top:0}); return;
+  }
+  corrected = true;
+  CTRL.forEach((it,i) => {
+    const v = document.getElementById('ctrl-in-'+i).value;
+    ctrlState[i] = !norm(v) ? 'bad' : (autoMatch(v, it.acc) ? 'ok' : 'judge');
+    renderRes(i);
+  });
+  updateScore();
+  $('#ctrl-check').textContent = 'Recommencer';
+});
+
+/* ================= INIT ================= */
+buildCtrl();
+startDeck(CARDS);
+const savedPanel = store.get('rev30_panel');
+showPanel(PANELS.includes(savedPanel) ? savedPanel : 'fiche');
+render();
+</script>
+
+<footer class="rev-foot"><a href="../mentions-legales.html">Mentions légales et confidentialité</a> · <a href="../cours.html#revisions">Tous mes sites de révision</a></footer>
+</body></html>

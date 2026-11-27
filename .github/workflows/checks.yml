@@ -31,6 +31,9 @@ jobs:
       - name: Check the search index is up to date
         run: node scripts/build-search-index.js --check
 
+      - name: Unit tests (node:test)
+        run: node --test tests/*.test.js
+
   secrets:
     runs-on: ubuntu-latest
     steps:

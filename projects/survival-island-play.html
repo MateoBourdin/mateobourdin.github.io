@@ -50,11 +50,13 @@
         <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">🇬🇧 EN</button>
     </div>
 
+    <main id="contenu">
+
     <div class="container play-wrap">
         <a href="sae101.html" class="back-btn" data-i18n="back">← Retour à la page du projet</a>
 
         <div class="hero project-hero">
-            <h1 data-i18n="title">🏝️ Survival Island — Jouez directement ici</h1>
+            <h1 data-i18n="title">Survival Island — Jouez directement ici</h1>
             <p data-i18n="intro">Le jeu d'origine est une application de bureau C# / WPF, qui ne peut pas tourner dans un navigateur. Je l'ai donc porté en JavaScript (Canvas 2D) en reprenant classe par classe le code de la SAE : mêmes constantes, mêmes règles, mêmes sprites. Rien à installer, tout s'exécute sur votre machine.</p>
         </div>
 
@@ -103,13 +105,15 @@
         </div>
     </div>
 
+    </main>
+
     <footer class="mini-footer"><a href="../mentions-legales.html">Mentions légales et confidentialité · Legal notice and privacy</a><br><span class="mini-updated">Mis à jour le 27 novembre 2026 · Updated 27 November 2026</span></footer>
 
     <script>
         const translations = {
             fr: {
                 back: "← Retour à la page du projet",
-                title: "🏝️ Survival Island — Jouez directement ici",
+                title: "Survival Island — Jouez directement ici",
                 intro: "Le jeu d'origine est une application de bureau C# / WPF, qui ne peut pas tourner dans un navigateur. Je l'ai donc traduit en JavaScript (Canvas 2D) classe par classe, à l'identique du dépôt GitHub : mêmes règles, même interface, mêmes images et mêmes sons. Rien à installer, tout s'exécute sur votre machine.",
                 touch: "Comme la version d'origine, le jeu se joue au clavier et à la souris : ouvrez cette page sur un ordinateur.",
                 keys: { aim: "Souris — viser", fire: "Clic gauche — tirer", move: "Z / clic droit — avancer", pause: "Échap — pause" },
@@ -130,7 +134,7 @@
             },
             en: {
                 back: "← Back to the project page",
-                title: "🏝️ Survival Island — Play it right here",
+                title: "Survival Island — Play it right here",
                 intro: "The original game is a C# / WPF desktop app, which can't run in a browser. So I translated it to JavaScript (Canvas 2D) class by class, identical to the GitHub repository: same rules, same interface, same images and same sounds. Nothing to install, everything runs on your machine.",
                 touch: "Like the original, the game is played with a keyboard and mouse: open this page on a computer.",
                 keys: { aim: "Mouse — aim", fire: "Left click — fire", move: "Z / right click — sail", pause: "Esc — pause" },
