@@ -147,7 +147,7 @@ const translations = {
             contact: 'Contact'
         },
         hero: {
-            availability: '⚡ Disponible pour un stage de 16 semaines dès le 19 janvier 2027',
+            availability: '⚡ Disponible pour un stage dès le 19 janvier 2027 : 16 semaines, prolongeable jusqu\'à 6 mois',
             greeting: 'Salut, je suis',
             title: 'Développeur & Étudiant en Informatique',
             description: 'Étudiant en 3e année de BUT Informatique (parcours Réalisation d\'Applications) à l\'IUT d\'Annecy, je développe des applications full-stack en C#/.NET, Vue 3 et Python, avec une première expérience en studio de jeux vidéo.',
@@ -235,9 +235,9 @@ const translations = {
             },
             internship: {
                 title: 'Stage BUT3 Informatique',
-                description: 'Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement d\'applications (logiciel et web). Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Python, Vue 3, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l\'étranger.',
+                description: 'Je recherche activement un stage de 16 semaines (prolongeable jusqu\'à 6 mois) à partir du 19 janvier 2027 en développement d\'applications (logiciel et web). Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Python, Vue 3, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l\'étranger.',
                 duration: 'Durée :',
-                weeks: '16 semaines',
+                weeks: '16 semaines, prolongeable jusqu\'à 6 mois (avec une pause d\'un mois, de mi-mai à mi-juin, pour mes cours)',
                 start: 'Début :',
                 date: '19 janvier 2027',
                 domains: 'Domaines :',
@@ -924,7 +924,7 @@ const translations = {
             contact: 'Contact'
         },
         hero: {
-            availability: '⚡ Available for a 16-week internship from 19 January 2027',
+            availability: '⚡ Available for an internship from 19 January 2027: 16 weeks, extendable up to 6 months',
             greeting: 'Hi, I\'m',
             title: 'Developer & Computer Science Student',
             description: 'Third-year Computer Science student (BUT Informatique, Application Development track) at IUT d\'Annecy, I build full-stack applications with C#/.NET, Vue 3 and Python, with first professional experience in a video game studio.',
@@ -1012,9 +1012,9 @@ const translations = {
             },
             internship: {
                 title: '3rd-year Computer Science Internship',
-                description: 'I am actively seeking a 16-week internship starting on 19 January 2027 in application development (software and web). Objective: to put into practice my skills in C#/ASP.NET Core, Python, Vue 3, PostgreSQL and contribute to concrete projects in a company, in France or abroad.',
+                description: 'I am actively seeking a 16-week internship (extendable up to 6 months) starting on 19 January 2027 in application development (software and web). Objective: to put into practice my skills in C#/ASP.NET Core, Python, Vue 3, PostgreSQL and contribute to concrete projects in a company, in France or abroad.',
                 duration: 'Duration:',
-                weeks: '16 weeks',
+                weeks: '16 weeks, extendable up to 6 months (with a one-month break, mid-May to mid-June, for my classes)',
                 start: 'Start:',
                 date: '19 January 2027',
                 domains: 'Areas:',
