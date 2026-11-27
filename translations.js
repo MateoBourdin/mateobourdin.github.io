@@ -138,6 +138,7 @@ const translations = {
             butYears: 'Parcours BUT',
             projects: 'Projets',
             projectsCategoryWeb: 'Applications web',
+            projectsCategoryPro: 'Stage et bénévolat',
             projectsCategoryGames: 'Jeux',
             projectsCategoryDesktop: 'Applications bureau',
             emulations: '🕹️ Émulations',
@@ -149,7 +150,7 @@ const translations = {
             availability: '⚡ Disponible pour un stage de 16 semaines dès le 19 janvier 2027',
             greeting: 'Salut, je suis',
             title: 'Développeur & Étudiant en Informatique',
-            description: 'Étudiant en 3e année de BUT Informatique (parcours Réalisation d\'Applications) à l\'IUT d\'Annecy, je développe des applications full-stack en C#/.NET, Vue 3 et Python, avec une première expérience en studio de jeux vidéo. Je cherche un stage de 16 semaines à partir du 19 janvier 2027.',
+            description: 'Étudiant en 3e année de BUT Informatique (parcours Réalisation d\'Applications) à l\'IUT d\'Annecy, je développe des applications full-stack en C#/.NET, Vue 3 et Python, avec une première expérience en studio de jeux vidéo.',
             contact: '📩 Me contacter',
             downloadCV: '📄 Télécharger mon CV',
             projects: '🚀 Voir mes projets'
@@ -167,7 +168,9 @@ const translations = {
         },
         about: {
             tag: '👨‍💻 À propos de moi',
-            title: 'Qui suis-je ?'
+            title: 'Qui suis-je ?',
+            p1: 'Originaire de Quimper, j’ai commencé par une prépa intégrée à l’ENIB avant de rejoindre l’IUT d’Annecy, où je termine mon BUT Informatique. Ce qui me plaît : les problèmes qui demandent de la rigueur (je suis majorant en maths de ma promo et j’ai un faible pour les graphes et Python) et les applications que des gens utilisent vraiment, d’une boutique en ligne à un jeu vidéo.',
+            p2: 'En dehors du code, je fais de la production musicale et de l’équitation : j’ai été champion de France de polo et 3e en saut d’obstacles.'
         },
         journey: {
             tag: '🧭 Mon parcours',
@@ -187,7 +190,8 @@ const translations = {
         },
         stats: {
             education: 'Informatique à l\'IUT Annecy',
-            projects: 'Projets détaillés, dont 3 jouables en ligne',
+            projects: 'Projets présentés, dont 3 jouables en ligne',
+            grades: 'Moyenne du dernier semestre',
             champion: 'Champion & 3e',
             sports: 'France de Polo et Saut d\'Obstacles',
             languages: '3',
@@ -352,6 +356,7 @@ const translations = {
                 "gitlab": "GitLab CI/CD : mes 18 exercices"
             },
             "revLink": "Mon site de révision",
+        "coursesTitle": "Mes cours de 3e année",
             "c8": {
                 "label": "Qualité algorithmique",
                 "title": "Les design patterns, codés en C#",
@@ -555,7 +560,21 @@ const translations = {
                 title: 'Filtrer les projets :',
                 all: 'Tous les projets',
                 academic: 'Projets Académiques',
-                personal: 'Projets Personnels'
+                personal: 'Projets Personnels',
+                pro: 'Stage et bénévolat'
+            },
+            pro: {
+                lappiDate: 'Avr. – juin 2026',
+                lappiType: 'Stage BUT2',
+                lappiTitle: 'The Inspector — Discovery Diary',
+                lappiText: 'Stage dans un studio de jeux vidéo indépendant : j’ai conçu seul le carnet d’enquête du jeu sous Unity (12 scripts C#, notifications synchronisées au son, 5 langues) et fait passer une scène de test de 2 à 84 FPS.',
+                magicalText: 'Bénévole sur un serveur Minecraft communautaire : création et réglage de monstres et d’objets (MythicMobs, MMOItems), en équipe avec les autres développeurs du serveur.'
+            },
+            astraeus: {
+                team: 'BUT3 - Équipe de 4',
+                title: 'Astraeus — plateforme éducative sur la météo',
+                text: 'Exploration des phénomènes atmosphériques, quiz et WeatherGuessr, un jeu où le joueur affronte notre propre modèle de prévision (1 h à 72 h). Mon rôle : la partie données et IA, avec un réseau LSTM entraîné sur les données ERA5.',
+                more: 'Voir dans Cours actuels →'
             },
             techFilters: {
                 all: 'Toutes technos',
@@ -636,7 +655,7 @@ const translations = {
         },
         contact: {
             title: 'Travaillons ensemble !',
-            subtitle: 'Je suis disponible pour un stage de 16 semaines à partir du 19 janvier 2027',
+            subtitle: 'Un stage, un projet ou une simple question : écrivez-moi.',
             emailBtn: 'Me contacter',
             email: '📧 Formulaire de contact'
         },
@@ -896,6 +915,7 @@ const translations = {
             butYears: 'BUT years',
             projects: 'Projects',
             projectsCategoryWeb: 'Web apps',
+            projectsCategoryPro: 'Internship and volunteering',
             projectsCategoryGames: 'Games',
             projectsCategoryDesktop: 'Desktop apps',
             emulations: '🕹️ Emulations',
@@ -907,7 +927,7 @@ const translations = {
             availability: '⚡ Available for a 16-week internship from 19 January 2027',
             greeting: 'Hi, I\'m',
             title: 'Developer & Computer Science Student',
-            description: 'Third-year Computer Science student (BUT Informatique, Application Development track) at IUT d\'Annecy, I build full-stack applications with C#/.NET, Vue 3 and Python, with first professional experience in a video game studio. I am looking for a 16-week internship starting on 19 January 2027.',
+            description: 'Third-year Computer Science student (BUT Informatique, Application Development track) at IUT d\'Annecy, I build full-stack applications with C#/.NET, Vue 3 and Python, with first professional experience in a video game studio.',
             contact: '📩 Contact me',
             downloadCV: '📄 Download my CV',
             projects: '🚀 View my projects'
@@ -925,7 +945,9 @@ const translations = {
         },
         about: {
             tag: '👨‍💻 About me',
-            title: 'Who am I?'
+            title: 'Who am I?',
+            p1: 'Originally from Quimper, I started with an integrated preparatory year at ENIB engineering school before joining IUT d’Annecy, where I am finishing my Bachelor in Computer Science. What I enjoy: problems that call for rigour (I am top of my class in maths and have a soft spot for graphs and Python) and applications that people actually use, from an online shop to a video game.',
+            p2: 'Outside of code, I produce music and ride horses: I was French polo champion and finished 3rd in show jumping.'
         },
         journey: {
             tag: '🧭 My background',
@@ -945,7 +967,8 @@ const translations = {
         },
         stats: {
             education: 'Computer Science at IUT Annecy',
-            projects: 'Detailed projects, 3 playable online',
+            projects: 'Projects shown, 3 playable online',
+            grades: 'Average in my last semester',
             champion: 'Champion & 3rd',
             sports: 'French Polo and Show Jumping Championships',
             languages: '3',
@@ -1110,6 +1133,7 @@ const translations = {
                 "gitlab": "GitLab CI/CD: my 18 exercises"
             },
             "revLink": "My revision site",
+        "coursesTitle": "My third-year courses",
             "c8": {
                 "label": "Algorithm quality",
                 "title": "Design patterns, written in C#",
@@ -1313,7 +1337,21 @@ const translations = {
                 title: 'Filter projects:',
                 all: 'All projects',
                 academic: 'Academic Projects',
-                personal: 'Personal Projects'
+                personal: 'Personal Projects',
+                pro: 'Internship and volunteering'
+            },
+            pro: {
+                lappiDate: 'Apr. – June 2026',
+                lappiType: '2nd-year internship',
+                lappiTitle: 'The Inspector — Discovery Diary',
+                lappiText: 'Internship at an independent video game studio: I designed the game’s investigation notebook on my own in Unity (12 C# scripts, notifications synced to audio, 5 languages) and took a test scene from 2 to 84 FPS.',
+                magicalText: 'Volunteer on a community Minecraft server: creating and tuning monsters and items (MythicMobs, MMOItems), working with the server’s other developers.'
+            },
+            astraeus: {
+                team: '3rd year - Team of 4',
+                title: 'Astraeus — educational weather platform',
+                text: 'Exploring atmospheric phenomena, quizzes and WeatherGuessr, a game where players compete against our own forecasting model (1 h to 72 h). My part: data and AI, with an LSTM network trained on ERA5 data.',
+                more: 'See in Current courses →'
             },
             techFilters: {
                 all: 'All techs',
@@ -1394,7 +1432,7 @@ const translations = {
         },
         contact: {
             title: 'Let\'s work together!',
-            subtitle: 'I\'m available for a 16-week internship starting on 19 January 2027',
+            subtitle: 'An internship, a project or just a question: get in touch.',
             emailBtn: 'Contact me',
             email: '📧 Contact form'
         },

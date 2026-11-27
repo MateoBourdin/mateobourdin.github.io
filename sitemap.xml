@@ -1,133 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://mateobourdin.github.io/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/parcours.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/projets.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/cours.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/cours-docker.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/cours-maths.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/cours-aspnet.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/cours-flask.html</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
         <loc>https://mateobourdin.github.io/competences.html</loc>
-        <changefreq>monthly</changefreq>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://mateobourdin.github.io/contact.html</loc>
-        <changefreq>yearly</changefreq>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/projects/zelda.html</loc>
-        <changefreq>yearly</changefreq>
+        <loc>https://mateobourdin.github.io/cours-aspnet.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/cours-docker.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/cours-flask.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/cours-maths.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/cours.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/jeu-bug.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/jeu-ile.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/jeu-ski.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/jeux.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/mentions-legales.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/parcours.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/projects/cubebikes.html</loc>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://mateobourdin.github.io/projects/fianchetto.html</loc>
-        <changefreq>monthly</changefreq>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/fianchetto/</loc>
-        <changefreq>monthly</changefreq>
+        <loc>https://mateobourdin.github.io/projects/lappisoft.html</loc>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/projects/zelda-play.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/projects/survival-island-play.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://mateobourdin.github.io/projects/cubebikes.html</loc>
-        <changefreq>yearly</changefreq>
+        <loc>https://mateobourdin.github.io/projects/magicalsky.html</loc>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/projects/twitterclone.html</loc>
-        <changefreq>yearly</changefreq>
+        <loc>https://mateobourdin.github.io/projects/sae101.html</loc>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://mateobourdin.github.io/projects/sae201.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/projects/sae101.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://mateobourdin.github.io/projects/survival-island-play.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/projects/lappisoft.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://mateobourdin.github.io/projects/twitterclone.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/projects/magicalsky.html</loc>
-        <changefreq>yearly</changefreq>
+        <loc>https://mateobourdin.github.io/projects/zelda-play.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/projects/zelda.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/projets.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/revisions/adaptation-domaine.html</loc>
+        <lastmod>2026-11-27</lastmod>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/mentions-legales.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <loc>https://mateobourdin.github.io/revisions/design-patterns.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/jeu-ski.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://mateobourdin.github.io/revisions/maths-express.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/jeu-ile.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://mateobourdin.github.io/revisions/puffer-cours.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/jeu-bug.html</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://mateobourdin.github.io/revisions/r5a05-tp.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://mateobourdin.github.io/jeux.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://mateobourdin.github.io/revisions/uml-projets.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/revisions/vocab-qualite.html</loc>
+        <lastmod>2026-11-27</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://mateobourdin.github.io/fianchetto/</loc>
+        <priority>0.7</priority>
     </url>
 </urlset>

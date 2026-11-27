@@ -45,6 +45,8 @@
         "sameAs": ["https://github.com/MateoBourdin", "https://www.linkedin.com/in/BOURDINMateo/"]
     }
     </script>
+    <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="themes.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -96,7 +98,7 @@
                     <span data-i18n="hero.greeting">Salut, je suis</span> <span class="gradient-text">Matéo Bourdin</span><br>
                     <span data-i18n="hero.title">Développeur & Étudiant en Informatique</span>
                 </h1>
-                <p data-i18n="hero.description">Étudiant en 3e année de BUT Informatique (parcours Réalisation d'Applications) à l'IUT d'Annecy, je développe des applications full-stack en C#/.NET, Vue 3 et Python, avec une première expérience en studio de jeux vidéo. Je cherche un stage de 16 semaines à partir du 19 janvier 2027.</p>
+                <p data-i18n="hero.description">Étudiant en 3e année de BUT Informatique (parcours Réalisation d'Applications) à l'IUT d'Annecy, je développe des applications full-stack en C#/.NET, Vue 3 et Python, avec une première expérience en studio de jeux vidéo.</p>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn btn-primary">
                         <span data-i18n="hero.contact">📩 Me contacter</span>
@@ -167,6 +169,10 @@
                 <span class="section-tag"><span data-i18n="about.tag">👨‍💻 À propos de moi</span></span>
                 <h2 data-i18n="about.title">Qui suis-je ?</h2>
             </div>
+            <div class="about-text reveal">
+                <p data-i18n="about.p1">Originaire de Quimper, j’ai commencé par une prépa intégrée à l’ENIB avant de rejoindre l’IUT d’Annecy, où je termine mon BUT Informatique. Ce qui me plaît : les problèmes qui demandent de la rigueur (je suis majorant en maths de ma promo et j’ai un faible pour les graphes et Python) et les applications que des gens utilisent vraiment, d’une boutique en ligne à un jeu vidéo.</p>
+                <p data-i18n="about.p2">En dehors du code, je fais de la production musicale et de l’équitation : j’ai été champion de France de polo et 3e en saut d’obstacles.</p>
+            </div>
             <div class="stats reveal">
                 <div class="stat-card">
                     <div class="icon">🎓</div>
@@ -175,23 +181,18 @@
                 </div>
                 <div class="stat-card">
                     <div class="icon">💻</div>
-                    <h3>8</h3>
-                    <p data-i18n="stats.projects">Projets détaillés, dont 3 jouables en ligne</p>
+                    <h3>10</h3>
+                    <p data-i18n="stats.projects">Projets présentés, dont 3 jouables en ligne</p>
                 </div>
                 <div class="stat-card">
-                    <div class="icon">🏆</div>
-                    <h3 data-i18n="stats.champion">Champion & 3e</h3>
-                    <p data-i18n="stats.sports">France de Polo et Saut d'Obstacles</p>
+                    <div class="icon">📈</div>
+                    <h3>16,5/20</h3>
+                    <p data-i18n="stats.grades">Moyenne du dernier semestre</p>
                 </div>
                 <div class="stat-card">
                     <div class="icon">🌍</div>
                     <h3 data-i18n="stats.languages">3</h3>
                     <p data-i18n="stats.languagesText">Langues parlées</p>
-                </div>
-                <div class="stat-card internship-highlight">
-                    <div class="icon">🎯</div>
-                    <h3 data-i18n="stats.internship">Stage</h3>
-                    <p data-i18n="stats.seeking">Recherche active dès le 19 janvier 2027</p>
                 </div>
             </div>
 
@@ -239,7 +240,7 @@
         <div class="container">
             <div class="contact-section reveal">
                 <h2 data-i18n="contact.title">Travaillons ensemble !</h2>
-                <p data-i18n="contact.subtitle">Je suis disponible pour un stage de 16 semaines à partir du 19 janvier 2027</p>
+                <p data-i18n="contact.subtitle">Un stage, un projet ou une simple question : écrivez-moi.</p>
                 <a href="contact.html" class="btn btn-primary"><span data-i18n="contact.emailBtn">Me contacter</span></a>
 
                 <div class="contact-methods">
@@ -305,10 +306,10 @@
         </div>
     </div>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
-    <script src="theme.js"></script>
-    <script src="style-switcher.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="theme.js" defer></script>
+    <script src="style-switcher.js" defer></script>
     <script src="search.js" defer></script>
 </body>
 </html>

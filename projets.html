@@ -26,6 +26,8 @@
     <meta name="twitter:description" content="Projets web, jeux et applications de Matéo Bourdin, classés par catégorie.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     
+    <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="themes.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -80,6 +82,50 @@
                 <button class="filter-btn active" data-filter="all"><span data-i18n="projects.filters.all">Tous les projets</span></button>
                 <button class="filter-btn" data-filter="academic"><span data-i18n="projects.filters.academic">Projets Académiques</span></button>
                 <button class="filter-btn" data-filter="personal"><span data-i18n="projects.filters.personal">Projets Personnels</span></button>
+                <button class="filter-btn" data-filter="pro"><span data-i18n="projects.filters.pro">Stage et bénévolat</span></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience-pro" class="project-category">
+        <div class="container">
+            <h2 class="category-title" data-i18n="nav.projectsCategoryPro">Stage et bénévolat</h2>
+            <div class="projects-grid">
+                <!-- The Inspector - stage Lappi Soft -->
+                <div class="project-card reveal" data-type="pro" data-tech="game" style="border: 3px solid var(--accent-orange);">
+                    <div class="project-image project-shot"><img src="img/projects/lappisoft-diary-card.webp" alt="Le carnet Discovery Diary dans The Inspector (Unity)" data-i18n-alt="shots.lappi" loading="lazy" decoding="async"></div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="projects.pro.lappiDate">Avr. – juin 2026</span>
+                            <span class="project-tag tag-solid tag-blue" data-i18n="projects.pro.lappiType">Stage BUT2</span>
+                            <span class="project-tag tag-soft">Lappi Soft</span>
+                        </div>
+                        <h3 data-i18n="projects.pro.lappiTitle">The Inspector — Discovery Diary</h3>
+                        <p data-i18n="projects.pro.lappiText">Stage dans un studio de jeux vidéo indépendant : j’ai conçu seul le carnet d’enquête du jeu sous Unity (12 scripts C#, notifications synchronisées au son, 5 langues) et fait passer une scène de test de 2 à 84 FPS.</p>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.fianchetto.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">Unity 2019.4, C#, Pixel Crushers Dialogue System</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="projects/lappisoft.html" class="btn btn-secondary"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- MagicalSky - bénévolat -->
+                <div class="project-card reveal" data-type="pro" data-tech="game" style="border: 3px solid var(--accent-purple);">
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--primary), var(--accent-purple));">🎮</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag" data-i18n="experience.magicalsky.since">Févr. 2025 – mars 2026</span>
+                            <span class="project-tag tag-solid tag-purple" data-i18n="experience.magicalsky.type">Bénévolat Informatique</span>
+                        </div>
+                        <h3 data-i18n="experience.magicalsky.title">Game Designer - MagicalSky</h3>
+                        <p data-i18n="projects.pro.magicalText">Bénévole sur un serveur Minecraft communautaire : création et réglage de monstres et d’objets (MythicMobs, MMOItems), en équipe avec les autres développeurs du serveur.</p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="projects/magicalsky.html" class="btn btn-secondary"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -88,15 +134,36 @@
         <div class="container">
             <h2 class="category-title" data-i18n="nav.projectsCategoryWeb">Applications web</h2>
             <div class="projects-grid">
+                <!-- Astraeus - SAE 5.01 (en cours) -->
+                <div class="project-card reveal" data-type="academic" data-tech="web ai" style="border: 3px solid var(--accent-green);">
+                    <div class="project-image" style="background: linear-gradient(135deg, var(--accent-orange), var(--primary));">🌦️</div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag tag-solid tag-green" data-i18n="tags.ongoing">En développement</span>
+                            <span class="project-tag tag-solid tag-primary">SAE 5.01</span>
+                            <span class="project-tag" data-i18n="projects.astraeus.team">BUT3 - Équipe de 4</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.academic">Académique</span>
+                        </div>
+                        <h3 data-i18n="projects.astraeus.title">Astraeus — plateforme éducative sur la météo</h3>
+                        <p data-i18n="projects.astraeus.text">Exploration des phénomènes atmosphériques, quiz et WeatherGuessr, un jeu où le joueur affronte notre propre modèle de prévision (1 h à 72 h). Mon rôle : la partie données et IA, avec un réseau LSTM entraîné sur les données ERA5.</p>
+                        <div style="margin-top: 0.5rem;">
+                            <strong style="color: var(--text);" data-i18n="projects.fianchetto.tech">Technologies :</strong>
+                            <span style="color: var(--text-light);">Python, LSTM, ERA5, Open-Meteo, Scrum, Azure DevOps</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                            <a href="cours.html" class="btn btn-secondary"><span data-i18n="projects.astraeus.more">Voir dans Cours actuels →</span></a>
+                        </div>
+                    </div>
+                </div>
                 <!-- CUBE Bikes - SAE 4.01 -->
                 <div class="project-card reveal" data-type="academic" data-tech="web database" style="border: 3px solid var(--primary);">
                     <div class="project-image project-shot"><img src="img/projects/cubebikes-card.webp" alt="Sélecteur de magasin CUBE Bikes sur carte Leaflet (données de démonstration)" data-i18n-alt="shots.cube" loading="lazy" decoding="async" style="object-position: center;"></div>
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="tags.y2025_2026">2025 – 2026</span>
-                            <span class="project-tag" style="background: var(--primary); color: white;">SAE 4.01</span>
+                            <span class="project-tag tag-solid tag-primary">SAE 4.01</span>
                             <span class="project-tag" data-i18n="tags.but2team5">BUT2 - Équipe de 5</span>
-                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.academic">Académique</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.academic">Académique</span>
                         </div>
                         <h3 data-i18n="projects.cubebikes.title">CUBE Bikes - Plateforme E-commerce</h3>
                         <p data-i18n="projects.cubebikes.description">Plateforme e-commerce full-stack pour une boutique de vélos : backend ASP.NET Core 8 / Entity Framework Core / PostgreSQL avec authentification JWT + Google OAuth, 2FA par TOTP, paiement Stripe Checkout et pattern Repository/Service ; frontend Vue 3 / Pinia / Tailwind CSS avec recherche à facettes, sélecteur de magasin sur carte Leaflet et disponibilité produit par taille et par magasin. Projet récurrent ayant évolué de la SAE 3.01 (Laravel/PostgreSQL) à la SAE 4.01 (ASP.NET Core/Vue 3). Mon rôle : le sélecteur de magasin et la disponibilité par magasin, côté API et côté interface.</p>
@@ -120,7 +187,7 @@
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="tags.spring2026">Printemps 2026</span>
                             <span class="project-tag" data-i18n="tags.r408team4">R408A1 - Équipe de 4</span>
-                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.academic">Académique</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.academic">Académique</span>
                         </div>
                         <h3 data-i18n="projects.twitterclone.title">Clone Twitter/X</h3>
                         <p data-i18n="projects.twitterclone.description">Clone de réseau social développé en équipe de 4 avec Laravel 13 / PHP 8.3, PostgreSQL, Redis et Livewire/Alpine.js, incluant des fonctionnalités temps réel via WebSockets (Laravel Reverb) et un assistant IA façon Grok basé sur l'API Gemini, déployé avec Docker. Mon rôle : l'envoi de médias (jusqu'à 4 photos ou vidéos par tweet, aperçu, validation et stockage).</p>
@@ -140,9 +207,9 @@
                     <div class="project-image project-shot"><img src="img/projects/fianchetto.webp" alt="Rapport d’analyse d’une partie dans Fianchetto" data-i18n-alt="shots.fianchetto" loading="lazy" decoding="async" style="object-position: left top;"></div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="tags.ongoing">En développement</span>
+                            <span class="project-tag tag-solid tag-green" data-i18n="tags.ongoing">En développement</span>
                             <span class="project-tag" data-i18n="tags.oct2026">Oct. 2026</span>
-                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.personal">Personnel</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.personal">Personnel</span>
                         </div>
                         <h3 data-i18n="projects.fianchetto.title">Fianchetto — analyse de parties d’échecs</h3>
                         <p data-i18n="projects.fianchetto.description">Application web d’échecs qui tourne entièrement dans le navigateur : bots de 500 à 2500 Elo, import des parties Chess.com et Lichess, rapport d’analyse avec Stockfish (WebAssembly) — précision, 11 catégories de coups, commentaires — bilans sur plusieurs parties et problèmes tirés de ses propres erreurs.</p>
@@ -157,7 +224,7 @@
                         <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
                             <a href="projects/fianchetto.html" class="btn btn-secondary"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
                             <a href="https://mateobourdin.github.io/fianchetto/" target="_blank" rel="noopener" class="btn btn-primary"><span data-i18n="projects.fianchetto.open">Ouvrir l’appli ↗</span></a>
-                            <a href="https://github.com/MateoBourdin/fianchetto" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: var(--dark); border-color: var(--dark);">💻 GitHub</a>
+                            <a href="https://github.com/MateoBourdin/fianchetto" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-github">💻 GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -166,9 +233,9 @@
                     <div class="project-image project-shot"><img src="img/projects/portfolio.webp" alt="Page d’accueil du portfolio" data-i18n-alt="shots.portfolio" loading="lazy" decoding="async" style="object-position: left top;"></div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="tags.ongoing">En développement</span>
+                            <span class="project-tag tag-solid tag-green" data-i18n="tags.ongoing">En développement</span>
                             <span class="project-tag" data-i18n="tags.sinceDec2024">Depuis déc. 2024</span>
-                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.personal">Personnel</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.personal">Personnel</span>
                         </div>
                         <h3 data-i18n="projects.portfolio.title">Portfolio personnel bilingue</h3>
                         <p data-i18n="projects.portfolio.description">Site portfolio responsive et bilingue (FR/EN), lancé en décembre 2024 et toujours en évolution : HTML5, CSS3 et JavaScript vanilla, animations, système de traduction i18n, formulaire de contact via Formspree. Chaque pull request passe un pipeline GitHub Actions (HTML, traductions, liens, secrets) et la Quality Gate de SonarQube Cloud avant d’être déployée sur GitHub Pages.</p>
@@ -183,7 +250,7 @@
                         <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
                             <a href="index.html" class="btn btn-secondary"><span data-i18n="projects.viewSite">Vous êtes dessus ! →</span></a>
                             <a href="competences.html#qualite" class="btn btn-secondary"><span data-i18n="projects.portfolio.pipeline">🔁 Pipeline CI/CD</span></a>
-                            <a href="https://github.com/MateoBourdin/mateobourdin.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: var(--dark); border-color: var(--dark);">💻 GitHub</a>
+                            <a href="https://github.com/MateoBourdin/mateobourdin.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-github">💻 GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +269,7 @@
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="tags.dec2024">Déc. 2024</span>
                             <span class="project-tag" data-i18n="tags.team3">Équipe de 3</span>
-                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.academic">Académique</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.academic">Académique</span>
                             <span class="project-tag">IUT Annecy</span>
                         </div>
                         <h3 data-i18n="projects.survival.title">Survival Island</h3>
@@ -224,7 +291,7 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="tags.spring2024">Printemps 2024</span>
-                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.academic">Académique</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.academic">Académique</span>
                             <span class="project-tag">ENIB</span>
                         </div>
                         <h3 data-i18n="projects.zelda.title">Zelda II: The Adventure of Link</h3>
@@ -239,7 +306,7 @@
                         </div>
                         <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
                             <a href="projects/zelda.html" class="btn btn-secondary"><span data-i18n="projects.viewProject">Voir le projet →</span></a>
-                            <a href="https://github.com/MateoBourdin/ZeldaProject" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: var(--dark); border-color: var(--dark);">💻 GitHub</a>
+                            <a href="https://github.com/MateoBourdin/ZeldaProject" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-github">💻 GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -258,7 +325,7 @@
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="tags.spring2025">Printemps 2025</span>
                             <span class="project-tag" data-i18n="tags.team2">Équipe de 2</span>
-                            <span class="project-tag" style="background: var(--primary-lighter); color: var(--primary);" data-i18n="tags.academic">Académique</span>
+                            <span class="project-tag tag-soft" data-i18n="tags.academic">Académique</span>
                             <span class="project-tag">IUT Annecy</span>
                         </div>
                         <h3 data-i18n="projects.sae201.title">Cave à vin Nicolas - SAE 2.01</h3>
@@ -345,10 +412,10 @@
         </div>
     </footer>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
-    <script src="theme.js"></script>
-    <script src="style-switcher.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="theme.js" defer></script>
+    <script src="style-switcher.js" defer></script>
     <script src="search.js" defer></script>
 </body>
 </html>

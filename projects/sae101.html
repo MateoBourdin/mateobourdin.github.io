@@ -25,6 +25,8 @@
     <meta name="twitter:description" content="Survival Island (SAE 1.01) : jeu de combat naval en C# / WPF, développé à trois au premier semestre du BUT Informatique.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Survival Island - Matéo Bourdin</title>
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -143,7 +145,7 @@
                 <div class="tech-item">UML</div>
                 <div class="tech-item">Git / GitHub</div>
             </div>
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte pédagogique</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.context">Contexte pédagogique</h4>
             <p style="color: var(--text-light); line-height: 1.8;" data-i18n="tech.contextDesc">La SAE 1.01 « Implémentation d'un besoin client » est le premier projet en équipe du BUT Informatique : programmation orientée objet, conception UML (diagramme de classes) et travail collaboratif avec Git.</p>
         </div>
 
@@ -336,9 +338,9 @@
         }
         document.addEventListener('DOMContentLoaded', () => changeLanguage(currentLang === 'en' ? 'en' : 'fr'));
     </script>
-    <script src="../embeds.js"></script>
-    <script src="../theme.js"></script>
-    <script src="../style-switcher.js"></script>
+    <script src="../embeds.js" defer></script>
+    <script src="../theme.js" defer></script>
+    <script src="../style-switcher.js" defer></script>
     <script src="../search.js" defer></script>
 </body>
 </html>

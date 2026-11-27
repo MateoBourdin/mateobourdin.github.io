@@ -89,3 +89,11 @@ test('main : --check confirme un index à jour, et la régénération donne le m
     assert.match(logs[1], /Wrote search-index\.json/);
     assert.equal(fs.readFileSync(out, 'utf8'), avant, 'l’index régénéré est identique');
 });
+
+test('translationsFor : reconnaît translations.js chargé avec defer ou async', () => {
+    for (const tag of ['<script src="translations.js"></script>', '<script src="translations.js" defer></script>', '<script src="../translations.js" async></script>']) {
+        const tr = idx.translationsFor('<html><body>' + tag + '</body></html>');
+        assert.ok(tr && tr.en && tr.fr, tag);
+    }
+    assert.equal(idx.translationsFor('<html><body><p>rien</p></body></html>'), null);
+});

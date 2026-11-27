@@ -26,6 +26,8 @@
     <meta name="twitter:description" content="Expérience, formation et années de BUT Informatique de Matéo Bourdin (IUT d'Annecy).">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     
+    <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="themes.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -92,7 +94,7 @@
                     <div class="project-image" style="background: linear-gradient(135deg, var(--accent-green), var(--primary));">💼</div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="experience.lookingFor">Recherche active</span>
+                            <span class="project-tag tag-solid tag-green" data-i18n="experience.lookingFor">Recherche active</span>
                             <span class="project-tag" data-i18n="tags.jan2027">19 janvier 2027</span>
                         </div>
                         <h3 data-i18n="experience.internship.title">Stage BUT3 Informatique</h3>
@@ -111,7 +113,7 @@
                     <div class="project-image project-shot"><img src="img/projects/lappisoft-diary-card.webp" alt="Le carnet Discovery Diary dans The Inspector (Unity)" data-i18n-alt="shots.lappi" loading="lazy" decoding="async" style="object-position: center;"></div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag" style="background: var(--accent-orange); color: white;" data-i18n="experience.lappisoft.dates">Avril – juin 2026</span>
+                            <span class="project-tag tag-solid tag-blue" data-i18n="experience.lappisoft.dates">Avril – juin 2026</span>
                             <span class="project-tag" data-i18n="tags.internshipBut2">Stage BUT2</span>
                         </div>
                         <h3 data-i18n="experience.lappisoft.title">Développeur logiciel (Unity/C#) - Lappi Soft</h3>
@@ -133,7 +135,7 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="experience.magicalsky.since">Févr. 2025 – mars 2026</span>
-                            <span class="project-tag" style="background: var(--primary); color: white;" data-i18n="experience.magicalsky.type">Bénévolat Informatique</span>
+                            <span class="project-tag tag-solid tag-primary" data-i18n="experience.magicalsky.type">Bénévolat Informatique</span>
                         </div>
                         <h3 data-i18n="experience.magicalsky.title">Game Designer - MagicalSky</h3>
                         <p data-i18n="experience.magicalsky.description">Game designer sur le serveur Minecraft MagicalSky (magicalsky.fr). Création et configuration de mobs avec MythicMobs, développement d'outils personnalisés avec MMOItems. Création de serveurs privés et plugins avec Paper. Modélisation 3D de mobs avec Blockbench, compétence acquise grâce à mon expérience CATIA à l'ENIB. Force de proposition pour de nouvelles fonctionnalités et solutions techniques. Travail collaboratif au sein d'une équipe de 13-14 personnes.</p>
@@ -153,7 +155,7 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="tags.summer2024">Été 2024</span>
-                            <span class="project-tag" style="background: var(--accent-purple); color: white;" data-i18n="tags.seasonal">Emploi saisonnier</span>
+                            <span class="project-tag tag-solid tag-purple" data-i18n="tags.seasonal">Emploi saisonnier</span>
                         </div>
                         <h3 data-i18n="experience.intersport.title">Vendeur - Intersport</h3>
                         <p data-i18n="experience.intersport.description">Conseil personnalisé aux clients sur les équipements sportifs, gestion des stocks et mise en rayon. Développement de compétences en relation client et travail d'équipe dans un environnement commercial dynamique.</p>
@@ -166,7 +168,7 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="tags.summer2023">Été 2023</span>
-                            <span class="project-tag" style="background: var(--accent-purple); color: white;" data-i18n="tags.seasonal">Emploi saisonnier</span>
+                            <span class="project-tag tag-solid tag-purple" data-i18n="tags.seasonal">Emploi saisonnier</span>
                         </div>
                         <h3 data-i18n="experience.carrefour.title">Employé Boulangerie - Carrefour Market</h3>
                         <p data-i18n="experience.carrefour.description">Préparation et mise en valeur des produits de boulangerie, contrôle qualité et respect des normes d'hygiène. Gestion de la relation client et travail en équipe dans un contexte exigeant.</p>
@@ -261,7 +263,7 @@
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag" data-i18n="butYears.y3.dates">2026 – 2027</span>
-                            <span class="project-tag" style="background: var(--accent-green); color: white;" data-i18n="butYears.current">En cours</span>
+                            <span class="project-tag tag-solid tag-green" data-i18n="butYears.current">En cours</span>
                         </div>
                         <h3 data-i18n="butYears.y3.title">3e année — Qualité, DevOps et IA</h3>
                         <p data-i18n="butYears.y3.intro">Dernière année, avec des cours dispensés en anglais à l’initiative de l’IUT et de ses étudiants : qualité logicielle, automatisation et premiers modèles d’IA, avant un stage de 16 semaines dès janvier 2027.</p>
@@ -366,10 +368,10 @@
         </div>
     </footer>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
-    <script src="theme.js"></script>
-    <script src="style-switcher.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="theme.js" defer></script>
+    <script src="style-switcher.js" defer></script>
     <script src="search.js" defer></script>
 </body>
 </html>

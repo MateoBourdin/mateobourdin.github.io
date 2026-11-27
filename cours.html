@@ -26,6 +26,8 @@
     <meta name="twitter:description" content="Les cours de 3e année de BUT Informatique que suit Matéo Bourdin, avec des extraits de code.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     
+    <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="themes.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -70,6 +72,7 @@
                 <h1 data-i18n="now.title">Ce sur quoi je travaille cette année</h1>
                 <p data-i18n="now.description">Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais, des extraits de mon code et les sites de révision que je me suis faits. Mis à jour le 27 novembre 2026.</p>
             </div>
+            <h2 class="sr-only" data-i18n="now.coursesTitle">Mes cours de 3e année</h2>
             <div class="projects-grid now-grid">
                 <article class="project-card now-card reveal">
                     <div class="project-content">
@@ -437,10 +440,10 @@ Assert.IsFalse(produitRelu.EnReappro);</code></pre></div>
         </div>
     </footer>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
-    <script src="theme.js"></script>
-    <script src="style-switcher.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="theme.js" defer></script>
+    <script src="style-switcher.js" defer></script>
     <script src="search.js" defer></script>
 </body>
 </html>

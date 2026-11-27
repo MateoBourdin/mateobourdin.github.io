@@ -25,6 +25,8 @@
     <meta name="twitter:description" content="Game Designer - MagicalSky - Expérience de bénévolat en informatique sur serveur Minecraft">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>MagicalSky - Matéo Bourdin</title>
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -118,7 +120,7 @@
                 <div class="tech-item">Git</div>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.minecraft.title">Écosystème Minecraft</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.minecraft.title">Écosystème Minecraft</h4>
             <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1rem;" data-i18n="tech.minecraft.desc">
                 Le développement sur serveur Minecraft implique l'utilisation de plusieurs technologies complémentaires :
                 <strong>MythicMobs</strong> pour la création de créatures personnalisées avec des comportements complexes,
@@ -432,8 +434,8 @@
             }
         });
     </script>
-    <script src="../theme.js"></script>
-    <script src="../style-switcher.js"></script>
+    <script src="../theme.js" defer></script>
+    <script src="../style-switcher.js" defer></script>
     <script src="../search.js" defer></script>
 </body>
 </html>

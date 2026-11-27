@@ -25,6 +25,8 @@
     <meta name="twitter:description" content="Fianchetto : application web d'échecs de Matéo Bourdin. Bots, analyse de parties Chess.com et Lichess avec Stockfish, bilans et problèmes, dans le navigateur.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Fianchetto - Matéo Bourdin</title>
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -138,7 +140,7 @@
                 <li data-i18n="method.s4"><b>Règles spéciales</b> : « Génial » pour un sacrifice correct, « Coup unique » quand la 2ᵉ option perd au moins 15 points, « Occasion manquée » quand on ne punit pas l’erreur adverse.</li>
                 <li data-i18n="method.s5"><b>Vérifier</b> chaque erreur détectée par une analyse plus profonde avant de la confirmer, pour éliminer les faux positifs dus à l’horizon du moteur.</li>
             </ol>
-            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="method.code">Probabilité de gain et précision d’un coup (js/core/review.js)</h4>
+            <h4 style="color: var(--primary); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="method.code">Probabilité de gain et précision d’un coup (js/core/review.js)</h4>
             <div class="code-preview">
                 <pre><code><span class="comment">/** Probabilité de gain des Blancs (0–100) pour un score en centipions. */</span>
 <span class="keyword">export function</span> <span class="function">winPercent</span>(cp) {
@@ -169,7 +171,7 @@
                 <div class="tech-item">Node.js (tests)</div>
                 <div class="tech-item">GitHub Pages</div>
             </div>
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.architecture">Architecture</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.architecture">Architecture</h4>
             <div class="code-preview">
                 <pre><code>index.html            <span class="comment"># Coquille de l'application (4 vues)</span>
 css/style.css         <span class="comment"># Thème « ardoise &amp; ambre », responsive</span>
@@ -440,8 +442,8 @@ tests/                <span class="comment"># Tests Node avec le vrai Stockfish<
 
         document.addEventListener('DOMContentLoaded', () => changeLanguage(currentLang === 'en' ? 'en' : 'fr'));
     </script>
-    <script src="../theme.js"></script>
-    <script src="../style-switcher.js"></script>
+    <script src="../theme.js" defer></script>
+    <script src="../style-switcher.js" defer></script>
     <script src="../search.js" defer></script>
 </body>
 </html>

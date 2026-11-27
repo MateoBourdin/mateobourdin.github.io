@@ -25,6 +25,8 @@
     <meta name="twitter:description" content="Zelda II: The Adventure of Link - A Python Terminal-Based RPG Adventure">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Zelda II - Matéo Bourdin</title>
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -167,7 +169,7 @@
         <div class="section">
             <h3 data-i18n="code.title">💻 Extraits de Code</h3>
 
-            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.player">Système de Joueur (Player.py)</h4>
+            <h4 style="color: var(--primary); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.player">Système de Joueur (Player.py)</h4>
             <div class="code-preview">
                 <pre><code><span class="keyword">import</span> os
 <span class="keyword">import</span> sys
@@ -188,7 +190,7 @@
     <span class="keyword">return</span> player</code></pre>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.gameloop">Boucle de Jeu Principale (main.py)</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.gameloop">Boucle de Jeu Principale (main.py)</h4>
             <div class="code-preview">
                 <pre><code><span class="keyword">def</span> <span class="function">run</span>(data):
     <span class="comment"># Boucle de simulation principale</span>
@@ -210,7 +212,7 @@
             Player.<span class="function">set_attack_cd</span>(data[<span class="string">'player'</span>], <span class="number">5</span>)</code></pre>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.encounters">Système de Rencontres Aléatoires</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="code.encounters">Système de Rencontres Aléatoires</h4>
             <div class="code-preview">
                 <pre><code><span class="comment"># Détection des rencontres aléatoires dans les plaines</span>
 <span class="keyword">if</span> cara_on_new_pos == <span class="string">'7'</span>:
@@ -236,7 +238,7 @@
                 <div class="tech-item">OOP (Object-Oriented)</div>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.architecture">Architecture du Projet</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 1rem; font-size: 1.25rem;" data-i18n="tech.architecture">Architecture du Projet</h4>
             <div class="code-preview">
                 <pre><code>Projet IPI 2024/
 ├── main.py              <span class="comment"># Point d'entrée et boucle de jeu principale</span>
@@ -290,7 +292,7 @@
         <div class="section">
             <h3 data-i18n="howto.title">🚀 Comment Lancer le Jeu</h3>
 
-            <h4 style="color: var(--accent-purple); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.prereq">Prérequis</h4>
+            <h4 style="color: var(--primary); margin: 1.5rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.prereq">Prérequis</h4>
             <ul style="margin-left: 1.5rem; line-height: 1.8; color: var(--text-light);">
                 <li data-i18n="howto.prereqItems.python">Python 3.x installé</li>
                 <li data-i18n="howto.prereqItems.system">Système Linux/Unix/MacOS (ou WSL sur Windows)</li>
@@ -298,7 +300,7 @@
                 <li data-i18n="howto.prereqItems.fullscreen">Terminal en plein écran recommandé</li>
             </ul>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.install">Installation et Lancement</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.install">Installation et Lancement</h4>
             <div class="code-preview">
                 <pre><code><span class="comment"># Cloner le repository</span>
 git clone https://github.com/MateoBourdin/ZeldaProject.git
@@ -310,7 +312,7 @@ cd ZeldaProject/<span class="string">"Projet IPI 2024"</span>
 python3 main.py</code></pre>
             </div>
 
-            <h4 style="color: var(--accent-purple); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.windows">Pour Windows (WSL)</h4>
+            <h4 style="color: var(--primary); margin: 2rem 0 0.75rem; font-size: 1.25rem;" data-i18n="howto.windows">Pour Windows (WSL)</h4>
             <div class="code-preview">
                 <pre><code><span class="comment"># Installer WSL</span>
 wsl --install
@@ -689,8 +691,8 @@ python3 main.py</code></pre>
             }
         });
     </script>
-    <script src="../theme.js"></script>
-    <script src="../style-switcher.js"></script>
+    <script src="../theme.js" defer></script>
+    <script src="../style-switcher.js" defer></script>
     <script src="../search.js" defer></script>
 </body>
 </html>

@@ -26,6 +26,8 @@
     <meta name="twitter:description" content="Langages, frameworks, outils et langues de Matéo Bourdin.">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     
+    <link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="themes.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -180,7 +182,7 @@
                     </ul>
                     <div class="quality-links">
                         <a href="https://sonarcloud.io/summary/overall?id=MateoBourdin_mateobourdin.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><span data-i18n="quality.sonarLink">🛡️ Tableau de bord SonarQube</span></a>
-                        <a href="https://github.com/MateoBourdin/mateobourdin.github.io/actions" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: var(--dark); border-color: var(--dark); color: #fff;"><span data-i18n="quality.actionsLink">⚙️ Exécutions GitHub Actions</span></a>
+                        <a href="https://github.com/MateoBourdin/mateobourdin.github.io/actions" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-github"><span data-i18n="quality.actionsLink">⚙️ Exécutions GitHub Actions</span></a>
                     </div>
                 </div>
                 <div class="skill-category quality-card reveal">
@@ -252,10 +254,10 @@
         </div>
     </footer>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
-    <script src="theme.js"></script>
-    <script src="style-switcher.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="theme.js" defer></script>
+    <script src="style-switcher.js" defer></script>
     <script src="search.js" defer></script>
 </body>
 </html>

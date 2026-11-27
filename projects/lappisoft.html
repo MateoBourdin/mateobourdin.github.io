@@ -25,6 +25,8 @@
     <meta name="twitter:description" content="Stage BUT2 chez Lappi Soft - Système Discovery Diary développé sous Unity pour le jeu The Inspector">
     <meta name="twitter:image" content="https://mateobourdin.github.io/og-image.png">
     <title>Discovery Diary (Lappi Soft) - Matéo Bourdin</title>
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -310,8 +312,8 @@
             changeLanguage(currentLang === 'en' ? 'en' : 'fr');
         });
     </script>
-    <script src="../theme.js"></script>
-    <script src="../style-switcher.js"></script>
+    <script src="../theme.js" defer></script>
+    <script src="../style-switcher.js" defer></script>
     <script src="../search.js" defer></script>
 </body>
 </html>
