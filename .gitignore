@@ -1,3 +1,4 @@
 # Fichiers compilés Python (générés localement, jamais versionnés)
 __pycache__/
 *.pyc
+lcov.info

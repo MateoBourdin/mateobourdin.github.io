@@ -1,0 +1,15 @@
+/* Pages de révision : polices du site (aucun appel à Google Fonts) et barre de retour */
+@font-face { font-family: 'Inter'; font-weight: 400; font-display: swap; src: url('../fonts/inter-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 600; font-display: swap; src: url('../fonts/inter-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 700; font-display: swap; src: url('../fonts/inter-latin-700-normal.woff2') format('woff2'); }
+/* Les titres de ces pages utilisaient Space Grotesk, Bricolage Grotesque ou Fraunces : remplacés par Manrope, la police de titres du portfolio */
+@font-face { font-family: 'Space Grotesk'; font-weight: 500 700; font-display: swap; src: url('../fonts/manrope-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Bricolage Grotesque'; font-weight: 400 800; font-display: swap; src: url('../fonts/manrope-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-weight: 400 700; font-display: swap; src: url('../fonts/manrope-latin-700-normal.woff2') format('woff2'); }
+
+.rev-bar { position: sticky; top: 0; z-index: 9999; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; justify-content: space-between; padding: 0.6rem 1.25rem; background: #1d2240; color: #e7e9f7; font: 600 0.9rem/1.4 'Inter', system-ui, sans-serif; }
+.rev-bar a { color: #ffffff; text-decoration: none; }
+.rev-bar a:hover, .rev-bar a:focus-visible { text-decoration: underline; }
+.rev-bar span { font-weight: 400; color: #c8cce6; }
+.rev-foot { padding: 1.5rem 1.25rem 2rem; text-align: center; font: 400 0.85rem/1.5 'Inter', system-ui, sans-serif; color: #5b6183; }
+.rev-foot a { color: #4f5dc2; }

@@ -43,7 +43,7 @@ const EXTRA = [
 
 function listHtml(dir, out = []) {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-        if (['node_modules', '.git', 'vendor', 'games', 'fonts', 'img', 'scripts'].includes(e.name)) continue;
+        if (['node_modules', '.git', 'vendor', 'games', 'fonts', 'img', 'scripts', 'tests', 'revisions'].includes(e.name)) continue;
         const full = path.join(dir, e.name);
         if (e.isDirectory()) listHtml(full, out);
         else if (e.name.endsWith('.html')) out.push(full);
@@ -177,18 +177,24 @@ function indexPage(file) {
     };
 }
 
-const pages = listHtml(ROOT).map(indexPage);
-const index = { v: 1, pages: [...pages, ...EXTRA] };
-const json = JSON.stringify(index);
+function main(argv) {
+    const pages = listHtml(ROOT).map(indexPage);
+    const index = { v: 1, pages: [...pages, ...EXTRA] };
+    const json = JSON.stringify(index);
 
-if (process.argv.includes('--check')) {
-    const current = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '';
-    if (current !== json) {
-        console.error('search-index.json is out of date: run `node scripts/build-search-index.js` and commit the result.');
-        process.exit(1);
+    if (argv.includes('--check')) {
+        const current = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '';
+        if (current !== json) {
+            console.error('search-index.json is out of date: run `node scripts/build-search-index.js` and commit the result.');
+            process.exit(1);
+        }
+        console.log(`search-index.json is up to date (${index.pages.length} entries). OK.`);
+    } else {
+        fs.writeFileSync(OUT, json);
+        console.log(`Wrote search-index.json: ${index.pages.length} entries, ${(json.length / 1024).toFixed(0)} KB.`);
     }
-    console.log(`search-index.json is up to date (${index.pages.length} entries). OK.`);
-} else {
-    fs.writeFileSync(OUT, json);
-    console.log(`Wrote search-index.json: ${index.pages.length} entries, ${(json.length / 1024).toFixed(0)} KB.`);
 }
+
+// Fonctions exportées pour les tests (tests/*.test.js) ; le script s'exécute seulement en ligne de commande.
+module.exports = { decode, stripTags, clean, attr, indexPage, listHtml, evalTranslations, translationsFor, main };
+if (require.main === module) main(process.argv);

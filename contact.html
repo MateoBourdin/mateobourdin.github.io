@@ -60,6 +60,8 @@
         </div>
     </header>
 
+    <main id="contenu">
+
     <!-- Contact Hero -->
     <section class="contact-hero">
         <div class="floating-element floating-1"></div>
@@ -80,7 +82,7 @@
         <div class="container">
             <!-- Contact Form -->
             <div class="contact-form-section">
-                <h2 data-i18n="contact.form.title">📬 Envoyez-moi un message</h2>
+                <h2 data-i18n="contact.form.title">Envoyez-moi un message</h2>
                 <p data-i18n="contact.form.subtitle">Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais</p>
 
                 <form id="contactForm" class="contact-form" action="https://formspree.io/f/xgvdvjnv" method="POST">
@@ -142,20 +144,20 @@
 
             <!-- Map Section -->
             <div class="map-section">
-                <h2 data-i18n="contact.location.title">📍 Ma Localisation</h2>
+                <h2 data-i18n="contact.location.title">Ma localisation</h2>
                 <p data-i18n="contact.location.subtitle">Reignier-Ésery, Haute-Savoie</p>
 
                 <div class="address-info">
                     <div class="icon">📍</div>
                     <div class="info">
                         <h3 data-i18n="contact.location.institution">Localisation</h3>
-                        <p><strong data-i18n="contact.location.address">Adresse :</strong> 613 rue de la Gare, 74930 Reignier-Ésery, France</p>
+                        <p><strong data-i18n="contact.location.address">Secteur :</strong> <span data-i18n="contact.location.area">Reignier-Ésery (Haute-Savoie), à 25 min d’Annecy et de Genève, véhiculé</span></p>
                         <p><strong data-i18n="contact.location.availability">Disponibilité :</strong> <span data-i18n="contact.location.availabilityText">Stage à partir du 19 janvier 2027 (16 semaines)</span></p>
                     </div>
                 </div>
 
                 <div class="map-container">
-                    <div class="embed-facade" data-src="https://www.openstreetmap.org/export/embed.html?bbox=6.258%2C46.132%2C6.268%2C46.142&amp;layer=mapnik&amp;marker=46.137%2C6.263" data-title="Carte OpenStreetMap">
+                    <div class="embed-facade" data-src="https://www.openstreetmap.org/export/embed.html?bbox=6.05%2C45.85%2C6.45%2C46.25&amp;layer=mapnik" data-title="Carte OpenStreetMap">
                         <p data-i18n="contact.location.mapConsent">La carte est fournie par OpenStreetMap, qui recevra votre adresse IP si vous l’affichez.</p>
                         <button type="button" class="embed-load btn btn-primary" data-i18n="contact.location.mapShow">🗺️ Afficher la carte</button>
                     </div>
@@ -165,10 +167,12 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer>
         <div class="container">
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
-            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p data-i18n="footer.signature">Site conçu et codé par moi, vérifié à chaque modification par GitHub Actions et SonarQube</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
             <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 27 novembre 2026</p>
         </div>
@@ -226,7 +230,7 @@
                         subtitle: 'Je suis disponible pour discuter de votre projet ou d\'opportunités de stage'
                     },
                     form: {
-                        title: '📬 Envoyez-moi un message',
+                        title: 'Envoyez-moi un message',
                         privacy: 'Vos nom, e-mail et message sont transmis par le service Formspree (États-Unis) et servent uniquement à vous répondre. Ils sont supprimés au plus tard 12 mois après notre dernier échange.',
                         privacyLink: 'En savoir plus et exercer vos droits',
                         subtitle: 'Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais',
@@ -250,10 +254,11 @@
                         button: 'Voir mon GitHub'
                     },
                     location: {
-                        title: '📍 Ma Localisation',
+                        title: 'Ma localisation',
                         subtitle: 'Reignier-Ésery, Haute-Savoie',
                         institution: 'Localisation',
-                        address: 'Adresse :',
+                        address: 'Secteur :',
+                        area: 'Reignier-Ésery (Haute-Savoie), à 25 min d’Annecy et de Genève, véhiculé',
                         availability: 'Disponibilité :',
                         availabilityText: 'Stage à partir du 19 janvier 2027 (16 semaines)',
                         mapConsent: 'La carte est fournie par OpenStreetMap, qui recevra votre adresse IP si vous l’affichez.',
@@ -262,7 +267,7 @@
                 },
                 footer: {
                     copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
-                    signature: 'Créé avec passion 🚀',
+                    signature: 'Site conçu et codé par moi, vérifié à chaque modification par GitHub Actions et SonarQube',
                     legal: 'Mentions légales et confidentialité',
                     updated: 'Dernière mise à jour : 27 novembre 2026'
                 }
@@ -289,7 +294,7 @@
                         subtitle: 'I\'m available to discuss your project or internship opportunities'
                     },
                     form: {
-                        title: '📬 Send me a message',
+                        title: 'Send me a message',
                         privacy: 'Your name, email and message are sent through the Formspree service (United States) and are only used to reply to you. They are deleted at the latest 12 months after our last exchange.',
                         privacyLink: 'Learn more and exercise your rights',
                         subtitle: 'Fill out the form below and I will get back to you as soon as possible',
@@ -313,10 +318,11 @@
                         button: 'View my GitHub'
                     },
                     location: {
-                        title: '📍 My Location',
+                        title: 'My location',
                         subtitle: 'Reignier-Ésery, Haute-Savoie',
                         institution: 'Location',
-                        address: 'Address:',
+                        address: 'Area:',
+                        area: 'Reignier-Ésery (Haute-Savoie, France), 25 min from Annecy and Geneva, with a car',
                         availability: 'Availability:',
                         availabilityText: 'Internship from 19 January 2027 (16 weeks)',
                         mapConsent: 'The map is provided by OpenStreetMap, which will receive your IP address if you display it.',
@@ -325,7 +331,7 @@
                 },
                 footer: {
                     copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
-                    signature: 'Created with passion 🚀',
+                    signature: 'Site designed and coded by me, checked on every change by GitHub Actions and SonarQube',
                     legal: 'Legal notice and privacy',
                     updated: 'Last updated: 27 November 2026'
                 }

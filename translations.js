@@ -149,10 +149,21 @@ const translations = {
             availability: '⚡ Disponible pour un stage de 16 semaines dès le 19 janvier 2027',
             greeting: 'Salut, je suis',
             title: 'Développeur & Étudiant en Informatique',
-            description: 'Étudiant en 3e et dernière année de Bachelor (BUT) Informatique, parcours Réalisation d\'Applications, à l\'IUT d\'Annecy. Développeur full-stack (C#/.NET, Vue.js, Python) fort d\'une première expérience en studio de jeux vidéo, je m\'appuie sur un solide bagage en mathématiques et en data/IA, domaine dans lequel j\'aimerais poursuivre en master. Je recherche un stage de 16 semaines à partir du 19 janvier 2027.',
+            description: 'Étudiant en 3e année de BUT Informatique (parcours Réalisation d\'Applications) à l\'IUT d\'Annecy, je développe des applications full-stack en C#/.NET, Vue 3 et Python, avec une première expérience en studio de jeux vidéo. Je cherche un stage de 16 semaines à partir du 19 janvier 2027.',
             contact: '📩 Me contacter',
             downloadCV: '📄 Télécharger mon CV',
             projects: '🚀 Voir mes projets'
+        },
+        featured: {
+            tag: 'Projets phares',
+            title: 'Trois projets pour me découvrir',
+            subtitle: 'Un projet d’équipe, un stage en studio et un projet personnel, avec à chaque fois ce que j’ai fait moi-même.',
+            more: 'Voir le projet →',
+            open: 'Ouvrir l’appli ↗',
+            all: 'Tous mes projets →',
+            cube: { title: 'CUBE Bikes — e-commerce full-stack', text: 'En équipe de 5 : API ASP.NET Core (JWT, 2FA, paiement Stripe) et interface Vue 3. Mon rôle : le sélecteur de magasin sur carte et la disponibilité par magasin, de l’API jusqu’à l’écran.' },
+            lappi: { title: 'The Inspector — stage en studio de jeu', text: 'Chez Lappi Soft, j’ai conçu seul le Discovery Diary du jeu : 12 scripts C#, notifications synchronisées au son, 5 langues, et une scène de test passée de 2 à 84 FPS.' },
+            fianchetto: { title: 'Fianchetto — analyse de parties d’échecs', text: 'Application 100 % navigateur : bots de 500 à 2500 Elo, import Chess.com et Lichess, analyse Stockfish en WebAssembly et exercices tirés de ses propres erreurs.' }
         },
         about: {
             tag: '👨‍💻 À propos de moi',
@@ -176,7 +187,7 @@ const translations = {
         },
         stats: {
             education: 'Informatique à l\'IUT Annecy',
-            projects: 'Projets développés',
+            projects: 'Projets détaillés, dont 3 jouables en ligne',
             champion: 'Champion & 3e',
             sports: 'France de Polo et Saut d\'Obstacles',
             languages: '3',
@@ -220,13 +231,13 @@ const translations = {
             },
             internship: {
                 title: 'Stage BUT3 Informatique',
-                description: 'Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement logiciel, développement web ou data/IA. Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Python, Vue 3, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l\'étranger.',
+                description: 'Je recherche activement un stage de 16 semaines à partir du 19 janvier 2027 en développement d\'applications (logiciel et web). Objectif : mettre en pratique mes compétences en C#/ASP.NET Core, Python, Vue 3, PostgreSQL et contribuer à des projets concrets en entreprise, en France comme à l\'étranger.',
                 duration: 'Durée :',
                 weeks: '16 semaines',
                 start: 'Début :',
                 date: '19 janvier 2027',
                 domains: 'Domaines :',
-                domainsText: 'Développement logiciel, développement web, data & IA'
+                domainsText: 'Développement d\'applications : logiciel et web'
             },
             magicalsky: {
                 since: 'Févr. 2025 – mars 2026',
@@ -241,7 +252,7 @@ const translations = {
         now: {
             "tag": "🛠️ En ce moment",
             "title": "Ce sur quoi je travaille cette année",
-            "description": "Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais et des extraits de mon code. Mis à jour le 4 novembre 2026.",
+            "description": "Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais, des extraits de mon code et les sites de révision que je me suis faits. Mis à jour le 27 novembre 2026.",
             "status": "En cours",
             "next": "En ce moment",
             "c1": {
@@ -251,7 +262,7 @@ const translations = {
                 "b1": "Interfaces séparées par rôle et contrôleur CRUD générique",
                 "b2": "DTO et AutoMapper pour ne jamais exposer les entités",
                 "b3": "Tests unitaires (MSTest, Moq) et tests d’intégration sur une vraie base PostgreSQL",
-                "now": "client Blazor Server en MVVM (MVVM Toolkit) qui consomme l’API",
+                "now": "révision de l’examen écrit : le vocabulaire du cours illustré par les fichiers de TPRevision",
                 "link": "Voir les extraits de code"
             },
             "c2": {
@@ -261,7 +272,8 @@ const translations = {
                 "b1": "Flask-SQLAlchemy sur la base de données Chinook",
                 "b2": "Tableau de bord de séries temporelles avec InfluxDB",
                 "b3": "Reconnaissance de chiffres manuscrits (MNIST) avec TensorFlow, servie par Flask",
-                "now": "une application Flask complète à rendre (base de données, upload d’images, modèles d’IA)"
+                "now": "l’application Flask finale à rendre : base de données, upload d’images et modèles d’IA",
+                "b4": "Oral en anglais le 25 novembre, à trois : démo de l’application et explication du code des 5 TP et du TP noté (Quadtree)"
             },
             "c3": {
                 "label": "SAE 5.01 — projet de groupe",
@@ -270,7 +282,8 @@ const translations = {
                 "b1": "Mon rôle : la partie IA et le traitement des données",
                 "b2": "Notre propre modèle de prévision à base de réseaux de neurones (un LSTM pour commencer) qui prévoit les conditions météo, pas seulement la température",
                 "b3": "Prévision jusqu’à 3 jours, calculée pendant que le joueur devine",
-                "now": "premier sprint, lancé en novembre 2026"
+                "now": "sprints de développement sur Azure DevOps : préparation des données ERA5 pour le premier LSTM",
+                "b4": "Données météo ERA5 versionnées dans le dépôt du projet, pour que toute l’équipe entraîne et teste sur les mêmes données"
             },
             "c4": {
                 "label": "Modélisation mathématique",
@@ -300,16 +313,17 @@ const translations = {
                 "b2": "Photoshop, cours en anglais : « Avatarize yourself », un avatar créé à partir de ma photo",
                 "b3": "Veille technologique en groupe sur WebAssembly",
                 "b4": "« Domain Adaptation » : un sujet d’IA expliqué en anglais à la classe, en groupe de 3",
-                "now": "rigging du personnage sous Blender et retouche de l’avatar"
+                "now": "rigging du personnage sous Blender (armature Rigify) et finitions de l’avatar"
             },
             "c7": {
                 "label": "Nouvelles bases de données (R5.A.10)",
-                "title": "Séries temporelles avec InfluxDB 3 et Grafana",
+                "title": "Séries temporelles et NoSQL : InfluxDB 3, Grafana et MongoDB",
                 "intro": "TD noté en binôme, sur une machine virtuelle Ubuntu de l’IUT.",
                 "b1": "Mise en place d’InfluxDB 3, une base pensée pour les mesures horodatées",
                 "b2": "Données réelles de deux sources : NOAA et Open-Meteo",
                 "b3": "Tableaux de bord Grafana branchés sur InfluxDB",
-                "now": "étape 1 du TD, sur les données NOAA et Open-Meteo"
+                "now": "TD MongoDB, après le TD InfluxDB et Grafana noté",
+                "b4": "MongoDB sur un cluster Atlas avec Compass : documents, requêtes et agrégations"
             },
             "code": {
                 "title": "Extraits de code",
@@ -336,6 +350,60 @@ const translations = {
                 "r403": "R4.03 : application console .NET",
                 "qdd": "Qualité de dev : dépôt complet (TPRevision)",
                 "gitlab": "GitLab CI/CD : mes 18 exercices"
+            },
+            "revLink": "Mon site de révision",
+            "c8": {
+                "label": "Qualité algorithmique",
+                "title": "Les design patterns, codés en C#",
+                "intro": "Onze patterns de création et de structure, tous appliqués au même exemple fil rouge : un site de vente de véhicules.",
+                "b1": "Création : Abstract Factory, Builder, Factory Method, Prototype et Singleton",
+                "b2": "Structure : Adapter, Bridge, Composite, Decorator, Facade et Flyweight",
+                "b3": "9 projets C# de la solution du cours, redessinés en diagrammes de classes UML à partir de mon code",
+                "now": "révision du contrôle avec mon site : QCM, reconnaissance des diagrammes UML et « trouve le bug »",
+                "uml": "Mes diagrammes UML"
+            },
+            "c9": {
+                "label": "Optimisation pour l’aide à la décision",
+                "title": "Choisir la meilleure solution quand les objectifs s’opposent",
+                "intro": "Un cours en anglais sur l’optimisation multi-objectif, en TD.",
+                "b1": "Front de Pareto, somme pondérée et méthodes de surclassement pour comparer des solutions",
+                "b2": "Problème d’affectation résolu en programmation linéaire",
+                "b3": "Algorithmes génétiques, jusqu’à NSGA-II pour approcher le front de Pareto",
+                "now": "contrôle de novembre, documents autorisés, préparé avec mes fiches"
+            },
+            "rev": {
+                "tag": "Réviser",
+                "title": "Mes sites de révision",
+                "intro": "Pour chaque cours, je me fais un petit site pour réviser : fiches, QCM, exercices et suivi de ce que je maîtrise. Ils sont en français et s’ouvrent directement ici.",
+                "dp": {
+                    "t": "Design patterns",
+                    "d": "Les 11 patterns du cours : rôles, code C# annoté, lecture de l’UML, QCM et « trouve le bug »."
+                },
+                "uml": {
+                    "t": "UML de mes projets",
+                    "d": "Le diagramme de classes de chacun de mes 9 projets de patterns, dessiné à partir du code."
+                },
+                "tp": {
+                    "t": "TP de R5.A.05 (Flask et IA)",
+                    "d": "Nos 8 projets Flask expliqués ligne par ligne, avec les questions de l’oral et leurs réponses."
+                },
+                "vocab": {
+                    "t": "Vocabulaire de qualité de dev",
+                    "d": "Les notions du cours illustrées avec TPRevision, puis des questions ouvertes corrigées."
+                },
+                "maths": {
+                    "t": "Révision express de maths",
+                    "d": "30 minutes chronométrées : fiche flash, flashcards, contrôle blanc et pièges à éviter."
+                },
+                "da": {
+                    "t": "Adaptation de domaine",
+                    "d": "La carte mentale de notre exposé en anglais : types de décalage, méthodes et pièges."
+                },
+                "puffer": {
+                    "t": "Puffer Cours, le jeu",
+                    "d": "Un jeu de vocabulaire de mes cours, à plusieurs sur un écran ou en ligne avec mes amis."
+                },
+                "open": "Ouvrir"
             }
         },
         butYears: {
@@ -454,6 +522,7 @@ const translations = {
             system: 'Système',
             ai: 'Intelligence Artificielle',
             aiAssisted: 'Dév. assisté par IA',
+            techTitle: 'Compétences techniques',
             level: { advanced: 'confirmé', intermediate: 'intermédiaire', basic: 'notions', learning: 'en cours' }
         },
         tags: {
@@ -566,7 +635,7 @@ const translations = {
             }
         },
         contact: {
-            title: '🚀 Travaillons ensemble !',
+            title: 'Travaillons ensemble !',
             subtitle: 'Je suis disponible pour un stage de 16 semaines à partir du 19 janvier 2027',
             emailBtn: 'Me contacter',
             email: '📧 Formulaire de contact'
@@ -582,6 +651,7 @@ const translations = {
             "hostTitle": "Hébergeur",
             "hostText": "GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — téléphone : +1 877 448 4820.",
             "qualityText": "À chaque modification, le code source du site (et non ses visiteurs) est vérifié automatiquement par GitHub Actions et analysé par SonarQube Cloud (SonarSource Sàrl, Suisse). Ces outils ne reçoivent aucune donnée sur les personnes qui consultent le site.",
+            "revText": "Le jeu Puffer Cours et mes sites de révision gardent leur progression dans votre navigateur, comme ci-dessus. En mode « Un seul écran », le jeu n’envoie rien. En mode en ligne, et seulement si vous créez ou rejoignez une partie, la mise en relation passe par le serveur public PeerJS (0.peerjs.com), qui reçoit votre adresse IP et le code de la partie ; les navigateurs des joueurs échangent ensuite directement (WebRTC), si bien que chaque joueur peut voir l’adresse IP des autres. Les vidéos de mon site de révision des TP de R5.A.05 sont trop lourdes pour ce site : un lien ouvre, au clic, leur version d’origine hébergée sur claude.ai (Anthropic).",
             "dataTitle": "Données personnelles",
             "dataIntro": "Ce site ne contient ni outil de statistiques, ni publicité, ni cookie de suivi. Les seules données personnelles traitées sont celles que vous envoyez via le formulaire de contact.",
             "formTitle": "Formulaire de contact",
@@ -644,6 +714,10 @@ const translations = {
             }
         },
         arcade: {
+            pufferTitle: 'Puffer Cours',
+            pufferText: 'Mon jeu de révision entre amis : cite un design pattern, un code HTTP ou une commande Git avant que le poisson-globe n’éclate. Sur un écran ou en ligne.',
+            pufferTag: 'Multijoueur',
+            pufferAlt: 'Écran d’accueil de Puffer Cours',
             "open": "🕹️ Ouvrir l’Arcade",
             "tag": "🕹️ Arcade",
             "title": "Arcade",
@@ -665,7 +739,7 @@ const translations = {
         },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy',
-            signature: 'Créé avec passion 🚀',
+            signature: 'Site conçu et codé par moi, vérifié à chaque modification par GitHub Actions et SonarQube',
             legal: 'Mentions légales et confidentialité',
             updated: 'Dernière mise à jour : 27 novembre 2026'
         },
@@ -833,10 +907,21 @@ const translations = {
             availability: '⚡ Available for a 16-week internship from 19 January 2027',
             greeting: 'Hi, I\'m',
             title: 'Developer & Computer Science Student',
-            description: 'In the third and final year of a Bachelor\'s degree in Computer Science (BUT Informatique, Application Development track) at IUT d\'Annecy. A full-stack developer (C#/.NET, Vue.js, Python) with first professional experience in a video game studio, I bring a strong background in maths and data/AI, the field I hope to pursue in a Master\'s. I am seeking a 16-week internship starting on 19 January 2027.',
+            description: 'Third-year Computer Science student (BUT Informatique, Application Development track) at IUT d\'Annecy, I build full-stack applications with C#/.NET, Vue 3 and Python, with first professional experience in a video game studio. I am looking for a 16-week internship starting on 19 January 2027.',
             contact: '📩 Contact me',
             downloadCV: '📄 Download my CV',
             projects: '🚀 View my projects'
+        },
+        featured: {
+            tag: 'Featured projects',
+            title: 'Three projects to get to know me',
+            subtitle: 'A team project, an internship at a game studio and a personal project, each time with what I built myself.',
+            more: 'View project →',
+            open: 'Open the app ↗',
+            all: 'All my projects →',
+            cube: { title: 'CUBE Bikes — full-stack e-commerce', text: 'In a team of 5: an ASP.NET Core API (JWT, 2FA, Stripe payments) and a Vue 3 interface. My part: the map-based store picker and per-store availability, from the API to the screen.' },
+            lappi: { title: 'The Inspector — game studio internship', text: 'At Lappi Soft, I designed the game’s Discovery Diary on my own: 12 C# scripts, notifications synced to audio, 5 languages, and a test scene taken from 2 to 84 FPS.' },
+            fianchetto: { title: 'Fianchetto — chess game analysis', text: 'A 100% in-browser app: bots from 500 to 2500 Elo, Chess.com and Lichess import, Stockfish analysis in WebAssembly and puzzles built from your own mistakes.' }
         },
         about: {
             tag: '👨‍💻 About me',
@@ -860,7 +945,7 @@ const translations = {
         },
         stats: {
             education: 'Computer Science at IUT Annecy',
-            projects: 'Developed projects',
+            projects: 'Detailed projects, 3 playable online',
             champion: 'Champion & 3rd',
             sports: 'French Polo and Show Jumping Championships',
             languages: '3',
@@ -904,13 +989,13 @@ const translations = {
             },
             internship: {
                 title: '3rd-year Computer Science Internship',
-                description: 'I am actively seeking a 16-week internship starting on 19 January 2027 in software development, web development or data/AI. Objective: to put into practice my skills in C#/ASP.NET Core, Python, Vue 3, PostgreSQL and contribute to concrete projects in a company, in France or abroad.',
+                description: 'I am actively seeking a 16-week internship starting on 19 January 2027 in application development (software and web). Objective: to put into practice my skills in C#/ASP.NET Core, Python, Vue 3, PostgreSQL and contribute to concrete projects in a company, in France or abroad.',
                 duration: 'Duration:',
                 weeks: '16 weeks',
                 start: 'Start:',
                 date: '19 January 2027',
                 domains: 'Areas:',
-                domainsText: 'Software development, web development, data & AI'
+                domainsText: 'Application development: software and web'
             },
             magicalsky: {
                 since: 'Feb. 2025 – Mar. 2026',
@@ -925,7 +1010,7 @@ const translations = {
         now: {
             "tag": "🛠️ Right now",
             "title": "What I’m working on this year",
-            "description": "The 3rd-year courses I’m currently taking (semester 5, September to December 2026), what I do in each and excerpts of my code. Updated 4 November 2026.",
+            "description": "The third-year courses I’m taking right now (semester 5, September to December 2026), with what I do in them, excerpts of my code and the revision sites I built for myself. Updated on 27 November 2026.",
             "status": "In progress",
             "next": "Right now",
             "c1": {
@@ -935,7 +1020,7 @@ const translations = {
                 "b1": "Interfaces split by role and a generic CRUD controller",
                 "b2": "DTOs and AutoMapper so entities are never exposed",
                 "b3": "Unit tests (MSTest, Moq) and integration tests against a real PostgreSQL database",
-                "now": "a Blazor Server MVVM client (MVVM Toolkit) consuming the API",
+                "now": "revising for the written exam: the course vocabulary illustrated with the TPRevision files",
                 "link": "See the code excerpts"
             },
             "c2": {
@@ -945,7 +1030,8 @@ const translations = {
                 "b1": "Flask-SQLAlchemy on the Chinook database",
                 "b2": "Time-series dashboard with InfluxDB",
                 "b3": "Handwritten digit recognition (MNIST) with TensorFlow, served by Flask",
-                "now": "a complete Flask application to hand in (database, image upload, AI models)"
+                "now": "the final Flask app to hand in: database, image upload and AI models",
+                "b4": "Oral exam in English on 25 November, in a group of three: app demo and explanation of the code of the 5 labs and the graded lab (Quadtree)"
             },
             "c3": {
                 "label": "SAE 5.01 — group project",
@@ -954,7 +1040,8 @@ const translations = {
                 "b1": "My role: the AI and data-processing part",
                 "b2": "Our own neural-network forecasting model (an LSTM to start with) that predicts weather conditions, not just temperature",
                 "b3": "Forecasts up to 3 days ahead, computed while the player is guessing",
-                "now": "first sprint, started in November 2026"
+                "now": "development sprints on Azure DevOps: preparing the ERA5 data for the first LSTM",
+                "b4": "ERA5 weather data versioned in the project repository, so the whole team trains and tests on the same data"
             },
             "c4": {
                 "label": "Mathematical modelling",
@@ -984,16 +1071,17 @@ const translations = {
                 "b2": "Photoshop, taught in English: “Avatarize yourself”, an avatar made from my own photo",
                 "b3": "Group technology watch on WebAssembly",
                 "b4": "“Domain Adaptation”: an AI topic explained in English to the class, in a group of 3",
-                "now": "rigging the character in Blender and finishing the avatar"
+                "now": "rigging the character in Blender (Rigify armature) and finishing the avatar"
             },
             "c7": {
                 "label": "New databases (R5.A.10)",
-                "title": "Time series with InfluxDB 3 and Grafana",
+                "title": "Time series and NoSQL: InfluxDB 3, Grafana and MongoDB",
                 "intro": "Graded assignment in pairs, on an Ubuntu virtual machine at the university.",
                 "b1": "Setting up InfluxDB 3, a database built for timestamped measurements",
                 "b2": "Real data from two sources: NOAA and Open-Meteo",
                 "b3": "Grafana dashboards connected to InfluxDB",
-                "now": "step 1 of the assignment, on the NOAA and Open-Meteo data"
+                "now": "MongoDB assignment, after the graded InfluxDB and Grafana one",
+                "b4": "MongoDB on an Atlas cluster with Compass: documents, queries and aggregations"
             },
             "code": {
                 "title": "Code excerpts",
@@ -1020,6 +1108,60 @@ const translations = {
                 "r403": "R4.03: .NET console application",
                 "qdd": "Software quality: full repository (TPRevision)",
                 "gitlab": "GitLab CI/CD: my 18 exercises"
+            },
+            "revLink": "My revision site",
+            "c8": {
+                "label": "Algorithm quality",
+                "title": "Design patterns, written in C#",
+                "intro": "Eleven creational and structural patterns, all applied to the same running example: a vehicle sales website.",
+                "b1": "Creational: Abstract Factory, Builder, Factory Method, Prototype and Singleton",
+                "b2": "Structural: Adapter, Bridge, Composite, Decorator, Facade and Flyweight",
+                "b3": "9 C# projects from the course solution, redrawn as UML class diagrams from my code",
+                "now": "revising for the test with my site: quizzes, recognising UML diagrams and “spot the bug”",
+                "uml": "My UML diagrams"
+            },
+            "c9": {
+                "label": "Optimization for decision support",
+                "title": "Picking the best solution when goals conflict",
+                "intro": "A course taught in English on multi-objective optimization, through tutorials.",
+                "b1": "Pareto front, weighted sum and outranking methods to compare solutions",
+                "b2": "Assignment problem solved with linear programming",
+                "b3": "Genetic algorithms, up to NSGA-II to approximate the Pareto front",
+                "now": "the November test, open book, prepared with my own summary sheets"
+            },
+            "rev": {
+                "tag": "Revise",
+                "title": "My revision sites",
+                "intro": "For each course, I build myself a small revision site: summary sheets, quizzes, exercises and tracking of what I’ve mastered. They are in French and open right here.",
+                "dp": {
+                    "t": "Design patterns",
+                    "d": "The 11 patterns of the course: roles, annotated C# code, reading the UML, quizzes and “spot the bug”."
+                },
+                "uml": {
+                    "t": "UML of my projects",
+                    "d": "The class diagram of each of my 9 pattern projects, drawn from the code."
+                },
+                "tp": {
+                    "t": "R5.A.05 labs (Flask and AI)",
+                    "d": "Our 8 Flask projects explained line by line, with the oral exam questions and their answers."
+                },
+                "vocab": {
+                    "t": "Software quality vocabulary",
+                    "d": "The course concepts illustrated with TPRevision, then open questions with model answers."
+                },
+                "maths": {
+                    "t": "Express maths revision",
+                    "d": "30 timed minutes: flash sheet, flashcards, mock test and traps to avoid."
+                },
+                "da": {
+                    "t": "Domain adaptation",
+                    "d": "The mind map of our talk in English: types of shift, methods and pitfalls."
+                },
+                "puffer": {
+                    "t": "Puffer Cours, the game",
+                    "d": "A vocabulary game on my courses, on one screen or online with friends."
+                },
+                "open": "Open"
             }
         },
         butYears: {
@@ -1138,6 +1280,7 @@ const translations = {
             system: 'System',
             ai: 'Artificial Intelligence',
             aiAssisted: 'AI-assisted development',
+            techTitle: 'Technical skills',
             level: { advanced: 'advanced', intermediate: 'intermediate', basic: 'basic', learning: 'in progress' }
         },
         tags: {
@@ -1250,7 +1393,7 @@ const translations = {
             }
         },
         contact: {
-            title: '🚀 Let\'s work together!',
+            title: 'Let\'s work together!',
             subtitle: 'I\'m available for a 16-week internship starting on 19 January 2027',
             emailBtn: 'Contact me',
             email: '📧 Contact form'
@@ -1266,6 +1409,7 @@ const translations = {
             "hostTitle": "Host",
             "hostText": "GitHub, Inc. (GitHub Pages service), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States — phone: +1 877 448 4820.",
             "qualityText": "On every change, the site's source code (not its visitors) is checked automatically by GitHub Actions and analysed by SonarQube Cloud (SonarSource Sàrl, Switzerland). These tools receive no data about the people who visit the site.",
+            "revText": "The Puffer Cours game and my revision sites keep their progress in your browser, as above. In “one screen” mode, the game sends nothing. In online mode, and only if you create or join a game, matchmaking goes through the public PeerJS server (0.peerjs.com), which receives your IP address and the game code; players’ browsers then talk to each other directly (WebRTC), so each player can see the others’ IP addresses. The videos of my R5.A.05 lab revision site are too large for this site: a link opens, on click, their original version hosted on claude.ai (Anthropic).",
             "dataTitle": "Personal data",
             "dataIntro": "This site has no analytics, no advertising and no tracking cookies. The only personal data processed is what you send through the contact form.",
             "formTitle": "Contact form",
@@ -1328,6 +1472,10 @@ const translations = {
             }
         },
         arcade: {
+            pufferTitle: 'Puffer Cours',
+            pufferText: 'My revision game with friends: name a design pattern, an HTTP status code or a Git command before the pufferfish pops. On one screen or online (in French).',
+            pufferTag: 'Multiplayer',
+            pufferAlt: 'Puffer Cours home screen',
             "open": "🕹️ Open the Arcade",
             "tag": "🕹️ Arcade",
             "title": "Arcade",
@@ -1349,7 +1497,7 @@ const translations = {
         },
         footer: {
             copyright: '© 2026 Matéo Bourdin - Computer Science Student | IUT Annecy',
-            signature: 'Created with passion 🚀',
+            signature: 'Site designed and coded by me, checked on every change by GitHub Actions and SonarQube',
             legal: 'Legal notice and privacy',
             updated: 'Last updated: 27 November 2026'
         },

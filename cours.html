@@ -60,13 +60,15 @@
         </div>
     </header>
 
+    <main id="contenu">
+
     <!-- Right now: current 3rd-year courses -->
     <section id="en-cours" class="page-hero">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag"><span data-i18n="now.tag">🛠️ En ce moment</span></span>
                 <h1 data-i18n="now.title">Ce sur quoi je travaille cette année</h1>
-                <p data-i18n="now.description">Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais et des extraits de mon code. Mis à jour le 4 novembre 2026.</p>
+                <p data-i18n="now.description">Les cours de 3e année que je suis en ce moment (semestre 5, septembre à décembre 2026), avec ce que j’y fais, des extraits de mon code et les sites de révision que je me suis faits. Mis à jour le 27 novembre 2026.</p>
             </div>
             <div class="projects-grid now-grid">
                 <article class="project-card now-card reveal">
@@ -82,9 +84,10 @@
                             <li><span data-i18n="now.c1.b2">DTO et AutoMapper pour ne jamais exposer les entités</span></li>
                             <li><span data-i18n="now.c1.b3">Tests unitaires (MSTest, Moq) et tests d’intégration sur une vraie base PostgreSQL</span></li>
                         </ul>
-                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c1.now">client Blazor Server en MVVM (MVVM Toolkit) qui consomme l’API</span></p>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c1.now">révision de l’examen écrit : le vocabulaire du cours illustré par les fichiers de TPRevision</span></p>
                         <div class="now-techs"><span class="now-tech">C#</span><span class="now-tech">ASP.NET Core</span><span class="now-tech">EF Core</span><span class="now-tech">AutoMapper</span><span class="now-tech">MSTest</span><span class="now-tech">Moq</span><span class="now-tech">Blazor</span></div>
                             <a href="cours-aspnet.html" class="btn btn-primary now-detail"><span data-i18n="courses.detail">Page détaillée : rendus, démos et révisions →</span></a>
+                            <a href="revisions/vocab-qualite.html" class="but-year-link"><span data-i18n="now.revLink">Mon site de révision</span> →</a>
                             <a href="#extraits" class="but-year-link"><span data-i18n="now.c1.link">Voir les extraits de code</span> ↓</a>
                     </div>
                 </article>
@@ -100,10 +103,12 @@
                             <li><span data-i18n="now.c2.b1">Flask-SQLAlchemy sur la base de données Chinook</span></li>
                             <li><span data-i18n="now.c2.b2">Tableau de bord de séries temporelles avec InfluxDB</span></li>
                             <li><span data-i18n="now.c2.b3">Reconnaissance de chiffres manuscrits (MNIST) avec TensorFlow, servie par Flask</span></li>
+                            <li><span data-i18n="now.c2.b4">Oral en anglais le 25 novembre, à trois : démo de l’application et explication du code des 5 TP et du TP noté (Quadtree)</span></li>
                         </ul>
-                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c2.now">une application Flask complète à rendre (base de données, upload d’images, modèles d’IA)</span></p>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c2.now">l’application Flask finale à rendre : base de données, upload d’images et modèles d’IA</span></p>
                         <div class="now-techs"><span class="now-tech">Python</span><span class="now-tech">Flask</span><span class="now-tech">SQLAlchemy</span><span class="now-tech">InfluxDB</span><span class="now-tech">TensorFlow</span><span class="now-tech">Docker Compose</span></div>
                             <a href="cours-flask.html" class="btn btn-primary now-detail"><span data-i18n="courses.detail">Page détaillée : rendus, démos et révisions →</span></a>
+                            <a href="revisions/r5a05-tp.html" class="but-year-link"><span data-i18n="now.revLink">Mon site de révision</span> →</a>
                     </div>
                 </article>
                 <article class="project-card now-card reveal">
@@ -118,9 +123,10 @@
                             <li><span data-i18n="now.c3.b1">Mon rôle : la partie IA et le traitement des données</span></li>
                             <li><span data-i18n="now.c3.b2">Notre propre modèle de prévision à base de réseaux de neurones (un LSTM pour commencer) qui prévoit les conditions météo, pas seulement la température</span></li>
                             <li><span data-i18n="now.c3.b3">Prévision jusqu’à 3 jours, calculée pendant que le joueur devine</span></li>
+                            <li><span data-i18n="now.c3.b4">Données météo ERA5 versionnées dans le dépôt du projet, pour que toute l’équipe entraîne et teste sur les mêmes données</span></li>
                         </ul>
-                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c3.now">premier sprint, lancé en novembre 2026</span></p>
-                        <div class="now-techs"><span class="now-tech">Python</span><span class="now-tech">LSTM</span><span class="now-tech">Scrum</span></div>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c3.now">sprints de développement sur Azure DevOps : préparation des données ERA5 pour le premier LSTM</span></p>
+                        <div class="now-techs"><span class="now-tech">Python</span><span class="now-tech">LSTM</span><span class="now-tech">ERA5</span><span class="now-tech">Scrum</span><span class="now-tech">Azure DevOps</span></div>
                     </div>
                 </article>
                 <article class="project-card now-card reveal">
@@ -139,6 +145,7 @@
                         <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c4.now">réseaux récurrents et Transformers, en lien avec le LSTM d’Astraeus</span></p>
                         <div class="now-techs"><span class="now-tech">NumPy</span><span class="now-tech">pandas</span><span class="now-tech">scikit-learn</span><span class="now-tech">Keras</span></div>
                             <a href="cours-maths.html" class="btn btn-primary now-detail"><span data-i18n="courses.detail">Page détaillée : rendus, démos et révisions →</span></a>
+                            <a href="revisions/maths-express.html" class="but-year-link"><span data-i18n="now.revLink">Mon site de révision</span> →</a>
                     </div>
                 </article>
                 <article class="project-card now-card reveal">
@@ -175,8 +182,9 @@
                             <li><span data-i18n="now.c6.b3">Veille technologique en groupe sur WebAssembly</span></li>
                             <li><span data-i18n="now.c6.b4">« Domain Adaptation » : un sujet d’IA expliqué en anglais à la classe, en groupe de 3</span></li>
                         </ul>
-                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c6.now">rigging du personnage sous Blender et retouche de l’avatar</span></p>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c6.now">rigging du personnage sous Blender (armature Rigify) et finitions de l’avatar</span></p>
                         <div class="now-techs"><span class="now-tech">Blender</span><span class="now-tech">Photoshop</span><span class="now-tech">WebAssembly</span></div>
+                            <a href="revisions/adaptation-domaine.html" class="but-year-link"><span data-i18n="now.revLink">Mon site de révision</span> →</a>
                     </div>
                 </article>
                 <article class="project-card now-card reveal">
@@ -185,17 +193,105 @@
                             <span class="project-tag">📈 <span data-i18n="now.c7.label">Nouvelles bases de données (R5.A.10)</span></span>
                             <span class="project-tag now-live" data-i18n="now.status">En cours</span>
                         </div>
-                        <h3 data-i18n="now.c7.title">Séries temporelles avec InfluxDB 3 et Grafana</h3>
+                        <h3 data-i18n="now.c7.title">Séries temporelles et NoSQL : InfluxDB 3, Grafana et MongoDB</h3>
                         <p class="now-intro" data-i18n="now.c7.intro">TD noté en binôme, sur une machine virtuelle Ubuntu de l’IUT.</p>
                         <ul class="now-list">
                             <li><span data-i18n="now.c7.b1">Mise en place d’InfluxDB 3, une base pensée pour les mesures horodatées</span></li>
                             <li><span data-i18n="now.c7.b2">Données réelles de deux sources : NOAA et Open-Meteo</span></li>
                             <li><span data-i18n="now.c7.b3">Tableaux de bord Grafana branchés sur InfluxDB</span></li>
+                            <li><span data-i18n="now.c7.b4">MongoDB sur un cluster Atlas avec Compass : documents, requêtes et agrégations</span></li>
                         </ul>
-                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c7.now">étape 1 du TD, sur les données NOAA et Open-Meteo</span></p>
-                        <div class="now-techs"><span class="now-tech">InfluxDB 3</span><span class="now-tech">Grafana</span><span class="now-tech">Ubuntu</span></div>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c7.now">TD MongoDB, après le TD InfluxDB et Grafana noté</span></p>
+                        <div class="now-techs"><span class="now-tech">InfluxDB 3</span><span class="now-tech">Grafana</span><span class="now-tech">MongoDB</span><span class="now-tech">Ubuntu</span></div>
                     </div>
                 </article>
+
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">🧩 <span data-i18n="now.c8.label">Qualité algorithmique</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c8.title">Les design patterns, codés en C#</h3>
+                        <p class="now-intro" data-i18n="now.c8.intro">Onze patterns de création et de structure, tous appliqués au même exemple fil rouge : un site de vente de véhicules.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c8.b1">Création : Abstract Factory, Builder, Factory Method, Prototype et Singleton</span></li>
+                            <li><span data-i18n="now.c8.b2">Structure : Adapter, Bridge, Composite, Decorator, Facade et Flyweight</span></li>
+                            <li><span data-i18n="now.c8.b3">9 projets C# de la solution du cours, redessinés en diagrammes de classes UML à partir de mon code</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c8.now">révision du contrôle avec mon site : QCM, reconnaissance des diagrammes UML et « trouve le bug »</span></p>
+                        <div class="now-techs"><span class="now-tech">C#</span><span class="now-tech">UML</span><span class="now-tech">Design patterns</span><span class="now-tech">.NET</span></div>
+                            <a href="revisions/design-patterns.html" class="btn btn-primary now-detail"><span data-i18n="now.revLink">Mon site de révision</span> →</a>
+                            <a href="revisions/uml-projets.html" class="but-year-link"><span data-i18n="now.c8.uml">Mes diagrammes UML</span> →</a>
+                    </div>
+                </article>
+                <article class="project-card now-card reveal">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">📊 <span data-i18n="now.c9.label">Optimisation pour l’aide à la décision</span></span>
+                            <span class="project-tag now-live" data-i18n="now.status">En cours</span>
+                        </div>
+                        <h3 data-i18n="now.c9.title">Choisir la meilleure solution quand les objectifs s’opposent</h3>
+                        <p class="now-intro" data-i18n="now.c9.intro">Un cours en anglais sur l’optimisation multi-objectif, en TD.</p>
+                        <ul class="now-list">
+                            <li><span data-i18n="now.c9.b1">Front de Pareto, somme pondérée et méthodes de surclassement pour comparer des solutions</span></li>
+                            <li><span data-i18n="now.c9.b2">Problème d’affectation résolu en programmation linéaire</span></li>
+                            <li><span data-i18n="now.c9.b3">Algorithmes génétiques, jusqu’à NSGA-II pour approcher le front de Pareto</span></li>
+                        </ul>
+                        <p class="now-next"><strong data-i18n="now.next">En ce moment</strong> : <span data-i18n="now.c9.now">contrôle de novembre, documents autorisés, préparé avec mes fiches</span></p>
+                        <div class="now-techs"><span class="now-tech">Pareto</span><span class="now-tech">Programmation linéaire</span><span class="now-tech">NSGA-II</span><span class="now-tech">Python</span></div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="rev-section reveal" id="revisions">
+                <span class="section-tag"><span data-i18n="now.rev.tag">Réviser</span></span>
+                <h2 data-i18n="now.rev.title">Mes sites de révision</h2>
+                <p class="rev-intro" data-i18n="now.rev.intro">Pour chaque cours, je me fais un petit site pour réviser : fiches, QCM, exercices et suivi de ce que je maîtrise. Ils sont en français et s’ouvrent directement ici.</p>
+                <div class="rev-grid">
+                <a href="revisions/design-patterns.html" class="rev-card reveal">
+                    <span class="rev-icon" aria-hidden="true">🧩</span>
+                    <span class="rev-title" data-i18n="now.rev.dp.t">Design patterns</span>
+                    <span class="rev-desc" data-i18n="now.rev.dp.d">Les 11 patterns du cours : rôles, code C# annoté, lecture de l’UML, QCM et « trouve le bug ».</span>
+                    <span class="rev-open"><span data-i18n="now.rev.open">Ouvrir</span> →</span>
+                </a>
+                <a href="revisions/uml-projets.html" class="rev-card reveal">
+                    <span class="rev-icon" aria-hidden="true">📐</span>
+                    <span class="rev-title" data-i18n="now.rev.uml.t">UML de mes projets</span>
+                    <span class="rev-desc" data-i18n="now.rev.uml.d">Le diagramme de classes de chacun de mes 9 projets de patterns, dessiné à partir du code.</span>
+                    <span class="rev-open"><span data-i18n="now.rev.open">Ouvrir</span> →</span>
+                </a>
+                <a href="revisions/r5a05-tp.html" class="rev-card reveal">
+                    <span class="rev-icon" aria-hidden="true">🐍</span>
+                    <span class="rev-title" data-i18n="now.rev.tp.t">TP de R5.A.05 (Flask et IA)</span>
+                    <span class="rev-desc" data-i18n="now.rev.tp.d">Nos 8 projets Flask expliqués ligne par ligne, avec les questions de l’oral et leurs réponses.</span>
+                    <span class="rev-open"><span data-i18n="now.rev.open">Ouvrir</span> →</span>
+                </a>
+                <a href="revisions/vocab-qualite.html" class="rev-card reveal">
+                    <span class="rev-icon" aria-hidden="true">🧪</span>
+                    <span class="rev-title" data-i18n="now.rev.vocab.t">Vocabulaire de qualité de dev</span>
+                    <span class="rev-desc" data-i18n="now.rev.vocab.d">Les notions du cours illustrées avec TPRevision, puis des questions ouvertes corrigées.</span>
+                    <span class="rev-open"><span data-i18n="now.rev.open">Ouvrir</span> →</span>
+                </a>
+                <a href="revisions/maths-express.html" class="rev-card reveal">
+                    <span class="rev-icon" aria-hidden="true">⏱️</span>
+                    <span class="rev-title" data-i18n="now.rev.maths.t">Révision express de maths</span>
+                    <span class="rev-desc" data-i18n="now.rev.maths.d">30 minutes chronométrées : fiche flash, flashcards, contrôle blanc et pièges à éviter.</span>
+                    <span class="rev-open"><span data-i18n="now.rev.open">Ouvrir</span> →</span>
+                </a>
+                <a href="revisions/adaptation-domaine.html" class="rev-card reveal">
+                    <span class="rev-icon" aria-hidden="true">🧠</span>
+                    <span class="rev-title" data-i18n="now.rev.da.t">Adaptation de domaine</span>
+                    <span class="rev-desc" data-i18n="now.rev.da.d">La carte mentale de notre exposé en anglais : types de décalage, méthodes et pièges.</span>
+                    <span class="rev-open"><span data-i18n="now.rev.open">Ouvrir</span> →</span>
+                </a>
+                <a href="revisions/puffer-cours.html" class="rev-card reveal">
+                    <span class="rev-icon" aria-hidden="true">🐡</span>
+                    <span class="rev-title" data-i18n="now.rev.puffer.t">Puffer Cours, le jeu</span>
+                    <span class="rev-desc" data-i18n="now.rev.puffer.d">Un jeu de vocabulaire de mes cours, à plusieurs sur un écran ou en ligne avec mes amis.</span>
+                    <span class="rev-open"><span data-i18n="now.rev.open">Ouvrir</span> →</span>
+                </a>
+                </div>
             </div>
 
             <div class="now-code reveal" id="extraits">
@@ -330,10 +426,12 @@ Assert.IsFalse(produitRelu.EnReappro);</code></pre></div>
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer>
         <div class="container">
             <p data-i18n="footer.copyright">© 2026 Matéo Bourdin - Étudiant en informatique | IUT Annecy</p>
-            <p data-i18n="footer.signature">Créé avec passion 🚀</p>
+            <p data-i18n="footer.signature">Site conçu et codé par moi, vérifié à chaque modification par GitHub Actions et SonarQube</p>
             <p><a href="mentions-legales.html" class="footer-legal" data-i18n="footer.legal">Mentions légales et confidentialité</a></p>
             <p class="footer-updated" data-i18n="footer.updated">Dernière mise à jour : 27 novembre 2026</p>
         </div>
