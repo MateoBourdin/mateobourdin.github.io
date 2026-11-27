@@ -78,7 +78,7 @@ function translationsFor(html) {
     for (const [, body] of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)) {
         if (/const\s+translations\s*=\s*\{/.test(body)) return evalTranslations(body);
     }
-    if (/<script src="(?:\.\.\/)?translations\.js">/.test(html)) {
+    if (/<script src="(?:\.\.\/)?translations\.js"[^>]*>/.test(html)) {
         if (!shared) shared = evalTranslations(fs.readFileSync(path.join(ROOT, 'translations.js'), 'utf8'));
         return shared;
     }

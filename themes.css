@@ -377,3 +377,7 @@
     :root[data-style] body::after, :root[data-style] .floating-element, :root[data-style] .btn:hover::after { animation: none !important; }
     .style-fx, .maths-coords { display: none; }
 }
+
+/* Badges pleins dans les styles à thème : couleur principale du style et texte adapté */
+:root[data-style] .project-tag.tag-solid { background: var(--primary); color: var(--on-primary); }
+:root[data-style] .project-tag.tag-soft { background: var(--primary-lighter); color: var(--text); }

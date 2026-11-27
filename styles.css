@@ -337,6 +337,8 @@ nav {
 }
 
 .language-switcher .lang-btn {
+    /* Texte « FR / EN » : pleine opacité pour garder un contraste suffisant */
+    opacity: 1;
     background: transparent;
     border: 2px solid transparent;
     padding: 0.5rem 1rem;
@@ -2533,7 +2535,8 @@ section.page-hero + section {
     text-align: center;
     padding: 2rem 1rem;
     font-size: 0.85rem;
-    color: var(--text-light);
+    /* Fond sombre (règle « footer ») : texte clair pour un contraste suffisant */
+    color: #d6d9ee;
 }
 
 section.page-hero:has(+ .legal-section) {
@@ -3546,7 +3549,7 @@ html.site-search-open { overflow: hidden; }
 /* Date de dernière mise à jour du site, en bas de page */
 .footer-updated {
     font-size: 0.82rem;
-    opacity: 0.75;
+    opacity: 0.9;
 }
 
 .mini-updated {
@@ -3596,3 +3599,31 @@ html.site-search-open { overflow: hidden; }
 .rev-title { font-family: 'Manrope', 'Inter', sans-serif; font-weight: 800; font-size: 1.08rem; }
 .rev-desc { color: var(--text-light); font-size: 0.92rem; line-height: 1.55; flex: 1; }
 .rev-open { color: var(--primary); font-weight: 600; font-size: 0.92rem; }
+
+/* Badges pleins (type de projet, expérience) : couleurs foncées pour un contraste AA avec le texte blanc */
+.project-tag.tag-solid { color: #ffffff; }
+.project-tag.tag-primary { background: #4f5dc2; }
+.project-tag.tag-green { background: #1f7a52; }
+.project-tag.tag-blue { background: #2a6496; }
+.project-tag.tag-purple { background: #6a52b8; }
+.project-tag.tag-soft { background: var(--primary-lighter); color: var(--primary); }
+[data-theme="dark"] .project-tag.tag-solid { color: #12152b; }
+[data-theme="dark"] .project-tag.tag-primary { background: #9aa5ee; }
+[data-theme="dark"] .project-tag.tag-green { background: #6cc4a3; }
+[data-theme="dark"] .project-tag.tag-blue { background: #7cc0ee; }
+[data-theme="dark"] .project-tag.tag-purple { background: #b3a3ee; }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .project-tag.tag-solid { color: #12152b; }
+    :root:not([data-theme="light"]) .project-tag.tag-primary { background: #9aa5ee; }
+    :root:not([data-theme="light"]) .project-tag.tag-green { background: #6cc4a3; }
+    :root:not([data-theme="light"]) .project-tag.tag-blue { background: #7cc0ee; }
+    :root:not([data-theme="light"]) .project-tag.tag-purple { background: #b3a3ee; }
+}
+
+/* Présentation de l'accueil (section « Qui suis-je ? ») */
+.about-text { max-width: 760px; margin: 0 auto; text-align: center; color: var(--text-light); font-size: 1.08rem; line-height: 1.75; }
+.about-text p + p { margin-top: 1rem; }
+
+/* Boutons GitHub (fond sombre) */
+.btn.btn-github { background: var(--dark); border-color: var(--dark); color: var(--light); }
+.btn.btn-github:hover { filter: brightness(1.25); }

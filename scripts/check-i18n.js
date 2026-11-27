@@ -68,7 +68,7 @@ function findTranslationsForFile(file, text) {
     }
 
     // Case 2: the page loads the shared translations.js file.
-    if (/<script src="(?:\.\.\/)?translations\.js">/.test(text)) {
+    if (/<script src="(?:\.\.\/)?translations\.js"[^>]*>/.test(text)) {
         const shared = fs.readFileSync(path.join(ROOT, 'translations.js'), 'utf8');
         return evalTranslations(shared);
     }
